@@ -21,25 +21,5 @@ namespace Domain.Entities
             orders.Add(new Order());
             comments = new List<Comment>();
         }
-        public void AddCustomer()
-        {
-
-        }
-        public void EditCustomer()
-        {
-
-        }
-        public void DeactivationCustomer()
-        {
-            IsActive = false;
-        }
-        public void AddComment()
-        {
-            comments.Add(new Comment());
-        }
-        public void AddOrder()
-        {
-            orders.Add(new Order());
-        }
     }
 }
