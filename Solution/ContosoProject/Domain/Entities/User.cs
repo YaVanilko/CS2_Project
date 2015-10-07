@@ -48,11 +48,5 @@ namespace Domain.Entities
             Password = password;
             this.role = role;
         }
-
-        public void DeactivateUser()
-        {
-            if (IsActive)
-                IsActive = false;
-        }
     }
 }

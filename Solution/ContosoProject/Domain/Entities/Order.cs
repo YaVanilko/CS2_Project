@@ -35,11 +35,5 @@ namespace Domain.Entities
                 comments.Add(comment);
             }
         }
-
-        public void DeactivateOrder ()
-        {
-            if (IsActive)
-                IsActive = false;
-        }
     }
 }
