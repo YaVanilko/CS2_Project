@@ -39,11 +39,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\BaseEntity.cs" />
+    <Compile Include="Entities\Comment.cs" />
+    <Compile Include="Entities\ContactInfo.cs" />
+    <Compile Include="Entities\Customer.cs" />
+    <Compile Include="Entities\Goods.cs" />
+    <Compile Include="Entities\GoodsRow.cs" />
+    <Compile Include="Entities\Order.cs" />
+    <Compile Include="Entities\OrderStatus.cs" />
+    <Compile Include="Entities\Permission.cs" />
+    <Compile Include="Entities\PersonalInfo.cs" />
+    <Compile Include="Entities\ProductCategory.cs" />
+    <Compile Include="Entities\Role.cs" />
+    <Compile Include="Entities\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DAO\" />
-    <Folder Include="Entities\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
