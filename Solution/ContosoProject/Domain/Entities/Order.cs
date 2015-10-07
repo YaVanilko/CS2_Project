@@ -8,11 +8,11 @@ namespace Domain.Entities
 {
     public class Order : BaseEntity
     {
-        private Customer customer;
-        private List<GoodsRow> goodsList = new List<GoodsRow>();
-        private double totalCost;
-        private OrderStatus currentStatus;
-        private List<Comment> comments;
+        public Customer customer;
+        public List<GoodsRow> goodsList = new List<GoodsRow>();
+        public double totalCost;
+        public OrderStatus currentStatus;
+        public List<Comment> comments;
 
         public Order(Customer currentCustomer, List<GoodsRow> good) : this (currentCustomer, good, new Comment())
         {
@@ -36,12 +36,7 @@ namespace Domain.Entities
             }
         }
 
-        public void EditOrder()
-        {
-            throw new NotImplementedException();
-        }
-
-        public DeactivateOrder ()
+        public void DeactivateOrder ()
         {
             if (IsActive)
                 IsActive = false;

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Domain.Entities
 {
-    public class PersonalInfo
+    public class PersonalInfo : BaseEntity
     {
         private string firstName;
         private string middleName;
