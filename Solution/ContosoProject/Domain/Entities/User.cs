@@ -8,45 +8,17 @@ namespace Domain.Entities
 {
     public class User : BaseEntity
     {
-        public PersonalInfo personalInfo;
-        private string login;
-        private string password;
-        public Role role;
-
-        public string Login
-        {
-            get { return login; }
-            set
-            {
-                if (value.Length != 0 && value.Length >= 4)
-                {
-                    login = value;
-                }
-            }
-        }
-
-        public string Password
-        {
-            get { return password; }
-            set
-            {
-                if (value.Length != 0 && value.Length >= 5)
-                {
-                    password = value;
-                }
-                else
-                {
-                    
-                }
-            }
-        }
+        public PersonalInfo UserInfo { get; set; }
+        public Role UserRole { get; set; }
+        public string Login { get; set; }
+        public string Password { get; set; }
 
         public User (PersonalInfo info, string login, string password, Role role)
         {
-            personalInfo = info;
+            UserInfo = info;
             Login = login;
             Password = password;
-            this.role = role;
+            UserRole = role;
         }
     }
 }

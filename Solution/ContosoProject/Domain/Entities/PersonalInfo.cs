@@ -8,45 +8,9 @@ namespace Domain.Entities
 {
     public class PersonalInfo : BaseEntity
     {
-        private string firstName;
-        private string middleName;
-        private string lastName;
-
-        public string FirstName
-        {
-            get { return firstName; }
-            set
-            {
-                if (value.Length != 0)
-                {
-                    firstName = value;
-                }
-            }
-        }
-
-        public string MiddleName
-        {
-            get { return middleName; }
-            set
-            {
-                if (value.Length != 0)
-                {
-                    middleName = value;
-                }
-            }
-        }
-
-        public string LastName
-        {
-            get { return lastName; }
-            set
-            {
-                if (value.Length != 0)
-                {
-                    lastName = value;
-                }
-            }
-        }
+        public string FirstName { get; set; }
+        public string MiddleName { get; set; }
+        public string LastName { get; set; }
 
         public PersonalInfo (string name, string middleName, string surname)
         {

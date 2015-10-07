@@ -8,25 +8,25 @@ namespace Domain.Entities
 {
     public class Order : BaseEntity
     {
-        public Customer customer;
+        public Customer Customer { get; set; }
         public List<GoodsRow> goodsList = new List<GoodsRow>();
-        public double totalCost;
-        public OrderStatus currentStatus;
-        public List<Comment> comments;
+        public double TotalCost { get; set; }
+        public OrderStatus Status { get; set; }
+        public List<Comment> comments = new List<Comment>();
 
-        public Order(Customer currentCustomer, List<GoodsRow> good) : this (currentCustomer, good, new Comment())
+        private Order(Customer currentCustomer, List<GoodsRow> good) : this (currentCustomer, good, new Comment())
         {
         }
 
-        public Order(Customer customer, List<GoodsRow> goods, Comment comment)
+        private Order(Customer customer, List<GoodsRow> goods, Comment comment)
         {
-            this.customer = customer;
+            this.Customer = customer;
             if (goods != null)
             {
                 foreach (GoodsRow row in goods)
                 {
                     goodsList.Add(row);
-                    totalCost += row.Price;
+                    TotalCost += row.Price;
                 }
             }
 
