@@ -13,7 +13,6 @@ namespace Domain.Entities
         public string LastName { get; set; }
 
         public PersonalInfo(User user, string firstName, string middleName, string lastName)
-            :base(user)
         {
             FirstName = firstName;
             MiddleName = middleName;

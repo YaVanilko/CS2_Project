@@ -13,7 +13,7 @@ namespace Domain.Entities
         public string Login { get; set; }
         public string Password { get; set; }
 
-        public User (PersonalInfo info, string login, string password, Role role)
+        public User (PersonalInfo info, string login, string password, Role role) : base(user)
         {
             UserInfo = info;
             Login = login;
