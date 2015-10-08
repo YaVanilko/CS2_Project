@@ -6,17 +6,18 @@ using System.Threading.Tasks;
 
 namespace Domain.Entities
 {
-    public class PersonalInfo : BaseEntity
+    public class PersonalInfo: BaseEntity
     {
         public string FirstName { get; set; }
         public string MiddleName { get; set; }
         public string LastName { get; set; }
 
-        public PersonalInfo (string name, string middleName, string surname)
+        public PersonalInfo(User user, string firstName, string middleName, string lastName)
+            :base(user)
         {
-            FirstName = name;
+            FirstName = firstName;
             MiddleName = middleName;
-            LastName = surname;
+            LastName = lastName;
         }
     }
 }
