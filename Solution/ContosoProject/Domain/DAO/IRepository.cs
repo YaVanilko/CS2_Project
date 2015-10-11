@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Domain.DAO
 {
-    interface IRepository<T>
+    public interface IRepository<T>
     {
         public void Add(T entity);
         void Update(T entity);
