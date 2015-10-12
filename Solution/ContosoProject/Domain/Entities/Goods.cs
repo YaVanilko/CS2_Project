@@ -14,16 +14,10 @@ namespace Domain.Entities
         public int Count { get; set; }
         public ProductCategory Category { get; set; }
         public List<Comment> Coments { get; set; }
-        public Goods(User user, string name, string sku, double price, int count,
-            ProductCategory category)
-            :base(user)
+        public Goods()
         {
-            Name = name;
-            SKU = sku;
-            Price = price;
-            Count = count;
-            Category = category;
             Coments = new List<Comment>();
         }
+
     }
 }

@@ -10,10 +10,8 @@ namespace Domain.Entities
     {
         public string CategoryName { get; set; }
         public List<Goods> Goods { get; set; }
-        public ProductCategory(User user, string categoryName)
-            :base(user)
+        public ProductCategory()
         {
-            CategoryName = categoryName;
             Goods = new List<Goods>();
         }
     }
