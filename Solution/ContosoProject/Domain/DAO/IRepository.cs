@@ -8,7 +8,7 @@ namespace Domain.DAO
 {
     public interface IRepository<T>
     {
-        public void Add(T entity);
+        void Add(T entity);
         void Update(T entity);
         void Delete(T entity);
         T GetById(int Id); 

@@ -20,7 +20,7 @@ namespace Data.DumbData
                 User user = new User();
                 user.Login = "user" + i;
                 user.Password = "user" + i;
-                user.UserInfo = infoCollection[i];
+                user.UserInfo = personalInfoCollection[i];
                 user.UserRole = roleCollection[i];
                 user.Operator = user;
 
