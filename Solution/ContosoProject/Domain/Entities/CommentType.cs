@@ -6,12 +6,10 @@ using System.Threading.Tasks;
 
 namespace Domain.Entities
 {
-    public class Comment:BaseEntity
+    public enum CommentType
     {
-     
-            public string Message { get; set; }
-
-            public CommentType Type { get; set; }
-
+        Order = 1,
+        Customer,
+        Goods
     }
 }

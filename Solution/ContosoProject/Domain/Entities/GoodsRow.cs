@@ -23,5 +23,9 @@ namespace Domain.Entities
                 totalPrise = Price * Count;
             }
         }
+
+        public GoodsRow() { Goods = new Goods(); }
+
+
     }
 }

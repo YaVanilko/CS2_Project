@@ -16,6 +16,8 @@ namespace Domain.Entities
         {
             Orders = new List<Order>();
             Comments = new List<Comment>();
+            PersonalInfo = new PersonalInfo();
+            Contacts = new ContactInfo();
         }
     }
 }
