@@ -17,8 +17,13 @@ namespace Data.DumbData
             
             for (int i = 0; i < 9; i++)
 			{
-			    orderCollection.Add(new Order(customerCollection(i), new List<GoodsRow>(), new Comment("message"+i, CommentType.Order)));
-                orderCollection[i].goodsList.Add(goodsRowCollection[i]);
+                Order order = new Order();
+                order.Customer = customerCollection[i];
+                order.comments.Add(new Comment() { Message = "commentfromOrder" + i, });
+                order.Operator = userCollection[i];
+                order.goodsList.Add(goodsRowCollection[i]);
+
+                orderCollection.Add(order);
 			}
             return orderCollection;
         }

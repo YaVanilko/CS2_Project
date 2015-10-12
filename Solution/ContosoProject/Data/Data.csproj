@@ -49,6 +49,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DumbData\GoodsRowStorage.cs" />
+    <Compile Include="DumbData\GoodsStorage.cs" />
+    <Compile Include="DumbData\IOrderRepository.cs" />
+    <Compile Include="DumbData\IRoleRepository.cs" />
+    <Compile Include="DumbData\IUserRepository.cs" />
+    <Compile Include="DumbData\OrderDao.cs" />
+    <Compile Include="DumbData\RoleDao.cs" />
+    <Compile Include="DumbData\RolerStorage.cs" />
+    <Compile Include="DumbData\PermissionStorage.cs" />
+    <Compile Include="DumbData\UserDao.cs" />
     <Compile Include="DumbData\UserStorage.cs" />
     <Compile Include="DumbData\OrderStorage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

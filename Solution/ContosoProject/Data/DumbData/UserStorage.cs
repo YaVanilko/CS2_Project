@@ -17,8 +17,14 @@ namespace Data.DumbData
 
             for (int i = 0; i < 9; i++)
             {
-                User user = new User(new PersonalInfo(null, "firstName" + i, "middleName" + i, "lastName" + i), "user" + i, "user" + i, new Role());
+                User user = new User();
+                user.Login = "user" + i;
+                user.Password = "user" + i;
+                user.UserInfo = infoCollection[i];
+                user.UserRole = roleCollection[i];
                 user.Operator = user;
+
+                userCollection.Add(user);
             }
             return userCollection;
         }

@@ -14,13 +14,17 @@ namespace Data.DumbData
 
         private static List<GoodsRow> AddTenRows()
         {
-            List<GoodsRow> gooddsRowCollection = new List<GoodsRow>();
+            List<GoodsRow> goodsRowCollection = new List<GoodsRow>();
             for (int i = 0; i < 9; i++)
             {
-                gooddsRowCollection.Add(new GoodsRow(userCollection[i], goodsCollection[i], i*1.1));
+                GoodsRow row = new GoodsRow();
+                row.Count = i;
+                row.Goods = goodsCollection[i];
+                row.Operator = userCollection[i];
+                row.Price = i * 1.1;
             }
-            return gooddsRowCollection;
+            return goodsRowCollection;
         }
 
-    }
+    }  
 }
