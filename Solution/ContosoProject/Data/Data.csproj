@@ -48,27 +48,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DumbData\GoodsRowStorage.cs" />
-    <Compile Include="DumbData\GoodsStorage.cs" />
-    <Compile Include="DumbData\IOrderRepository.cs" />
-    <Compile Include="DumbData\IRoleRepository.cs" />
-    <Compile Include="DumbData\IUserRepository.cs" />
-    <Compile Include="DumbData\OrderDao.cs" />
-    <Compile Include="DumbData\RoleDao.cs" />
-    <Compile Include="DumbData\RolerStorage.cs" />
-    <Compile Include="DumbData\BaseDao.cs" />
-    <Compile Include="DumbData\ContactInfoStor.cs" />
-    <Compile Include="DumbData\ContactsInfoDao.cs" />
-    <Compile Include="DumbData\CustomerDao.cs" />
-    <Compile Include="DumbData\CustomerStor.cs" />
-    <Compile Include="DumbData\PersonalInfoDao.cs" />
-    <Compile Include="DumbData\PersonalInfoStor.cs" />
-    <Compile Include="DumbData\ProductCategoryStor.cs" />
-
-    <Compile Include="DumbData\PermissionStorage.cs" />
-    <Compile Include="DumbData\UserDao.cs" />
-    <Compile Include="DumbData\UserStorage.cs" />
-    <Compile Include="DumbData\OrderStorage.cs" />
+    <Compile Include="DumbData\Storage\GoodsRowStorage.cs" />
+    <Compile Include="DumbData\GoodsDao.cs" />
+    <Compile Include="DumbData\Storage\GoodsStorage.cs" />
+    <Compile Include="DumbData\tempDAO\OrderDao.cs" />
+    <Compile Include="DumbData\tempDAO\RoleDao.cs" />
+    <Compile Include="DumbData\Storage\RolerStorage.cs" />
+    <Compile Include="DumbData\tempDAO\BaseDao.cs" />
+    <Compile Include="DumbData\Storage\ContactInfoStor.cs" />
+    <Compile Include="DumbData\tempDAO\ContactsInfoDao.cs" />
+    <Compile Include="DumbData\tempDAO\CustomerDao.cs" />
+    <Compile Include="DumbData\PermissionDao.cs" />
+    <Compile Include="DumbData\ProductCategoryDao.cs" />
+    <Compile Include="DumbData\Storage\CustomerStor.cs" />
+    <Compile Include="DumbData\tempDAO\PersonalInfoDao.cs" />
+    <Compile Include="DumbData\Storage\PersonalInfoStor.cs" />
+    <Compile Include="DumbData\Storage\ProductCategoryStor.cs" />
+    <Compile Include="DumbData\Storage\PermissionStorage.cs" />
+    <Compile Include="DumbData\tempDAO\UserDao.cs" />
+    <Compile Include="DumbData\Storage\UserStorage.cs" />
+    <Compile Include="DumbData\Storage\OrderStorage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -62,7 +62,6 @@ namespace Data.DumbData
             {
                 Data.DumbData.Storage.statusList.Add(entity as OrderStatus);
             }
-
         }
 
         public void Update(T entity)
@@ -190,6 +189,7 @@ namespace Data.DumbData
                     newPersonStor.Add(item);
                 }
             }
+
             return (IEnumerable<T>)newPersonStor;
         }
     }

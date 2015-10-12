@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Data.DumbData
 {
-    class IOrderRepository : IRepository
+    class IPermessionRepository, IRepository
     {
+
     }
 }
