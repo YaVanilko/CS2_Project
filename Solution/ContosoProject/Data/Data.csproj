@@ -54,6 +54,7 @@
     <Compile Include="DumbData\IRoleRepository.cs" />
     <Compile Include="DumbData\IUserRepository.cs" />
     <Compile Include="DumbData\OrderDao.cs" />
+    <Compile Include="DumbData\ProductCategoryDao.cs" />
     <Compile Include="DumbData\RoleDao.cs" />
     <Compile Include="DumbData\RolerStorage.cs" />
     <Compile Include="DumbData\BaseDao.cs" />
@@ -64,7 +65,6 @@
     <Compile Include="DumbData\PersonalInfoDao.cs" />
     <Compile Include="DumbData\PersonalInfoStor.cs" />
     <Compile Include="DumbData\ProductCategoryStor.cs" />
-
     <Compile Include="DumbData\PermissionStorage.cs" />
     <Compile Include="DumbData\UserDao.cs" />
     <Compile Include="DumbData\UserStorage.cs" />
