@@ -9,7 +9,7 @@ namespace Data.DumbData
 {
     public static partial class Storage
     {
-        List<Customer> customerCollection = new List<Customer>()
+        public static List<Customer> customerCollection = new List<Customer>()
         {
             new Customer()
             {
