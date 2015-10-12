@@ -28,7 +28,7 @@ namespace Data.DumbData
             }
             else if (entityType == typeof(ProductCategory))
 	        {
-                Data.DumbData.Storage.productCategoryCollection.Add(entity as string);
+                Data.DumbData.Storage.categoryCollection.Add(entity as string);
 	        }
             else if (entityType == typeof(User))
             {
@@ -44,7 +44,7 @@ namespace Data.DumbData
             }
             else if (entityType == typeof(GoodsRow))
             {
-                Data.DumbData.Storage.gooddsRowCollection.Add(entity as GoodsRow);
+                Data.DumbData.Storage.goodsRowCollection.Add(entity as GoodsRow);
             }
             else if (entityType == typeof(Role))
             {
@@ -91,7 +91,7 @@ namespace Data.DumbData
             }
             else if (entityType == typeof(ProductCategory))
             {
-                Data.DumbData.Storage.productCategoryCollection.Remove(entity as string);
+                Data.DumbData.Storage.categoryCollection.Remove(entity as string);
             }
             else if (entityType == typeof(User))
             {
@@ -107,7 +107,7 @@ namespace Data.DumbData
             }
             else if (entityType == typeof(GoodsRow))
             {
-                Data.DumbData.Storage.gooddsRowCollection.Remove(entity as GoodsRow);
+                Data.DumbData.Storage.goodsRowCollection.Remove(entity as GoodsRow);
             }
             else if (entityType == typeof(Role))
             {
@@ -143,7 +143,7 @@ namespace Data.DumbData
             }
             else if (typeof(T) == typeof(ProductCategory))
             {
-                Data.DumbData.Storage.productCategoryCollection.FirstOrDefault(x => x[Id] == Id);
+                Data.DumbData.Storage.categoryCollection.FirstOrDefault(x => x[Id] == Id);
             }
             else if (typeof(T) == typeof(User))
             {
@@ -159,7 +159,7 @@ namespace Data.DumbData
             }
             else if (typeof(T) == typeof(GoodsRow))
             {
-                Data.DumbData.Storage.gooddsRowCollection.FirstOrDefault(x => x.Id == Id);
+                Data.DumbData.Storage.goodsRowCollection.FirstOrDefault(x => x.Id == Id);
             }
             else if (typeof(T) == typeof(Role))
             {

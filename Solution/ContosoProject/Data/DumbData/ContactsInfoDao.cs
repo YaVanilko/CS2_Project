@@ -8,7 +8,7 @@ using Domain.Entities;
 
 namespace Data.DumbData
 {
-    public class ContactsInfoDao: BaseDao<ContactInfo>
+    public class ContactsInfoDao : BaseDao<ContactInfo>, IContactInfoRepository
     {
     }
 }

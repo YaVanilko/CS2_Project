@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Domain.DAO
 {
-    interface ICustomerRepository : IRepository<Customer>
+    public interface ICustomerRepository : IRepository<Customer>
     {
     }
 }

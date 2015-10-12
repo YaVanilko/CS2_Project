@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Domain.DAO
 {
-    interface IPersonalInfoRepository : IRepository<PersonalInfo>
+    public interface IPersonalInfoRepository : IRepository<PersonalInfo>
     {
     }
 }

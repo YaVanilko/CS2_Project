@@ -8,7 +8,7 @@ namespace Data.DumbData
 {
     public static partial class Storage
     {
-        public static List<string> productCategoryCollection = new List<string>()
+        public static List<string> categoryCollection = new List<string>()
         {
             "Стулья",
             "Столы",

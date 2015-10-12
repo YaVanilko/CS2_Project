@@ -9,7 +9,7 @@ using Domain.Entities;
 
 namespace Data.DumbData
 {
-    public class CustomerDao: BaseDao<Customer>
+    public class CustomerDao: BaseDao<Customer>, ICustomerRepository
     {
     }
 }
