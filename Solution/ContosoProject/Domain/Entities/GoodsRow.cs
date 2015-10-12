@@ -23,13 +23,5 @@ namespace Domain.Entities
                 totalPrise = Price * Count;
             }
         }
-        public GoodsRow(User user, Goods goods, int count, double price)
-            : base(user)
-        {
-            Goods = goods;
-            Count = count;
-            Price = price;
-            this.totalPrise = price * count;
-        }
     }
 }

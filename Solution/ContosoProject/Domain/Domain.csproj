@@ -39,6 +39,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAO\IContactsInfoRepository.cs" />
+    <Compile Include="DAO\ICustomerRepository.cs" />
+    <Compile Include="DAO\IGoodsRepository.cs" />
+    <Compile Include="DAO\IGoodsRowRepository.cs" />
+    <Compile Include="DAO\IPersonalInfoRepository.cs" />
+    <Compile Include="DAO\IProductCategoryRepository.cs" />
+    <Compile Include="DAO\IRepository.cs" />
     <Compile Include="Entities\BaseEntity.cs" />
     <Compile Include="Entities\Comment.cs" />
     <Compile Include="Entities\ContactInfo.cs" />
@@ -54,9 +61,7 @@
     <Compile Include="Entities\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DAO\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

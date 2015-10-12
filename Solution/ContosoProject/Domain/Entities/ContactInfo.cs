@@ -12,18 +12,5 @@ namespace Domain.Entities
         public string Adress { get; set; }
         public string Telephone { get; set; }
         public string Email { get; set; }
-        public ContactInfo(User user, string city, string adress, string telephone)
-            :base (user)
-        {
-            City = city;
-            Adress = adress;
-            Telephone = telephone;
-        }
-        public ContactInfo(User user, string city, string adress, string telephone, string email)
-            :this(user, city, adress, telephone)
-        {
-            Email = email;
-        }
-
     }
 }
