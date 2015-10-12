@@ -44,6 +44,7 @@
     <Compile Include="DAO\IGoodsRepository.cs" />
     <Compile Include="DAO\IGoodsRowRepository.cs" />
     <Compile Include="DAO\IOrderRepository.cs" />
+    <Compile Include="DAO\IPermissionRepository.cs" />
     <Compile Include="DAO\IPersonalInfoRepository.cs" />
     <Compile Include="DAO\IProductCategoryRepository.cs" />
     <Compile Include="DAO\IRepository.cs" />

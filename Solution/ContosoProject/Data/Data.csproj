@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DumbData\Storage\GoodsRowStorage.cs" />
+    <Compile Include="DumbData\GoodsDao.cs" />
     <Compile Include="DumbData\Storage\GoodsStorage.cs" />
     <Compile Include="DumbData\tempDAO\OrderDao.cs" />
     <Compile Include="DumbData\tempDAO\RoleDao.cs" />
@@ -57,6 +58,8 @@
     <Compile Include="DumbData\Storage\ContactInfoStor.cs" />
     <Compile Include="DumbData\tempDAO\ContactsInfoDao.cs" />
     <Compile Include="DumbData\tempDAO\CustomerDao.cs" />
+    <Compile Include="DumbData\PermissionDao.cs" />
+    <Compile Include="DumbData\ProductCategoryDao.cs" />
     <Compile Include="DumbData\Storage\CustomerStor.cs" />
     <Compile Include="DumbData\tempDAO\PersonalInfoDao.cs" />
     <Compile Include="DumbData\Storage\PersonalInfoStor.cs" />
