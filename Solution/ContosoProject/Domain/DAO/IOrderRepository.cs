@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Domain.DAO;
+using Domain.Entities;
 
-namespace Data.DumbData
+namespace Domain.DAO
 {
-    interface IRoleRepository : IRepository
+    public interface IOrderRepository : IRepository<Order>
     {
     }
 }

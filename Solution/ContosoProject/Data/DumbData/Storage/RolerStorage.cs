@@ -8,7 +8,7 @@ namespace Data.DumbData
 {
     public static partial class Storage
     {
-        List<Role> roleCollection = AddTenRoles();
+        public static List<Role> roleCollection = AddTenRoles();
 
         private static List<Role> AddTenRoles()
         {
