@@ -9,14 +9,14 @@ namespace Domain.Entities
     public abstract class BaseEntity
     {
         public int Id { get; protected set; }
-        public bool IsActive { get; protected set; }
-        public User Operator { get; protected set; }
-        public DateTime EditTime { get; protected set; }
+        public bool IsActive { get; set; }
+        public User Operator { get; set; }
+        public DateTime EditTime { get; set; }
 
-        public BaseEntity(User user)
+        public BaseEntity()
         {
+            ////TODO: Add Autorized user
             IsActive = true;
-            Operator = user;
             EditTime = DateTime.Now;
         }
     }
