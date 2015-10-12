@@ -12,13 +12,5 @@ namespace Domain.Entities
         public Role UserRole { get; set; }
         public string Login { get; set; }
         public string Password { get; set; }
-
-        public User (PersonalInfo info, string login, string password, Role role) : base(user)
-        {
-            UserInfo = info;
-            Login = login;
-            Password = password;
-            UserRole = role;
-        }
     }
 }
