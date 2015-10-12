@@ -12,13 +12,9 @@ namespace Domain.Entities
         public ContactInfo Contacts { get; set; }
         public List<Order> Orders { get; set; }
         public List<Comment> Comments { get; set; }
-        public Customer(User user, PersonalInfo personalInfo, ContactInfo contacts, Order order,
-            string city, string adress, string telephone, string firstName, string middleName, string lastName)
-            :base(user)
+        public Customer()
         {
-            PersonalInfo = new PersonalInfo(user, firstName, middleName, lastName);
-            Contacts = new ContactInfo(user, city, adress, telephone);
-            Orders.Add(new Order());
+            Orders = new List<Order>();
             Comments = new List<Comment>();
         }
     }
