@@ -1,14 +1,13 @@
-﻿using Domain.DAO;
-using Domain.Entities;
+﻿using Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Data.DumbData
+namespace Domain.DAO
 {
-    class OrderDao : BaseDao<Order>, IOrderRepository
+    public interface IOrderStstusRepository : IRepository<OrderStatus>
     {
     }
 }
