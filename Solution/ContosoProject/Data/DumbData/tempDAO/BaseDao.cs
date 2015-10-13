@@ -9,7 +9,7 @@ using Domain.Entities;
 
 namespace Data.DumbData
 {
-    public class BaseDao<T>: IRepository<T>
+    public class BaseDao<T> : IRepository<T> where T : class
     {
         public void Add(T entity)
         {
@@ -28,7 +28,7 @@ namespace Data.DumbData
             }
             else if (entityType == typeof(ProductCategory))
 	        {
-                Data.DumbData.Storage.categoryCollection.Add(entity as string);
+                Data.DumbData.Storage.categoryCollection.Add(entity as ProductCategory);
 	        }
             else if (entityType == typeof(User))
             {
@@ -69,7 +69,75 @@ namespace Data.DumbData
             System.Type entityType = entity.GetType();
             if (entityType == typeof(PersonalInfo))
             {
-                PersonalInfo personInfo = Data.DumbData.Storage.personalInfoCollection.Find(x => x.GetHashCode() == entity.GetHashCode());
+                var typedEntity = entity as PersonalInfo;
+                var oldEntity = Data.DumbData.Storage.personalInfoCollection.FirstOrDefault(x => x.Id == typedEntity.Id);
+                oldEntity = typedEntity;
+            }
+            else if (entityType == typeof(ContactInfo))
+            {
+                var typedEntity = entity as ContactInfo;
+                var oldEntity = Data.DumbData.Storage.contactInfoCollection.FirstOrDefault(x => x.Id == typedEntity.Id);
+                oldEntity = typedEntity;
+            }
+            else if (entityType == typeof(Customer))
+            {
+                var typedEntity = entity as Customer;
+                var oldEntity = Data.DumbData.Storage.customerCollection.FirstOrDefault(x => x.Id == typedEntity.Id);
+                oldEntity = typedEntity;
+            }
+            else if (entityType == typeof(ProductCategory))
+            {
+                var typedEntity = entity as ProductCategory;
+                var oldEntity = Data.DumbData.Storage.categoryCollection.FirstOrDefault(x => x.Id == typedEntity.Id);
+                oldEntity = typedEntity;
+            }
+            else if (entityType == typeof(User))
+            {
+                var typedEntity = entity as User;
+                var oldEntity = Data.DumbData.Storage.userCollection.FirstOrDefault(x => x.Id == typedEntity.Id);
+                oldEntity = typedEntity;
+            }
+            else if (entityType == typeof(Order))
+            {
+                var typedEntity = entity as Order;
+                var oldEntity = Data.DumbData.Storage.orderCollection.FirstOrDefault(x => x.Id == typedEntity.Id);
+                oldEntity = typedEntity;
+            }
+            else if (entityType == typeof(Goods))
+            {
+                var typedEntity = entity as Goods;
+                var oldEntity = Data.DumbData.Storage.goodsCollection.FirstOrDefault(x => x.Id == typedEntity.Id);
+                oldEntity = typedEntity;
+            }
+            else if (entityType == typeof(GoodsRow))
+            {
+                var typedEntity = entity as GoodsRow;
+                var oldEntity = Data.DumbData.Storage.goodsRowCollection.FirstOrDefault(x => x.Id == typedEntity.Id);
+                oldEntity = typedEntity;
+            }
+            else if (entityType == typeof(Role))
+            {
+                var typedEntity = entity as Role;
+                var oldEntity = Data.DumbData.Storage.roleCollection.FirstOrDefault(x => x.Id == typedEntity.Id);
+                oldEntity = typedEntity;
+            }
+            else if (entityType == typeof(Permission))
+            {
+                var typedEntity = entity as Permission;
+                var oldEntity = Data.DumbData.Storage.permissionCollection.FirstOrDefault(x => x.Id == typedEntity.Id);
+                oldEntity = typedEntity;
+            }
+            else if (entityType == typeof(Comment))
+            {
+                var typedEntity = entity as Comment;
+                var oldEntity = Data.DumbData.Storage.commentCollection.FirstOrDefault(x => x.Id == typedEntity.Id);
+                oldEntity = typedEntity;
+            }
+            else if (entityType == typeof(OrderStatus))
+            {
+                var typedEntity = entity as OrderStatus;
+                var oldEntity = Data.DumbData.Storage.orderStatusCollection.FirstOrDefault(x => x.Id == typedEntity.Id);
+                oldEntity = typedEntity;
             }
         }
 
@@ -90,7 +158,7 @@ namespace Data.DumbData
             }
             else if (entityType == typeof(ProductCategory))
             {
-                Data.DumbData.Storage.categoryCollection.Remove(entity as string);
+                Data.DumbData.Storage.categoryCollection.Remove(entity as ProductCategory);
             }
             else if (entityType == typeof(User))
             {
@@ -128,54 +196,56 @@ namespace Data.DumbData
 
         public T GetById(int Id)
         {
+            T resultEntity = null;
             if (typeof(T) == typeof(PersonalInfo))
             {
-               PersonalInfo info = Data.DumbData.Storage.personalInfoCollection.FirstOrDefault(x => x.Id == Id);               
+                resultEntity = Data.DumbData.Storage.personalInfoCollection.FirstOrDefault(x => x.Id == Id) as T;
             }
             else if (typeof(T) == typeof(ContactInfo))
             {
-                Data.DumbData.Storage.contactInfoCollection.FirstOrDefault(x => x.Id == Id);
+                resultEntity = Data.DumbData.Storage.contactInfoCollection.FirstOrDefault(x => x.Id == Id) as T;
             }
             else if (typeof(T) == typeof(Customer))
             {
-                Data.DumbData.Storage.customerCollection.FirstOrDefault(x => x.Id == Id);
+                resultEntity = Data.DumbData.Storage.customerCollection.FirstOrDefault(x => x.Id == Id) as T;
             }
             else if (typeof(T) == typeof(ProductCategory))
             {
-                Data.DumbData.Storage.categoryCollection.FirstOrDefault(x => x[Id] == Id);
+                resultEntity = Data.DumbData.Storage.categoryCollection.FirstOrDefault(x => x.Id == Id) as T;
             }
             else if (typeof(T) == typeof(User))
             {
-                Data.DumbData.Storage.userCollection.FirstOrDefault(x => x.Id == Id);
+                resultEntity = Data.DumbData.Storage.userCollection.FirstOrDefault(x => x.Id == Id) as T;
             }
             else if (typeof(T) == typeof(Order))
             {
-                Data.DumbData.Storage.orderCollection.FirstOrDefault(x => x.Id == Id);
+                resultEntity = Data.DumbData.Storage.orderCollection.FirstOrDefault(x => x.Id == Id) as T;
             }
             else if (typeof(T) == typeof(Goods))
             {
-                Data.DumbData.Storage.goodsCollection.FirstOrDefault(x => x.Id == Id);
+                resultEntity = Data.DumbData.Storage.goodsCollection.FirstOrDefault(x => x.Id == Id) as T;
             }
             else if (typeof(T) == typeof(GoodsRow))
             {
-                Data.DumbData.Storage.goodsRowCollection.FirstOrDefault(x => x.Id == Id);
+                resultEntity = Data.DumbData.Storage.goodsRowCollection.FirstOrDefault(x => x.Id == Id) as T;
             }
             else if (typeof(T) == typeof(Role))
             {
-                Data.DumbData.Storage.roleCollection.FirstOrDefault(x => x.Id == Id);
+                resultEntity = Data.DumbData.Storage.roleCollection.FirstOrDefault(x => x.Id == Id) as T;
             }
             else if (typeof(T) == typeof(Permission))
             {
-                Data.DumbData.Storage.permissionCollection.FirstOrDefault(x => x.Id == Id);
+                resultEntity = Data.DumbData.Storage.permissionCollection.FirstOrDefault(x => x.Id == Id) as T;
             }
             else if (typeof(T) == typeof(Comment))
             {
-                Data.DumbData.Storage.commentCollection.FirstOrDefault(x => x.Id == Id);
+                resultEntity = Data.DumbData.Storage.commentCollection.FirstOrDefault(x => x.Id == Id) as T;
             }
             else if (typeof(T) == typeof(OrderStatus))
             {
-                Data.DumbData.Storage.orderStatusCollection.FirstOrDefault(x => x.Id == Id);
+                resultEntity = Data.DumbData.Storage.orderStatusCollection.FirstOrDefault(x => x.Id == Id) as T;
             }
+            return resultEntity;
         }
 
         public IEnumerable<T> GetAll()
