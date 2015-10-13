@@ -56,13 +56,12 @@ namespace Data.DumbData
             }
             else if (entityType == typeof(Comment))
             {
-                Data.DumbData.Storage.commentList.Add(entity as Comment);
+                Data.DumbData.Storage.commentCollection.Add(entity as Comment);
             }
             else if (entityType == typeof(OrderStatus))
             {
-                Data.DumbData.Storage.statusList.Add(entity as OrderStatus);
+                Data.DumbData.Storage.orderStatusCollection.Add(entity as OrderStatus);
             }
-
         }
 
         public void Update(T entity)
@@ -119,11 +118,11 @@ namespace Data.DumbData
             }
             else if (entityType == typeof(Comment))
             {
-                Data.DumbData.Storage.commentList.Remove(entity as Comment);
+                Data.DumbData.Storage.commentCollection.Remove(entity as Comment);
             }
             else if (entityType == typeof(OrderStatus))
             {
-                Data.DumbData.Storage.statusList.Remove(entity as OrderStatus);
+                Data.DumbData.Storage.orderStatusCollection.Remove(entity as OrderStatus);
             }
         }
 
@@ -171,11 +170,11 @@ namespace Data.DumbData
             }
             else if (typeof(T) == typeof(Comment))
             {
-                Data.DumbData.Storage.commentList.FirstOrDefault(x => x.Id == Id);
+                Data.DumbData.Storage.commentCollection.FirstOrDefault(x => x.Id == Id);
             }
             else if (typeof(T) == typeof(OrderStatus))
             {
-                Data.DumbData.Storage.statusList.FirstOrDefault(x => x.Id == Id);
+                Data.DumbData.Storage.orderStatusCollection.FirstOrDefault(x => x.Id == Id);
             }
         }
 
@@ -190,6 +189,7 @@ namespace Data.DumbData
                     newPersonStor.Add(item);
                 }
             }
+
             return (IEnumerable<T>)newPersonStor;
         }
     }

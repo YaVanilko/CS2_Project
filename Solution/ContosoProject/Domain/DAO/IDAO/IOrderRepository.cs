@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Domain.DAO;
+using Domain.Entities;
 
-namespace Domain.Entities
+namespace Domain.DAO
 {
-    public class OrderStatus:BaseEntity
+    public interface IOrderRepository : IRepository<Order>
     {
-        public string Status { get; set; }
     }
 }

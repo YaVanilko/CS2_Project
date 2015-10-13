@@ -19,7 +19,7 @@ namespace Data.DumbData
 			{
                 Order order = new Order();
                 order.Customer = customerCollection[i];
-                order.comments.Add(new Comment() { Message = "commentfromOrder" + i, });
+                order.comments.Add(new Comment() { Message = "commentfromOrder" + i, Type = CommentType.Order});
                 order.Operator = userCollection[i];
                 order.goodsList.Add(goodsRowCollection[i]);
 

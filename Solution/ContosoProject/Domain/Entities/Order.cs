@@ -14,19 +14,12 @@ namespace Domain.Entities
         public OrderStatus Status { get; set; }
         public List<Comment> comments { get; set; }
 
-        public Order(Customer customer, List<GoodsRow> goods, Comment comment)
+        public Order()
         {
-            Customer = customer;
+            Customer = new Customer();
             goodsList = new List<GoodsRow>();
+            Status = new OrderStatus();
             comments = new List<Comment>();
-
-            foreach (GoodsRow row in goods)
-            {
-                 goodsList.Add(row);
-                 TotalCost += row.Price;
-            }
-
-            comments.Add(comment);
         }
     }
 }

@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Domain.DAO;
+using Domain.Entities;
 
-namespace Data.DumbData
+namespace Domain.DAO
+
 {
-    class OrderDao : BaseDao, IOrderRepository
+    public interface IUserRepository : IRepository<User>
     {
     }
 }

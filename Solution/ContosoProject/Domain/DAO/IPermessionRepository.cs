@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Data.DumbData
 {
-    class RoleDao : BaseDao, IRoleRepository
+    class IPermessionRepository, IRepository
     {
+
     }
 }

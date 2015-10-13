@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Domain.Entities
+namespace Data.DumbData
 {
-    public class OrderStatus:BaseEntity
+    class PermessionDao : BaseDao, IPermessionRepository
     {
-        public string Status { get; set; }
     }
 }

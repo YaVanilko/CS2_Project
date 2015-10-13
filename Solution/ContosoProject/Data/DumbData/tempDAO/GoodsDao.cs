@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Domain.Entities;
+using Domain.DAO;
 
-namespace Domain.Entities
+namespace Data.DumbData
 {
-    public class OrderStatus:BaseEntity
+    public class GoodsDao: BaseDao<Goods>, IGoodsRepository
     {
-        public string Status { get; set; }
+
     }
 }

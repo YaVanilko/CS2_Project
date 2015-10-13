@@ -17,6 +17,7 @@ namespace Domain.Entities
         public Goods()
         {
             Coments = new List<Comment>();
+            Category = new ProductCategory();
         }
 
     }

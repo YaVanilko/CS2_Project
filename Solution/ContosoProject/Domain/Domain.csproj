@@ -39,15 +39,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DAO\IContactsInfoRepository.cs" />
-    <Compile Include="DAO\ICustomerRepository.cs" />
-    <Compile Include="DAO\IGoodsRepository.cs" />
-    <Compile Include="DAO\IGoodsRowRepository.cs" />
-    <Compile Include="DAO\IPersonalInfoRepository.cs" />
-    <Compile Include="DAO\IProductCategoryRepository.cs" />
-    <Compile Include="DAO\IRepository.cs" />
+    <Compile Include="DAO\IDAO\ICommentRepository.cs" />
+    <Compile Include="DAO\IDAO\IContactsInfoRepository.cs" />
+    <Compile Include="DAO\IDAO\ICustomerRepository.cs" />
+    <Compile Include="DAO\IDAO\IGoodsRepository.cs" />
+    <Compile Include="DAO\IDAO\IGoodsRowRepository.cs" />
+    <Compile Include="DAO\IDAO\IOrderRepository.cs" />
+    <Compile Include="DAO\IDAO\IOrderStstusRepository.cs" />
+    <Compile Include="DAO\IDAO\IPermissionRepository.cs" />
+    <Compile Include="DAO\IDAO\IPersonalInfoRepository.cs" />
+    <Compile Include="DAO\IDAO\IProductCategoryRepository.cs" />
+    <Compile Include="DAO\IDAO\IRepository.cs" />
+    <Compile Include="DAO\IDAO\IRoleRepository.cs" />
+    <Compile Include="DAO\IDAO\IUserRepository.cs" />
     <Compile Include="Entities\BaseEntity.cs" />
     <Compile Include="Entities\Comment.cs" />
+    <Compile Include="Entities\CommentType.cs" />
     <Compile Include="Entities\ContactInfo.cs" />
     <Compile Include="Entities\Customer.cs" />
     <Compile Include="Entities\Goods.cs" />

@@ -4,9 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Data.DumbData
+namespace Domain.Entities
 {
-    class UserDao : BaseDao, IUserRepository
+    public enum CommentType
     {
+        Order = 1,
+        Customer,
+        Goods
     }
 }
