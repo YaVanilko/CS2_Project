@@ -9,7 +9,6 @@ namespace Data.DumbData
 {
     public class Storage
     {
-
         #region Role
         public static List<Role> roleCollection = new List<Role>()
         {
@@ -355,8 +354,6 @@ namespace Data.DumbData
             new GoodsRow{Id = 3,Goods = goodsCollection[2], Count=1, Price=1}
         };
         #endregion
-
-
 
         #region Order
         public static List<Order> orderCollection = new List<Order>() 
