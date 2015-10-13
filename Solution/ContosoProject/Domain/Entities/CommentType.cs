@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Domain.DAO;
 
-namespace Data.DumbData
+namespace Domain.Entities
 {
-    public class ProductCategoryDao : BaseDao<ProductCategoryDao>, IPermissionRepository
+    public enum CommentType
     {
-
+        Order = 1,
+        Customer,
+        Goods
     }
 }
