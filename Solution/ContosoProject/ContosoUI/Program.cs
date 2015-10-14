@@ -1,4 +1,7 @@
-﻿using Data.DumbData;
+﻿using ContosoUI.Customers.Add;
+using ContosoUI.Customers.Report;
+using ContosoUI.Customers.Search;
+using Data.DumbData;
 using Domain.DAO;
 using Domain.Entities;
 using System;
@@ -21,7 +24,7 @@ namespace ContosoUI
             GetAuthUser();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
+            Application.Run(new CustomerReportView());
         }
 
         private static void GetAuthUser()
