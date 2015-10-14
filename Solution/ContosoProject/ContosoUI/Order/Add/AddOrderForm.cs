@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ContosoUI.Order_Forms
 {
-    public partial class orderForm : Form
+    public partial class addOrderForm : Form
     {
-        public orderForm()
+        public addOrderForm()
         {
             InitializeComponent();
         }

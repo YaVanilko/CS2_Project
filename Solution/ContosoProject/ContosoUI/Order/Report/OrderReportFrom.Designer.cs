@@ -30,12 +30,15 @@
         {
             this.mainTabControl = new System.Windows.Forms.TabControl();
             this.customerTabPage = new System.Windows.Forms.TabPage();
-            this.statusTabPage = new System.Windows.Forms.TabPage();
-            this.goodTabPage = new System.Windows.Forms.TabPage();
-            this.customerLabel = new System.Windows.Forms.Label();
-            this.statusLabel = new System.Windows.Forms.Label();
-            this.statusComboBox = new System.Windows.Forms.ComboBox();
+            this.customerDataGridView = new System.Windows.Forms.DataGridView();
             this.customerComboBox = new System.Windows.Forms.ComboBox();
+            this.customerLabel = new System.Windows.Forms.Label();
+            this.statusTabPage = new System.Windows.Forms.TabPage();
+            this.statusDataGridView = new System.Windows.Forms.DataGridView();
+            this.statusComboBox = new System.Windows.Forms.ComboBox();
+            this.statusLabel = new System.Windows.Forms.Label();
+            this.goodTabPage = new System.Windows.Forms.TabPage();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.goodComboBox = new System.Windows.Forms.ComboBox();
             this.goodLabel = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -45,17 +48,14 @@
             this.editOrderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteOrderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.customerDataGridView = new System.Windows.Forms.DataGridView();
-            this.statusDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.mainTabControl.SuspendLayout();
             this.customerTabPage.SuspendLayout();
-            this.statusTabPage.SuspendLayout();
-            this.goodTabPage.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.customerDataGridView)).BeginInit();
+            this.statusTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.statusDataGridView)).BeginInit();
+            this.goodTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // mainTabControl
@@ -83,6 +83,32 @@
             this.customerTabPage.Text = "Orders by customer";
             this.customerTabPage.UseVisualStyleBackColor = true;
             // 
+            // customerDataGridView
+            // 
+            this.customerDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.customerDataGridView.Location = new System.Drawing.Point(11, 73);
+            this.customerDataGridView.Name = "customerDataGridView";
+            this.customerDataGridView.Size = new System.Drawing.Size(727, 430);
+            this.customerDataGridView.TabIndex = 6;
+            // 
+            // customerComboBox
+            // 
+            this.customerComboBox.FormattingEnabled = true;
+            this.customerComboBox.Location = new System.Drawing.Point(169, 26);
+            this.customerComboBox.Name = "customerComboBox";
+            this.customerComboBox.Size = new System.Drawing.Size(197, 21);
+            this.customerComboBox.TabIndex = 5;
+            // 
+            // customerLabel
+            // 
+            this.customerLabel.AutoSize = true;
+            this.customerLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customerLabel.Location = new System.Drawing.Point(8, 29);
+            this.customerLabel.Name = "customerLabel";
+            this.customerLabel.Size = new System.Drawing.Size(134, 20);
+            this.customerLabel.TabIndex = 0;
+            this.customerLabel.Text = "Filter by customer";
+            // 
             // statusTabPage
             // 
             this.statusTabPage.Controls.Add(this.statusDataGridView);
@@ -95,6 +121,32 @@
             this.statusTabPage.TabIndex = 1;
             this.statusTabPage.Text = "Orders by status";
             this.statusTabPage.UseVisualStyleBackColor = true;
+            // 
+            // statusDataGridView
+            // 
+            this.statusDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.statusDataGridView.Location = new System.Drawing.Point(11, 73);
+            this.statusDataGridView.Name = "statusDataGridView";
+            this.statusDataGridView.Size = new System.Drawing.Size(727, 430);
+            this.statusDataGridView.TabIndex = 7;
+            // 
+            // statusComboBox
+            // 
+            this.statusComboBox.FormattingEnabled = true;
+            this.statusComboBox.Location = new System.Drawing.Point(169, 26);
+            this.statusComboBox.Name = "statusComboBox";
+            this.statusComboBox.Size = new System.Drawing.Size(197, 21);
+            this.statusComboBox.TabIndex = 3;
+            // 
+            // statusLabel
+            // 
+            this.statusLabel.AutoSize = true;
+            this.statusLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.statusLabel.Location = new System.Drawing.Point(8, 29);
+            this.statusLabel.Name = "statusLabel";
+            this.statusLabel.Size = new System.Drawing.Size(112, 20);
+            this.statusLabel.TabIndex = 2;
+            this.statusLabel.Text = "Filter by status";
             // 
             // goodTabPage
             // 
@@ -109,41 +161,13 @@
             this.goodTabPage.Text = "Orders by good";
             this.goodTabPage.UseVisualStyleBackColor = true;
             // 
-            // customerLabel
+            // dataGridView3
             // 
-            this.customerLabel.AutoSize = true;
-            this.customerLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customerLabel.Location = new System.Drawing.Point(8, 29);
-            this.customerLabel.Name = "customerLabel";
-            this.customerLabel.Size = new System.Drawing.Size(131, 18);
-            this.customerLabel.TabIndex = 0;
-            this.customerLabel.Text = "Filter by customer";
-            // 
-            // statusLabel
-            // 
-            this.statusLabel.AutoSize = true;
-            this.statusLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.statusLabel.Location = new System.Drawing.Point(8, 29);
-            this.statusLabel.Name = "statusLabel";
-            this.statusLabel.Size = new System.Drawing.Size(108, 18);
-            this.statusLabel.TabIndex = 2;
-            this.statusLabel.Text = "Filter by status";
-            // 
-            // statusComboBox
-            // 
-            this.statusComboBox.FormattingEnabled = true;
-            this.statusComboBox.Location = new System.Drawing.Point(169, 26);
-            this.statusComboBox.Name = "statusComboBox";
-            this.statusComboBox.Size = new System.Drawing.Size(197, 21);
-            this.statusComboBox.TabIndex = 3;
-            // 
-            // customerComboBox
-            // 
-            this.customerComboBox.FormattingEnabled = true;
-            this.customerComboBox.Location = new System.Drawing.Point(169, 26);
-            this.customerComboBox.Name = "customerComboBox";
-            this.customerComboBox.Size = new System.Drawing.Size(197, 21);
-            this.customerComboBox.TabIndex = 5;
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Location = new System.Drawing.Point(11, 73);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.Size = new System.Drawing.Size(727, 430);
+            this.dataGridView3.TabIndex = 7;
             // 
             // goodComboBox
             // 
@@ -156,10 +180,10 @@
             // goodLabel
             // 
             this.goodLabel.AutoSize = true;
-            this.goodLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.goodLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.goodLabel.Location = new System.Drawing.Point(8, 29);
             this.goodLabel.Name = "goodLabel";
-            this.goodLabel.Size = new System.Drawing.Size(103, 18);
+            this.goodLabel.Size = new System.Drawing.Size(104, 20);
             this.goodLabel.TabIndex = 4;
             this.goodLabel.Text = "Filter by good";
             // 
@@ -186,7 +210,7 @@
             // closeToolStripMenuItem
             // 
             this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-            this.closeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.closeToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.closeToolStripMenuItem.Text = "Close";
             // 
             // editToolStripMenuItem
@@ -201,13 +225,13 @@
             // editOrderToolStripMenuItem
             // 
             this.editOrderToolStripMenuItem.Name = "editOrderToolStripMenuItem";
-            this.editOrderToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.editOrderToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
             this.editOrderToolStripMenuItem.Text = "Edit order";
             // 
             // deleteOrderToolStripMenuItem
             // 
             this.deleteOrderToolStripMenuItem.Name = "deleteOrderToolStripMenuItem";
-            this.deleteOrderToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.deleteOrderToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
             this.deleteOrderToolStripMenuItem.Text = "Delete order";
             // 
             // helpToolStripMenuItem
@@ -215,30 +239,6 @@
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.helpToolStripMenuItem.Text = "Help";
-            // 
-            // customerDataGridView
-            // 
-            this.customerDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.customerDataGridView.Location = new System.Drawing.Point(11, 73);
-            this.customerDataGridView.Name = "customerDataGridView";
-            this.customerDataGridView.Size = new System.Drawing.Size(727, 430);
-            this.customerDataGridView.TabIndex = 6;
-            // 
-            // statusDataGridView
-            // 
-            this.statusDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.statusDataGridView.Location = new System.Drawing.Point(11, 73);
-            this.statusDataGridView.Name = "statusDataGridView";
-            this.statusDataGridView.Size = new System.Drawing.Size(727, 430);
-            this.statusDataGridView.TabIndex = 7;
-            // 
-            // dataGridView3
-            // 
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Location = new System.Drawing.Point(11, 73);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.Size = new System.Drawing.Size(727, 430);
-            this.dataGridView3.TabIndex = 7;
             // 
             // OrderReportFrom
             // 
@@ -253,15 +253,15 @@
             this.mainTabControl.ResumeLayout(false);
             this.customerTabPage.ResumeLayout(false);
             this.customerTabPage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.customerDataGridView)).EndInit();
             this.statusTabPage.ResumeLayout(false);
             this.statusTabPage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.statusDataGridView)).EndInit();
             this.goodTabPage.ResumeLayout(false);
             this.goodTabPage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.customerDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.statusDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

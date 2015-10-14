@@ -50,22 +50,22 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Order Forms\EditOrderForm.cs">
+    <Compile Include="Order\Edit\EditOrderForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Order Forms\EditOrderForm.Designer.cs">
+    <Compile Include="Order\Edit\EditOrderForm.Designer.cs">
       <DependentUpon>EditOrderForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Order Forms\OrderForm.cs">
+    <Compile Include="Order\Add\AddOrderForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Order Forms\OrderForm.Designer.cs">
-      <DependentUpon>OrderForm.cs</DependentUpon>
+    <Compile Include="Order\Add\AddOrderForm.Designer.cs">
+      <DependentUpon>AddOrderForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Order Forms\OrderReportFrom.cs">
+    <Compile Include="Order\Report\OrderReportFrom.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Order Forms\OrderReportFrom.Designer.cs">
+    <Compile Include="Order\Report\OrderReportFrom.Designer.cs">
       <DependentUpon>OrderReportFrom.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -73,13 +73,13 @@
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Order Forms\EditOrderForm.resx">
+    <EmbeddedResource Include="Order\Edit\EditOrderForm.resx">
       <DependentUpon>EditOrderForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Order Forms\OrderForm.resx">
-      <DependentUpon>OrderForm.cs</DependentUpon>
+    <EmbeddedResource Include="Order\Add\AddOrderForm.resx">
+      <DependentUpon>AddOrderForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Order Forms\OrderReportFrom.resx">
+    <EmbeddedResource Include="Order\Report\OrderReportFrom.resx">
       <DependentUpon>OrderReportFrom.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
