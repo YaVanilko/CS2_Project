@@ -44,6 +44,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AuthenticationForm\AuthenticationForm.cs">
+    <Compile Include="AuthenticationForm\AuthenticationForm.Designer.cs">
+      <DependentUpon>AuthenticationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditUserForm\EditUserForm .cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditUserForm\EditUserForm .Designer.cs">
+      <DependentUpon>EditUserForm .cs</DependentUpon>
+    </Compile>
+    <Compile Include="GoodsStoreReportForm\GoodsStoreReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GoodsStoreReportForm\GoodsStoreReportForm.Designer.cs">
+      <DependentUpon>GoodsStoreReportForm.cs</DependentUpon>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -51,11 +66,17 @@
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Order\Edit\EditOrderForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <EmbeddedResource Include="AuthenticationForm\AuthenticationForm.resx">
+      <DependentUpon>AuthenticationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditUserForm\EditUserForm .resx">
+      <DependentUpon>EditUserForm .cs</DependentUpon>
     <Compile Include="Order\Edit\EditOrderForm.Designer.cs">
       <DependentUpon>EditOrderForm.cs</DependentUpon>
-    </Compile>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GoodsStoreReportForm\GoodsStoreReportForm.resx">
+      <DependentUpon>GoodsStoreReportForm.cs</DependentUpon>
+    </EmbeddedResource>
     <Compile Include="Order\Add\AddOrderForm.cs">
       <SubType>Form</SubType>
     </Compile>
