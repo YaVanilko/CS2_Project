@@ -45,6 +45,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AuthenticationForm\AuthenticationForm.cs">
+	      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="AuthenticationForm\AuthenticationForm.Designer.cs">
       <DependentUpon>AuthenticationForm.cs</DependentUpon>
     </Compile>
@@ -59,6 +61,7 @@
     </Compile>
     <Compile Include="GoodsStoreReportForm\GoodsStoreReportForm.Designer.cs">
       <DependentUpon>GoodsStoreReportForm.cs</DependentUpon>
+	  </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,14 +69,17 @@
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Order\Edit\EditOrderForm.cs">
+	<SubType>Form</SubType>
+    </Compile>
     <EmbeddedResource Include="AuthenticationForm\AuthenticationForm.resx">
       <DependentUpon>AuthenticationForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditUserForm\EditUserForm .resx">
       <DependentUpon>EditUserForm .cs</DependentUpon>
+      </EmbeddedResource>
     <Compile Include="Order\Edit\EditOrderForm.Designer.cs">
       <DependentUpon>EditOrderForm.cs</DependentUpon>
-    </EmbeddedResource>
+	  </Compile>  
     <EmbeddedResource Include="GoodsStoreReportForm\GoodsStoreReportForm.resx">
       <DependentUpon>GoodsStoreReportForm.cs</DependentUpon>
     </EmbeddedResource>
