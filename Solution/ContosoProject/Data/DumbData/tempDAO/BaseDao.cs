@@ -16,15 +16,15 @@ namespace Data.DumbData
             System.Type entityType = entity.GetType();
             if (entityType == typeof(PersonalInfo))
             {
-                Storage.personalInfoCollection.Add(entity as PersonalInfo);
+                Storage.PersonalInfoCollection.Add(entity as PersonalInfo);
             }
             else if (entityType == typeof(ContactInfo))
             {
-                Storage.contactInfoCollection.Add(entity as ContactInfo);
+                Storage.ContactInfoCollection.Add(entity as ContactInfo);
             }
             else if (entityType == typeof(Customer))
             {
-                Storage.customerCollection.Add(entity as Customer);
+                Storage.CustomerCollection.Add(entity as Customer);
             }
             else if (entityType == typeof(ProductCategory))
 	        {
@@ -32,11 +32,11 @@ namespace Data.DumbData
 	        }
             else if (entityType == typeof(User))
             {
-                Storage.userCollection.Add(entity as User);
+                Storage.UserCollection.Add(entity as User);
             }
             else if (entityType == typeof(Order))
             {
-                Storage.orderCollection.Add(entity as Order);
+                Storage.OrderCollection.Add(entity as Order);
             }
             else if (entityType == typeof(Goods))
             {
@@ -44,23 +44,23 @@ namespace Data.DumbData
             }
             else if (entityType == typeof(GoodsRow))
             {
-                Storage.goodsRowCollection.Add(entity as GoodsRow);
+                Storage.GoodsRowCollection.Add(entity as GoodsRow);
             }
             else if (entityType == typeof(Role))
             {
-                Storage.roleCollection.Add(entity as Role);
+                Storage.RoleCollection.Add(entity as Role);
             }
             else if (entityType == typeof(Permission))
             {
-                Storage.permissionCollection.Add(entity as Permission);
+                Storage.PermissionCollection.Add(entity as Permission);
             }
             else if (entityType == typeof(Comment))
             {
-                Storage.commentCollection.Add(entity as Comment);
+                Storage.CommentCollection.Add(entity as Comment);
             }
             else if (entityType == typeof(OrderStatus))
             {
-                Storage.orderStatusCollection.Add(entity as OrderStatus);
+                Storage.OrderStatusCollection.Add(entity as OrderStatus);
             }
         }
 
@@ -70,19 +70,19 @@ namespace Data.DumbData
             if (entityType == typeof(PersonalInfo))
             {
                 var typedEntity = entity as PersonalInfo;
-                var oldEntity = Storage.personalInfoCollection.FirstOrDefault(x => x.Id == typedEntity.Id);
+                var oldEntity = Storage.PersonalInfoCollection.FirstOrDefault(x => x.Id == typedEntity.Id);
                 oldEntity = typedEntity;
             }
             else if (entityType == typeof(ContactInfo))
             {
                 var typedEntity = entity as ContactInfo;
-                var oldEntity = Storage.contactInfoCollection.FirstOrDefault(x => x.Id == typedEntity.Id);
+                var oldEntity = Storage.ContactInfoCollection.FirstOrDefault(x => x.Id == typedEntity.Id);
                 oldEntity = typedEntity;
             }
             else if (entityType == typeof(Customer))
             {
                 var typedEntity = entity as Customer;
-                var oldEntity = Storage.customerCollection.FirstOrDefault(x => x.Id == typedEntity.Id);
+                var oldEntity = Storage.CustomerCollection.FirstOrDefault(x => x.Id == typedEntity.Id);
                 oldEntity = typedEntity;
             }
             else if (entityType == typeof(ProductCategory))
@@ -94,13 +94,13 @@ namespace Data.DumbData
             else if (entityType == typeof(User))
             {
                 var typedEntity = entity as User;
-                var oldEntity = Storage.userCollection.FirstOrDefault(x => x.Id == typedEntity.Id);
+                var oldEntity = Storage.UserCollection.FirstOrDefault(x => x.Id == typedEntity.Id);
                 oldEntity = typedEntity;
             }
             else if (entityType == typeof(Order))
             {
                 var typedEntity = entity as Order;
-                var oldEntity = Storage.orderCollection.FirstOrDefault(x => x.Id == typedEntity.Id);
+                var oldEntity = Storage.OrderCollection.FirstOrDefault(x => x.Id == typedEntity.Id);
                 oldEntity = typedEntity;
             }
             else if (entityType == typeof(Goods))
@@ -112,31 +112,31 @@ namespace Data.DumbData
             else if (entityType == typeof(GoodsRow))
             {
                 var typedEntity = entity as GoodsRow;
-                var oldEntity = Storage.goodsRowCollection.FirstOrDefault(x => x.Id == typedEntity.Id);
+                var oldEntity = Storage.GoodsRowCollection.FirstOrDefault(x => x.Id == typedEntity.Id);
                 oldEntity = typedEntity;
             }
             else if (entityType == typeof(Role))
             {
                 var typedEntity = entity as Role;
-                var oldEntity = Storage.roleCollection.FirstOrDefault(x => x.Id == typedEntity.Id);
+                var oldEntity = Storage.RoleCollection.FirstOrDefault(x => x.Id == typedEntity.Id);
                 oldEntity = typedEntity;
             }
             else if (entityType == typeof(Permission))
             {
                 var typedEntity = entity as Permission;
-                var oldEntity = Storage.permissionCollection.FirstOrDefault(x => x.Id == typedEntity.Id);
+                var oldEntity = Storage.PermissionCollection.FirstOrDefault(x => x.Id == typedEntity.Id);
                 oldEntity = typedEntity;
             }
             else if (entityType == typeof(Comment))
             {
                 var typedEntity = entity as Comment;
-                var oldEntity = Storage.commentCollection.FirstOrDefault(x => x.Id == typedEntity.Id);
+                var oldEntity = Storage.CommentCollection.FirstOrDefault(x => x.Id == typedEntity.Id);
                 oldEntity = typedEntity;
             }
             else if (entityType == typeof(OrderStatus))
             {
                 var typedEntity = entity as OrderStatus;
-                var oldEntity = Storage.orderStatusCollection.FirstOrDefault(x => x.Id == typedEntity.Id);
+                var oldEntity = Storage.OrderStatusCollection.FirstOrDefault(x => x.Id == typedEntity.Id);
                 oldEntity = typedEntity;
             }
         }
@@ -146,15 +146,15 @@ namespace Data.DumbData
             System.Type entityType = entity.GetType();
             if (entityType == typeof(PersonalInfo))
             {
-                Storage.personalInfoCollection.Remove(entity as PersonalInfo);
+                Storage.PersonalInfoCollection.Remove(entity as PersonalInfo);
             }
             else if (entityType == typeof(ContactInfo))
             {
-                Storage.contactInfoCollection.Remove(entity as ContactInfo);
+                Storage.ContactInfoCollection.Remove(entity as ContactInfo);
             }
             else if (entityType == typeof(Customer))
             {
-                Storage.customerCollection.Remove(entity as Customer);
+                Storage.CustomerCollection.Remove(entity as Customer);
             }
             else if (entityType == typeof(ProductCategory))
             {
@@ -162,11 +162,11 @@ namespace Data.DumbData
             }
             else if (entityType == typeof(User))
             {
-                Storage.userCollection.Remove(entity as User);
+                Storage.UserCollection.Remove(entity as User);
             }
             else if (entityType == typeof(Order))
             {
-                Storage.orderCollection.Remove(entity as Order);
+                Storage.OrderCollection.Remove(entity as Order);
             }
             else if (entityType == typeof(Goods))
             {
@@ -174,23 +174,23 @@ namespace Data.DumbData
             }
             else if (entityType == typeof(GoodsRow))
             {
-                Storage.goodsRowCollection.Remove(entity as GoodsRow);
+                Storage.GoodsRowCollection.Remove(entity as GoodsRow);
             }
             else if (entityType == typeof(Role))
             {
-                Storage.roleCollection.Remove(entity as Role);
+                Storage.RoleCollection.Remove(entity as Role);
             }
             else if (entityType == typeof(Permission))
             {
-                Storage.permissionCollection.Remove(entity as Permission);
+                Storage.PermissionCollection.Remove(entity as Permission);
             }
             else if (entityType == typeof(Comment))
             {
-                Storage.commentCollection.Remove(entity as Comment);
+                Storage.CommentCollection.Remove(entity as Comment);
             }
             else if (entityType == typeof(OrderStatus))
             {
-                Storage.orderStatusCollection.Remove(entity as OrderStatus);
+                Storage.OrderStatusCollection.Remove(entity as OrderStatus);
             }
         }
 
@@ -199,15 +199,15 @@ namespace Data.DumbData
             T resultEntity = null;
             if (typeof(T) == typeof(PersonalInfo))
             {
-                resultEntity = Storage.personalInfoCollection.FirstOrDefault(x => x.Id == Id) as T;
+                resultEntity = Storage.PersonalInfoCollection.FirstOrDefault(x => x.Id == Id) as T;
             }
             else if (typeof(T) == typeof(ContactInfo))
             {
-                resultEntity = Storage.contactInfoCollection.FirstOrDefault(x => x.Id == Id) as T;
+                resultEntity = Storage.ContactInfoCollection.FirstOrDefault(x => x.Id == Id) as T;
             }
             else if (typeof(T) == typeof(Customer))
             {
-                resultEntity = Storage.customerCollection.FirstOrDefault(x => x.Id == Id) as T;
+                resultEntity = Storage.CustomerCollection.FirstOrDefault(x => x.Id == Id) as T;
             }
             else if (typeof(T) == typeof(ProductCategory))
             {
@@ -215,11 +215,11 @@ namespace Data.DumbData
             }
             else if (typeof(T) == typeof(User))
             {
-                resultEntity = Storage.userCollection.FirstOrDefault(x => x.Id == Id) as T;
+                resultEntity = Storage.UserCollection.FirstOrDefault(x => x.Id == Id) as T;
             }
             else if (typeof(T) == typeof(Order))
             {
-                resultEntity = Storage.orderCollection.FirstOrDefault(x => x.Id == Id) as T;
+                resultEntity = Storage.OrderCollection.FirstOrDefault(x => x.Id == Id) as T;
             }
             else if (typeof(T) == typeof(Goods))
             {
@@ -227,23 +227,23 @@ namespace Data.DumbData
             }
             else if (typeof(T) == typeof(GoodsRow))
             {
-                resultEntity = Storage.goodsRowCollection.FirstOrDefault(x => x.Id == Id) as T;
+                resultEntity = Storage.GoodsRowCollection.FirstOrDefault(x => x.Id == Id) as T;
             }
             else if (typeof(T) == typeof(Role))
             {
-                resultEntity = Storage.roleCollection.FirstOrDefault(x => x.Id == Id) as T;
+                resultEntity = Storage.RoleCollection.FirstOrDefault(x => x.Id == Id) as T;
             }
             else if (typeof(T) == typeof(Permission))
             {
-                resultEntity = Storage.permissionCollection.FirstOrDefault(x => x.Id == Id) as T;
+                resultEntity = Storage.PermissionCollection.FirstOrDefault(x => x.Id == Id) as T;
             }
             else if (typeof(T) == typeof(Comment))
             {
-                resultEntity = Storage.commentCollection.FirstOrDefault(x => x.Id == Id) as T;
+                resultEntity = Storage.CommentCollection.FirstOrDefault(x => x.Id == Id) as T;
             }
             else if (typeof(T) == typeof(OrderStatus))
             {
-                resultEntity = Storage.orderStatusCollection.FirstOrDefault(x => x.Id == Id) as T;
+                resultEntity = Storage.OrderStatusCollection.FirstOrDefault(x => x.Id == Id) as T;
             }
             return resultEntity;
         }
@@ -254,7 +254,7 @@ namespace Data.DumbData
             if (typeof(T) == typeof(PersonalInfo))
             {
                 
-                foreach (var item in Storage.personalInfoCollection)
+                foreach (var item in Storage.PersonalInfoCollection)
                 {
                     newPersonStor.Add(item);
                 }
