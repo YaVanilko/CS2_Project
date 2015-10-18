@@ -28,222 +28,293 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.customerFilterLableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.cityLabel = new System.Windows.Forms.Label();
-            this.FirstNameLabel = new System.Windows.Forms.Label();
-            this.lastNameLabel = new System.Windows.Forms.Label();
-            this.firstNameTextBox = new System.Windows.Forms.TextBox();
-            this.lastNameTextBox = new System.Windows.Forms.TextBox();
-            this.cityComboBox = new System.Windows.Forms.ComboBox();
-            this.customerFiltergroupBox = new System.Windows.Forms.GroupBox();
-            this.customerListGroupBox = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.FirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MiddleName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.City = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CountOrders = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.customerFilterLableLayoutPanel.SuspendLayout();
-            this.customerFiltergroupBox.SuspendLayout();
-            this.customerListGroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomersListView));
+            this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.searchCustomersButton = new DevExpress.XtraEditors.SimpleButton();
+            this.customersGridControl = new DevExpress.XtraGrid.GridControl();
+            this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.customersGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.firstNameGridColumn = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.lastNameGridColumn = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.middleNameGridColumn = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.cityGridColumn = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.addressGridColumn = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.ordersCountGridColumn = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.ordersSumGridColumn = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.filterCityComboBoxEdit = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.filterCityItem = new DevExpress.XtraLayout.LayoutControlItem();
+            this.customersListItem = new DevExpress.XtraLayout.LayoutControlItem();
+            this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.searchCustomersItem = new DevExpress.XtraLayout.LayoutControlItem();
+            this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
+            this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.customersGridControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customersGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.filterCityComboBoxEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.filterCityItem)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customersListItem)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchCustomersItem)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).BeginInit();
             this.SuspendLayout();
             // 
-            // customerFilterLableLayoutPanel
+            // layoutControl1
             // 
-            this.customerFilterLableLayoutPanel.ColumnCount = 3;
-            this.customerFilterLableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.customerFilterLableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.customerFilterLableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.customerFilterLableLayoutPanel.Controls.Add(this.cityLabel, 0, 0);
-            this.customerFilterLableLayoutPanel.Controls.Add(this.FirstNameLabel, 1, 0);
-            this.customerFilterLableLayoutPanel.Controls.Add(this.lastNameLabel, 2, 0);
-            this.customerFilterLableLayoutPanel.Controls.Add(this.firstNameTextBox, 1, 1);
-            this.customerFilterLableLayoutPanel.Controls.Add(this.lastNameTextBox, 2, 1);
-            this.customerFilterLableLayoutPanel.Controls.Add(this.cityComboBox, 0, 1);
-            this.customerFilterLableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.customerFilterLableLayoutPanel.Location = new System.Drawing.Point(3, 16);
-            this.customerFilterLableLayoutPanel.Name = "customerFilterLableLayoutPanel";
-            this.customerFilterLableLayoutPanel.RowCount = 2;
-            this.customerFilterLableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 31.37255F));
-            this.customerFilterLableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 68.62745F));
-            this.customerFilterLableLayoutPanel.Size = new System.Drawing.Size(644, 62);
-            this.customerFilterLableLayoutPanel.TabIndex = 0;
+            this.layoutControl1.Controls.Add(this.searchCustomersButton);
+            this.layoutControl1.Controls.Add(this.customersGridControl);
+            this.layoutControl1.Controls.Add(this.filterCityComboBoxEdit);
+            this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.layoutControl1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControl1.Name = "layoutControl1";
+            this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(401, 347, 498, 350);
+            this.layoutControl1.Root = this.layoutControlGroup1;
+            this.layoutControl1.Size = new System.Drawing.Size(804, 561);
+            this.layoutControl1.TabIndex = 0;
+            this.layoutControl1.Text = "layoutControl1";
             // 
-            // cityLabel
+            // searchCustomersButton
             // 
-            this.cityLabel.AutoSize = true;
-            this.cityLabel.Location = new System.Drawing.Point(3, 0);
-            this.cityLabel.Name = "cityLabel";
-            this.cityLabel.Size = new System.Drawing.Size(37, 13);
-            this.cityLabel.TabIndex = 0;
-            this.cityLabel.Text = "Город";
+            this.searchCustomersButton.Image = ((System.Drawing.Image)(resources.GetObject("searchCustomersButton.Image")));
+            this.searchCustomersButton.Location = new System.Drawing.Point(452, 12);
+            this.searchCustomersButton.Name = "searchCustomersButton";
+            this.searchCustomersButton.Size = new System.Drawing.Size(291, 38);
+            this.searchCustomersButton.StyleController = this.layoutControl1;
+            this.searchCustomersButton.TabIndex = 6;
+            this.searchCustomersButton.Text = "Поиск клиентов";
+            this.searchCustomersButton.Click += new System.EventHandler(this.searchCustomersButton_Click);
             // 
-            // FirstNameLabel
+            // customersGridControl
             // 
-            this.FirstNameLabel.AutoSize = true;
-            this.FirstNameLabel.Location = new System.Drawing.Point(219, 0);
-            this.FirstNameLabel.Name = "FirstNameLabel";
-            this.FirstNameLabel.Size = new System.Drawing.Size(29, 13);
-            this.FirstNameLabel.TabIndex = 2;
-            this.FirstNameLabel.Text = "Имя";
+            this.customersGridControl.DataSource = this.customerBindingSource;
+            this.customersGridControl.Location = new System.Drawing.Point(12, 90);
+            this.customersGridControl.MainView = this.customersGridView;
+            this.customersGridControl.Name = "customersGridControl";
+            this.customersGridControl.Size = new System.Drawing.Size(780, 459);
+            this.customersGridControl.TabIndex = 5;
+            this.customersGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.customersGridView});
             // 
-            // lastNameLabel
+            // customerBindingSource
             // 
-            this.lastNameLabel.AutoSize = true;
-            this.lastNameLabel.Location = new System.Drawing.Point(435, 0);
-            this.lastNameLabel.Name = "lastNameLabel";
-            this.lastNameLabel.Size = new System.Drawing.Size(56, 13);
-            this.lastNameLabel.TabIndex = 1;
-            this.lastNameLabel.Text = "Фамилия";
+            this.customerBindingSource.DataSource = typeof(Domain.Entities.Customer);
             // 
-            // firstNameTextBox
+            // customersGridView
             // 
-            this.firstNameTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.firstNameTextBox.Location = new System.Drawing.Point(219, 22);
-            this.firstNameTextBox.Name = "firstNameTextBox";
-            this.firstNameTextBox.Size = new System.Drawing.Size(210, 20);
-            this.firstNameTextBox.TabIndex = 3;
+            this.customersGridView.Appearance.HeaderPanel.Options.UseTextOptions = true;
+            this.customersGridView.Appearance.HeaderPanel.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.customersGridView.Appearance.Row.Options.UseTextOptions = true;
+            this.customersGridView.Appearance.Row.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.customersGridView.Appearance.ViewCaption.Options.UseTextOptions = true;
+            this.customersGridView.Appearance.ViewCaption.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.customersGridView.ColumnPanelRowHeight = 50;
+            this.customersGridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.firstNameGridColumn,
+            this.lastNameGridColumn,
+            this.middleNameGridColumn,
+            this.cityGridColumn,
+            this.addressGridColumn,
+            this.ordersCountGridColumn,
+            this.ordersSumGridColumn});
+            this.customersGridView.GridControl = this.customersGridControl;
+            this.customersGridView.Name = "customersGridView";
+            this.customersGridView.OptionsBehavior.Editable = false;
+            this.customersGridView.OptionsView.RowAutoHeight = true;
+            this.customersGridView.DoubleClick += new System.EventHandler(this.customersGridView_DoubleClick);
             // 
-            // lastNameTextBox
+            // firstNameGridColumn
             // 
-            this.lastNameTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lastNameTextBox.Location = new System.Drawing.Point(435, 22);
-            this.lastNameTextBox.Name = "lastNameTextBox";
-            this.lastNameTextBox.Size = new System.Drawing.Size(212, 20);
-            this.lastNameTextBox.TabIndex = 4;
+            this.firstNameGridColumn.Caption = "Имя";
+            this.firstNameGridColumn.FieldName = "PersonalInfo.FirstName";
+            this.firstNameGridColumn.Name = "firstNameGridColumn";
+            this.firstNameGridColumn.Visible = true;
+            this.firstNameGridColumn.VisibleIndex = 0;
             // 
-            // cityComboBox
+            // lastNameGridColumn
             // 
-            this.cityComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.cityComboBox.DropDownWidth = 205;
-            this.cityComboBox.FormattingEnabled = true;
-            this.cityComboBox.Items.AddRange(new object[] {
-            "Днепропетровск",
-            "Днепродзержинск",
-            "Одесса",
-            "Львов",
-            "Черновцы",
-            "Ужгород",
-            "Киев"});
-            this.cityComboBox.Location = new System.Drawing.Point(3, 22);
-            this.cityComboBox.Name = "cityComboBox";
-            this.cityComboBox.Size = new System.Drawing.Size(210, 21);
-            this.cityComboBox.TabIndex = 5;
+            this.lastNameGridColumn.Caption = "Фамилия";
+            this.lastNameGridColumn.FieldName = "PersonalInfo.LastName";
+            this.lastNameGridColumn.Name = "lastNameGridColumn";
+            this.lastNameGridColumn.Visible = true;
+            this.lastNameGridColumn.VisibleIndex = 1;
             // 
-            // customerFiltergroupBox
+            // middleNameGridColumn
             // 
-            this.customerFiltergroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.customerFiltergroupBox.Controls.Add(this.customerFilterLableLayoutPanel);
-            this.customerFiltergroupBox.Location = new System.Drawing.Point(12, 12);
-            this.customerFiltergroupBox.Name = "customerFiltergroupBox";
-            this.customerFiltergroupBox.Size = new System.Drawing.Size(650, 81);
-            this.customerFiltergroupBox.TabIndex = 1;
-            this.customerFiltergroupBox.TabStop = false;
-            this.customerFiltergroupBox.Text = "Поиск клиентов";
+            this.middleNameGridColumn.Caption = "Отчество";
+            this.middleNameGridColumn.FieldName = "PersonalInfo.MiddleName";
+            this.middleNameGridColumn.Name = "middleNameGridColumn";
+            this.middleNameGridColumn.Visible = true;
+            this.middleNameGridColumn.VisibleIndex = 2;
             // 
-            // customerListGroupBox
+            // cityGridColumn
             // 
-            this.customerListGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.customerListGroupBox.Controls.Add(this.dataGridView1);
-            this.customerListGroupBox.Location = new System.Drawing.Point(12, 112);
-            this.customerListGroupBox.Name = "customerListGroupBox";
-            this.customerListGroupBox.Size = new System.Drawing.Size(650, 387);
-            this.customerListGroupBox.TabIndex = 2;
-            this.customerListGroupBox.TabStop = false;
-            this.customerListGroupBox.Text = "Список клиентов";
+            this.cityGridColumn.Caption = "Город";
+            this.cityGridColumn.FieldName = "Contacts.City";
+            this.cityGridColumn.Name = "cityGridColumn";
+            this.cityGridColumn.Visible = true;
+            this.cityGridColumn.VisibleIndex = 3;
             // 
-            // dataGridView1
+            // addressGridColumn
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.FirstName,
-            this.LastName,
-            this.MiddleName,
-            this.City,
-            this.CountOrders});
-            this.dataGridView1.Location = new System.Drawing.Point(6, 19);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(638, 362);
-            this.dataGridView1.TabIndex = 0;
+            this.addressGridColumn.Caption = "Адрес";
+            this.addressGridColumn.FieldName = "Contacts.Adress";
+            this.addressGridColumn.Name = "addressGridColumn";
+            this.addressGridColumn.Visible = true;
+            this.addressGridColumn.VisibleIndex = 4;
             // 
-            // FirstName
+            // ordersCountGridColumn
             // 
-            this.FirstName.HeaderText = "Имя";
-            this.FirstName.Name = "FirstName";
-            this.FirstName.ReadOnly = true;
+            this.ordersCountGridColumn.AppearanceHeader.Options.UseTextOptions = true;
+            this.ordersCountGridColumn.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.ordersCountGridColumn.Caption = "Количество заказов";
+            this.ordersCountGridColumn.Name = "ordersCountGridColumn";
+            this.ordersCountGridColumn.Visible = true;
+            this.ordersCountGridColumn.VisibleIndex = 5;
             // 
-            // LastName
+            // ordersSumGridColumn
             // 
-            this.LastName.HeaderText = "Фамилия";
-            this.LastName.Name = "LastName";
-            this.LastName.ReadOnly = true;
+            this.ordersSumGridColumn.AppearanceHeader.Options.UseTextOptions = true;
+            this.ordersSumGridColumn.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.ordersSumGridColumn.Caption = "Общая сумма заказов";
+            this.ordersSumGridColumn.Name = "ordersSumGridColumn";
+            this.ordersSumGridColumn.OptionsEditForm.RowSpan = 2;
+            this.ordersSumGridColumn.Visible = true;
+            this.ordersSumGridColumn.VisibleIndex = 6;
             // 
-            // MiddleName
+            // filterCityComboBoxEdit
             // 
-            this.MiddleName.HeaderText = "Отчество";
-            this.MiddleName.Name = "MiddleName";
-            this.MiddleName.ReadOnly = true;
+            this.filterCityComboBoxEdit.Location = new System.Drawing.Point(76, 12);
+            this.filterCityComboBoxEdit.Name = "filterCityComboBoxEdit";
+            this.filterCityComboBoxEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.filterCityComboBoxEdit.Properties.Sorted = true;
+            this.filterCityComboBoxEdit.Size = new System.Drawing.Size(324, 20);
+            this.filterCityComboBoxEdit.StyleController = this.layoutControl1;
+            this.filterCityComboBoxEdit.TabIndex = 4;
             // 
-            // City
+            // layoutControlGroup1
             // 
-            this.City.HeaderText = "Город";
-            this.City.Name = "City";
-            this.City.ReadOnly = true;
+            this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
+            this.layoutControlGroup1.GroupBordersVisible = false;
+            this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.filterCityItem,
+            this.customersListItem,
+            this.emptySpaceItem2,
+            this.searchCustomersItem,
+            this.emptySpaceItem1,
+            this.emptySpaceItem3});
+            this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlGroup1.Name = "Root";
+            this.layoutControlGroup1.Size = new System.Drawing.Size(804, 561);
+            this.layoutControlGroup1.TextVisible = false;
             // 
-            // CountOrders
+            // filterCityItem
             // 
-            this.CountOrders.HeaderText = "Количество заказов";
-            this.CountOrders.Name = "CountOrders";
-            this.CountOrders.ReadOnly = true;
+            this.filterCityItem.Control = this.filterCityComboBoxEdit;
+            this.filterCityItem.Location = new System.Drawing.Point(0, 0);
+            this.filterCityItem.Name = "filterCityItem";
+            this.filterCityItem.Size = new System.Drawing.Size(392, 42);
+            this.filterCityItem.Text = "Город";
+            this.filterCityItem.TextSize = new System.Drawing.Size(61, 13);
+            // 
+            // customersListItem
+            // 
+            this.customersListItem.Control = this.customersGridControl;
+            this.customersListItem.Location = new System.Drawing.Point(0, 62);
+            this.customersListItem.Name = "customersListItem";
+            this.customersListItem.Size = new System.Drawing.Size(784, 479);
+            this.customersListItem.Text = "Покупатели";
+            this.customersListItem.TextLocation = DevExpress.Utils.Locations.Top;
+            this.customersListItem.TextSize = new System.Drawing.Size(61, 13);
+            // 
+            // emptySpaceItem2
+            // 
+            this.emptySpaceItem2.AllowHotTrack = false;
+            this.emptySpaceItem2.Location = new System.Drawing.Point(0, 42);
+            this.emptySpaceItem2.Name = "emptySpaceItem2";
+            this.emptySpaceItem2.Size = new System.Drawing.Size(784, 20);
+            this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // searchCustomersItem
+            // 
+            this.searchCustomersItem.Control = this.searchCustomersButton;
+            this.searchCustomersItem.Location = new System.Drawing.Point(440, 0);
+            this.searchCustomersItem.Name = "searchCustomersItem";
+            this.searchCustomersItem.Size = new System.Drawing.Size(295, 42);
+            this.searchCustomersItem.TextSize = new System.Drawing.Size(0, 0);
+            this.searchCustomersItem.TextVisible = false;
+            // 
+            // emptySpaceItem1
+            // 
+            this.emptySpaceItem1.AllowHotTrack = false;
+            this.emptySpaceItem1.Location = new System.Drawing.Point(392, 0);
+            this.emptySpaceItem1.Name = "emptySpaceItem1";
+            this.emptySpaceItem1.Size = new System.Drawing.Size(48, 42);
+            this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // emptySpaceItem3
+            // 
+            this.emptySpaceItem3.AllowHotTrack = false;
+            this.emptySpaceItem3.Location = new System.Drawing.Point(735, 0);
+            this.emptySpaceItem3.Name = "emptySpaceItem3";
+            this.emptySpaceItem3.Size = new System.Drawing.Size(49, 42);
+            this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
             // 
             // CustomersListView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(674, 511);
-            this.Controls.Add(this.customerListGroupBox);
-            this.Controls.Add(this.customerFiltergroupBox);
+            this.ClientSize = new System.Drawing.Size(804, 561);
+            this.Controls.Add(this.layoutControl1);
             this.MinimumSize = new System.Drawing.Size(690, 550);
             this.Name = "CustomersListView";
             this.Text = "Список клиентов";
-            this.customerFilterLableLayoutPanel.ResumeLayout(false);
-            this.customerFilterLableLayoutPanel.PerformLayout();
-            this.customerFiltergroupBox.ResumeLayout(false);
-            this.customerListGroupBox.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.CustomersListView_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
+            this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.customersGridControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customersGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.filterCityComboBoxEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.filterCityItem)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customersListItem)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchCustomersItem)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TableLayoutPanel customerFilterLableLayoutPanel;
-        private System.Windows.Forms.Label cityLabel;
-        private System.Windows.Forms.Label FirstNameLabel;
-        private System.Windows.Forms.Label lastNameLabel;
-        private System.Windows.Forms.TextBox firstNameTextBox;
-        private System.Windows.Forms.TextBox lastNameTextBox;
-        private System.Windows.Forms.ComboBox cityComboBox;
-        private System.Windows.Forms.GroupBox customerFiltergroupBox;
-        private System.Windows.Forms.GroupBox customerListGroupBox;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FirstName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn LastName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MiddleName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn City;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CountOrders;
+        private DevExpress.XtraLayout.LayoutControl layoutControl1;
+        private DevExpress.XtraEditors.ComboBoxEdit filterCityComboBoxEdit;
+        private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
+        private DevExpress.XtraLayout.LayoutControlItem filterCityItem;
+        private DevExpress.XtraGrid.GridControl customersGridControl;
+        private DevExpress.XtraGrid.Views.Grid.GridView customersGridView;
+        private DevExpress.XtraGrid.Columns.GridColumn firstNameGridColumn;
+        private DevExpress.XtraGrid.Columns.GridColumn lastNameGridColumn;
+        private DevExpress.XtraGrid.Columns.GridColumn middleNameGridColumn;
+        private DevExpress.XtraGrid.Columns.GridColumn cityGridColumn;
+        private DevExpress.XtraGrid.Columns.GridColumn addressGridColumn;
+        private DevExpress.XtraGrid.Columns.GridColumn ordersCountGridColumn;
+        private DevExpress.XtraGrid.Columns.GridColumn ordersSumGridColumn;
+        private DevExpress.XtraLayout.LayoutControlItem customersListItem;
+        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
+        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem2;
+        private System.Windows.Forms.BindingSource customerBindingSource;
+        private DevExpress.XtraEditors.SimpleButton searchCustomersButton;
+        private DevExpress.XtraLayout.LayoutControlItem searchCustomersItem;
+        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem3;
+
     }
 }

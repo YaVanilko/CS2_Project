@@ -11,5 +11,9 @@ namespace Data.DumbData
 {
     public class CustomerDao: BaseDao<Customer>, ICustomerRepository
     {
+        public ICollection<Customer> GetCustomersByCity(string city)
+        {
+            return Storage.CustomerCollection.Where(x => x.Contacts.City == city).ToList(); 
+        }
     }
 }

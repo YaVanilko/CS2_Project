@@ -301,14 +301,14 @@ namespace Data.DumbData
             new Customer()
             {
                 Id = 3,
-                PersonalInfo = PersonalInfoCollection[2],
-                Contacts = ContactInfoCollection[2],
+                PersonalInfo = PersonalInfoCollection[3],
+                Contacts = ContactInfoCollection[3],
             },
             new Customer()
             {
                 Id = 9,
-                PersonalInfo = PersonalInfoCollection[2],
-                Contacts = ContactInfoCollection[2],
+                PersonalInfo = PersonalInfoCollection[4],
+                Contacts = ContactInfoCollection[4],
             },
             new Customer()
             {
