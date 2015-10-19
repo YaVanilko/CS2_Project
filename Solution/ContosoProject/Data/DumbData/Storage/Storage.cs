@@ -431,5 +431,10 @@ namespace Data.DumbData
 
         #endregion
 
+        static Storage()
+        {
+            CustomerCollection[0].Orders.Add(OrderCollection[0]);
+        }
+
     }
 }
