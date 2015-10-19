@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Data.DumbData
 {
-    class UserDao : BaseDao<User>, IUserRepository
+    public class UserDao : BaseDao<User>, IUserRepository
     {
     }
 }

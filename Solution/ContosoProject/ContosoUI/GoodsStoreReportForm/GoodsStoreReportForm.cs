@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ContosoUI
+namespace ContosoUI.GoodsStoreReportForm
 {
-    public partial class MainForm : Form
+    public partial class GoodsStoreReportForm : Form
     {
-        public MainForm()
+        public GoodsStoreReportForm()
         {
             InitializeComponent();
         }
