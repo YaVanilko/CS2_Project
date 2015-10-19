@@ -36,6 +36,7 @@
     <Reference Include="DevExpress.Printing.v15.1.Core, Version=15.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Sparkline.v15.1.Core, Version=15.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Utils.v15.1, Version=15.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraBars.v15.1, Version=15.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v15.1, Version=15.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraGrid.v15.1, Version=15.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraLayout.v15.1, Version=15.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -84,6 +85,11 @@
     <Compile Include="EditUserForm\EditUserForm .Designer.cs">
       <DependentUpon>EditUserForm .cs</DependentUpon>
     </Compile>
+    <Compile Include="GoodsForm.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GoodsForm.resx</DependentUpon>
+    </Compile>
     <Compile Include="GoodsForm1\GoodsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,14 +106,26 @@
     <Compile Include="GoodsStoreReportForm\GoodsStoreReportForm.Designer.cs">
       <DependentUpon>GoodsStoreReportForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainForm.cs">
+    <Compile Include="MainView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainForm.Designer.cs">
-      <DependentUpon>MainForm.cs</DependentUpon>
+    <Compile Include="MainView.Designer.cs">
+      <DependentUpon>MainView.cs</DependentUpon>
     </Compile>
     <Compile Include="Order\Edit\EditOrderForm.cs">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Test\CustomerListView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Test\CustomerListView.Designer.cs">
+      <DependentUpon>CustomerListView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Test\OrderListView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Test\OrderListView.Designer.cs">
+      <DependentUpon>OrderListView.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="AuthenticationForm\AuthenticationForm.resx">
       <DependentUpon>AuthenticationForm.cs</DependentUpon>
@@ -127,7 +145,10 @@
     <Compile Include="Order\Edit\EditOrderForm.Designer.cs">
       <DependentUpon>EditOrderForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="GoodsForm.resx" />
+    <EmbeddedResource Include="GoodsForm.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>GoodsForm.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="GoodsForm1\GoodsForm.resx">
       <DependentUpon>GoodsForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -148,8 +169,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="MainForm.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
+    <EmbeddedResource Include="MainView.resx">
+      <DependentUpon>MainView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Order\Edit\EditOrderForm.resx">
       <DependentUpon>EditOrderForm.cs</DependentUpon>
@@ -170,6 +191,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Test\CustomerListView.resx">
+      <DependentUpon>CustomerListView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Test\OrderListView.resx">
+      <DependentUpon>OrderListView.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

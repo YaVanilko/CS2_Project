@@ -21,7 +21,7 @@ namespace ContosoUI
             GetAuthUser();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
+            Application.Run(new MainView());
         }
 
         private static void GetAuthUser()

@@ -12,14 +12,15 @@ using System.Windows.Forms;
 
 namespace ContosoUI.GoodsForm1
 {
-    public partial class GoodsForm : Form
+    public partial class GoodsForm : Form, IGoodsView
     {
         int goodsID;
-        private GoodsPresenter presenter = new GoodsPresenter(this, new GoodsModel());//тут ругается на this
+        private GoodsPresenter presenter;
 
         public GoodsForm()
         {
             InitializeComponent();
+            presenter = new GoodsPresenter(this, new GoodsModel());//тут ругается на this
         }
 
         private void GoodsButtonSearch_Click(object sender, EventArgs e)
@@ -50,5 +51,10 @@ namespace ContosoUI.GoodsForm1
                 GoodsCategoryComboBoxDE.Properties.Items.Add(productCategory.CategoryName);
             }
         }
+
+
+        public event EventHandler<EventArgs> loadGoodsForm;
+
+        public event EventHandler<EventArgs> searchButtonClick;
     }
 }
