@@ -19,7 +19,7 @@ namespace ContosoUI.Customers.Add
         public CustomerDetailsPresenter(CustomerDetailsViev view)
         {
             this.view = view;
-            customer = model.GetById(2);
+            customer = model.GetById(0);
         }
         public string FirstName 
         { 

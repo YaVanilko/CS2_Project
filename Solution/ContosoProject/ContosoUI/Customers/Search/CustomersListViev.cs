@@ -14,7 +14,7 @@ namespace ContosoUI.Customers.Search
 {
     public partial class CustomersListView : Form
     {
-        private CustomersListPresenter presenter;
+        CustomersListPresenter presenter;
         public CustomersListView()
         {
             InitializeComponent();

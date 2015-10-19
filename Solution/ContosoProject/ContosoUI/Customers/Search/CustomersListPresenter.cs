@@ -24,7 +24,7 @@ namespace ContosoUI.Customers.Search
             cities = contactModel.GetAll().Select(x => x.City).Distinct().ToList();
         }
 
-        internal void SearchCustomers(string city)
+        public void SearchCustomers(string city)
         {
             if (city == "Все города")
             {
