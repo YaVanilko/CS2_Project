@@ -284,61 +284,83 @@ namespace Data.DumbData
             {
                 Id = 0,
                 PersonalInfo = PersonalInfoCollection[0],
-                Contacts = ContactInfoCollection[0],
+                Contacts = ContactInfoCollection[0], 
+                OrdersCount = 2,
+                TotalOrdersCoast = 460.90,
+                //Orders = new List<Order>(){OrderCollection[0]},
+                Comments = new List<Comment>(){CommentCollection.Where(x => x.Type == CommentType.Customer).ToList()[0]}
             },
             new Customer()
             {
                 Id = 1,
                 PersonalInfo = PersonalInfoCollection[1],
                 Contacts = ContactInfoCollection[1],
+                //Orders = new List<Order>(){OrderCollection[1]},
+                Comments = new List<Comment>(){CommentCollection.Where(x => x.Type == CommentType.Customer).ToList()[0]}
             },
             new Customer()
             {
                 Id = 2,
                 PersonalInfo = PersonalInfoCollection[2],
                 Contacts = ContactInfoCollection[2],
+                //Orders = new List<Order>(){OrderCollection[2]},
+                Comments = new List<Comment>(){CommentCollection.Where(x => x.Type == CommentType.Customer).ToList()[1]}
             },
             new Customer()
             {
                 Id = 3,
-                PersonalInfo = PersonalInfoCollection[2],
-                Contacts = ContactInfoCollection[2],
+                PersonalInfo = PersonalInfoCollection[3],
+                Contacts = ContactInfoCollection[3],
+                //Orders = new List<Order>(){OrderCollection[2]},
+                Comments = new List<Comment>(){CommentCollection.Where(x => x.Type == CommentType.Customer).ToList()[0]}
             },
             new Customer()
             {
                 Id = 9,
-                PersonalInfo = PersonalInfoCollection[2],
-                Contacts = ContactInfoCollection[2],
+                PersonalInfo = PersonalInfoCollection[4],
+                Contacts = ContactInfoCollection[4],
+                //Orders = new List<Order>(){OrderCollection[4]},
+                Comments = new List<Comment>(){CommentCollection.Where(x => x.Type == CommentType.Customer).ToList()[1]}
             },
             new Customer()
             {
                 Id = 4,
                 PersonalInfo = PersonalInfoCollection[5],
                 Contacts = ContactInfoCollection[5],
+                //Orders = new List<Order>(){OrderCollection[5]},
+                Comments = new List<Comment>(){CommentCollection.Where(x => x.Type == CommentType.Customer).ToList()[1]}
             },
             new Customer()
             {
                 Id = 5,
                 PersonalInfo = PersonalInfoCollection[6],
                 Contacts = ContactInfoCollection[6],
+                //Orders = new List<Order>(){OrderCollection[6]},
+                Comments = new List<Comment>(){CommentCollection.Where(x => x.Type == CommentType.Customer).ToList()[0]}
             },
             new Customer()
             {
                 Id = 6,
                 PersonalInfo = PersonalInfoCollection[7],
                 Contacts = ContactInfoCollection[7],
+                //Orders = new List<Order>(){OrderCollection[7]},
+                Comments = new List<Comment>(){CommentCollection.Where(x => x.Type == CommentType.Customer).ToList()[1]}
             },
             new Customer()
             {
                 Id = 7,
                 PersonalInfo = PersonalInfoCollection[8],
                 Contacts = ContactInfoCollection[8],
+                //Orders = new List<Order>(){OrderCollection[8]},
+                Comments = new List<Comment>(){CommentCollection.Where(x => x.Type == CommentType.Customer).ToList()[0]}
             },
             new Customer()
             {
                 Id = 8,
                 PersonalInfo = PersonalInfoCollection[9],
                 Contacts = ContactInfoCollection[9],
+                //Orders = new List<Order>(){OrderCollection[9]},
+                Comments = new List<Comment>(){CommentCollection.Where(x => x.Type == CommentType.Customer).ToList()[1]}
             }
         };
         #endregion
