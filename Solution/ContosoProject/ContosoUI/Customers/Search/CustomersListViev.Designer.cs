@@ -173,6 +173,7 @@
             this.ordersCountGridColumn.AppearanceHeader.Options.UseTextOptions = true;
             this.ordersCountGridColumn.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.ordersCountGridColumn.Caption = "Количество заказов";
+            this.ordersCountGridColumn.FieldName = "OrdersCount";
             this.ordersCountGridColumn.Name = "ordersCountGridColumn";
             this.ordersCountGridColumn.Visible = true;
             this.ordersCountGridColumn.VisibleIndex = 5;
@@ -182,6 +183,7 @@
             this.ordersSumGridColumn.AppearanceHeader.Options.UseTextOptions = true;
             this.ordersSumGridColumn.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.ordersSumGridColumn.Caption = "Общая сумма заказов";
+            this.ordersSumGridColumn.FieldName = "TotalOrdersCoast";
             this.ordersSumGridColumn.Name = "ordersSumGridColumn";
             this.ordersSumGridColumn.OptionsEditForm.RowSpan = 2;
             this.ordersSumGridColumn.Visible = true;
