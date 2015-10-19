@@ -25,7 +25,7 @@ namespace ContosoUI.Customers.Search
             filterCityComboBoxEdit.Properties.Items.Clear();
             filterCityComboBoxEdit.Properties.Items.AddRange(presenter.Cities.ToArray());
             filterCityComboBoxEdit.Properties.Items.Add("Все города");
-            customersGridControl.DataSource = presenter.Customers;
+            customersGridControl.DataSource = presenter.vm;
             customersGridControl.RefreshDataSource();
         }
 
@@ -55,6 +55,18 @@ namespace ContosoUI.Customers.Search
             GridView view = (GridView)sender;
             Point pt = view.GridControl.PointToClient(Control.MousePosition);
             DoRowDoubleClick(view, pt);
+        }
+
+        private void checkBox1_CheckStateChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                searchCustomersItem.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
+            }
+            else
+            {
+                searchCustomersItem.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
+            }
         }
 
     }

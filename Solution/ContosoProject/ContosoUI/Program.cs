@@ -10,6 +10,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ContosoUI.Customers.Report;
+using ContosoUI.Test;
 
 namespace ContosoUI
 {
@@ -25,7 +26,7 @@ namespace ContosoUI
             GetAuthUser();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainView());
+            Application.Run(new CustomersListView());
         }
 
         private static void GetAuthUser()

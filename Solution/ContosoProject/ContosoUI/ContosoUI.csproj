@@ -147,11 +147,23 @@
     <Compile Include="Test\CustomerListView.Designer.cs">
       <DependentUpon>CustomerListView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Test\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Test\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Test\OrderListView.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Test\OrderListView.Designer.cs">
       <DependentUpon>OrderListView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Test\UserListViw.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Test\UserListViw.Designer.cs">
+      <DependentUpon>UserListViw.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="AuthenticationForm\AuthenticationForm.resx">
       <DependentUpon>AuthenticationForm.cs</DependentUpon>
@@ -217,7 +229,15 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Test\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Test\UserListViw.resx">
+      <DependentUpon>UserListViw.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\DataSources\ContosoUI.Customers.Search.CustomersListViewModel.datasource" />
     <None Include="Properties\DataSources\Domain.Entities.Customer.datasource" />
+    <None Include="Properties\DataSources\Domain.Entities.Goods.datasource" />
     <None Include="Properties\DataSources\Domain.Entities.Order.datasource" />
     <EmbeddedResource Include="Test\CustomerListView.resx">
       <DependentUpon>CustomerListView.cs</DependentUpon>

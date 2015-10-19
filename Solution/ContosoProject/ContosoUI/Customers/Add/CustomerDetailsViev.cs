@@ -36,5 +36,12 @@ namespace ContosoUI.Customers.Add
         {
             Refresh();
         }
+
+        private void gridView1_DoubleClick(object sender, EventArgs e)
+        {
+            var rowHandle = gridView1.FocusedRowHandle;
+
+            MessageBox.Show(gridView1.GetRowCellValue(rowHandle, "orderNumberGridColumn").ToString());
+        }
     }
 }

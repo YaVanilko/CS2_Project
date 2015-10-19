@@ -25,7 +25,7 @@ namespace ContosoUI
 
         private void customersMenuBtn_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            var form = new Test.CustomerListView();
+            var form = new Customers.Report.CustomerReportView();
             form.MdiParent = this;
             form.Show();
         }
@@ -39,7 +39,9 @@ namespace ContosoUI
 
         private void usersMenuBtn_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            var form = new Test.UserListViw();
+            form.MdiParent = this;
+            form.Show();
         }
     }
 }

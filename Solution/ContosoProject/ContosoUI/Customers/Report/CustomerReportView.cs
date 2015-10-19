@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DevExpress.XtraEditors;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,7 +11,7 @@ using System.Windows.Forms;
 
 namespace ContosoUI.Customers.Report
 {
-    public partial class CustomerReportView : Form
+    public partial class CustomerReportView : XtraForm
     {
         CustomerReportPresenter presenter;
         public CustomerReportView()
@@ -21,14 +22,11 @@ namespace ContosoUI.Customers.Report
 
         private void searchButton_Click(object sender, EventArgs e)
         {
-            presenter.SearchCustomersForReport(cityFilterComboBoxEdit.Text);
             Refresh();
         }
         public void Refresh()
         {
-            cityFilterComboBoxEdit.Properties.Items.Clear();
-            cityFilterComboBoxEdit.Properties.Items.AddRange(presenter.Cities.ToArray());
-            cityFilterComboBoxEdit.Properties.Items.Add("Все города");
+            repositoryItemComboBox1.Items.AddRange(presenter.Cities.ToArray());
             customerReportGridControl.DataSource = presenter.Customers;
             customerReportGridControl.RefreshDataSource();
         }

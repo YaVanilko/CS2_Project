@@ -28,16 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerReportView));
             this.customerReportPrintDocument = new System.Drawing.Printing.PrintDocument();
             this.customerReportPrintPreviewDialog = new System.Windows.Forms.PrintPreviewDialog();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-            this.searchButton = new DevExpress.XtraEditors.SimpleButton();
-            this.printButton = new DevExpress.XtraEditors.SimpleButton();
-            this.saveButton = new DevExpress.XtraEditors.SimpleButton();
             this.customerReportGridControl = new DevExpress.XtraGrid.GridControl();
-            this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.customerBindingSource = new System.Windows.Forms.BindingSource();
             this.customerReportGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.firstNameGridColumn = new DevExpress.XtraGrid.Columns.GridColumn();
             this.LastNameGridColumn = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -48,35 +44,31 @@
             this.ordersSumGridColumn = new DevExpress.XtraGrid.Columns.GridColumn();
             this.telephoneGridColumn = new DevExpress.XtraGrid.Columns.GridColumn();
             this.emailGridColumn = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.cityFilterComboBoxEdit = new DevExpress.XtraEditors.ComboBoxEdit();
             this.cutsomerReportGroup = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.cityFilterItem = new DevExpress.XtraLayout.LayoutControlItem();
             this.customerReportItem = new DevExpress.XtraLayout.LayoutControlItem();
-            this.saveItem = new DevExpress.XtraLayout.LayoutControlItem();
-            this.printItem = new DevExpress.XtraLayout.LayoutControlItem();
-            this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.emptySpaceItem4 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.searchItem = new DevExpress.XtraLayout.LayoutControlItem();
-            this.emptySpaceItem5 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
+            this.mainRibbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
+            this.repositoryItemButtonEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.barEditItem1 = new DevExpress.XtraBars.BarEditItem();
+            this.repositoryItemComboBox1 = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.customerReportGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerReportGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cityFilterComboBoxEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cutsomerReportGroup)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cityFilterItem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerReportItem)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.saveItem)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.printItem)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.searchItem)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             this.SuspendLayout();
             // 
             // customerReportPrintDocument
@@ -96,60 +88,24 @@
             // 
             // layoutControl1
             // 
-            this.layoutControl1.Controls.Add(this.searchButton);
-            this.layoutControl1.Controls.Add(this.printButton);
-            this.layoutControl1.Controls.Add(this.saveButton);
+            this.layoutControl1.Controls.Add(this.textBox1);
             this.layoutControl1.Controls.Add(this.customerReportGridControl);
-            this.layoutControl1.Controls.Add(this.cityFilterComboBoxEdit);
-            this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.layoutControl1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.layoutControl1.Location = new System.Drawing.Point(0, 137);
             this.layoutControl1.Name = "layoutControl1";
-            this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(598, 293, 367, 350);
+            this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(518, 293, 367, 350);
             this.layoutControl1.Root = this.cutsomerReportGroup;
-            this.layoutControl1.Size = new System.Drawing.Size(762, 511);
+            this.layoutControl1.Size = new System.Drawing.Size(762, 374);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
-            // 
-            // searchButton
-            // 
-            this.searchButton.Image = ((System.Drawing.Image)(resources.GetObject("searchButton.Image")));
-            this.searchButton.Location = new System.Drawing.Point(431, 12);
-            this.searchButton.Name = "searchButton";
-            this.searchButton.Size = new System.Drawing.Size(271, 38);
-            this.searchButton.StyleController = this.layoutControl1;
-            this.searchButton.TabIndex = 8;
-            this.searchButton.Text = "Поиск клиентов";
-            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
-            // 
-            // printButton
-            // 
-            this.printButton.Image = ((System.Drawing.Image)(resources.GetObject("printButton.Image")));
-            this.printButton.Location = new System.Drawing.Point(154, 461);
-            this.printButton.Name = "printButton";
-            this.printButton.Size = new System.Drawing.Size(124, 38);
-            this.printButton.StyleController = this.layoutControl1;
-            this.printButton.TabIndex = 7;
-            this.printButton.Text = "Распечатать";
-            this.printButton.Click += new System.EventHandler(this.printButton_Click);
-            // 
-            // saveButton
-            // 
-            this.saveButton.Image = ((System.Drawing.Image)(resources.GetObject("saveButton.Image")));
-            this.saveButton.Location = new System.Drawing.Point(12, 461);
-            this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(125, 38);
-            this.saveButton.StyleController = this.layoutControl1;
-            this.saveButton.TabIndex = 6;
-            this.saveButton.Text = "Сохранить";
-            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
             // customerReportGridControl
             // 
             this.customerReportGridControl.DataSource = this.customerBindingSource;
-            this.customerReportGridControl.Location = new System.Drawing.Point(12, 80);
+            this.customerReportGridControl.Location = new System.Drawing.Point(12, 52);
             this.customerReportGridControl.MainView = this.customerReportGridView;
             this.customerReportGridControl.Name = "customerReportGridControl";
-            this.customerReportGridControl.Size = new System.Drawing.Size(738, 377);
+            this.customerReportGridControl.Size = new System.Drawing.Size(738, 310);
             this.customerReportGridControl.TabIndex = 5;
             this.customerReportGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.customerReportGridView});
@@ -251,127 +207,142 @@
             this.emailGridColumn.Visible = true;
             this.emailGridColumn.VisibleIndex = 6;
             // 
-            // cityFilterComboBoxEdit
-            // 
-            this.cityFilterComboBoxEdit.Location = new System.Drawing.Point(131, 12);
-            this.cityFilterComboBoxEdit.Name = "cityFilterComboBoxEdit";
-            this.cityFilterComboBoxEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cityFilterComboBoxEdit.Size = new System.Drawing.Size(248, 20);
-            this.cityFilterComboBoxEdit.StyleController = this.layoutControl1;
-            this.cityFilterComboBoxEdit.TabIndex = 4;
-            // 
             // cutsomerReportGroup
             // 
             this.cutsomerReportGroup.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
             this.cutsomerReportGroup.GroupBordersVisible = false;
             this.cutsomerReportGroup.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.cityFilterItem,
             this.customerReportItem,
-            this.saveItem,
-            this.printItem,
-            this.emptySpaceItem1,
-            this.emptySpaceItem3,
-            this.emptySpaceItem2,
-            this.emptySpaceItem4,
-            this.searchItem,
-            this.emptySpaceItem5});
+            this.layoutControlItem1});
             this.cutsomerReportGroup.Location = new System.Drawing.Point(0, 0);
             this.cutsomerReportGroup.Name = "Root";
-            this.cutsomerReportGroup.Size = new System.Drawing.Size(762, 511);
+            this.cutsomerReportGroup.Size = new System.Drawing.Size(762, 374);
             this.cutsomerReportGroup.TextVisible = false;
-            // 
-            // cityFilterItem
-            // 
-            this.cityFilterItem.Control = this.cityFilterComboBoxEdit;
-            this.cityFilterItem.Location = new System.Drawing.Point(0, 0);
-            this.cityFilterItem.Name = "cityFilterItem";
-            this.cityFilterItem.Size = new System.Drawing.Size(371, 42);
-            this.cityFilterItem.Text = "Город";
-            this.cityFilterItem.TextSize = new System.Drawing.Size(116, 13);
             // 
             // customerReportItem
             // 
             this.customerReportItem.Control = this.customerReportGridControl;
-            this.customerReportItem.Location = new System.Drawing.Point(0, 52);
+            this.customerReportItem.Location = new System.Drawing.Point(0, 24);
             this.customerReportItem.Name = "customerReportItem";
-            this.customerReportItem.Size = new System.Drawing.Size(742, 397);
+            this.customerReportItem.Size = new System.Drawing.Size(742, 330);
             this.customerReportItem.Text = "Отчет по покупателям";
             this.customerReportItem.TextLocation = DevExpress.Utils.Locations.Top;
             this.customerReportItem.TextSize = new System.Drawing.Size(116, 13);
             // 
-            // saveItem
+            // ribbonControl1
             // 
-            this.saveItem.Control = this.saveButton;
-            this.saveItem.Location = new System.Drawing.Point(0, 449);
-            this.saveItem.Name = "saveItem";
-            this.saveItem.Size = new System.Drawing.Size(129, 42);
-            this.saveItem.TextSize = new System.Drawing.Size(0, 0);
-            this.saveItem.TextVisible = false;
+            this.ribbonControl1.ExpandCollapseItem.Id = 0;
+            this.ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
+            this.ribbonControl1.ExpandCollapseItem,
+            this.barButtonItem1,
+            this.barButtonItem2,
+            this.barButtonItem3,
+            this.barEditItem1});
+            this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
+            this.ribbonControl1.MaxItemId = 8;
+            this.ribbonControl1.Name = "ribbonControl1";
+            this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
+            this.mainRibbonPage});
+            this.ribbonControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemButtonEdit1,
+            this.repositoryItemComboBox1});
+            this.ribbonControl1.Size = new System.Drawing.Size(762, 141);
             // 
-            // printItem
+            // mainRibbonPage
             // 
-            this.printItem.Control = this.printButton;
-            this.printItem.Location = new System.Drawing.Point(142, 449);
-            this.printItem.Name = "printItem";
-            this.printItem.Size = new System.Drawing.Size(128, 42);
-            this.printItem.TextSize = new System.Drawing.Size(0, 0);
-            this.printItem.TextVisible = false;
+            this.mainRibbonPage.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup1,
+            this.ribbonPageGroup2});
+            this.mainRibbonPage.Name = "mainRibbonPage";
+            this.mainRibbonPage.Text = "Main";
             // 
-            // emptySpaceItem1
+            // ribbonPageGroup1
             // 
-            this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(694, 0);
-            this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(48, 42);
-            this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
+            this.ribbonPageGroup1.ItemLinks.Add(this.barEditItem1);
+            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem1);
+            this.ribbonPageGroup1.MergeOrder = 10;
+            this.ribbonPageGroup1.Name = "ribbonPageGroup1";
+            this.ribbonPageGroup1.Text = "ribbonPageGroup1";
             // 
-            // emptySpaceItem3
+            // barButtonItem1
             // 
-            this.emptySpaceItem3.AllowHotTrack = false;
-            this.emptySpaceItem3.Location = new System.Drawing.Point(129, 449);
-            this.emptySpaceItem3.Name = "emptySpaceItem3";
-            this.emptySpaceItem3.Size = new System.Drawing.Size(13, 42);
-            this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
+            this.barButtonItem1.Caption = "Search";
+            this.barButtonItem1.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.Glyph")));
+            this.barButtonItem1.Id = 1;
+            this.barButtonItem1.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.LargeGlyph")));
+            this.barButtonItem1.Name = "barButtonItem1";
+            this.barButtonItem1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText;
             // 
-            // emptySpaceItem2
+            // ribbonPageGroup2
             // 
-            this.emptySpaceItem2.AllowHotTrack = false;
-            this.emptySpaceItem2.Location = new System.Drawing.Point(0, 42);
-            this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(742, 10);
-            this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
+            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem2);
+            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem3);
+            this.ribbonPageGroup2.MergeOrder = 20;
+            this.ribbonPageGroup2.Name = "ribbonPageGroup2";
+            this.ribbonPageGroup2.Text = "ribbonPageGroup2";
             // 
-            // emptySpaceItem4
+            // barButtonItem2
             // 
-            this.emptySpaceItem4.AllowHotTrack = false;
-            this.emptySpaceItem4.Location = new System.Drawing.Point(270, 449);
-            this.emptySpaceItem4.Name = "emptySpaceItem4";
-            this.emptySpaceItem4.Size = new System.Drawing.Size(472, 42);
-            this.emptySpaceItem4.TextSize = new System.Drawing.Size(0, 0);
+            this.barButtonItem2.Caption = "Save";
+            this.barButtonItem2.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.Glyph")));
+            this.barButtonItem2.Id = 4;
+            this.barButtonItem2.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.LargeGlyph")));
+            this.barButtonItem2.Name = "barButtonItem2";
             // 
-            // searchItem
+            // barButtonItem3
             // 
-            this.searchItem.Control = this.searchButton;
-            this.searchItem.Location = new System.Drawing.Point(419, 0);
-            this.searchItem.Name = "searchItem";
-            this.searchItem.Size = new System.Drawing.Size(275, 42);
-            this.searchItem.TextSize = new System.Drawing.Size(0, 0);
-            this.searchItem.TextVisible = false;
+            this.barButtonItem3.Caption = "Save and New";
+            this.barButtonItem3.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.Glyph")));
+            this.barButtonItem3.Id = 5;
+            this.barButtonItem3.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.LargeGlyph")));
+            this.barButtonItem3.Name = "barButtonItem3";
             // 
-            // emptySpaceItem5
+            // repositoryItemButtonEdit1
             // 
-            this.emptySpaceItem5.AllowHotTrack = false;
-            this.emptySpaceItem5.Location = new System.Drawing.Point(371, 0);
-            this.emptySpaceItem5.Name = "emptySpaceItem5";
-            this.emptySpaceItem5.Size = new System.Drawing.Size(48, 42);
-            this.emptySpaceItem5.TextSize = new System.Drawing.Size(0, 0);
+            this.repositoryItemButtonEdit1.AutoHeight = false;
+            this.repositoryItemButtonEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.repositoryItemButtonEdit1.Name = "repositoryItemButtonEdit1";
+            // 
+            // barEditItem1
+            // 
+            this.barEditItem1.Caption = "barEditItem1";
+            this.barEditItem1.Edit = this.repositoryItemComboBox1;
+            this.barEditItem1.Id = 7;
+            this.barEditItem1.Name = "barEditItem1";
+            this.barEditItem1.Width = 120;
+            // 
+            // repositoryItemComboBox1
+            // 
+            this.repositoryItemComboBox1.AutoHeight = false;
+            this.repositoryItemComboBox1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemComboBox1.ButtonsStyle = DevExpress.XtraEditors.Controls.BorderStyles.Flat;
+            this.repositoryItemComboBox1.Name = "repositoryItemComboBox1";
+            this.repositoryItemComboBox1.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(131, 12);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.PasswordChar = '*';
+            this.textBox1.Size = new System.Drawing.Size(619, 20);
+            this.textBox1.TabIndex = 6;
+            // 
+            // layoutControlItem1
+            // 
+            this.layoutControlItem1.Control = this.textBox1;
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem1.Name = "layoutControlItem1";
+            this.layoutControlItem1.Size = new System.Drawing.Size(742, 24);
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(116, 13);
             // 
             // CustomerReportView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(762, 511);
+            this.Controls.Add(this.ribbonControl1);
             this.Controls.Add(this.layoutControl1);
             this.MinimumSize = new System.Drawing.Size(690, 550);
             this.Name = "CustomerReportView";
@@ -382,19 +353,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.customerReportGridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerReportGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cityFilterComboBoxEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cutsomerReportGroup)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cityFilterItem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerReportItem)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.saveItem)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.printItem)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.searchItem)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -403,20 +369,10 @@
         private System.Drawing.Printing.PrintDocument customerReportPrintDocument;
         private System.Windows.Forms.PrintPreviewDialog customerReportPrintPreviewDialog;
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
-        private DevExpress.XtraEditors.SimpleButton saveButton;
         private DevExpress.XtraGrid.GridControl customerReportGridControl;
         private DevExpress.XtraGrid.Views.Grid.GridView customerReportGridView;
-        private DevExpress.XtraEditors.ComboBoxEdit cityFilterComboBoxEdit;
         private DevExpress.XtraLayout.LayoutControlGroup cutsomerReportGroup;
-        private DevExpress.XtraLayout.LayoutControlItem cityFilterItem;
         private DevExpress.XtraLayout.LayoutControlItem customerReportItem;
-        private DevExpress.XtraLayout.LayoutControlItem saveItem;
-        private DevExpress.XtraEditors.SimpleButton printButton;
-        private DevExpress.XtraLayout.LayoutControlItem printItem;
-        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
-        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem3;
-        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem2;
-        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem4;
         private DevExpress.XtraGrid.Columns.GridColumn firstNameGridColumn;
         private DevExpress.XtraGrid.Columns.GridColumn LastNameGridColumn;
         private DevExpress.XtraGrid.Columns.GridColumn middleNameGridColumn;
@@ -424,12 +380,21 @@
         private DevExpress.XtraGrid.Columns.GridColumn addressGridColumn;
         private DevExpress.XtraGrid.Columns.GridColumn orderCountgridColumn;
         private DevExpress.XtraGrid.Columns.GridColumn ordersSumGridColumn;
-        private DevExpress.XtraEditors.SimpleButton searchButton;
-        private DevExpress.XtraLayout.LayoutControlItem searchItem;
-        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem5;
         private System.Windows.Forms.BindingSource customerBindingSource;
         private DevExpress.XtraGrid.Columns.GridColumn telephoneGridColumn;
         private DevExpress.XtraGrid.Columns.GridColumn emailGridColumn;
+        private DevExpress.XtraBars.Ribbon.RibbonControl ribbonControl1;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem3;
+        private DevExpress.XtraBars.Ribbon.RibbonPage mainRibbonPage;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
+        private DevExpress.XtraBars.BarEditItem barEditItem1;
+        private DevExpress.XtraEditors.Repository.RepositoryItemComboBox repositoryItemComboBox1;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEdit1;
+        private System.Windows.Forms.TextBox textBox1;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
 
     }
 }

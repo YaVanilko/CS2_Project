@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerDetailsViev));
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.commentsListBoxControl = new DevExpress.XtraEditors.ListBoxControl();
@@ -36,6 +35,7 @@
             this.saveEditButton = new DevExpress.XtraEditors.SimpleButton();
             this.commentMemoEdit = new DevExpress.XtraEditors.MemoEdit();
             this.ordersGridControl = new DevExpress.XtraGrid.GridControl();
+            this.orderBindingSource = new System.Windows.Forms.BindingSource();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.orderNumberGridColumn = new DevExpress.XtraGrid.Columns.GridColumn();
             this.orderSumGridColumn = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -64,12 +64,12 @@
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.listCommentsItem = new DevExpress.XtraLayout.LayoutControlItem();
-            this.orderBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.commentsListBoxControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.commentMemoEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordersGridControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emailTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.telephoneTextEdit.Properties)).BeginInit();
@@ -95,7 +95,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listCommentsItem)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -168,6 +167,10 @@
             this.ordersGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
+            // orderBindingSource
+            // 
+            this.orderBindingSource.DataSource = typeof(Domain.Entities.Order);
+            // 
             // gridView1
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
@@ -176,6 +179,7 @@
             this.orderStatusGridColumn});
             this.gridView1.GridControl = this.ordersGridControl;
             this.gridView1.Name = "gridView1";
+            this.gridView1.DoubleClick += new System.EventHandler(this.gridView1_DoubleClick);
             // 
             // orderNumberGridColumn
             // 
@@ -184,7 +188,7 @@
             this.orderNumberGridColumn.Name = "orderNumberGridColumn";
             this.orderNumberGridColumn.Visible = true;
             this.orderNumberGridColumn.VisibleIndex = 0;
-            this.orderNumberGridColumn.Width = 133;
+            this.orderNumberGridColumn.Width = 54;
             // 
             // orderSumGridColumn
             // 
@@ -193,7 +197,7 @@
             this.orderSumGridColumn.Name = "orderSumGridColumn";
             this.orderSumGridColumn.Visible = true;
             this.orderSumGridColumn.VisibleIndex = 1;
-            this.orderSumGridColumn.Width = 248;
+            this.orderSumGridColumn.Width = 289;
             // 
             // orderStatusGridColumn
             // 
@@ -202,7 +206,7 @@
             this.orderStatusGridColumn.Name = "orderStatusGridColumn";
             this.orderStatusGridColumn.Visible = true;
             this.orderStatusGridColumn.VisibleIndex = 2;
-            this.orderStatusGridColumn.Width = 251;
+            this.orderStatusGridColumn.Width = 299;
             // 
             // emailTextEdit
             // 
@@ -454,10 +458,6 @@
             this.listCommentsItem.TextLocation = DevExpress.Utils.Locations.Top;
             this.listCommentsItem.TextSize = new System.Drawing.Size(105, 13);
             // 
-            // orderBindingSource
-            // 
-            this.orderBindingSource.DataSource = typeof(Domain.Entities.Order);
-            // 
             // CustomerDetailsViev
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -473,6 +473,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.commentsListBoxControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.commentMemoEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordersGridControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emailTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.telephoneTextEdit.Properties)).EndInit();
@@ -498,7 +499,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.listCommentsItem)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

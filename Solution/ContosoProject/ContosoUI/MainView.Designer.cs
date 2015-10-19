@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainView));
             this.ribbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
@@ -39,7 +38,7 @@
             this.mainRibbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.workRibbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.System = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
+            this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
@@ -122,6 +121,7 @@
             this.workRibbonPageGroup.ItemLinks.Add(this.customersMenuBtn);
             this.workRibbonPageGroup.ItemLinks.Add(this.ordersMenuBtn);
             this.workRibbonPageGroup.ItemLinks.Add(this.usersMenuBtn);
+            this.workRibbonPageGroup.MergeOrder = 100;
             this.workRibbonPageGroup.Name = "workRibbonPageGroup";
             this.workRibbonPageGroup.Text = "Work";
             // 
@@ -129,6 +129,7 @@
             // 
             this.System.ItemLinks.Add(this.barButtonItem2);
             this.System.ItemLinks.Add(this.barButtonItem1);
+            this.System.MergeOrder = 999;
             this.System.Name = "System";
             this.System.Text = "System";
             // 
