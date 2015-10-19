@@ -145,17 +145,12 @@
       <DependentUpon>AddOrderXtraForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Order\AddEdit\Presenter.cs" />
-    <Compile Include="Order\Report\OrderReportFrom.cs">
+    <Compile Include="Order\Search\SearchPresenter.cs" />
+    <Compile Include="Order\Search\SearchXtraView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Order\Report\OrderReportFrom.Designer.cs">
-      <DependentUpon>OrderReportFrom.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Order\Report\SearchXtraForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Order\Report\SearchXtraForm.Designer.cs">
-      <DependentUpon>SearchXtraForm.cs</DependentUpon>
+    <Compile Include="Order\Search\SearchXtraView.Designer.cs">
+      <DependentUpon>SearchXtraView.cs</DependentUpon>
     </Compile>
     <Compile Include="Test\CustomerListView.cs">
       <SubType>Form</SubType>
@@ -202,11 +197,8 @@
     <EmbeddedResource Include="Order\AddEdit\AddOrderXtraForm.resx">
       <DependentUpon>AddOrderXtraForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Order\Report\OrderReportFrom.resx">
-      <DependentUpon>OrderReportFrom.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Order\Report\SearchXtraForm.resx">
-      <DependentUpon>SearchXtraForm.cs</DependentUpon>
+    <EmbeddedResource Include="Order\Search\SearchXtraView.resx">
+      <DependentUpon>SearchXtraView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
