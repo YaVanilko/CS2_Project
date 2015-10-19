@@ -23,10 +23,10 @@ namespace ContosoUI.Order.Search
 
     public class SearchViewModel
     {
-        public Customer Customer { get; set; }
-        public int countOfGoods { get { return } set { } }
-        public double TotalCost { get; set; }
         public OrderStatus Status { get; set; }
+        public Customer Customer { get; set; }
+        public int countOfGoods { get; set; }
+        public double TotalCost { get; set; }
         public int countOfComments { get; set; }
     }
 }
