@@ -9,58 +9,58 @@ using Domain.Entities;
 
 namespace Data.DumbData
 {
-    public class BaseDao<T>: IRepository<T>
+    public class BaseDao<T> : IRepository<T> where T : class
     {
         public void Add(T entity)
         {
             System.Type entityType = entity.GetType();
             if (entityType == typeof(PersonalInfo))
             {
-                Data.DumbData.Storage.personalInfoCollection.Add(entity as PersonalInfo);
+                Storage.PersonalInfoCollection.Add(entity as PersonalInfo);
             }
             else if (entityType == typeof(ContactInfo))
             {
-                Data.DumbData.Storage.contactInfoCollection.Add(entity as ContactInfo);
+                Storage.ContactInfoCollection.Add(entity as ContactInfo);
             }
             else if (entityType == typeof(Customer))
             {
-                Data.DumbData.Storage.customerCollection.Add(entity as Customer);
+                Storage.CustomerCollection.Add(entity as Customer);
             }
             else if (entityType == typeof(ProductCategory))
 	        {
-                Data.DumbData.Storage.categoryCollection.Add(entity as string);
+                Storage.categoryCollection.Add(entity as ProductCategory);
 	        }
             else if (entityType == typeof(User))
             {
-                Data.DumbData.Storage.userCollection.Add(entity as User);
+                Storage.UserCollection.Add(entity as User);
             }
             else if (entityType == typeof(Order))
             {
-                Data.DumbData.Storage.orderCollection.Add(entity as Order);
+                Storage.OrderCollection.Add(entity as Order);
             }
             else if (entityType == typeof(Goods))
             {
-                Data.DumbData.Storage.goodsCollection.Add(entity as Goods);
+                Storage.goodsCollection.Add(entity as Goods);
             }
             else if (entityType == typeof(GoodsRow))
             {
-                Data.DumbData.Storage.goodsRowCollection.Add(entity as GoodsRow);
+                Storage.GoodsRowCollection.Add(entity as GoodsRow);
             }
             else if (entityType == typeof(Role))
             {
-                Data.DumbData.Storage.roleCollection.Add(entity as Role);
+                Storage.RoleCollection.Add(entity as Role);
             }
             else if (entityType == typeof(Permission))
             {
-                Data.DumbData.Storage.permissionCollection.Add(entity as Permission);
+                Storage.PermissionCollection.Add(entity as Permission);
             }
             else if (entityType == typeof(Comment))
             {
-                Data.DumbData.Storage.commentCollection.Add(entity as Comment);
+                Storage.CommentCollection.Add(entity as Comment);
             }
             else if (entityType == typeof(OrderStatus))
             {
-                Data.DumbData.Storage.orderStatusCollection.Add(entity as OrderStatus);
+                Storage.OrderStatusCollection.Add(entity as OrderStatus);
             }
         }
 
@@ -69,7 +69,75 @@ namespace Data.DumbData
             System.Type entityType = entity.GetType();
             if (entityType == typeof(PersonalInfo))
             {
-                PersonalInfo personInfo = Data.DumbData.Storage.personalInfoCollection.Find(x => x.GetHashCode() == entity.GetHashCode());
+                var typedEntity = entity as PersonalInfo;
+                var oldEntity = Storage.PersonalInfoCollection.FirstOrDefault(x => x.Id == typedEntity.Id);
+                oldEntity = typedEntity;
+            }
+            else if (entityType == typeof(ContactInfo))
+            {
+                var typedEntity = entity as ContactInfo;
+                var oldEntity = Storage.ContactInfoCollection.FirstOrDefault(x => x.Id == typedEntity.Id);
+                oldEntity = typedEntity;
+            }
+            else if (entityType == typeof(Customer))
+            {
+                var typedEntity = entity as Customer;
+                var oldEntity = Storage.CustomerCollection.FirstOrDefault(x => x.Id == typedEntity.Id);
+                oldEntity = typedEntity;
+            }
+            else if (entityType == typeof(ProductCategory))
+            {
+                var typedEntity = entity as ProductCategory;
+                var oldEntity = Storage.categoryCollection.FirstOrDefault(x => x.Id == typedEntity.Id);
+                oldEntity = typedEntity;
+            }
+            else if (entityType == typeof(User))
+            {
+                var typedEntity = entity as User;
+                var oldEntity = Storage.UserCollection.FirstOrDefault(x => x.Id == typedEntity.Id);
+                oldEntity = typedEntity;
+            }
+            else if (entityType == typeof(Order))
+            {
+                var typedEntity = entity as Order;
+                var oldEntity = Storage.OrderCollection.FirstOrDefault(x => x.Id == typedEntity.Id);
+                oldEntity = typedEntity;
+            }
+            else if (entityType == typeof(Goods))
+            {
+                var typedEntity = entity as Goods;
+                var oldEntity = Storage.goodsCollection.FirstOrDefault(x => x.Id == typedEntity.Id);
+                oldEntity = typedEntity;
+            }
+            else if (entityType == typeof(GoodsRow))
+            {
+                var typedEntity = entity as GoodsRow;
+                var oldEntity = Storage.GoodsRowCollection.FirstOrDefault(x => x.Id == typedEntity.Id);
+                oldEntity = typedEntity;
+            }
+            else if (entityType == typeof(Role))
+            {
+                var typedEntity = entity as Role;
+                var oldEntity = Storage.RoleCollection.FirstOrDefault(x => x.Id == typedEntity.Id);
+                oldEntity = typedEntity;
+            }
+            else if (entityType == typeof(Permission))
+            {
+                var typedEntity = entity as Permission;
+                var oldEntity = Storage.PermissionCollection.FirstOrDefault(x => x.Id == typedEntity.Id);
+                oldEntity = typedEntity;
+            }
+            else if (entityType == typeof(Comment))
+            {
+                var typedEntity = entity as Comment;
+                var oldEntity = Storage.CommentCollection.FirstOrDefault(x => x.Id == typedEntity.Id);
+                oldEntity = typedEntity;
+            }
+            else if (entityType == typeof(OrderStatus))
+            {
+                var typedEntity = entity as OrderStatus;
+                var oldEntity = Storage.OrderStatusCollection.FirstOrDefault(x => x.Id == typedEntity.Id);
+                oldEntity = typedEntity;
             }
         }
 
@@ -78,119 +146,231 @@ namespace Data.DumbData
             System.Type entityType = entity.GetType();
             if (entityType == typeof(PersonalInfo))
             {
-                Data.DumbData.Storage.personalInfoCollection.Remove(entity as PersonalInfo);
+                Storage.PersonalInfoCollection.Remove(entity as PersonalInfo);
             }
             else if (entityType == typeof(ContactInfo))
             {
-                Data.DumbData.Storage.contactInfoCollection.Remove(entity as ContactInfo);
+                Storage.ContactInfoCollection.Remove(entity as ContactInfo);
             }
             else if (entityType == typeof(Customer))
             {
-                Data.DumbData.Storage.customerCollection.Remove(entity as Customer);
+                Storage.CustomerCollection.Remove(entity as Customer);
             }
             else if (entityType == typeof(ProductCategory))
             {
-                Data.DumbData.Storage.categoryCollection.Remove(entity as string);
+                Storage.categoryCollection.Remove(entity as ProductCategory);
             }
             else if (entityType == typeof(User))
             {
-                Data.DumbData.Storage.userCollection.Remove(entity as User);
+                Storage.UserCollection.Remove(entity as User);
             }
             else if (entityType == typeof(Order))
             {
-                Data.DumbData.Storage.orderCollection.Remove(entity as Order);
+                Storage.OrderCollection.Remove(entity as Order);
             }
             else if (entityType == typeof(Goods))
             {
-                Data.DumbData.Storage.goodsCollection.Remove(entity as Goods);
+                Storage.goodsCollection.Remove(entity as Goods);
             }
             else if (entityType == typeof(GoodsRow))
             {
-                Data.DumbData.Storage.goodsRowCollection.Remove(entity as GoodsRow);
+                Storage.GoodsRowCollection.Remove(entity as GoodsRow);
             }
             else if (entityType == typeof(Role))
             {
-                Data.DumbData.Storage.roleCollection.Remove(entity as Role);
+                Storage.RoleCollection.Remove(entity as Role);
             }
             else if (entityType == typeof(Permission))
             {
-                Data.DumbData.Storage.permissionCollection.Remove(entity as Permission);
+                Storage.PermissionCollection.Remove(entity as Permission);
             }
             else if (entityType == typeof(Comment))
             {
-                Data.DumbData.Storage.commentCollection.Remove(entity as Comment);
+                Storage.CommentCollection.Remove(entity as Comment);
             }
             else if (entityType == typeof(OrderStatus))
             {
-                Data.DumbData.Storage.orderStatusCollection.Remove(entity as OrderStatus);
+                Storage.OrderStatusCollection.Remove(entity as OrderStatus);
             }
         }
 
         public T GetById(int Id)
         {
+            T resultEntity = null;
             if (typeof(T) == typeof(PersonalInfo))
             {
-               PersonalInfo info = Data.DumbData.Storage.personalInfoCollection.FirstOrDefault(x => x.Id == Id);               
+                resultEntity = Storage.PersonalInfoCollection.FirstOrDefault(x => x.Id == Id) as T;
             }
             else if (typeof(T) == typeof(ContactInfo))
             {
-                Data.DumbData.Storage.contactInfoCollection.FirstOrDefault(x => x.Id == Id);
+                resultEntity = Storage.ContactInfoCollection.FirstOrDefault(x => x.Id == Id) as T;
             }
             else if (typeof(T) == typeof(Customer))
             {
-                Data.DumbData.Storage.customerCollection.FirstOrDefault(x => x.Id == Id);
+                resultEntity = Storage.CustomerCollection.FirstOrDefault(x => x.Id == Id) as T;
             }
             else if (typeof(T) == typeof(ProductCategory))
             {
-                Data.DumbData.Storage.categoryCollection.FirstOrDefault(x => x[Id] == Id);
+                resultEntity = Storage.categoryCollection.FirstOrDefault(x => x.Id == Id) as T;
             }
             else if (typeof(T) == typeof(User))
             {
-                Data.DumbData.Storage.userCollection.FirstOrDefault(x => x.Id == Id);
+                resultEntity = Storage.UserCollection.FirstOrDefault(x => x.Id == Id) as T;
             }
             else if (typeof(T) == typeof(Order))
             {
-                Data.DumbData.Storage.orderCollection.FirstOrDefault(x => x.Id == Id);
+                resultEntity = Storage.OrderCollection.FirstOrDefault(x => x.Id == Id) as T;
             }
             else if (typeof(T) == typeof(Goods))
             {
-                Data.DumbData.Storage.goodsCollection.FirstOrDefault(x => x.Id == Id);
+                resultEntity = Storage.goodsCollection.FirstOrDefault(x => x.Id == Id) as T;
             }
             else if (typeof(T) == typeof(GoodsRow))
             {
-                Data.DumbData.Storage.goodsRowCollection.FirstOrDefault(x => x.Id == Id);
+                resultEntity = Storage.GoodsRowCollection.FirstOrDefault(x => x.Id == Id) as T;
             }
             else if (typeof(T) == typeof(Role))
             {
-                Data.DumbData.Storage.roleCollection.FirstOrDefault(x => x.Id == Id);
+                resultEntity = Storage.RoleCollection.FirstOrDefault(x => x.Id == Id) as T;
             }
             else if (typeof(T) == typeof(Permission))
             {
-                Data.DumbData.Storage.permissionCollection.FirstOrDefault(x => x.Id == Id);
+                resultEntity = Storage.PermissionCollection.FirstOrDefault(x => x.Id == Id) as T;
             }
             else if (typeof(T) == typeof(Comment))
             {
-                Data.DumbData.Storage.commentCollection.FirstOrDefault(x => x.Id == Id);
+                resultEntity = Storage.CommentCollection.FirstOrDefault(x => x.Id == Id) as T;
             }
             else if (typeof(T) == typeof(OrderStatus))
             {
-                Data.DumbData.Storage.orderStatusCollection.FirstOrDefault(x => x.Id == Id);
+                resultEntity = Storage.OrderStatusCollection.FirstOrDefault(x => x.Id == Id) as T;
             }
+            return resultEntity;
         }
 
-        public IEnumerable<T> GetAll()
+        public IQueryable<T> GetAll()
         {
-            List<PersonalInfo> newPersonStor = new List<PersonalInfo>();
+            IEnumerable<T> allItems = new List<T>();
             if (typeof(T) == typeof(PersonalInfo))
             {
+                List<PersonalInfo> newPersonStor = new List<PersonalInfo>();
                 
-                foreach (var item in Data.DumbData.Storage.personalInfoCollection)
+                foreach (var item in Storage.PersonalInfoCollection)
                 {
                     newPersonStor.Add(item);
                 }
-            }
 
-            return (IEnumerable<T>)newPersonStor;
+                allItems = (IEnumerable<T>)newPersonStor;
+            }
+            else if (typeof(T) == typeof(ContactInfo))
+            {
+                List<ContactInfo> newContactInfoStor = new List<ContactInfo>();
+
+                foreach (var item in Storage.ContactInfoCollection)
+                {
+                    newContactInfoStor.Add(item);
+                }
+                allItems = (IEnumerable<T>)newContactInfoStor;               
+            }
+            else if (typeof(T) == typeof(Customer))
+            {
+                List<Customer> newCustomersStor = new List<Customer>();
+
+                foreach (var item in Storage.CustomerCollection)
+                {
+                    newCustomersStor.Add(item);
+                }
+                allItems = (IEnumerable<T>)newCustomersStor;
+            }
+            else if (typeof(T) == typeof(ProductCategory))
+            {
+                List<ProductCategory> newCategoryStor = new List<ProductCategory>();
+
+                foreach (var item in Storage.categoryCollection)
+                {
+                    newCategoryStor.Add(item);
+                }
+                allItems = (IEnumerable<T>)newCategoryStor;
+            }
+            else if (typeof(T) == typeof(User))
+            {
+                List<User> newUsersStor = new List<User>();
+
+                foreach (var item in Storage.UserCollection)
+                {
+                    newUsersStor.Add(item);
+                }
+                allItems = (IEnumerable<T>)newUsersStor;
+            }
+            else if (typeof(T) == typeof(Order))
+            {
+                List<Order> newOrdersStor = new List<Order>();
+                foreach (var item in Storage.OrderCollection)
+                {
+                    newOrdersStor.Add(item);
+                }
+                allItems = (IEnumerable<T>)newOrdersStor;
+            }
+            else if (typeof(T) == typeof(Goods))
+            {
+                List<Goods> newGoodsStor = new List<Goods>();
+                foreach (var item in Storage.goodsCollection)
+                {
+                    newGoodsStor.Add(item);
+                }
+                allItems = (IEnumerable<T>)newGoodsStor;
+            }
+            else if (typeof(T) == typeof(GoodsRow))
+            {
+                List<GoodsRow> newGoodsRowStor = new List<GoodsRow>();
+                foreach (var item in Storage.GoodsRowCollection)
+                {
+                    newGoodsRowStor.Add(item);
+                }
+                allItems = (IEnumerable<T>)newGoodsRowStor;
+            }
+            else if (typeof(T) == typeof(Role))
+            {
+                List<Role> newRolesStor = new List<Role>();
+                foreach (var item in Storage.RoleCollection)
+                {
+                    newRolesStor.Add(item);
+                }
+                allItems = (IEnumerable<T>)newRolesStor;
+            }
+            else if (typeof(T) == typeof(Permission))
+            {
+                List<Permission> newPermissionsStor = new List<Permission>();
+                foreach (var item in Storage.PermissionCollection)
+                {
+                    newPermissionsStor.Add(item);
+                }
+                allItems = (IEnumerable<T>)newPermissionsStor;
+            }
+            else if (typeof(T) == typeof(Comment))
+            {
+                List<Comment> newCommentsStor = new List<Comment>();
+                foreach (var item in Storage.CommentCollection)
+                {
+                    newCommentsStor.Add(item);
+                }
+                allItems = (IEnumerable<T>)newCommentsStor;
+            }
+            else if (typeof(T) == typeof(OrderStatus))
+            {
+                List<OrderStatus> newOrderStatusesStor = new List<OrderStatus>();
+                foreach (var item in Storage.OrderStatusCollection)
+                {
+                    newOrderStatusesStor.Add(item);
+                }
+                allItems = (IEnumerable<T>)newOrderStatusesStor;
+            }
+            return allItems.AsQueryable<T>();
+        }
+
+        public IQueryable<T> FindBy(System.Linq.Expressions.Expression<Func<T, bool>> predicate)
+        {
+            throw new NotImplementedException();
         }
     }
 }
