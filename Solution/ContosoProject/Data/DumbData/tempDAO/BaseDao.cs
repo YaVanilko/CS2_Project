@@ -248,7 +248,7 @@ namespace Data.DumbData
             return resultEntity;
         }
 
-        public IEnumerable<T> GetAll()
+        public IQueryable<T> GetAll()
         {
             IEnumerable<T> allItems = new List<T>();
             if (typeof(T) == typeof(PersonalInfo))
@@ -365,7 +365,12 @@ namespace Data.DumbData
                 }
                 allItems = (IEnumerable<T>)newOrderStatusesStor;
             }
-            return allItems;
+            return allItems.AsQueryable<T>();
+        }
+
+        public IQueryable<T> FindBy(System.Linq.Expressions.Expression<Func<T, bool>> predicate)
+        {
+            throw new NotImplementedException();
         }
     }
 }
