@@ -104,16 +104,16 @@ namespace Data.DumbData
         #region User
         public static List<User> UserCollection = new List<User>() 
         {
-            new User {Id=0, Login="admin",Password="123",UserInfo = PersonalInfoCollection[0], UserRole = RoleCollection[0]},
-            new User {Id=1, Login="manager",Password="123",UserInfo = PersonalInfoCollection[1], UserRole = RoleCollection[1]},
-            new User {Id=2, Login="boss",Password="123",UserInfo = PersonalInfoCollection[2], UserRole = RoleCollection[2]},
-            new User {Id=3, Login="user3",Password="123",UserInfo = PersonalInfoCollection[3], UserRole = RoleCollection[3]},
-            new User {Id=3, Login="user4",Password="123",UserInfo = PersonalInfoCollection[4], UserRole = RoleCollection[4]},
-            new User {Id=3, Login="user5",Password="123",UserInfo = PersonalInfoCollection[5], UserRole = RoleCollection[5]},
-            new User {Id=3, Login="user6",Password="123",UserInfo = PersonalInfoCollection[6], UserRole = RoleCollection[6]},
-            new User {Id=3, Login="user7",Password="123",UserInfo = PersonalInfoCollection[7], UserRole = RoleCollection[7]},
-            new User {Id=3, Login="user8",Password="123",UserInfo = PersonalInfoCollection[8], UserRole = RoleCollection[8]},
-            new User {Id=3, Login="user9",Password="123",UserInfo = PersonalInfoCollection[9], UserRole = RoleCollection[9]},
+            new User {Id=0, Login="admin",Password="123",PersonalInfo = PersonalInfoCollection[0], Role = RoleCollection[0]},
+            new User {Id=1, Login="manager",Password="123",PersonalInfo = PersonalInfoCollection[1], Role = RoleCollection[1]},
+            new User {Id=2, Login="boss",Password="123",PersonalInfo = PersonalInfoCollection[2], Role = RoleCollection[2]},
+            new User {Id=3, Login="user3",Password="123",PersonalInfo = PersonalInfoCollection[3], Role = RoleCollection[3]},
+            new User {Id=3, Login="user4",Password="123",PersonalInfo = PersonalInfoCollection[4], Role = RoleCollection[4]},
+            new User {Id=3, Login="user5",Password="123",PersonalInfo = PersonalInfoCollection[5], Role = RoleCollection[5]},
+            new User {Id=3, Login="user6",Password="123",PersonalInfo = PersonalInfoCollection[6], Role = RoleCollection[6]},
+            new User {Id=3, Login="user7",Password="123",PersonalInfo = PersonalInfoCollection[7], Role = RoleCollection[7]},
+            new User {Id=3, Login="user8",Password="123",PersonalInfo = PersonalInfoCollection[8], Role = RoleCollection[8]},
+            new User {Id=3, Login="user9",Password="123",PersonalInfo = PersonalInfoCollection[9], Role = RoleCollection[9]},
 
         };
         #endregion

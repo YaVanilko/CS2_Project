@@ -8,8 +8,8 @@ namespace Domain.Entities
 {
     public class User : BaseEntity
     {
-        public PersonalInfo UserInfo { get; set; }
-        public Role UserRole { get; set; }
+        public PersonalInfo PersonalInfo { get; set; }
+        public Role Role { get; set; }
         public string Login { get; set; }
         public string Password { get; set; }
     }

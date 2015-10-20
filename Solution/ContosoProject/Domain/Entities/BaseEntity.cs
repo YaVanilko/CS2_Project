@@ -17,7 +17,6 @@ namespace Domain.Entities
         {
             IsActive = true;
             EditTime = DateTime.Now;
-            //Operator = 
         }
     }
 }
