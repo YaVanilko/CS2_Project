@@ -28,377 +28,520 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.personalInfoBox = new System.Windows.Forms.GroupBox();
-            this.middleNameTextBox = new System.Windows.Forms.TextBox();
-            this.lastNameTextBox = new System.Windows.Forms.TextBox();
-            this.firstNameTextBox = new System.Windows.Forms.TextBox();
-            this.middleNameLabel = new System.Windows.Forms.Label();
-            this.lastNameLabel = new System.Windows.Forms.Label();
-            this.firstNameLabel = new System.Windows.Forms.Label();
-            this.contactsInfoBox = new System.Windows.Forms.GroupBox();
-            this.emailLabel = new System.Windows.Forms.Label();
-            this.addressTextBox = new System.Windows.Forms.TextBox();
-            this.cityTextBox = new System.Windows.Forms.TextBox();
-            this.telephoneLabel = new System.Windows.Forms.Label();
-            this.addressLabel = new System.Windows.Forms.Label();
-            this.cityLabel = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.orderListBox = new System.Windows.Forms.GroupBox();
-            this.ordersListDataGridView = new System.Windows.Forms.DataGridView();
-            this.OrderNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.OrderDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.OrderSum = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.OrderState = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.personalContactInfoTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.telephoneEmailtableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
-            this.personalInfoBox.SuspendLayout();
-            this.contactsInfoBox.SuspendLayout();
-            this.orderListBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ordersListDataGridView)).BeginInit();
-            this.personalContactInfoTableLayoutPanel.SuspendLayout();
-            this.telephoneEmailtableLayoutPanel.SuspendLayout();
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerDetailsViev));
+            this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.commentsListBoxControl = new DevExpress.XtraEditors.ListBoxControl();
+            this.saveNewButton = new DevExpress.XtraEditors.SimpleButton();
+            this.saveEditButton = new DevExpress.XtraEditors.SimpleButton();
+            this.commentMemoEdit = new DevExpress.XtraEditors.MemoEdit();
+            this.ordersGridControl = new DevExpress.XtraGrid.GridControl();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.orderNumberGridColumn = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.orderSumGridColumn = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.orderStatusGridColumn = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.emailTextEdit = new DevExpress.XtraEditors.TextEdit();
+            this.telephoneTextEdit = new DevExpress.XtraEditors.TextEdit();
+            this.addressTextEdit = new DevExpress.XtraEditors.TextEdit();
+            this.cityTextEdit = new DevExpress.XtraEditors.TextEdit();
+            this.middleNameTextEdit = new DevExpress.XtraEditors.TextEdit();
+            this.lastNameTextEdit = new DevExpress.XtraEditors.TextEdit();
+            this.firstNameTextEdit = new DevExpress.XtraEditors.TextEdit();
+            this.customerGroup = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.personalInfoGroup = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.firstNameItem = new DevExpress.XtraLayout.LayoutControlItem();
+            this.lastNameItem = new DevExpress.XtraLayout.LayoutControlItem();
+            this.middleNameItem = new DevExpress.XtraLayout.LayoutControlItem();
+            this.contactInfoGroup = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.cityItem = new DevExpress.XtraLayout.LayoutControlItem();
+            this.addressItem = new DevExpress.XtraLayout.LayoutControlItem();
+            this.telephoneItem = new DevExpress.XtraLayout.LayoutControlItem();
+            this.emailItem = new DevExpress.XtraLayout.LayoutControlItem();
+            this.ordersItem = new DevExpress.XtraLayout.LayoutControlItem();
+            this.commentItem = new DevExpress.XtraLayout.LayoutControlItem();
+            this.saveEditItem = new DevExpress.XtraLayout.LayoutControlItem();
+            this.saveNewItem = new DevExpress.XtraLayout.LayoutControlItem();
+            this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.listCommentsItem = new DevExpress.XtraLayout.LayoutControlItem();
+            this.orderBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
+            this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.commentsListBoxControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.commentMemoEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ordersGridControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emailTextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.telephoneTextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.addressTextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cityTextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.middleNameTextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lastNameTextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.firstNameTextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerGroup)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.personalInfoGroup)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.firstNameItem)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lastNameItem)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.middleNameItem)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contactInfoGroup)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cityItem)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.addressItem)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.telephoneItem)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emailItem)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ordersItem)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.commentItem)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.saveEditItem)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.saveNewItem)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listCommentsItem)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // personalInfoBox
+            // layoutControl1
             // 
-            this.personalInfoBox.Controls.Add(this.middleNameTextBox);
-            this.personalInfoBox.Controls.Add(this.lastNameTextBox);
-            this.personalInfoBox.Controls.Add(this.firstNameTextBox);
-            this.personalInfoBox.Controls.Add(this.middleNameLabel);
-            this.personalInfoBox.Controls.Add(this.lastNameLabel);
-            this.personalInfoBox.Controls.Add(this.firstNameLabel);
-            this.personalInfoBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.personalInfoBox.Location = new System.Drawing.Point(3, 3);
-            this.personalInfoBox.Name = "personalInfoBox";
-            this.personalInfoBox.Size = new System.Drawing.Size(314, 220);
-            this.personalInfoBox.TabIndex = 0;
-            this.personalInfoBox.TabStop = false;
-            this.personalInfoBox.Text = "Персональные данные заказчика";
+            this.layoutControl1.Controls.Add(this.commentsListBoxControl);
+            this.layoutControl1.Controls.Add(this.saveNewButton);
+            this.layoutControl1.Controls.Add(this.saveEditButton);
+            this.layoutControl1.Controls.Add(this.commentMemoEdit);
+            this.layoutControl1.Controls.Add(this.ordersGridControl);
+            this.layoutControl1.Controls.Add(this.emailTextEdit);
+            this.layoutControl1.Controls.Add(this.telephoneTextEdit);
+            this.layoutControl1.Controls.Add(this.addressTextEdit);
+            this.layoutControl1.Controls.Add(this.cityTextEdit);
+            this.layoutControl1.Controls.Add(this.middleNameTextEdit);
+            this.layoutControl1.Controls.Add(this.lastNameTextEdit);
+            this.layoutControl1.Controls.Add(this.firstNameTextEdit);
+            this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.layoutControl1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControl1.Name = "layoutControl1";
+            this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(626, 69, 631, 398);
+            this.layoutControl1.Root = this.customerGroup;
+            this.layoutControl1.Size = new System.Drawing.Size(684, 665);
+            this.layoutControl1.TabIndex = 0;
+            this.layoutControl1.Text = "layoutControl1";
             // 
-            // middleNameTextBox
+            // commentsListBoxControl
             // 
-            this.middleNameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.middleNameTextBox.Location = new System.Drawing.Point(15, 154);
-            this.middleNameTextBox.Name = "middleNameTextBox";
-            this.middleNameTextBox.Size = new System.Drawing.Size(285, 20);
-            this.middleNameTextBox.TabIndex = 5;
+            this.commentsListBoxControl.Location = new System.Drawing.Point(12, 423);
+            this.commentsListBoxControl.Name = "commentsListBoxControl";
+            this.commentsListBoxControl.Size = new System.Drawing.Size(660, 102);
+            this.commentsListBoxControl.StyleController = this.layoutControl1;
+            this.commentsListBoxControl.TabIndex = 15;
             // 
-            // lastNameTextBox
+            // saveNewButton
             // 
-            this.lastNameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lastNameTextBox.Location = new System.Drawing.Point(15, 100);
-            this.lastNameTextBox.Name = "lastNameTextBox";
-            this.lastNameTextBox.Size = new System.Drawing.Size(285, 20);
-            this.lastNameTextBox.TabIndex = 4;
+            this.saveNewButton.Image = ((System.Drawing.Image)(resources.GetObject("saveNewButton.Image")));
+            this.saveNewButton.Location = new System.Drawing.Point(185, 615);
+            this.saveNewButton.Name = "saveNewButton";
+            this.saveNewButton.Size = new System.Drawing.Size(159, 38);
+            this.saveNewButton.StyleController = this.layoutControl1;
+            this.saveNewButton.TabIndex = 14;
+            this.saveNewButton.Text = "Сохранить заказчика";
             // 
-            // firstNameTextBox
+            // saveEditButton
             // 
-            this.firstNameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.firstNameTextBox.Location = new System.Drawing.Point(15, 47);
-            this.firstNameTextBox.Name = "firstNameTextBox";
-            this.firstNameTextBox.Size = new System.Drawing.Size(284, 20);
-            this.firstNameTextBox.TabIndex = 3;
+            this.saveEditButton.Image = ((System.Drawing.Image)(resources.GetObject("saveEditButton.Image")));
+            this.saveEditButton.Location = new System.Drawing.Point(12, 615);
+            this.saveEditButton.Name = "saveEditButton";
+            this.saveEditButton.Size = new System.Drawing.Size(159, 38);
+            this.saveEditButton.StyleController = this.layoutControl1;
+            this.saveEditButton.TabIndex = 13;
+            this.saveEditButton.Text = "Сохранить изменения";
             // 
-            // middleNameLabel
+            // commentMemoEdit
             // 
-            this.middleNameLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.middleNameLabel.AutoSize = true;
-            this.middleNameLabel.Location = new System.Drawing.Point(12, 137);
-            this.middleNameLabel.Name = "middleNameLabel";
-            this.middleNameLabel.Size = new System.Drawing.Size(54, 13);
-            this.middleNameLabel.TabIndex = 2;
-            this.middleNameLabel.Text = "Отчество";
+            this.commentMemoEdit.Location = new System.Drawing.Point(12, 545);
+            this.commentMemoEdit.Name = "commentMemoEdit";
+            this.commentMemoEdit.Size = new System.Drawing.Size(660, 66);
+            this.commentMemoEdit.StyleController = this.layoutControl1;
+            this.commentMemoEdit.TabIndex = 12;
             // 
-            // lastNameLabel
+            // ordersGridControl
             // 
-            this.lastNameLabel.AutoSize = true;
-            this.lastNameLabel.Location = new System.Drawing.Point(12, 83);
-            this.lastNameLabel.Name = "lastNameLabel";
-            this.lastNameLabel.Size = new System.Drawing.Size(56, 13);
-            this.lastNameLabel.TabIndex = 1;
-            this.lastNameLabel.Text = "Фамилия";
+            this.ordersGridControl.DataSource = this.orderBindingSource;
+            this.ordersGridControl.Location = new System.Drawing.Point(12, 190);
+            this.ordersGridControl.MainView = this.gridView1;
+            this.ordersGridControl.Name = "ordersGridControl";
+            this.ordersGridControl.Size = new System.Drawing.Size(660, 213);
+            this.ordersGridControl.TabIndex = 11;
+            this.ordersGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
             // 
-            // firstNameLabel
+            // gridView1
             // 
-            this.firstNameLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.firstNameLabel.AutoSize = true;
-            this.firstNameLabel.Location = new System.Drawing.Point(12, 30);
-            this.firstNameLabel.Name = "firstNameLabel";
-            this.firstNameLabel.Size = new System.Drawing.Size(29, 13);
-            this.firstNameLabel.TabIndex = 0;
-            this.firstNameLabel.Text = "Имя";
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.orderNumberGridColumn,
+            this.orderSumGridColumn,
+            this.orderStatusGridColumn});
+            this.gridView1.GridControl = this.ordersGridControl;
+            this.gridView1.Name = "gridView1";
             // 
-            // contactsInfoBox
+            // orderNumberGridColumn
             // 
-            this.contactsInfoBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.contactsInfoBox.Controls.Add(this.telephoneEmailtableLayoutPanel);
-            this.contactsInfoBox.Controls.Add(this.addressTextBox);
-            this.contactsInfoBox.Controls.Add(this.cityTextBox);
-            this.contactsInfoBox.Controls.Add(this.addressLabel);
-            this.contactsInfoBox.Controls.Add(this.cityLabel);
-            this.contactsInfoBox.Location = new System.Drawing.Point(323, 3);
-            this.contactsInfoBox.Name = "contactsInfoBox";
-            this.contactsInfoBox.Size = new System.Drawing.Size(314, 220);
-            this.contactsInfoBox.TabIndex = 1;
-            this.contactsInfoBox.TabStop = false;
-            this.contactsInfoBox.Text = "Контактные данные заказчика";
+            this.orderNumberGridColumn.Caption = "Номер заказа";
+            this.orderNumberGridColumn.FieldName = "Id";
+            this.orderNumberGridColumn.Name = "orderNumberGridColumn";
+            this.orderNumberGridColumn.Visible = true;
+            this.orderNumberGridColumn.VisibleIndex = 0;
+            this.orderNumberGridColumn.Width = 133;
             // 
-            // emailLabel
+            // orderSumGridColumn
             // 
-            this.emailLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.emailLabel.AutoSize = true;
-            this.emailLabel.Location = new System.Drawing.Point(150, 0);
-            this.emailLabel.Name = "emailLabel";
-            this.emailLabel.Size = new System.Drawing.Size(133, 13);
-            this.emailLabel.TabIndex = 6;
-            this.emailLabel.Text = "E-Mail";
+            this.orderSumGridColumn.Caption = "Сумма заказа";
+            this.orderSumGridColumn.FieldName = "TotalCost";
+            this.orderSumGridColumn.Name = "orderSumGridColumn";
+            this.orderSumGridColumn.Visible = true;
+            this.orderSumGridColumn.VisibleIndex = 1;
+            this.orderSumGridColumn.Width = 248;
             // 
-            // addressTextBox
+            // orderStatusGridColumn
             // 
-            this.addressTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.addressTextBox.Location = new System.Drawing.Point(18, 99);
-            this.addressTextBox.Name = "addressTextBox";
-            this.addressTextBox.Size = new System.Drawing.Size(286, 20);
-            this.addressTextBox.TabIndex = 4;
+            this.orderStatusGridColumn.Caption = "Статус заказа";
+            this.orderStatusGridColumn.FieldName = "Status.Status";
+            this.orderStatusGridColumn.Name = "orderStatusGridColumn";
+            this.orderStatusGridColumn.Visible = true;
+            this.orderStatusGridColumn.VisibleIndex = 2;
+            this.orderStatusGridColumn.Width = 251;
             // 
-            // cityTextBox
+            // emailTextEdit
             // 
-            this.cityTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.cityTextBox.Location = new System.Drawing.Point(18, 46);
-            this.cityTextBox.Name = "cityTextBox";
-            this.cityTextBox.Size = new System.Drawing.Size(286, 20);
-            this.cityTextBox.TabIndex = 3;
+            this.emailTextEdit.Location = new System.Drawing.Point(509, 138);
+            this.emailTextEdit.Name = "emailTextEdit";
+            this.emailTextEdit.Properties.Mask.EditMask = "(\\w|[\\.\\-])+@(\\w|[\\-]+\\.)*(\\w|[\\-]){2,63}\\.[a-zA-Z]{2,4}";
+            this.emailTextEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
+            this.emailTextEdit.Properties.Mask.ShowPlaceHolders = false;
+            this.emailTextEdit.Size = new System.Drawing.Size(151, 20);
+            this.emailTextEdit.StyleController = this.layoutControl1;
+            this.emailTextEdit.TabIndex = 10;
             // 
-            // telephoneLabel
+            // telephoneTextEdit
             // 
-            this.telephoneLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.telephoneLabel.AutoSize = true;
-            this.telephoneLabel.Location = new System.Drawing.Point(3, 0);
-            this.telephoneLabel.Name = "telephoneLabel";
-            this.telephoneLabel.Size = new System.Drawing.Size(141, 13);
-            this.telephoneLabel.TabIndex = 2;
-            this.telephoneLabel.Text = "Телефон";
+            this.telephoneTextEdit.Location = new System.Drawing.Point(356, 138);
+            this.telephoneTextEdit.Name = "telephoneTextEdit";
+            this.telephoneTextEdit.Properties.Mask.EditMask = "(999) 000-00-00";
+            this.telephoneTextEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Simple;
+            this.telephoneTextEdit.Size = new System.Drawing.Size(149, 20);
+            this.telephoneTextEdit.StyleController = this.layoutControl1;
+            this.telephoneTextEdit.TabIndex = 9;
             // 
-            // addressLabel
+            // addressTextEdit
             // 
-            this.addressLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.addressLabel.AutoSize = true;
-            this.addressLabel.Location = new System.Drawing.Point(15, 83);
-            this.addressLabel.Name = "addressLabel";
-            this.addressLabel.Size = new System.Drawing.Size(38, 13);
-            this.addressLabel.TabIndex = 1;
-            this.addressLabel.Text = "Адрес";
+            this.addressTextEdit.Location = new System.Drawing.Point(356, 98);
+            this.addressTextEdit.Name = "addressTextEdit";
+            this.addressTextEdit.Size = new System.Drawing.Size(304, 20);
+            this.addressTextEdit.StyleController = this.layoutControl1;
+            this.addressTextEdit.TabIndex = 8;
             // 
-            // cityLabel
+            // cityTextEdit
             // 
-            this.cityLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.cityLabel.AutoSize = true;
-            this.cityLabel.Location = new System.Drawing.Point(15, 30);
-            this.cityLabel.Name = "cityLabel";
-            this.cityLabel.Size = new System.Drawing.Size(37, 13);
-            this.cityLabel.TabIndex = 0;
-            this.cityLabel.Text = "Город";
+            this.cityTextEdit.Location = new System.Drawing.Point(356, 58);
+            this.cityTextEdit.Name = "cityTextEdit";
+            this.cityTextEdit.Properties.Mask.EditMask = "\\p{L}+";
+            this.cityTextEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
+            this.cityTextEdit.Properties.Mask.ShowPlaceHolders = false;
+            this.cityTextEdit.Size = new System.Drawing.Size(304, 20);
+            this.cityTextEdit.StyleController = this.layoutControl1;
+            this.cityTextEdit.TabIndex = 7;
             // 
-            // label1
+            // middleNameTextEdit
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 408);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(69, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Коментарии";
+            this.middleNameTextEdit.Location = new System.Drawing.Point(24, 138);
+            this.middleNameTextEdit.Name = "middleNameTextEdit";
+            this.middleNameTextEdit.Properties.Mask.EditMask = "\\p{L}+";
+            this.middleNameTextEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
+            this.middleNameTextEdit.Properties.Mask.ShowPlaceHolders = false;
+            this.middleNameTextEdit.Size = new System.Drawing.Size(304, 20);
+            this.middleNameTextEdit.StyleController = this.layoutControl1;
+            this.middleNameTextEdit.TabIndex = 6;
             // 
-            // textBox1
+            // lastNameTextEdit
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(12, 433);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(646, 53);
-            this.textBox1.TabIndex = 3;
+            this.lastNameTextEdit.Location = new System.Drawing.Point(24, 98);
+            this.lastNameTextEdit.Name = "lastNameTextEdit";
+            this.lastNameTextEdit.Properties.Mask.EditMask = "\\p{L}+";
+            this.lastNameTextEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
+            this.lastNameTextEdit.Properties.Mask.ShowPlaceHolders = false;
+            this.lastNameTextEdit.Size = new System.Drawing.Size(304, 20);
+            this.lastNameTextEdit.StyleController = this.layoutControl1;
+            this.lastNameTextEdit.TabIndex = 5;
             // 
-            // orderListBox
+            // firstNameTextEdit
             // 
-            this.orderListBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.orderListBox.Controls.Add(this.ordersListDataGridView);
-            this.orderListBox.Location = new System.Drawing.Point(12, 245);
-            this.orderListBox.Name = "orderListBox";
-            this.orderListBox.Size = new System.Drawing.Size(641, 158);
-            this.orderListBox.TabIndex = 4;
-            this.orderListBox.TabStop = false;
-            this.orderListBox.Text = "Список заказов";
+            this.firstNameTextEdit.Location = new System.Drawing.Point(24, 58);
+            this.firstNameTextEdit.Name = "firstNameTextEdit";
+            this.firstNameTextEdit.Properties.Mask.EditMask = "\\p{L}+";
+            this.firstNameTextEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
+            this.firstNameTextEdit.Properties.Mask.ShowPlaceHolders = false;
+            this.firstNameTextEdit.Properties.Mask.UseMaskAsDisplayFormat = true;
+            this.firstNameTextEdit.Size = new System.Drawing.Size(304, 20);
+            this.firstNameTextEdit.StyleController = this.layoutControl1;
+            this.firstNameTextEdit.TabIndex = 4;
             // 
-            // ordersListDataGridView
+            // customerGroup
             // 
-            this.ordersListDataGridView.AllowUserToAddRows = false;
-            this.ordersListDataGridView.AllowUserToDeleteRows = false;
-            this.ordersListDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.ordersListDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.ordersListDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.ordersListDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ordersListDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.OrderNumber,
-            this.OrderDate,
-            this.OrderSum,
-            this.OrderState});
-            this.ordersListDataGridView.Location = new System.Drawing.Point(15, 30);
-            this.ordersListDataGridView.Name = "ordersListDataGridView";
-            this.ordersListDataGridView.ReadOnly = true;
-            this.ordersListDataGridView.Size = new System.Drawing.Size(615, 110);
-            this.ordersListDataGridView.TabIndex = 0;
+            this.customerGroup.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
+            this.customerGroup.GroupBordersVisible = false;
+            this.customerGroup.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.personalInfoGroup,
+            this.contactInfoGroup,
+            this.ordersItem,
+            this.commentItem,
+            this.saveEditItem,
+            this.saveNewItem,
+            this.emptySpaceItem1,
+            this.emptySpaceItem2,
+            this.listCommentsItem});
+            this.customerGroup.Location = new System.Drawing.Point(0, 0);
+            this.customerGroup.Name = "Root";
+            this.customerGroup.Size = new System.Drawing.Size(684, 665);
+            this.customerGroup.TextVisible = false;
             // 
-            // OrderNumber
+            // personalInfoGroup
             // 
-            this.OrderNumber.HeaderText = "Номер заказа";
-            this.OrderNumber.Name = "OrderNumber";
-            this.OrderNumber.ReadOnly = true;
+            this.personalInfoGroup.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.firstNameItem,
+            this.lastNameItem,
+            this.middleNameItem});
+            this.personalInfoGroup.Location = new System.Drawing.Point(0, 0);
+            this.personalInfoGroup.Name = "personalInfoGroup";
+            this.personalInfoGroup.Size = new System.Drawing.Size(332, 162);
+            this.personalInfoGroup.Text = "Персональные данные";
             // 
-            // OrderDate
+            // firstNameItem
             // 
-            this.OrderDate.HeaderText = "Дата заказа";
-            this.OrderDate.Name = "OrderDate";
-            this.OrderDate.ReadOnly = true;
+            this.firstNameItem.Control = this.firstNameTextEdit;
+            this.firstNameItem.Location = new System.Drawing.Point(0, 0);
+            this.firstNameItem.Name = "firstNameItem";
+            this.firstNameItem.Size = new System.Drawing.Size(308, 40);
+            this.firstNameItem.Text = "Имя";
+            this.firstNameItem.TextLocation = DevExpress.Utils.Locations.Top;
+            this.firstNameItem.TextSize = new System.Drawing.Size(105, 13);
             // 
-            // OrderSum
+            // lastNameItem
             // 
-            this.OrderSum.HeaderText = "Общая сумма заказа";
-            this.OrderSum.Name = "OrderSum";
-            this.OrderSum.ReadOnly = true;
+            this.lastNameItem.Control = this.lastNameTextEdit;
+            this.lastNameItem.Location = new System.Drawing.Point(0, 40);
+            this.lastNameItem.Name = "lastNameItem";
+            this.lastNameItem.Size = new System.Drawing.Size(308, 40);
+            this.lastNameItem.Text = "Фамилия";
+            this.lastNameItem.TextLocation = DevExpress.Utils.Locations.Top;
+            this.lastNameItem.TextSize = new System.Drawing.Size(105, 13);
             // 
-            // OrderState
+            // middleNameItem
             // 
-            this.OrderState.HeaderText = "Статус Заказа";
-            this.OrderState.Name = "OrderState";
-            this.OrderState.ReadOnly = true;
+            this.middleNameItem.Control = this.middleNameTextEdit;
+            this.middleNameItem.Location = new System.Drawing.Point(0, 80);
+            this.middleNameItem.Name = "middleNameItem";
+            this.middleNameItem.Size = new System.Drawing.Size(308, 40);
+            this.middleNameItem.Text = "Отчество";
+            this.middleNameItem.TextLocation = DevExpress.Utils.Locations.Top;
+            this.middleNameItem.TextSize = new System.Drawing.Size(105, 13);
             // 
-            // personalContactInfoTableLayoutPanel
+            // contactInfoGroup
             // 
-            this.personalContactInfoTableLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.personalContactInfoTableLayoutPanel.ColumnCount = 2;
-            this.personalContactInfoTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.personalContactInfoTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.personalContactInfoTableLayoutPanel.Controls.Add(this.personalInfoBox, 0, 0);
-            this.personalContactInfoTableLayoutPanel.Controls.Add(this.contactsInfoBox, 1, 0);
-            this.personalContactInfoTableLayoutPanel.Location = new System.Drawing.Point(13, 13);
-            this.personalContactInfoTableLayoutPanel.Name = "personalContactInfoTableLayoutPanel";
-            this.personalContactInfoTableLayoutPanel.RowCount = 1;
-            this.personalContactInfoTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.personalContactInfoTableLayoutPanel.Size = new System.Drawing.Size(640, 226);
-            this.personalContactInfoTableLayoutPanel.TabIndex = 5;
+            this.contactInfoGroup.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.cityItem,
+            this.addressItem,
+            this.telephoneItem,
+            this.emailItem});
+            this.contactInfoGroup.Location = new System.Drawing.Point(332, 0);
+            this.contactInfoGroup.Name = "contactInfoGroup";
+            this.contactInfoGroup.Size = new System.Drawing.Size(332, 162);
+            this.contactInfoGroup.Text = "Контактные данные";
             // 
-            // telephoneEmailtableLayoutPanel
+            // cityItem
             // 
-            this.telephoneEmailtableLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.telephoneEmailtableLayoutPanel.ColumnCount = 2;
-            this.telephoneEmailtableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.3986F));
-            this.telephoneEmailtableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 48.6014F));
-            this.telephoneEmailtableLayoutPanel.Controls.Add(this.telephoneLabel, 0, 0);
-            this.telephoneEmailtableLayoutPanel.Controls.Add(this.emailLabel, 1, 0);
-            this.telephoneEmailtableLayoutPanel.Controls.Add(this.maskedTextBox1, 1, 1);
-            this.telephoneEmailtableLayoutPanel.Controls.Add(this.textBox2, 0, 1);
-            this.telephoneEmailtableLayoutPanel.Location = new System.Drawing.Point(18, 137);
-            this.telephoneEmailtableLayoutPanel.Name = "telephoneEmailtableLayoutPanel";
-            this.telephoneEmailtableLayoutPanel.RowCount = 2;
-            this.telephoneEmailtableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.telephoneEmailtableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 49F));
-            this.telephoneEmailtableLayoutPanel.Size = new System.Drawing.Size(286, 63);
-            this.telephoneEmailtableLayoutPanel.TabIndex = 5;
+            this.cityItem.Control = this.cityTextEdit;
+            this.cityItem.Location = new System.Drawing.Point(0, 0);
+            this.cityItem.Name = "cityItem";
+            this.cityItem.Size = new System.Drawing.Size(308, 40);
+            this.cityItem.Text = "Город";
+            this.cityItem.TextLocation = DevExpress.Utils.Locations.Top;
+            this.cityItem.TextSize = new System.Drawing.Size(105, 13);
             // 
-            // textBox2
+            // addressItem
             // 
-            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox2.Location = new System.Drawing.Point(3, 17);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(141, 20);
-            this.textBox2.TabIndex = 7;
+            this.addressItem.Control = this.addressTextEdit;
+            this.addressItem.Location = new System.Drawing.Point(0, 40);
+            this.addressItem.Name = "addressItem";
+            this.addressItem.Size = new System.Drawing.Size(308, 40);
+            this.addressItem.Text = "Адрес";
+            this.addressItem.TextLocation = DevExpress.Utils.Locations.Top;
+            this.addressItem.TextSize = new System.Drawing.Size(105, 13);
             // 
-            // maskedTextBox1
+            // telephoneItem
             // 
-            this.maskedTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.maskedTextBox1.Location = new System.Drawing.Point(150, 17);
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(133, 20);
-            this.maskedTextBox1.TabIndex = 8;
+            this.telephoneItem.Control = this.telephoneTextEdit;
+            this.telephoneItem.Location = new System.Drawing.Point(0, 80);
+            this.telephoneItem.Name = "telephoneItem";
+            this.telephoneItem.Size = new System.Drawing.Size(153, 40);
+            this.telephoneItem.Text = "Телефон";
+            this.telephoneItem.TextLocation = DevExpress.Utils.Locations.Top;
+            this.telephoneItem.TextSize = new System.Drawing.Size(105, 13);
+            // 
+            // emailItem
+            // 
+            this.emailItem.Control = this.emailTextEdit;
+            this.emailItem.Location = new System.Drawing.Point(153, 80);
+            this.emailItem.Name = "emailItem";
+            this.emailItem.Size = new System.Drawing.Size(155, 40);
+            this.emailItem.Text = "E-mail";
+            this.emailItem.TextLocation = DevExpress.Utils.Locations.Top;
+            this.emailItem.TextSize = new System.Drawing.Size(105, 13);
+            // 
+            // ordersItem
+            // 
+            this.ordersItem.Control = this.ordersGridControl;
+            this.ordersItem.Location = new System.Drawing.Point(0, 162);
+            this.ordersItem.Name = "ordersItem";
+            this.ordersItem.Size = new System.Drawing.Size(664, 233);
+            this.ordersItem.Text = "Список заказов";
+            this.ordersItem.TextLocation = DevExpress.Utils.Locations.Top;
+            this.ordersItem.TextSize = new System.Drawing.Size(105, 13);
+            // 
+            // commentItem
+            // 
+            this.commentItem.Control = this.commentMemoEdit;
+            this.commentItem.Location = new System.Drawing.Point(0, 517);
+            this.commentItem.Name = "commentItem";
+            this.commentItem.Size = new System.Drawing.Size(664, 86);
+            this.commentItem.Text = "Ваш коментарий";
+            this.commentItem.TextLocation = DevExpress.Utils.Locations.Top;
+            this.commentItem.TextSize = new System.Drawing.Size(105, 13);
+            // 
+            // saveEditItem
+            // 
+            this.saveEditItem.Control = this.saveEditButton;
+            this.saveEditItem.Location = new System.Drawing.Point(0, 603);
+            this.saveEditItem.Name = "saveEditItem";
+            this.saveEditItem.Size = new System.Drawing.Size(163, 42);
+            this.saveEditItem.TextSize = new System.Drawing.Size(0, 0);
+            this.saveEditItem.TextVisible = false;
+            // 
+            // saveNewItem
+            // 
+            this.saveNewItem.Control = this.saveNewButton;
+            this.saveNewItem.Location = new System.Drawing.Point(173, 603);
+            this.saveNewItem.Name = "saveNewItem";
+            this.saveNewItem.Size = new System.Drawing.Size(163, 42);
+            this.saveNewItem.TextSize = new System.Drawing.Size(0, 0);
+            this.saveNewItem.TextVisible = false;
+            // 
+            // emptySpaceItem1
+            // 
+            this.emptySpaceItem1.AllowHotTrack = false;
+            this.emptySpaceItem1.Location = new System.Drawing.Point(336, 603);
+            this.emptySpaceItem1.Name = "emptySpaceItem1";
+            this.emptySpaceItem1.Size = new System.Drawing.Size(328, 42);
+            this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // emptySpaceItem2
+            // 
+            this.emptySpaceItem2.AllowHotTrack = false;
+            this.emptySpaceItem2.Location = new System.Drawing.Point(163, 603);
+            this.emptySpaceItem2.Name = "emptySpaceItem2";
+            this.emptySpaceItem2.Size = new System.Drawing.Size(10, 42);
+            this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // listCommentsItem
+            // 
+            this.listCommentsItem.Control = this.commentsListBoxControl;
+            this.listCommentsItem.Location = new System.Drawing.Point(0, 395);
+            this.listCommentsItem.Name = "listCommentsItem";
+            this.listCommentsItem.Size = new System.Drawing.Size(664, 122);
+            this.listCommentsItem.Text = "Список коментариев";
+            this.listCommentsItem.TextLocation = DevExpress.Utils.Locations.Top;
+            this.listCommentsItem.TextSize = new System.Drawing.Size(105, 13);
+            // 
+            // orderBindingSource
+            // 
+            this.orderBindingSource.DataSource = typeof(Domain.Entities.Order);
             // 
             // CustomerDetailsViev
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(674, 511);
-            this.Controls.Add(this.personalContactInfoTableLayoutPanel);
-            this.Controls.Add(this.orderListBox);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(684, 665);
+            this.Controls.Add(this.layoutControl1);
             this.MinimumSize = new System.Drawing.Size(690, 550);
             this.Name = "CustomerDetailsViev";
             this.Text = "Заказчик";
-            this.personalInfoBox.ResumeLayout(false);
-            this.personalInfoBox.PerformLayout();
-            this.contactsInfoBox.ResumeLayout(false);
-            this.contactsInfoBox.PerformLayout();
-            this.orderListBox.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.ordersListDataGridView)).EndInit();
-            this.personalContactInfoTableLayoutPanel.ResumeLayout(false);
-            this.telephoneEmailtableLayoutPanel.ResumeLayout(false);
-            this.telephoneEmailtableLayoutPanel.PerformLayout();
+            this.Load += new System.EventHandler(this.CustomerDetailsViev_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
+            this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.commentsListBoxControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.commentMemoEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ordersGridControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emailTextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.telephoneTextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.addressTextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cityTextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.middleNameTextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lastNameTextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.firstNameTextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerGroup)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.personalInfoGroup)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.firstNameItem)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lastNameItem)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.middleNameItem)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contactInfoGroup)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cityItem)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.addressItem)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.telephoneItem)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emailItem)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ordersItem)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.commentItem)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.saveEditItem)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.saveNewItem)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listCommentsItem)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.GroupBox personalInfoBox;
-        private System.Windows.Forms.TextBox middleNameTextBox;
-        private System.Windows.Forms.TextBox lastNameTextBox;
-        private System.Windows.Forms.TextBox firstNameTextBox;
-        private System.Windows.Forms.Label middleNameLabel;
-        private System.Windows.Forms.Label lastNameLabel;
-        private System.Windows.Forms.Label firstNameLabel;
-        private System.Windows.Forms.GroupBox contactsInfoBox;
-        private System.Windows.Forms.Label emailLabel;
-        private System.Windows.Forms.TextBox addressTextBox;
-        private System.Windows.Forms.TextBox cityTextBox;
-        private System.Windows.Forms.Label telephoneLabel;
-        private System.Windows.Forms.Label addressLabel;
-        private System.Windows.Forms.Label cityLabel;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.GroupBox orderListBox;
-        private System.Windows.Forms.DataGridView ordersListDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn OrderNumber;
-        private System.Windows.Forms.DataGridViewTextBoxColumn OrderDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn OrderSum;
-        private System.Windows.Forms.DataGridViewTextBoxColumn OrderState;
-        private System.Windows.Forms.TableLayoutPanel personalContactInfoTableLayoutPanel;
-        private System.Windows.Forms.TableLayoutPanel telephoneEmailtableLayoutPanel;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private DevExpress.XtraLayout.LayoutControl layoutControl1;
+        private DevExpress.XtraLayout.LayoutControlGroup customerGroup;
+        private DevExpress.XtraGrid.GridControl ordersGridControl;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.Columns.GridColumn orderNumberGridColumn;
+        private DevExpress.XtraGrid.Columns.GridColumn orderSumGridColumn;
+        private DevExpress.XtraGrid.Columns.GridColumn orderStatusGridColumn;
+        private DevExpress.XtraEditors.TextEdit emailTextEdit;
+        private DevExpress.XtraEditors.TextEdit telephoneTextEdit;
+        private DevExpress.XtraEditors.TextEdit addressTextEdit;
+        private DevExpress.XtraEditors.TextEdit cityTextEdit;
+        private DevExpress.XtraEditors.TextEdit middleNameTextEdit;
+        private DevExpress.XtraEditors.TextEdit lastNameTextEdit;
+        private DevExpress.XtraEditors.TextEdit firstNameTextEdit;
+        private DevExpress.XtraLayout.LayoutControlGroup personalInfoGroup;
+        private DevExpress.XtraLayout.LayoutControlItem firstNameItem;
+        private DevExpress.XtraLayout.LayoutControlItem lastNameItem;
+        private DevExpress.XtraLayout.LayoutControlItem middleNameItem;
+        private DevExpress.XtraLayout.LayoutControlGroup contactInfoGroup;
+        private DevExpress.XtraLayout.LayoutControlItem cityItem;
+        private DevExpress.XtraLayout.LayoutControlItem addressItem;
+        private DevExpress.XtraLayout.LayoutControlItem telephoneItem;
+        private DevExpress.XtraLayout.LayoutControlItem emailItem;
+        private DevExpress.XtraLayout.LayoutControlItem ordersItem;
+        private DevExpress.XtraEditors.SimpleButton saveNewButton;
+        private DevExpress.XtraEditors.SimpleButton saveEditButton;
+        private DevExpress.XtraEditors.MemoEdit commentMemoEdit;
+        private DevExpress.XtraLayout.LayoutControlItem commentItem;
+        private DevExpress.XtraLayout.LayoutControlItem saveEditItem;
+        private DevExpress.XtraLayout.LayoutControlItem saveNewItem;
+        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
+        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem2;
+        private DevExpress.XtraEditors.ListBoxControl commentsListBoxControl;
+        private DevExpress.XtraLayout.LayoutControlItem listCommentsItem;
+        private System.Windows.Forms.BindingSource orderBindingSource;
+
+
+
     }
 }

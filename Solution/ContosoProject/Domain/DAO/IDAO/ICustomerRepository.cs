@@ -9,5 +9,6 @@ namespace Domain.DAO
 {
     public interface ICustomerRepository : IRepository<Customer>
     {
+        ICollection<Customer> GetCustomersByCity(string city);
     }
 }
