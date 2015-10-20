@@ -284,10 +284,8 @@ namespace Data.DumbData
             {
                 Id = 0,
                 PersonalInfo = PersonalInfoCollection[0],
-                Contacts = ContactInfoCollection[0], 
-                OrdersCount = 2,
-                TotalOrdersCoast = 460.90,
-                //Orders = new List<Order>(){OrderCollection[0]},
+                Contacts = ContactInfoCollection[0],
+                Orders = new List<Order>(),
                 Comments = new List<Comment>(){CommentCollection.Where(x => x.Type == CommentType.Customer).ToList()[0]}
             },
             new Customer()
@@ -295,7 +293,6 @@ namespace Data.DumbData
                 Id = 1,
                 PersonalInfo = PersonalInfoCollection[1],
                 Contacts = ContactInfoCollection[1],
-                //Orders = new List<Order>(){OrderCollection[1]},
                 Comments = new List<Comment>(){CommentCollection.Where(x => x.Type == CommentType.Customer).ToList()[0]}
             },
             new Customer()
@@ -303,7 +300,6 @@ namespace Data.DumbData
                 Id = 2,
                 PersonalInfo = PersonalInfoCollection[2],
                 Contacts = ContactInfoCollection[2],
-                //Orders = new List<Order>(){OrderCollection[2]},
                 Comments = new List<Comment>(){CommentCollection.Where(x => x.Type == CommentType.Customer).ToList()[1]}
             },
             new Customer()
@@ -311,7 +307,6 @@ namespace Data.DumbData
                 Id = 3,
                 PersonalInfo = PersonalInfoCollection[3],
                 Contacts = ContactInfoCollection[3],
-                //Orders = new List<Order>(){OrderCollection[2]},
                 Comments = new List<Comment>(){CommentCollection.Where(x => x.Type == CommentType.Customer).ToList()[0]}
             },
             new Customer()
@@ -319,7 +314,6 @@ namespace Data.DumbData
                 Id = 9,
                 PersonalInfo = PersonalInfoCollection[4],
                 Contacts = ContactInfoCollection[4],
-                //Orders = new List<Order>(){OrderCollection[4]},
                 Comments = new List<Comment>(){CommentCollection.Where(x => x.Type == CommentType.Customer).ToList()[1]}
             },
             new Customer()
@@ -327,7 +321,6 @@ namespace Data.DumbData
                 Id = 4,
                 PersonalInfo = PersonalInfoCollection[5],
                 Contacts = ContactInfoCollection[5],
-                //Orders = new List<Order>(){OrderCollection[5]},
                 Comments = new List<Comment>(){CommentCollection.Where(x => x.Type == CommentType.Customer).ToList()[1]}
             },
             new Customer()
@@ -335,7 +328,6 @@ namespace Data.DumbData
                 Id = 5,
                 PersonalInfo = PersonalInfoCollection[6],
                 Contacts = ContactInfoCollection[6],
-                //Orders = new List<Order>(){OrderCollection[6]},
                 Comments = new List<Comment>(){CommentCollection.Where(x => x.Type == CommentType.Customer).ToList()[0]}
             },
             new Customer()
@@ -343,7 +335,6 @@ namespace Data.DumbData
                 Id = 6,
                 PersonalInfo = PersonalInfoCollection[7],
                 Contacts = ContactInfoCollection[7],
-                //Orders = new List<Order>(){OrderCollection[7]},
                 Comments = new List<Comment>(){CommentCollection.Where(x => x.Type == CommentType.Customer).ToList()[1]}
             },
             new Customer()
@@ -351,7 +342,6 @@ namespace Data.DumbData
                 Id = 7,
                 PersonalInfo = PersonalInfoCollection[8],
                 Contacts = ContactInfoCollection[8],
-                //Orders = new List<Order>(){OrderCollection[8]},
                 Comments = new List<Comment>(){CommentCollection.Where(x => x.Type == CommentType.Customer).ToList()[0]}
             },
             new Customer()
@@ -359,7 +349,6 @@ namespace Data.DumbData
                 Id = 8,
                 PersonalInfo = PersonalInfoCollection[9],
                 Contacts = ContactInfoCollection[9],
-                //Orders = new List<Order>(){OrderCollection[9]},
                 Comments = new List<Comment>(){CommentCollection.Where(x => x.Type == CommentType.Customer).ToList()[1]}
             }
         };
@@ -368,32 +357,32 @@ namespace Data.DumbData
         #region Goods
         public static List<Goods> goodsCollection = new List<Goods>()
         {
-            new Goods(){Id = 0, Name="g1", Category = categoryCollection[0]},
-            new Goods(){Id = 1, Name="g2",Category = categoryCollection[1]},
-            new Goods(){Id = 2, Name="g3",Category = categoryCollection[2]},
-            new Goods(){Id = 3, Name="g4",Category = categoryCollection[3]},
-            new Goods(){Id = 4, Name="g5",Category = categoryCollection[4]},
-            new Goods(){Id = 5, Name="g6",Category = categoryCollection[5]},
-            new Goods(){Id = 6, Name="g7",Category = categoryCollection[6]},
-            new Goods(){Id = 7, Name="g8",Category = categoryCollection[7]},
-            new Goods(){Id = 8, Name="g9",Category = categoryCollection[8]},
-            new Goods(){Id = 9, Name="g10",Category = categoryCollection[9]},
+            new Goods(){Id = 0, Name="Стул Комфорт", Category = categoryCollection[0]},
+            new Goods(){Id = 1, Name="Стол Венеция",Category = categoryCollection[1]},
+            new Goods(){Id = 2, Name="Шкаф Марк",Category = categoryCollection[2]},
+            new Goods(){Id = 3, Name="Диван Тина с кушеткой",Category = categoryCollection[3]},
+            new Goods(){Id = 4, Name="Кровать Соната",Category = categoryCollection[4]},
+            new Goods(){Id = 5, Name="Полка Юниор",Category = categoryCollection[5]},
+            new Goods(){Id = 6, Name="Кухня Модерн",Category = categoryCollection[6]},
+            new Goods(){Id = 7, Name="Ручка дверная Стерх",Category = categoryCollection[7]},
+            new Goods(){Id = 8, Name="Комод Ришелье",Category = categoryCollection[8]},
+            new Goods(){Id = 9, Name="Тумба Стандарт прикроватная",Category = categoryCollection[9]},
         };
         #endregion
 
         #region GoodsRow
         public static List<GoodsRow> GoodsRowCollection = new List<GoodsRow>() 
         { 
-            new GoodsRow{Id = 0,Goods = goodsCollection[0], Count=1, Price=1},
-            new GoodsRow{Id = 1,Goods = goodsCollection[1], Count=2, Price=2},
-            new GoodsRow{Id = 2,Goods = goodsCollection[2], Count=3, Price=3},
-            new GoodsRow{Id = 3,Goods = goodsCollection[3], Count=4, Price=4},
-            new GoodsRow{Id = 4,Goods = goodsCollection[4], Count=5, Price=5},
-            new GoodsRow{Id = 5,Goods = goodsCollection[5], Count=6, Price=6},
-            new GoodsRow{Id = 6,Goods = goodsCollection[6], Count=7, Price=7},
-            new GoodsRow{Id = 7,Goods = goodsCollection[7], Count=8, Price=8},
-            new GoodsRow{Id = 8,Goods = goodsCollection[8], Count=9, Price=9},
-            new GoodsRow{Id = 9,Goods = goodsCollection[9], Count=10, Price=10},
+            new GoodsRow{Id = 0,Goods = goodsCollection[0], Count=2, Price=400, TotalPrice=800},
+            new GoodsRow{Id = 1,Goods = goodsCollection[1], Count=1, Price=2000, TotalPrice=2000},
+            new GoodsRow{Id = 2,Goods = goodsCollection[2], Count=1, Price=1400, TotalPrice=1400},
+            new GoodsRow{Id = 3,Goods = goodsCollection[3], Count=1, Price=12400, TotalPrice=12400},
+            new GoodsRow{Id = 4,Goods = goodsCollection[4], Count=1, Price=6059.16, TotalPrice=6059.16},
+            new GoodsRow{Id = 5,Goods = goodsCollection[5], Count=2, Price=605, TotalPrice=1210},
+            new GoodsRow{Id = 6,Goods = goodsCollection[6], Count=1, Price=7000.80},
+            new GoodsRow{Id = 7,Goods = goodsCollection[7], Count=4, Price=200, TotalPrice=800},
+            new GoodsRow{Id = 8,Goods = goodsCollection[8], Count=1, Price=1200, TotalPrice=1200},
+            new GoodsRow{Id = 9,Goods = goodsCollection[9], Count=2, Price=500, TotalPrice=1000},
         };
         #endregion
 
@@ -429,5 +418,30 @@ namespace Data.DumbData
 
         };
         #endregion
+
+        public Storage()
+        {
+            CustomerCollection[0].Orders.Add(OrderCollection[0]);
+            CustomerCollection[1].Orders.Add(OrderCollection[1]);
+            CustomerCollection[2].Orders.Add(OrderCollection[2]);
+            CustomerCollection[3].Orders.Add(OrderCollection[3]);
+            CustomerCollection[4].Orders.Add(OrderCollection[4]);
+            CustomerCollection[5].Orders.Add(OrderCollection[5]);
+            CustomerCollection[6].Orders.Add(OrderCollection[6]);
+            CustomerCollection[7].Orders.Add(OrderCollection[7]);
+            CustomerCollection[8].Orders.Add(OrderCollection[8]);
+            CustomerCollection[9].Orders.Add(OrderCollection[9]);
+
+            OrderCollection[0].goodsList.Add(GoodsRowCollection[0]);
+            OrderCollection[1].goodsList.Add(GoodsRowCollection[1]);
+            OrderCollection[2].goodsList.Add(GoodsRowCollection[2]);
+            OrderCollection[3].goodsList.Add(GoodsRowCollection[3]);
+            OrderCollection[4].goodsList.Add(GoodsRowCollection[4]);
+            OrderCollection[5].goodsList.Add(GoodsRowCollection[5]);
+            OrderCollection[6].goodsList.Add(GoodsRowCollection[6]);
+            OrderCollection[7].goodsList.Add(GoodsRowCollection[7]);
+            OrderCollection[8].goodsList.Add(GoodsRowCollection[8]);
+            OrderCollection[9].goodsList.Add(GoodsRowCollection[9]);
+        }
     }
 }
