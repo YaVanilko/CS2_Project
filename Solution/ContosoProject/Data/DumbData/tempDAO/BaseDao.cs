@@ -248,19 +248,129 @@ namespace Data.DumbData
             return resultEntity;
         }
 
-        public IEnumerable<T> GetAll()
+        public IQueryable<T> GetAll()
         {
-            List<PersonalInfo> newPersonStor = new List<PersonalInfo>();
+            IEnumerable<T> allItems = new List<T>();
             if (typeof(T) == typeof(PersonalInfo))
             {
+                List<PersonalInfo> newPersonStor = new List<PersonalInfo>();
                 
                 foreach (var item in Storage.PersonalInfoCollection)
                 {
                     newPersonStor.Add(item);
                 }
-            }
 
-            return (IEnumerable<T>)newPersonStor;
+                allItems = (IEnumerable<T>)newPersonStor;
+            }
+            else if (typeof(T) == typeof(ContactInfo))
+            {
+                List<ContactInfo> newContactInfoStor = new List<ContactInfo>();
+
+                foreach (var item in Storage.ContactInfoCollection)
+                {
+                    newContactInfoStor.Add(item);
+                }
+                allItems = (IEnumerable<T>)newContactInfoStor;               
+            }
+            else if (typeof(T) == typeof(Customer))
+            {
+                List<Customer> newCustomersStor = new List<Customer>();
+
+                foreach (var item in Storage.CustomerCollection)
+                {
+                    newCustomersStor.Add(item);
+                }
+                allItems = (IEnumerable<T>)newCustomersStor;
+            }
+            else if (typeof(T) == typeof(ProductCategory))
+            {
+                List<ProductCategory> newCategoryStor = new List<ProductCategory>();
+
+                foreach (var item in Storage.categoryCollection)
+                {
+                    newCategoryStor.Add(item);
+                }
+                allItems = (IEnumerable<T>)newCategoryStor;
+            }
+            else if (typeof(T) == typeof(User))
+            {
+                List<User> newUsersStor = new List<User>();
+
+                foreach (var item in Storage.UserCollection)
+                {
+                    newUsersStor.Add(item);
+                }
+                allItems = (IEnumerable<T>)newUsersStor;
+            }
+            else if (typeof(T) == typeof(Order))
+            {
+                List<Order> newOrdersStor = new List<Order>();
+                foreach (var item in Storage.OrderCollection)
+                {
+                    newOrdersStor.Add(item);
+                }
+                allItems = (IEnumerable<T>)newOrdersStor;
+            }
+            else if (typeof(T) == typeof(Goods))
+            {
+                List<Goods> newGoodsStor = new List<Goods>();
+                foreach (var item in Storage.goodsCollection)
+                {
+                    newGoodsStor.Add(item);
+                }
+                allItems = (IEnumerable<T>)newGoodsStor;
+            }
+            else if (typeof(T) == typeof(GoodsRow))
+            {
+                List<GoodsRow> newGoodsRowStor = new List<GoodsRow>();
+                foreach (var item in Storage.GoodsRowCollection)
+                {
+                    newGoodsRowStor.Add(item);
+                }
+                allItems = (IEnumerable<T>)newGoodsRowStor;
+            }
+            else if (typeof(T) == typeof(Role))
+            {
+                List<Role> newRolesStor = new List<Role>();
+                foreach (var item in Storage.RoleCollection)
+                {
+                    newRolesStor.Add(item);
+                }
+                allItems = (IEnumerable<T>)newRolesStor;
+            }
+            else if (typeof(T) == typeof(Permission))
+            {
+                List<Permission> newPermissionsStor = new List<Permission>();
+                foreach (var item in Storage.PermissionCollection)
+                {
+                    newPermissionsStor.Add(item);
+                }
+                allItems = (IEnumerable<T>)newPermissionsStor;
+            }
+            else if (typeof(T) == typeof(Comment))
+            {
+                List<Comment> newCommentsStor = new List<Comment>();
+                foreach (var item in Storage.CommentCollection)
+                {
+                    newCommentsStor.Add(item);
+                }
+                allItems = (IEnumerable<T>)newCommentsStor;
+            }
+            else if (typeof(T) == typeof(OrderStatus))
+            {
+                List<OrderStatus> newOrderStatusesStor = new List<OrderStatus>();
+                foreach (var item in Storage.OrderStatusCollection)
+                {
+                    newOrderStatusesStor.Add(item);
+                }
+                allItems = (IEnumerable<T>)newOrderStatusesStor;
+            }
+            return allItems.AsQueryable<T>();
+        }
+
+        public IQueryable<T> FindBy(System.Linq.Expressions.Expression<Func<T, bool>> predicate)
+        {
+            throw new NotImplementedException();
         }
     }
 }
