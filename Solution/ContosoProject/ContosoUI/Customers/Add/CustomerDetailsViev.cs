@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace ContosoUI.Customers.Add
 {
-    public partial class CustomerDetailsViev : Form
+    public partial class CustomerDetailsViev : DevExpress.XtraEditors.XtraForm
     {
         private readonly CustomerDetailsPresenter presenter;
         public CustomerDetailsViev()
