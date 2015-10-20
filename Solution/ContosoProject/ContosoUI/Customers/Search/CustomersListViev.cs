@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace ContosoUI.Customers.Search
 {
-    public partial class CustomersListView : Form
+    public partial class CustomersListView : DevExpress.XtraEditors.XtraForm
     {
         CustomersListPresenter presenter;
         public CustomersListView()
@@ -25,16 +25,9 @@ namespace ContosoUI.Customers.Search
             filterCityComboBoxEdit.Properties.Items.Clear();
             filterCityComboBoxEdit.Properties.Items.AddRange(presenter.Cities.ToArray());
             filterCityComboBoxEdit.Properties.Items.Add("Все города");
-            customersGridControl.DataSource = presenter.Customers;
+            customersGridControl.DataSource = presenter.viewModel;
             customersGridControl.RefreshDataSource();
         }
-
-        private void searchCustomersButton_Click(object sender, EventArgs e)
-        {
-            presenter.SearchCustomers(filterCityComboBoxEdit.Text);
-            Refresh();
-        }
-
         private void CustomersListView_Load(object sender, EventArgs e)
         {
             Refresh();
@@ -55,6 +48,12 @@ namespace ContosoUI.Customers.Search
             GridView view = (GridView)sender;
             Point pt = view.GridControl.PointToClient(Control.MousePosition);
             DoRowDoubleClick(view, pt);
+        }
+
+        private void searchButtonItem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            presenter.SearchCustomers(filterCityComboBoxEdit.Text);
+            Refresh();
         }
 
     }

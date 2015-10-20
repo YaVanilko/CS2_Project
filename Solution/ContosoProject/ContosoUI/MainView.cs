@@ -8,6 +8,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using ContosoUI.Customers.Search;
 
 namespace ContosoUI
 {
@@ -25,7 +26,7 @@ namespace ContosoUI
 
         private void customersMenuBtn_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            var form = new Test.CustomerListView();
+            var form = new CustomersListView();
             form.MdiParent = this;
             form.Show();
         }

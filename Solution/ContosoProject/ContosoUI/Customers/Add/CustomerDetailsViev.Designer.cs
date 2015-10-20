@@ -29,13 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerDetailsViev));
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.commentsListBoxControl = new DevExpress.XtraEditors.ListBoxControl();
-            this.saveNewButton = new DevExpress.XtraEditors.SimpleButton();
-            this.saveEditButton = new DevExpress.XtraEditors.SimpleButton();
             this.commentMemoEdit = new DevExpress.XtraEditors.MemoEdit();
             this.ordersGridControl = new DevExpress.XtraGrid.GridControl();
+            this.orderBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.orderNumberGridColumn = new DevExpress.XtraGrid.Columns.GridColumn();
             this.orderSumGridColumn = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -59,17 +57,18 @@
             this.emailItem = new DevExpress.XtraLayout.LayoutControlItem();
             this.ordersItem = new DevExpress.XtraLayout.LayoutControlItem();
             this.commentItem = new DevExpress.XtraLayout.LayoutControlItem();
-            this.saveEditItem = new DevExpress.XtraLayout.LayoutControlItem();
-            this.saveNewItem = new DevExpress.XtraLayout.LayoutControlItem();
-            this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.listCommentsItem = new DevExpress.XtraLayout.LayoutControlItem();
-            this.orderBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
+            this.saveEditButtonItem = new DevExpress.XtraBars.BarButtonItem();
+            this.saveAndNewButtonItem = new DevExpress.XtraBars.BarButtonItem();
+            this.mainRibbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.saveOrEditribbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.commentsListBoxControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.commentMemoEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordersGridControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emailTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.telephoneTextEdit.Properties)).BeginInit();
@@ -90,19 +89,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.emailItem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordersItem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.commentItem)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.saveEditItem)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.saveNewItem)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listCommentsItem)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
             // 
             this.layoutControl1.Controls.Add(this.commentsListBoxControl);
-            this.layoutControl1.Controls.Add(this.saveNewButton);
-            this.layoutControl1.Controls.Add(this.saveEditButton);
             this.layoutControl1.Controls.Add(this.commentMemoEdit);
             this.layoutControl1.Controls.Add(this.ordersGridControl);
             this.layoutControl1.Controls.Add(this.emailTextEdit);
@@ -112,48 +105,27 @@
             this.layoutControl1.Controls.Add(this.middleNameTextEdit);
             this.layoutControl1.Controls.Add(this.lastNameTextEdit);
             this.layoutControl1.Controls.Add(this.firstNameTextEdit);
-            this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.layoutControl1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControl1.Location = new System.Drawing.Point(-2, 135);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(626, 69, 631, 398);
             this.layoutControl1.Root = this.customerGroup;
-            this.layoutControl1.Size = new System.Drawing.Size(684, 665);
+            this.layoutControl1.Size = new System.Drawing.Size(690, 530);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
             // commentsListBoxControl
             // 
-            this.commentsListBoxControl.Location = new System.Drawing.Point(12, 423);
+            this.commentsListBoxControl.Location = new System.Drawing.Point(12, 367);
             this.commentsListBoxControl.Name = "commentsListBoxControl";
-            this.commentsListBoxControl.Size = new System.Drawing.Size(660, 102);
+            this.commentsListBoxControl.Size = new System.Drawing.Size(666, 64);
             this.commentsListBoxControl.StyleController = this.layoutControl1;
             this.commentsListBoxControl.TabIndex = 15;
             // 
-            // saveNewButton
-            // 
-            this.saveNewButton.Image = ((System.Drawing.Image)(resources.GetObject("saveNewButton.Image")));
-            this.saveNewButton.Location = new System.Drawing.Point(185, 615);
-            this.saveNewButton.Name = "saveNewButton";
-            this.saveNewButton.Size = new System.Drawing.Size(159, 38);
-            this.saveNewButton.StyleController = this.layoutControl1;
-            this.saveNewButton.TabIndex = 14;
-            this.saveNewButton.Text = "Сохранить заказчика";
-            // 
-            // saveEditButton
-            // 
-            this.saveEditButton.Image = ((System.Drawing.Image)(resources.GetObject("saveEditButton.Image")));
-            this.saveEditButton.Location = new System.Drawing.Point(12, 615);
-            this.saveEditButton.Name = "saveEditButton";
-            this.saveEditButton.Size = new System.Drawing.Size(159, 38);
-            this.saveEditButton.StyleController = this.layoutControl1;
-            this.saveEditButton.TabIndex = 13;
-            this.saveEditButton.Text = "Сохранить изменения";
-            // 
             // commentMemoEdit
             // 
-            this.commentMemoEdit.Location = new System.Drawing.Point(12, 545);
+            this.commentMemoEdit.Location = new System.Drawing.Point(12, 451);
             this.commentMemoEdit.Name = "commentMemoEdit";
-            this.commentMemoEdit.Size = new System.Drawing.Size(660, 66);
+            this.commentMemoEdit.Size = new System.Drawing.Size(666, 67);
             this.commentMemoEdit.StyleController = this.layoutControl1;
             this.commentMemoEdit.TabIndex = 12;
             // 
@@ -163,10 +135,14 @@
             this.ordersGridControl.Location = new System.Drawing.Point(12, 190);
             this.ordersGridControl.MainView = this.gridView1;
             this.ordersGridControl.Name = "ordersGridControl";
-            this.ordersGridControl.Size = new System.Drawing.Size(660, 213);
+            this.ordersGridControl.Size = new System.Drawing.Size(666, 157);
             this.ordersGridControl.TabIndex = 11;
             this.ordersGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            // 
+            // orderBindingSource
+            // 
+            this.orderBindingSource.DataSource = typeof(Domain.Entities.Order);
             // 
             // gridView1
             // 
@@ -206,41 +182,41 @@
             // 
             // emailTextEdit
             // 
-            this.emailTextEdit.Location = new System.Drawing.Point(509, 138);
+            this.emailTextEdit.Location = new System.Drawing.Point(513, 138);
             this.emailTextEdit.Name = "emailTextEdit";
             this.emailTextEdit.Properties.Mask.EditMask = "(\\w|[\\.\\-])+@(\\w|[\\-]+\\.)*(\\w|[\\-]){2,63}\\.[a-zA-Z]{2,4}";
             this.emailTextEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.emailTextEdit.Properties.Mask.ShowPlaceHolders = false;
-            this.emailTextEdit.Size = new System.Drawing.Size(151, 20);
+            this.emailTextEdit.Size = new System.Drawing.Size(153, 20);
             this.emailTextEdit.StyleController = this.layoutControl1;
             this.emailTextEdit.TabIndex = 10;
             // 
             // telephoneTextEdit
             // 
-            this.telephoneTextEdit.Location = new System.Drawing.Point(356, 138);
+            this.telephoneTextEdit.Location = new System.Drawing.Point(359, 138);
             this.telephoneTextEdit.Name = "telephoneTextEdit";
             this.telephoneTextEdit.Properties.Mask.EditMask = "(999) 000-00-00";
             this.telephoneTextEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Simple;
-            this.telephoneTextEdit.Size = new System.Drawing.Size(149, 20);
+            this.telephoneTextEdit.Size = new System.Drawing.Size(150, 20);
             this.telephoneTextEdit.StyleController = this.layoutControl1;
             this.telephoneTextEdit.TabIndex = 9;
             // 
             // addressTextEdit
             // 
-            this.addressTextEdit.Location = new System.Drawing.Point(356, 98);
+            this.addressTextEdit.Location = new System.Drawing.Point(359, 98);
             this.addressTextEdit.Name = "addressTextEdit";
-            this.addressTextEdit.Size = new System.Drawing.Size(304, 20);
+            this.addressTextEdit.Size = new System.Drawing.Size(307, 20);
             this.addressTextEdit.StyleController = this.layoutControl1;
             this.addressTextEdit.TabIndex = 8;
             // 
             // cityTextEdit
             // 
-            this.cityTextEdit.Location = new System.Drawing.Point(356, 58);
+            this.cityTextEdit.Location = new System.Drawing.Point(359, 58);
             this.cityTextEdit.Name = "cityTextEdit";
             this.cityTextEdit.Properties.Mask.EditMask = "\\p{L}+";
             this.cityTextEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.cityTextEdit.Properties.Mask.ShowPlaceHolders = false;
-            this.cityTextEdit.Size = new System.Drawing.Size(304, 20);
+            this.cityTextEdit.Size = new System.Drawing.Size(307, 20);
             this.cityTextEdit.StyleController = this.layoutControl1;
             this.cityTextEdit.TabIndex = 7;
             // 
@@ -251,7 +227,7 @@
             this.middleNameTextEdit.Properties.Mask.EditMask = "\\p{L}+";
             this.middleNameTextEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.middleNameTextEdit.Properties.Mask.ShowPlaceHolders = false;
-            this.middleNameTextEdit.Size = new System.Drawing.Size(304, 20);
+            this.middleNameTextEdit.Size = new System.Drawing.Size(307, 20);
             this.middleNameTextEdit.StyleController = this.layoutControl1;
             this.middleNameTextEdit.TabIndex = 6;
             // 
@@ -262,7 +238,7 @@
             this.lastNameTextEdit.Properties.Mask.EditMask = "\\p{L}+";
             this.lastNameTextEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.lastNameTextEdit.Properties.Mask.ShowPlaceHolders = false;
-            this.lastNameTextEdit.Size = new System.Drawing.Size(304, 20);
+            this.lastNameTextEdit.Size = new System.Drawing.Size(307, 20);
             this.lastNameTextEdit.StyleController = this.layoutControl1;
             this.lastNameTextEdit.TabIndex = 5;
             // 
@@ -274,7 +250,7 @@
             this.firstNameTextEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.firstNameTextEdit.Properties.Mask.ShowPlaceHolders = false;
             this.firstNameTextEdit.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.firstNameTextEdit.Size = new System.Drawing.Size(304, 20);
+            this.firstNameTextEdit.Size = new System.Drawing.Size(307, 20);
             this.firstNameTextEdit.StyleController = this.layoutControl1;
             this.firstNameTextEdit.TabIndex = 4;
             // 
@@ -287,14 +263,10 @@
             this.contactInfoGroup,
             this.ordersItem,
             this.commentItem,
-            this.saveEditItem,
-            this.saveNewItem,
-            this.emptySpaceItem1,
-            this.emptySpaceItem2,
             this.listCommentsItem});
             this.customerGroup.Location = new System.Drawing.Point(0, 0);
             this.customerGroup.Name = "Root";
-            this.customerGroup.Size = new System.Drawing.Size(684, 665);
+            this.customerGroup.Size = new System.Drawing.Size(690, 530);
             this.customerGroup.TextVisible = false;
             // 
             // personalInfoGroup
@@ -305,7 +277,7 @@
             this.middleNameItem});
             this.personalInfoGroup.Location = new System.Drawing.Point(0, 0);
             this.personalInfoGroup.Name = "personalInfoGroup";
-            this.personalInfoGroup.Size = new System.Drawing.Size(332, 162);
+            this.personalInfoGroup.Size = new System.Drawing.Size(335, 162);
             this.personalInfoGroup.Text = "Персональные данные";
             // 
             // firstNameItem
@@ -313,7 +285,7 @@
             this.firstNameItem.Control = this.firstNameTextEdit;
             this.firstNameItem.Location = new System.Drawing.Point(0, 0);
             this.firstNameItem.Name = "firstNameItem";
-            this.firstNameItem.Size = new System.Drawing.Size(308, 40);
+            this.firstNameItem.Size = new System.Drawing.Size(311, 40);
             this.firstNameItem.Text = "Имя";
             this.firstNameItem.TextLocation = DevExpress.Utils.Locations.Top;
             this.firstNameItem.TextSize = new System.Drawing.Size(105, 13);
@@ -323,7 +295,7 @@
             this.lastNameItem.Control = this.lastNameTextEdit;
             this.lastNameItem.Location = new System.Drawing.Point(0, 40);
             this.lastNameItem.Name = "lastNameItem";
-            this.lastNameItem.Size = new System.Drawing.Size(308, 40);
+            this.lastNameItem.Size = new System.Drawing.Size(311, 40);
             this.lastNameItem.Text = "Фамилия";
             this.lastNameItem.TextLocation = DevExpress.Utils.Locations.Top;
             this.lastNameItem.TextSize = new System.Drawing.Size(105, 13);
@@ -333,7 +305,7 @@
             this.middleNameItem.Control = this.middleNameTextEdit;
             this.middleNameItem.Location = new System.Drawing.Point(0, 80);
             this.middleNameItem.Name = "middleNameItem";
-            this.middleNameItem.Size = new System.Drawing.Size(308, 40);
+            this.middleNameItem.Size = new System.Drawing.Size(311, 40);
             this.middleNameItem.Text = "Отчество";
             this.middleNameItem.TextLocation = DevExpress.Utils.Locations.Top;
             this.middleNameItem.TextSize = new System.Drawing.Size(105, 13);
@@ -345,9 +317,9 @@
             this.addressItem,
             this.telephoneItem,
             this.emailItem});
-            this.contactInfoGroup.Location = new System.Drawing.Point(332, 0);
+            this.contactInfoGroup.Location = new System.Drawing.Point(335, 0);
             this.contactInfoGroup.Name = "contactInfoGroup";
-            this.contactInfoGroup.Size = new System.Drawing.Size(332, 162);
+            this.contactInfoGroup.Size = new System.Drawing.Size(335, 162);
             this.contactInfoGroup.Text = "Контактные данные";
             // 
             // cityItem
@@ -355,7 +327,7 @@
             this.cityItem.Control = this.cityTextEdit;
             this.cityItem.Location = new System.Drawing.Point(0, 0);
             this.cityItem.Name = "cityItem";
-            this.cityItem.Size = new System.Drawing.Size(308, 40);
+            this.cityItem.Size = new System.Drawing.Size(311, 40);
             this.cityItem.Text = "Город";
             this.cityItem.TextLocation = DevExpress.Utils.Locations.Top;
             this.cityItem.TextSize = new System.Drawing.Size(105, 13);
@@ -365,7 +337,7 @@
             this.addressItem.Control = this.addressTextEdit;
             this.addressItem.Location = new System.Drawing.Point(0, 40);
             this.addressItem.Name = "addressItem";
-            this.addressItem.Size = new System.Drawing.Size(308, 40);
+            this.addressItem.Size = new System.Drawing.Size(311, 40);
             this.addressItem.Text = "Адрес";
             this.addressItem.TextLocation = DevExpress.Utils.Locations.Top;
             this.addressItem.TextSize = new System.Drawing.Size(105, 13);
@@ -375,7 +347,7 @@
             this.telephoneItem.Control = this.telephoneTextEdit;
             this.telephoneItem.Location = new System.Drawing.Point(0, 80);
             this.telephoneItem.Name = "telephoneItem";
-            this.telephoneItem.Size = new System.Drawing.Size(153, 40);
+            this.telephoneItem.Size = new System.Drawing.Size(154, 40);
             this.telephoneItem.Text = "Телефон";
             this.telephoneItem.TextLocation = DevExpress.Utils.Locations.Top;
             this.telephoneItem.TextSize = new System.Drawing.Size(105, 13);
@@ -383,9 +355,9 @@
             // emailItem
             // 
             this.emailItem.Control = this.emailTextEdit;
-            this.emailItem.Location = new System.Drawing.Point(153, 80);
+            this.emailItem.Location = new System.Drawing.Point(154, 80);
             this.emailItem.Name = "emailItem";
-            this.emailItem.Size = new System.Drawing.Size(155, 40);
+            this.emailItem.Size = new System.Drawing.Size(157, 40);
             this.emailItem.Text = "E-mail";
             this.emailItem.TextLocation = DevExpress.Utils.Locations.Top;
             this.emailItem.TextSize = new System.Drawing.Size(105, 13);
@@ -395,7 +367,7 @@
             this.ordersItem.Control = this.ordersGridControl;
             this.ordersItem.Location = new System.Drawing.Point(0, 162);
             this.ordersItem.Name = "ordersItem";
-            this.ordersItem.Size = new System.Drawing.Size(664, 233);
+            this.ordersItem.Size = new System.Drawing.Size(670, 177);
             this.ordersItem.Text = "Список заказов";
             this.ordersItem.TextLocation = DevExpress.Utils.Locations.Top;
             this.ordersItem.TextSize = new System.Drawing.Size(105, 13);
@@ -403,66 +375,71 @@
             // commentItem
             // 
             this.commentItem.Control = this.commentMemoEdit;
-            this.commentItem.Location = new System.Drawing.Point(0, 517);
+            this.commentItem.Location = new System.Drawing.Point(0, 423);
             this.commentItem.Name = "commentItem";
-            this.commentItem.Size = new System.Drawing.Size(664, 86);
+            this.commentItem.Size = new System.Drawing.Size(670, 87);
             this.commentItem.Text = "Ваш коментарий";
             this.commentItem.TextLocation = DevExpress.Utils.Locations.Top;
             this.commentItem.TextSize = new System.Drawing.Size(105, 13);
             // 
-            // saveEditItem
-            // 
-            this.saveEditItem.Control = this.saveEditButton;
-            this.saveEditItem.Location = new System.Drawing.Point(0, 603);
-            this.saveEditItem.Name = "saveEditItem";
-            this.saveEditItem.Size = new System.Drawing.Size(163, 42);
-            this.saveEditItem.TextSize = new System.Drawing.Size(0, 0);
-            this.saveEditItem.TextVisible = false;
-            // 
-            // saveNewItem
-            // 
-            this.saveNewItem.Control = this.saveNewButton;
-            this.saveNewItem.Location = new System.Drawing.Point(173, 603);
-            this.saveNewItem.Name = "saveNewItem";
-            this.saveNewItem.Size = new System.Drawing.Size(163, 42);
-            this.saveNewItem.TextSize = new System.Drawing.Size(0, 0);
-            this.saveNewItem.TextVisible = false;
-            // 
-            // emptySpaceItem1
-            // 
-            this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(336, 603);
-            this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(328, 42);
-            this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // emptySpaceItem2
-            // 
-            this.emptySpaceItem2.AllowHotTrack = false;
-            this.emptySpaceItem2.Location = new System.Drawing.Point(163, 603);
-            this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(10, 42);
-            this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
-            // 
             // listCommentsItem
             // 
             this.listCommentsItem.Control = this.commentsListBoxControl;
-            this.listCommentsItem.Location = new System.Drawing.Point(0, 395);
+            this.listCommentsItem.Location = new System.Drawing.Point(0, 339);
             this.listCommentsItem.Name = "listCommentsItem";
-            this.listCommentsItem.Size = new System.Drawing.Size(664, 122);
+            this.listCommentsItem.Size = new System.Drawing.Size(670, 84);
             this.listCommentsItem.Text = "Список коментариев";
             this.listCommentsItem.TextLocation = DevExpress.Utils.Locations.Top;
             this.listCommentsItem.TextSize = new System.Drawing.Size(105, 13);
             // 
-            // orderBindingSource
+            // ribbonControl1
             // 
-            this.orderBindingSource.DataSource = typeof(Domain.Entities.Order);
+            this.ribbonControl1.ExpandCollapseItem.Id = 0;
+            this.ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
+            this.ribbonControl1.ExpandCollapseItem,
+            this.saveEditButtonItem,
+            this.saveAndNewButtonItem});
+            this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
+            this.ribbonControl1.MaxItemId = 3;
+            this.ribbonControl1.Name = "ribbonControl1";
+            this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
+            this.mainRibbonPage});
+            this.ribbonControl1.Size = new System.Drawing.Size(684, 141);
+            // 
+            // saveEditButtonItem
+            // 
+            this.saveEditButtonItem.Caption = "Сохранить";
+            this.saveEditButtonItem.Id = 1;
+            this.saveEditButtonItem.ImageUri.Uri = "Save";
+            this.saveEditButtonItem.Name = "saveEditButtonItem";
+            // 
+            // saveAndNewButtonItem
+            // 
+            this.saveAndNewButtonItem.Caption = "Сохранить/Создать";
+            this.saveAndNewButtonItem.Id = 2;
+            this.saveAndNewButtonItem.ImageUri.Uri = "SaveAndNew";
+            this.saveAndNewButtonItem.Name = "saveAndNewButtonItem";
+            // 
+            // mainRibbonPage
+            // 
+            this.mainRibbonPage.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.saveOrEditribbonPageGroup});
+            this.mainRibbonPage.Name = "mainRibbonPage";
+            this.mainRibbonPage.Text = "Main";
+            // 
+            // saveOrEditribbonPageGroup
+            // 
+            this.saveOrEditribbonPageGroup.ItemLinks.Add(this.saveEditButtonItem);
+            this.saveOrEditribbonPageGroup.ItemLinks.Add(this.saveAndNewButtonItem);
+            this.saveOrEditribbonPageGroup.Name = "saveOrEditribbonPageGroup";
+            this.saveOrEditribbonPageGroup.Text = "Сохранение";
             // 
             // CustomerDetailsViev
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(684, 665);
+            this.Controls.Add(this.ribbonControl1);
             this.Controls.Add(this.layoutControl1);
             this.MinimumSize = new System.Drawing.Size(690, 550);
             this.Name = "CustomerDetailsViev";
@@ -473,6 +450,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.commentsListBoxControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.commentMemoEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordersGridControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emailTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.telephoneTextEdit.Properties)).EndInit();
@@ -493,13 +471,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.emailItem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordersItem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.commentItem)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.saveEditItem)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.saveNewItem)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.listCommentsItem)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -529,17 +504,16 @@
         private DevExpress.XtraLayout.LayoutControlItem telephoneItem;
         private DevExpress.XtraLayout.LayoutControlItem emailItem;
         private DevExpress.XtraLayout.LayoutControlItem ordersItem;
-        private DevExpress.XtraEditors.SimpleButton saveNewButton;
-        private DevExpress.XtraEditors.SimpleButton saveEditButton;
         private DevExpress.XtraEditors.MemoEdit commentMemoEdit;
         private DevExpress.XtraLayout.LayoutControlItem commentItem;
-        private DevExpress.XtraLayout.LayoutControlItem saveEditItem;
-        private DevExpress.XtraLayout.LayoutControlItem saveNewItem;
-        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
-        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem2;
         private DevExpress.XtraEditors.ListBoxControl commentsListBoxControl;
         private DevExpress.XtraLayout.LayoutControlItem listCommentsItem;
         private System.Windows.Forms.BindingSource orderBindingSource;
+        private DevExpress.XtraBars.Ribbon.RibbonControl ribbonControl1;
+        private DevExpress.XtraBars.Ribbon.RibbonPage mainRibbonPage;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup saveOrEditribbonPageGroup;
+        private DevExpress.XtraBars.BarButtonItem saveEditButtonItem;
+        private DevExpress.XtraBars.BarButtonItem saveAndNewButtonItem;
 
 
 
