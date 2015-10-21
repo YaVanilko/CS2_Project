@@ -279,6 +279,7 @@
             this.saveButtonItem.Id = 2;
             this.saveButtonItem.ImageUri.Uri = "Save";
             this.saveButtonItem.Name = "saveButtonItem";
+            this.saveButtonItem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.saveButtonItem_ItemClick);
             // 
             // printButtonItem
             // 
@@ -286,6 +287,7 @@
             this.printButtonItem.Id = 3;
             this.printButtonItem.ImageUri.Uri = "Print";
             this.printButtonItem.Name = "printButtonItem";
+            this.printButtonItem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.printButtonItem_ItemClick);
             // 
             // mainRibbonPage
             // 
