@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Data.DumbData
 {
-    public class OrderDao : BaseDao<Order>, IOrderRepository
+    class OrderDao : BaseDao<Order>, IOrderRepository
     {
     }
 }

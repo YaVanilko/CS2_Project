@@ -3,19 +3,23 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Text;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DevExpress.XtraEditors;
 
-namespace ContosoUI.Order.Search
+namespace ContosoUI.Order_Forms
 {
-    public partial class SearchView : DevExpress.XtraEditors.XtraForm
+    public partial class EditOrderForm : Form
     {
-        public SearchView()
+        public EditOrderForm()
         {
             InitializeComponent();
+        }
+
+        private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

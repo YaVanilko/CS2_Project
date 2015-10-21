@@ -62,10 +62,7 @@
     <Compile Include="DumbData\tempDAO\PersonalInfoDao.cs" />
     <Compile Include="DumbData\tempDAO\UserDao.cs" />
     <Compile Include="EFData\EfBaseDao.cs" />
-    <Compile Include="EFData\EFOrderDao.cs" />
-    <Compile Include="EFData\PersonalInfoDao.cs" />
     <Compile Include="EFData\ProjectContext.cs" />
-    <Compile Include="EFData\UserDao.cs" />
     <Compile Include="Migrations\201510201359549_Init.cs" />
     <Compile Include="Migrations\201510201359549_Init.Designer.cs">
       <DependentUpon>201510201359549_Init.cs</DependentUpon>

@@ -284,15 +284,8 @@ namespace Data.DumbData
             {
                 Id = 0,
                 PersonalInfo = PersonalInfoCollection[0],
-<<<<<<< HEAD
-                Contacts = ContactInfoCollection[0], 
-                OrdersCount = 2,
-                TotalOrdersCoast = 460.90,
-                Orders = new List<Order>(){OrderCollection[0]},
-=======
                 Contacts = ContactInfoCollection[0],
                 Orders = new List<Order>(),
->>>>>>> refs/remotes/demmy/Development
                 Comments = new List<Comment>(){CommentCollection.Where(x => x.Type == CommentType.Customer).ToList()[0]}
             },
             new Customer()
@@ -300,10 +293,6 @@ namespace Data.DumbData
                 Id = 1,
                 PersonalInfo = PersonalInfoCollection[1],
                 Contacts = ContactInfoCollection[1],
-<<<<<<< HEAD
-                Orders = new List<Order>(){OrderCollection[1]},
-=======
->>>>>>> refs/remotes/demmy/Development
                 Comments = new List<Comment>(){CommentCollection.Where(x => x.Type == CommentType.Customer).ToList()[0]}
             },
             new Customer()
@@ -311,10 +300,6 @@ namespace Data.DumbData
                 Id = 2,
                 PersonalInfo = PersonalInfoCollection[2],
                 Contacts = ContactInfoCollection[2],
-<<<<<<< HEAD
-                Orders = new List<Order>(){OrderCollection[2]},
-=======
->>>>>>> refs/remotes/demmy/Development
                 Comments = new List<Comment>(){CommentCollection.Where(x => x.Type == CommentType.Customer).ToList()[1]}
             },
             new Customer()
@@ -322,10 +307,6 @@ namespace Data.DumbData
                 Id = 3,
                 PersonalInfo = PersonalInfoCollection[3],
                 Contacts = ContactInfoCollection[3],
-<<<<<<< HEAD
-                Orders = new List<Order>(){OrderCollection[2]},
-=======
->>>>>>> refs/remotes/demmy/Development
                 Comments = new List<Comment>(){CommentCollection.Where(x => x.Type == CommentType.Customer).ToList()[0]}
             },
             new Customer()
@@ -333,10 +314,6 @@ namespace Data.DumbData
                 Id = 9,
                 PersonalInfo = PersonalInfoCollection[4],
                 Contacts = ContactInfoCollection[4],
-<<<<<<< HEAD
-                Orders = new List<Order>(){OrderCollection[4]},
-=======
->>>>>>> refs/remotes/demmy/Development
                 Comments = new List<Comment>(){CommentCollection.Where(x => x.Type == CommentType.Customer).ToList()[1]}
             },
             new Customer()
@@ -344,7 +321,6 @@ namespace Data.DumbData
                 Id = 4,
                 PersonalInfo = PersonalInfoCollection[5],
                 Contacts = ContactInfoCollection[5],
-                Orders = new List<Order>(){OrderCollection[5]},
                 Comments = new List<Comment>(){CommentCollection.Where(x => x.Type == CommentType.Customer).ToList()[1]}
             },
             new Customer()
@@ -352,7 +328,6 @@ namespace Data.DumbData
                 Id = 5,
                 PersonalInfo = PersonalInfoCollection[6],
                 Contacts = ContactInfoCollection[6],
-                Orders = new List<Order>(){OrderCollection[6]},
                 Comments = new List<Comment>(){CommentCollection.Where(x => x.Type == CommentType.Customer).ToList()[0]}
             },
             new Customer()
@@ -360,7 +335,6 @@ namespace Data.DumbData
                 Id = 6,
                 PersonalInfo = PersonalInfoCollection[7],
                 Contacts = ContactInfoCollection[7],
-                Orders = new List<Order>(){OrderCollection[7]},
                 Comments = new List<Comment>(){CommentCollection.Where(x => x.Type == CommentType.Customer).ToList()[1]}
             },
             new Customer()
@@ -368,7 +342,6 @@ namespace Data.DumbData
                 Id = 7,
                 PersonalInfo = PersonalInfoCollection[8],
                 Contacts = ContactInfoCollection[8],
-                Orders = new List<Order>(){OrderCollection[8]},
                 Comments = new List<Comment>(){CommentCollection.Where(x => x.Type == CommentType.Customer).ToList()[0]}
             },
             new Customer()
@@ -376,7 +349,6 @@ namespace Data.DumbData
                 Id = 8,
                 PersonalInfo = PersonalInfoCollection[9],
                 Contacts = ContactInfoCollection[9],
-                Orders = new List<Order>(){OrderCollection[9]},
                 Comments = new List<Comment>(){CommentCollection.Where(x => x.Type == CommentType.Customer).ToList()[1]}
             }
         };
@@ -445,7 +417,6 @@ namespace Data.DumbData
             new Permission{Id=9,EditTime = DateTime.Now},
 
         };
-
         #endregion
 
         public Storage()
