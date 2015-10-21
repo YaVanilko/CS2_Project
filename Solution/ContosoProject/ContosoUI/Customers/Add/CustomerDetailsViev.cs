@@ -16,7 +16,12 @@ namespace ContosoUI.Customers.Add
         public CustomerDetailsViev()
         {
             InitializeComponent();
-            presenter = new CustomerDetailsPresenter(this);
+            presenter = new CustomerDetailsPresenter(this, -1);
+        }
+        public CustomerDetailsViev(int id)
+        {
+            InitializeComponent();
+            presenter = new CustomerDetailsPresenter(this, id);
         }
         private void Refresh()
         {
