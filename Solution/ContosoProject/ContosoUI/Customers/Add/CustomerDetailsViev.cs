@@ -18,6 +18,11 @@ namespace ContosoUI.Customers.Add
             InitializeComponent();
             presenter = new CustomerDetailsPresenter(this);
         }
+        public CustomerDetailsViev(int id)
+        {
+            InitializeComponent();
+            presenter = new CustomerDetailsPresenter(this);
+        }
         private void Refresh()
         {
             firstNameTextEdit.Text = presenter.FirstName;

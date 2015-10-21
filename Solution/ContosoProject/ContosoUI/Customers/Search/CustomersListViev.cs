@@ -1,4 +1,5 @@
-﻿using DevExpress.XtraGrid.Views.Grid;
+﻿using ContosoUI.Customers.Add;
+using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraGrid.Views.Grid.ViewInfo;
 using System;
 using System.Collections.Generic;
@@ -34,21 +35,18 @@ namespace ContosoUI.Customers.Search
             Refresh();
         }
 
-        private void DoRowDoubleClick(GridView view, Point pt)
-        {
-            GridHitInfo info = view.CalcHitInfo(pt);
-            if (info.InRow || info.InRowCell)
-            {
-                string colCaption = info.Column == null ? "N/A" : info.Column.GetCaption();
-                MessageBox.Show(string.Format("DoubleClick on row: {0}, column: {1}.", info.RowHandle, colCaption));
-            }
-
-        }
         private void customersGridView_DoubleClick(object sender, EventArgs e)
         {
-            GridView view = (GridView)sender;
-            Point pt = view.GridControl.PointToClient(Control.MousePosition);
-            DoRowDoubleClick(view, pt);
+            GridHitInfo hi = customersGridView.CalcHitInfo(customersGridControl.PointToClient(MousePosition));
+            if (hi.InRowCell)
+            {
+                GridView view = (GridView)sender;
+                GridHitInfo info = view.CalcHitInfo(view.GridControl.PointToClient(Control.MousePosition));
+                int id = (int)view.GetRowCellValue(info.RowHandle, "Id");
+                var form = new CustomerDetailsViev(id);
+                form.MdiParent = this.MdiParent;
+                form.Show();
+            }
         }
 
         private void searchButtonItem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -59,7 +57,6 @@ namespace ContosoUI.Customers.Search
 
         private void saveButtonItem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Stream myStream;
             SaveFileDialog saveFileDialog1 = new SaveFileDialog();
 
             saveFileDialog1.Filter = "xls files (*.xls)|*.xls|All files (*.*)|*.*";
@@ -73,7 +70,8 @@ namespace ContosoUI.Customers.Search
 
         private void printButtonItem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            customersGridView.ShowPrintPreview();
+            customersGridView.Print();
         }
 
     }
