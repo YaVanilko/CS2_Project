@@ -6,9 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Data.DumbData
+namespace Data.EFData
 {
-    public class OrderDao : BaseDao<Order>, IOrderRepository
+    public class UserDao : EfBaseDao<User>, IUserRepository
     {
     }
 }

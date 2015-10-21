@@ -105,7 +105,6 @@
     <Compile Include="Customers\Search\CustomersListViev.Designer.cs">
       <DependentUpon>CustomersListViev.cs</DependentUpon>
     </Compile>
-    <Compile Include="Customers\Search\CustomersListViewModel.cs" />
     <Compile Include="EditUserForm\EditUserForm .cs">
       <SubType>Form</SubType>
     </Compile>
@@ -139,19 +138,8 @@
     <Compile Include="MainView.Designer.cs">
       <DependentUpon>MainView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Order\AddEdit\AddOrderXtraForm.cs">
+    <Compile Include="Order\Edit\EditOrderForm.cs">
       <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Order\AddEdit\AddOrderXtraForm.Designer.cs">
-      <DependentUpon>AddOrderXtraForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Order\AddEdit\Presenter.cs" />
-    <Compile Include="Order\Search\SearchPresenter.cs" />
-    <Compile Include="Order\Search\SearchView.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Order\Search\SearchView.Designer.cs">
-      <DependentUpon>SearchView.cs</DependentUpon>
     </Compile>
     <Compile Include="Test\CustomerListView.cs">
       <SubType>Form</SubType>
@@ -180,6 +168,9 @@
     <EmbeddedResource Include="EditUserForm\EditUserForm .resx">
       <DependentUpon>EditUserForm .cs</DependentUpon>
     </EmbeddedResource>
+    <Compile Include="Order\Edit\EditOrderForm.Designer.cs">
+      <DependentUpon>EditOrderForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="GoodsForm.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>GoodsForm.Designer.cs</LastGenOutput>
@@ -190,16 +181,31 @@
     <EmbeddedResource Include="GoodsStoreReportForm\GoodsStoreReportForm.resx">
       <DependentUpon>GoodsStoreReportForm.cs</DependentUpon>
     </EmbeddedResource>
+    <Compile Include="Order\Add\AddOrderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Order\Add\AddOrderForm.Designer.cs">
+      <DependentUpon>AddOrderForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Order\Report\OrderReportFrom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Order\Report\OrderReportFrom.Designer.cs">
+      <DependentUpon>OrderReportFrom.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="MainView.resx">
       <DependentUpon>MainView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Order\AddEdit\AddOrderXtraForm.resx">
-      <DependentUpon>AddOrderXtraForm.cs</DependentUpon>
+    <EmbeddedResource Include="Order\Edit\EditOrderForm.resx">
+      <DependentUpon>EditOrderForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Order\Search\SearchView.resx">
-      <DependentUpon>SearchView.cs</DependentUpon>
+    <EmbeddedResource Include="Order\Add\AddOrderForm.resx">
+      <DependentUpon>AddOrderForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Order\Report\OrderReportFrom.resx">
+      <DependentUpon>OrderReportFrom.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -211,7 +217,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="Properties\DataSources\ContosoUI.Customers.Search.CustomersListViewModel.datasource" />
     <None Include="Properties\DataSources\Domain.Entities.Customer.datasource" />
     <None Include="Properties\DataSources\Domain.Entities.Order.datasource" />
     <EmbeddedResource Include="Test\CustomerListView.resx">
@@ -243,7 +248,6 @@
       <Name>Domain</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

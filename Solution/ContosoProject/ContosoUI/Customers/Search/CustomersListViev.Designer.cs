@@ -293,7 +293,7 @@
             this.searchRibbonPageGroup,
             this.saveRibbonPageGroup});
             this.mainRibbonPage.Name = "mainRibbonPage";
-            this.mainRibbonPage.Text = "Main";
+            this.mainRibbonPage.Text = "Меню";
             // 
             // searchRibbonPageGroup
             // 
