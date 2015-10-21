@@ -105,7 +105,6 @@
     <Compile Include="Customers\Search\CustomersListViev.Designer.cs">
       <DependentUpon>CustomersListViev.cs</DependentUpon>
     </Compile>
-    <Compile Include="Customers\Search\CustomersListViewModel.cs" />
     <Compile Include="EditUserForm\EditUserForm .cs">
       <SubType>Form</SubType>
     </Compile>
@@ -211,7 +210,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="Properties\DataSources\ContosoUI.Customers.Search.CustomersListViewModel.datasource" />
+    <None Include="Properties\DataSources\ContosoUI.Order.Search.SearchViewModel.datasource" />
     <None Include="Properties\DataSources\Domain.Entities.Customer.datasource" />
     <None Include="Properties\DataSources\Domain.Entities.Order.datasource" />
     <EmbeddedResource Include="Test\CustomerListView.resx">
