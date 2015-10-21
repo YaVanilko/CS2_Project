@@ -16,10 +16,17 @@ namespace ContosoUI.Customers.Add
         Customer customer;
         public List<Order> Orders { get { return customer.Orders; } set { } }
         public List<Comment> Comments { get { return customer.Comments; } set { } }
-        public CustomerDetailsPresenter(CustomerDetailsViev view)
+        public CustomerDetailsPresenter(CustomerDetailsViev view, int id)
         {
             this.view = view;
-            customer = model.GetById(0);
+            if (id < 1)
+            {
+                customer = new Customer();
+            }
+            else
+            {
+                customer = model.GetById(id);
+            }
         }
         public string FirstName 
         { 

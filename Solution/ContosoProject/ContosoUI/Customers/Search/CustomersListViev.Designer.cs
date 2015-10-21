@@ -42,6 +42,7 @@
             this.ordersSumGridColumn = new DevExpress.XtraGrid.Columns.GridColumn();
             this.telephoneGridColumn = new DevExpress.XtraGrid.Columns.GridColumn();
             this.eMailGridColumn = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.idGridColumn = new DevExpress.XtraGrid.Columns.GridColumn();
             this.filterCityComboBoxEdit = new DevExpress.XtraEditors.ComboBoxEdit();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.customersListItem = new DevExpress.XtraLayout.LayoutControlItem();
@@ -115,7 +116,8 @@
             this.ordersCountGridColumn,
             this.ordersSumGridColumn,
             this.telephoneGridColumn,
-            this.eMailGridColumn});
+            this.eMailGridColumn,
+            this.idGridColumn});
             this.customersGridView.GridControl = this.customersGridControl;
             this.customersGridView.Name = "customersGridView";
             this.customersGridView.OptionsBehavior.Editable = false;
@@ -198,6 +200,12 @@
             this.eMailGridColumn.Name = "eMailGridColumn";
             this.eMailGridColumn.Visible = true;
             this.eMailGridColumn.VisibleIndex = 6;
+            // 
+            // idGridColumn
+            // 
+            this.idGridColumn.Caption = "Id";
+            this.idGridColumn.FieldName = "Id";
+            this.idGridColumn.Name = "idGridColumn";
             // 
             // filterCityComboBoxEdit
             // 
@@ -366,6 +374,7 @@
         private System.Windows.Forms.BindingSource customersListViewModelBindingSource1;
         private DevExpress.XtraGrid.Columns.GridColumn telephoneGridColumn;
         private DevExpress.XtraGrid.Columns.GridColumn eMailGridColumn;
+        private DevExpress.XtraGrid.Columns.GridColumn idGridColumn;
 
     }
 }
