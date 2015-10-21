@@ -14,9 +14,8 @@ namespace ContosoUI.Customers.Add
         readonly CustomerDetailsViev view;
         readonly ICustomerRepository model = new CustomerDao();
         Customer customer;
-        public List<Domain.Entities.Order> Orders { get { return customer.Orders; } set { } }
+        public List<Order> Orders { get { return customer.Orders; } set { } }
         public List<Comment> Comments { get { return customer.Comments; } set { } }
-
         public CustomerDetailsPresenter(CustomerDetailsViev view)
         {
             this.view = view;
