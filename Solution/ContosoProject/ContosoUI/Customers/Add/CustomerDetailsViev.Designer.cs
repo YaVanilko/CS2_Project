@@ -413,6 +413,7 @@
             this.saveEditButtonItem.Id = 1;
             this.saveEditButtonItem.ImageUri.Uri = "Save";
             this.saveEditButtonItem.Name = "saveEditButtonItem";
+            this.saveEditButtonItem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.saveEditButtonItem_ItemClick);
             // 
             // saveAndNewButtonItem
             // 
@@ -420,6 +421,7 @@
             this.saveAndNewButtonItem.Id = 2;
             this.saveAndNewButtonItem.ImageUri.Uri = "SaveAndNew";
             this.saveAndNewButtonItem.Name = "saveAndNewButtonItem";
+            this.saveAndNewButtonItem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.saveAndNewButtonItem_ItemClick);
             // 
             // mainRibbonPage
             // 

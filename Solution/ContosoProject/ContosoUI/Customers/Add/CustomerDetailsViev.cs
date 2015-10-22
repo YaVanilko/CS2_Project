@@ -41,5 +41,15 @@ namespace ContosoUI.Customers.Add
         {
             Refresh();
         }
+
+        private void saveEditButtonItem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
+
+        private void saveAndNewButtonItem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
     }
 }
