@@ -1,5 +1,4 @@
-﻿using Domain.DAO;
-using Domain.Entities;
+﻿using Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Data.EFData
 {
-    public class PersonalInfoDao : EfBaseDao<PersonalInfo>, IPersonalInfoRepository
+    public class EFPersonalInfoDao : EfBaseDao<PersonalInfo>
     {
     }
 }
