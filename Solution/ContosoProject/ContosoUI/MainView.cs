@@ -52,5 +52,12 @@ namespace ContosoUI
             form.MdiParent = this;
             form.Show();
         }
+
+        private void addNewOrderBtn_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            var form = new CustomerDetailsViev();
+            form.MdiParent = this;
+            form.Show();
+        }
     }
 }

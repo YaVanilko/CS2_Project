@@ -1,6 +1,4 @@
-﻿using ContosoUI.Customers.Search;
-using ContosoUI.Customers.Add;
-using Data.DumbData;
+﻿using Data.DumbData;
 using Domain.DAO;
 using Domain.Entities;
 using System;

@@ -135,6 +135,7 @@
             this.addNewOrderBtn.Id = 8;
             this.addNewOrderBtn.ImageUri.Uri = "AddItem";
             this.addNewOrderBtn.Name = "addNewOrderBtn";
+            this.addNewOrderBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.addNewOrderBtn_ItemClick);
             // 
             // addNewUserBtn
             // 
