@@ -138,6 +138,8 @@
             // 
             // addNewUserBtn
             // 
+            this.addNewUserBtn.ActAsDropDown = true;
+            this.addNewUserBtn.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown;
             this.addNewUserBtn.Caption = "Добавить пользователя";
             this.addNewUserBtn.Id = 9;
             this.addNewUserBtn.ImageUri.Uri = "Customization";
