@@ -91,6 +91,20 @@
       <DependentUpon>CustomersListViev.cs</DependentUpon>
     </Compile>
     <Compile Include="Customers\Search\CustomersListViewModel.cs" />
+    <Compile Include="Order\AddEdit\AddOrderXtraForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Order\AddEdit\AddOrderXtraForm.Designer.cs">
+      <DependentUpon>AddOrderXtraForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Order\AddEdit\Presenter.cs" />
+    <Compile Include="Order\Search\SearchPresenter.cs" />
+    <Compile Include="Order\Search\SearchView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Order\Search\SearchView.Designer.cs">
+      <DependentUpon>SearchView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Users\ReportForm\UserReportForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,9 +140,6 @@
     <Compile Include="MainView.Designer.cs">
       <DependentUpon>MainView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Order\Edit\EditOrderForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Test\CustomerListView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -150,9 +161,12 @@
     <EmbeddedResource Include="Customers\Search\CustomersListViev.resx">
       <DependentUpon>CustomersListViev.cs</DependentUpon>
     </EmbeddedResource>
-    <Compile Include="Order\Edit\EditOrderForm.Designer.cs">
-      <DependentUpon>EditOrderForm.cs</DependentUpon>
-    </Compile>
+    <EmbeddedResource Include="Order\AddEdit\AddOrderXtraForm.resx">
+      <DependentUpon>AddOrderXtraForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Order\Search\SearchView.resx">
+      <DependentUpon>SearchView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Users\ReportForm\UserReportForm.resx">
       <DependentUpon>UserReportForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -166,31 +180,10 @@
     <EmbeddedResource Include="GoodsStoreReportForm\GoodsStoreReportForm.resx">
       <DependentUpon>GoodsStoreReportForm.cs</DependentUpon>
     </EmbeddedResource>
-    <Compile Include="Order\Add\AddOrderForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Order\Add\AddOrderForm.Designer.cs">
-      <DependentUpon>AddOrderForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Order\Report\OrderReportFrom.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Order\Report\OrderReportFrom.Designer.cs">
-      <DependentUpon>OrderReportFrom.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="MainView.resx">
       <DependentUpon>MainView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Order\Edit\EditOrderForm.resx">
-      <DependentUpon>EditOrderForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Order\Add\AddOrderForm.resx">
-      <DependentUpon>AddOrderForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Order\Report\OrderReportFrom.resx">
-      <DependentUpon>OrderReportFrom.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
