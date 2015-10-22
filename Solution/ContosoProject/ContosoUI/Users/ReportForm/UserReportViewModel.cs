@@ -45,10 +45,10 @@ namespace ContosoUI.EditUserForm
                 }
             }
         }
-        public string Operator
-        {
-            get { return user.Operator.Login; }
-        }
+        //public string Operator
+        //{
+        //    get { return user.Operator.Login; }
+        //}
         public int ID
         {
             get { return user.Id; }
