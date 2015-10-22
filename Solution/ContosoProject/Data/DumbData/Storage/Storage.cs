@@ -104,16 +104,16 @@ namespace Data.DumbData
         #region User
         public static List<User> UserCollection = new List<User>() 
         {
-            new User {Id=0, Login="admin",Password="123",PersonalInfo = PersonalInfoCollection[0], Role = RoleCollection[0], Operator = new User()},
-            new User {Id=1, Login="manager",Password="123",PersonalInfo = PersonalInfoCollection[1], Role = RoleCollection[1], Operator = new User()},
-            new User {Id=2, Login="boss",Password="123",PersonalInfo = PersonalInfoCollection[2], Role = RoleCollection[2], Operator = new User()},
-            new User {Id=3, Login="user3",Password="123",PersonalInfo = PersonalInfoCollection[3], Role = RoleCollection[3], Operator = new User()},
-            new User {Id=3, Login="user4",Password="123",PersonalInfo = PersonalInfoCollection[4], Role = RoleCollection[4], Operator = new User()},
-            new User {Id=3, Login="user5",Password="123",PersonalInfo = PersonalInfoCollection[5], Role = RoleCollection[5], Operator = new User()},
-            new User {Id=3, Login="user6",Password="123",PersonalInfo = PersonalInfoCollection[6], Role = RoleCollection[6], Operator = new User()},
-            new User {Id=3, Login="user7",Password="123",PersonalInfo = PersonalInfoCollection[7], Role = RoleCollection[7], Operator = new User()},
-            new User {Id=3, Login="user8",Password="123",PersonalInfo = PersonalInfoCollection[8], Role = RoleCollection[8], Operator = new User()},
-            new User {Id=3, Login="user9",Password="123",PersonalInfo = PersonalInfoCollection[9], Role = RoleCollection[9], Operator = new User()},
+            new User {Id=0, Login="admin",Password="123",PersonalInfo = PersonalInfoCollection[0], Role = RoleCollection[0]},
+            new User {Id=1, Login="manager",Password="123",PersonalInfo = PersonalInfoCollection[1], Role = RoleCollection[1]},
+            new User {Id=2, Login="boss",Password="123",PersonalInfo = PersonalInfoCollection[2], Role = RoleCollection[2]},
+            new User {Id=3, Login="user3",Password="123",PersonalInfo = PersonalInfoCollection[3], Role = RoleCollection[3]},
+            new User {Id=3, Login="user4",Password="123",PersonalInfo = PersonalInfoCollection[4], Role = RoleCollection[4]},
+            new User {Id=3, Login="user5",Password="123",PersonalInfo = PersonalInfoCollection[5], Role = RoleCollection[5]},
+            new User {Id=3, Login="user6",Password="123",PersonalInfo = PersonalInfoCollection[6], Role = RoleCollection[6]},
+            new User {Id=3, Login="user7",Password="123",PersonalInfo = PersonalInfoCollection[7], Role = RoleCollection[7]},
+            new User {Id=3, Login="user8",Password="123",PersonalInfo = PersonalInfoCollection[8], Role = RoleCollection[8]},
+            new User {Id=3, Login="user9",Password="123",PersonalInfo = PersonalInfoCollection[9], Role = RoleCollection[9]},
 
         };
         #endregion
@@ -264,16 +264,16 @@ namespace Data.DumbData
         #region Comment
         public static List<Comment> CommentCollection = new List<Comment>()
             {
-                new Comment(){Id = 0, Operator = UserCollection[2], Message="This order is for Mr.Been", Type=CommentType.Order},
-                new Comment(){Id = 1, Operator = UserCollection[1], Message= "Утром деньги, вечером стуья",Type=CommentType.Order},
-                new Comment(){Id = 2, Operator = UserCollection[0], Message= "Стулья ничего так, но себе лучше не брать", Type=CommentType.Goods},
-                new Comment(){Id = 3, Operator = UserCollection[1], Message="Брать предоплату 100%!!",Type= CommentType.Customer},
-                new Comment(){Id = 4, Operator = UserCollection[1], Message= "Норм чел. Никаких претензий или проблем",Type= CommentType.Customer},
-                new Comment(){Id = 5, Operator = UserCollection[1], Message="Ну и заказик... ", Type=CommentType.Order},
-                new Comment(){Id = 6, Operator = UserCollection[1], Message= "Шкафы классные, но на дверях лучше не кататься", Type=CommentType.Goods},
-                new Comment(){Id = 7, Operator = UserCollection[1], Message= "Видимо кресло хорошее, т.к. шеф себе заказал",Type= CommentType.Goods},
-                new Comment(){Id = 8, Operator = UserCollection[1], Message= "ЧП \"Ромашка\" для офиса. Опт", Type=CommentType.Order},
-                new Comment(){Id = 9, Operator = UserCollection[1], Message = "Необходимо привезти завтра до 10", Type=CommentType.Order }
+                new Comment(){Id = 0, Message="This order is for Mr.Been", Type=CommentType.Order},
+                new Comment(){Id = 1,  Message= "Утром деньги, вечером стуья",Type=CommentType.Order},
+                new Comment(){Id = 2,  Message= "Стулья ничего так, но себе лучше не брать", Type=CommentType.Goods},
+                new Comment(){Id = 3,  Message="Брать предоплату 100%!!",Type= CommentType.Customer},
+                new Comment(){Id = 4,  Message= "Норм чел. Никаких претензий или проблем",Type= CommentType.Customer},
+                new Comment(){Id = 5,  Message="Ну и заказик... ", Type=CommentType.Order},
+                new Comment(){Id = 6,  Message= "Шкафы классные, но на дверях лучше не кататься", Type=CommentType.Goods},
+                new Comment(){Id = 7, Message= "Видимо кресло хорошее, т.к. шеф себе заказал",Type= CommentType.Goods},
+                new Comment(){Id = 8, Message= "ЧП \"Ромашка\" для офиса. Опт", Type=CommentType.Order},
+                new Comment(){Id = 9,  Message = "Необходимо привезти завтра до 10", Type=CommentType.Order }
        };
         #endregion
 
