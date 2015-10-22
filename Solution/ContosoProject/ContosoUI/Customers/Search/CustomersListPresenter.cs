@@ -34,6 +34,7 @@ namespace ContosoUI.Customers.Search
                 foreach (var customer in customers)
                 {
                     viewModel.Add(new CustomersListViewModel() {
+                        Id = customer.Id,
                         LastName = customer.PersonalInfo.LastName,
                         FirstName = customer.PersonalInfo.FirstName,
                         MiddleName = customer.PersonalInfo.MiddleName,
@@ -54,6 +55,7 @@ namespace ContosoUI.Customers.Search
                 {
                     viewModel.Add(new CustomersListViewModel()
                     {
+                        Id = customer.Id,
                         LastName = customer.PersonalInfo.LastName,
                         FirstName = customer.PersonalInfo.FirstName,
                         MiddleName = customer.PersonalInfo.MiddleName,
