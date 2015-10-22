@@ -10,7 +10,6 @@ namespace Domain.Entities
     {
         public int Id { get; set; }
         public bool IsActive { get; set; }
-        public User Operator { get; set; }
         public DateTime EditTime { get; set; }
 
         public BaseEntity()
