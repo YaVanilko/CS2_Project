@@ -264,16 +264,16 @@ namespace Data.DumbData
         #region Comment
         public static List<Comment> CommentCollection = new List<Comment>()
             {
-                new Comment(){Id = 0, Operator = UserCollection[2], Message="This order is for Mr.Been", Type=CommentType.Order},
-                new Comment(){Id = 1, Operator = UserCollection[1], Message= "Утром деньги, вечером стуья",Type=CommentType.Order},
-                new Comment(){Id = 2, Operator = UserCollection[0], Message= "Стулья ничего так, но себе лучше не брать", Type=CommentType.Goods},
-                new Comment(){Id = 3, Operator = UserCollection[1], Message="Брать предоплату 100%!!",Type= CommentType.Customer},
-                new Comment(){Id = 4, Operator = UserCollection[1], Message= "Норм чел. Никаких претензий или проблем",Type= CommentType.Customer},
-                new Comment(){Id = 5, Operator = UserCollection[1], Message="Ну и заказик... ", Type=CommentType.Order},
-                new Comment(){Id = 6, Operator = UserCollection[1], Message= "Шкафы классные, но на дверях лучше не кататься", Type=CommentType.Goods},
-                new Comment(){Id = 7, Operator = UserCollection[1], Message= "Видимо кресло хорошее, т.к. шеф себе заказал",Type= CommentType.Goods},
-                new Comment(){Id = 8, Operator = UserCollection[1], Message= "ЧП \"Ромашка\" для офиса. Опт", Type=CommentType.Order},
-                new Comment(){Id = 9, Operator = UserCollection[1], Message = "Необходимо привезти завтра до 10", Type=CommentType.Order }
+                new Comment(){Id = 0, Message="This order is for Mr.Been", Type=CommentType.Order},
+                new Comment(){Id = 1,  Message= "Утром деньги, вечером стуья",Type=CommentType.Order},
+                new Comment(){Id = 2,  Message= "Стулья ничего так, но себе лучше не брать", Type=CommentType.Goods},
+                new Comment(){Id = 3,  Message="Брать предоплату 100%!!",Type= CommentType.Customer},
+                new Comment(){Id = 4,  Message= "Норм чел. Никаких претензий или проблем",Type= CommentType.Customer},
+                new Comment(){Id = 5,  Message="Ну и заказик... ", Type=CommentType.Order},
+                new Comment(){Id = 6,  Message= "Шкафы классные, но на дверях лучше не кататься", Type=CommentType.Goods},
+                new Comment(){Id = 7, Message= "Видимо кресло хорошее, т.к. шеф себе заказал",Type= CommentType.Goods},
+                new Comment(){Id = 8, Message= "ЧП \"Ромашка\" для офиса. Опт", Type=CommentType.Order},
+                new Comment(){Id = 9,  Message = "Необходимо привезти завтра до 10", Type=CommentType.Order }
        };
         #endregion
 
