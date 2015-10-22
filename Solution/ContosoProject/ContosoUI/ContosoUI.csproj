@@ -91,12 +91,14 @@
       <DependentUpon>CustomersListViev.cs</DependentUpon>
     </Compile>
     <Compile Include="Customers\Search\CustomersListViewModel.cs" />
-    <Compile Include="EditUserForm\EditUserForm .cs">
+    <Compile Include="Users\ReportForm\UserReportForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EditUserForm\EditUserForm .Designer.cs">
-      <DependentUpon>EditUserForm .cs</DependentUpon>
+    <Compile Include="Users\ReportForm\UserReportForm.Designer.cs">
+      <DependentUpon>UserReportForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Users\ReportForm\UserReportPresenter.cs" />
+    <Compile Include="Users\ReportForm\UserReportViewModel.cs" />
     <Compile Include="GoodsForm.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -148,12 +150,12 @@
     <EmbeddedResource Include="Customers\Search\CustomersListViev.resx">
       <DependentUpon>CustomersListViev.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditUserForm\EditUserForm .resx">
-      <DependentUpon>EditUserForm .cs</DependentUpon>
-    </EmbeddedResource>
     <Compile Include="Order\Edit\EditOrderForm.Designer.cs">
       <DependentUpon>EditOrderForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Users\ReportForm\UserReportForm.resx">
+      <DependentUpon>UserReportForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GoodsForm.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>GoodsForm.Designer.cs</LastGenOutput>
@@ -201,6 +203,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <None Include="Properties\DataSources\ContosoUI.Customers.Search.CustomersListViewModel.datasource" />
+    <None Include="Properties\DataSources\ContosoUI.EditUserForm.UserReportViewModel.datasource" />
+    <None Include="Properties\DataSources\Data.DumbData.Storage.datasource" />
     <None Include="Properties\DataSources\Domain.Entities.Customer.datasource" />
     <None Include="Properties\DataSources\Domain.Entities.Order.datasource" />
     <EmbeddedResource Include="Test\CustomerListView.resx">
@@ -209,6 +213,7 @@
     <EmbeddedResource Include="Test\OrderListView.resx">
       <DependentUpon>OrderListView.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Properties\DataSources\Domain.Entities.User.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
