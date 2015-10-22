@@ -3,23 +3,25 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DevExpress.XtraEditors;
 
 namespace ContosoUI.AuthenticationForm
 {
-    public partial class AuthenticationForm : Form
+    public partial class AuthenticationForm : DevExpress.XtraEditors.XtraForm
     {
         public AuthenticationForm()
         {
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void OkButton_Click(object sender, EventArgs e)
         {
-
+            
         }
+
     }
 }

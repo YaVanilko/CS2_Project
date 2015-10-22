@@ -41,7 +41,9 @@ namespace ContosoUI
 
         private void usersMenuBtn_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            var form = new EditUserForm.UserReportForm();
+            form.MdiParent = this;
+            form.Show();
         }
 
         private void addNewCustomerBtn_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
