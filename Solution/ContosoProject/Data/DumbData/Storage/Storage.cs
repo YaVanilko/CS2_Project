@@ -12,16 +12,16 @@ namespace Data.DumbData
         #region Role
         public static List<Role> RoleCollection = new List<Role>()
         {
-            new Role{Id=0},
-            new Role{Id=1},
-            new Role{Id=2},
-            new Role{Id=3},
-            new Role{Id=4},
-            new Role{Id=5},
-            new Role{Id=6},
-            new Role{Id=7},
-            new Role{Id=8},
-            new Role{Id=9}
+            new Role{Id=0, Name = "Администратор"},
+            new Role{Id=1, Name = "Шеф"},
+            new Role{Id=2, Name = "Менеджер"},
+            new Role{Id=3, Name = "Друг Админа"},
+            new Role{Id=4, Name = "Друг Шефа"},
+            new Role{Id=5, Name = "Администратор"},
+            new Role{Id=6, Name = "Менеджер"},
+            new Role{Id=7, Name = "Менеджер"},
+            new Role{Id=8, Name = "Менеджер"},
+            new Role{Id=9, Name = "Менеджер"}
         };
         #endregion
 
