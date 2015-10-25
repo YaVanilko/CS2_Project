@@ -33,7 +33,6 @@
             this.commentsListBoxControl = new DevExpress.XtraEditors.ListBoxControl();
             this.commentMemoEdit = new DevExpress.XtraEditors.MemoEdit();
             this.ordersGridControl = new DevExpress.XtraGrid.GridControl();
-            this.orderBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.orderNumberGridColumn = new DevExpress.XtraGrid.Columns.GridColumn();
             this.orderSumGridColumn = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -63,12 +62,12 @@
             this.saveAndNewButtonItem = new DevExpress.XtraBars.BarButtonItem();
             this.mainRibbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.saveOrEditribbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.commentsListBoxControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.commentMemoEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordersGridControl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emailTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.telephoneTextEdit.Properties)).BeginInit();
@@ -91,6 +90,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.commentItem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listCommentsItem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -132,7 +132,6 @@
             // 
             // ordersGridControl
             // 
-            this.ordersGridControl.DataSource = this.orderBindingSource;
             this.ordersGridControl.Location = new System.Drawing.Point(12, 190);
             this.ordersGridControl.MainView = this.gridView1;
             this.ordersGridControl.Name = "ordersGridControl";
@@ -140,10 +139,6 @@
             this.ordersGridControl.TabIndex = 11;
             this.ordersGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
-            // 
-            // orderBindingSource
-            // 
-            this.orderBindingSource.DataSource = typeof(Domain.Entities.Order);
             // 
             // gridView1
             // 
@@ -453,7 +448,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.commentsListBoxControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.commentMemoEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordersGridControl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emailTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.telephoneTextEdit.Properties)).EndInit();
@@ -476,6 +470,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.commentItem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.listCommentsItem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -511,12 +506,12 @@
         private DevExpress.XtraLayout.LayoutControlItem commentItem;
         private DevExpress.XtraEditors.ListBoxControl commentsListBoxControl;
         private DevExpress.XtraLayout.LayoutControlItem listCommentsItem;
-        private System.Windows.Forms.BindingSource orderBindingSource;
         private DevExpress.XtraBars.Ribbon.RibbonControl ribbonControl1;
         private DevExpress.XtraBars.Ribbon.RibbonPage mainRibbonPage;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup saveOrEditribbonPageGroup;
         private DevExpress.XtraBars.BarButtonItem saveEditButtonItem;
         private DevExpress.XtraBars.BarButtonItem saveAndNewButtonItem;
+        private System.Windows.Forms.BindingSource customerBindingSource;
 
 
 

@@ -23,33 +23,30 @@ namespace ContosoUI.Customers.Add
             InitializeComponent();
             presenter = new CustomerDetailsPresenter(this, id);
         }
-        private void Refresh()
-        {
-            firstNameTextEdit.Text = presenter.FirstName;
-            lastNameTextEdit.Text = presenter.LastName;
-            middleNameTextEdit.Text = presenter.MiddleName;
-            cityTextEdit.Text = presenter.City;
-            addressTextEdit.Text = presenter.Address;
-            telephoneTextEdit.Text = presenter.Telephone;
-            emailTextEdit.Text = presenter.Email;
-            ordersGridControl.DataSource = presenter.Orders;
-            ordersGridControl.RefreshDataSource();
-            commentsListBoxControl.Items.AddRange(presenter.Comments.ToArray());
-        }
 
         private void CustomerDetailsViev_Load(object sender, EventArgs e)
         {
-            Refresh();
+            this.customerBindingSource.DataSource = presenter;
+            firstNameTextEdit.DataBindings.Add("EditValue", customerBindingSource, "FirstName");
+            lastNameTextEdit.DataBindings.Add("EditValue", customerBindingSource, "LastName");
+            middleNameTextEdit.DataBindings.Add("EditValue", customerBindingSource, "MiddleName");
+            cityTextEdit.DataBindings.Add("EditValue", customerBindingSource, "City");
+            addressTextEdit.DataBindings.Add("EditValue", customerBindingSource, "Address");
+            telephoneTextEdit.DataBindings.Add("EditValue", customerBindingSource, "Telephone");
+            emailTextEdit.DataBindings.Add("EditValue", customerBindingSource, "Email");
+            ordersGridControl.DataBindings.Add("DataSource", customerBindingSource, "Orders");
+            commentsListBoxControl.DataBindings.Add("DataSource", customerBindingSource, "Comments");
+            commentMemoEdit.DataBindings.Add("EditValue", customerBindingSource, "CurentComment");
         }
 
         private void saveEditButtonItem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            presenter.Save();       
         }
 
         private void saveAndNewButtonItem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            presenter.SaveAndNew();
         }
     }
 }
