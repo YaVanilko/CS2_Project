@@ -22,6 +22,7 @@ namespace Data.EFData
         public void Update(T entity)
         {
             dbContext.Entry(entity).State = EntityState.Modified;
+            dbContext.SaveChanges();
         }
 
         public void Delete(T entity)

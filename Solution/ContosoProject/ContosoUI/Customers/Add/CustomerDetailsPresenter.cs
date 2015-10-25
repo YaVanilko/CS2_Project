@@ -136,7 +136,7 @@ namespace ContosoUI.Customers.Add
         }
         public void Save()
         {
-            if (string.IsNullOrWhiteSpace(currentComment))
+            if (!string.IsNullOrWhiteSpace(currentComment))
             {
                 customer.Comments.Add(new Comment() { Message = currentComment });
             }

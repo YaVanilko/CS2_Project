@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Data.Entity;
 
 namespace Data.EFData
 {
@@ -12,11 +12,27 @@ namespace Data.EFData
     {
         public ICollection<Customer> GetCustomersByCity(string city)
         {
-            return dbContext.Customers.Where(x => x.Contacts.City == city).ToList();
+            return dbContext.Customers.Where(x => x.Contacts.City == city)
+                    .Include(x => x.Contacts)
+                    .Include(x => x.PersonalInfo)
+                    .Include(x => x.Comments)
+                    .ToList();
         }
-        //public IQueryable<Customer> GetAll()
-        //{
-        //    IQueryable<Customer> collection = dbContext.Customers.Include(x => x)
-        //}
+        public new IQueryable<Customer> GetAll()
+        {
+            IQueryable<Customer> collection =
+                dbContext.Customers.Where(x => x.IsActive)
+                    .Include(x => x.Contacts)
+                    .Include(x => x.PersonalInfo)
+                    .Include(x => x.Comments);
+            return collection;
+        }
+        public Customer GetById(int id)
+        {
+            return dbContext.Customers.Where(x => x.Id == id)
+                    .Include(x => x.Contacts)
+                    .Include(x => x.PersonalInfo)
+                    .Include(x => x.Comments).FirstOrDefault();
+        }
     }
 }
