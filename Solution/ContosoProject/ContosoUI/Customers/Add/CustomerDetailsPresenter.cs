@@ -122,8 +122,8 @@ namespace ContosoUI.Customers.Add
                 if (currentComment != value)
                 {
                     currentComment = value;
-                    NotifyPropertyChanged("CurentComment");
-                }
+                    
+                }NotifyPropertyChanged("CurentComment");
             }
         }
         public event PropertyChangedEventHandler PropertyChanged;
@@ -138,7 +138,8 @@ namespace ContosoUI.Customers.Add
         {
             if (!string.IsNullOrWhiteSpace(currentComment))
             {
-                customer.Comments.Add(new Comment() { Message = currentComment });
+                customer.Comments.Add(new Comment() { Message = currentComment, Type = CommentType.Customer });
+                currentComment = string.Empty;
             }
             if (customer.Id > 0)
             {
@@ -148,6 +149,7 @@ namespace ContosoUI.Customers.Add
             {
                 model.Add(customer);
             }
+            NotifyPropertyChanged("Save");
         }
         public void SaveAndNew()
         {

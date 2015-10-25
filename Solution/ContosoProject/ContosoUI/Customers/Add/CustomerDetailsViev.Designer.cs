@@ -63,6 +63,7 @@
             this.mainRibbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.saveOrEditribbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.commentsListBoxControl)).BeginInit();
@@ -91,6 +92,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.listCommentsItem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -116,11 +118,14 @@
             // 
             // commentsListBoxControl
             // 
+            this.commentsListBoxControl.DataSource = this.bindingSource1;
+            this.commentsListBoxControl.DisplayMember = "Message";
             this.commentsListBoxControl.Location = new System.Drawing.Point(12, 457);
             this.commentsListBoxControl.Name = "commentsListBoxControl";
             this.commentsListBoxControl.Size = new System.Drawing.Size(660, 86);
             this.commentsListBoxControl.StyleController = this.layoutControl1;
             this.commentsListBoxControl.TabIndex = 15;
+            this.commentsListBoxControl.ValueMember = "Id";
             // 
             // commentMemoEdit
             // 
@@ -432,6 +437,10 @@
             this.saveOrEditribbonPageGroup.Name = "saveOrEditribbonPageGroup";
             this.saveOrEditribbonPageGroup.Text = "Сохранение";
             // 
+            // bindingSource1
+            // 
+            this.bindingSource1.DataSource = typeof(Domain.Entities.Comment);
+            // 
             // CustomerDetailsViev
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -471,6 +480,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.listCommentsItem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -512,6 +522,7 @@
         private DevExpress.XtraBars.BarButtonItem saveEditButtonItem;
         private DevExpress.XtraBars.BarButtonItem saveAndNewButtonItem;
         private System.Windows.Forms.BindingSource customerBindingSource;
+        private System.Windows.Forms.BindingSource bindingSource1;
 
 
 

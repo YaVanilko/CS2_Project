@@ -41,11 +41,13 @@ namespace ContosoUI.Customers.Add
 
         private void saveEditButtonItem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            presenter.Save();       
+            customerBindingSource.EndEdit();
+            presenter.Save();
         }
 
         private void saveAndNewButtonItem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            customerBindingSource.EndEdit();
             presenter.SaveAndNew();
         }
     }

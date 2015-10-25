@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Data.Entity;
+using System.Data.Entity.Migrations;
 
 namespace Data.EFData
 {
@@ -33,6 +34,11 @@ namespace Data.EFData
                     .Include(x => x.Contacts)
                     .Include(x => x.PersonalInfo)
                     .Include(x => x.Comments).FirstOrDefault();
+        }
+        public new void Update(Customer entity)
+        {
+            dbContext.Customers.AddOrUpdate(entity);
+            dbContext.SaveChanges();
         }
     }
 }
