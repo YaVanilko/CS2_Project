@@ -9,6 +9,5 @@ namespace Domain.DAO
 {
     public interface IGoodsRepository: IRepository<Goods>
     {
-        ICollection<Goods> GetGoodsByCategory(string category);
     }
 }

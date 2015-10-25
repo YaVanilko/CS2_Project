@@ -91,21 +91,6 @@
       <DependentUpon>CustomersListViev.cs</DependentUpon>
     </Compile>
     <Compile Include="Customers\Search\CustomersListViewModel.cs" />
-    <Compile Include="GoodsAll\AddGoods\AddGoods.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GoodsAll\AddGoods\AddGoods.Designer.cs">
-      <DependentUpon>AddGoods.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GoodsAll\AddGoods\AddGoodsPresenter.cs" />
-    <Compile Include="GoodsAll\GoodsF\GoodsForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GoodsAll\GoodsF\GoodsForm.Designer.cs">
-      <DependentUpon>GoodsForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GoodsAll\GoodsF\GoodsListViewModel.cs" />
-    <Compile Include="GoodsAll\GoodsF\GoodsPresenter.cs" />
     <Compile Include="Order\AddEdit\AddOrderXtraForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,6 +113,27 @@
     </Compile>
     <Compile Include="Users\ReportForm\UserReportPresenter.cs" />
     <Compile Include="Users\ReportForm\UserReportViewModel.cs" />
+    <Compile Include="GoodsForm.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GoodsForm.resx</DependentUpon>
+    </Compile>
+    <Compile Include="GoodsForm1\GoodsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GoodsForm1\GoodsForm.Designer.cs">
+      <DependentUpon>GoodsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GoodsForm1\GoodsModel.cs" />
+    <Compile Include="GoodsForm1\GoodsPresenter.cs" />
+    <Compile Include="GoodsForm1\IGoodsModel.cs" />
+    <Compile Include="GoodsForm1\IGoodsView.cs" />
+    <Compile Include="GoodsStoreReportForm\GoodsStoreReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GoodsStoreReportForm\GoodsStoreReportForm.Designer.cs">
+      <DependentUpon>GoodsStoreReportForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -155,12 +161,6 @@
     <EmbeddedResource Include="Customers\Search\CustomersListViev.resx">
       <DependentUpon>CustomersListViev.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GoodsAll\AddGoods\AddGoods.resx">
-      <DependentUpon>AddGoods.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GoodsAll\GoodsF\GoodsForm.resx">
-      <DependentUpon>GoodsForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Order\AddEdit\AddOrderXtraForm.resx">
       <DependentUpon>AddOrderXtraForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -169,6 +169,16 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Users\ReportForm\UserReportForm.resx">
       <DependentUpon>UserReportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GoodsForm.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>GoodsForm.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GoodsForm1\GoodsForm.resx">
+      <DependentUpon>GoodsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GoodsStoreReportForm\GoodsStoreReportForm.resx">
+      <DependentUpon>GoodsStoreReportForm.cs</DependentUpon>
     </EmbeddedResource>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -189,7 +199,6 @@
     <None Include="Properties\DataSources\ContosoUI.EditUserForm.UserReportViewModel.datasource" />
     <None Include="Properties\DataSources\Data.DumbData.Storage.datasource" />
     <None Include="Properties\DataSources\Domain.Entities.Customer.datasource" />
-    <None Include="Properties\DataSources\Domain.Entities.Goods.datasource" />
     <None Include="Properties\DataSources\Domain.Entities.Order.datasource" />
     <EmbeddedResource Include="Test\CustomerListView.resx">
       <DependentUpon>CustomerListView.cs</DependentUpon>
@@ -221,7 +230,6 @@
       <Name>Domain</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
