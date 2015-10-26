@@ -70,12 +70,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AuthenticationForm\AuthenticationForm.cs">
+    <Compile Include="Authentication\AuthenticationForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AuthenticationForm\AuthenticationForm.Designer.cs">
+    <Compile Include="Authentication\AuthenticationForm.Designer.cs">
       <DependentUpon>AuthenticationForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Authentication\AuthenticationPresenter.cs" />
     <Compile Include="Customers\Add\CustomerDetailsPresenter.cs" />
     <Compile Include="Customers\Add\CustomerDetailsViev.cs">
       <SubType>Form</SubType>
@@ -159,7 +160,7 @@
     <Compile Include="Test\OrderListView.Designer.cs">
       <DependentUpon>OrderListView.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AuthenticationForm\AuthenticationForm.resx">
+    <EmbeddedResource Include="Authentication\AuthenticationForm.resx">
       <DependentUpon>AuthenticationForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Customers\Add\CustomerDetailsViev.resx">
