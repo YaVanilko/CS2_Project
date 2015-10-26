@@ -12,7 +12,7 @@ namespace Data.EFData
     {
         public DbSet<Order> Orders { get; set; }
         public DbSet<Customer> Customers { get; set; }
-        public DbSet<Goods> Products { get; set; }
+        public DbSet<Goods> Goods { get; set; }
         public DbSet<ProductCategory> Categories { get; set; }
 
         public DbSet<User> Users { get; set; }

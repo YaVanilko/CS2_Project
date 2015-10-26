@@ -158,6 +158,7 @@
             this.colEditTime});
             this.gridView1.GridControl = this.GoodsGridControl;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsBehavior.Editable = false;
             // 
             // colName
             // 

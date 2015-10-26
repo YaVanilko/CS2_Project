@@ -11,7 +11,7 @@ namespace Data.EFData
 {
     public class EfBaseDao<T> : IRepository<T> where T : BaseEntity, new()
     {
-        ProjectContext dbContext = new ProjectContext();
+        protected ProjectContext dbContext = new ProjectContext();
 
         public void Add(T entity)
         {

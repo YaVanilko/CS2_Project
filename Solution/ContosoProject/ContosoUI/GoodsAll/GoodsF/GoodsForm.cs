@@ -47,9 +47,9 @@ namespace ContosoUI.GoodsAll.GoodsF
 
         private void GoodsComboBoxCategory_SelectedIndexChanged(object sender, EventArgs e)
         {
-            this.goodsBindingSource.Clear();
+            //this.goodsBindingSource.Clear();
             this.goodsBindingSource.DataSource = presenter.SearchGoodsOnCategory(GoodsComboBoxCategory.SelectedItem.ToString());
-
+            GoodsGridControl.RefreshDataSource();
         }
 
         private void GoodsGridControl_Click(object sender, EventArgs e)
