@@ -62,8 +62,8 @@
     <Compile Include="DumbData\tempDAO\PersonalInfoDao.cs" />
     <Compile Include="DumbData\tempDAO\UserDao.cs" />
     <Compile Include="EFData\EfBaseDao.cs" />
-    <Compile Include="EFData\EFContactInfoDao.cs" />
-    <Compile Include="EFData\EFCustomerDao.cs" />
+    <Compile Include="EFData\ContactsInfoDao.cs" />
+    <Compile Include="EFData\CustomerDao.cs" />
     <Compile Include="EFData\EFProductCategoryDao.cs" />
     <Compile Include="EFData\ProjectContext.cs" />
     <Compile Include="Migrations\201510221021052_Init.cs" />

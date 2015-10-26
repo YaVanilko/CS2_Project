@@ -1,4 +1,5 @@
 ﻿using Domain.Entities;
+using Domain.DAO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Data.EFData
 {
-    public class EFContactInfoDao: EfBaseDao<ContactInfo>
+    public class ContactsInfoDao : EfBaseDao<ContactInfo>, IContactInfoRepository
     {
     }
 }
