@@ -16,11 +16,13 @@ namespace Data.EFData
         public void Add(T entity)
         {
             dbContext.Set<T>().Add(entity);
+            dbContext.SaveChanges();
         }
 
         public void Update(T entity)
         {
             dbContext.Entry(entity).State = EntityState.Modified;
+            dbContext.SaveChanges();
         }
 
         public void Delete(T entity)

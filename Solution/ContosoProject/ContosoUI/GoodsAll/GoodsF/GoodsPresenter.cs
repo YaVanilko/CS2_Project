@@ -47,8 +47,7 @@ namespace ContosoUI.GoodsAll.GoodsF
                         Count = g.Count,
                         Category = g.Category.CategoryName,
                         Coment = g.Coments.ToString(),
-                        isActive = g.IsActive,
-                        User = g.User.Login
+                        isActive = g.IsActive
                     });
                 }
             }
