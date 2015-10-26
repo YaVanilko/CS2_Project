@@ -48,6 +48,7 @@
             this.usersMenuGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.System = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
+            this.RolesButton = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
@@ -66,9 +67,10 @@
             this.addNewOrderBtn,
             this.addNewUserBtn,
             this.goodsMenuBtn,
-            this.barButtonItem3});
+            this.barButtonItem3,
+            this.RolesButton});
             this.ribbonControl.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl.MaxItemId = 13;
+            this.ribbonControl.MaxItemId = 14;
             this.ribbonControl.MdiMergeStyle = DevExpress.XtraBars.Ribbon.RibbonMdiMergeStyle.Always;
             this.ribbonControl.Name = "ribbonControl";
             this.ribbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -197,6 +199,7 @@
             // 
             this.usersMenuGroup.ItemLinks.Add(this.usersMenuBtn);
             this.usersMenuGroup.ItemLinks.Add(this.addNewUserBtn);
+            this.usersMenuGroup.ItemLinks.Add(this.RolesButton);
             this.usersMenuGroup.Name = "usersMenuGroup";
             this.usersMenuGroup.Text = "Пользователи";
             // 
@@ -211,13 +214,21 @@
             // 
             this.xtraTabbedMdiManager1.MdiParent = this;
             // 
+            // RolesButton
+            // 
+            this.RolesButton.Caption = "Роли";
+            this.RolesButton.Id = 13;
+            this.RolesButton.ImageUri.Uri = "Show";
+            this.RolesButton.Name = "RolesButton";
+            this.RolesButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.RolesButton_ItemClick);
+            // 
             // MainView
             // 
             this.ClientSize = new System.Drawing.Size(1028, 621);
             this.Controls.Add(this.ribbonControl);
             this.IsMdiContainer = true;
             this.Name = "MainView";
-            this.Text = "MainView";
+            this.Text = "ContosoProgram";
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).EndInit();
             this.ResumeLayout(false);
@@ -245,5 +256,6 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ordersMenuGroup;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup goodsMenuGroup;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup usersMenuGroup;
+        private DevExpress.XtraBars.BarButtonItem RolesButton;
     }
 }
