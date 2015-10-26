@@ -11,7 +11,6 @@ namespace Domain.Entities
         public string Name { get; set; }
         public string SKU { get; set; }
         public double Price { get; set; }
-        public bool IsActive { get; set; }
         public int Count { get; set; }
         public ProductCategory Category { get; set; }
         public List<Comment> Coments { get; set; }
@@ -20,7 +19,6 @@ namespace Domain.Entities
             Coments = new List<Comment>();
             Category = new ProductCategory();
         }
-        public  User User { get; set; }
 
     }
 }
