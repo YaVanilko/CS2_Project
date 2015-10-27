@@ -146,6 +146,7 @@
             this.addNewUserBtn.Id = 9;
             this.addNewUserBtn.ImageUri.Uri = "Customization";
             this.addNewUserBtn.Name = "addNewUserBtn";
+            this.addNewUserBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.addNewUserBtn_ItemClick);
             // 
             // goodsMenuBtn
             // 
