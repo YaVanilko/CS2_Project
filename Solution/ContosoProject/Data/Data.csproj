@@ -68,6 +68,7 @@
     <Compile Include="EFData\PermissionDao.cs" />
     <Compile Include="EFData\ProjectContext.cs" />
     <Compile Include="EFData\RoleDao.cs" />
+    <Compile Include="EFData\UserDao.cs" />
     <Compile Include="Migrations\201510221021052_Init.cs" />
     <Compile Include="Migrations\201510221021052_Init.Designer.cs">
       <DependentUpon>201510221021052_Init.cs</DependentUpon>
