@@ -73,6 +73,5 @@ namespace ContosoUI.Customers.Search
             customersGridView.ShowPrintPreview();
             customersGridView.Print();
         }
-
     }
 }

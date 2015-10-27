@@ -10,6 +10,9 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using ContosoUI.Customers.Search;
 using ContosoUI.Customers.Add;
+using ContosoUI.Order.AddEdit;
+using ContosoUI.Order.Search;
+using ContosoUI.Order;
 
 namespace ContosoUI
 {
@@ -34,7 +37,7 @@ namespace ContosoUI
 
         private void ordersMenuBtn_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            var form = new Test.OrderListView();
+            var form = new SearchView();
             form.MdiParent = this;
             form.Show();
         }
@@ -55,7 +58,7 @@ namespace ContosoUI
 
         private void addNewOrderBtn_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            var form = new CustomerDetailsViev();
+            var form = new AddEditOrderView();
             form.MdiParent = this;
             form.Show();
         }

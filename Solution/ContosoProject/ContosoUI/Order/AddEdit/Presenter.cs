@@ -3,17 +3,20 @@ using Domain.DAO;
 using Domain.Entities;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace ContosoUI.Order.AddEdit
 {
-    public class AddEditOrderPresenter
+    public class AddEditOrderPresenter : INotifyPropertyChanged
     {
         readonly AddEditOrderView view = new AddEditOrderView();
         readonly IOrderRepository model = new OrderDao();
         Domain.Entities.Order order;
+
+        public event PropertyChangedEventHandler PropertyChanged;
 
         public AddEditOrderPresenter(AddEditOrderView view)
         {

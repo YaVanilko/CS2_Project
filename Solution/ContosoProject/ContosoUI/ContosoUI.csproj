@@ -91,11 +91,11 @@
       <DependentUpon>CustomersListViev.cs</DependentUpon>
     </Compile>
     <Compile Include="Customers\Search\CustomersListViewModel.cs" />
-    <Compile Include="Order\AddEdit\AddOrderXtraForm.cs">
+    <Compile Include="Order\AddEdit\AddEditOrderView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Order\AddEdit\AddOrderXtraForm.Designer.cs">
-      <DependentUpon>AddOrderXtraForm.cs</DependentUpon>
+    <Compile Include="Order\AddEdit\AddEditOrderView.Designer.cs">
+      <DependentUpon>AddEditOrderView.cs</DependentUpon>
     </Compile>
     <Compile Include="Order\AddEdit\Presenter.cs" />
     <Compile Include="Order\Search\SearchPresenter.cs" />
@@ -161,8 +161,8 @@
     <EmbeddedResource Include="Customers\Search\CustomersListViev.resx">
       <DependentUpon>CustomersListViev.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Order\AddEdit\AddOrderXtraForm.resx">
-      <DependentUpon>AddOrderXtraForm.cs</DependentUpon>
+    <EmbeddedResource Include="Order\AddEdit\AddEditOrderView.resx">
+      <DependentUpon>AddEditOrderView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Order\Search\SearchView.resx">
       <DependentUpon>SearchView.cs</DependentUpon>
@@ -197,6 +197,7 @@
     </Compile>
     <None Include="Properties\DataSources\ContosoUI.Customers.Search.CustomersListViewModel.datasource" />
     <None Include="Properties\DataSources\ContosoUI.EditUserForm.UserReportViewModel.datasource" />
+    <None Include="Properties\DataSources\ContosoUI.Order.Search.SearchViewModel.datasource" />
     <None Include="Properties\DataSources\Data.DumbData.Storage.datasource" />
     <None Include="Properties\DataSources\Domain.Entities.Customer.datasource" />
     <None Include="Properties\DataSources\Domain.Entities.Order.datasource" />

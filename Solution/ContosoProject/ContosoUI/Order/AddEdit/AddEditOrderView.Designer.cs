@@ -194,7 +194,7 @@
             this.deleteRibbonPageGroup,
             this.ribbonPageGroup1});
             this.mainRibbonPage.Name = "mainRibbonPage";
-            this.mainRibbonPage.Text = "Главная";
+            this.mainRibbonPage.Text = "Меню";
             // 
             // addGroupPage
             // 

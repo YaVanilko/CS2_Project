@@ -38,14 +38,15 @@
             this.statusComboBox = new System.Windows.Forms.ComboBox();
             this.resultGridControl = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colCustomer = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colcountOfGoods = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colTotalCost = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colStatus = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colcountOfComments = new DevExpress.XtraGrid.Columns.GridColumn();
             this.layoutControlGroup = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.statusLayoutControlItem = new DevExpress.XtraLayout.LayoutControlItem();
+            this.searchViewModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.colStatus = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCustomer = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcountOfGoods = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTotalCost = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcountOfComments = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl)).BeginInit();
             this.layoutControl.SuspendLayout();
@@ -54,6 +55,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.statusLayoutControlItem)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchViewModelBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonControl
@@ -82,7 +84,7 @@
             this.mainRibbonPage.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.searchRibbonPageGroup});
             this.mainRibbonPage.Name = "mainRibbonPage";
-            this.mainRibbonPage.Text = "Главная";
+            this.mainRibbonPage.Text = "Меню";
             // 
             // searchRibbonPageGroup
             // 
@@ -113,6 +115,7 @@
             // 
             // resultGridControl
             // 
+            this.resultGridControl.DataSource = this.searchViewModelBindingSource;
             this.resultGridControl.Location = new System.Drawing.Point(12, 37);
             this.resultGridControl.MainView = this.gridView1;
             this.resultGridControl.MenuManager = this.ribbonControl;
@@ -125,48 +128,13 @@
             // gridView1
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colStatus,
             this.colCustomer,
             this.colcountOfGoods,
             this.colTotalCost,
-            this.colStatus,
             this.colcountOfComments});
             this.gridView1.GridControl = this.resultGridControl;
             this.gridView1.Name = "gridView1";
-            // 
-            // colCustomer
-            // 
-            this.colCustomer.FieldName = "Customer";
-            this.colCustomer.Name = "colCustomer";
-            this.colCustomer.Visible = true;
-            this.colCustomer.VisibleIndex = 0;
-            // 
-            // colcountOfGoods
-            // 
-            this.colcountOfGoods.FieldName = "countOfGoods";
-            this.colcountOfGoods.Name = "colcountOfGoods";
-            this.colcountOfGoods.Visible = true;
-            this.colcountOfGoods.VisibleIndex = 1;
-            // 
-            // colTotalCost
-            // 
-            this.colTotalCost.FieldName = "TotalCost";
-            this.colTotalCost.Name = "colTotalCost";
-            this.colTotalCost.Visible = true;
-            this.colTotalCost.VisibleIndex = 2;
-            // 
-            // colStatus
-            // 
-            this.colStatus.FieldName = "Status";
-            this.colStatus.Name = "colStatus";
-            this.colStatus.Visible = true;
-            this.colStatus.VisibleIndex = 3;
-            // 
-            // colcountOfComments
-            // 
-            this.colcountOfComments.FieldName = "countOfComments";
-            this.colcountOfComments.Name = "colcountOfComments";
-            this.colcountOfComments.Visible = true;
-            this.colcountOfComments.VisibleIndex = 4;
             // 
             // layoutControlGroup
             // 
@@ -198,6 +166,45 @@
             this.statusLayoutControlItem.Text = "Статус";
             this.statusLayoutControlItem.TextSize = new System.Drawing.Size(36, 13);
             // 
+            // searchViewModelBindingSource
+            // 
+            this.searchViewModelBindingSource.DataSource = typeof(ContosoUI.Order.Search.SearchViewModel);
+            // 
+            // colStatus
+            // 
+            this.colStatus.FieldName = "Status";
+            this.colStatus.Name = "colStatus";
+            this.colStatus.Visible = true;
+            this.colStatus.VisibleIndex = 0;
+            // 
+            // colCustomer
+            // 
+            this.colCustomer.FieldName = "Customer";
+            this.colCustomer.Name = "colCustomer";
+            this.colCustomer.Visible = true;
+            this.colCustomer.VisibleIndex = 1;
+            // 
+            // colcountOfGoods
+            // 
+            this.colcountOfGoods.FieldName = "countOfGoods";
+            this.colcountOfGoods.Name = "colcountOfGoods";
+            this.colcountOfGoods.Visible = true;
+            this.colcountOfGoods.VisibleIndex = 2;
+            // 
+            // colTotalCost
+            // 
+            this.colTotalCost.FieldName = "TotalCost";
+            this.colTotalCost.Name = "colTotalCost";
+            this.colTotalCost.Visible = true;
+            this.colTotalCost.VisibleIndex = 3;
+            // 
+            // colcountOfComments
+            // 
+            this.colcountOfComments.FieldName = "countOfComments";
+            this.colcountOfComments.Name = "colcountOfComments";
+            this.colcountOfComments.Visible = true;
+            this.colcountOfComments.VisibleIndex = 4;
+            // 
             // SearchView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -215,6 +222,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.statusLayoutControlItem)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchViewModelBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -233,10 +241,11 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private System.Windows.Forms.ComboBox statusComboBox;
         private DevExpress.XtraLayout.LayoutControlItem statusLayoutControlItem;
+        private System.Windows.Forms.BindingSource searchViewModelBindingSource;
+        private DevExpress.XtraGrid.Columns.GridColumn colStatus;
         private DevExpress.XtraGrid.Columns.GridColumn colCustomer;
         private DevExpress.XtraGrid.Columns.GridColumn colcountOfGoods;
         private DevExpress.XtraGrid.Columns.GridColumn colTotalCost;
-        private DevExpress.XtraGrid.Columns.GridColumn colStatus;
         private DevExpress.XtraGrid.Columns.GridColumn colcountOfComments;
     }
 }
