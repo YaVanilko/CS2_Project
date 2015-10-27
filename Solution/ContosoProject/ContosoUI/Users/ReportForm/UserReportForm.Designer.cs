@@ -35,7 +35,6 @@
             this.colLogin = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colIsActive = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colOperator = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colEditTime = new DevExpress.XtraGrid.Columns.GridColumn();
             this.UserReportGridControl = new DevExpress.XtraGrid.GridControl();
             this.userReportViewModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -67,7 +66,6 @@
             this.colLogin,
             this.colId,
             this.colIsActive,
-            this.colOperator,
             this.colEditTime});
             this.UserReportGridView.GridControl = this.UserReportGridControl;
             this.UserReportGridView.Name = "UserReportGridView";
@@ -77,13 +75,13 @@
             // colPersonalInfo
             // 
             this.colPersonalInfo.Caption = "ФИО";
-            this.colPersonalInfo.FieldName = "PersonalInfo";
+            this.colPersonalInfo.FieldName = "Name";
             this.colPersonalInfo.Name = "colPersonalInfo";
             this.colPersonalInfo.OptionsColumn.AllowFocus = false;
             this.colPersonalInfo.OptionsColumn.ReadOnly = true;
             this.colPersonalInfo.Visible = true;
             this.colPersonalInfo.VisibleIndex = 0;
-            this.colPersonalInfo.Width = 189;
+            this.colPersonalInfo.Width = 257;
             // 
             // colRole
             // 
@@ -94,7 +92,7 @@
             this.colRole.OptionsColumn.ReadOnly = true;
             this.colRole.Visible = true;
             this.colRole.VisibleIndex = 1;
-            this.colRole.Width = 113;
+            this.colRole.Width = 143;
             // 
             // colLogin
             // 
@@ -105,7 +103,7 @@
             this.colLogin.OptionsColumn.ReadOnly = true;
             this.colLogin.Visible = true;
             this.colLogin.VisibleIndex = 2;
-            this.colLogin.Width = 191;
+            this.colLogin.Width = 195;
             // 
             // colId
             // 
@@ -115,6 +113,7 @@
             this.colId.OptionsColumn.ReadOnly = true;
             this.colId.Visible = true;
             this.colId.VisibleIndex = 3;
+            this.colId.Width = 89;
             // 
             // colIsActive
             // 
@@ -125,29 +124,18 @@
             this.colIsActive.OptionsColumn.ReadOnly = true;
             this.colIsActive.Visible = true;
             this.colIsActive.VisibleIndex = 4;
-            this.colIsActive.Width = 140;
-            // 
-            // colOperator
-            // 
-            this.colOperator.Caption = "Добавил";
-            this.colOperator.FieldName = "Operator";
-            this.colOperator.Name = "colOperator";
-            this.colOperator.OptionsColumn.AllowFocus = false;
-            this.colOperator.OptionsColumn.ReadOnly = true;
-            this.colOperator.Visible = true;
-            this.colOperator.VisibleIndex = 5;
-            this.colOperator.Width = 140;
+            this.colIsActive.Width = 137;
             // 
             // colEditTime
             // 
-            this.colEditTime.Caption = "Редактировали";
+            this.colEditTime.Caption = "Добавлен";
             this.colEditTime.FieldName = "EditTime";
             this.colEditTime.Name = "colEditTime";
             this.colEditTime.OptionsColumn.AllowFocus = false;
             this.colEditTime.OptionsColumn.ReadOnly = true;
             this.colEditTime.Visible = true;
-            this.colEditTime.VisibleIndex = 6;
-            this.colEditTime.Width = 160;
+            this.colEditTime.VisibleIndex = 5;
+            this.colEditTime.Width = 165;
             // 
             // UserReportGridControl
             // 
@@ -162,6 +150,10 @@
             this.UserReportGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.UserReportGridView,
             this.gridView2});
+            // 
+            // userReportViewModelBindingSource
+            // 
+            this.userReportViewModelBindingSource.DataSource = typeof(ContosoUI.EditUserForm.UserReportViewModel);
             // 
             // ribbon
             // 
@@ -330,7 +322,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colLogin;
         private DevExpress.XtraGrid.Columns.GridColumn colId;
         private DevExpress.XtraGrid.Columns.GridColumn colIsActive;
-        private DevExpress.XtraGrid.Columns.GridColumn colOperator;
         private DevExpress.XtraGrid.Columns.GridColumn colEditTime;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
