@@ -8,6 +8,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraBars;
+using DevExpress.XtraGrid.Views.Grid;
+using DevExpress.XtraGrid.Views.Grid.ViewInfo;
 
 namespace ContosoUI.EditUserForm
 {
@@ -29,6 +31,13 @@ namespace ContosoUI.EditUserForm
         private void userReportViewModelBindingSource_CurrentChanged(object sender, EventArgs e)
         {
             Refresh();
+        }
+
+        private void UserReportGridView_DoubleClick(object sender, EventArgs e)
+        {
+            var grid = (GridView)sender;
+            GridHitInfo info = grid.CalcHitInfo(grid.GridControl.PointToClient(Control.MousePosition));
+            MessageBox.Show(grid.GetRowCellValue(info.RowHandle, "Id").ToString());
         }
 
    

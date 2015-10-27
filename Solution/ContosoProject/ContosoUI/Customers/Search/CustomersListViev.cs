@@ -25,8 +25,9 @@ namespace ContosoUI.Customers.Search
         public void Refresh()
         {
             filterCityComboBoxEdit.Properties.Items.Clear();
-            filterCityComboBoxEdit.Properties.Items.AddRange(presenter.Cities.ToArray());
             filterCityComboBoxEdit.Properties.Items.Add("Все города");
+            filterCityComboBoxEdit.Properties.Items.AddRange(presenter.Cities.ToArray());
+            filterCityComboBoxEdit.SelectedIndex = 0;
             customersGridControl.DataSource = presenter.viewModel;
             customersGridControl.RefreshDataSource();
         }

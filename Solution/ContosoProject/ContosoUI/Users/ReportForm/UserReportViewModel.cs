@@ -49,7 +49,7 @@ namespace ContosoUI.EditUserForm
         //{
         //    get { return user.Operator.Login; }
         //}
-        public int ID
+        public int Id
         {
             get { return user.Id; }
         }

@@ -62,13 +62,20 @@
     <Compile Include="DumbData\tempDAO\PersonalInfoDao.cs" />
     <Compile Include="DumbData\tempDAO\UserDao.cs" />
     <Compile Include="EFData\EfBaseDao.cs" />
-    <Compile Include="EFData\EFContactInfoDao.cs" />
-    <Compile Include="EFData\EFCustomerDao.cs" />
+    <Compile Include="EFData\ContactsInfoDao.cs" />
+    <Compile Include="EFData\CustomerDao.cs" />
     <Compile Include="EFData\EFProductCategoryDao.cs" />
+    <Compile Include="EFData\PermissionDao.cs" />
     <Compile Include="EFData\ProjectContext.cs" />
+    <Compile Include="EFData\RoleDao.cs" />
+    <Compile Include="EFData\UserDao.cs" />
     <Compile Include="Migrations\201510221021052_Init.cs" />
     <Compile Include="Migrations\201510221021052_Init.Designer.cs">
       <DependentUpon>201510221021052_Init.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510271339203_RolePerson.cs" />
+    <Compile Include="Migrations\201510271339203_RolePerson.Designer.cs">
+      <DependentUpon>201510271339203_RolePerson.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -86,6 +93,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201510221021052_Init.resx">
       <DependentUpon>201510221021052_Init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510271339203_RolePerson.resx">
+      <DependentUpon>201510271339203_RolePerson.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
