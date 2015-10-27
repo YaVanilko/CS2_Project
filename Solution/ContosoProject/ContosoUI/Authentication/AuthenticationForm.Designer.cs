@@ -1,4 +1,4 @@
-﻿namespace ContosoUI.AuthenticationForm
+﻿namespace ContosoUI.Authentication
 {
     partial class AuthenticationForm
     {
@@ -37,10 +37,11 @@
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlGroup3 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.LoginLayoutControlItem = new DevExpress.XtraLayout.LayoutControlItem();
+            this.PasswordLayoutControlItem = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlGroup4 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.simpleButtonLCI = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LoginPictureBox)).BeginInit();
@@ -49,10 +50,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LoginLayoutControlItem)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PasswordLayoutControlItem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.simpleButtonLCI)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             this.SuspendLayout();
             // 
             // OkButton
@@ -100,15 +102,20 @@
             this.LoginTextEdit.Size = new System.Drawing.Size(398, 20);
             this.LoginTextEdit.StyleController = this.layoutControl1;
             this.LoginTextEdit.TabIndex = 4;
+            this.LoginTextEdit.KeyDown += new System.Windows.Forms.KeyEventHandler(this.LoginTextEdit_KeyDown);
             // 
             // PasswordEdit
             // 
             this.PasswordEdit.EditValue = "";
             this.PasswordEdit.Location = new System.Drawing.Point(56, 329);
             this.PasswordEdit.Name = "PasswordEdit";
+            this.PasswordEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8F);
+            this.PasswordEdit.Properties.Appearance.Options.UseFont = true;
+            this.PasswordEdit.Properties.UseSystemPasswordChar = true;
             this.PasswordEdit.Size = new System.Drawing.Size(398, 20);
             this.PasswordEdit.StyleController = this.layoutControl1;
             this.PasswordEdit.TabIndex = 6;
+            this.PasswordEdit.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PasswordEdit_KeyDown);
             // 
             // layoutControlGroup1
             // 
@@ -140,37 +147,35 @@
             this.layoutControlGroup3.CustomizationFormText = "layoutControlGroup2";
             this.layoutControlGroup3.GroupBordersVisible = false;
             this.layoutControlGroup3.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlItem2,
-            this.layoutControlItem3});
+            this.LoginLayoutControlItem,
+            this.PasswordLayoutControlItem});
             this.layoutControlGroup3.Location = new System.Drawing.Point(0, 293);
             this.layoutControlGroup3.Name = "layoutControlGroup3";
             this.layoutControlGroup3.Size = new System.Drawing.Size(446, 48);
             this.layoutControlGroup3.Text = "layoutControlGroup2";
             // 
-            // layoutControlItem2
+            // LoginLayoutControlItem
             // 
-            this.layoutControlItem2.Control = this.LoginTextEdit;
-            this.layoutControlItem2.CustomizationFormText = "layoutControlItem1";
-            this.layoutControlItem2.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlItem2.MaxSize = new System.Drawing.Size(0, 24);
-            this.layoutControlItem2.MinSize = new System.Drawing.Size(98, 24);
-            this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(446, 24);
-            this.layoutControlItem2.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
-            this.layoutControlItem2.Text = "Логин:";
-            this.layoutControlItem2.TextLocation = DevExpress.Utils.Locations.Left;
-            this.layoutControlItem2.TextSize = new System.Drawing.Size(41, 13);
+            this.LoginLayoutControlItem.Control = this.LoginTextEdit;
+            this.LoginLayoutControlItem.Location = new System.Drawing.Point(0, 0);
+            this.LoginLayoutControlItem.MaxSize = new System.Drawing.Size(0, 24);
+            this.LoginLayoutControlItem.MinSize = new System.Drawing.Size(98, 24);
+            this.LoginLayoutControlItem.Name = "LoginLayoutControlItem";
+            this.LoginLayoutControlItem.Size = new System.Drawing.Size(446, 24);
+            this.LoginLayoutControlItem.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            this.LoginLayoutControlItem.Text = "Логин:";
+            this.LoginLayoutControlItem.TextLocation = DevExpress.Utils.Locations.Left;
+            this.LoginLayoutControlItem.TextSize = new System.Drawing.Size(41, 13);
             // 
-            // layoutControlItem3
+            // PasswordLayoutControlItem
             // 
-            this.layoutControlItem3.Control = this.PasswordEdit;
-            this.layoutControlItem3.CustomizationFormText = "layoutControlItem3";
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 24);
-            this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(446, 24);
-            this.layoutControlItem3.Text = "Пароль:";
-            this.layoutControlItem3.TextLocation = DevExpress.Utils.Locations.Left;
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(41, 13);
+            this.PasswordLayoutControlItem.Control = this.PasswordEdit;
+            this.PasswordLayoutControlItem.Location = new System.Drawing.Point(0, 24);
+            this.PasswordLayoutControlItem.Name = "layoutControlItem3";
+            this.PasswordLayoutControlItem.Size = new System.Drawing.Size(446, 24);
+            this.PasswordLayoutControlItem.Text = "Пароль:";
+            this.PasswordLayoutControlItem.TextLocation = DevExpress.Utils.Locations.Left;
+            this.PasswordLayoutControlItem.TextSize = new System.Drawing.Size(41, 13);
             // 
             // layoutControlGroup4
             // 
@@ -199,6 +204,17 @@
             this.simpleButtonLCI.TrimClientAreaToControl = false;
             this.simpleButtonLCI.Click += new System.EventHandler(this.OkButton_Click);
             // 
+            // layoutControlItem3
+            // 
+            this.layoutControlItem3.Control = this.PasswordEdit;
+            this.layoutControlItem3.CustomizationFormText = "layoutControlItem3";
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 24);
+            this.layoutControlItem3.Name = "layoutControlItem3";
+            this.layoutControlItem3.Size = new System.Drawing.Size(446, 24);
+            this.layoutControlItem3.Text = "Пароль:";
+            this.layoutControlItem3.TextLocation = DevExpress.Utils.Locations.Left;
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(41, 13);
+            // 
             // AuthenticationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -219,10 +235,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LoginLayoutControlItem)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PasswordLayoutControlItem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.simpleButtonLCI)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -237,10 +254,11 @@
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup3;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
+        private DevExpress.XtraLayout.LayoutControlItem LoginLayoutControlItem;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup4;
         private DevExpress.XtraLayout.LayoutControlItem simpleButtonLCI;
+        private DevExpress.XtraLayout.LayoutControlItem PasswordLayoutControlItem;
 
 
     }
