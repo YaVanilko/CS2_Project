@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using DevExpress.XtraBars;
 using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraGrid.Views.Grid.ViewInfo;
+using ContosoUI.Users.Edit;
 
 namespace ContosoUI.EditUserForm
 {
@@ -37,10 +38,9 @@ namespace ContosoUI.EditUserForm
         {
             var grid = (GridView)sender;
             GridHitInfo info = grid.CalcHitInfo(grid.GridControl.PointToClient(Control.MousePosition));
-            MessageBox.Show(grid.GetRowCellValue(info.RowHandle, "Id").ToString());
+            var form = new UserEditForm((int)grid.GetRowCellValue(info.RowHandle, "Id"));
+            form.MdiParent = this.MdiParent;
+            form.Show();
         }
-
-   
-
     }
 }
