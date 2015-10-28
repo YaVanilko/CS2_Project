@@ -128,6 +128,7 @@
     <Compile Include="Order\Search\SearchView.Designer.cs">
       <DependentUpon>SearchView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Users\Edit\RolesDao.cs" />
     <Compile Include="Users\Edit\UserEditForm.cs">
       <SubType>Form</SubType>
     </Compile>

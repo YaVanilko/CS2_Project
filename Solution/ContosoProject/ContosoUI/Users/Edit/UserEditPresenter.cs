@@ -14,18 +14,22 @@ namespace ContosoUI.Users.Edit
     {
         User user = null;
         UserEditForm view = null;
+        List<Role> roles = null;
         IUserRepository model = new UserDao();
+        IRoleRepository role = new RoleDao();
+        
 
 
         public UserEditPresenter(UserEditForm view)
         {
             this.user = new User();
-            this.view = view;   
+            this.view = view;
+            this.roles = this.role.GetAll().ToList();
         }
         public UserEditPresenter(UserEditForm view, int id)
+            : this(view)
         {
             this.user = model.GetById(id);
-            this.view = view;
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -86,9 +90,24 @@ namespace ContosoUI.Users.Edit
                 }
             }
         }
-        public string Role
+        public  Role Role
+        { 
+            get { return user.Role; }
+            set
+            {
+                if (user.Role != value)
+                {
+                    user.Role = value;
+                    NotifyPropertyChanged("Role");
+                }
+            }
+        }
+        public List<Role> AllRoles
         {
-            get { return user.Role.Name; }
+            get
+            {
+                return roles;
+            }
         }
     }
 }

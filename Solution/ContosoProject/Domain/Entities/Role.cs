@@ -16,5 +16,9 @@ namespace Domain.Entities
         { 
             Permissions = new List<Permission>(); 
         }
+        public override string ToString()
+        {
+            return this.Name;
+        }
     }
 }

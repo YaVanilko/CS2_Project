@@ -36,10 +36,10 @@
             this.SelectRoleComboBox = new DevExpress.XtraEditors.ComboBoxEdit();
             this.customerGroup = new DevExpress.XtraLayout.LayoutControlGroup();
             this.personalInfoGroup = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.oldPasswordLayoutControlItem = new DevExpress.XtraLayout.LayoutControlItem();
+            this.loginLayoutControlItem = new DevExpress.XtraLayout.LayoutControlItem();
+            this.newPasswordLayoutControlItem = new DevExpress.XtraLayout.LayoutControlItem();
+            this.confimPasswordLayoutControlItem = new DevExpress.XtraLayout.LayoutControlItem();
             this.contactInfoGroup = new DevExpress.XtraLayout.LayoutControlGroup();
             this.lastNameItem = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -63,10 +63,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.SelectRoleComboBox.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerGroup)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.personalInfoGroup)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oldPasswordLayoutControlItem)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.loginLayoutControlItem)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.newPasswordLayoutControlItem)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.confimPasswordLayoutControlItem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.contactInfoGroup)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lastNameItem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
@@ -89,7 +89,7 @@
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 143);
             this.layoutControl1.Name = "layoutControl1";
-            this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(626, 69, 631, 398);
+            this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(413, 69, 631, 398);
             this.layoutControl1.Root = this.customerGroup;
             this.layoutControl1.Size = new System.Drawing.Size(953, 522);
             this.layoutControl1.TabIndex = 0;
@@ -146,8 +146,7 @@
             this.loginTextEdit.Location = new System.Drawing.Point(24, 58);
             this.loginTextEdit.Name = "loginTextEdit";
             this.loginTextEdit.Properties.AllowFocused = false;
-            this.loginTextEdit.Properties.Mask.EditMask = "\\p{L}+";
-            this.loginTextEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
+            this.loginTextEdit.Properties.Mask.EditMask = "[a-zA-Z]+";
             this.loginTextEdit.Properties.Mask.ShowPlaceHolders = false;
             this.loginTextEdit.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.loginTextEdit.Size = new System.Drawing.Size(386, 20);
@@ -184,6 +183,7 @@
             this.SelectRoleComboBox.Name = "SelectRoleComboBox";
             this.SelectRoleComboBox.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.SelectRoleComboBox.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.SelectRoleComboBox.Size = new System.Drawing.Size(491, 20);
             this.SelectRoleComboBox.StyleController = this.layoutControl1;
             this.SelectRoleComboBox.TabIndex = 4;
@@ -203,58 +203,58 @@
             // personalInfoGroup
             // 
             this.personalInfoGroup.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlItem3,
-            this.layoutControlItem4,
-            this.layoutControlItem5,
-            this.layoutControlItem6});
+            this.oldPasswordLayoutControlItem,
+            this.loginLayoutControlItem,
+            this.newPasswordLayoutControlItem,
+            this.confimPasswordLayoutControlItem});
             this.personalInfoGroup.Location = new System.Drawing.Point(0, 0);
             this.personalInfoGroup.Name = "personalInfoGroup";
             this.personalInfoGroup.Size = new System.Drawing.Size(414, 502);
             this.personalInfoGroup.Text = "Персональные данные";
             // 
-            // layoutControlItem3
+            // oldPasswordLayoutControlItem
             // 
-            this.layoutControlItem3.Control = this.OldPasswordTextEdit;
-            this.layoutControlItem3.CustomizationFormText = "Имя";
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 40);
-            this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(390, 40);
-            this.layoutControlItem3.Text = "Старый пароль";
-            this.layoutControlItem3.TextLocation = DevExpress.Utils.Locations.Top;
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(109, 13);
+            this.oldPasswordLayoutControlItem.Control = this.OldPasswordTextEdit;
+            this.oldPasswordLayoutControlItem.CustomizationFormText = "Имя";
+            this.oldPasswordLayoutControlItem.Location = new System.Drawing.Point(0, 40);
+            this.oldPasswordLayoutControlItem.Name = "oldPasswordLayoutControlItem";
+            this.oldPasswordLayoutControlItem.Size = new System.Drawing.Size(390, 40);
+            this.oldPasswordLayoutControlItem.Text = "Старый пароль";
+            this.oldPasswordLayoutControlItem.TextLocation = DevExpress.Utils.Locations.Top;
+            this.oldPasswordLayoutControlItem.TextSize = new System.Drawing.Size(109, 13);
             // 
-            // layoutControlItem4
+            // loginLayoutControlItem
             // 
-            this.layoutControlItem4.Control = this.loginTextEdit;
-            this.layoutControlItem4.CustomizationFormText = "Имя";
-            this.layoutControlItem4.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(390, 40);
-            this.layoutControlItem4.Text = "Логин";
-            this.layoutControlItem4.TextLocation = DevExpress.Utils.Locations.Top;
-            this.layoutControlItem4.TextSize = new System.Drawing.Size(109, 13);
+            this.loginLayoutControlItem.Control = this.loginTextEdit;
+            this.loginLayoutControlItem.CustomizationFormText = "Имя";
+            this.loginLayoutControlItem.Location = new System.Drawing.Point(0, 0);
+            this.loginLayoutControlItem.Name = "loginLayoutControlItem";
+            this.loginLayoutControlItem.Size = new System.Drawing.Size(390, 40);
+            this.loginLayoutControlItem.Text = "Логин";
+            this.loginLayoutControlItem.TextLocation = DevExpress.Utils.Locations.Top;
+            this.loginLayoutControlItem.TextSize = new System.Drawing.Size(109, 13);
             // 
-            // layoutControlItem5
+            // newPasswordLayoutControlItem
             // 
-            this.layoutControlItem5.Control = this.NewPasswordTextEdit;
-            this.layoutControlItem5.CustomizationFormText = "Имя";
-            this.layoutControlItem5.Location = new System.Drawing.Point(0, 80);
-            this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(390, 40);
-            this.layoutControlItem5.Text = "Новый пароль";
-            this.layoutControlItem5.TextLocation = DevExpress.Utils.Locations.Top;
-            this.layoutControlItem5.TextSize = new System.Drawing.Size(109, 13);
+            this.newPasswordLayoutControlItem.Control = this.NewPasswordTextEdit;
+            this.newPasswordLayoutControlItem.CustomizationFormText = "Имя";
+            this.newPasswordLayoutControlItem.Location = new System.Drawing.Point(0, 80);
+            this.newPasswordLayoutControlItem.Name = "newPasswordLayoutControlItem";
+            this.newPasswordLayoutControlItem.Size = new System.Drawing.Size(390, 40);
+            this.newPasswordLayoutControlItem.Text = "Новый пароль";
+            this.newPasswordLayoutControlItem.TextLocation = DevExpress.Utils.Locations.Top;
+            this.newPasswordLayoutControlItem.TextSize = new System.Drawing.Size(109, 13);
             // 
-            // layoutControlItem6
+            // confimPasswordLayoutControlItem
             // 
-            this.layoutControlItem6.Control = this.ConfimPasswordTextEdit;
-            this.layoutControlItem6.CustomizationFormText = "Имя";
-            this.layoutControlItem6.Location = new System.Drawing.Point(0, 120);
-            this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(390, 340);
-            this.layoutControlItem6.Text = "Подтвердите Пароль";
-            this.layoutControlItem6.TextLocation = DevExpress.Utils.Locations.Top;
-            this.layoutControlItem6.TextSize = new System.Drawing.Size(109, 13);
+            this.confimPasswordLayoutControlItem.Control = this.ConfimPasswordTextEdit;
+            this.confimPasswordLayoutControlItem.CustomizationFormText = "Имя";
+            this.confimPasswordLayoutControlItem.Location = new System.Drawing.Point(0, 120);
+            this.confimPasswordLayoutControlItem.Name = "confimPasswordLayoutControlItem";
+            this.confimPasswordLayoutControlItem.Size = new System.Drawing.Size(390, 340);
+            this.confimPasswordLayoutControlItem.Text = "Подтвердите Пароль";
+            this.confimPasswordLayoutControlItem.TextLocation = DevExpress.Utils.Locations.Top;
+            this.confimPasswordLayoutControlItem.TextSize = new System.Drawing.Size(109, 13);
             // 
             // contactInfoGroup
             // 
@@ -365,7 +365,7 @@
             this.MinimumSize = new System.Drawing.Size(690, 550);
             this.Name = "UserEditForm";
             this.Ribbon = this.ribbonControl1;
-            this.Text = "Заказчик";
+            this.Text = "Пользователь";
             this.Load += new System.EventHandler(this.UserEditForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
@@ -379,10 +379,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.SelectRoleComboBox.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerGroup)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.personalInfoGroup)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oldPasswordLayoutControlItem)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.loginLayoutControlItem)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.newPasswordLayoutControlItem)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.confimPasswordLayoutControlItem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.contactInfoGroup)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lastNameItem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
@@ -418,10 +418,10 @@
         private DevExpress.XtraEditors.TextEdit NewPasswordTextEdit;
         private DevExpress.XtraEditors.TextEdit ConfimPasswordTextEdit;
         private DevExpress.XtraEditors.ComboBoxEdit SelectRoleComboBox;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
+        private DevExpress.XtraLayout.LayoutControlItem oldPasswordLayoutControlItem;
+        private DevExpress.XtraLayout.LayoutControlItem loginLayoutControlItem;
+        private DevExpress.XtraLayout.LayoutControlItem newPasswordLayoutControlItem;
+        private DevExpress.XtraLayout.LayoutControlItem confimPasswordLayoutControlItem;
         private System.Windows.Forms.BindingSource UserEditBindingSource;
         
     }
