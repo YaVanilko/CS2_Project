@@ -42,6 +42,7 @@
             this.goodsMenuBtn = new DevExpress.XtraBars.BarButtonItem();
             this.addGoodsBarButton = new DevExpress.XtraBars.BarButtonItem();
             this.RolesButton = new DevExpress.XtraBars.BarButtonItem();
+            this.ChangePasswordBtn = new DevExpress.XtraBars.BarButtonItem();
             this.mainRibbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.customersMenuGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ordersMenuGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -68,9 +69,10 @@
             this.addNewUserBtn,
             this.goodsMenuBtn,
             this.addGoodsBarButton,
-            this.RolesButton});
+            this.RolesButton,
+            this.ChangePasswordBtn});
             this.ribbonControl.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl.MaxItemId = 14;
+            this.ribbonControl.MaxItemId = 15;
             this.ribbonControl.MdiMergeStyle = DevExpress.XtraBars.Ribbon.RibbonMdiMergeStyle.Always;
             this.ribbonControl.Name = "ribbonControl";
             this.ribbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -95,6 +97,7 @@
             this.logoutBtn.Id = 2;
             this.logoutBtn.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("logoutBtn.LargeGlyph")));
             this.logoutBtn.Name = "logoutBtn";
+            this.logoutBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.logoutBtn_ItemClick);
             // 
             // ordersMenuBtn
             // 
@@ -137,6 +140,7 @@
             this.addNewOrderBtn.Id = 8;
             this.addNewOrderBtn.ImageUri.Uri = "AddItem";
             this.addNewOrderBtn.Name = "addNewOrderBtn";
+            this.addNewOrderBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.addNewOrderBtn_ItemClick);
             // 
             // addNewUserBtn
             // 
@@ -154,6 +158,7 @@
             this.goodsMenuBtn.Id = 10;
             this.goodsMenuBtn.ImageUri.Uri = "ListBullets";
             this.goodsMenuBtn.Name = "goodsMenuBtn";
+            this.goodsMenuBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.goodsMenuBtn_ItemClick);
             // 
             // addGoodsBarButton
             // 
@@ -161,6 +166,7 @@
             this.addGoodsBarButton.Id = 12;
             this.addGoodsBarButton.ImageUri.Uri = "Apply";
             this.addGoodsBarButton.Name = "addGoodsBarButton";
+            this.barButtonItem3.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem3_ItemClick);
             // 
             // RolesButton
             // 
@@ -169,6 +175,15 @@
             this.RolesButton.ImageUri.Uri = "Show";
             this.RolesButton.Name = "RolesButton";
             this.RolesButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.RolesButton_ItemClick);
+            // 
+            // ChangePasswordBtn
+            // 
+            this.ChangePasswordBtn.Caption = "Изменить пароль";
+            this.ChangePasswordBtn.Glyph = ((System.Drawing.Image)(resources.GetObject("ChangePasswordBtn.Glyph")));
+            this.ChangePasswordBtn.Id = 14;
+            this.ChangePasswordBtn.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("ChangePasswordBtn.LargeGlyph")));
+            this.ChangePasswordBtn.Name = "ChangePasswordBtn";
+            this.ChangePasswordBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick_1);
             // 
             // mainRibbonPage
             // 
@@ -214,6 +229,7 @@
             // System
             // 
             this.System.ItemLinks.Add(this.logoutBtn);
+            this.System.ItemLinks.Add(this.ChangePasswordBtn);
             this.System.ItemLinks.Add(this.exitBtn);
             this.System.Name = "System";
             this.System.Text = "Системные";
@@ -257,5 +273,6 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup goodsMenuGroup;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup usersMenuGroup;
         private DevExpress.XtraBars.BarButtonItem RolesButton;
+        private DevExpress.XtraBars.BarButtonItem ChangePasswordBtn;
     }
 }

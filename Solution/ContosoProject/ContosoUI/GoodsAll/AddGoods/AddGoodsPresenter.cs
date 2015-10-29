@@ -11,7 +11,7 @@ namespace ContosoUI.GoodsAll.AddGoods
 {
     public class AddGoodsPresenter
     {
-        AddGoods view = new AddGoods();
+        AddGoods view;
         IGoodsRepository model = new GoodsDao();
         Goods thisGoods;
        // public List<Domain.Entities.Goods> Goods { get { return thisGoods.Name; } set { } }

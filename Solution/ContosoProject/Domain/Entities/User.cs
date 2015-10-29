@@ -12,5 +12,11 @@ namespace Domain.Entities
         public Role Role { get; set; }
         public string Login { get; set; }
         public string Password { get; set; }
+
+        public User()
+        {
+            PersonalInfo = new PersonalInfo();
+            Role = new Role();
+        }
     }
 }
