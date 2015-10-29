@@ -16,8 +16,10 @@ namespace ContosoUI.Authentication
     {
         public event EventHandler OkButtonClick = null;
         public AuthenticationPresenter presenter = null;
+        
         public string Login { get { return LoginTextEdit.Text; } }
         public string Password { get { return PasswordEdit.Text; } }
+        
         public AuthenticationForm()
         {
             InitializeComponent();
@@ -56,6 +58,11 @@ namespace ContosoUI.Authentication
         {
             PasswordEdit.Text = String.Empty;
         }
-
+        
+        public void FieldsReset()
+        {
+            PasswordReset();
+            LoginTextEdit.Text = String.Empty;
+        }
     }
 }
