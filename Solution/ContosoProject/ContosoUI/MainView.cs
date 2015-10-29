@@ -11,6 +11,7 @@ using DevExpress.XtraEditors;
 using ContosoUI.Customers.Search;
 using ContosoUI.Customers.Add;
 using ContosoUI.Users.Edit;
+using ContosoUI.Order;
 
 namespace ContosoUI
 {
@@ -43,7 +44,7 @@ namespace ContosoUI
 
         private void ordersMenuBtn_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            var form = new Test.OrderListView();
+            var form = new Order.Search.SearchView();
             form.MdiParent = this;
             form.Show();
         }
@@ -86,6 +87,27 @@ namespace ContosoUI
             var form = new UserEditForm(Program.AuthUser.Id);
             form.MdiParent = this;
             form.AsPasswordChange();
+            form.Show();
+        }
+
+        private void addNewOrderBtn_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            var form = new AddEditOrderView();
+            form.MdiParent = this;
+            form.Show();
+        }
+
+        private void goodsMenuBtn_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            var form = new GoodsAll.GoodsF.GoodsForm();
+            form.MdiParent = this;
+            form.Show();
+        }
+
+        private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            var form = new GoodsAll.AddGoods.AddGoods();
+            form.MdiParent = this;
             form.Show();
         }
     }

@@ -26,7 +26,7 @@ namespace ContosoUI.Authentication
         void OkButtonClickHendler(object sender, System.EventArgs e)
         
         {
-            if (model.FindByLoginPassword(out this.user, view.Login, view.Password))
+            if (model.TryFindByLoginPassword(out this.user, view.Login, view.Password))
             {
                 if (user.IsActive)
                 {
