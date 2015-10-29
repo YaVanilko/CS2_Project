@@ -145,10 +145,11 @@ namespace Data.Migrations
                 .PrimaryKey(t => t.Id);
             
             CreateTable(
-                "dbo.Roles",
+                "dbo.Permissions",
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
+                        Type = c.Int(nullable: false),
                         Name = c.String(),
                         IsActive = c.Boolean(nullable: false),
                         EditTime = c.DateTime(nullable: false),
@@ -156,11 +157,10 @@ namespace Data.Migrations
                 .PrimaryKey(t => t.Id);
             
             CreateTable(
-                "dbo.Permissions",
+                "dbo.Roles",
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        Type = c.Int(nullable: false),
                         Name = c.String(),
                         IsActive = c.Boolean(nullable: false),
                         EditTime = c.DateTime(nullable: false),
@@ -186,17 +186,17 @@ namespace Data.Migrations
                 .Index(t => t.Role_Id);
             
             CreateTable(
-                "dbo.PermissionRoles",
+                "dbo.RolePermissions",
                 c => new
                     {
-                        Permission_Id = c.Int(nullable: false),
                         Role_Id = c.Int(nullable: false),
+                        Permission_Id = c.Int(nullable: false),
                     })
-                .PrimaryKey(t => new { t.Permission_Id, t.Role_Id })
-                .ForeignKey("dbo.Permissions", t => t.Permission_Id, cascadeDelete: true)
+                .PrimaryKey(t => new { t.Role_Id, t.Permission_Id })
                 .ForeignKey("dbo.Roles", t => t.Role_Id, cascadeDelete: true)
-                .Index(t => t.Permission_Id)
-                .Index(t => t.Role_Id);
+                .ForeignKey("dbo.Permissions", t => t.Permission_Id, cascadeDelete: true)
+                .Index(t => t.Role_Id)
+                .Index(t => t.Permission_Id);
             
         }
         
@@ -204,8 +204,8 @@ namespace Data.Migrations
         {
             DropForeignKey("dbo.Users", "Role_Id", "dbo.Roles");
             DropForeignKey("dbo.Users", "PersonalInfo_Id", "dbo.PersonalInfoes");
-            DropForeignKey("dbo.PermissionRoles", "Role_Id", "dbo.Roles");
-            DropForeignKey("dbo.PermissionRoles", "Permission_Id", "dbo.Permissions");
+            DropForeignKey("dbo.RolePermissions", "Permission_Id", "dbo.Permissions");
+            DropForeignKey("dbo.RolePermissions", "Role_Id", "dbo.Roles");
             DropForeignKey("dbo.Customers", "PersonalInfo_Id", "dbo.PersonalInfoes");
             DropForeignKey("dbo.Orders", "Status_Id", "dbo.OrderStatus");
             DropForeignKey("dbo.GoodsRows", "Order_Id", "dbo.Orders");
@@ -216,8 +216,8 @@ namespace Data.Migrations
             DropForeignKey("dbo.Comments", "Customer_Id", "dbo.Customers");
             DropForeignKey("dbo.Comments", "Goods_Id", "dbo.Goods");
             DropForeignKey("dbo.Goods", "Category_Id", "dbo.ProductCategories");
-            DropIndex("dbo.PermissionRoles", new[] { "Role_Id" });
-            DropIndex("dbo.PermissionRoles", new[] { "Permission_Id" });
+            DropIndex("dbo.RolePermissions", new[] { "Permission_Id" });
+            DropIndex("dbo.RolePermissions", new[] { "Role_Id" });
             DropIndex("dbo.Users", new[] { "Role_Id" });
             DropIndex("dbo.Users", new[] { "PersonalInfo_Id" });
             DropIndex("dbo.GoodsRows", new[] { "Order_Id" });
@@ -230,10 +230,10 @@ namespace Data.Migrations
             DropIndex("dbo.Comments", new[] { "Customer_Id" });
             DropIndex("dbo.Comments", new[] { "Goods_Id" });
             DropIndex("dbo.Goods", new[] { "Category_Id" });
-            DropTable("dbo.PermissionRoles");
+            DropTable("dbo.RolePermissions");
             DropTable("dbo.Users");
-            DropTable("dbo.Permissions");
             DropTable("dbo.Roles");
+            DropTable("dbo.Permissions");
             DropTable("dbo.PersonalInfoes");
             DropTable("dbo.OrderStatus");
             DropTable("dbo.GoodsRows");

@@ -28,6 +28,16 @@ namespace Domain
         NewRole = 14,
         EditRole = 15,
 
+        SaveListClients = 16,
+        SaveListOrders = 17,
+        SaveListGoods = 18,
+        SaveListUsers = 19,
+
+        PrintReportClients = 20,
+        PrintReportOrders = 21,
+        PrintReportGoods = 22,
+        PrintReportUsers = 23,
+
         None = 0
     }
 }
