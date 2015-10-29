@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.rolesRibbomItem = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.saveRoleButton = new DevExpress.XtraBars.BarButtonItem();
-            this.saveAndNewRoleButton = new DevExpress.XtraBars.BarButtonItem();
+            this.addNewRoleButton = new DevExpress.XtraBars.BarButtonItem();
             this.mainRibbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.saveRoleRibbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
@@ -68,7 +68,7 @@
             this.rolesRibbomItem.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.rolesRibbomItem.ExpandCollapseItem,
             this.saveRoleButton,
-            this.saveAndNewRoleButton});
+            this.addNewRoleButton});
             this.rolesRibbomItem.Location = new System.Drawing.Point(0, 0);
             this.rolesRibbomItem.MaxItemId = 3;
             this.rolesRibbomItem.Name = "rolesRibbomItem";
@@ -84,13 +84,13 @@
             this.saveRoleButton.Name = "saveRoleButton";
             this.saveRoleButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.saveRoleButton_ItemClick);
             // 
-            // saveAndNewRoleButton
+            // addNewRoleButton
             // 
-            this.saveAndNewRoleButton.Caption = "Сохранить/Создать";
-            this.saveAndNewRoleButton.Id = 2;
-            this.saveAndNewRoleButton.ImageUri.Uri = "SaveAndNew";
-            this.saveAndNewRoleButton.Name = "saveAndNewRoleButton";
-            this.saveAndNewRoleButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.saveAndNewRoleButton_ItemClick);
+            this.addNewRoleButton.Caption = "Добавить";
+            this.addNewRoleButton.Id = 2;
+            this.addNewRoleButton.ImageUri.Uri = "SaveAndNew";
+            this.addNewRoleButton.Name = "addNewRoleButton";
+            this.addNewRoleButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.addNewRoleButton_ItemClick);
             // 
             // mainRibbonPage
             // 
@@ -102,7 +102,7 @@
             // saveRoleRibbonPageGroup
             // 
             this.saveRoleRibbonPageGroup.ItemLinks.Add(this.saveRoleButton);
-            this.saveRoleRibbonPageGroup.ItemLinks.Add(this.saveAndNewRoleButton);
+            this.saveRoleRibbonPageGroup.ItemLinks.Add(this.addNewRoleButton);
             this.saveRoleRibbonPageGroup.Name = "saveRoleRibbonPageGroup";
             this.saveRoleRibbonPageGroup.Text = "Сохранение";
             // 
@@ -153,6 +153,7 @@
             this.rolesGridView.GridControl = this.rolesGridControl;
             this.rolesGridView.Name = "rolesGridView";
             this.rolesGridView.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.rolesGridView_FocusedRowChanged);
+            this.rolesGridView.BeforeLeaveRow += new DevExpress.XtraGrid.Views.Base.RowAllowEventHandler(this.rolesGridView_BeforeLeaveRow);
             // 
             // layoutControlGroup1
             // 
@@ -249,7 +250,7 @@
         private DevExpress.XtraBars.Ribbon.RibbonPage mainRibbonPage;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup saveRoleRibbonPageGroup;
         private DevExpress.XtraBars.BarButtonItem saveRoleButton;
-        private DevExpress.XtraBars.BarButtonItem saveAndNewRoleButton;
+        private DevExpress.XtraBars.BarButtonItem addNewRoleButton;
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
         private DevExpress.XtraGrid.GridControl rolesGridControl;

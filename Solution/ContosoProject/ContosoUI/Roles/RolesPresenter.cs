@@ -15,6 +15,7 @@ namespace ContosoUI.Roles
         readonly RolesView view;
         readonly IRoleRepository model = new RoleDao();
         readonly IPermissionRepository modelPermission = new PermissionDao();
+        Role role;
         public RolesPresenter(RolesView view)
         {
             Roles = model.GetAll().ToList();
@@ -53,6 +54,17 @@ namespace ContosoUI.Roles
             if (PropertyChanged != null)
             {
                 PropertyChanged(this, new PropertyChangedEventArgs(info));
+            }
+        }
+        public void Save()
+        {
+            if (role.Id > 0)
+            {
+                model.Update(this.role);
+            }
+            else
+            {
+                model.Add(role);
             }
         }
     }
