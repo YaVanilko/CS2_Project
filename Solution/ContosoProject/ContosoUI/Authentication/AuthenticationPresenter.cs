@@ -26,10 +26,19 @@ namespace ContosoUI.Authentication
         void OkButtonClickHendler(object sender, System.EventArgs e)
         
         {
-            if (model.FindByLoginPassword(out this.user, view.Login, view.Password))
+            if (model.TryFindByLoginPassword(out this.user, view.Login, view.Password))
             {
-                view.DialogResult = DialogResult.OK;
-                view.Close();
+                if (user.IsActive)
+                {
+                    view.DialogResult = DialogResult.OK;
+                    view.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Извините, данный аккаунт не активен.", "Ошибка!");
+                    view.FieldsReset();
+                }
+                
             }
             else
             {

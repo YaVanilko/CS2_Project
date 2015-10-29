@@ -10,9 +10,10 @@ namespace Data.DumbData
 {
     public class UserDao : BaseDao<User>, IUserRepository
     {
-        public bool FindByLoginPassword(out User authUser, string login, string password)
+        public bool TryFindByLoginPassword(out User authUser, string login, string password)
         {
             bool isFind = false;
+            new Storage();
             authUser = Storage.UserCollection.Find(x => x.Login == login && x.Password == password);
             if (authUser!=null)
             {
