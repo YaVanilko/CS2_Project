@@ -61,11 +61,17 @@
     <Compile Include="DumbData\tempDAO\ProductCategoryDao.cs" />
     <Compile Include="DumbData\tempDAO\PersonalInfoDao.cs" />
     <Compile Include="DumbData\tempDAO\UserDao.cs" />
+    <Compile Include="EFData\CommentDao.cs" />
     <Compile Include="EFData\EfBaseDao.cs" />
     <Compile Include="EFData\ContactsInfoDao.cs" />
     <Compile Include="EFData\CustomerDao.cs" />
     <Compile Include="EFData\EFProductCategoryDao.cs" />
+    <Compile Include="EFData\GoodsDao.cs" />
+    <Compile Include="EFData\OrderDao.cs" />
+    <Compile Include="EFData\OrderStatusDao.cs" />
     <Compile Include="EFData\PermissionDao.cs" />
+    <Compile Include="EFData\PersonalInfoDao.cs" />
+    <Compile Include="EFData\ProductCategoryDao.cs" />
     <Compile Include="EFData\ProjectContext.cs" />
     <Compile Include="EFData\RoleDao.cs" />
     <Compile Include="EFData\UserDao.cs" />
