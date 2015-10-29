@@ -29,26 +29,131 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
-            this.barButtonGroup1 = new DevExpress.XtraBars.BarButtonGroup();
-            this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
-            this.UserReportGridControl = new DevExpress.XtraGrid.GridControl();
-            this.userReportViewModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.UserReportGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colPersonalInfo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colRole = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colLogin = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colIsActive = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colOperator = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colEditTime = new DevExpress.XtraGrid.Columns.GridColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
+            this.UserReportGridControl = new DevExpress.XtraGrid.GridControl();
+            this.userReportViewModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
+            this.barButtonGroup1 = new DevExpress.XtraBars.BarButtonGroup();
+            this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
+            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.UserReportGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UserReportGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userReportViewModelBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             this.SuspendLayout();
+            // 
+            // UserReportGridView
+            // 
+            this.UserReportGridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colPersonalInfo,
+            this.colRole,
+            this.colLogin,
+            this.colId,
+            this.colIsActive,
+            this.colEditTime});
+            this.UserReportGridView.GridControl = this.UserReportGridControl;
+            this.UserReportGridView.Name = "UserReportGridView";
+            this.UserReportGridView.OptionsFind.AlwaysVisible = true;
+            this.UserReportGridView.DoubleClick += new System.EventHandler(this.UserReportGridView_DoubleClick);
+            // 
+            // colPersonalInfo
+            // 
+            this.colPersonalInfo.Caption = "ФИО";
+            this.colPersonalInfo.FieldName = "Name";
+            this.colPersonalInfo.Name = "colPersonalInfo";
+            this.colPersonalInfo.OptionsColumn.AllowFocus = false;
+            this.colPersonalInfo.OptionsColumn.ReadOnly = true;
+            this.colPersonalInfo.Visible = true;
+            this.colPersonalInfo.VisibleIndex = 0;
+            this.colPersonalInfo.Width = 257;
+            // 
+            // colRole
+            // 
+            this.colRole.Caption = "Роль";
+            this.colRole.FieldName = "Role";
+            this.colRole.Name = "colRole";
+            this.colRole.OptionsColumn.AllowFocus = false;
+            this.colRole.OptionsColumn.ReadOnly = true;
+            this.colRole.Visible = true;
+            this.colRole.VisibleIndex = 1;
+            this.colRole.Width = 143;
+            // 
+            // colLogin
+            // 
+            this.colLogin.Caption = "Логин";
+            this.colLogin.FieldName = "Login";
+            this.colLogin.Name = "colLogin";
+            this.colLogin.OptionsColumn.AllowFocus = false;
+            this.colLogin.OptionsColumn.ReadOnly = true;
+            this.colLogin.Visible = true;
+            this.colLogin.VisibleIndex = 2;
+            this.colLogin.Width = 195;
+            // 
+            // colId
+            // 
+            this.colId.FieldName = "Id";
+            this.colId.Name = "colId";
+            this.colId.OptionsColumn.AllowFocus = false;
+            this.colId.OptionsColumn.ReadOnly = true;
+            this.colId.Visible = true;
+            this.colId.VisibleIndex = 3;
+            this.colId.Width = 89;
+            // 
+            // colIsActive
+            // 
+            this.colIsActive.Caption = "Активен";
+            this.colIsActive.FieldName = "IsActive";
+            this.colIsActive.Name = "colIsActive";
+            this.colIsActive.OptionsColumn.AllowFocus = false;
+            this.colIsActive.OptionsColumn.ReadOnly = true;
+            this.colIsActive.Visible = true;
+            this.colIsActive.VisibleIndex = 4;
+            this.colIsActive.Width = 137;
+            // 
+            // colEditTime
+            // 
+            this.colEditTime.Caption = "Добавлен";
+            this.colEditTime.FieldName = "EditTime";
+            this.colEditTime.Name = "colEditTime";
+            this.colEditTime.OptionsColumn.AllowFocus = false;
+            this.colEditTime.OptionsColumn.ReadOnly = true;
+            this.colEditTime.Visible = true;
+            this.colEditTime.VisibleIndex = 5;
+            this.colEditTime.Width = 165;
+            // 
+            // UserReportGridControl
+            // 
+            this.UserReportGridControl.DataSource = this.userReportViewModelBindingSource;
+            this.UserReportGridControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.UserReportGridControl.Location = new System.Drawing.Point(0, 143);
+            this.UserReportGridControl.MainView = this.UserReportGridView;
+            this.UserReportGridControl.MenuManager = this.ribbon;
+            this.UserReportGridControl.Name = "UserReportGridControl";
+            this.UserReportGridControl.Size = new System.Drawing.Size(1004, 275);
+            this.UserReportGridControl.TabIndex = 2;
+            this.UserReportGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.UserReportGridView,
+            this.gridView2});
+            // 
+            // userReportViewModelBindingSource
+            // 
+            this.userReportViewModelBindingSource.DataSource = typeof(ContosoUI.EditUserForm.UserReportViewModel);
             // 
             // ribbon
             // 
@@ -91,107 +196,94 @@
             this.ribbonStatusBar.Ribbon = this.ribbon;
             this.ribbonStatusBar.Size = new System.Drawing.Size(1004, 31);
             // 
-            // UserReportGridControl
+            // gridView2
             // 
-            this.UserReportGridControl.DataSource = this.userReportViewModelBindingSource;
-            this.UserReportGridControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.UserReportGridControl.Location = new System.Drawing.Point(0, 143);
-            this.UserReportGridControl.MainView = this.gridView1;
-            this.UserReportGridControl.MenuManager = this.ribbon;
-            this.UserReportGridControl.Name = "UserReportGridControl";
-            this.UserReportGridControl.Size = new System.Drawing.Size(1004, 275);
-            this.UserReportGridControl.TabIndex = 2;
-            this.UserReportGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
+            this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn1,
+            this.gridColumn2,
+            this.gridColumn3,
+            this.gridColumn4,
+            this.gridColumn5,
+            this.gridColumn6,
+            this.gridColumn7});
+            this.gridView2.GridControl = this.UserReportGridControl;
+            this.gridView2.Name = "gridView2";
+            this.gridView2.OptionsFind.AlwaysVisible = true;
             // 
-            // gridView1
+            // gridColumn1
             // 
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colPersonalInfo,
-            this.colRole,
-            this.colLogin,
-            this.colId,
-            this.colIsActive,
-            this.colOperator,
-            this.colEditTime});
-            this.gridView1.CustomizationFormBounds = new System.Drawing.Rectangle(846, 398, 210, 172);
-            this.gridView1.GridControl = this.UserReportGridControl;
-            this.gridView1.Name = "gridView1";
+            this.gridColumn1.Caption = "ФИО";
+            this.gridColumn1.FieldName = "PersonalInfo";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.OptionsColumn.AllowFocus = false;
+            this.gridColumn1.OptionsColumn.ReadOnly = true;
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 0;
+            this.gridColumn1.Width = 189;
             // 
-            // colPersonalInfo
+            // gridColumn2
             // 
-            this.colPersonalInfo.Caption = "ФИО";
-            this.colPersonalInfo.FieldName = "PersonalInfo";
-            this.colPersonalInfo.Name = "colPersonalInfo";
-            this.colPersonalInfo.OptionsColumn.AllowFocus = false;
-            this.colPersonalInfo.OptionsColumn.ReadOnly = true;
-            this.colPersonalInfo.Visible = true;
-            this.colPersonalInfo.VisibleIndex = 0;
-            this.colPersonalInfo.Width = 189;
+            this.gridColumn2.Caption = "Роль";
+            this.gridColumn2.FieldName = "Role";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.OptionsColumn.AllowFocus = false;
+            this.gridColumn2.OptionsColumn.ReadOnly = true;
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 1;
+            this.gridColumn2.Width = 113;
             // 
-            // colRole
+            // gridColumn3
             // 
-            this.colRole.Caption = "Роль";
-            this.colRole.FieldName = "Role";
-            this.colRole.Name = "colRole";
-            this.colRole.OptionsColumn.AllowFocus = false;
-            this.colRole.OptionsColumn.ReadOnly = true;
-            this.colRole.Visible = true;
-            this.colRole.VisibleIndex = 1;
-            this.colRole.Width = 113;
+            this.gridColumn3.Caption = "Логин";
+            this.gridColumn3.FieldName = "Login";
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.OptionsColumn.AllowFocus = false;
+            this.gridColumn3.OptionsColumn.ReadOnly = true;
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 2;
+            this.gridColumn3.Width = 191;
             // 
-            // colLogin
+            // gridColumn4
             // 
-            this.colLogin.Caption = "Логин";
-            this.colLogin.FieldName = "Login";
-            this.colLogin.Name = "colLogin";
-            this.colLogin.OptionsColumn.AllowFocus = false;
-            this.colLogin.OptionsColumn.ReadOnly = true;
-            this.colLogin.Visible = true;
-            this.colLogin.VisibleIndex = 2;
-            this.colLogin.Width = 191;
+            this.gridColumn4.FieldName = "Id";
+            this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.OptionsColumn.AllowFocus = false;
+            this.gridColumn4.OptionsColumn.ReadOnly = true;
+            this.gridColumn4.Visible = true;
+            this.gridColumn4.VisibleIndex = 3;
             // 
-            // colId
+            // gridColumn5
             // 
-            this.colId.FieldName = "Id";
-            this.colId.Name = "colId";
-            this.colId.OptionsColumn.AllowFocus = false;
-            this.colId.OptionsColumn.ReadOnly = true;
-            this.colId.Visible = true;
-            this.colId.VisibleIndex = 3;
+            this.gridColumn5.Caption = "Активен";
+            this.gridColumn5.FieldName = "IsActive";
+            this.gridColumn5.Name = "gridColumn5";
+            this.gridColumn5.OptionsColumn.AllowFocus = false;
+            this.gridColumn5.OptionsColumn.ReadOnly = true;
+            this.gridColumn5.Visible = true;
+            this.gridColumn5.VisibleIndex = 4;
+            this.gridColumn5.Width = 140;
             // 
-            // colIsActive
+            // gridColumn6
             // 
-            this.colIsActive.Caption = "Активен";
-            this.colIsActive.FieldName = "IsActive";
-            this.colIsActive.Name = "colIsActive";
-            this.colIsActive.OptionsColumn.AllowFocus = false;
-            this.colIsActive.OptionsColumn.ReadOnly = true;
-            this.colIsActive.Visible = true;
-            this.colIsActive.VisibleIndex = 4;
-            this.colIsActive.Width = 140;
+            this.gridColumn6.Caption = "Добавил";
+            this.gridColumn6.FieldName = "Operator";
+            this.gridColumn6.Name = "gridColumn6";
+            this.gridColumn6.OptionsColumn.AllowFocus = false;
+            this.gridColumn6.OptionsColumn.ReadOnly = true;
+            this.gridColumn6.Visible = true;
+            this.gridColumn6.VisibleIndex = 5;
+            this.gridColumn6.Width = 140;
             // 
-            // colOperator
+            // gridColumn7
             // 
-            this.colOperator.Caption = "Добавил";
-            this.colOperator.FieldName = "Operator";
-            this.colOperator.Name = "colOperator";
-            this.colOperator.OptionsColumn.AllowFocus = false;
-            this.colOperator.OptionsColumn.ReadOnly = true;
-            this.colOperator.Visible = true;
-            this.colOperator.VisibleIndex = 5;
-            this.colOperator.Width = 140;
-            // 
-            // colEditTime
-            // 
-            this.colEditTime.Caption = "Редактировали";
-            this.colEditTime.FieldName = "EditTime";
-            this.colEditTime.Name = "colEditTime";
-            this.colEditTime.OptionsColumn.AllowFocus = false;
-            this.colEditTime.OptionsColumn.ReadOnly = true;
-            this.colEditTime.Visible = true;
-            this.colEditTime.VisibleIndex = 6;
-            this.colEditTime.Width = 160;
+            this.gridColumn7.Caption = "Редактировали";
+            this.gridColumn7.FieldName = "EditTime";
+            this.gridColumn7.Name = "gridColumn7";
+            this.gridColumn7.OptionsColumn.AllowFocus = false;
+            this.gridColumn7.OptionsColumn.ReadOnly = true;
+            this.gridColumn7.Visible = true;
+            this.gridColumn7.VisibleIndex = 6;
+            this.gridColumn7.Width = 160;
             // 
             // UserReportForm
             // 
@@ -205,10 +297,11 @@
             this.Ribbon = this.ribbon;
             this.StatusBar = this.ribbonStatusBar;
             this.Text = "Список Пользователей";
-            ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UserReportGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.UserReportGridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.userReportViewModelBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -222,14 +315,21 @@
         private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar;
         private DevExpress.XtraBars.BarButtonGroup barButtonGroup1;
         private DevExpress.XtraGrid.GridControl UserReportGridControl;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private System.Windows.Forms.BindingSource userReportViewModelBindingSource;
+        private DevExpress.XtraGrid.Views.Grid.GridView UserReportGridView;
         private DevExpress.XtraGrid.Columns.GridColumn colPersonalInfo;
         private DevExpress.XtraGrid.Columns.GridColumn colRole;
         private DevExpress.XtraGrid.Columns.GridColumn colLogin;
         private DevExpress.XtraGrid.Columns.GridColumn colId;
         private DevExpress.XtraGrid.Columns.GridColumn colIsActive;
-        private DevExpress.XtraGrid.Columns.GridColumn colOperator;
         private DevExpress.XtraGrid.Columns.GridColumn colEditTime;
-        private System.Windows.Forms.BindingSource userReportViewModelBindingSource;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
     }
 }

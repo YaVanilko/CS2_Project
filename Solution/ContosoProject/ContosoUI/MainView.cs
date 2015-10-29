@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using ContosoUI.Customers.Search;
 using ContosoUI.Customers.Add;
+using ContosoUI.Users.Edit;
 
 namespace ContosoUI
 {
@@ -49,6 +50,13 @@ namespace ContosoUI
         private void addNewCustomerBtn_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             var form = new CustomerDetailsViev();
+            form.MdiParent = this;
+            form.Show();
+        }
+
+        private void addNewUserBtn_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            var form = new UserEditForm();
             form.MdiParent = this;
             form.Show();
         }
