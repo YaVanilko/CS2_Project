@@ -30,6 +30,7 @@ namespace ContosoUI.Users.Edit
             this.view = view;
             this.roles = this.role.GetAll().ToList();
             this.view.SaveBtnClick += new EventHandler(SaveBtnClickHandler);
+            this.view.PasswordChange += new EventHandler(PasswordChangedHandler);
         }
 
        
@@ -53,6 +54,19 @@ namespace ContosoUI.Users.Edit
             else
             {
                 MessageBox.Show("Пользователь с данным логином уже существует.", "Ошибка!");
+            }
+        }
+
+        private void PasswordChangedHandler(object sender, EventArgs e)
+        {
+            if (Program.AuthUser.Role.Permissions.Any(x => x.Type == Domain.PermissionType.EditUser) ||
+                    view.OldPassword == user.Password)
+            {
+                user.Password = view.NewPassword;
+            }
+            else
+            {
+                MessageBox.Show("Введен неверный пароль.", "Ошибка!");
             }
         }
 
@@ -113,20 +127,6 @@ namespace ContosoUI.Users.Edit
                     user.Login = value;
                     NotifyPropertyChanged("Login");
                 }
-            }
-        }
-
-        public string Password
-        {
-            get { return user.Password;}
-            set
-            {
-                if (Program.AuthUser.Role.Permissions.Any(x=> x.Type == Domain.PermissionType.EditUser)||
-                    view.OldPassword == user.Password)
-                {
-                    user.Password = value;
-                    NotifyPropertyChanged("Password"); 
-                }   
             }
         }
 

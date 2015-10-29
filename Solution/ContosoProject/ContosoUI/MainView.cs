@@ -28,6 +28,34 @@ namespace ContosoUI
             {
                 this.usersMenuBtn.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             }
+            if (!Program.AuthUser.Role.Permissions.Any(x => x.Type == Domain.PermissionType.NewClient))
+            {
+                this.addNewCustomerBtn.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            }
+            if (!Program.AuthUser.Role.Permissions.Any(x => x.Type == Domain.PermissionType.ListClient))
+            {
+                this.customersMenuBtn.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            }
+            if (!Program.AuthUser.Role.Permissions.Any(x => x.Type == Domain.PermissionType.ListRoles))
+            {
+                this.RolesButton.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            }
+            if (!Program.AuthUser.Role.Permissions.Any(x => x.Type == Domain.PermissionType.ListOrder))
+            {
+                this.ordersMenuBtn.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            }
+            if (!Program.AuthUser.Role.Permissions.Any(x => x.Type == Domain.PermissionType.NewOrder))
+            {
+                this.addNewOrderBtn.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            }
+            if (!Program.AuthUser.Role.Permissions.Any(x => x.Type == Domain.PermissionType.ListGoods))
+            {
+                this.goodsMenuBtn.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            }
+            if (!Program.AuthUser.Role.Permissions.Any(x => x.Type == Domain.PermissionType.NewGoods))
+            {
+                this.addGoodsBarButton.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            }
         }
 
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -104,7 +132,7 @@ namespace ContosoUI
             form.Show();
         }
 
-        private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void addGoodsBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             var form = new GoodsAll.AddGoods.AddGoods();
             form.MdiParent = this;
