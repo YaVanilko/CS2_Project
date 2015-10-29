@@ -40,7 +40,9 @@
             this.addNewOrderBtn = new DevExpress.XtraBars.BarButtonItem();
             this.addNewUserBtn = new DevExpress.XtraBars.BarButtonItem();
             this.goodsMenuBtn = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
+            this.addGoodsBarButton = new DevExpress.XtraBars.BarButtonItem();
+            this.RolesButton = new DevExpress.XtraBars.BarButtonItem();
+            this.ChangePasswordBtn = new DevExpress.XtraBars.BarButtonItem();
             this.mainRibbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.customersMenuGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ordersMenuGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -48,7 +50,6 @@
             this.usersMenuGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.System = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
-            this.RolesButton = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
@@ -67,10 +68,11 @@
             this.addNewOrderBtn,
             this.addNewUserBtn,
             this.goodsMenuBtn,
-            this.barButtonItem3,
-            this.RolesButton});
+            this.addGoodsBarButton,
+            this.RolesButton,
+            this.ChangePasswordBtn});
             this.ribbonControl.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl.MaxItemId = 14;
+            this.ribbonControl.MaxItemId = 15;
             this.ribbonControl.MdiMergeStyle = DevExpress.XtraBars.Ribbon.RibbonMdiMergeStyle.Always;
             this.ribbonControl.Name = "ribbonControl";
             this.ribbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -95,6 +97,7 @@
             this.logoutBtn.Id = 2;
             this.logoutBtn.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("logoutBtn.LargeGlyph")));
             this.logoutBtn.Name = "logoutBtn";
+            this.logoutBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.logoutBtn_ItemClick);
             // 
             // ordersMenuBtn
             // 
@@ -137,6 +140,7 @@
             this.addNewOrderBtn.Id = 8;
             this.addNewOrderBtn.ImageUri.Uri = "AddItem";
             this.addNewOrderBtn.Name = "addNewOrderBtn";
+            this.addNewOrderBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.addNewOrderBtn_ItemClick);
             // 
             // addNewUserBtn
             // 
@@ -154,13 +158,32 @@
             this.goodsMenuBtn.Id = 10;
             this.goodsMenuBtn.ImageUri.Uri = "ListBullets";
             this.goodsMenuBtn.Name = "goodsMenuBtn";
+            this.goodsMenuBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.goodsMenuBtn_ItemClick);
             // 
-            // barButtonItem3
+            // addGoodsBarButton
             // 
-            this.barButtonItem3.Caption = "Добавить товар";
-            this.barButtonItem3.Id = 12;
-            this.barButtonItem3.ImageUri.Uri = "Apply";
-            this.barButtonItem3.Name = "barButtonItem3";
+            this.addGoodsBarButton.Caption = "Добавить товар";
+            this.addGoodsBarButton.Id = 12;
+            this.addGoodsBarButton.ImageUri.Uri = "Apply";
+            this.addGoodsBarButton.Name = "addGoodsBarButton";
+            this.addGoodsBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.addGoodsBarButton_ItemClick);
+            // 
+            // RolesButton
+            // 
+            this.RolesButton.Caption = "Роли";
+            this.RolesButton.Id = 13;
+            this.RolesButton.ImageUri.Uri = "Show";
+            this.RolesButton.Name = "RolesButton";
+            this.RolesButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.RolesButton_ItemClick);
+            // 
+            // ChangePasswordBtn
+            // 
+            this.ChangePasswordBtn.Caption = "Изменить пароль";
+            this.ChangePasswordBtn.Glyph = ((System.Drawing.Image)(resources.GetObject("ChangePasswordBtn.Glyph")));
+            this.ChangePasswordBtn.Id = 14;
+            this.ChangePasswordBtn.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("ChangePasswordBtn.LargeGlyph")));
+            this.ChangePasswordBtn.Name = "ChangePasswordBtn";
+            this.ChangePasswordBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick_1);
             // 
             // mainRibbonPage
             // 
@@ -191,7 +214,7 @@
             // goodsMenuGroup
             // 
             this.goodsMenuGroup.ItemLinks.Add(this.goodsMenuBtn);
-            this.goodsMenuGroup.ItemLinks.Add(this.barButtonItem3);
+            this.goodsMenuGroup.ItemLinks.Add(this.addGoodsBarButton);
             this.goodsMenuGroup.Name = "goodsMenuGroup";
             this.goodsMenuGroup.Text = "Товары";
             // 
@@ -206,6 +229,7 @@
             // System
             // 
             this.System.ItemLinks.Add(this.logoutBtn);
+            this.System.ItemLinks.Add(this.ChangePasswordBtn);
             this.System.ItemLinks.Add(this.exitBtn);
             this.System.Name = "System";
             this.System.Text = "Системные";
@@ -213,14 +237,6 @@
             // xtraTabbedMdiManager1
             // 
             this.xtraTabbedMdiManager1.MdiParent = this;
-            // 
-            // RolesButton
-            // 
-            this.RolesButton.Caption = "Роли";
-            this.RolesButton.Id = 13;
-            this.RolesButton.ImageUri.Uri = "Show";
-            this.RolesButton.Name = "RolesButton";
-            this.RolesButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.RolesButton_ItemClick);
             // 
             // MainView
             // 
@@ -252,10 +268,11 @@
         private DevExpress.XtraBars.BarButtonItem addNewOrderBtn;
         private DevExpress.XtraBars.BarButtonItem addNewUserBtn;
         private DevExpress.XtraBars.BarButtonItem goodsMenuBtn;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem3;
+        private DevExpress.XtraBars.BarButtonItem addGoodsBarButton;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ordersMenuGroup;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup goodsMenuGroup;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup usersMenuGroup;
         private DevExpress.XtraBars.BarButtonItem RolesButton;
+        private DevExpress.XtraBars.BarButtonItem ChangePasswordBtn;
     }
 }

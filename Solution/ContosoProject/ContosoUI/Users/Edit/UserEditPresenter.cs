@@ -7,6 +7,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace ContosoUI.Users.Edit
 {
@@ -14,21 +15,61 @@ namespace ContosoUI.Users.Edit
     {
         User user = null;
         UserEditForm view = null;
-        IUserRepository model = new UserDao();
+        List<Role> roles = null;
 
+        IUserRepository model = new UserDao();
+        IRoleRepository role = new RoleDao();
+        bool userIsFromBase = false;
+        
+        public event PropertyChangedEventHandler PropertyChanged;
+        
 
         public UserEditPresenter(UserEditForm view)
         {
             this.user = new User();
-            this.view = view;   
-        }
-        public UserEditPresenter(UserEditForm view, int id)
-        {
-            this.user = model.GetById(id);
             this.view = view;
+            this.roles = this.role.GetAll().ToList();
+            this.view.SaveBtnClick += new EventHandler(SaveBtnClickHandler);
+            this.view.PasswordChange += new EventHandler(PasswordChangedHandler);
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
+       
+        public UserEditPresenter(UserEditForm view, int id)
+            : this(view)
+        {
+            this.user = model.GetById(id);
+            this.userIsFromBase = true;
+        }
+        
+        private void SaveBtnClickHandler(object sender, EventArgs e)
+        {
+            if (userIsFromBase)
+            {
+                model.Update(user);
+            }
+            else if (!model.GetAll().ToList().Any(x => x.Login == this.user.Login))
+            {
+                model.Add(user);
+            }
+            else
+            {
+                MessageBox.Show("Пользователь с данным логином уже существует.", "Ошибка!");
+            }
+        }
+
+        private void PasswordChangedHandler(object sender, EventArgs e)
+        {
+            if (Program.AuthUser.Role.Permissions.Any(x => x.Type == Domain.PermissionType.EditUser) ||
+                    view.OldPassword == user.Password)
+            {
+                user.Password = view.NewPassword;
+            }
+            else
+            {
+                MessageBox.Show("Введен неверный пароль.", "Ошибка!");
+            }
+        }
+
         private void NotifyPropertyChanged(String info)
         {
             if (PropertyChanged != null)
@@ -49,6 +90,7 @@ namespace ContosoUI.Users.Edit
                 }
             }
         }
+
         public string LastName
         {
             get { return user.PersonalInfo.LastName; }
@@ -61,6 +103,7 @@ namespace ContosoUI.Users.Edit
                 }
             }
         }
+
         public string MiddleName
         {
             get { return user.PersonalInfo.MiddleName; }
@@ -79,16 +122,37 @@ namespace ContosoUI.Users.Edit
             get { return user.Login; }
             set
             {
-                if (user.Login == string.Empty)
+                if (user.Login != string.Empty)
                 {
                     user.Login = value;
                     NotifyPropertyChanged("Login");
                 }
             }
         }
-        public string Role
+
+        public bool IsActive
         {
-            get { return user.Role.Name; }
+            get { return user.IsActive; }
+            set { user.IsActive = value; }
+        }
+
+        public  Role Role
+        { 
+            get { return user.Role; }
+            set
+            {
+                if (user.Role != value)
+                {
+                    user.Role = value;
+                    NotifyPropertyChanged("Role");
+                }
+            }
+        }
+
+        public List<Role> AllRoles
+        {
+            get
+            { return roles; }
         }
     }
 }
