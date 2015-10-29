@@ -48,9 +48,9 @@
             this.mainRibbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.saveOrEditribbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.saveEditButtonItem = new DevExpress.XtraBars.BarButtonItem();
-            this.saveAndNewButtonItem = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
-            this.UserEditBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.userEditBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MiddleNameTextEdit.Properties)).BeginInit();
@@ -73,7 +73,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.middleNameItem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.UserEditBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userEditBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -134,45 +134,44 @@
             this.OldPasswordTextEdit.Location = new System.Drawing.Point(24, 98);
             this.OldPasswordTextEdit.Name = "OldPasswordTextEdit";
             this.OldPasswordTextEdit.Properties.Mask.EditMask = "\\p{L}+";
-            this.OldPasswordTextEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.OldPasswordTextEdit.Properties.Mask.ShowPlaceHolders = false;
             this.OldPasswordTextEdit.Properties.Mask.UseMaskAsDisplayFormat = true;
+            this.OldPasswordTextEdit.Properties.UseSystemPasswordChar = true;
             this.OldPasswordTextEdit.Size = new System.Drawing.Size(386, 20);
             this.OldPasswordTextEdit.StyleController = this.layoutControl1;
-            this.OldPasswordTextEdit.TabIndex = 4;
+            this.OldPasswordTextEdit.TabIndex = 2;
             // 
             // loginTextEdit
             // 
             this.loginTextEdit.Location = new System.Drawing.Point(24, 58);
             this.loginTextEdit.Name = "loginTextEdit";
-            this.loginTextEdit.Properties.AllowFocused = false;
             this.loginTextEdit.Properties.Mask.EditMask = "[a-zA-Z]+";
             this.loginTextEdit.Properties.Mask.ShowPlaceHolders = false;
             this.loginTextEdit.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.loginTextEdit.Size = new System.Drawing.Size(386, 20);
             this.loginTextEdit.StyleController = this.layoutControl1;
-            this.loginTextEdit.TabIndex = 4;
+            this.loginTextEdit.TabIndex = 1;
             // 
             // NewPasswordTextEdit
             // 
             this.NewPasswordTextEdit.Location = new System.Drawing.Point(24, 138);
             this.NewPasswordTextEdit.Name = "NewPasswordTextEdit";
             this.NewPasswordTextEdit.Properties.Mask.EditMask = "\\p{L}+";
-            this.NewPasswordTextEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.NewPasswordTextEdit.Properties.Mask.ShowPlaceHolders = false;
             this.NewPasswordTextEdit.Properties.Mask.UseMaskAsDisplayFormat = true;
+            this.NewPasswordTextEdit.Properties.UseSystemPasswordChar = true;
             this.NewPasswordTextEdit.Size = new System.Drawing.Size(386, 20);
             this.NewPasswordTextEdit.StyleController = this.layoutControl1;
-            this.NewPasswordTextEdit.TabIndex = 4;
+            this.NewPasswordTextEdit.TabIndex = 3;
             // 
             // ConfimPasswordTextEdit
             // 
             this.ConfimPasswordTextEdit.Location = new System.Drawing.Point(24, 178);
             this.ConfimPasswordTextEdit.Name = "ConfimPasswordTextEdit";
             this.ConfimPasswordTextEdit.Properties.Mask.EditMask = "\\p{L}+";
-            this.ConfimPasswordTextEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.ConfimPasswordTextEdit.Properties.Mask.ShowPlaceHolders = false;
             this.ConfimPasswordTextEdit.Properties.Mask.UseMaskAsDisplayFormat = true;
+            this.ConfimPasswordTextEdit.Properties.UseSystemPasswordChar = true;
             this.ConfimPasswordTextEdit.Size = new System.Drawing.Size(386, 20);
             this.ConfimPasswordTextEdit.StyleController = this.layoutControl1;
             this.ConfimPasswordTextEdit.TabIndex = 4;
@@ -186,7 +185,7 @@
             this.SelectRoleComboBox.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.SelectRoleComboBox.Size = new System.Drawing.Size(491, 20);
             this.SelectRoleComboBox.StyleController = this.layoutControl1;
-            this.SelectRoleComboBox.TabIndex = 4;
+            this.SelectRoleComboBox.TabIndex = 7;
             // 
             // customerGroup
             // 
@@ -210,7 +209,7 @@
             this.personalInfoGroup.Location = new System.Drawing.Point(0, 0);
             this.personalInfoGroup.Name = "personalInfoGroup";
             this.personalInfoGroup.Size = new System.Drawing.Size(414, 502);
-            this.personalInfoGroup.Text = "Персональные данные";
+            this.personalInfoGroup.Text = "Данные авторизации";
             // 
             // oldPasswordLayoutControlItem
             // 
@@ -266,7 +265,7 @@
             this.contactInfoGroup.Location = new System.Drawing.Point(414, 0);
             this.contactInfoGroup.Name = "contactInfoGroup";
             this.contactInfoGroup.Size = new System.Drawing.Size(519, 502);
-            this.contactInfoGroup.Text = "Контактные данные";
+            this.contactInfoGroup.Text = "Личная информация";
             // 
             // lastNameItem
             // 
@@ -319,7 +318,6 @@
             // saveOrEditribbonPageGroup
             // 
             this.saveOrEditribbonPageGroup.ItemLinks.Add(this.saveEditButtonItem);
-            this.saveOrEditribbonPageGroup.ItemLinks.Add(this.saveAndNewButtonItem);
             this.saveOrEditribbonPageGroup.Name = "saveOrEditribbonPageGroup";
             this.saveOrEditribbonPageGroup.Text = "Сохранение";
             // 
@@ -329,13 +327,13 @@
             this.saveEditButtonItem.Id = 1;
             this.saveEditButtonItem.ImageUri.Uri = "Save";
             this.saveEditButtonItem.Name = "saveEditButtonItem";
+            this.saveEditButtonItem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.saveEditButtonItem_ItemClick);
             // 
-            // saveAndNewButtonItem
+            // barButtonItem1
             // 
-            this.saveAndNewButtonItem.Caption = "Сохранить/Создать";
-            this.saveAndNewButtonItem.Id = 2;
-            this.saveAndNewButtonItem.ImageUri.Uri = "SaveAndNew";
-            this.saveAndNewButtonItem.Name = "saveAndNewButtonItem";
+            this.barButtonItem1.Caption = "Изменить пароль";
+            this.barButtonItem1.Id = 2;
+            this.barButtonItem1.Name = "barButtonItem1";
             // 
             // ribbonControl1
             // 
@@ -343,17 +341,17 @@
             this.ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbonControl1.ExpandCollapseItem,
             this.saveEditButtonItem,
-            this.saveAndNewButtonItem});
+            this.barButtonItem1});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 1;
+            this.ribbonControl1.MaxItemId = 3;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.mainRibbonPage});
             this.ribbonControl1.Size = new System.Drawing.Size(953, 143);
             // 
-            // UserEditBindingSource
+            // userEditBindingSource
             // 
-            this.UserEditBindingSource.DataSource = typeof(ContosoUI.Users.Edit.UserEditPresenter);
+            this.userEditBindingSource.DataSource = typeof(ContosoUI.Users.Edit.UserEditPresenter);
             // 
             // UserEditForm
             // 
@@ -389,7 +387,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.middleNameItem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.UserEditBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userEditBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -408,7 +406,6 @@
         private DevExpress.XtraBars.Ribbon.RibbonPage mainRibbonPage;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup saveOrEditribbonPageGroup;
         private DevExpress.XtraBars.BarButtonItem saveEditButtonItem;
-        private DevExpress.XtraBars.BarButtonItem saveAndNewButtonItem;
         private DevExpress.XtraBars.Ribbon.RibbonControl ribbonControl1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraEditors.TextEdit FirstNameTextEdit;
@@ -422,7 +419,8 @@
         private DevExpress.XtraLayout.LayoutControlItem loginLayoutControlItem;
         private DevExpress.XtraLayout.LayoutControlItem newPasswordLayoutControlItem;
         private DevExpress.XtraLayout.LayoutControlItem confimPasswordLayoutControlItem;
-        private System.Windows.Forms.BindingSource UserEditBindingSource;
+        private System.Windows.Forms.BindingSource userEditBindingSource;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
         
     }
 }
