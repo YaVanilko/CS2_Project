@@ -11,5 +11,11 @@ namespace Domain.Entities
         public PermissionType Type { get; set; }
         public string Name { get; set; }
 
+        public virtual ICollection<Role> Roles { get; set; }
+
+        public Permission()
+        {
+            Roles = new List<Role>();
+        }
     }
 }

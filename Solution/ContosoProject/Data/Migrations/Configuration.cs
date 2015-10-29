@@ -38,6 +38,10 @@ namespace Data.Migrations
                 new Permission{Name = "Печатать отчет по заказам", Type = Domain.PermissionType.PrintReportOrders},
                 new Permission{Name = "Печатать отчет по товарам", Type = Domain.PermissionType.PrintReportGoods},
                 new Permission{Name = "Печатать отчет по пользователям", Type = Domain.PermissionType.PrintReportUsers},
+
+                new Permission{Name = "Список ролей", Type = Domain.PermissionType.ListRoles},
+                new Permission{Name = "Добавление роли", Type = Domain.PermissionType.NewRole},
+                new Permission{Name = "Редактирование роли", Type = Domain.PermissionType.EditRole}
             };
             
             var role = new Role { Name = "Administrator", Permissions = permissions };
