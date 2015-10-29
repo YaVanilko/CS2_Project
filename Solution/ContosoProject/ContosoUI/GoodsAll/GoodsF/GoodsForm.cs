@@ -62,6 +62,7 @@ namespace ContosoUI.GoodsAll.GoodsF
                 goodsID = (int)gv.GetRowCellValue(gridInfo.RowHandle,"Id");
 
                 AddGoods.AddGoods frm = new AddGoods.AddGoods(goodsID);
+                frm.MdiParent = this.MdiParent;
                 frm.Show();
             }
 
@@ -84,6 +85,25 @@ namespace ContosoUI.GoodsAll.GoodsF
         {
             GoodsGridControl.ShowPrintPreview();
             GoodsGridControl.Print();
+        }
+
+        private void GoodsPrintBarButtonItem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            GoodsGridControl.ShowPrintPreview();
+            GoodsGridControl.Print();
+        }
+
+        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            SaveFileDialog saveDialog = new SaveFileDialog();
+            saveDialog.Filter = "xls files (*.xls)|*.xls|All files(*.*)|*.*";
+
+            if (saveDialog.ShowDialog() == DialogResult.OK)
+            {
+                string fileName = saveDialog.FileName;
+                GoodsGridControl.ExportToXls(fileName);
+
+            }
         }
 
 

@@ -9,5 +9,6 @@ namespace Data.EFData
 {
     public class EFProductCategoryDao : EfBaseDao<ProductCategory>
     {
+
     }
 }

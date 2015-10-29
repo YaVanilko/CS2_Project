@@ -28,33 +28,41 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddGoods));
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.groupControl4 = new DevExpress.XtraEditors.GroupControl();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.AddGoodsCheckBoxIsActive = new System.Windows.Forms.CheckBox();
             this.AddGoodsTextBoxUser = new DevExpress.XtraEditors.TextEdit();
             this.AddGoodsTextBoxCount = new DevExpress.XtraEditors.TextEdit();
             this.AddGoodsTextBoxPrice = new DevExpress.XtraEditors.TextEdit();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.AddGoodsComboBoxEditCategory = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.AddGoodsTextBoxComent = new DevExpress.XtraEditors.TextEdit();
             this.AddGoodsTextBoxSKU = new DevExpress.XtraEditors.TextEdit();
             this.AddGoodsTextBoxName = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.AddGoodsCheckBoxIsActive = new System.Windows.Forms.CheckBox();
-            this.AddGoodsSaveButton = new System.Windows.Forms.Button();
-            this.groupControl4 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.AddGoodsTextBoxComent = new DevExpress.XtraEditors.TextEdit();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
+            this.SaveGoodsButton = new DevExpress.XtraBars.BarButtonItem();
+            this.mainRibbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.EditGoodsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).BeginInit();
+            this.groupControl4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AddGoodsTextBoxUser.Properties)).BeginInit();
@@ -63,15 +71,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AddGoodsComboBoxEditCategory.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AddGoodsTextBoxComent.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AddGoodsTextBoxSKU.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AddGoodsTextBoxName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).BeginInit();
-            this.groupControl4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.AddGoodsTextBoxComent.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.EditGoodsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -88,12 +96,31 @@
             this.layoutControl1.TabIndex = 11;
             this.layoutControl1.Text = "layoutControl1";
             // 
+            // groupControl4
+            // 
+            this.groupControl4.Controls.Add(this.textBox1);
+            this.groupControl4.Location = new System.Drawing.Point(12, 196);
+            this.groupControl4.Name = "groupControl4";
+            this.groupControl4.Size = new System.Drawing.Size(701, 145);
+            this.groupControl4.TabIndex = 1;
+            this.groupControl4.Text = "История коментариев";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox1.Location = new System.Drawing.Point(5, 23);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(691, 117);
+            this.textBox1.TabIndex = 0;
+            // 
             // groupControl2
             // 
             this.groupControl2.Controls.Add(this.label7);
             this.groupControl2.Controls.Add(this.label6);
             this.groupControl2.Controls.Add(this.label5);
-            this.groupControl2.Controls.Add(this.AddGoodsSaveButton);
             this.groupControl2.Controls.Add(this.AddGoodsCheckBoxIsActive);
             this.groupControl2.Controls.Add(this.AddGoodsTextBoxUser);
             this.groupControl2.Controls.Add(this.AddGoodsTextBoxCount);
@@ -103,6 +130,43 @@
             this.groupControl2.Size = new System.Drawing.Size(346, 180);
             this.groupControl2.TabIndex = 5;
             this.groupControl2.Text = "Данные товара";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(8, 96);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(79, 13);
+            this.label7.TabIndex = 6;
+            this.label7.Text = "Пользователь";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(8, 59);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(67, 13);
+            this.label6.TabIndex = 5;
+            this.label6.Text = "Количество";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(5, 20);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(33, 13);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "Цена";
+            // 
+            // AddGoodsCheckBoxIsActive
+            // 
+            this.AddGoodsCheckBoxIsActive.AutoSize = true;
+            this.AddGoodsCheckBoxIsActive.Location = new System.Drawing.Point(6, 151);
+            this.AddGoodsCheckBoxIsActive.Name = "AddGoodsCheckBoxIsActive";
+            this.AddGoodsCheckBoxIsActive.Size = new System.Drawing.Size(77, 17);
+            this.AddGoodsCheckBoxIsActive.TabIndex = 3;
+            this.AddGoodsCheckBoxIsActive.Text = "Активный";
+            this.AddGoodsCheckBoxIsActive.UseVisualStyleBackColor = true;
             // 
             // AddGoodsTextBoxUser
             // 
@@ -141,6 +205,33 @@
             this.groupControl1.TabIndex = 4;
             this.groupControl1.Text = "Описание товара";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(6, 133);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(68, 13);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Каментарий";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 98);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(61, 13);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Категория";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(7, 59);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(50, 13);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Артикул";
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -159,6 +250,13 @@
             this.AddGoodsComboBoxEditCategory.Size = new System.Drawing.Size(341, 20);
             this.AddGoodsComboBoxEditCategory.TabIndex = 3;
             // 
+            // AddGoodsTextBoxComent
+            // 
+            this.AddGoodsTextBoxComent.Location = new System.Drawing.Point(5, 148);
+            this.AddGoodsTextBoxComent.Name = "AddGoodsTextBoxComent";
+            this.AddGoodsTextBoxComent.Size = new System.Drawing.Size(341, 20);
+            this.AddGoodsTextBoxComent.TabIndex = 2;
+            // 
             // AddGoodsTextBoxSKU
             // 
             this.AddGoodsTextBoxSKU.Location = new System.Drawing.Point(5, 74);
@@ -172,7 +270,7 @@
             this.AddGoodsTextBoxName.Name = "AddGoodsTextBoxName";
             this.AddGoodsTextBoxName.Size = new System.Drawing.Size(341, 20);
             this.AddGoodsTextBoxName.TabIndex = 0;
-            this.AddGoodsTextBoxName.EditValueChanged += new System.EventHandler(this.textEdit1_EditValueChanged);
+            //this.AddGoodsTextBoxName.EditValueChanged += new System.EventHandler(this.textEdit1_EditValueChanged);
             // 
             // layoutControlGroup1
             // 
@@ -205,35 +303,6 @@
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
-            // AddGoodsCheckBoxIsActive
-            // 
-            this.AddGoodsCheckBoxIsActive.AutoSize = true;
-            this.AddGoodsCheckBoxIsActive.Location = new System.Drawing.Point(6, 151);
-            this.AddGoodsCheckBoxIsActive.Name = "AddGoodsCheckBoxIsActive";
-            this.AddGoodsCheckBoxIsActive.Size = new System.Drawing.Size(77, 17);
-            this.AddGoodsCheckBoxIsActive.TabIndex = 3;
-            this.AddGoodsCheckBoxIsActive.Text = "Активный";
-            this.AddGoodsCheckBoxIsActive.UseVisualStyleBackColor = true;
-            // 
-            // AddGoodsSaveButton
-            // 
-            this.AddGoodsSaveButton.Location = new System.Drawing.Point(271, 151);
-            this.AddGoodsSaveButton.Name = "AddGoodsSaveButton";
-            this.AddGoodsSaveButton.Size = new System.Drawing.Size(75, 23);
-            this.AddGoodsSaveButton.TabIndex = 1;
-            this.AddGoodsSaveButton.Text = "Сохранить";
-            this.AddGoodsSaveButton.UseVisualStyleBackColor = true;
-            this.AddGoodsSaveButton.Click += new System.EventHandler(this.AddGoodsSaveButton_Click);
-            // 
-            // groupControl4
-            // 
-            this.groupControl4.Controls.Add(this.textBox1);
-            this.groupControl4.Location = new System.Drawing.Point(12, 196);
-            this.groupControl4.Name = "groupControl4";
-            this.groupControl4.Size = new System.Drawing.Size(701, 145);
-            this.groupControl4.TabIndex = 1;
-            this.groupControl4.Text = "История коментариев";
-            // 
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.groupControl4;
@@ -243,86 +312,56 @@
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextVisible = false;
             // 
-            // textBox1
+            // ribbonControl1
             // 
-            this.textBox1.Location = new System.Drawing.Point(5, 23);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(691, 117);
-            this.textBox1.TabIndex = 0;
+            this.ribbonControl1.ExpandCollapseItem.Id = 0;
+            this.ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
+            this.ribbonControl1.ExpandCollapseItem,
+            this.SaveGoodsButton});
+            this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
+            this.ribbonControl1.MaxItemId = 2;
+            this.ribbonControl1.Name = "ribbonControl1";
+            this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
+            this.mainRibbonPage});
+            this.ribbonControl1.Size = new System.Drawing.Size(725, 141);
             // 
-            // AddGoodsTextBoxComent
+            // SaveGoodsButton
             // 
-            this.AddGoodsTextBoxComent.Location = new System.Drawing.Point(5, 148);
-            this.AddGoodsTextBoxComent.Name = "AddGoodsTextBoxComent";
-            this.AddGoodsTextBoxComent.Size = new System.Drawing.Size(341, 20);
-            this.AddGoodsTextBoxComent.TabIndex = 2;
-            this.AddGoodsTextBoxComent.EditValueChanged += new System.EventHandler(this.textEdit3_EditValueChanged);
+            this.SaveGoodsButton.Caption = "Сохранить";
+            this.SaveGoodsButton.Glyph = ((System.Drawing.Image)(resources.GetObject("SaveGoodsButton.Glyph")));
+            this.SaveGoodsButton.Id = 1;
+            this.SaveGoodsButton.Name = "SaveGoodsButton";
+            this.SaveGoodsButton.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.SaveGoodsButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.SaveGoodsButton_ItemClick);
             // 
-            // label2
+            // mainRibbonPage
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(7, 59);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(50, 13);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Артикул";
+            this.mainRibbonPage.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup1});
+            this.mainRibbonPage.Name = "mainRibbonPage";
+            this.mainRibbonPage.Text = "ribbonPage1";
             // 
-            // label3
+            // ribbonPageGroup1
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 98);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(61, 13);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Категория";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 133);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(68, 13);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Каментарий";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(5, 20);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(33, 13);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Цена";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(8, 59);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(67, 13);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "Количество";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(8, 96);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(79, 13);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "Пользователь";
+            this.ribbonPageGroup1.ItemLinks.Add(this.SaveGoodsButton);
+            this.ribbonPageGroup1.Name = "ribbonPageGroup1";
+            this.ribbonPageGroup1.Text = "ribbonPageGroup1";
             // 
             // AddGoods
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(725, 353);
+            this.Controls.Add(this.ribbonControl1);
             this.Controls.Add(this.layoutControl1);
             this.Name = "AddGoods";
             this.Text = "AddGoods";
+           // this.Load += new System.EventHandler(this.AddGoods_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).EndInit();
+            this.groupControl4.ResumeLayout(false);
+            this.groupControl4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
             this.groupControl2.PerformLayout();
@@ -333,17 +372,17 @@
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AddGoodsComboBoxEditCategory.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AddGoodsTextBoxComent.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AddGoodsTextBoxSKU.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AddGoodsTextBoxName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).EndInit();
-            this.groupControl4.ResumeLayout(false);
-            this.groupControl4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.AddGoodsTextBoxComent.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.EditGoodsBindingSource)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -362,7 +401,6 @@
         private DevExpress.XtraEditors.ComboBoxEdit AddGoodsComboBoxEditCategory;
         private DevExpress.XtraEditors.TextEdit AddGoodsTextBoxSKU;
         private DevExpress.XtraEditors.TextEdit AddGoodsTextBoxName;
-        private System.Windows.Forms.Button AddGoodsSaveButton;
         private System.Windows.Forms.CheckBox AddGoodsCheckBoxIsActive;
         private DevExpress.XtraEditors.GroupControl groupControl4;
         private System.Windows.Forms.TextBox textBox1;
@@ -374,5 +412,10 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
+        private DevExpress.XtraBars.Ribbon.RibbonControl ribbonControl1;
+        private DevExpress.XtraBars.Ribbon.RibbonPage mainRibbonPage;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
+        private DevExpress.XtraBars.BarButtonItem SaveGoodsButton;
+        private System.Windows.Forms.BindingSource EditGoodsBindingSource;
     }
 }

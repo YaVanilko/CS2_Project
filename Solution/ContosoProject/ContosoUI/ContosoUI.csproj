@@ -215,6 +215,7 @@
     <EmbeddedResource Include="Test\OrderListView.resx">
       <DependentUpon>OrderListView.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Properties\DataSources\Domain.Entities.Permission.datasource" />
     <None Include="Properties\DataSources\Domain.Entities.User.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

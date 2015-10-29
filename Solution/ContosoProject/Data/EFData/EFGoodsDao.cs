@@ -13,8 +13,21 @@ namespace Data.EFData
    public  class EFGoodsDao:EfBaseDao<Goods>,IGoodsRepository
    {
         public ICollection<Goods> GetGoodsByCategory(string category)
+        { 
+            return dbContext.Goods.Where(x => x.Category.CategoryName == category).ToList();  
+        }
+
+        public ICollection<Goods> GetAll()
         {
-            return dbContext.Goods.
+           
+            return dbContext.Goods.Where(x => x.IsActive)
+                                .Include(x => x.Category).ToList();
+        }
+
+        public ICollection<Goods> GetAllIsActive()
+        {
+            return dbContext.Goods.Where(x => x.IsActive)
+                                .Include(x => x.Category).ToList();
         }
 
       
