@@ -94,10 +94,6 @@
             this.customersGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.customersGridView});
             // 
-            // customersListViewModelBindingSource1
-            // 
-            this.customersListViewModelBindingSource1.DataSource = typeof(ContosoUI.Customers.Search.CustomersListViewModel);
-            // 
             // customersGridView
             // 
             this.customersGridView.Appearance.HeaderPanel.Options.UseTextOptions = true;
@@ -248,10 +244,6 @@
             this.filterCityItem.Size = new System.Drawing.Size(784, 24);
             this.filterCityItem.Text = "Город";
             this.filterCityItem.TextSize = new System.Drawing.Size(61, 13);
-            // 
-            // customersListViewModelBindingSource
-            // 
-            this.customersListViewModelBindingSource.DataSource = typeof(ContosoUI.Customers.Search.CustomersListViewModel);
             // 
             // customerBindingSource
             // 

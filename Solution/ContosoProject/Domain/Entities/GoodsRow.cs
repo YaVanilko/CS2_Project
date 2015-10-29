@@ -11,21 +11,14 @@ namespace Domain.Entities
         public Goods Goods { get; set; }
         public int Count { get; set; }
         public double Price { get; set; }
-        double totalPrise;
         public double TotalPrice
         {
             get
             {
-                return totalPrise;
-            }
-            set
-            {
-                totalPrise = Price * Count;
+                return Price * Count;
             }
         }
 
         public GoodsRow() { Goods = new Goods(); }
-
-
     }
 }

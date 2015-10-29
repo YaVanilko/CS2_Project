@@ -14,10 +14,50 @@ namespace ContosoUI.Order.Search
         readonly SearchView view;
         readonly IOrderRepository model = new Data.DumbData.OrderDao();
         List<Domain.Entities.Order> ordersList = new List<Domain.Entities.Order>();
-
+        List<SearchViewModel> vm = new List<SearchViewModel>();
+        public List<string> statuses = new List<string>();
+ 
         public SearchPresenter(SearchView view)
         {
             this.view = view;
+            statuses = model.GetAll().Select(x => x.Status.Status).Distinct().ToList();
+        }
+
+        public void SelectOdersByStatus(string status)
+        {
+            if (status == "Все статусы")
+            {
+                ordersList = model.GetAll().ToList();
+                vm.Clear();
+
+                foreach (Domain.Entities.Order order in ordersList)
+                {
+                    vm.Add(new SearchViewModel()
+                    {
+                        Status = order.Status,
+                        Customer = order.Customer,
+                        countOfGoods = order.goodsList.Count,
+                        TotalCost = order.TotalCost,
+                        countOfComments = order.comments.Count
+                    });
+                }
+            }
+            else
+            {
+                ordersList = model.GetOrderByStatus(status).ToList();
+                vm.Clear();
+                foreach (Domain.Entities.Order order in ordersList)
+                {
+                    vm.Add(new SearchViewModel()
+                    {
+                        Status = order.Status,
+                        Customer = order.Customer,
+                        countOfGoods = order.goodsList.Count,
+                        TotalCost = order.TotalCost,
+                        countOfComments = order.comments.Count
+                    });
+                }
+            }       
         }
     }
 

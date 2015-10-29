@@ -62,5 +62,10 @@ namespace ContosoUI
             form.MdiParent = this;
             form.Show();
         }
+
+        private void addNewUserBtn_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
     }
 }

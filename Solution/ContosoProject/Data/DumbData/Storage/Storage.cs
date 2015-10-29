@@ -373,32 +373,32 @@ namespace Data.DumbData
         #region GoodsRow
         public static List<GoodsRow> GoodsRowCollection = new List<GoodsRow>() 
         { 
-            new GoodsRow{Id = 0,Goods = goodsCollection[0], Count=2, Price=400, TotalPrice=800},
-            new GoodsRow{Id = 1,Goods = goodsCollection[1], Count=1, Price=2000, TotalPrice=2000},
-            new GoodsRow{Id = 2,Goods = goodsCollection[2], Count=1, Price=1400, TotalPrice=1400},
-            new GoodsRow{Id = 3,Goods = goodsCollection[3], Count=1, Price=12400, TotalPrice=12400},
-            new GoodsRow{Id = 4,Goods = goodsCollection[4], Count=1, Price=6059.16, TotalPrice=6059.16},
-            new GoodsRow{Id = 5,Goods = goodsCollection[5], Count=2, Price=605, TotalPrice=1210},
+            new GoodsRow{Id = 0,Goods = goodsCollection[0], Count=2, Price=400},
+            new GoodsRow{Id = 1,Goods = goodsCollection[1], Count=1, Price=2000},
+            new GoodsRow{Id = 2,Goods = goodsCollection[2], Count=1, Price=1400},
+            new GoodsRow{Id = 3,Goods = goodsCollection[3], Count=1, Price=12400},
+            new GoodsRow{Id = 4,Goods = goodsCollection[4], Count=1, Price=6059.16},
+            new GoodsRow{Id = 5,Goods = goodsCollection[5], Count=2, Price=605},
             new GoodsRow{Id = 6,Goods = goodsCollection[6], Count=1, Price=7000.80},
-            new GoodsRow{Id = 7,Goods = goodsCollection[7], Count=4, Price=200, TotalPrice=800},
-            new GoodsRow{Id = 8,Goods = goodsCollection[8], Count=1, Price=1200, TotalPrice=1200},
-            new GoodsRow{Id = 9,Goods = goodsCollection[9], Count=2, Price=500, TotalPrice=1000},
+            new GoodsRow{Id = 7,Goods = goodsCollection[7], Count=4, Price=200},
+            new GoodsRow{Id = 8,Goods = goodsCollection[8], Count=1, Price=1200},
+            new GoodsRow{Id = 9,Goods = goodsCollection[9], Count=2, Price=500},
         };
         #endregion
 
         #region Order
         public static List<Order> OrderCollection = new List<Order>() 
         { 
-            new Order{Id = 0, Customer = CustomerCollection[0]},
-            new Order{Id = 1, Customer = CustomerCollection[1]},
-            new Order{Id = 2, Customer = CustomerCollection[2]},
-            new Order{Id = 3, Customer = CustomerCollection[3]},
-            new Order{Id = 4, Customer = CustomerCollection[4]},
-            new Order{Id = 5, Customer = CustomerCollection[5]},
-            new Order{Id = 6, Customer = CustomerCollection[6]},
-            new Order{Id = 7, Customer = CustomerCollection[7]},
-            new Order{Id = 8, Customer = CustomerCollection[8]},
-            new Order{Id = 9, Customer = CustomerCollection[9]},
+            new Order{Id = 0, Customer = CustomerCollection[0], Status = OrderStatusCollection[0]},
+            new Order{Id = 1, Customer = CustomerCollection[1], Status = OrderStatusCollection[1]},
+            new Order{Id = 2, Customer = CustomerCollection[2], Status = OrderStatusCollection[2]},
+            new Order{Id = 3, Customer = CustomerCollection[3], Status = OrderStatusCollection[3]},
+            new Order{Id = 4, Customer = CustomerCollection[4], Status = OrderStatusCollection[4]},
+            new Order{Id = 5, Customer = CustomerCollection[5], Status = OrderStatusCollection[4]},
+            new Order{Id = 6, Customer = CustomerCollection[6], Status = OrderStatusCollection[1]},
+            new Order{Id = 7, Customer = CustomerCollection[7], Status = OrderStatusCollection[1]},
+            new Order{Id = 8, Customer = CustomerCollection[8], Status = OrderStatusCollection[2]},
+            new Order{Id = 9, Customer = CustomerCollection[9], Status = OrderStatusCollection[3]},
         };
         #endregion
 

@@ -10,5 +10,6 @@ namespace Domain.DAO
 {
     public interface IOrderRepository : IRepository<Order>
     {
+        ICollection<Order> GetOrderByStatus(string status);
     }
 }

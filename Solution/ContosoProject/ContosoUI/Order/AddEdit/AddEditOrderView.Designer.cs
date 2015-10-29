@@ -104,20 +104,20 @@
             // 
             // goodsListBoxControl
             // 
-            this.goodsListBoxControl.Location = new System.Drawing.Point(12, 132);
+            this.goodsListBoxControl.Location = new System.Drawing.Point(12, 212);
             this.goodsListBoxControl.Name = "goodsListBoxControl";
-            this.goodsListBoxControl.Size = new System.Drawing.Size(760, 277);
+            this.goodsListBoxControl.Size = new System.Drawing.Size(760, 197);
             this.goodsListBoxControl.StyleController = this.mainLayoutControl;
             this.goodsListBoxControl.TabIndex = 9;
             // 
             // statusComboBoxEdit
             // 
-            this.statusComboBoxEdit.Location = new System.Drawing.Point(82, 36);
+            this.statusComboBoxEdit.Location = new System.Drawing.Point(12, 68);
             this.statusComboBoxEdit.MenuManager = this.mainRibbonControl;
             this.statusComboBoxEdit.Name = "statusComboBoxEdit";
             this.statusComboBoxEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.statusComboBoxEdit.Size = new System.Drawing.Size(690, 20);
+            this.statusComboBoxEdit.Size = new System.Drawing.Size(760, 20);
             this.statusComboBoxEdit.StyleController = this.mainLayoutControl;
             this.statusComboBoxEdit.TabIndex = 8;
             // 
@@ -222,41 +222,41 @@
             // 
             // commentTextEdit
             // 
-            this.commentTextEdit.Location = new System.Drawing.Point(82, 84);
+            this.commentTextEdit.Location = new System.Drawing.Point(12, 148);
             this.commentTextEdit.MenuManager = this.mainRibbonControl;
             this.commentTextEdit.Name = "commentTextEdit";
-            this.commentTextEdit.Size = new System.Drawing.Size(690, 20);
+            this.commentTextEdit.Size = new System.Drawing.Size(760, 20);
             this.commentTextEdit.StyleController = this.mainLayoutControl;
             this.commentTextEdit.TabIndex = 7;
             // 
             // totalCostTextEdit
             // 
-            this.totalCostTextEdit.Location = new System.Drawing.Point(82, 60);
+            this.totalCostTextEdit.Location = new System.Drawing.Point(12, 108);
             this.totalCostTextEdit.MenuManager = this.mainRibbonControl;
             this.totalCostTextEdit.Name = "totalCostTextEdit";
-            this.totalCostTextEdit.Size = new System.Drawing.Size(690, 20);
+            this.totalCostTextEdit.Size = new System.Drawing.Size(760, 20);
             this.totalCostTextEdit.StyleController = this.mainLayoutControl;
             this.totalCostTextEdit.TabIndex = 6;
             // 
             // customerComboBoxEdit
             // 
-            this.customerComboBoxEdit.Location = new System.Drawing.Point(82, 12);
+            this.customerComboBoxEdit.Location = new System.Drawing.Point(12, 28);
             this.customerComboBoxEdit.MenuManager = this.mainRibbonControl;
             this.customerComboBoxEdit.Name = "customerComboBoxEdit";
             this.customerComboBoxEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.customerComboBoxEdit.Size = new System.Drawing.Size(690, 20);
+            this.customerComboBoxEdit.Size = new System.Drawing.Size(760, 20);
             this.customerComboBoxEdit.StyleController = this.mainLayoutControl;
             this.customerComboBoxEdit.TabIndex = 5;
             // 
             // goodComboBoxEdit
             // 
-            this.goodComboBoxEdit.Location = new System.Drawing.Point(82, 108);
+            this.goodComboBoxEdit.Location = new System.Drawing.Point(12, 188);
             this.goodComboBoxEdit.MenuManager = this.mainRibbonControl;
             this.goodComboBoxEdit.Name = "goodComboBoxEdit";
             this.goodComboBoxEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.goodComboBoxEdit.Size = new System.Drawing.Size(690, 20);
+            this.goodComboBoxEdit.Size = new System.Drawing.Size(760, 20);
             this.goodComboBoxEdit.StyleController = this.mainLayoutControl;
             this.goodComboBoxEdit.TabIndex = 4;
             // 
@@ -279,10 +279,11 @@
             // goodLayoutControlItem
             // 
             this.goodLayoutControlItem.Control = this.goodComboBoxEdit;
-            this.goodLayoutControlItem.Location = new System.Drawing.Point(0, 96);
+            this.goodLayoutControlItem.Location = new System.Drawing.Point(0, 160);
             this.goodLayoutControlItem.Name = "goodLayoutControlItem";
-            this.goodLayoutControlItem.Size = new System.Drawing.Size(764, 24);
+            this.goodLayoutControlItem.Size = new System.Drawing.Size(764, 40);
             this.goodLayoutControlItem.Text = "Товар";
+            this.goodLayoutControlItem.TextLocation = DevExpress.Utils.Locations.Top;
             this.goodLayoutControlItem.TextSize = new System.Drawing.Size(67, 13);
             // 
             // customerLayoutControlItem
@@ -290,44 +291,48 @@
             this.customerLayoutControlItem.Control = this.customerComboBoxEdit;
             this.customerLayoutControlItem.Location = new System.Drawing.Point(0, 0);
             this.customerLayoutControlItem.Name = "customerLayoutControlItem";
-            this.customerLayoutControlItem.Size = new System.Drawing.Size(764, 24);
+            this.customerLayoutControlItem.Size = new System.Drawing.Size(764, 40);
             this.customerLayoutControlItem.Text = "Клиент";
+            this.customerLayoutControlItem.TextLocation = DevExpress.Utils.Locations.Top;
             this.customerLayoutControlItem.TextSize = new System.Drawing.Size(67, 13);
             // 
             // totalCostlayoutControlItem
             // 
             this.totalCostlayoutControlItem.Control = this.totalCostTextEdit;
-            this.totalCostlayoutControlItem.Location = new System.Drawing.Point(0, 48);
+            this.totalCostlayoutControlItem.Location = new System.Drawing.Point(0, 80);
             this.totalCostlayoutControlItem.Name = "totalCostlayoutControlItem";
-            this.totalCostlayoutControlItem.Size = new System.Drawing.Size(764, 24);
+            this.totalCostlayoutControlItem.Size = new System.Drawing.Size(764, 40);
             this.totalCostlayoutControlItem.Text = "Цена";
+            this.totalCostlayoutControlItem.TextLocation = DevExpress.Utils.Locations.Top;
             this.totalCostlayoutControlItem.TextSize = new System.Drawing.Size(67, 13);
             // 
             // commenLayoutControlItem
             // 
             this.commenLayoutControlItem.Control = this.commentTextEdit;
-            this.commenLayoutControlItem.Location = new System.Drawing.Point(0, 72);
+            this.commenLayoutControlItem.Location = new System.Drawing.Point(0, 120);
             this.commenLayoutControlItem.Name = "commenLayoutControlItem";
-            this.commenLayoutControlItem.Size = new System.Drawing.Size(764, 24);
+            this.commenLayoutControlItem.Size = new System.Drawing.Size(764, 40);
             this.commenLayoutControlItem.Text = "Комментарий";
+            this.commenLayoutControlItem.TextLocation = DevExpress.Utils.Locations.Top;
             this.commenLayoutControlItem.TextSize = new System.Drawing.Size(67, 13);
             // 
             // layoutControlItem
             // 
             this.layoutControlItem.Control = this.goodsListBoxControl;
-            this.layoutControlItem.Location = new System.Drawing.Point(0, 120);
+            this.layoutControlItem.Location = new System.Drawing.Point(0, 200);
             this.layoutControlItem.Name = "layoutControlItem";
-            this.layoutControlItem.Size = new System.Drawing.Size(764, 281);
+            this.layoutControlItem.Size = new System.Drawing.Size(764, 201);
             this.layoutControlItem.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem.TextVisible = false;
             // 
             // statusLayoutControlItem
             // 
             this.statusLayoutControlItem.Control = this.statusComboBoxEdit;
-            this.statusLayoutControlItem.Location = new System.Drawing.Point(0, 24);
+            this.statusLayoutControlItem.Location = new System.Drawing.Point(0, 40);
             this.statusLayoutControlItem.Name = "statusLayoutControlItem";
-            this.statusLayoutControlItem.Size = new System.Drawing.Size(764, 24);
+            this.statusLayoutControlItem.Size = new System.Drawing.Size(764, 40);
             this.statusLayoutControlItem.Text = "Статус";
+            this.statusLayoutControlItem.TextLocation = DevExpress.Utils.Locations.Top;
             this.statusLayoutControlItem.TextSize = new System.Drawing.Size(67, 13);
             // 
             // layoutControlItem7
@@ -346,6 +351,7 @@
             this.Controls.Add(this.mainLayoutControl);
             this.Name = "AddEditOrderView";
             this.Text = "Добавить/Редактировать заказ";
+            this.Load += new System.EventHandler(this.AddEditOrderView_Load);
             ((System.ComponentModel.ISupportInitialize)(this.mainLayoutControl)).EndInit();
             this.mainLayoutControl.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.commentsListBoxControl)).EndInit();

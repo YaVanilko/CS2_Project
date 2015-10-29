@@ -37,25 +37,25 @@
             this.layoutControl = new DevExpress.XtraLayout.LayoutControl();
             this.statusComboBox = new System.Windows.Forms.ComboBox();
             this.resultGridControl = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.layoutControlGroup = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.statusLayoutControlItem = new DevExpress.XtraLayout.LayoutControlItem();
             this.searchViewModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colStatus = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCustomer = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colcountOfGoods = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTotalCost = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colcountOfComments = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.layoutControlGroup = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.statusLayoutControlItem = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl)).BeginInit();
             this.layoutControl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.resultGridControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchViewModelBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.statusLayoutControlItem)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.searchViewModelBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonControl
@@ -78,6 +78,7 @@
             this.searchBarButtonItem.Id = 1;
             this.searchBarButtonItem.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("searchBarButtonItem.LargeGlyph")));
             this.searchBarButtonItem.Name = "searchBarButtonItem";
+            this.searchBarButtonItem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.searchBarButtonItem_ItemClick);
             // 
             // mainRibbonPage
             // 
@@ -125,6 +126,10 @@
             this.resultGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
+            // searchViewModelBindingSource
+            // 
+            this.searchViewModelBindingSource.DataSource = typeof(ContosoUI.Order.Search.SearchViewModel);
+            // 
             // gridView1
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
@@ -135,40 +140,6 @@
             this.colcountOfComments});
             this.gridView1.GridControl = this.resultGridControl;
             this.gridView1.Name = "gridView1";
-            // 
-            // layoutControlGroup
-            // 
-            this.layoutControlGroup.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
-            this.layoutControlGroup.GroupBordersVisible = false;
-            this.layoutControlGroup.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlItem1,
-            this.statusLayoutControlItem});
-            this.layoutControlGroup.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlGroup.Name = "layoutControlGroup";
-            this.layoutControlGroup.Size = new System.Drawing.Size(784, 424);
-            this.layoutControlGroup.TextVisible = false;
-            // 
-            // layoutControlItem1
-            // 
-            this.layoutControlItem1.Control = this.resultGridControl;
-            this.layoutControlItem1.Location = new System.Drawing.Point(0, 25);
-            this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(764, 379);
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem1.TextVisible = false;
-            // 
-            // statusLayoutControlItem
-            // 
-            this.statusLayoutControlItem.Control = this.statusComboBox;
-            this.statusLayoutControlItem.Location = new System.Drawing.Point(0, 0);
-            this.statusLayoutControlItem.Name = "statusLayoutControlItem";
-            this.statusLayoutControlItem.Size = new System.Drawing.Size(764, 25);
-            this.statusLayoutControlItem.Text = "Статус";
-            this.statusLayoutControlItem.TextSize = new System.Drawing.Size(36, 13);
-            // 
-            // searchViewModelBindingSource
-            // 
-            this.searchViewModelBindingSource.DataSource = typeof(ContosoUI.Order.Search.SearchViewModel);
             // 
             // colStatus
             // 
@@ -205,6 +176,36 @@
             this.colcountOfComments.Visible = true;
             this.colcountOfComments.VisibleIndex = 4;
             // 
+            // layoutControlGroup
+            // 
+            this.layoutControlGroup.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
+            this.layoutControlGroup.GroupBordersVisible = false;
+            this.layoutControlGroup.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem1,
+            this.statusLayoutControlItem});
+            this.layoutControlGroup.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlGroup.Name = "layoutControlGroup";
+            this.layoutControlGroup.Size = new System.Drawing.Size(784, 424);
+            this.layoutControlGroup.TextVisible = false;
+            // 
+            // layoutControlItem1
+            // 
+            this.layoutControlItem1.Control = this.resultGridControl;
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 25);
+            this.layoutControlItem1.Name = "layoutControlItem1";
+            this.layoutControlItem1.Size = new System.Drawing.Size(764, 379);
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem1.TextVisible = false;
+            // 
+            // statusLayoutControlItem
+            // 
+            this.statusLayoutControlItem.Control = this.statusComboBox;
+            this.statusLayoutControlItem.Location = new System.Drawing.Point(0, 0);
+            this.statusLayoutControlItem.Name = "statusLayoutControlItem";
+            this.statusLayoutControlItem.Size = new System.Drawing.Size(764, 25);
+            this.statusLayoutControlItem.Text = "Статус";
+            this.statusLayoutControlItem.TextSize = new System.Drawing.Size(36, 13);
+            // 
             // SearchView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -218,11 +219,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl)).EndInit();
             this.layoutControl.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.resultGridControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchViewModelBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.statusLayoutControlItem)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.searchViewModelBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 
 namespace Domain.DAO
 {
-    public interface IOrderStstusRepository : IRepository<OrderStatus>
+    public interface IOrderStatusRepository : IRepository<OrderStatus>
     {
+        
     }
 }

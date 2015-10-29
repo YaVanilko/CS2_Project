@@ -105,7 +105,7 @@
     <Compile Include="Order\AddEdit\AddEditOrderView.Designer.cs">
       <DependentUpon>AddEditOrderView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Order\AddEdit\Presenter.cs" />
+    <Compile Include="Order\AddEdit\AddEditOrderPresenter.cs" />
     <Compile Include="Order\Search\SearchPresenter.cs" />
     <Compile Include="Order\Search\SearchView.cs">
       <SubType>Form</SubType>
