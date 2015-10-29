@@ -46,6 +46,11 @@
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.roleBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.roleBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.colName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colIsActive = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colEditTime = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.rolesRibbomItem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -60,6 +65,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.roleBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roleBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // rolesRibbomItem
@@ -131,14 +137,20 @@
             // 
             // permissionsCheckedListBoxControl
             // 
+            this.permissionsCheckedListBoxControl.CheckOnClick = true;
+            this.permissionsCheckedListBoxControl.DisplayMember = "Name";
             this.permissionsCheckedListBoxControl.Location = new System.Drawing.Point(540, 28);
             this.permissionsCheckedListBoxControl.Name = "permissionsCheckedListBoxControl";
+            this.permissionsCheckedListBoxControl.SelectionMode = System.Windows.Forms.SelectionMode.None;
             this.permissionsCheckedListBoxControl.Size = new System.Drawing.Size(247, 463);
+            this.permissionsCheckedListBoxControl.SortOrder = System.Windows.Forms.SortOrder.Ascending;
             this.permissionsCheckedListBoxControl.StyleController = this.layoutControl1;
             this.permissionsCheckedListBoxControl.TabIndex = 5;
+            this.permissionsCheckedListBoxControl.ValueMember = "Id";
             // 
             // rolesGridControl
             // 
+            this.rolesGridControl.DataSource = this.roleBindingSource1;
             this.rolesGridControl.Location = new System.Drawing.Point(12, 28);
             this.rolesGridControl.MainView = this.rolesGridView;
             this.rolesGridControl.MenuManager = this.rolesRibbomItem;
@@ -150,6 +162,11 @@
             // 
             // rolesGridView
             // 
+            this.rolesGridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colName,
+            this.colId,
+            this.colIsActive,
+            this.colEditTime});
             this.rolesGridView.GridControl = this.rolesGridControl;
             this.rolesGridView.Name = "rolesGridView";
             this.rolesGridView.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.rolesGridView_FocusedRowChanged);
@@ -215,6 +232,38 @@
             this.emptySpaceItem2.Size = new System.Drawing.Size(268, 24);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
+            // roleBindingSource1
+            // 
+            this.roleBindingSource1.DataSource = typeof(Domain.Entities.Role);
+            // 
+            // colName
+            // 
+            this.colName.FieldName = "Name";
+            this.colName.Name = "colName";
+            this.colName.Visible = true;
+            this.colName.VisibleIndex = 0;
+            // 
+            // colId
+            // 
+            this.colId.FieldName = "Id";
+            this.colId.Name = "colId";
+            this.colId.Visible = true;
+            this.colId.VisibleIndex = 1;
+            // 
+            // colIsActive
+            // 
+            this.colIsActive.FieldName = "IsActive";
+            this.colIsActive.Name = "colIsActive";
+            this.colIsActive.Visible = true;
+            this.colIsActive.VisibleIndex = 2;
+            // 
+            // colEditTime
+            // 
+            this.colEditTime.FieldName = "EditTime";
+            this.colEditTime.Name = "colEditTime";
+            this.colEditTime.Visible = true;
+            this.colEditTime.VisibleIndex = 3;
+            // 
             // RolesView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -239,6 +288,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.roleBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roleBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -263,5 +313,10 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem2;
         private System.Windows.Forms.BindingSource roleBindingSource;
+        private System.Windows.Forms.BindingSource roleBindingSource1;
+        private DevExpress.XtraGrid.Columns.GridColumn colName;
+        private DevExpress.XtraGrid.Columns.GridColumn colId;
+        private DevExpress.XtraGrid.Columns.GridColumn colIsActive;
+        private DevExpress.XtraGrid.Columns.GridColumn colEditTime;
     }
 }

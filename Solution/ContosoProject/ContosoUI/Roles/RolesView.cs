@@ -17,13 +17,20 @@ namespace ContosoUI.Roles
         readonly RolesPresenter presenter;
         public RolesView()
         {
-            presenter = new RolesPresenter(this);
             InitializeComponent();
+            if (!Program.AuthUser.Role.Permissions.Any(x => x.Type == Domain.PermissionType.NewRole))
+            {
+                this.addNewRoleButton.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            }
+            if (!Program.AuthUser.Role.Permissions.Any(x => x.Type == Domain.PermissionType.EditRole))
+            {
+                this.saveRoleButton.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            }
+            presenter = new RolesPresenter(this);
         }
         private void RolesView_Load(object sender, EventArgs e)
         {
             rolesGridControl.DataSource = presenter.Roles;
-
             permissionsCheckedListBoxControl.DataSource = presenter.Permissions;
             permissionsCheckedListBoxControl.DisplayMember = "Name";
             permissionsCheckedListBoxControl.ValueMember = "Id";
@@ -45,7 +52,6 @@ namespace ContosoUI.Roles
             foreach (var perm in permissions)
             {
                 permissionsCheckedListBoxControl.SetItemChecked(perm.Id - 1, true);
-
             }
         }
 

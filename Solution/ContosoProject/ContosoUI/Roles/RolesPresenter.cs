@@ -18,6 +18,7 @@ namespace ContosoUI.Roles
         Role role;
         public RolesPresenter(RolesView view)
         {
+            this.view = view;
             Roles = model.GetAll().ToList();
             Permissions = modelPermission.GetAll().ToList();
         }

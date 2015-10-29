@@ -29,7 +29,15 @@ namespace Data.Migrations
                 new Permission{Name = "Редактирование товара", Type = Domain.PermissionType.EditGoods},
                 new Permission{Name = "Список пользователей", Type = Domain.PermissionType.ListUser},
                 new Permission{Name = "Новый пользователь", Type = Domain.PermissionType.NewUser},
-                new Permission{Name = "Редактирование пользователя", Type = Domain.PermissionType.EditUser}
+                new Permission{Name = "Редактирование пользователя", Type = Domain.PermissionType.EditUser},
+                new Permission{Name = "Сохранить список клиентов", Type = Domain.PermissionType.SaveListClients},
+                new Permission{Name = "Сохранить список заказов", Type = Domain.PermissionType.SaveListOrders},
+                new Permission{Name = "Сохранить список товаров", Type = Domain.PermissionType.SaveListGoods},
+                new Permission{Name = "Сохранить список пользователей", Type = Domain.PermissionType.SaveListUsers},
+                new Permission{Name = "Печатать отчет по клиентам", Type = Domain.PermissionType.PrintReportClients},
+                new Permission{Name = "Печатать отчет по заказам", Type = Domain.PermissionType.PrintReportOrders},
+                new Permission{Name = "Печатать отчет по товарам", Type = Domain.PermissionType.PrintReportGoods},
+                new Permission{Name = "Печатать отчет по пользователям", Type = Domain.PermissionType.PrintReportUsers},
             };
             
             var role = new Role { Name = "Administrator", Permissions = permissions };
