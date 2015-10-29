@@ -166,7 +166,7 @@
             this.addGoodsBarButton.Id = 12;
             this.addGoodsBarButton.ImageUri.Uri = "Apply";
             this.addGoodsBarButton.Name = "addGoodsBarButton";
-            this.barButtonItem3.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem3_ItemClick);
+            this.addGoodsBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.addGoodsBarButton_ItemClick);
             // 
             // RolesButton
             // 
