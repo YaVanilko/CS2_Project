@@ -46,6 +46,11 @@ namespace ContosoUI.GoodsAll.AddGoods
             set { thisGoods.SKU = value; }
         }
 
+        public bool IsActive
+        {
+            get { return thisGoods.IsActive; }
+            set { thisGoods.IsActive = value; }
+        }
         public double Price
         {
             get { return thisGoods.Price; }

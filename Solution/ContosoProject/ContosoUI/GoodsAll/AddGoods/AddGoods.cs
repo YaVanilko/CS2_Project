@@ -37,6 +37,9 @@ namespace ContosoUI.GoodsAll.AddGoods
             AddGoodsTextBoxSKU.DataBindings.Add("EditValue", presenter, "SKU");
             AddGoodsTextBoxCount.DataBindings.Add("EditValue", presenter, "Count");
             AddGoodsTextBoxPrice.DataBindings.Add("EditValue", presenter, "Price");
+            AddGoodsComboBoxEditCategory.SelectedItem = presenter.Category;
+            if (presenter.IsActive)
+            { AddGoodsCheckBoxIsActive.Checked=true; }
            // AddGoodsTextBoxComent.DataBindings.Add("EditValue", presenter, "");
         }
 
