@@ -40,7 +40,7 @@
             this.addNewOrderBtn = new DevExpress.XtraBars.BarButtonItem();
             this.addNewUserBtn = new DevExpress.XtraBars.BarButtonItem();
             this.goodsMenuBtn = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
+            this.addGoodsBarButton = new DevExpress.XtraBars.BarButtonItem();
             this.RolesButton = new DevExpress.XtraBars.BarButtonItem();
             this.ChangePasswordBtn = new DevExpress.XtraBars.BarButtonItem();
             this.mainRibbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -68,7 +68,7 @@
             this.addNewOrderBtn,
             this.addNewUserBtn,
             this.goodsMenuBtn,
-            this.barButtonItem3,
+            this.addGoodsBarButton,
             this.RolesButton,
             this.ChangePasswordBtn});
             this.ribbonControl.Location = new System.Drawing.Point(0, 0);
@@ -160,13 +160,13 @@
             this.goodsMenuBtn.Name = "goodsMenuBtn";
             this.goodsMenuBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.goodsMenuBtn_ItemClick);
             // 
-            // barButtonItem3
+            // addGoodsBarButton
             // 
-            this.barButtonItem3.Caption = "Добавить товар";
-            this.barButtonItem3.Id = 12;
-            this.barButtonItem3.ImageUri.Uri = "Apply";
-            this.barButtonItem3.Name = "barButtonItem3";
-            this.barButtonItem3.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem3_ItemClick);
+            this.addGoodsBarButton.Caption = "Добавить товар";
+            this.addGoodsBarButton.Id = 12;
+            this.addGoodsBarButton.ImageUri.Uri = "Apply";
+            this.addGoodsBarButton.Name = "addGoodsBarButton";
+            this.addGoodsBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.addGoodsBarButton_ItemClick);
             // 
             // RolesButton
             // 
@@ -214,7 +214,7 @@
             // goodsMenuGroup
             // 
             this.goodsMenuGroup.ItemLinks.Add(this.goodsMenuBtn);
-            this.goodsMenuGroup.ItemLinks.Add(this.barButtonItem3);
+            this.goodsMenuGroup.ItemLinks.Add(this.addGoodsBarButton);
             this.goodsMenuGroup.Name = "goodsMenuGroup";
             this.goodsMenuGroup.Text = "Товары";
             // 
@@ -268,7 +268,7 @@
         private DevExpress.XtraBars.BarButtonItem addNewOrderBtn;
         private DevExpress.XtraBars.BarButtonItem addNewUserBtn;
         private DevExpress.XtraBars.BarButtonItem goodsMenuBtn;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem3;
+        private DevExpress.XtraBars.BarButtonItem addGoodsBarButton;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ordersMenuGroup;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup goodsMenuGroup;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup usersMenuGroup;
