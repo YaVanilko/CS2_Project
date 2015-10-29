@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserReportForm));
             this.UserReportGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colPersonalInfo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colRole = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -40,10 +41,12 @@
             this.userReportViewModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.barButtonGroup1 = new DevExpress.XtraBars.BarButtonGroup();
+            this.UserReportSaveBtn = new DevExpress.XtraBars.BarButtonItem();
+            this.UserReportPrintBtn = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
-            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.userReportGridWiew = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -55,7 +58,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.UserReportGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userReportViewModelBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userReportGridWiew)).BeginInit();
             this.SuspendLayout();
             // 
             // UserReportGridView
@@ -149,7 +152,7 @@
             this.UserReportGridControl.TabIndex = 2;
             this.UserReportGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.UserReportGridView,
-            this.gridView2});
+            this.userReportGridWiew});
             // 
             // userReportViewModelBindingSource
             // 
@@ -160,9 +163,11 @@
             this.ribbon.ExpandCollapseItem.Id = 0;
             this.ribbon.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbon.ExpandCollapseItem,
-            this.barButtonGroup1});
+            this.barButtonGroup1,
+            this.UserReportSaveBtn,
+            this.UserReportPrintBtn});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 4;
+            this.ribbon.MaxItemId = 6;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
@@ -176,6 +181,24 @@
             this.barButtonGroup1.Id = 1;
             this.barButtonGroup1.Name = "barButtonGroup1";
             // 
+            // UserReportSaveBtn
+            // 
+            this.UserReportSaveBtn.Caption = "Сохранить";
+            this.UserReportSaveBtn.Glyph = ((System.Drawing.Image)(resources.GetObject("UserReportSaveBtn.Glyph")));
+            this.UserReportSaveBtn.Id = 4;
+            this.UserReportSaveBtn.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("UserReportSaveBtn.LargeGlyph")));
+            this.UserReportSaveBtn.Name = "UserReportSaveBtn";
+            this.UserReportSaveBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.UserReportSaveBtn_ItemClick);
+            // 
+            // UserReportPrintBtn
+            // 
+            this.UserReportPrintBtn.Caption = "Печать";
+            this.UserReportPrintBtn.Glyph = ((System.Drawing.Image)(resources.GetObject("UserReportPrintBtn.Glyph")));
+            this.UserReportPrintBtn.Id = 5;
+            this.UserReportPrintBtn.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("UserReportPrintBtn.LargeGlyph")));
+            this.UserReportPrintBtn.Name = "UserReportPrintBtn";
+            this.UserReportPrintBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.UserReportPrintBtn_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -186,8 +209,10 @@
             // ribbonPageGroup1
             // 
             this.ribbonPageGroup1.ItemLinks.Add(this.barButtonGroup1);
+            this.ribbonPageGroup1.ItemLinks.Add(this.UserReportSaveBtn);
+            this.ribbonPageGroup1.ItemLinks.Add(this.UserReportPrintBtn);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
-            this.ribbonPageGroup1.Text = "ribbonPageGroup1";
+            this.ribbonPageGroup1.Text = "Сохранение";
             // 
             // ribbonStatusBar
             // 
@@ -196,9 +221,9 @@
             this.ribbonStatusBar.Ribbon = this.ribbon;
             this.ribbonStatusBar.Size = new System.Drawing.Size(1004, 31);
             // 
-            // gridView2
+            // userReportGridWiew
             // 
-            this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.userReportGridWiew.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn1,
             this.gridColumn2,
             this.gridColumn3,
@@ -206,9 +231,9 @@
             this.gridColumn5,
             this.gridColumn6,
             this.gridColumn7});
-            this.gridView2.GridControl = this.UserReportGridControl;
-            this.gridView2.Name = "gridView2";
-            this.gridView2.OptionsFind.AlwaysVisible = true;
+            this.userReportGridWiew.GridControl = this.UserReportGridControl;
+            this.userReportGridWiew.Name = "userReportGridWiew";
+            this.userReportGridWiew.OptionsFind.AlwaysVisible = true;
             // 
             // gridColumn1
             // 
@@ -301,7 +326,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.UserReportGridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.userReportViewModelBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userReportGridWiew)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -323,7 +348,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn colId;
         private DevExpress.XtraGrid.Columns.GridColumn colIsActive;
         private DevExpress.XtraGrid.Columns.GridColumn colEditTime;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
+        private DevExpress.XtraGrid.Views.Grid.GridView userReportGridWiew;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
@@ -331,5 +356,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
+        private DevExpress.XtraBars.BarButtonItem UserReportSaveBtn;
+        private DevExpress.XtraBars.BarButtonItem UserReportPrintBtn;
     }
 }

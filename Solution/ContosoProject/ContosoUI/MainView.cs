@@ -19,6 +19,14 @@ namespace ContosoUI
         public MainView()
         {
             InitializeComponent();
+            if (!Program.AuthUser.Role.Permissions.Any(x => x.Type == Domain.PermissionType.NewUser))
+            {
+                this.addNewUserBtn.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            }
+            if (!Program.AuthUser.Role.Permissions.Any(x => x.Type == Domain.PermissionType.ListUser))
+            {
+                this.usersMenuBtn.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            }
         }
 
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -65,6 +73,19 @@ namespace ContosoUI
         {
             var form = new Roles.RolesView();
             form.MdiParent = this;
+            form.Show();
+        }
+
+        private void logoutBtn_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Application.Restart();
+        }
+
+        private void barButtonItem1_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            var form = new UserEditForm(Program.AuthUser.Id);
+            form.MdiParent = this;
+            form.AsPasswordChange();
             form.Show();
         }
     }
