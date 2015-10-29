@@ -55,9 +55,7 @@ namespace ContosoUI
 
         private void RolesButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            var form = new Roles.RolesView();
-            form.MdiParent = this;
-            form.Show();
+           
         }
     }
 }
