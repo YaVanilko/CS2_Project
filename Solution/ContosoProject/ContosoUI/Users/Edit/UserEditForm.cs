@@ -17,8 +17,6 @@ namespace ContosoUI.Users.Edit
         public event EventHandler SaveBtnClick;
 
         public string OldPassword { get { return OldPasswordTextEdit.Text; } }
-        public string NewPassword { get { return NewPasswordTextEdit.Text; } }
-
 
         public UserEditForm()
         {
@@ -45,12 +43,15 @@ namespace ContosoUI.Users.Edit
             FirstNameTextEdit.DataBindings.Add("EditValue", userEditBindingSource, "FirstName");
             LastNameTextEdit.DataBindings.Add("EditValue", userEditBindingSource, "LastName");
             MiddleNameTextEdit.DataBindings.Add("EditValue", userEditBindingSource, "MiddleName");
+            
             loginTextEdit.DataBindings.Add("EditValue", userEditBindingSource, "Login");
 
             SelectRoleComboBox.DataBindings.Add("EditValue", userEditBindingSource, "Role");
             SelectRoleComboBox.Properties.Items.AddRange(presenter.AllRoles);
 
             ConfimPasswordTextEdit.DataBindings.Add("EditValue", userEditBindingSource, "Password");
+
+            IsActiveUserCheckEdit.DataBindings.Add("EditValue", userEditBindingSource, "IsActive");
         }
 
         internal void AsPasswordChange()

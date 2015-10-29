@@ -130,6 +130,12 @@ namespace ContosoUI.Users.Edit
             }
         }
 
+        public bool IsActive
+        {
+            get { return user.IsActive; }
+            set { user.IsActive = value; }
+        }
+
         public  Role Role
         { 
             get { return user.Role; }

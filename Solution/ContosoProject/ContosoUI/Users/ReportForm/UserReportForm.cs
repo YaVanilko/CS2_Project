@@ -50,5 +50,24 @@ namespace ContosoUI.EditUserForm
                 }
             }
         }
+
+        private void UserReportSaveBtn_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+
+            saveFileDialog1.Filter = "xls files (*.xls)|*.xls|All files (*.*)|*.*";
+
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                string FileName = saveFileDialog1.FileName;
+                userReportGridWiew.ExportToXls(FileName);
+            }
+        }
+
+        private void UserReportPrintBtn_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            userReportGridWiew.PrintDialog();
+            userReportGridWiew.Print();
+        }
     }
 }
