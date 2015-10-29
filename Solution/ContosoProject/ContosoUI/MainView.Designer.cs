@@ -140,6 +140,7 @@
             this.addNewOrderBtn.Id = 8;
             this.addNewOrderBtn.ImageUri.Uri = "AddItem";
             this.addNewOrderBtn.Name = "addNewOrderBtn";
+            this.addNewOrderBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.addNewOrderBtn_ItemClick);
             // 
             // addNewUserBtn
             // 
@@ -157,6 +158,7 @@
             this.goodsMenuBtn.Id = 10;
             this.goodsMenuBtn.ImageUri.Uri = "ListBullets";
             this.goodsMenuBtn.Name = "goodsMenuBtn";
+            this.goodsMenuBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.goodsMenuBtn_ItemClick);
             // 
             // barButtonItem3
             // 
@@ -164,6 +166,7 @@
             this.barButtonItem3.Id = 12;
             this.barButtonItem3.ImageUri.Uri = "Apply";
             this.barButtonItem3.Name = "barButtonItem3";
+            this.barButtonItem3.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem3_ItemClick);
             // 
             // RolesButton
             // 
