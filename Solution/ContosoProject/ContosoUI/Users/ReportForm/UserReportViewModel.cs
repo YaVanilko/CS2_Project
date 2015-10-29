@@ -21,7 +21,7 @@ namespace ContosoUI.EditUserForm
 
         public string Name
         {
-            get { return String.Format("{0} {1}", user.PersonalInfo.LastName, user.PersonalInfo.FirstName); }
+            get { return string.Format("{0} {1} {2}", user.PersonalInfo.LastName, user.PersonalInfo.FirstName, user.PersonalInfo.MiddleName); }
         }
         public string Login
         {
@@ -45,10 +45,6 @@ namespace ContosoUI.EditUserForm
                 }
             }
         }
-        //public string Operator
-        //{
-        //    get { return user.Operator.Login; }
-        //}
         public int Id
         {
             get { return user.Id; }

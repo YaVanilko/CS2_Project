@@ -216,6 +216,7 @@
     <None Include="packages.config" />
     <None Include="Properties\DataSources\ContosoUI.Customers.Search.CustomersListViewModel.datasource" />
     <None Include="Properties\DataSources\ContosoUI.EditUserForm.UserReportViewModel.datasource" />
+    <None Include="Properties\DataSources\ContosoUI.Users.Edit.UserEditPresenter.datasource" />
     <None Include="Properties\DataSources\Data.DumbData.Storage.datasource" />
     <None Include="Properties\DataSources\Domain.Entities.Customer.datasource" />
     <None Include="Properties\DataSources\Domain.Entities.Goods.datasource" />

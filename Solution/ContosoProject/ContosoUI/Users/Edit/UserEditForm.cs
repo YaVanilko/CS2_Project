@@ -17,12 +17,23 @@ namespace ContosoUI.Users.Edit
         public UserEditForm()
         {
             InitializeComponent();
-            presenter = new UserEditPresenter();
+            presenter = new UserEditPresenter(this);
         }
         public UserEditForm(int id)
         {
             InitializeComponent();
-            presenter = new UserEditPresenter(id);
+            presenter = new UserEditPresenter(this, id);
+            loginTextEdit.ReadOnly = true;
+        }
+
+        private void UserEditForm_Load(object sender, EventArgs e)
+        {
+            this.UserEditBindingSource.DataSource = presenter;
+            FirstNameTextEdit.DataBindings.Add("EditValue", UserEditBindingSource, "FirstName");
+            LastNameTextEdit.DataBindings.Add("EditValue", UserEditBindingSource, "LastName");
+            MiddleNameTextEdit.DataBindings.Add("EditValue", UserEditBindingSource, "MiddleName");
+            loginTextEdit.DataBindings.Add("EditValue", UserEditBindingSource, "Login");
+            SelectRoleComboBox.DataBindings.Add("EditValue", UserEditBindingSource, "Role");
         }
     }
 }
