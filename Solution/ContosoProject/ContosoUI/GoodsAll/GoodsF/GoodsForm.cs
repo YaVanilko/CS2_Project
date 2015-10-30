@@ -20,12 +20,12 @@ namespace ContosoUI.GoodsAll.GoodsF
 
         public GoodsForm()
         {
-            List < Domain.Entities.ProductCategory > categoryList=new List<ProductCategory>();
+            List<Domain.Entities.ProductCategory> categoryList = new List<ProductCategory>();
             InitializeComponent();
             presenter = new GoodsPresenter(this);
             GoodsComboBoxCategory.Properties.Items.Add("Все");
             GoodsComboBoxCategory.Properties.Items.AddRange(presenter.productCategoryList.ToArray());
-           // GoodsComboBoxCategory.SelectedIndex = 0;
+            // GoodsComboBoxCategory.SelectedIndex = 0;
 
             this.GoodsComboBoxCategory.SelectedIndexChanged += new EventHandler(GoodsComboBoxCategory_SelectedIndexChanged);
 
@@ -47,9 +47,9 @@ namespace ContosoUI.GoodsAll.GoodsF
 
         private void GoodsComboBoxCategory_SelectedIndexChanged(object sender, EventArgs e)
         {
-            this.goodsBindingSource.Clear();
+            //this.goodsBindingSource.Clear();
             this.goodsBindingSource.DataSource = presenter.SearchGoodsOnCategory(GoodsComboBoxCategory.SelectedItem.ToString());
-
+            GoodsGridControl.RefreshDataSource();
         }
 
         private void GoodsGridControl_Click(object sender, EventArgs e)
@@ -59,9 +59,10 @@ namespace ContosoUI.GoodsAll.GoodsF
             {
                 GridView gv = (GridView)sender;
                 GridHitInfo gridInfo = gv.CalcHitInfo(gv.GridControl.PointToClient(Control.MousePosition));
-                goodsID = (int)gv.GetRowCellValue(gridInfo.RowHandle,"Id");
+                goodsID = (int)gv.GetRowCellValue(gridInfo.RowHandle, "Id");
 
                 AddGoods.AddGoods frm = new AddGoods.AddGoods(goodsID);
+                frm.MdiParent = this.MdiParent;
                 frm.Show();
             }
 
@@ -84,6 +85,25 @@ namespace ContosoUI.GoodsAll.GoodsF
         {
             GoodsGridControl.ShowPrintPreview();
             GoodsGridControl.Print();
+        }
+
+        private void GoodsPrintBarButtonItem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            GoodsGridControl.ShowPrintPreview();
+            GoodsGridControl.Print();
+        }
+
+        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            SaveFileDialog saveDialog = new SaveFileDialog();
+            saveDialog.Filter = "xls files (*.xls)|*.xls|All files(*.*)|*.*";
+
+            if (saveDialog.ShowDialog() == DialogResult.OK)
+            {
+                string fileName = saveDialog.FileName;
+                GoodsGridControl.ExportToXls(fileName);
+
+            }
         }
 
 

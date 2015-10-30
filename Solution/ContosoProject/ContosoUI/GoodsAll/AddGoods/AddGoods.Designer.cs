@@ -172,7 +172,7 @@
             this.AddGoodsTextBoxName.Name = "AddGoodsTextBoxName";
             this.AddGoodsTextBoxName.Size = new System.Drawing.Size(341, 20);
             this.AddGoodsTextBoxName.TabIndex = 0;
-            this.AddGoodsTextBoxName.EditValueChanged += new System.EventHandler(this.textEdit1_EditValueChanged);
+          //  this.AddGoodsTextBoxName.EditValueChanged += new System.EventHandler(this.textEdit1_EditValueChanged);
             // 
             // layoutControlGroup1
             // 
@@ -223,7 +223,7 @@
             this.AddGoodsSaveButton.TabIndex = 1;
             this.AddGoodsSaveButton.Text = "Сохранить";
             this.AddGoodsSaveButton.UseVisualStyleBackColor = true;
-            this.AddGoodsSaveButton.Click += new System.EventHandler(this.AddGoodsSaveButton_Click);
+           // this.AddGoodsSaveButton.Click += new System.EventHandler(this.AddGoodsSaveButton_Click);
             // 
             // groupControl4
             // 
@@ -257,7 +257,7 @@
             this.AddGoodsTextBoxComent.Name = "AddGoodsTextBoxComent";
             this.AddGoodsTextBoxComent.Size = new System.Drawing.Size(341, 20);
             this.AddGoodsTextBoxComent.TabIndex = 2;
-            this.AddGoodsTextBoxComent.EditValueChanged += new System.EventHandler(this.textEdit3_EditValueChanged);
+            //this.AddGoodsTextBoxComent.EditValueChanged += new System.EventHandler(this.textEdit3_EditValueChanged);
             // 
             // label2
             // 
