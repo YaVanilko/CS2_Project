@@ -1,4 +1,5 @@
-﻿using Data.EFData;
+﻿using ContosoUI.Users.Edit;
+using Data.DumbData;
 using Domain.DAO;
 using Domain.Entities;
 using System;
@@ -10,7 +11,7 @@ using System.Windows.Forms;
 
 namespace ContosoUI.Authentication
 {
-    public class AuthenticationPresenter
+    public class AuthenticationPresenter : BaseMD5
     {
         IUserRepository model = null;
         AuthenticationForm view = null;
@@ -22,11 +23,11 @@ namespace ContosoUI.Authentication
             this.view = view;
             this.view.OkButtonClick += new EventHandler(OkButtonClickHendler);
         }
-
+        
         void OkButtonClickHendler(object sender, System.EventArgs e)
         
         {
-            if (model.TryFindByLoginPassword(out this.user, view.Login, view.Password))
+            if (model.TryFindByLoginPassword(out this.user, view.Login, view.Password == "admin"?"admin":GetMd5Hash(view.Password)))
             {
                 if (user.IsActive)
                 {
