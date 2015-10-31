@@ -59,13 +59,9 @@ namespace ContosoUI.Roles
         }
         public void Save()
         {
-            if (role.Id > 0)
+            foreach (var role in roles)
             {
-                model.Update(this.role);
-            }
-            else
-            {
-                model.Add(role);
+                model.AddOrUpdate(role);
             }
         }
     }
