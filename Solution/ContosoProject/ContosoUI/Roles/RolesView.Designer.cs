@@ -91,6 +91,7 @@
             // 
             this.mainRibbonPage.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.saveRoleRibbonPageGroup});
+            this.mainRibbonPage.MergeOrder = 1;
             this.mainRibbonPage.Name = "mainRibbonPage";
             this.mainRibbonPage.Text = "Меню";
             // 

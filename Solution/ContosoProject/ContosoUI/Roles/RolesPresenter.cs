@@ -21,6 +21,15 @@ namespace ContosoUI.Roles
             this.view = view;
             Roles = model.GetAll().ToList();
             Permissions = modelPermission.GetAll().ToList();
+            foreach (var role in Roles)
+            {
+                List<Permission> listPermissions = new List<Permission>();
+                foreach (var permission in role.Permissions)
+                {   
+                    listPermissions.Add(Permissions.First(x => x.Id == permission.Id));
+                }
+                role.Permissions = listPermissions;
+            }
         }
         List<Role> roles = new List<Role>();
         public List<Role> Roles

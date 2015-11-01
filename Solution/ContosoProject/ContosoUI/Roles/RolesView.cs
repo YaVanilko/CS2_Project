@@ -55,8 +55,8 @@ namespace ContosoUI.Roles
             permissionsCheckedListBoxControl.UnCheckAll();
             foreach (var permission in permissions)
             {
-                var permissionName = permissionsCheckedListBoxControl.FindString(permission.Name);
-                permissionsCheckedListBoxControl.SetItemChecked(permissionName, true);
+                var permissionIndex = permissionsCheckedListBoxControl.FindString(permission.Name);
+                permissionsCheckedListBoxControl.SetItemChecked(permissionIndex, true);
             }
 
         }
@@ -67,7 +67,7 @@ namespace ContosoUI.Roles
             rolesGridControl.RefreshDataSource();
         }
         private void saveRoleButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
+        {           
             presenter.Save();
         }
 
