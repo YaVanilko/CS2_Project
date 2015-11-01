@@ -373,16 +373,16 @@ namespace Data.DumbData
         #region GoodsRow
         public static List<GoodsRow> GoodsRowCollection = new List<GoodsRow>() 
         { 
-            new GoodsRow(){Id = 0,Goods = goodsCollection[0], Count=2, Price=400, TotalPrice=800},
-            new GoodsRow(){Id = 1,Goods = goodsCollection[1], Count=1, Price=2000, TotalPrice=2000},
-            new GoodsRow(){Id = 2,Goods = goodsCollection[2], Count=1, Price=1400, TotalPrice=1400},
-            new GoodsRow(){Id = 3,Goods = goodsCollection[3], Count=1, Price=12400, TotalPrice=12400},
-            new GoodsRow(){Id = 4,Goods = goodsCollection[4], Count=1, Price=6059.16, TotalPrice=6059.16},
-            new GoodsRow(){Id = 5,Goods = goodsCollection[5], Count=2, Price=605, TotalPrice=1210},
+            new GoodsRow(){Id = 0,Goods = goodsCollection[0], Count=2, Price=400},
+            new GoodsRow(){Id = 1,Goods = goodsCollection[1], Count=1, Price=2000},
+            new GoodsRow(){Id = 2,Goods = goodsCollection[2], Count=1, Price=1400},
+            new GoodsRow(){Id = 3,Goods = goodsCollection[3], Count=1, Price=12400},
+            new GoodsRow(){Id = 4,Goods = goodsCollection[4], Count=1, Price=6059.16},
+            new GoodsRow(){Id = 5,Goods = goodsCollection[5], Count=2, Price=605},
             new GoodsRow(){Id = 6,Goods = goodsCollection[6], Count=1, Price=7000.80},
-            new GoodsRow(){Id = 7,Goods = goodsCollection[7], Count=4, Price=200, TotalPrice=800},
-            new GoodsRow(){Id = 8,Goods = goodsCollection[8], Count=1, Price=1200, TotalPrice=1200},
-            new GoodsRow(){Id = 9,Goods = goodsCollection[9], Count=2, Price=500, TotalPrice=1000},
+            new GoodsRow(){Id = 7,Goods = goodsCollection[7], Count=4, Price=200},
+            new GoodsRow(){Id = 8,Goods = goodsCollection[8], Count=1, Price=1200},
+            new GoodsRow(){Id = 9,Goods = goodsCollection[9], Count=2, Price=500},
         };
         #endregion
 

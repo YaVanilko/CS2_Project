@@ -114,18 +114,18 @@
     </Compile>
     <Compile Include="GoodsAll\GoodsF\GoodsListViewModel.cs" />
     <Compile Include="GoodsAll\GoodsF\GoodsPresenter.cs" />
-    <Compile Include="Order\AddEdit\AddOrderXtraForm.cs">
+    <Compile Include="Order\AddEdit\AddEditOrderPresenter.cs" />
+    <Compile Include="Order\AddEdit\AddEditOrderView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Order\AddEdit\AddOrderXtraForm.Designer.cs">
-      <DependentUpon>AddOrderXtraForm.cs</DependentUpon>
+    <Compile Include="Order\AddEdit\AddEditOrderView.Designer.cs">
+      <DependentUpon>AddEditOrderView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Order\AddEdit\Presenter.cs" />
     <Compile Include="Order\Search\SearchPresenter.cs" />
     <Compile Include="Order\Search\SearchView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Order\Search\SearchView.Designer.cs">
+    <Compile Include="Order\Search\SearchView.designer.cs">
       <DependentUpon>SearchView.cs</DependentUpon>
     </Compile>
     <Compile Include="Users\Edit\UserEditForm.cs">
@@ -183,8 +183,8 @@
     <EmbeddedResource Include="GoodsAll\GoodsF\GoodsForm.resx">
       <DependentUpon>GoodsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Order\AddEdit\AddOrderXtraForm.resx">
-      <DependentUpon>AddOrderXtraForm.cs</DependentUpon>
+    <EmbeddedResource Include="Order\AddEdit\AddEditOrderView.resx">
+      <DependentUpon>AddEditOrderView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Order\Search\SearchView.resx">
       <DependentUpon>SearchView.cs</DependentUpon>
