@@ -17,19 +17,31 @@ namespace ContosoUI.Order
         AddEditOrderPresenter presenter;
         public AddEditOrderView() : this(-1)
         {
+            InitializeComponent();
         }
 
         public AddEditOrderView(int id)
         {
             InitializeComponent();
-            presenter = new AddEditOrderPresenter(this, id);
+            presenter = new AddEditOrderPresenter(this, 3);
         }
 
         private void AddEditOrderView_Load(object sender, EventArgs e)
         {
             BindingSource bindings = new BindingSource();
-
             bindings.DataSource = presenter;
+            customerComboBoxEdit.DataBindings.Clear();
+            //customerComboBoxEdit.DataBindings.Add("DataSource", bindings, "AllCustomers");
+            customerComboBoxEdit.DataBindings.Add("EditValue", bindings, "CustomerToString");
+            priceTextEdit.DataBindings.Clear();
+            priceTextEdit.DataBindings.Add("Text", bindings, "TotalCost");
+            //statusComboBoxEdit.DataBindings.Add("DataSource", bindings, "All statuses");
+            //statusComboBoxEdit.DataBindings.Add("EditValue", bindings, "Status");
+
+        }
+
+        private void goodComboBoxEdit_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
     }

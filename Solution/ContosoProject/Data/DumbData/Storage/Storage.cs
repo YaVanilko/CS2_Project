@@ -389,16 +389,16 @@ namespace Data.DumbData
         #region Order
         public static List<Order> OrderCollection = new List<Order>() 
         { 
-            new Order{Id = 0, Customer = CustomerCollection[0], Status = OrderStatusCollection[0]},
-            new Order{Id = 1, Customer = CustomerCollection[1], Status = OrderStatusCollection[1]},
-            new Order{Id = 2, Customer = CustomerCollection[2], Status = OrderStatusCollection[2]},
-            new Order{Id = 3, Customer = CustomerCollection[3], Status = OrderStatusCollection[3]},
-            new Order{Id = 4, Customer = CustomerCollection[4], Status = OrderStatusCollection[4]},
-            new Order{Id = 5, Customer = CustomerCollection[5], Status = OrderStatusCollection[4]},
-            new Order{Id = 6, Customer = CustomerCollection[6], Status = OrderStatusCollection[1]},
-            new Order{Id = 7, Customer = CustomerCollection[7], Status = OrderStatusCollection[1]},
-            new Order{Id = 8, Customer = CustomerCollection[8], Status = OrderStatusCollection[2]},
-            new Order{Id = 9, Customer = CustomerCollection[9], Status = OrderStatusCollection[3]},
+            new Order{Id = 0, Customer = CustomerCollection[0], Status = OrderStatusCollection[0], TotalCost = GoodsRowCollection[0].TotalPrice},
+            new Order{Id = 1, Customer = CustomerCollection[1], Status = OrderStatusCollection[1], TotalCost = GoodsRowCollection[1].TotalPrice},
+            new Order{Id = 2, Customer = CustomerCollection[2], Status = OrderStatusCollection[2], TotalCost = GoodsRowCollection[2].TotalPrice},
+            new Order{Id = 3, Customer = CustomerCollection[3], Status = OrderStatusCollection[3], TotalCost = GoodsRowCollection[3].TotalPrice},
+            new Order{Id = 4, Customer = CustomerCollection[4], Status = OrderStatusCollection[4], TotalCost = GoodsRowCollection[4].TotalPrice},
+            new Order{Id = 5, Customer = CustomerCollection[5], Status = OrderStatusCollection[4], TotalCost = GoodsRowCollection[5].TotalPrice},
+            new Order{Id = 6, Customer = CustomerCollection[6], Status = OrderStatusCollection[1], TotalCost = GoodsRowCollection[6].TotalPrice},
+            new Order{Id = 7, Customer = CustomerCollection[7], Status = OrderStatusCollection[1], TotalCost = GoodsRowCollection[7].TotalPrice},
+            new Order{Id = 8, Customer = CustomerCollection[8], Status = OrderStatusCollection[2], TotalCost = GoodsRowCollection[8].TotalPrice},
+            new Order{Id = 9, Customer = CustomerCollection[9], Status = OrderStatusCollection[3], TotalCost = GoodsRowCollection[9].TotalPrice},
         };
         #endregion
 

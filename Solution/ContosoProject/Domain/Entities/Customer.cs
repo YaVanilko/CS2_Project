@@ -12,12 +12,18 @@ namespace Domain.Entities
         public ContactInfo Contacts { get; set; }
         public List<Order> Orders { get; set; }
         public List<Comment> Comments { get; set; }
+
         public Customer()
         {
             Orders = new List<Order>();
             Comments = new List<Comment>();
             PersonalInfo = new PersonalInfo();
             Contacts = new ContactInfo();
+        }
+
+        public override string ToString()
+        {
+            return String.Format(PersonalInfo.LastName + " " + PersonalInfo.FirstName + " " + PersonalInfo.MiddleName);
         }
     }
 }

@@ -18,13 +18,24 @@ namespace ContosoUI.Order.Search
         {
             InitializeComponent();
             presenter = new SearchPresenter(this);
-            statusComboBox.Items.Add("Все статусы");
-            statusComboBox.Items.AddRange(presenter.statuses.ToArray());
+        }
+
+        private void SearchView_Load(object sender, EventArgs e)
+        {
+            BindingSource bindings = new BindingSource();
+            bindings.DataSource = presenter;
+
+            statusComboBox.DataSource = presenter.Statuses;
+            //statusComboBox.DataBindings.Add("DataSource", bindings, "Statuses");
         }
 
         private void searchBarButtonItem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            presenter.SelectOdersByStatus(statusComboBox.Text);
+        }
+
+        private void resultGridControl_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
