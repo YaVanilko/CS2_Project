@@ -8,6 +8,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraBars;
+using DevExpress.XtraGrid.Views.Grid;
+using DevExpress.XtraGrid.Views.Grid.ViewInfo;
+using ContosoUI.Users.Edit;
 
 namespace ContosoUI.EditUserForm
 {
@@ -31,7 +34,40 @@ namespace ContosoUI.EditUserForm
             Refresh();
         }
 
-   
+        private void UserReportGridView_DoubleClick(object sender, EventArgs e)
+        {
+            if (Program.AuthUser.Role.Permissions.Any(x=> x.Type == Domain.PermissionType.EditUser))
+            {
+                var grid = (GridView)sender;
+                GridHitInfo info = grid.CalcHitInfo(grid.GridControl.PointToClient(Control.MousePosition));
 
+                var id = grid.GetRowCellValue(info.RowHandle, "Id");
+                if (id != null)
+                {
+                    var form = new UserEditForm((int)id);
+                    form.MdiParent = this.MdiParent;
+                    form.Show();
+                }
+            }
+        }
+
+        private void UserReportSaveBtn_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+
+            saveFileDialog1.Filter = "xls files (*.xls)|*.xls|All files (*.*)|*.*";
+
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                string FileName = saveFileDialog1.FileName;
+                userReportGridWiew.ExportToXls(FileName);
+            }
+        }
+
+        private void UserReportPrintBtn_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            userReportGridWiew.PrintDialog();
+            userReportGridWiew.Print();
+        }
     }
 }

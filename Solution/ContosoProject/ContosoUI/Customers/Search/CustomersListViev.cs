@@ -20,13 +20,22 @@ namespace ContosoUI.Customers.Search
         public CustomersListView()
         {
             InitializeComponent();
+            if (!Program.AuthUser.Role.Permissions.Any(x => x.Type == Domain.PermissionType.SaveListClients))
+            {
+                this.saveButtonItem.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            }
+            if (!Program.AuthUser.Role.Permissions.Any(x => x.Type == Domain.PermissionType.SaveListClients))
+            {
+                this.printButtonItem.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            }
             presenter = new CustomersListPresenter(this);
         }
         public void Refresh()
         {
             filterCityComboBoxEdit.Properties.Items.Clear();
-            filterCityComboBoxEdit.Properties.Items.AddRange(presenter.Cities.ToArray());
             filterCityComboBoxEdit.Properties.Items.Add("Все города");
+            filterCityComboBoxEdit.Properties.Items.AddRange(presenter.Cities.ToArray());
+            filterCityComboBoxEdit.SelectedIndex = 0;
             customersGridControl.DataSource = presenter.viewModel;
             customersGridControl.RefreshDataSource();
         }

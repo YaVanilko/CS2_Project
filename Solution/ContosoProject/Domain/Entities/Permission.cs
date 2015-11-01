@@ -12,5 +12,10 @@ namespace Domain.Entities
         public string Name { get; set; }
 
         public virtual ICollection<Role> Roles { get; set; }
+
+        public Permission()
+        {
+            Roles = new List<Role>();
+        }
     }
 }

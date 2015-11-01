@@ -16,8 +16,8 @@ namespace Data.EFData
         public DbSet<ProductCategory> Categories { get; set; }
 
         public DbSet<User> Users { get; set; }
-        public DbSet<Role> Roles { get; set; }        
-        
+        public DbSet<Role> Roles { get; set; }
+        public DbSet<Permission> Permissions { get; set; }
         public DbSet<Comment> Comments { get; set; }
         
 
@@ -26,9 +26,10 @@ namespace Data.EFData
             base.OnModelCreating(modelBuilder);
         }
 
-        public ProjectContext() : base("ContosoProject")
+        public ProjectContext()
+            : base("name=ContosoContext")
         {
-
+            AppDomain.CurrentDomain.SetData("DataDirectory", System.IO.Directory.GetCurrentDirectory());
         }
     }
 }
