@@ -308,6 +308,7 @@
             // searchRibbonPageGroup
             // 
             this.searchRibbonPageGroup.ItemLinks.Add(this.searchButtonItem);
+            this.searchRibbonPageGroup.MergeOrder = 5;
             this.searchRibbonPageGroup.Name = "searchRibbonPageGroup";
             this.searchRibbonPageGroup.Text = "Поиск";
             // 
@@ -315,6 +316,7 @@
             // 
             this.saveRibbonPageGroup.ItemLinks.Add(this.saveButtonItem);
             this.saveRibbonPageGroup.ItemLinks.Add(this.printButtonItem);
+            this.saveRibbonPageGroup.MergeOrder = 6;
             this.saveRibbonPageGroup.Name = "saveRibbonPageGroup";
             this.saveRibbonPageGroup.Text = "Сохранение";
             // 

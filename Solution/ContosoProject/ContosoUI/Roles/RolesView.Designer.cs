@@ -99,6 +99,7 @@
             // 
             this.saveRoleRibbonPageGroup.ItemLinks.Add(this.saveRoleButton);
             this.saveRoleRibbonPageGroup.ItemLinks.Add(this.addNewRoleButton);
+            this.saveRoleRibbonPageGroup.MergeOrder = 5;
             this.saveRoleRibbonPageGroup.Name = "saveRoleRibbonPageGroup";
             this.saveRoleRibbonPageGroup.Text = "Сохранение";
             // 

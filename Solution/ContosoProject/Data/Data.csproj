@@ -69,6 +69,7 @@
     <Compile Include="EFData\PermissionDao.cs" />
     <Compile Include="EFData\ProjectContext.cs" />
     <Compile Include="EFData\RoleDao.cs" />
+    <Compile Include="EFData\RoleViewProxy.cs" />
     <Compile Include="EFData\UserDao.cs" />
     <Compile Include="Migrations\201510291530109_Init.cs" />
     <Compile Include="Migrations\201510291530109_Init.Designer.cs">

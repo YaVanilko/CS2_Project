@@ -11,26 +11,32 @@ namespace Data.EFData
 {
     public class RoleDao : EfBaseDao<Role>, IRoleRepository
     {
+        readonly ProjectContext context;
+        public RoleDao(ProjectContext context)
+        {
+            this.context = context;
+        }
         public new IQueryable<Role> GetAll()
         {
-            IQueryable<Role> collection = dbContext.Roles.Where(x => x.IsActive);
+            IQueryable<Role> collection = context.Roles.Where(x => x.IsActive);
             return collection;
         }
         public new void Add(Role role)
         {
-            dbContext.Set<Role>().Add(role);
-            dbContext.SaveChanges();
+            context.Set<Role>().Add(role);
+            context.SaveChanges();
         }
 
         public new void Update(Role role)
         {
-            dbContext.Entry(role).State = System.Data.Entity.EntityState.Modified;
-            dbContext.SaveChanges();
+            context.Entry(role).State = System.Data.Entity.EntityState.Modified;
+            context.SaveChanges();
         }
 
         public void AddOrUpdate(Role role)
         {
-            dbContext.Roles.AddOrUpdate(x => x.Name, new Role[] { role });
+            context.Roles.AddOrUpdate(x => x.Name, new Role[] { role });
+            context.SaveChanges();
         }
     }
 }

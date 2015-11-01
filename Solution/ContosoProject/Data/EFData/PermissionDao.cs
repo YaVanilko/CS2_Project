@@ -12,9 +12,14 @@ namespace Data.EFData
 {
     public class PermissionDao : EfBaseDao<Permission>, IPermissionRepository
     {
+        readonly ProjectContext context;
+        public PermissionDao(ProjectContext context)
+        {
+            this.context = context;
+        }
         public new IQueryable<Permission> GetAll()
         {
-            return dbContext.Permissions.Where(x => x.IsActive).AsQueryable();
+            return context.Permissions.Where(x => x.IsActive).AsQueryable();
         }
     }
 }

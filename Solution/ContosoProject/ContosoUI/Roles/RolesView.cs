@@ -67,13 +67,18 @@ namespace ContosoUI.Roles
             rolesGridControl.RefreshDataSource();
         }
         private void saveRoleButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {           
+        {
+            SavePermissions();    
             presenter.Save();
         }
 
         private void rolesGridView_BeforeLeaveRow(object sender, DevExpress.XtraGrid.Views.Base.RowAllowEventArgs e)
         {
-            GridView view = sender as GridView;
+            SavePermissions();
+        }
+        void SavePermissions()
+        {
+            GridView view = rolesGridView;
             object roleObj = view.GetRow(view.FocusedRowHandle);
             Role role = roleObj as Role;
 
