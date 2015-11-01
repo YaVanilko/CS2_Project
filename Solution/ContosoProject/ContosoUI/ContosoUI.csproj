@@ -99,13 +99,28 @@
       <DependentUpon>CustomersListViev.cs</DependentUpon>
     </Compile>
     <Compile Include="Customers\Search\CustomersListViewModel.cs" />
-    <Compile Include="Order\AddEdit\AddEditOrderView.cs">
+    <Compile Include="GoodsAll\AddGoods\AddGoods.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Order\AddEdit\AddEditOrderView.Designer.cs">
-      <DependentUpon>AddEditOrderView.cs</DependentUpon>
+    <Compile Include="GoodsAll\AddGoods\AddGoods.Designer.cs">
+      <DependentUpon>AddGoods.cs</DependentUpon>
     </Compile>
-    <Compile Include="Order\AddEdit\AddEditOrderPresenter.cs" />
+    <Compile Include="GoodsAll\AddGoods\AddGoodsPresenter.cs" />
+    <Compile Include="GoodsAll\GoodsF\GoodsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GoodsAll\GoodsF\GoodsForm.Designer.cs">
+      <DependentUpon>GoodsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GoodsAll\GoodsF\GoodsListViewModel.cs" />
+    <Compile Include="GoodsAll\GoodsF\GoodsPresenter.cs" />
+    <Compile Include="Order\AddEdit\AddOrderXtraForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Order\AddEdit\AddOrderXtraForm.Designer.cs">
+      <DependentUpon>AddOrderXtraForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Order\AddEdit\Presenter.cs" />
     <Compile Include="Order\Search\SearchPresenter.cs" />
     <Compile Include="Order\Search\SearchView.cs">
       <SubType>Form</SubType>
@@ -162,8 +177,14 @@
     <EmbeddedResource Include="Customers\Search\CustomersListViev.resx">
       <DependentUpon>CustomersListViev.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Order\AddEdit\AddEditOrderView.resx">
-      <DependentUpon>AddEditOrderView.cs</DependentUpon>
+    <EmbeddedResource Include="GoodsAll\AddGoods\AddGoods.resx">
+      <DependentUpon>AddGoods.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GoodsAll\GoodsF\GoodsForm.resx">
+      <DependentUpon>GoodsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Order\AddEdit\AddOrderXtraForm.resx">
+      <DependentUpon>AddOrderXtraForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Order\Search\SearchView.resx">
       <DependentUpon>SearchView.cs</DependentUpon>
@@ -195,8 +216,9 @@
     <None Include="packages.config" />
     <None Include="Properties\DataSources\ContosoUI.Customers.Search.CustomersListViewModel.datasource" />
     <None Include="Properties\DataSources\ContosoUI.EditUserForm.UserReportViewModel.datasource" />
-    <None Include="Properties\DataSources\ContosoUI.Order.Search.SearchViewModel.datasource" />
+    <None Include="Properties\DataSources\ContosoUI.Users.Edit.UserEditPresenter.datasource" />
     <None Include="Properties\DataSources\Data.DumbData.Storage.datasource" />
+    <None Include="Properties\DataSources\Data.EFData.PermissionDao.datasource" />
     <None Include="Properties\DataSources\Domain.Entities.Customer.datasource" />
     <None Include="Properties\DataSources\Domain.Entities.Goods.datasource" />
     <None Include="Properties\DataSources\Domain.Entities.Order.datasource" />
@@ -206,6 +228,7 @@
     <EmbeddedResource Include="Test\OrderListView.resx">
       <DependentUpon>OrderListView.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Properties\DataSources\Domain.Entities.Role.datasource" />
     <None Include="Properties\DataSources\Domain.Entities.User.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

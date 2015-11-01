@@ -20,6 +20,14 @@ namespace ContosoUI.Customers.Search
         public CustomersListView()
         {
             InitializeComponent();
+            if (!Program.AuthUser.Role.Permissions.Any(x => x.Type == Domain.PermissionType.SaveListClients))
+            {
+                this.saveButtonItem.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            }
+            if (!Program.AuthUser.Role.Permissions.Any(x => x.Type == Domain.PermissionType.SaveListClients))
+            {
+                this.printButtonItem.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            }
             presenter = new CustomersListPresenter(this);
         }
         public void Refresh()

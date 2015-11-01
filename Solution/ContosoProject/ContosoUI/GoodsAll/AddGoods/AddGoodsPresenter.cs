@@ -11,14 +11,18 @@ namespace ContosoUI.GoodsAll.AddGoods
 {
     public class AddGoodsPresenter
     {
-        AddGoods view = new AddGoods();
+        AddGoods view;
         IGoodsRepository model = new GoodsDao();
         Goods thisGoods;
-       // public List<Domain.Entities.Goods> Goods { get { return thisGoods.Name; } set { } }
+        public List<string> productCategoryList = new List<string>();
         public List<Comment> Comments { get { return thisGoods.Coments; } set { } }
 
         public AddGoodsPresenter(AddGoods view, int id)
         {
+            foreach (ProductCategory pc in Storage.categoryCollection)
+            {
+                productCategoryList.Add(pc.CategoryName);
+            }
             this.view = view;
             if (id < 1)
             {
@@ -66,9 +70,20 @@ namespace ContosoUI.GoodsAll.AddGoods
             //set { thisGoods.Coments = value; }
         }
 
+        public bool IsActive
+        {
+            get { return thisGoods.IsActive; }
+            set { thisGoods.IsActive = value; }
+        }
+
         public void Save(Goods goods)
         {
             model.Add(goods);
+        }
+
+        public void Update(Goods goods)
+        {
+            model.Update(goods);
         }
     }
 }

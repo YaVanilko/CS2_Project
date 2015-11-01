@@ -26,9 +26,10 @@ namespace Data.EFData
             base.OnModelCreating(modelBuilder);
         }
 
-        public ProjectContext() : base("ContosoProject")
+        public ProjectContext()
+            : base("name=ContosoContext")
         {
-
+            AppDomain.CurrentDomain.SetData("DataDirectory", System.IO.Directory.GetCurrentDirectory());
         }
     }
 }

@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace ContosoUI.GoodsAll.GoodsF
 {
-    class GoodsPresenter:INotifyPropertyChanged
+    class GoodsPresenter : INotifyPropertyChanged
     {
         private IGoodsRepository model = new GoodsDao();
         private IProductCategoryRepository modelCategory = new ProductCategoryDao();
@@ -36,7 +36,7 @@ namespace ContosoUI.GoodsAll.GoodsF
             viewModel.Clear();
             foreach (Goods g in goodsForLoad)
             {
-                if (g.Category.IsActive==isActive)
+                if (g.Category.IsActive == isActive)
                 {
                     viewModel.Add(new GoodsListViewModel
                     {
@@ -61,10 +61,32 @@ namespace ContosoUI.GoodsAll.GoodsF
             viewModel.Clear();
             if (category == "Все")
             {
-                
+
                 foreach (Goods g in goodsForLoad)
                 {
                     viewModel.Add(new GoodsListViewModel
+                    {
+                        Id = g.Id,
+                        Name = g.Name,
+                        SKU = g.SKU,
+                        Price = g.Price,
+                        Count = g.Count,
+                        Category = g.Category.CategoryName,
+                        Coment = g.Coments.ToString(),
+                        isActive = g.IsActive,
+                        //User = g.User.Login
+                    });
+                }
+            }
+
+            else
+            {
+                foreach (Goods g in goodsForLoad)
+                {
+
+                    if (g.Category.CategoryName == category)
+                    {
+                        viewModel.Add(new GoodsListViewModel
                         {
                             Id = g.Id,
                             Name = g.Name,
@@ -76,32 +98,10 @@ namespace ContosoUI.GoodsAll.GoodsF
                             isActive = g.IsActive,
                             //User = g.User.Login
                         });
-                }
-            }
-
-                else
-                {
-                    foreach (Goods g in goodsForLoad)
-                {
-                   
-                        if(g.Category.CategoryName==category)
-                        {
-                            viewModel.Add(new GoodsListViewModel
-                                {
-                                    Id = g.Id,
-                                    Name = g.Name,
-                                    SKU = g.SKU,
-                                    Price = g.Price,
-                                    Count = g.Count,
-                                    Category = g.Category.CategoryName,
-                                    Coment = g.Coments.ToString(),
-                                    isActive = g.IsActive,
-                                    //User = g.User.Login
-                                });
-                        }
+                    }
                 }
 
-                
+
             }
 
             return viewModel;
