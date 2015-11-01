@@ -20,7 +20,7 @@ namespace ContosoUI
         public MainView()
         {
             InitializeComponent();
-            if (!Program.AuthUser.Role.Permissions.Any(x => x.Type == Domain.PermissionType.NewUser))
+            /*if (!Program.AuthUser.Role.Permissions.Any(x => x.Type == Domain.PermissionType.NewUser))
             {
                 this.addNewUserBtn.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             }
@@ -55,7 +55,7 @@ namespace ContosoUI
             if (!Program.AuthUser.Role.Permissions.Any(x => x.Type == Domain.PermissionType.NewGoods))
             {
                 this.addGoodsBarButton.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-            }
+            }*/
         }
 
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

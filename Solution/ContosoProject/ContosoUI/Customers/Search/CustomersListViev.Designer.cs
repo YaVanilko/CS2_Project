@@ -28,10 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.customersGridControl = new DevExpress.XtraGrid.GridControl();
-            this.customersListViewModelBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.customersListViewModelBindingSource1 = new System.Windows.Forms.BindingSource();
             this.customersGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.firstNameGridColumn = new DevExpress.XtraGrid.Columns.GridColumn();
             this.lastNameGridColumn = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -47,8 +46,8 @@
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.customersListItem = new DevExpress.XtraLayout.LayoutControlItem();
             this.filterCityItem = new DevExpress.XtraLayout.LayoutControlItem();
-            this.customersListViewModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.customersListViewModelBindingSource = new System.Windows.Forms.BindingSource();
+            this.customerBindingSource = new System.Windows.Forms.BindingSource();
             this.menuRibbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.searchButtonItem = new DevExpress.XtraBars.BarButtonItem();
             this.saveButtonItem = new DevExpress.XtraBars.BarButtonItem();

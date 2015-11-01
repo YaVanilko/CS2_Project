@@ -12,7 +12,7 @@ namespace ContosoUI.GoodsAll.AddGoods
     public class AddGoodsPresenter
     {
         AddGoods view;
-        IGoodsRepository model = new GoodsDao();
+        IGoodsRepository model = new GoodDao();
         Goods thisGoods;
         public List<string> productCategoryList = new List<string>();
         public List<Comment> Comments { get { return thisGoods.Coments; } set { } }

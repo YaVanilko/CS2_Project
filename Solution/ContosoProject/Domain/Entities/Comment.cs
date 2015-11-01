@@ -8,10 +8,7 @@ namespace Domain.Entities
 {
     public class Comment:BaseEntity
     {
-     
-            public string Message { get; set; }
-
-            public CommentType Type { get; set; }
-
+        public string Message { get; set; }
+        public CommentType Type { get; set; }
     }
 }

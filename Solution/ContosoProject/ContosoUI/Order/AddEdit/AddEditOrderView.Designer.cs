@@ -28,81 +28,81 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddEditOrderView));
             this.mainLayoutControl = new DevExpress.XtraLayout.LayoutControl();
-            this.priceTextEdit = new DevExpress.XtraEditors.TextEdit();
+            this.priceEdit = new DevExpress.XtraEditors.TextEdit();
             this.mainRibbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.saveOrderButton = new DevExpress.XtraBars.BarButtonItem();
             this.saveAndNewOrderButton = new DevExpress.XtraBars.BarButtonItem();
             this.mainRibbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.saveRibbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.statusComboBoxEdit = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.countTextEdit = new DevExpress.XtraEditors.TextEdit();
-            this.addGoodsButton = new DevExpress.XtraEditors.SimpleButton();
-            this.addCommentsButton = new DevExpress.XtraEditors.SimpleButton();
-            this.commentsComboBoxEdit = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.commetnsListBox = new DevExpress.XtraEditors.ListBoxControl();
+            this.addGoodButton = new DevExpress.XtraEditors.SimpleButton();
+            this.addCommentButton = new DevExpress.XtraEditors.SimpleButton();
+            this.commentTextEdit = new DevExpress.XtraEditors.TextEdit();
+            this.commentsListBox = new DevExpress.XtraEditors.ListBoxControl();
+            this.countOfGoodTextEdit = new DevExpress.XtraEditors.TextEdit();
+            this.goodsComboBox = new System.Windows.Forms.ComboBox();
+            this.customerComboBox = new System.Windows.Forms.ComboBox();
             this.goodsRowGridControl = new DevExpress.XtraGrid.GridControl();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.bindingSource1 = new System.Windows.Forms.BindingSource();
             this.goodsRowGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colGoods = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCount = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPrice = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTotalPrice = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.customerComboBoxEdit = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.goodComboBoxEdit = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.statusComboBox = new System.Windows.Forms.ComboBox();
             this.layoutControlGroup = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.customerLayoutControlItem = new DevExpress.XtraLayout.LayoutControlItem();
-            this.goodLayoutControlItem = new DevExpress.XtraLayout.LayoutControlItem();
             this.goodsLayoutControlItem = new DevExpress.XtraLayout.LayoutControlItem();
+            this.goodLayoutControlItem = new DevExpress.XtraLayout.LayoutControlItem();
+            this.statusLayoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.customerLayoutControlItem = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.commentLayoutControlItem = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.countofGoodslayoutControlItem = new DevExpress.XtraLayout.LayoutControlItem();
-            this.statusLayoutControlItem = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.priceLayoutControlItem = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem = new DevExpress.XtraLayout.LayoutControlItem();
+            this.editCommentButton = new DevExpress.XtraEditors.SimpleButton();
+            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.mainLayoutControl)).BeginInit();
             this.mainLayoutControl.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.priceTextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.priceEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mainRibbonControl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.statusComboBoxEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.countTextEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.commentsComboBoxEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.commetnsListBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.commentTextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.commentsListBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.countOfGoodTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.goodsRowGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.goodsRowGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customerComboBoxEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.goodComboBoxEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customerLayoutControlItem)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.goodLayoutControlItem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.goodsLayoutControlItem)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.goodLayoutControlItem)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.statusLayoutControlItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerLayoutControlItem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.commentLayoutControlItem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.countofGoodslayoutControlItem)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.statusLayoutControlItem)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.priceLayoutControlItem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             this.SuspendLayout();
             // 
             // mainLayoutControl
             // 
-            this.mainLayoutControl.Controls.Add(this.priceTextEdit);
-            this.mainLayoutControl.Controls.Add(this.statusComboBoxEdit);
-            this.mainLayoutControl.Controls.Add(this.countTextEdit);
-            this.mainLayoutControl.Controls.Add(this.addGoodsButton);
-            this.mainLayoutControl.Controls.Add(this.addCommentsButton);
-            this.mainLayoutControl.Controls.Add(this.commentsComboBoxEdit);
-            this.mainLayoutControl.Controls.Add(this.commetnsListBox);
+            this.mainLayoutControl.Controls.Add(this.editCommentButton);
+            this.mainLayoutControl.Controls.Add(this.priceEdit);
+            this.mainLayoutControl.Controls.Add(this.addGoodButton);
+            this.mainLayoutControl.Controls.Add(this.addCommentButton);
+            this.mainLayoutControl.Controls.Add(this.commentTextEdit);
+            this.mainLayoutControl.Controls.Add(this.commentsListBox);
+            this.mainLayoutControl.Controls.Add(this.countOfGoodTextEdit);
+            this.mainLayoutControl.Controls.Add(this.goodsComboBox);
+            this.mainLayoutControl.Controls.Add(this.customerComboBox);
             this.mainLayoutControl.Controls.Add(this.goodsRowGridControl);
-            this.mainLayoutControl.Controls.Add(this.customerComboBoxEdit);
-            this.mainLayoutControl.Controls.Add(this.goodComboBoxEdit);
+            this.mainLayoutControl.Controls.Add(this.statusComboBox);
             this.mainLayoutControl.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.mainLayoutControl.Location = new System.Drawing.Point(0, 140);
             this.mainLayoutControl.Name = "mainLayoutControl";
@@ -112,14 +112,14 @@
             this.mainLayoutControl.TabIndex = 0;
             this.mainLayoutControl.Text = "layoutControl1";
             // 
-            // priceTextEdit
+            // priceEdit
             // 
-            this.priceTextEdit.Location = new System.Drawing.Point(297, 389);
-            this.priceTextEdit.MenuManager = this.mainRibbonControl;
-            this.priceTextEdit.Name = "priceTextEdit";
-            this.priceTextEdit.Size = new System.Drawing.Size(475, 20);
-            this.priceTextEdit.StyleController = this.mainLayoutControl;
-            this.priceTextEdit.TabIndex = 28;
+            this.priceEdit.Location = new System.Drawing.Point(96, 389);
+            this.priceEdit.MenuManager = this.mainRibbonControl;
+            this.priceEdit.Name = "priceEdit";
+            this.priceEdit.Size = new System.Drawing.Size(676, 20);
+            this.priceEdit.StyleController = this.mainLayoutControl;
+            this.priceEdit.TabIndex = 43;
             // 
             // mainRibbonControl
             // 
@@ -166,70 +166,77 @@
             this.saveRibbonPageGroup.Name = "saveRibbonPageGroup";
             this.saveRibbonPageGroup.Text = "Сохранить";
             // 
-            // statusComboBoxEdit
+            // addGoodButton
             // 
-            this.statusComboBoxEdit.Location = new System.Drawing.Point(12, 68);
-            this.statusComboBoxEdit.MenuManager = this.mainRibbonControl;
-            this.statusComboBoxEdit.Name = "statusComboBoxEdit";
-            this.statusComboBoxEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.statusComboBoxEdit.Size = new System.Drawing.Size(281, 20);
-            this.statusComboBoxEdit.StyleController = this.mainLayoutControl;
-            this.statusComboBoxEdit.TabIndex = 26;
+            this.addGoodButton.Location = new System.Drawing.Point(290, 94);
+            this.addGoodButton.Name = "addGoodButton";
+            this.addGoodButton.Size = new System.Drawing.Size(482, 22);
+            this.addGoodButton.StyleController = this.mainLayoutControl;
+            this.addGoodButton.TabIndex = 42;
+            this.addGoodButton.Text = "Добавить";
             // 
-            // countTextEdit
+            // addCommentButton
             // 
-            this.countTextEdit.Location = new System.Drawing.Point(597, 28);
-            this.countTextEdit.Name = "countTextEdit";
-            this.countTextEdit.Size = new System.Drawing.Size(93, 20);
-            this.countTextEdit.StyleController = this.mainLayoutControl;
-            this.countTextEdit.TabIndex = 27;
+            this.addCommentButton.Location = new System.Drawing.Point(12, 93);
+            this.addCommentButton.Name = "addCommentButton";
+            this.addCommentButton.Size = new System.Drawing.Size(135, 22);
+            this.addCommentButton.StyleController = this.mainLayoutControl;
+            this.addCommentButton.TabIndex = 41;
+            this.addCommentButton.Text = "Добавить";
+            this.addCommentButton.Click += new System.EventHandler(this.addCommentButton_Click);
             // 
-            // addGoodsButton
+            // commentTextEdit
             // 
-            this.addGoodsButton.Location = new System.Drawing.Point(694, 12);
-            this.addGoodsButton.Name = "addGoodsButton";
-            this.addGoodsButton.Size = new System.Drawing.Size(78, 36);
-            this.addGoodsButton.StyleController = this.mainLayoutControl;
-            this.addGoodsButton.TabIndex = 24;
-            this.addGoodsButton.Text = "Добавить";
+            this.commentTextEdit.Location = new System.Drawing.Point(12, 69);
+            this.commentTextEdit.MenuManager = this.mainRibbonControl;
+            this.commentTextEdit.Name = "commentTextEdit";
+            this.commentTextEdit.Size = new System.Drawing.Size(274, 20);
+            this.commentTextEdit.StyleController = this.mainLayoutControl;
+            this.commentTextEdit.TabIndex = 40;
             // 
-            // addCommentsButton
+            // commentsListBox
             // 
-            this.addCommentsButton.Location = new System.Drawing.Point(218, 373);
-            this.addCommentsButton.Name = "addCommentsButton";
-            this.addCommentsButton.Size = new System.Drawing.Size(75, 36);
-            this.addCommentsButton.StyleController = this.mainLayoutControl;
-            this.addCommentsButton.TabIndex = 23;
-            this.addCommentsButton.Text = "Добавить";
+            this.commentsListBox.Location = new System.Drawing.Point(12, 120);
+            this.commentsListBox.Name = "commentsListBox";
+            this.commentsListBox.Size = new System.Drawing.Size(274, 265);
+            this.commentsListBox.StyleController = this.mainLayoutControl;
+            this.commentsListBox.TabIndex = 39;
+            this.commentsListBox.SelectedIndexChanged += new System.EventHandler(this.commentsListBox_SelectedIndexChanged);
+            this.commentsListBox.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.commentsListBox_MouseDoubleClick);
             // 
-            // commentsComboBoxEdit
+            // countOfGoodTextEdit
             // 
-            this.commentsComboBoxEdit.Location = new System.Drawing.Point(12, 389);
-            this.commentsComboBoxEdit.MenuManager = this.mainRibbonControl;
-            this.commentsComboBoxEdit.Name = "commentsComboBoxEdit";
-            this.commentsComboBoxEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.commentsComboBoxEdit.Size = new System.Drawing.Size(202, 20);
-            this.commentsComboBoxEdit.StyleController = this.mainLayoutControl;
-            this.commentsComboBoxEdit.TabIndex = 21;
+            this.countOfGoodTextEdit.Location = new System.Drawing.Point(679, 69);
+            this.countOfGoodTextEdit.MenuManager = this.mainRibbonControl;
+            this.countOfGoodTextEdit.Name = "countOfGoodTextEdit";
+            this.countOfGoodTextEdit.Size = new System.Drawing.Size(93, 20);
+            this.countOfGoodTextEdit.StyleController = this.mainLayoutControl;
+            this.countOfGoodTextEdit.TabIndex = 34;
             // 
-            // commetnsListBox
+            // goodsComboBox
             // 
-            this.commetnsListBox.Location = new System.Drawing.Point(12, 92);
-            this.commetnsListBox.Name = "commetnsListBox";
-            this.commetnsListBox.Size = new System.Drawing.Size(281, 277);
-            this.commetnsListBox.StyleController = this.mainLayoutControl;
-            this.commetnsListBox.TabIndex = 20;
+            this.goodsComboBox.FormattingEnabled = true;
+            this.goodsComboBox.Location = new System.Drawing.Point(290, 69);
+            this.goodsComboBox.Name = "goodsComboBox";
+            this.goodsComboBox.Size = new System.Drawing.Size(385, 21);
+            this.goodsComboBox.TabIndex = 31;
+            // 
+            // customerComboBox
+            // 
+            this.customerComboBox.FormattingEnabled = true;
+            this.customerComboBox.Location = new System.Drawing.Point(290, 28);
+            this.customerComboBox.Name = "customerComboBox";
+            this.customerComboBox.Size = new System.Drawing.Size(482, 21);
+            this.customerComboBox.TabIndex = 30;
             // 
             // goodsRowGridControl
             // 
             this.goodsRowGridControl.DataSource = this.bindingSource1;
-            this.goodsRowGridControl.Location = new System.Drawing.Point(297, 68);
+            this.goodsRowGridControl.Location = new System.Drawing.Point(290, 136);
             this.goodsRowGridControl.MainView = this.goodsRowGridView;
             this.goodsRowGridControl.MenuManager = this.mainRibbonControl;
             this.goodsRowGridControl.Name = "goodsRowGridControl";
-            this.goodsRowGridControl.Size = new System.Drawing.Size(475, 301);
+            this.goodsRowGridControl.Size = new System.Drawing.Size(482, 249);
             this.goodsRowGridControl.TabIndex = 19;
             this.goodsRowGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.goodsRowGridView});
@@ -284,148 +291,132 @@
             this.colTotalPrice.VisibleIndex = 3;
             this.colTotalPrice.Width = 72;
             // 
-            // customerComboBoxEdit
+            // statusComboBox
             // 
-            this.customerComboBoxEdit.Location = new System.Drawing.Point(12, 28);
-            this.customerComboBoxEdit.MenuManager = this.mainRibbonControl;
-            this.customerComboBoxEdit.Name = "customerComboBoxEdit";
-            this.customerComboBoxEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.customerComboBoxEdit.Size = new System.Drawing.Size(281, 20);
-            this.customerComboBoxEdit.StyleController = this.mainLayoutControl;
-            this.customerComboBoxEdit.TabIndex = 5;
-            // 
-            // goodComboBoxEdit
-            // 
-            this.goodComboBoxEdit.Location = new System.Drawing.Point(297, 28);
-            this.goodComboBoxEdit.MenuManager = this.mainRibbonControl;
-            this.goodComboBoxEdit.Name = "goodComboBoxEdit";
-            this.goodComboBoxEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.goodComboBoxEdit.Size = new System.Drawing.Size(296, 20);
-            this.goodComboBoxEdit.StyleController = this.mainLayoutControl;
-            this.goodComboBoxEdit.TabIndex = 4;
-            this.goodComboBoxEdit.SelectedIndexChanged += new System.EventHandler(this.goodComboBoxEdit_SelectedIndexChanged);
+            this.statusComboBox.FormattingEnabled = true;
+            this.statusComboBox.Location = new System.Drawing.Point(12, 28);
+            this.statusComboBox.Name = "statusComboBox";
+            this.statusComboBox.Size = new System.Drawing.Size(274, 21);
+            this.statusComboBox.TabIndex = 5;
             // 
             // layoutControlGroup
             // 
             this.layoutControlGroup.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
             this.layoutControlGroup.GroupBordersVisible = false;
             this.layoutControlGroup.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.customerLayoutControlItem,
-            this.goodLayoutControlItem,
             this.goodsLayoutControlItem,
+            this.goodLayoutControlItem,
+            this.statusLayoutControlItem1,
+            this.customerLayoutControlItem,
             this.layoutControlItem1,
-            this.layoutControlItem3,
+            this.commentLayoutControlItem,
             this.layoutControlItem5,
-            this.layoutControlItem6,
-            this.countofGoodslayoutControlItem,
-            this.statusLayoutControlItem,
-            this.priceLayoutControlItem});
+            this.layoutControlItem4,
+            this.layoutControlItem2,
+            this.priceLayoutControlItem,
+            this.layoutControlItem3});
             this.layoutControlGroup.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup.Name = "Root";
             this.layoutControlGroup.Size = new System.Drawing.Size(784, 421);
             this.layoutControlGroup.TextVisible = false;
             // 
-            // customerLayoutControlItem
-            // 
-            this.customerLayoutControlItem.Control = this.customerComboBoxEdit;
-            this.customerLayoutControlItem.Location = new System.Drawing.Point(0, 0);
-            this.customerLayoutControlItem.Name = "customerLayoutControlItem";
-            this.customerLayoutControlItem.Size = new System.Drawing.Size(285, 40);
-            this.customerLayoutControlItem.Text = "Клиент";
-            this.customerLayoutControlItem.TextLocation = DevExpress.Utils.Locations.Top;
-            this.customerLayoutControlItem.TextSize = new System.Drawing.Size(81, 13);
-            // 
-            // goodLayoutControlItem
-            // 
-            this.goodLayoutControlItem.Control = this.goodComboBoxEdit;
-            this.goodLayoutControlItem.Location = new System.Drawing.Point(285, 0);
-            this.goodLayoutControlItem.Name = "goodLayoutControlItem";
-            this.goodLayoutControlItem.Size = new System.Drawing.Size(300, 40);
-            this.goodLayoutControlItem.Text = "Товар";
-            this.goodLayoutControlItem.TextLocation = DevExpress.Utils.Locations.Top;
-            this.goodLayoutControlItem.TextSize = new System.Drawing.Size(81, 13);
-            // 
             // goodsLayoutControlItem
             // 
             this.goodsLayoutControlItem.Control = this.goodsRowGridControl;
-            this.goodsLayoutControlItem.Location = new System.Drawing.Point(285, 40);
+            this.goodsLayoutControlItem.Location = new System.Drawing.Point(278, 108);
             this.goodsLayoutControlItem.Name = "goodsLayoutControlItem";
-            this.goodsLayoutControlItem.Size = new System.Drawing.Size(479, 321);
+            this.goodsLayoutControlItem.Size = new System.Drawing.Size(486, 269);
             this.goodsLayoutControlItem.Text = "Список товаров";
             this.goodsLayoutControlItem.TextLocation = DevExpress.Utils.Locations.Top;
             this.goodsLayoutControlItem.TextSize = new System.Drawing.Size(81, 13);
             // 
+            // goodLayoutControlItem
+            // 
+            this.goodLayoutControlItem.Control = this.goodsComboBox;
+            this.goodLayoutControlItem.Location = new System.Drawing.Point(278, 41);
+            this.goodLayoutControlItem.Name = "goodLayoutControlItem";
+            this.goodLayoutControlItem.Size = new System.Drawing.Size(389, 41);
+            this.goodLayoutControlItem.Text = "Товары";
+            this.goodLayoutControlItem.TextLocation = DevExpress.Utils.Locations.Top;
+            this.goodLayoutControlItem.TextSize = new System.Drawing.Size(81, 13);
+            // 
+            // statusLayoutControlItem1
+            // 
+            this.statusLayoutControlItem1.Control = this.statusComboBox;
+            this.statusLayoutControlItem1.CustomizationFormText = "Статус";
+            this.statusLayoutControlItem1.Location = new System.Drawing.Point(0, 0);
+            this.statusLayoutControlItem1.Name = "statusLayoutControlItem1";
+            this.statusLayoutControlItem1.Size = new System.Drawing.Size(278, 41);
+            this.statusLayoutControlItem1.Text = "Статус";
+            this.statusLayoutControlItem1.TextLocation = DevExpress.Utils.Locations.Top;
+            this.statusLayoutControlItem1.TextSize = new System.Drawing.Size(81, 13);
+            // 
+            // customerLayoutControlItem
+            // 
+            this.customerLayoutControlItem.Control = this.customerComboBox;
+            this.customerLayoutControlItem.Location = new System.Drawing.Point(278, 0);
+            this.customerLayoutControlItem.Name = "customerLayoutControlItem";
+            this.customerLayoutControlItem.Size = new System.Drawing.Size(486, 41);
+            this.customerLayoutControlItem.Text = "Клиент";
+            this.customerLayoutControlItem.TextLocation = DevExpress.Utils.Locations.Top;
+            this.customerLayoutControlItem.TextSize = new System.Drawing.Size(81, 13);
+            // 
             // layoutControlItem1
             // 
-            this.layoutControlItem1.Control = this.commetnsListBox;
-            this.layoutControlItem1.Location = new System.Drawing.Point(0, 80);
+            this.layoutControlItem1.Control = this.commentsListBox;
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 108);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(285, 281);
+            this.layoutControlItem1.Size = new System.Drawing.Size(278, 269);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
-            // layoutControlItem3
+            // commentLayoutControlItem
             // 
-            this.layoutControlItem3.Control = this.commentsComboBoxEdit;
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 361);
-            this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(206, 40);
-            this.layoutControlItem3.Text = "Комментарий";
-            this.layoutControlItem3.TextLocation = DevExpress.Utils.Locations.Top;
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(81, 13);
+            this.commentLayoutControlItem.Control = this.commentTextEdit;
+            this.commentLayoutControlItem.Location = new System.Drawing.Point(0, 41);
+            this.commentLayoutControlItem.Name = "commentLayoutControlItem";
+            this.commentLayoutControlItem.Size = new System.Drawing.Size(278, 40);
+            this.commentLayoutControlItem.Text = "Комментарий";
+            this.commentLayoutControlItem.TextLocation = DevExpress.Utils.Locations.Top;
+            this.commentLayoutControlItem.TextSize = new System.Drawing.Size(81, 13);
             // 
             // layoutControlItem5
             // 
-            this.layoutControlItem5.Control = this.addCommentsButton;
-            this.layoutControlItem5.Location = new System.Drawing.Point(206, 361);
-            this.layoutControlItem5.MinSize = new System.Drawing.Size(65, 26);
+            this.layoutControlItem5.Control = this.addCommentButton;
+            this.layoutControlItem5.Location = new System.Drawing.Point(0, 81);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(79, 40);
-            this.layoutControlItem5.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            this.layoutControlItem5.Size = new System.Drawing.Size(139, 27);
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextVisible = false;
             // 
-            // layoutControlItem6
+            // layoutControlItem4
             // 
-            this.layoutControlItem6.Control = this.addGoodsButton;
-            this.layoutControlItem6.Location = new System.Drawing.Point(682, 0);
-            this.layoutControlItem6.MinSize = new System.Drawing.Size(82, 26);
-            this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(82, 40);
-            this.layoutControlItem6.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
-            this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem6.TextVisible = false;
+            this.layoutControlItem4.Control = this.addGoodButton;
+            this.layoutControlItem4.Location = new System.Drawing.Point(278, 82);
+            this.layoutControlItem4.MinSize = new System.Drawing.Size(82, 26);
+            this.layoutControlItem4.Name = "layoutControlItem4";
+            this.layoutControlItem4.Size = new System.Drawing.Size(486, 26);
+            this.layoutControlItem4.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem4.TextVisible = false;
             // 
-            // countofGoodslayoutControlItem
+            // layoutControlItem2
             // 
-            this.countofGoodslayoutControlItem.Control = this.countTextEdit;
-            this.countofGoodslayoutControlItem.Location = new System.Drawing.Point(585, 0);
-            this.countofGoodslayoutControlItem.Name = "countofGoodslayoutControlItem";
-            this.countofGoodslayoutControlItem.Size = new System.Drawing.Size(97, 40);
-            this.countofGoodslayoutControlItem.Text = "Кол-во";
-            this.countofGoodslayoutControlItem.TextLocation = DevExpress.Utils.Locations.Top;
-            this.countofGoodslayoutControlItem.TextSize = new System.Drawing.Size(81, 13);
-            // 
-            // statusLayoutControlItem
-            // 
-            this.statusLayoutControlItem.Control = this.statusComboBoxEdit;
-            this.statusLayoutControlItem.Location = new System.Drawing.Point(0, 40);
-            this.statusLayoutControlItem.Name = "statusLayoutControlItem";
-            this.statusLayoutControlItem.Size = new System.Drawing.Size(285, 40);
-            this.statusLayoutControlItem.Text = "Статус";
-            this.statusLayoutControlItem.TextLocation = DevExpress.Utils.Locations.Top;
-            this.statusLayoutControlItem.TextSize = new System.Drawing.Size(81, 13);
+            this.layoutControlItem2.Control = this.countOfGoodTextEdit;
+            this.layoutControlItem2.Location = new System.Drawing.Point(667, 41);
+            this.layoutControlItem2.Name = "layoutControlItem2";
+            this.layoutControlItem2.Size = new System.Drawing.Size(97, 41);
+            this.layoutControlItem2.Text = "Кол-во";
+            this.layoutControlItem2.TextLocation = DevExpress.Utils.Locations.Top;
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(81, 13);
             // 
             // priceLayoutControlItem
             // 
-            this.priceLayoutControlItem.Control = this.priceTextEdit;
-            this.priceLayoutControlItem.Location = new System.Drawing.Point(285, 361);
+            this.priceLayoutControlItem.Control = this.priceEdit;
+            this.priceLayoutControlItem.Location = new System.Drawing.Point(0, 377);
             this.priceLayoutControlItem.Name = "priceLayoutControlItem";
-            this.priceLayoutControlItem.Size = new System.Drawing.Size(479, 40);
-            this.priceLayoutControlItem.Text = "Цена";
-            this.priceLayoutControlItem.TextLocation = DevExpress.Utils.Locations.Top;
+            this.priceLayoutControlItem.Size = new System.Drawing.Size(764, 24);
+            this.priceLayoutControlItem.Text = "Цена заказа";
             this.priceLayoutControlItem.TextSize = new System.Drawing.Size(81, 13);
             // 
             // layoutControlItem
@@ -434,6 +425,25 @@
             this.layoutControlItem.Name = "layoutControlItem7";
             this.layoutControlItem.Size = new System.Drawing.Size(382, 281);
             this.layoutControlItem.TextSize = new System.Drawing.Size(50, 20);
+            // 
+            // editCommentButton
+            // 
+            this.editCommentButton.Location = new System.Drawing.Point(151, 93);
+            this.editCommentButton.Name = "editCommentButton";
+            this.editCommentButton.Size = new System.Drawing.Size(135, 22);
+            this.editCommentButton.StyleController = this.mainLayoutControl;
+            this.editCommentButton.TabIndex = 44;
+            this.editCommentButton.Text = "Редактировать";
+            this.editCommentButton.Click += new System.EventHandler(this.editCommentButton_Click);
+            // 
+            // layoutControlItem3
+            // 
+            this.layoutControlItem3.Control = this.editCommentButton;
+            this.layoutControlItem3.Location = new System.Drawing.Point(139, 81);
+            this.layoutControlItem3.Name = "layoutControlItem3";
+            this.layoutControlItem3.Size = new System.Drawing.Size(139, 27);
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem3.TextVisible = false;
             // 
             // AddEditOrderView
             // 
@@ -447,29 +457,27 @@
             this.Load += new System.EventHandler(this.AddEditOrderView_Load);
             ((System.ComponentModel.ISupportInitialize)(this.mainLayoutControl)).EndInit();
             this.mainLayoutControl.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.priceTextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.priceEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mainRibbonControl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.statusComboBoxEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.countTextEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.commentsComboBoxEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.commetnsListBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.commentTextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.commentsListBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.countOfGoodTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.goodsRowGridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.goodsRowGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customerComboBoxEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.goodComboBoxEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customerLayoutControlItem)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.goodLayoutControlItem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.goodsLayoutControlItem)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.goodLayoutControlItem)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.statusLayoutControlItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerLayoutControlItem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.commentLayoutControlItem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.countofGoodslayoutControlItem)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.statusLayoutControlItem)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.priceLayoutControlItem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -479,37 +487,39 @@
 
         private DevExpress.XtraLayout.LayoutControl mainLayoutControl;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup;
-        private DevExpress.XtraBars.Ribbon.RibbonControl mainRibbonControl;
-        private DevExpress.XtraBars.Ribbon.RibbonPage mainRibbonPage;
-        private DevExpress.XtraEditors.ComboBoxEdit goodComboBoxEdit;
-        private DevExpress.XtraLayout.LayoutControlItem goodLayoutControlItem;
-        private DevExpress.XtraEditors.ComboBoxEdit customerComboBoxEdit;
-        private DevExpress.XtraLayout.LayoutControlItem customerLayoutControlItem;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem;
-        private DevExpress.XtraBars.BarButtonItem saveOrderButton;
-        private DevExpress.XtraBars.BarButtonItem saveAndNewOrderButton;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup saveRibbonPageGroup;
-        private DevExpress.XtraEditors.SimpleButton addGoodsButton;
-        private DevExpress.XtraEditors.SimpleButton addCommentsButton;
-        private DevExpress.XtraEditors.ComboBoxEdit commentsComboBoxEdit;
-        private DevExpress.XtraEditors.ListBoxControl commetnsListBox;
         private DevExpress.XtraGrid.GridControl goodsRowGridControl;
         private DevExpress.XtraGrid.Views.Grid.GridView goodsRowGridView;
         private DevExpress.XtraLayout.LayoutControlItem goodsLayoutControlItem;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
-        private DevExpress.XtraEditors.TextEdit countTextEdit;
-        private DevExpress.XtraLayout.LayoutControlItem countofGoodslayoutControlItem;
         private System.Windows.Forms.BindingSource bindingSource1;
         private DevExpress.XtraGrid.Columns.GridColumn colGoods;
         private DevExpress.XtraGrid.Columns.GridColumn colCount;
         private DevExpress.XtraGrid.Columns.GridColumn colPrice;
         private DevExpress.XtraGrid.Columns.GridColumn colTotalPrice;
-        private DevExpress.XtraEditors.ComboBoxEdit statusComboBoxEdit;
-        private DevExpress.XtraLayout.LayoutControlItem statusLayoutControlItem;
-        private DevExpress.XtraEditors.TextEdit priceTextEdit;
+        private DevExpress.XtraBars.Ribbon.RibbonControl mainRibbonControl;
+        private DevExpress.XtraBars.BarButtonItem saveOrderButton;
+        private DevExpress.XtraBars.BarButtonItem saveAndNewOrderButton;
+        private DevExpress.XtraBars.Ribbon.RibbonPage mainRibbonPage;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup saveRibbonPageGroup;
+        private System.Windows.Forms.ComboBox customerComboBox;
+        private DevExpress.XtraLayout.LayoutControlItem customerLayoutControlItem;
+        private System.Windows.Forms.ComboBox statusComboBox;
+        private DevExpress.XtraLayout.LayoutControlItem statusLayoutControlItem1;
+        private DevExpress.XtraEditors.TextEdit countOfGoodTextEdit;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
+        private DevExpress.XtraEditors.SimpleButton addGoodButton;
+        private DevExpress.XtraEditors.SimpleButton addCommentButton;
+        private DevExpress.XtraEditors.TextEdit commentTextEdit;
+        private DevExpress.XtraEditors.ListBoxControl commentsListBox;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
+        private DevExpress.XtraLayout.LayoutControlItem commentLayoutControlItem;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
+        private DevExpress.XtraEditors.TextEdit priceEdit;
         private DevExpress.XtraLayout.LayoutControlItem priceLayoutControlItem;
+        private System.Windows.Forms.ComboBox goodsComboBox;
+        private DevExpress.XtraLayout.LayoutControlItem goodLayoutControlItem;
+        private DevExpress.XtraEditors.SimpleButton editCommentButton;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
     }
 }

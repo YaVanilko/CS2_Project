@@ -8,7 +8,7 @@ using Domain.DAO;
 
 namespace Data.DumbData
 {
-    public class GoodsDao: BaseDao<Goods>, IGoodsRepository
+    public class GoodDao: BaseDao<Goods>, IGoodsRepository
     {
         public ICollection<Goods> GetGoodsByCategory(string category)
         {

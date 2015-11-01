@@ -14,11 +14,11 @@ namespace Domain.Entities
         public int Count { get; set; }
         public ProductCategory Category { get; set; }
         public List<Comment> Coments { get; set; }
+
         public Goods()
         {
             Coments = new List<Comment>();
             Category = new ProductCategory();
         }
-
     }
 }

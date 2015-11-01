@@ -389,32 +389,32 @@ namespace Data.DumbData
         #region Order
         public static List<Order> OrderCollection = new List<Order>() 
         { 
-            new Order(){Id = 0, Customer = CustomerCollection[0]},
-            new Order(){Id = 1, Customer = CustomerCollection[1]},
-            new Order(){Id = 2, Customer = CustomerCollection[2]},
-            new Order(){Id = 3, Customer = CustomerCollection[3]},
-            new Order(){Id = 4, Customer = CustomerCollection[4]},
-            new Order(){Id = 5, Customer = CustomerCollection[5]},
-            new Order(){Id = 6, Customer = CustomerCollection[6]},
-            new Order(){Id = 7, Customer = CustomerCollection[7]},
-            new Order(){Id = 8, Customer = CustomerCollection[8]},
-            new Order(){Id = 9, Customer = CustomerCollection[9]},
+            new Order(){Id = 0, Customer = CustomerCollection[0], Status = OrderStatusCollection[0], comments = CommentCollection},
+            new Order(){Id = 1, Customer = CustomerCollection[1], Status = OrderStatusCollection[1], comments = CommentCollection},
+            new Order(){Id = 2, Customer = CustomerCollection[2], Status = OrderStatusCollection[1], comments = CommentCollection},
+            new Order(){Id = 3, Customer = CustomerCollection[3], Status = OrderStatusCollection[2], comments = CommentCollection},
+            new Order(){Id = 4, Customer = CustomerCollection[4], Status = OrderStatusCollection[2], comments = CommentCollection},
+            new Order(){Id = 5, Customer = CustomerCollection[5], Status = OrderStatusCollection[3], comments = CommentCollection},
+            new Order(){Id = 6, Customer = CustomerCollection[6], Status = OrderStatusCollection[4], comments = CommentCollection},
+            new Order(){Id = 7, Customer = CustomerCollection[7], Status = OrderStatusCollection[4], comments = CommentCollection},
+            new Order(){Id = 8, Customer = CustomerCollection[8], Status = OrderStatusCollection[0], comments = CommentCollection},
+            new Order(){Id = 9, Customer = CustomerCollection[9], Status = OrderStatusCollection[0], comments = CommentCollection},
         };
         #endregion
 
         #region Permission
         public static List<Permission> PermissionCollection = new List<Permission>() 
         {
-            new Permission{Id=0,EditTime = DateTime.Now, Type = Domain.PermissionType.EditUser},
-            new Permission{Id=1,EditTime = DateTime.Now, Type = Domain.PermissionType.ListUser},
-            new Permission{Id=2,EditTime = DateTime.Now, Type = Domain.PermissionType.NewUser},
-            new Permission{Id=3,EditTime = DateTime.Now},
-            new Permission{Id=4,EditTime = DateTime.Now},
-            new Permission{Id=5,EditTime = DateTime.Now},
-            new Permission{Id=6,EditTime = DateTime.Now},
-            new Permission{Id=7,EditTime = DateTime.Now},
-            new Permission{Id=8,EditTime = DateTime.Now},
-            new Permission{Id=9,EditTime = DateTime.Now},
+            new Permission(){Id=0,EditTime = DateTime.Now, Type = Domain.PermissionType.EditUser},
+            new Permission(){Id=1,EditTime = DateTime.Now, Type = Domain.PermissionType.ListUser},
+            new Permission(){Id=2,EditTime = DateTime.Now, Type = Domain.PermissionType.NewUser},
+            new Permission(){Id=3,EditTime = DateTime.Now},
+            new Permission(){Id=4,EditTime = DateTime.Now},
+            new Permission(){Id=5,EditTime = DateTime.Now},
+            new Permission(){Id=6,EditTime = DateTime.Now},
+            new Permission(){Id=7,EditTime = DateTime.Now},
+            new Permission(){Id=8,EditTime = DateTime.Now},
+            new Permission(){Id=9,EditTime = DateTime.Now},
 
         };
         #endregion

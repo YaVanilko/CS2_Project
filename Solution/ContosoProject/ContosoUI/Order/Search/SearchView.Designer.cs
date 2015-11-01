@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SearchView));
             this.ribbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.searchBarButtonItem = new DevExpress.XtraBars.BarButtonItem();
@@ -37,7 +36,6 @@
             this.layoutControl = new DevExpress.XtraLayout.LayoutControl();
             this.statusComboBox = new System.Windows.Forms.ComboBox();
             this.resultGridControl = new DevExpress.XtraGrid.GridControl();
-            this.searchViewModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ordersGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colStatus = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCustomer = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -47,15 +45,16 @@
             this.layoutControlGroup = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.statusLayoutControlItem = new DevExpress.XtraLayout.LayoutControlItem();
+            this.searchViewModelBindingSource = new System.Windows.Forms.BindingSource();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl)).BeginInit();
             this.layoutControl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.resultGridControl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.searchViewModelBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordersGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.statusLayoutControlItem)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchViewModelBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonControl
@@ -124,7 +123,6 @@
             this.resultGridControl.TabIndex = 4;
             this.resultGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.ordersGridView});
-            this.resultGridControl.Click += new System.EventHandler(this.resultGridControl_Click);
             // 
             // ordersGridView
             // 
@@ -190,7 +188,7 @@
             this.layoutControlItem1,
             this.statusLayoutControlItem});
             this.layoutControlGroup.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlGroup.Name = "layoutControlGroup";
+            this.layoutControlGroup.Name = "Root";
             this.layoutControlGroup.Size = new System.Drawing.Size(784, 424);
             this.layoutControlGroup.TextVisible = false;
             // 
@@ -227,11 +225,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl)).EndInit();
             this.layoutControl.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.resultGridControl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.searchViewModelBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordersGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.statusLayoutControlItem)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchViewModelBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

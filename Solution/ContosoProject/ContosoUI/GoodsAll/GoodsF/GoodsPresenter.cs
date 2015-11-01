@@ -12,7 +12,7 @@ namespace ContosoUI.GoodsAll.GoodsF
 {
     class GoodsPresenter : INotifyPropertyChanged
     {
-        private IGoodsRepository model = new GoodsDao();
+        private IGoodsRepository model = new GoodDao();
         private IProductCategoryRepository modelCategory = new ProductCategoryDao();
         private GoodsForm goodsView;
 

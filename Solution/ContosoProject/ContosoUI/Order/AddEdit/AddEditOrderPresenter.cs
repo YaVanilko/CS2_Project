@@ -16,86 +16,125 @@ namespace ContosoUI.Order.AddEdit
 
         readonly IOrderRepository orderModel = new OrderDao();
         readonly ICustomerRepository customerModel = new CustomerDao();
-        readonly IGoodsRepository goodsModel = new GoodsDao();
+        readonly IGoodsRepository goodsModel = new GoodDao();
+        readonly IGoodsRowRepository goodsRowModel = new GoodsRowDao();
+        readonly IOrderStatusRepository orderStatusModel = new OrderStatusDao();
+        readonly ICommentRepository commentModel = new CommentDao();
+
+        private int orderId;
+
+        public List<string> statusesView = new List<string>();
+        public List<string> customersView = new List<string>();
+        public List<string> goodsView = new List<string>();
+        public List<string> commentsView = new List<string>();
 
         readonly Domain.Entities.Order order;
-
-        readonly List<Customer> customers;
-
-        public List<Customer> AllCustomers
-        {
-            get
-            {
-                return customers;
-            }
-        }
+        readonly List<Customer> allCustomers;
+        readonly List<Goods> allGoods;
+        readonly List<GoodsRow> goodsList;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
         public AddEditOrderPresenter(AddEditOrderView view) : this(view, -1)
         {
             order = new Domain.Entities.Order();
-            
         }
 
         public AddEditOrderPresenter(AddEditOrderView view, int orderId)
         {
             this.view = view;
-            customers = customerModel.GetAll().ToList();
+            this.orderId = orderId;
 
             if (orderId > 0)
             {
                 order = orderModel.GetById(orderId);
             }
+
+            allCustomers = customerModel.GetAll().ToList();
+            customersView = customerModel.GetAll().Select(x => x.PersonalInfo.LastName + " " + x.PersonalInfo.FirstName + " " + x.PersonalInfo.MiddleName).ToList();
+            statusesView = orderStatusModel.GetAll().Select(x => x.Status).Distinct().ToList();
+            allGoods = goodsModel.GetAll().ToList();
+            goodsView = goodsModel.GetAll().Select(x => x.Name).ToList();
+            goodsList = goodsRowModel.GetAll().Where(x => x.Id == orderId).ToList();
+
+            foreach (Comment comment in order.comments)
+            {
+                commentsView.Add(comment.Message);
+            }
         }
 
-        public string CustomerToString
+        public string SelectedCustomer
         {
             get { return order.Customer.ToString(); }
             set
             {
                 if (order.Customer.ToString() != value)
                 {
-                    //order.Customer.ToString() = value;
-                    NotifyPropertyChanged("CustomerToString");
+                    NotifyPropertyChanged("SelectedCustomer");
                 }
             }    
         }
 
-        public List<GoodsRow> goodsList
+        public List<GoodsRow> listOFGoods
         {
-            get { return order.goodsList; }
-            set
-            {
-                if (order.goodsList!= value)
-                {
-                    order.goodsList = value;
-                    NotifyPropertyChanged("goodList");
-                }
-            }
+            get; set;
         }
 
         public double TotalCost
         {
-            get { return order.TotalCost; }
-            set
-            {
-                NotifyPropertyChanged("TotalCost");
-            }
+            get { return CalculateOrderCost(); }
         }
 
-        public OrderStatus Status
+        public string SelectedStatus
         {
-            get { return order.Status; }
+            get { return order.Status.Status; }
             set
             {
-                if (order.Status != value)
+                if (order.Status.Status != value)
                 {
-                    order.Status = value;
-                    NotifyPropertyChanged("Status");
+                    order.Status.Status = value;
+                    NotifyPropertyChanged("SelectedStatus");
                 }
             }
         }
+
+        public int CommentIndex
+        {
+            get; set;
+        }
+        public string Message
+        {
+            get { return order.comments[CommentIndex].Message; }
+            set
+            {
+                if (Message != value)
+                {
+                    order.comments[CommentIndex].Message = value;
+                    NotifyPropertyChanged("Message");
+                }
+            }
+        }
+
+        public Comment Comment
+        {
+            get { return order.comments[orderId]; }
+            set
+            {
+                Comment.Message = Message;
+                Comment.Type = CommentType.Order;
+            }
+        }
+
+        public void AddNewComment(Comment value)
+        {
+            commentModel.Add(value);
+        }
+
+        public void UpdateCommentStorage (Comment value)
+        {
+            commentModel.Update(value);
+        }
+
         public List<Comment> comments
         {
             get { return order.comments; }
@@ -107,6 +146,16 @@ namespace ContosoUI.Order.AddEdit
                     NotifyPropertyChanged("comments");
                 }
             }
+        }
+
+        private double CalculateOrderCost ()
+        {
+            double result = 0;
+            foreach (GoodsRow row in order.goodsList)
+            {
+                result += row.TotalPrice;
+            }
+            return result;
         }
 
         private void NotifyPropertyChanged(String info)

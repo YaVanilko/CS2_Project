@@ -6,9 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Data.DumbData.tempDAO
+namespace Data.DumbData
 {
-    class CommentDao : BaseDao<Comment>, ICommentRepository
+    public class CommentDao : BaseDao<Comment>, ICommentRepository
     {
     }
 }

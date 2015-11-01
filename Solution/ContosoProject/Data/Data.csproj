@@ -49,8 +49,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DumbData\Storage\Storage.cs" />
-    <Compile Include="DumbData\tempDAO\CommentRepository.cs" />
-    <Compile Include="DumbData\tempDAO\GoodsDao.cs" />
+    <Compile Include="DumbData\tempDAO\CommentDao.cs" />
+    <Compile Include="DumbData\tempDAO\GoodsRowDao.cs" />
+    <Compile Include="DumbData\tempDAO\GoodDao.cs" />
     <Compile Include="DumbData\tempDAO\OrderDao.cs" />
     <Compile Include="DumbData\tempDAO\OrderStatusDao.cs" />
     <Compile Include="DumbData\tempDAO\RoleDao.cs" />
