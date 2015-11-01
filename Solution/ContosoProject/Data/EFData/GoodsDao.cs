@@ -12,6 +12,7 @@ namespace Data.EFData
 {
     public class EFGoodsDao : EfBaseDao<Goods>, IGoodsRepository
     {
+        ProjectContext context;
         public ICollection<Goods> GetGoodsByCategory(string category)
         {
             return dbContext.Products.Where(x => x.Category.CategoryName == category).ToList();

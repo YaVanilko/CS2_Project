@@ -1,4 +1,5 @@
 ﻿using Data.DumbData;
+using Data.EFData;
 using Domain.DAO;
 using Domain.Entities;
 using System;
@@ -12,7 +13,7 @@ namespace ContosoUI.GoodsAll.AddGoods
     public class AddGoodsPresenter
     {
         AddGoods view;
-        IGoodsRepository model = new GoodsDao();
+        IGoodsRepository model = new EFGoodsDao();
         Goods thisGoods;
         public List<string> productCategoryList = new List<string>();
         public List<Comment> Comments { get { return thisGoods.Coments; } set { } }

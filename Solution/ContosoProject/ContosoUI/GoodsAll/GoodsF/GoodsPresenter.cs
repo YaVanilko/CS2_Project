@@ -1,5 +1,6 @@
-﻿using Data.DumbData;
+﻿using Data.EFData;
 using Domain.DAO;
+
 using Domain.Entities;
 using System;
 using System.Collections.Generic;
@@ -13,7 +14,7 @@ namespace ContosoUI.GoodsAll.GoodsF
     class GoodsPresenter : INotifyPropertyChanged
     {
         private IGoodsRepository model = new GoodsDao();
-        private IProductCategoryRepository modelCategory = new ProductCategoryDao();
+        private IProductCategoryRepository modelCategory = new EFProductCategoryDao();
         private GoodsForm goodsView;
 
         public List<GoodsListViewModel> viewModel = new List<GoodsListViewModel>();
