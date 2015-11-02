@@ -54,17 +54,7 @@ namespace ContosoUI.GoodsAll.GoodsF
 
         private void GoodsGridControl_Click(object sender, EventArgs e)
         {
-            GridHitInfo hitInfo = gridView1.CalcHitInfo(GoodsGridControl.PointToClient(MousePosition));
-            if (hitInfo.InRowCell)
-            {
-                GridView gv = (GridView)sender;
-                GridHitInfo gridInfo = gv.CalcHitInfo(gv.GridControl.PointToClient(Control.MousePosition));
-                goodsID = (int)gv.GetRowCellValue(gridInfo.RowHandle, "Id");
-
-                AddGoods.AddGoods frm = new AddGoods.AddGoods(goodsID);
-                frm.MdiParent = this.MdiParent;
-                frm.Show();
-            }
+           
 
         }
 
@@ -105,5 +95,34 @@ namespace ContosoUI.GoodsAll.GoodsF
 
             }
         }
+
+        private void barButtonItem1_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
+
+        private void GoodsComboBoxCategory_TextChanged(object sender, EventArgs e)
+        {
+            presenter.productCategoryList.Add(GoodsComboBoxCategory.Text);
+            //GoodsComboBoxCategory.Text
+        }
+
+        private void goodsGreedView_DoubleClick(object sender, EventArgs e)
+        {
+            GridHitInfo hitInfo = goodsGreedView.CalcHitInfo(GoodsGridControl.PointToClient(MousePosition));
+            if (hitInfo.InRow || hitInfo.InRowCell)
+            //  if (hitInfo.InRowCell)
+            {
+                GridView gv = (GridView)sender;
+                GridHitInfo gridInfo = gv.CalcHitInfo(gv.GridControl.PointToClient(Control.MousePosition));
+                goodsID = (int)gv.GetRowCellValue(gridInfo.RowHandle, "Id");
+
+                AddGoods.AddGoods frm = new AddGoods.AddGoods(goodsID);
+                frm.MdiParent = this.MdiParent;
+                frm.Show();
+            }
+        }
+
+
     }
 }
