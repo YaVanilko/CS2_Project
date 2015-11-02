@@ -17,20 +17,20 @@ namespace Data.EFData
             return dbContext.Products.Where(x => x.Category.CategoryName == category).ToList();
         }
 
-        public ICollection<Goods> GetAll()
+        public new ICollection<Goods> GetAll()
         {
 
             return dbContext.Products.Where(x => x.IsActive)
-                                .Include(x => x.Category).ToList();
+                                .Include(x => x.Category)
+                                .Include(x=>x.Coments).ToList();
         }
 
         public ICollection<Goods> GetAllIsActive()
         {
             return dbContext.Products.Where(x => x.IsActive)
-                                .Include(x => x.Category).ToList();
+                                .Include(x => x.Category)
+                                .Include(x => x.Coments).ToList();
         }
-
-
     }
 }
 

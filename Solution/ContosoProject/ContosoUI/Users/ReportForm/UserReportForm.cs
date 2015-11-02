@@ -21,6 +21,14 @@ namespace ContosoUI.EditUserForm
         {
             InitializeComponent();
             presenter = new UserReportPresenter(this);
+            if (!Program.AuthUser.Role.Permissions.Any(x => x.Type == Domain.PermissionType.SaveListUsers))
+            {
+                this.userReportSaveBtn.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            }
+            if (!Program.AuthUser.Role.Permissions.Any(x => x.Type == Domain.PermissionType.PrintReportUsers))
+            {
+                this.userReportPrintBtn.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            }
         }
 
         public override void Refresh()
