@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace ContosoUI.Authentication
 {
-    public class BaseMD5
+    public static class BaseMD5Extension
     {
-        protected string GetMd5Hash(string input)
+        public static string ToMD5(this string input)
         {
             MD5 md5Hash = MD5.Create();
             byte[] data = md5Hash.ComputeHash(Encoding.UTF8.GetBytes(input));
