@@ -30,10 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GoodsForm));
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-            this.GoodsPrintButton = new System.Windows.Forms.Button();
             this.IsActiveCheckBox = new System.Windows.Forms.CheckBox();
-            this.GoodsButtonSave = new System.Windows.Forms.Button();
             this.GoodsGridControl = new DevExpress.XtraGrid.GridControl();
             this.goodsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -51,9 +50,7 @@
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.colName1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSKU1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPrice1 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -62,6 +59,14 @@
             this.colUser1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colId1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colIsActive1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
+            this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.mainRibbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GoodsGridControl)).BeginInit();
@@ -72,56 +77,33 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
             // 
-            this.layoutControl1.Controls.Add(this.GoodsPrintButton);
             this.layoutControl1.Controls.Add(this.IsActiveCheckBox);
-            this.layoutControl1.Controls.Add(this.GoodsButtonSave);
             this.layoutControl1.Controls.Add(this.GoodsGridControl);
             this.layoutControl1.Controls.Add(this.GoodsComboBoxCategory);
-            this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.layoutControl1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.layoutControl1.Location = new System.Drawing.Point(0, 81);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(336, 181, 409, 350);
             this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(871, 379);
+            this.layoutControl1.Size = new System.Drawing.Size(871, 298);
             this.layoutControl1.TabIndex = 1;
             this.layoutControl1.Text = "layoutControl1";
-            // 
-            // GoodsPrintButton
-            // 
-            this.GoodsPrintButton.Location = new System.Drawing.Point(541, 12);
-            this.GoodsPrintButton.Name = "GoodsPrintButton";
-            this.GoodsPrintButton.Size = new System.Drawing.Size(148, 20);
-            this.GoodsPrintButton.TabIndex = 8;
-            this.GoodsPrintButton.Text = "Печать";
-            this.GoodsPrintButton.UseVisualStyleBackColor = true;
-            this.GoodsPrintButton.Click += new System.EventHandler(this.GoodsPrintButton_Click);
             // 
             // IsActiveCheckBox
             // 
             this.IsActiveCheckBox.Location = new System.Drawing.Point(436, 12);
             this.IsActiveCheckBox.Name = "IsActiveCheckBox";
-            this.IsActiveCheckBox.Size = new System.Drawing.Size(101, 20);
+            this.IsActiveCheckBox.Size = new System.Drawing.Size(423, 20);
             this.IsActiveCheckBox.TabIndex = 7;
             this.IsActiveCheckBox.Text = "Товар активен";
             this.IsActiveCheckBox.UseVisualStyleBackColor = true;
             this.IsActiveCheckBox.CheckedChanged += new System.EventHandler(this.IsActiveCheckBox_CheckedChanged);
-            // 
-            // GoodsButtonSave
-            // 
-            this.GoodsButtonSave.Location = new System.Drawing.Point(693, 12);
-            this.GoodsButtonSave.Name = "GoodsButtonSave";
-            this.GoodsButtonSave.Size = new System.Drawing.Size(166, 20);
-            this.GoodsButtonSave.TabIndex = 6;
-            this.GoodsButtonSave.Text = "Сохранить";
-            this.GoodsButtonSave.UseVisualStyleBackColor = true;
-            this.GoodsButtonSave.Click += new System.EventHandler(this.GoodsButtonSave_Click);
             // 
             // GoodsGridControl
             // 
@@ -132,7 +114,7 @@
             this.GoodsGridControl.Location = new System.Drawing.Point(12, 52);
             this.GoodsGridControl.MainView = this.gridView1;
             this.GoodsGridControl.Name = "GoodsGridControl";
-            this.GoodsGridControl.Size = new System.Drawing.Size(847, 315);
+            this.GoodsGridControl.Size = new System.Drawing.Size(847, 234);
             this.GoodsGridControl.TabIndex = 5;
             this.GoodsGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1,
@@ -230,11 +212,11 @@
             // GoodsComboBoxCategory
             // 
             this.GoodsComboBoxCategory.EditValue = "Категории продуктов";
-            this.GoodsComboBoxCategory.Location = new System.Drawing.Point(108, 12);
+            this.GoodsComboBoxCategory.Location = new System.Drawing.Point(121, 12);
             this.GoodsComboBoxCategory.Name = "GoodsComboBoxCategory";
             this.GoodsComboBoxCategory.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.GoodsComboBoxCategory.Size = new System.Drawing.Size(324, 20);
+            this.GoodsComboBoxCategory.Size = new System.Drawing.Size(311, 20);
             this.GoodsComboBoxCategory.StyleController = this.layoutControl1;
             this.GoodsComboBoxCategory.TabIndex = 4;
             this.GoodsComboBoxCategory.SelectedIndexChanged += new System.EventHandler(this.GoodsComboBoxCategory_SelectedIndexChanged);
@@ -246,12 +228,10 @@
             this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem2,
             this.layoutControlItem1,
-            this.layoutControlItem3,
-            this.layoutControlItem4,
-            this.layoutControlItem5});
+            this.layoutControlItem4});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "Root";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(871, 379);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(871, 298);
             this.layoutControlGroup1.Text = " ";
             this.layoutControlGroup1.TextVisible = false;
             // 
@@ -260,10 +240,10 @@
             this.layoutControlItem2.Control = this.GoodsGridControl;
             this.layoutControlItem2.Location = new System.Drawing.Point(0, 24);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(851, 335);
+            this.layoutControlItem2.Size = new System.Drawing.Size(851, 254);
             this.layoutControlItem2.Text = " ";
             this.layoutControlItem2.TextLocation = DevExpress.Utils.Locations.Top;
-            this.layoutControlItem2.TextSize = new System.Drawing.Size(93, 13);
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(106, 13);
             // 
             // layoutControlItem1
             // 
@@ -271,34 +251,17 @@
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
             this.layoutControlItem1.Size = new System.Drawing.Size(424, 24);
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(93, 13);
-            // 
-            // layoutControlItem3
-            // 
-            this.layoutControlItem3.Control = this.GoodsButtonSave;
-            this.layoutControlItem3.Location = new System.Drawing.Point(681, 0);
-            this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(170, 24);
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem3.TextVisible = false;
+            this.layoutControlItem1.Text = "Категория продукта";
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(106, 13);
             // 
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.IsActiveCheckBox;
             this.layoutControlItem4.Location = new System.Drawing.Point(424, 0);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(105, 24);
+            this.layoutControlItem4.Size = new System.Drawing.Size(427, 24);
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;
-            // 
-            // layoutControlItem5
-            // 
-            this.layoutControlItem5.Control = this.GoodsPrintButton;
-            this.layoutControlItem5.Location = new System.Drawing.Point(529, 0);
-            this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(152, 24);
-            this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem5.TextVisible = false;
             // 
             // colName1
             // 
@@ -340,11 +303,75 @@
             this.colIsActive1.FieldName = "IsActive";
             this.colIsActive1.Name = "colIsActive1";
             // 
+            // ribbonControl1
+            // 
+            this.ribbonControl1.ExpandCollapseItem.Id = 0;
+            this.ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
+            this.ribbonControl1.ExpandCollapseItem,
+            this.barButtonItem1,
+            this.barButtonItem3});
+            this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
+            this.ribbonControl1.MaxItemId = 4;
+            this.ribbonControl1.Name = "ribbonControl1";
+            this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
+            this.mainRibbonPage});
+            this.ribbonControl1.Size = new System.Drawing.Size(871, 141);
+            this.ribbonControl1.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Above;
+            // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "Сохранить";
+            this.barButtonItem1.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.Glyph")));
+            this.barButtonItem1.Id = 1;
+            this.barButtonItem1.Name = "barButtonItem1";
+            this.barButtonItem1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            // 
+            // barButtonItem3
+            // 
+            this.barButtonItem3.Caption = "Печать";
+            this.barButtonItem3.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.Glyph")));
+            this.barButtonItem3.Id = 3;
+            this.barButtonItem3.Name = "barButtonItem3";
+            this.barButtonItem3.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            // 
+            // ribbonPageGroup2
+            // 
+            this.ribbonPageGroup2.Name = "ribbonPageGroup2";
+            this.ribbonPageGroup2.Text = "ribbonPageGroup2";
+            // 
+            // ribbonPageGroup1
+            // 
+            this.ribbonPageGroup1.Name = "ribbonPageGroup1";
+            this.ribbonPageGroup1.Text = "ribbonPageGroup1";
+            // 
+            // ribbonPage1
+            // 
+            this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup1,
+            this.ribbonPageGroup2});
+            this.ribbonPage1.Name = "ribbonPage1";
+            this.ribbonPage1.Text = "ribbonPage1";
+            // 
+            // mainRibbonPage
+            // 
+            this.mainRibbonPage.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup3});
+            this.mainRibbonPage.Name = "mainRibbonPage";
+            this.mainRibbonPage.Text = "ribbonPage2";
+            // 
+            // ribbonPageGroup3
+            // 
+            this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem1);
+            this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem3);
+            this.ribbonPageGroup3.Name = "ribbonPageGroup3";
+            this.ribbonPageGroup3.Text = "ribbonPageGroup3";
+            // 
             // GoodsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(871, 379);
+            this.Controls.Add(this.ribbonControl1);
             this.Controls.Add(this.layoutControl1);
             this.Name = "GoodsForm";
             this.Text = "GoodsForm";
@@ -358,10 +385,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -385,11 +412,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn colIsActive;
         private DevExpress.XtraGrid.Columns.GridColumn colEditTime;
         private System.Windows.Forms.CheckBox IsActiveCheckBox;
-        private System.Windows.Forms.Button GoodsButtonSave;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
-        private System.Windows.Forms.Button GoodsPrintButton;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
         private DevExpress.XtraGrid.Columns.GridColumn colName1;
         private DevExpress.XtraGrid.Columns.GridColumn colSKU1;
@@ -399,5 +422,13 @@
         private DevExpress.XtraGrid.Columns.GridColumn colUser1;
         private DevExpress.XtraGrid.Columns.GridColumn colId1;
         private DevExpress.XtraGrid.Columns.GridColumn colIsActive1;
+        private DevExpress.XtraBars.Ribbon.RibbonControl ribbonControl1;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem3;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
+        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage1;
+        private DevExpress.XtraBars.Ribbon.RibbonPage mainRibbonPage;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
     }
 }

@@ -106,6 +106,17 @@ namespace ContosoUI.GoodsAll.GoodsF
             }
         }
 
+        private void barButtonItem1_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
+
+        private void GoodsComboBoxCategory_TextChanged(object sender, EventArgs e)
+        {
+            presenter.productCategoryList.Add(GoodsComboBoxCategory.Text);
+            //GoodsComboBoxCategory.Text
+        }
+
 
     }
 }

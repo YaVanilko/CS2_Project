@@ -13,6 +13,8 @@ namespace Data.EFData
     public class EFGoodsDao : EfBaseDao<Goods>, IGoodsRepository
     {
         ProjectContext context;
+        //public ICollection<Goods> Ge
+
         public ICollection<Goods> GetGoodsByCategory(string category)
         {
             return dbContext.Products.Where(x => x.Category.CategoryName == category).ToList();
@@ -20,15 +22,14 @@ namespace Data.EFData
 
         public ICollection<Goods> GetAll()
         {
-
-            return dbContext.Products.Where(x => x.IsActive)
-                                .Include(x => x.Category).ToList();
+            return dbContext.Products.ToList();
+         
         }
 
         public ICollection<Goods> GetAllIsActive()
         {
-            return dbContext.Products.Where(x => x.IsActive)
-                                .Include(x => x.Category).ToList();
+            return dbContext.Products.Where(x => x.IsActive==true).ToList();
+                   
         }
 
 

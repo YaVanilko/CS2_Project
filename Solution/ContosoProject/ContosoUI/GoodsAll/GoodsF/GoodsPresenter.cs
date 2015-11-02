@@ -13,7 +13,7 @@ namespace ContosoUI.GoodsAll.GoodsF
 {
     class GoodsPresenter : INotifyPropertyChanged
     {
-        private IGoodsRepository model = new GoodsDao();
+        private IGoodsRepository model = new EFGoodsDao();
         private IProductCategoryRepository modelCategory = new EFProductCategoryDao();
         private GoodsForm goodsView;
 
@@ -25,7 +25,7 @@ namespace ContosoUI.GoodsAll.GoodsF
         public GoodsPresenter(GoodsForm goodsView)
         {
             this.goodsView = goodsView;
-            foreach (ProductCategory pc in Storage.categoryCollection)
+            foreach (ProductCategory pc in modelCategory.GetAll())
             {
                 productCategoryList.Add(pc.CategoryName);
             }

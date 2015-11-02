@@ -5,25 +5,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.Entity.Migrations;
+using Domain.DAO;
 
 namespace Data.EFData
 {
-    public class EFProductCategoryDao : EfBaseDao<ProductCategory>
+    public class EFProductCategoryDao : EfBaseDao<ProductCategory>, IProductCategoryRepository
     {
-        ProjectContext context;
-        public EFProductCategoryDao(ProjectContext context)
-        {
-            this.context=context;
-        }
-
+     
         public ICollection<ProductCategory> GetAll()
         {
-            ICollection<ProductCategory> collection;
-            collection = from p in context.Categories
-                         where p.IsActive=true
-                         select p;
-
-            return collection;
+            return dbContext.Categories.Where(x => x.IsActive== true).ToList();
         }
+
+        public void AddCategory(string categoryNew)
+        {
+            ProductCategory productCategory = new ProductCategory();
+            productCategory.CategoryName = categoryNew;
+            productCategory.IsActive = true;
+            dbContext.Set<ProductCategory>().Add(productCategory);
+            dbContext.SaveChanges();
+        }
+       
     }
 }
