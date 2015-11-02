@@ -10,5 +10,6 @@ namespace Domain.DAO
 {
     public interface IRoleRepository : IRepository<Role>
     {
+        void AddOrUpdate(Role role);
     }
 }

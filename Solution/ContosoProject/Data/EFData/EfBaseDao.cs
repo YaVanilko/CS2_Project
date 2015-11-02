@@ -13,6 +13,11 @@ namespace Data.EFData
     {
         protected ProjectContext dbContext = new ProjectContext();
 
+        public EfBaseDao(ProjectContext context = null)
+        {
+            dbContext = context ?? new ProjectContext();
+        }
+
         public void Add(T entity)
         {
             dbContext.Set<T>().Add(entity);

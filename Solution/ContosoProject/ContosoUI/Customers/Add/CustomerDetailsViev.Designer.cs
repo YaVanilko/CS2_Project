@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.commentsListBoxControl = new DevExpress.XtraEditors.ListBoxControl();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.commentMemoEdit = new DevExpress.XtraEditors.MemoEdit();
             this.ordersGridControl = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -63,10 +64,10 @@
             this.mainRibbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.saveOrEditribbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.commentsListBoxControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.commentMemoEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordersGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -92,7 +93,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.listCommentsItem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -126,6 +126,10 @@
             this.commentsListBoxControl.StyleController = this.layoutControl1;
             this.commentsListBoxControl.TabIndex = 15;
             this.commentsListBoxControl.ValueMember = "Id";
+            // 
+            // bindingSource1
+            // 
+            this.bindingSource1.DataSource = typeof(Domain.Entities.Comment);
             // 
             // commentMemoEdit
             // 
@@ -434,12 +438,9 @@
             // 
             this.saveOrEditribbonPageGroup.ItemLinks.Add(this.saveEditButtonItem);
             this.saveOrEditribbonPageGroup.ItemLinks.Add(this.saveAndNewButtonItem);
+            this.saveOrEditribbonPageGroup.MergeOrder = 5;
             this.saveOrEditribbonPageGroup.Name = "saveOrEditribbonPageGroup";
             this.saveOrEditribbonPageGroup.Text = "Сохранение";
-            // 
-            // bindingSource1
-            // 
-            this.bindingSource1.DataSource = typeof(Domain.Entities.Comment);
             // 
             // CustomerDetailsViev
             // 
@@ -455,6 +456,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.commentsListBoxControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.commentMemoEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordersGridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
@@ -480,7 +482,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.listCommentsItem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
