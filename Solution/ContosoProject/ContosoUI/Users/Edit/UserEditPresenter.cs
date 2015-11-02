@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace ContosoUI.Users.Edit
 {
-    class UserEditPresenter : BaseMD5,  INotifyPropertyChanged
+    class UserEditPresenter : INotifyPropertyChanged
     {
         User user = null;
         UserEditForm view = null;
@@ -61,9 +61,9 @@ namespace ContosoUI.Users.Edit
         private void PasswordChangedHandler(object sender, EventArgs e)
         {
             if (Program.AuthUser.Role.Permissions.Any(x => x.Type == Domain.PermissionType.EditUser) ||
-                    GetMd5Hash(view.OldPassword) == user.Password)
+                    view.OldPassword.ToMD5() == user.Password)
             {
-                user.Password = GetMd5Hash(view.NewPassword);
+                user.Password = view.NewPassword.ToMD5();
             }
             else
             {
