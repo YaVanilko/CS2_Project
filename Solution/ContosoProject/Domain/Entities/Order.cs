@@ -9,17 +9,17 @@ namespace Domain.Entities
     public class Order : BaseEntity
     {
         public Customer Customer { get; set; }
-        public List<GoodsRow> goodsList { get; set; }
+        public List<GoodsRow> GoodsList { get; set; }
         public double TotalCost { get; set; }
         public OrderStatus Status { get; set; }
-        public List<Comment> comments { get; set; }
+        public List<Comment> Comments { get; set; }
 
         public Order()
         {
             Customer = new Customer();
-            goodsList = new List<GoodsRow>();
+            GoodsList = new List<GoodsRow>();
             Status = new OrderStatus();
-            comments = new List<Comment>();
+            Comments = new List<Comment>();
         }
     }
 }

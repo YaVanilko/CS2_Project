@@ -432,16 +432,16 @@ namespace Data.DumbData
             CustomerCollection[8].Orders.Add(OrderCollection[8]);
             CustomerCollection[9].Orders.Add(OrderCollection[9]);
 
-            OrderCollection[0].goodsList.Add(GoodsRowCollection[0]);
-            OrderCollection[1].goodsList.Add(GoodsRowCollection[1]);
-            OrderCollection[2].goodsList.Add(GoodsRowCollection[2]);
-            OrderCollection[3].goodsList.Add(GoodsRowCollection[3]);
-            OrderCollection[4].goodsList.Add(GoodsRowCollection[4]);
-            OrderCollection[5].goodsList.Add(GoodsRowCollection[5]);
-            OrderCollection[6].goodsList.Add(GoodsRowCollection[6]);
-            OrderCollection[7].goodsList.Add(GoodsRowCollection[7]);
-            OrderCollection[8].goodsList.Add(GoodsRowCollection[8]);
-            OrderCollection[9].goodsList.Add(GoodsRowCollection[9]);
+            OrderCollection[0].GoodsList.Add(GoodsRowCollection[0]);
+            OrderCollection[1].GoodsList.Add(GoodsRowCollection[1]);
+            OrderCollection[2].GoodsList.Add(GoodsRowCollection[2]);
+            OrderCollection[3].GoodsList.Add(GoodsRowCollection[3]);
+            OrderCollection[4].GoodsList.Add(GoodsRowCollection[4]);
+            OrderCollection[5].GoodsList.Add(GoodsRowCollection[5]);
+            OrderCollection[6].GoodsList.Add(GoodsRowCollection[6]);
+            OrderCollection[7].GoodsList.Add(GoodsRowCollection[7]);
+            OrderCollection[8].GoodsList.Add(GoodsRowCollection[8]);
+            OrderCollection[9].GoodsList.Add(GoodsRowCollection[9]);
 
             RoleCollection[0].Permissions = PermissionCollection;
         }
