@@ -51,8 +51,6 @@ namespace ContosoUI.Users.Edit
             SelectRoleComboBox.DataBindings.Add("EditValue", userEditBindingSource, "Role");
             SelectRoleComboBox.Properties.Items.AddRange(presenter.AllRoles);
 
-            //ConfimPasswordTextEdit.DataBindings.Add("EditValue", userEditBindingSource, "Password");
-
             IsActiveUserCheckEdit.DataBindings.Add("EditValue", userEditBindingSource, "IsActive");
         }
 

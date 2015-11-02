@@ -1,4 +1,5 @@
-﻿using Data.DumbData;
+﻿using ContosoUI.Authentication;
+using Data.DumbData;
 using Domain.DAO;
 using Domain.Entities;
 using System;
@@ -11,7 +12,7 @@ using System.Windows.Forms;
 
 namespace ContosoUI.Users.Edit
 {
-    class UserEditPresenter : INotifyPropertyChanged
+    class UserEditPresenter : BaseMD5,  INotifyPropertyChanged
     {
         User user = null;
         UserEditForm view = null;
@@ -60,9 +61,9 @@ namespace ContosoUI.Users.Edit
         private void PasswordChangedHandler(object sender, EventArgs e)
         {
             if (Program.AuthUser.Role.Permissions.Any(x => x.Type == Domain.PermissionType.EditUser) ||
-                    view.OldPassword == user.Password)
+                    GetMd5Hash(view.OldPassword) == user.Password)
             {
-                user.Password = view.NewPassword;
+                user.Password = GetMd5Hash(view.NewPassword);
             }
             else
             {
