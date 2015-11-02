@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -100,20 +101,30 @@ namespace Data.DumbData
             }
         };
         #endregion
-
+        static string GetMd5Hash(string input)
+        {
+            MD5 md5Hash = MD5.Create();
+            byte[] data = md5Hash.ComputeHash(Encoding.UTF8.GetBytes(input));
+            StringBuilder sBuilder = new StringBuilder();
+            for (int i = 0; i < data.Length; i++)
+            {
+                sBuilder.Append(data[i].ToString("x2"));
+            }
+            return sBuilder.ToString();
+        }
         #region User
         public static List<User> UserCollection = new List<User>() 
         {
-            new User {Id=0, Login="admin",Password="123",PersonalInfo = PersonalInfoCollection[0], Role = RoleCollection[0], /*IsActive = false*/},
-            new User {Id=1, Login="manager",Password="123",PersonalInfo = PersonalInfoCollection[1], Role = RoleCollection[1]},
-            new User {Id=2, Login="boss",Password="123",PersonalInfo = PersonalInfoCollection[2], Role = RoleCollection[2]},
-            new User {Id=3, Login="user3",Password="123",PersonalInfo = PersonalInfoCollection[3], Role = RoleCollection[3]},
-            new User {Id=4, Login="user4",Password="123",PersonalInfo = PersonalInfoCollection[4], Role = RoleCollection[4]},
-            new User {Id=5, Login="user5",Password="123",PersonalInfo = PersonalInfoCollection[5], Role = RoleCollection[5]},
-            new User {Id=6, Login="user6",Password="123",PersonalInfo = PersonalInfoCollection[6], Role = RoleCollection[6]},
-            new User {Id=7, Login="user7",Password="123",PersonalInfo = PersonalInfoCollection[7], Role = RoleCollection[7]},
-            new User {Id=8, Login="user8",Password="123",PersonalInfo = PersonalInfoCollection[8], Role = RoleCollection[8]},
-            new User {Id=9, Login="user9",Password="123",PersonalInfo = PersonalInfoCollection[9], Role = RoleCollection[9]},
+            new User {Id=0, Login="admin",Password=GetMd5Hash("123"),PersonalInfo = PersonalInfoCollection[0], Role = RoleCollection[0], /*IsActive = false*/},
+            new User {Id=1, Login="manager",Password="admin",PersonalInfo = PersonalInfoCollection[1], Role = RoleCollection[1]},
+            new User {Id=2, Login="boss",Password=GetMd5Hash("123"),PersonalInfo = PersonalInfoCollection[2], Role = RoleCollection[2]},
+            new User {Id=3, Login="user3",Password=GetMd5Hash("123"),PersonalInfo = PersonalInfoCollection[3], Role = RoleCollection[3]},
+            new User {Id=4, Login="user4",Password=GetMd5Hash("123"),PersonalInfo = PersonalInfoCollection[4], Role = RoleCollection[4]},
+            new User {Id=5, Login="user5",Password=GetMd5Hash("123"),PersonalInfo = PersonalInfoCollection[5], Role = RoleCollection[5]},
+            new User {Id=6, Login="user6",Password=GetMd5Hash("123"),PersonalInfo = PersonalInfoCollection[6], Role = RoleCollection[6]},
+            new User {Id=7, Login="user7",Password=GetMd5Hash("123"),PersonalInfo = PersonalInfoCollection[7], Role = RoleCollection[7]},
+            new User {Id=8, Login="user8",Password=GetMd5Hash("123"),PersonalInfo = PersonalInfoCollection[8], Role = RoleCollection[8]},
+            new User {Id=9, Login="user9",Password=GetMd5Hash("123"),PersonalInfo = PersonalInfoCollection[9], Role = RoleCollection[9]},
 
         };
         #endregion
@@ -408,8 +419,8 @@ namespace Data.DumbData
             new Permission{Id=0,EditTime = DateTime.Now, Type = Domain.PermissionType.EditUser},
             new Permission{Id=1,EditTime = DateTime.Now, Type = Domain.PermissionType.ListUser},
             new Permission{Id=2,EditTime = DateTime.Now, Type = Domain.PermissionType.NewUser},
-            new Permission{Id=3,EditTime = DateTime.Now},
-            new Permission{Id=4,EditTime = DateTime.Now},
+            new Permission{Id=3,EditTime = DateTime.Now, Type = Domain.PermissionType.PrintReportUsers},
+            new Permission{Id=4,EditTime = DateTime.Now, Type = Domain.PermissionType.SaveListUsers},
             new Permission{Id=5,EditTime = DateTime.Now},
             new Permission{Id=6,EditTime = DateTime.Now},
             new Permission{Id=7,EditTime = DateTime.Now},
