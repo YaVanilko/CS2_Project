@@ -8,7 +8,7 @@ using System.Data.Entity;
 using System.Data.Entity.Migrations;
 namespace Data.EFData
 {
-    public class ProductCategoryDao : EfBaseDao<ProductCategory>
+    public class ProductCategoryDao : EfBaseDao<ProductCategory>, IProductCategoryRepository
     {
         public new IQueryable<ProductCategory> GetAll()
         {
@@ -27,6 +27,11 @@ namespace Data.EFData
         public new void Update(ProductCategory entity)
         {
             dbContext.Categories.AddOrUpdate(entity);
+            dbContext.SaveChanges();
+        }
+        public void AddOrUpdate(ProductCategory entity)
+        {
+            dbContext.Categories.AddOrUpdate(x => x.CategoryName, new ProductCategory[] { entity });
             dbContext.SaveChanges();
         }
     }

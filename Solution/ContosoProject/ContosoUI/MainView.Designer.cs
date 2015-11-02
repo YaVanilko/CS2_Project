@@ -50,6 +50,7 @@
             this.usersMenuGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.System = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
+            this.productCategoryButton = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
@@ -70,9 +71,10 @@
             this.goodsMenuBtn,
             this.addGoodsBarButton,
             this.RolesButton,
-            this.ChangePasswordBtn});
+            this.ChangePasswordBtn,
+            this.productCategoryButton});
             this.ribbonControl.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl.MaxItemId = 15;
+            this.ribbonControl.MaxItemId = 16;
             this.ribbonControl.MdiMergeStyle = DevExpress.XtraBars.Ribbon.RibbonMdiMergeStyle.Always;
             this.ribbonControl.Name = "ribbonControl";
             this.ribbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -217,6 +219,7 @@
             // 
             this.goodsMenuGroup.ItemLinks.Add(this.goodsMenuBtn);
             this.goodsMenuGroup.ItemLinks.Add(this.addGoodsBarButton);
+            this.goodsMenuGroup.ItemLinks.Add(this.productCategoryButton);
             this.goodsMenuGroup.MergeOrder = 30;
             this.goodsMenuGroup.Name = "goodsMenuGroup";
             this.goodsMenuGroup.Text = "Товары";
@@ -242,6 +245,14 @@
             // xtraTabbedMdiManager1
             // 
             this.xtraTabbedMdiManager1.MdiParent = this;
+            // 
+            // productCategoryButton
+            // 
+            this.productCategoryButton.Caption = "Категории товаров";
+            this.productCategoryButton.Id = 15;
+            this.productCategoryButton.ImageUri.Uri = "Filter";
+            this.productCategoryButton.Name = "productCategoryButton";
+            this.productCategoryButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.productCategoryButton_ItemClick);
             // 
             // MainView
             // 
@@ -279,5 +290,6 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup usersMenuGroup;
         private DevExpress.XtraBars.BarButtonItem RolesButton;
         private DevExpress.XtraBars.BarButtonItem ChangePasswordBtn;
+        private DevExpress.XtraBars.BarButtonItem productCategoryButton;
     }
 }

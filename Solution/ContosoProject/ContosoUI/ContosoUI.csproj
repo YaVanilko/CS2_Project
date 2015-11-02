@@ -129,6 +129,13 @@
     <Compile Include="Order\Search\SearchView.Designer.cs">
       <DependentUpon>SearchView.cs</DependentUpon>
     </Compile>
+    <Compile Include="ProductCategoryList\ProductCategoryPresenter.cs" />
+    <Compile Include="ProductCategoryList\ProductCategoryView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProductCategoryList\ProductCategoryView.Designer.cs">
+      <DependentUpon>ProductCategoryView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Users\Edit\UserEditForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -190,6 +197,9 @@
     <EmbeddedResource Include="Order\Search\SearchView.resx">
       <DependentUpon>SearchView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ProductCategoryList\ProductCategoryView.resx">
+      <DependentUpon>ProductCategoryView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Users\Edit\UserEditForm.resx">
       <DependentUpon>UserEditForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -229,6 +239,7 @@
     <EmbeddedResource Include="Test\OrderListView.resx">
       <DependentUpon>OrderListView.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Properties\DataSources\Domain.Entities.ProductCategory.datasource" />
     <None Include="Properties\DataSources\Domain.Entities.Role.datasource" />
     <None Include="Properties\DataSources\Domain.Entities.User.datasource" />
     <None Include="Properties\Settings.settings">

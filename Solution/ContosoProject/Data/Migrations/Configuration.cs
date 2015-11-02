@@ -41,7 +41,8 @@ namespace Data.Migrations
 
                 new Permission{Name = "Список ролей", Type = Domain.PermissionType.ListRoles},
                 new Permission{Name = "Добавление роли", Type = Domain.PermissionType.NewRole},
-                new Permission{Name = "Редактирование роли", Type = Domain.PermissionType.EditRole}
+                new Permission{Name = "Редактирование роли", Type = Domain.PermissionType.EditRole},
+                new Permission{Name = "Редактирование категории товаров", Type = Domain.PermissionType.EditProductCategory}
             };
             
             var role = new Role { Name = "Administrator", Permissions = permissions };
