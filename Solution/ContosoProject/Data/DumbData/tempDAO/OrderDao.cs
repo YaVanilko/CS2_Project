@@ -8,7 +8,11 @@ using System.Threading.Tasks;
 
 namespace Data.DumbData
 {
-    class OrderDao : BaseDao<Order>, IOrderRepository
+    public class OrderDao : BaseDao<Order>, IOrderRepository
     {
+        public ICollection<Order> GetOrderByStatus(string status)
+        {
+            return Storage.OrderCollection.Where(x => x.Status.Status == status).ToList();
+        }
     }
 }

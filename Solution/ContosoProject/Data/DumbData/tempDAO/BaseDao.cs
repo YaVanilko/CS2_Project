@@ -56,6 +56,7 @@ namespace Data.DumbData
             }
             else if (entityType == typeof(Comment))
             {
+                (entity as Comment).Id = Storage.CommentCollection.Count + 1;
                 Storage.CommentCollection.Add(entity as Comment);
             }
             else if (entityType == typeof(OrderStatus))

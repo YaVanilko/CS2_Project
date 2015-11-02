@@ -12,6 +12,7 @@ namespace Domain.Entities
         public ContactInfo Contacts { get; set; }
         public List<Order> Orders { get; set; }
         public List<Comment> Comments { get; set; }
+
         public Customer()
         {
             Orders = new List<Order>();

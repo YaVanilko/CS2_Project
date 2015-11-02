@@ -51,6 +51,13 @@
     <Reference Include="DevExpress.XtraPrinting.v15.1, Version=15.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraReports.v15.1, Version=15.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraReports.v15.1.Extensions, Version=15.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -70,12 +77,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AuthenticationForm\AuthenticationForm.cs">
+    <Compile Include="Authentication\AuthenticationForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AuthenticationForm\AuthenticationForm.Designer.cs">
+    <Compile Include="Authentication\AuthenticationForm.Designer.cs">
       <DependentUpon>AuthenticationForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Authentication\AuthenticationPresenter.cs" />
     <Compile Include="Customers\Add\CustomerDetailsPresenter.cs" />
     <Compile Include="Customers\Add\CustomerDetailsViev.cs">
       <SubType>Form</SubType>
@@ -91,41 +99,62 @@
       <DependentUpon>CustomersListViev.cs</DependentUpon>
     </Compile>
     <Compile Include="Customers\Search\CustomersListViewModel.cs" />
-    <Compile Include="EditUserForm\EditUserForm .cs">
+    <Compile Include="GoodsAll\AddGoods\AddGoods.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EditUserForm\EditUserForm .Designer.cs">
-      <DependentUpon>EditUserForm .cs</DependentUpon>
+    <Compile Include="GoodsAll\AddGoods\AddGoods.Designer.cs">
+      <DependentUpon>AddGoods.cs</DependentUpon>
     </Compile>
-    <Compile Include="GoodsForm.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>GoodsForm.resx</DependentUpon>
-    </Compile>
-    <Compile Include="GoodsForm1\GoodsForm.cs">
+    <Compile Include="GoodsAll\AddGoods\AddGoodsPresenter.cs" />
+    <Compile Include="GoodsAll\GoodsF\GoodsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GoodsForm1\GoodsForm.Designer.cs">
+    <Compile Include="GoodsAll\GoodsF\GoodsForm.Designer.cs">
       <DependentUpon>GoodsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="GoodsForm1\GoodsModel.cs" />
-    <Compile Include="GoodsForm1\GoodsPresenter.cs" />
-    <Compile Include="GoodsForm1\IGoodsModel.cs" />
-    <Compile Include="GoodsForm1\IGoodsView.cs" />
-    <Compile Include="GoodsStoreReportForm\GoodsStoreReportForm.cs">
+    <Compile Include="GoodsAll\GoodsF\GoodsListViewModel.cs" />
+    <Compile Include="GoodsAll\GoodsF\GoodsPresenter.cs" />
+    <Compile Include="Order\AddEdit\AddEditOrderPresenter.cs" />
+    <Compile Include="Order\AddEdit\AddEditOrderView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GoodsStoreReportForm\GoodsStoreReportForm.Designer.cs">
-      <DependentUpon>GoodsStoreReportForm.cs</DependentUpon>
+    <Compile Include="Order\AddEdit\AddEditOrderView.Designer.cs">
+      <DependentUpon>AddEditOrderView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Order\Search\SearchPresenter.cs" />
+    <Compile Include="Order\Search\SearchView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Order\Search\SearchView.designer.cs">
+      <DependentUpon>SearchView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users\Edit\UserEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users\Edit\UserEditForm.Designer.cs">
+      <DependentUpon>UserEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users\Edit\UserEditPresenter.cs" />
+    <Compile Include="Roles\RolesPresenter.cs" />
+    <Compile Include="Roles\RolesView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Roles\RolesView.Designer.cs">
+      <DependentUpon>RolesView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users\ReportForm\UserReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users\ReportForm\UserReportForm.Designer.cs">
+      <DependentUpon>UserReportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users\ReportForm\UserReportPresenter.cs" />
+    <Compile Include="Users\ReportForm\UserReportViewModel.cs" />
     <Compile Include="MainView.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MainView.Designer.cs">
       <DependentUpon>MainView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Order\Edit\EditOrderForm.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Test\CustomerListView.cs">
       <SubType>Form</SubType>
@@ -139,7 +168,7 @@
     <Compile Include="Test\OrderListView.Designer.cs">
       <DependentUpon>OrderListView.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AuthenticationForm\AuthenticationForm.resx">
+    <EmbeddedResource Include="Authentication\AuthenticationForm.resx">
       <DependentUpon>AuthenticationForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Customers\Add\CustomerDetailsViev.resx">
@@ -148,47 +177,31 @@
     <EmbeddedResource Include="Customers\Search\CustomersListViev.resx">
       <DependentUpon>CustomersListViev.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditUserForm\EditUserForm .resx">
-      <DependentUpon>EditUserForm .cs</DependentUpon>
+    <EmbeddedResource Include="GoodsAll\AddGoods\AddGoods.resx">
+      <DependentUpon>AddGoods.cs</DependentUpon>
     </EmbeddedResource>
-    <Compile Include="Order\Edit\EditOrderForm.Designer.cs">
-      <DependentUpon>EditOrderForm.cs</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="GoodsForm.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>GoodsForm.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GoodsForm1\GoodsForm.resx">
+    <EmbeddedResource Include="GoodsAll\GoodsF\GoodsForm.resx">
       <DependentUpon>GoodsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GoodsStoreReportForm\GoodsStoreReportForm.resx">
-      <DependentUpon>GoodsStoreReportForm.cs</DependentUpon>
+    <EmbeddedResource Include="Order\AddEdit\AddEditOrderView.resx">
+      <DependentUpon>AddEditOrderView.cs</DependentUpon>
     </EmbeddedResource>
-    <Compile Include="Order\Add\AddOrderForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Order\Add\AddOrderForm.Designer.cs">
-      <DependentUpon>AddOrderForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Order\Report\OrderReportFrom.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Order\Report\OrderReportFrom.Designer.cs">
-      <DependentUpon>OrderReportFrom.cs</DependentUpon>
-    </Compile>
+    <EmbeddedResource Include="Order\Search\SearchView.resx">
+      <DependentUpon>SearchView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users\Edit\UserEditForm.resx">
+      <DependentUpon>UserEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Roles\RolesView.resx">
+      <DependentUpon>RolesView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users\ReportForm\UserReportForm.resx">
+      <DependentUpon>UserReportForm.cs</DependentUpon>
+    </EmbeddedResource>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="MainView.resx">
       <DependentUpon>MainView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Order\Edit\EditOrderForm.resx">
-      <DependentUpon>EditOrderForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Order\Add\AddOrderForm.resx">
-      <DependentUpon>AddOrderForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Order\Report\OrderReportFrom.resx">
-      <DependentUpon>OrderReportFrom.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -200,8 +213,14 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\DataSources\ContosoUI.Customers.Search.CustomersListViewModel.datasource" />
+    <None Include="Properties\DataSources\ContosoUI.EditUserForm.UserReportViewModel.datasource" />
+    <None Include="Properties\DataSources\ContosoUI.Users.Edit.UserEditPresenter.datasource" />
+    <None Include="Properties\DataSources\Data.DumbData.Storage.datasource" />
+    <None Include="Properties\DataSources\Data.EFData.PermissionDao.datasource" />
     <None Include="Properties\DataSources\Domain.Entities.Customer.datasource" />
+    <None Include="Properties\DataSources\Domain.Entities.Goods.datasource" />
     <None Include="Properties\DataSources\Domain.Entities.Order.datasource" />
     <EmbeddedResource Include="Test\CustomerListView.resx">
       <DependentUpon>CustomerListView.cs</DependentUpon>
@@ -209,6 +228,8 @@
     <EmbeddedResource Include="Test\OrderListView.resx">
       <DependentUpon>OrderListView.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Properties\DataSources\Domain.Entities.Role.datasource" />
+    <None Include="Properties\DataSources\Domain.Entities.User.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -232,6 +253,7 @@
       <Name>Domain</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

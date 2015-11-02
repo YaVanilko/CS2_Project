@@ -45,7 +45,7 @@
     <Compile Include="DAO\IDAO\IGoodsRepository.cs" />
     <Compile Include="DAO\IDAO\IGoodsRowRepository.cs" />
     <Compile Include="DAO\IDAO\IOrderRepository.cs" />
-    <Compile Include="DAO\IDAO\IOrderStstusRepository.cs" />
+    <Compile Include="DAO\IDAO\IOrderStatusRepository.cs" />
     <Compile Include="DAO\IDAO\IPermissionRepository.cs" />
     <Compile Include="DAO\IDAO\IPersonalInfoRepository.cs" />
     <Compile Include="DAO\IDAO\IProductCategoryRepository.cs" />
@@ -66,6 +66,7 @@
     <Compile Include="Entities\ProductCategory.cs" />
     <Compile Include="Entities\Role.cs" />
     <Compile Include="Entities\User.cs" />
+    <Compile Include="PermissionType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

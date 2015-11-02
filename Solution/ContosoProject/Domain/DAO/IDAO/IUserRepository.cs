@@ -11,5 +11,6 @@ namespace Domain.DAO
 {
     public interface IUserRepository : IRepository<User>
     {
+        bool TryFindByLoginPassword(out User authUser, string login, string password);
     }
 }

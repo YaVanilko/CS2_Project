@@ -8,8 +8,14 @@ namespace Domain.Entities
 {
     public class Permission : BaseEntity
     {
-        List<Role> Roles { get; set; }
+        public PermissionType Type { get; set; }
+        public string Name { get; set; }
 
-        public Permission() { Roles = new List<Role>(); }
+        public virtual ICollection<Role> Roles { get; set; }
+
+        public Permission()
+        {
+            Roles = new List<Role>();
+        }
     }
 }

@@ -1,6 +1,4 @@
-﻿using ContosoUI.Customers.Search;
-using ContosoUI.Customers.Add;
-using Data.DumbData;
+﻿using Data.DumbData;
 using Domain.DAO;
 using Domain.Entities;
 using System;
@@ -8,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ContosoUI.Authentication;
 
 namespace ContosoUI
 {
@@ -20,16 +19,25 @@ namespace ContosoUI
         [STAThread]
         static void Main()
         {
-            GetAuthUser();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            GetAuthUser();
             Application.Run(new MainView());
         }
 
         private static void GetAuthUser()
         {
-            IUserRepository repo = new UserDao();
-            AuthUser = repo.GetById(0);
+            var auth = new AuthenticationForm();
+            auth.ShowDialog();
+            if (auth.DialogResult==DialogResult.OK)
+            {
+                AuthUser = auth.presenter.user;
+            }
+            else
+            {
+                System.Environment.Exit(0);
+            }
+            
         }
     }
 }

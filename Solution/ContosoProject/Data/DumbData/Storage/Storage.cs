@@ -12,16 +12,16 @@ namespace Data.DumbData
         #region Role
         public static List<Role> RoleCollection = new List<Role>()
         {
-            new Role{Id=0},
-            new Role{Id=1},
-            new Role{Id=2},
-            new Role{Id=3},
-            new Role{Id=4},
-            new Role{Id=5},
-            new Role{Id=6},
-            new Role{Id=7},
-            new Role{Id=8},
-            new Role{Id=9}
+            new Role{Id=0, Name = "Администратор"},
+            new Role{Id=1, Name = "Шеф"},
+            new Role{Id=2, Name = "Менеджер"},
+            new Role{Id=3, Name = "Друг Админа"},
+            new Role{Id=4, Name = "Друг Шефа"},
+            new Role{Id=5, Name = "Администратор"},
+            new Role{Id=6, Name = "Менеджер"},
+            new Role{Id=7, Name = "Менеджер"},
+            new Role{Id=8, Name = "Менеджер"},
+            new Role{Id=9, Name = "Менеджер"}
         };
         #endregion
 
@@ -104,16 +104,16 @@ namespace Data.DumbData
         #region User
         public static List<User> UserCollection = new List<User>() 
         {
-            new User {Id=0, Login="admin",Password="123",PersonalInfo = PersonalInfoCollection[0], Role = RoleCollection[0]},
+            new User {Id=0, Login="admin",Password="123",PersonalInfo = PersonalInfoCollection[0], Role = RoleCollection[0], /*IsActive = false*/},
             new User {Id=1, Login="manager",Password="123",PersonalInfo = PersonalInfoCollection[1], Role = RoleCollection[1]},
             new User {Id=2, Login="boss",Password="123",PersonalInfo = PersonalInfoCollection[2], Role = RoleCollection[2]},
             new User {Id=3, Login="user3",Password="123",PersonalInfo = PersonalInfoCollection[3], Role = RoleCollection[3]},
-            new User {Id=3, Login="user4",Password="123",PersonalInfo = PersonalInfoCollection[4], Role = RoleCollection[4]},
-            new User {Id=3, Login="user5",Password="123",PersonalInfo = PersonalInfoCollection[5], Role = RoleCollection[5]},
-            new User {Id=3, Login="user6",Password="123",PersonalInfo = PersonalInfoCollection[6], Role = RoleCollection[6]},
-            new User {Id=3, Login="user7",Password="123",PersonalInfo = PersonalInfoCollection[7], Role = RoleCollection[7]},
-            new User {Id=3, Login="user8",Password="123",PersonalInfo = PersonalInfoCollection[8], Role = RoleCollection[8]},
-            new User {Id=3, Login="user9",Password="123",PersonalInfo = PersonalInfoCollection[9], Role = RoleCollection[9]},
+            new User {Id=4, Login="user4",Password="123",PersonalInfo = PersonalInfoCollection[4], Role = RoleCollection[4]},
+            new User {Id=5, Login="user5",Password="123",PersonalInfo = PersonalInfoCollection[5], Role = RoleCollection[5]},
+            new User {Id=6, Login="user6",Password="123",PersonalInfo = PersonalInfoCollection[6], Role = RoleCollection[6]},
+            new User {Id=7, Login="user7",Password="123",PersonalInfo = PersonalInfoCollection[7], Role = RoleCollection[7]},
+            new User {Id=8, Login="user8",Password="123",PersonalInfo = PersonalInfoCollection[8], Role = RoleCollection[8]},
+            new User {Id=9, Login="user9",Password="123",PersonalInfo = PersonalInfoCollection[9], Role = RoleCollection[9]},
 
         };
         #endregion
@@ -264,16 +264,16 @@ namespace Data.DumbData
         #region Comment
         public static List<Comment> CommentCollection = new List<Comment>()
             {
-                new Comment(){Id = 0, Operator = UserCollection[2], Message="This order is for Mr.Been", Type=CommentType.Order},
-                new Comment(){Id = 1, Operator = UserCollection[1], Message= "Утром деньги, вечером стуья",Type=CommentType.Order},
-                new Comment(){Id = 2, Operator = UserCollection[0], Message= "Стулья ничего так, но себе лучше не брать", Type=CommentType.Goods},
-                new Comment(){Id = 3, Operator = UserCollection[1], Message="Брать предоплату 100%!!",Type= CommentType.Customer},
-                new Comment(){Id = 4, Operator = UserCollection[1], Message= "Норм чел. Никаких претензий или проблем",Type= CommentType.Customer},
-                new Comment(){Id = 5, Operator = UserCollection[1], Message="Ну и заказик... ", Type=CommentType.Order},
-                new Comment(){Id = 6, Operator = UserCollection[1], Message= "Шкафы классные, но на дверях лучше не кататься", Type=CommentType.Goods},
-                new Comment(){Id = 7, Operator = UserCollection[1], Message= "Видимо кресло хорошее, т.к. шеф себе заказал",Type= CommentType.Goods},
-                new Comment(){Id = 8, Operator = UserCollection[1], Message= "ЧП \"Ромашка\" для офиса. Опт", Type=CommentType.Order},
-                new Comment(){Id = 9, Operator = UserCollection[1], Message = "Необходимо привезти завтра до 10", Type=CommentType.Order }
+                new Comment(){Id = 0, Message="This order is for Mr.Been", Type=CommentType.Order},
+                new Comment(){Id = 1,  Message= "Утром деньги, вечером стуья",Type=CommentType.Order},
+                new Comment(){Id = 2,  Message= "Стулья ничего так, но себе лучше не брать", Type=CommentType.Goods},
+                new Comment(){Id = 3,  Message="Брать предоплату 100%!!",Type= CommentType.Customer},
+                new Comment(){Id = 4,  Message= "Норм чел. Никаких претензий или проблем",Type= CommentType.Customer},
+                new Comment(){Id = 5,  Message="Ну и заказик... ", Type=CommentType.Order},
+                new Comment(){Id = 6,  Message= "Шкафы классные, но на дверях лучше не кататься", Type=CommentType.Goods},
+                new Comment(){Id = 7, Message= "Видимо кресло хорошее, т.к. шеф себе заказал",Type= CommentType.Goods},
+                new Comment(){Id = 8, Message= "ЧП \"Ромашка\" для офиса. Опт", Type=CommentType.Order},
+                new Comment(){Id = 9,  Message = "Необходимо привезти завтра до 10", Type=CommentType.Order }
        };
         #endregion
 
@@ -373,48 +373,48 @@ namespace Data.DumbData
         #region GoodsRow
         public static List<GoodsRow> GoodsRowCollection = new List<GoodsRow>() 
         { 
-            new GoodsRow{Id = 0,Goods = goodsCollection[0], Count=2, Price=400, TotalPrice=800},
-            new GoodsRow{Id = 1,Goods = goodsCollection[1], Count=1, Price=2000, TotalPrice=2000},
-            new GoodsRow{Id = 2,Goods = goodsCollection[2], Count=1, Price=1400, TotalPrice=1400},
-            new GoodsRow{Id = 3,Goods = goodsCollection[3], Count=1, Price=12400, TotalPrice=12400},
-            new GoodsRow{Id = 4,Goods = goodsCollection[4], Count=1, Price=6059.16, TotalPrice=6059.16},
-            new GoodsRow{Id = 5,Goods = goodsCollection[5], Count=2, Price=605, TotalPrice=1210},
-            new GoodsRow{Id = 6,Goods = goodsCollection[6], Count=1, Price=7000.80},
-            new GoodsRow{Id = 7,Goods = goodsCollection[7], Count=4, Price=200, TotalPrice=800},
-            new GoodsRow{Id = 8,Goods = goodsCollection[8], Count=1, Price=1200, TotalPrice=1200},
-            new GoodsRow{Id = 9,Goods = goodsCollection[9], Count=2, Price=500, TotalPrice=1000},
+            new GoodsRow(){Id = 0,Goods = goodsCollection[0], Count=2, Price=400},
+            new GoodsRow(){Id = 1,Goods = goodsCollection[1], Count=1, Price=2000},
+            new GoodsRow(){Id = 2,Goods = goodsCollection[2], Count=1, Price=1400},
+            new GoodsRow(){Id = 3,Goods = goodsCollection[3], Count=1, Price=12400},
+            new GoodsRow(){Id = 4,Goods = goodsCollection[4], Count=1, Price=6059.16},
+            new GoodsRow(){Id = 5,Goods = goodsCollection[5], Count=2, Price=605},
+            new GoodsRow(){Id = 6,Goods = goodsCollection[6], Count=1, Price=7000.80},
+            new GoodsRow(){Id = 7,Goods = goodsCollection[7], Count=4, Price=200},
+            new GoodsRow(){Id = 8,Goods = goodsCollection[8], Count=1, Price=1200},
+            new GoodsRow(){Id = 9,Goods = goodsCollection[9], Count=2, Price=500},
         };
         #endregion
 
         #region Order
         public static List<Order> OrderCollection = new List<Order>() 
         { 
-            new Order{Id = 0, Customer = CustomerCollection[0]},
-            new Order{Id = 1, Customer = CustomerCollection[1]},
-            new Order{Id = 2, Customer = CustomerCollection[2]},
-            new Order{Id = 3, Customer = CustomerCollection[3]},
-            new Order{Id = 4, Customer = CustomerCollection[4]},
-            new Order{Id = 5, Customer = CustomerCollection[5]},
-            new Order{Id = 6, Customer = CustomerCollection[6]},
-            new Order{Id = 7, Customer = CustomerCollection[7]},
-            new Order{Id = 8, Customer = CustomerCollection[8]},
-            new Order{Id = 9, Customer = CustomerCollection[9]},
+            new Order(){Id = 0, Customer = CustomerCollection[0], Status = OrderStatusCollection[0], comments = CommentCollection},
+            new Order(){Id = 1, Customer = CustomerCollection[1], Status = OrderStatusCollection[1], comments = CommentCollection},
+            new Order(){Id = 2, Customer = CustomerCollection[2], Status = OrderStatusCollection[1], comments = CommentCollection},
+            new Order(){Id = 3, Customer = CustomerCollection[3], Status = OrderStatusCollection[2], comments = CommentCollection},
+            new Order(){Id = 4, Customer = CustomerCollection[4], Status = OrderStatusCollection[2], comments = CommentCollection},
+            new Order(){Id = 5, Customer = CustomerCollection[5], Status = OrderStatusCollection[3], comments = CommentCollection},
+            new Order(){Id = 6, Customer = CustomerCollection[6], Status = OrderStatusCollection[4], comments = CommentCollection},
+            new Order(){Id = 7, Customer = CustomerCollection[7], Status = OrderStatusCollection[4], comments = CommentCollection},
+            new Order(){Id = 8, Customer = CustomerCollection[8], Status = OrderStatusCollection[0], comments = CommentCollection},
+            new Order(){Id = 9, Customer = CustomerCollection[9], Status = OrderStatusCollection[0], comments = CommentCollection},
         };
         #endregion
 
         #region Permission
         public static List<Permission> PermissionCollection = new List<Permission>() 
         {
-            new Permission{Id=0,EditTime = DateTime.Now},
-            new Permission{Id=1,EditTime = DateTime.Now},
-            new Permission{Id=2,EditTime = DateTime.Now},
-            new Permission{Id=3,EditTime = DateTime.Now},
-            new Permission{Id=4,EditTime = DateTime.Now},
-            new Permission{Id=5,EditTime = DateTime.Now},
-            new Permission{Id=6,EditTime = DateTime.Now},
-            new Permission{Id=7,EditTime = DateTime.Now},
-            new Permission{Id=8,EditTime = DateTime.Now},
-            new Permission{Id=9,EditTime = DateTime.Now},
+            new Permission(){Id=0,EditTime = DateTime.Now, Type = Domain.PermissionType.EditUser},
+            new Permission(){Id=1,EditTime = DateTime.Now, Type = Domain.PermissionType.ListUser},
+            new Permission(){Id=2,EditTime = DateTime.Now, Type = Domain.PermissionType.NewUser},
+            new Permission(){Id=3,EditTime = DateTime.Now},
+            new Permission(){Id=4,EditTime = DateTime.Now},
+            new Permission(){Id=5,EditTime = DateTime.Now},
+            new Permission(){Id=6,EditTime = DateTime.Now},
+            new Permission(){Id=7,EditTime = DateTime.Now},
+            new Permission(){Id=8,EditTime = DateTime.Now},
+            new Permission(){Id=9,EditTime = DateTime.Now},
 
         };
         #endregion
@@ -442,6 +442,8 @@ namespace Data.DumbData
             OrderCollection[7].goodsList.Add(GoodsRowCollection[7]);
             OrderCollection[8].goodsList.Add(GoodsRowCollection[8]);
             OrderCollection[9].goodsList.Add(GoodsRowCollection[9]);
+
+            RoleCollection[0].Permissions = PermissionCollection;
         }
     }
 }
