@@ -1,6 +1,5 @@
 ﻿using Data.EFData;
 using Domain.DAO;
-
 using Domain.Entities;
 using System;
 using System.Collections.Generic;
@@ -11,10 +10,10 @@ using System.Threading.Tasks;
 
 namespace ContosoUI.GoodsAll.GoodsF
 {
-    class GoodsPresenter : INotifyPropertyChanged
+    class GoodsPresenter : INotifyPropertyChanged, IProductCategoryRepository
     {
         private IGoodsRepository model = new EFGoodsDao();
-        private IProductCategoryRepository modelCategory = new EFProductCategoryDao();
+        private IProductCategoryRepository modelCategory = new ProductCategoryDao();
         private GoodsForm goodsView;
 
         public List<GoodsListViewModel> viewModel = new List<GoodsListViewModel>();
@@ -116,6 +115,36 @@ namespace ContosoUI.GoodsAll.GoodsF
             {
                 PropertyChanged(this, new PropertyChangedEventArgs(info));
             }
+        }
+
+        public void Add(ProductCategory entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Update(ProductCategory entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Delete(ProductCategory entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public ProductCategory GetById(int Id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IQueryable<ProductCategory> GetAll()
+        {
+            throw new NotImplementedException();
+        }
+
+        public IQueryable<ProductCategory> FindBy(System.Linq.Expressions.Expression<Func<ProductCategory, bool>> predicate)
+        {
+            throw new NotImplementedException();
         }
     }
 }
