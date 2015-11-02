@@ -201,6 +201,7 @@
             // 
             this.customersMenuGroup.ItemLinks.Add(this.customersMenuBtn);
             this.customersMenuGroup.ItemLinks.Add(this.addNewCustomerBtn);
+            this.customersMenuGroup.MergeOrder = 10;
             this.customersMenuGroup.Name = "customersMenuGroup";
             this.customersMenuGroup.Text = "Клиенты";
             // 
@@ -208,6 +209,7 @@
             // 
             this.ordersMenuGroup.ItemLinks.Add(this.ordersMenuBtn);
             this.ordersMenuGroup.ItemLinks.Add(this.addNewOrderBtn);
+            this.ordersMenuGroup.MergeOrder = 20;
             this.ordersMenuGroup.Name = "ordersMenuGroup";
             this.ordersMenuGroup.Text = "Заказы";
             // 
@@ -215,6 +217,7 @@
             // 
             this.goodsMenuGroup.ItemLinks.Add(this.goodsMenuBtn);
             this.goodsMenuGroup.ItemLinks.Add(this.addGoodsBarButton);
+            this.goodsMenuGroup.MergeOrder = 30;
             this.goodsMenuGroup.Name = "goodsMenuGroup";
             this.goodsMenuGroup.Text = "Товары";
             // 
@@ -223,6 +226,7 @@
             this.usersMenuGroup.ItemLinks.Add(this.usersMenuBtn);
             this.usersMenuGroup.ItemLinks.Add(this.addNewUserBtn);
             this.usersMenuGroup.ItemLinks.Add(this.RolesButton);
+            this.usersMenuGroup.MergeOrder = 40;
             this.usersMenuGroup.Name = "usersMenuGroup";
             this.usersMenuGroup.Text = "Пользователи";
             // 
@@ -231,6 +235,7 @@
             this.System.ItemLinks.Add(this.logoutBtn);
             this.System.ItemLinks.Add(this.ChangePasswordBtn);
             this.System.ItemLinks.Add(this.exitBtn);
+            this.System.MergeOrder = 50;
             this.System.Name = "System";
             this.System.Text = "Системные";
             // 
