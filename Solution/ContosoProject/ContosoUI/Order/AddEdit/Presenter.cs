@@ -34,7 +34,7 @@ namespace ContosoUI.Order.AddEdit
         {
             get
             {
-                return order.goodsList;
+                return order.GoodsList;
             }
 
             set { }
@@ -62,7 +62,7 @@ namespace ContosoUI.Order.AddEdit
         {
             get
             {
-                return order.comments;
+                return order.Comments;
             }
 
             set { }

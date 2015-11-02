@@ -4,7 +4,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Data.Entity;
+using System.Data.Entity.Migrations;
 
 namespace Data.EFData
 {
@@ -12,8 +13,22 @@ namespace Data.EFData
     {
         public new IQueryable<Role> GetAll()
         {
-            IQueryable<Role> collection = dbContext.Roles.Where(x => x.IsActive);
+            IQueryable<Role> collection = dbContext.Roles.Where(x => x.IsActive)
+                .Include(x=> x.Permissions);
             return collection;
+        }
+
+        public new Role GetById(int id)
+        {
+            return dbContext.Roles.Where(x => x.Id == id)
+                .Include(x => x.Permissions).FirstOrDefault();
+        }
+
+        public new void Update(Permission entity)
+        {
+            dbContext.Permissions.AddOrUpdate(entity);
+            dbContext.SaveChanges();
+        
         }
     }
 }
