@@ -53,7 +53,17 @@ namespace ContosoUI.ProductCategoryList
             {
                 if (category.IsActive != true)
                 {
-                    MessageBox.Show("Вы уверенны, что хотите деактивировать категорию товаров? После деактивации категория будет удалена из списка!");
+                    DialogResult result;
+                    result = MessageBox.Show("Вы уверенны, что хотите деактивировать категорию товаров? После деактивации категория будет удалена из списка!", buttons: MessageBoxButtons.OKCancel, caption: "Деактивация категории товара");
+                    if (result == System.Windows.Forms.DialogResult.OK)
+                    {
+                        presenter.Save();
+                    }
+                    else
+                    {
+                        category.IsActive = true;
+                        presenter.Save();
+                    }
                 }    
             }
         }

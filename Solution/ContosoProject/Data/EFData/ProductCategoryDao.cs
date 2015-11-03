@@ -32,7 +32,8 @@ namespace Data.EFData
 
         public void AddOrUpdate(ProductCategory entity)
         {
-            throw new NotImplementedException();
+            dbContext.Categories.AddOrUpdate(x => x.CategoryName, new ProductCategory[] { entity });
+            dbContext.SaveChanges();
         }
     }
 }

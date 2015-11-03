@@ -68,6 +68,8 @@ namespace ContosoUI.Roles
         }
         private void saveRoleButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            rolesGridView.CloseEditor();
+            rolesGridView.UpdateCurrentRow();
             SavePermissions();    
             presenter.Save();
         }
@@ -104,10 +106,19 @@ namespace ContosoUI.Roles
             {
                 if (role.IsActive != true)
                 {
-                    MessageBox.Show("Вы уверенны, что хотите деактивировать категорию товаров? После деактивации категория будет удалена из списка!");
+                    DialogResult result;
+                    result = MessageBox.Show("Вы уверенны, что хотите деактивировать роль пользователя? После деактивации роль будет удалена из списка!", buttons: MessageBoxButtons.OKCancel, caption: "Деактивация роли");
+                    if (result == System.Windows.Forms.DialogResult.OK)
+                    {
+                        presenter.Save();
+                    }
+                    else
+                    {
+                        role.IsActive = true;
+                        presenter.Save();
+                    }
                 }
             }
-            presenter.Save();
         }
     }
 }
