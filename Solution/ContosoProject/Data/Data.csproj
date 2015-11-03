@@ -84,6 +84,10 @@
     <Compile Include="EFData\RoleDao.cs" />
     <Compile Include="EFData\RoleViewProxy.cs" />
     <Compile Include="EFData\UserDao.cs" />
+    <Compile Include="Migrations\201511031214147_Init.cs" />
+    <Compile Include="Migrations\201511031214147_Init.Designer.cs">
+      <DependentUpon>201511031214147_Init.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -98,6 +102,11 @@
       <Project>{39d880e2-2939-497d-8049-5eb6ad7bcb40}</Project>
       <Name>Domain</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201511031214147_Init.resx">
+      <DependentUpon>201511031214147_Init.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
