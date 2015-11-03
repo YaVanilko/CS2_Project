@@ -63,6 +63,8 @@ namespace ContosoUI.Users.Edit
                     view.OldPassword.ToMD5() == user.Password)
             {
                 user.Password = view.NewPassword.ToMD5();
+                MessageBox.Show("Пароль успешно изменен.", "Сообщеие");
+                SaveBtnClickHandler(null, null);
             }
             else
             {
