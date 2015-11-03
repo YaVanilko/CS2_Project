@@ -9,5 +9,15 @@ namespace Domain.Entities
     public class OrderStatus:BaseEntity
     {
         public string Status { get; set; }
+
+        public OrderStatus(string status)
+        {
+            Status = status;
+        }
+
+        public override string ToString()
+        {
+            return String.Format(Status);
+        }
     }
 }

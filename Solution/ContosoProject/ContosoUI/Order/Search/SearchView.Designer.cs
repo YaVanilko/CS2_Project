@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SearchView));
             this.ribbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.searchBarButtonItem = new DevExpress.XtraBars.BarButtonItem();
@@ -36,7 +37,9 @@
             this.layoutControl = new DevExpress.XtraLayout.LayoutControl();
             this.statusComboBox = new System.Windows.Forms.ComboBox();
             this.resultGridControl = new DevExpress.XtraGrid.GridControl();
+            this.searchViewModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ordersGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colStatus = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCustomer = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colcountOfGoods = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -45,16 +48,15 @@
             this.layoutControlGroup = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.statusLayoutControlItem = new DevExpress.XtraLayout.LayoutControlItem();
-            this.searchViewModelBindingSource = new System.Windows.Forms.BindingSource();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl)).BeginInit();
             this.layoutControl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.resultGridControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchViewModelBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordersGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.statusLayoutControlItem)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.searchViewModelBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonControl
@@ -115,6 +117,7 @@
             // 
             // resultGridControl
             // 
+            this.resultGridControl.DataSource = this.searchViewModelBindingSource;
             this.resultGridControl.Location = new System.Drawing.Point(12, 53);
             this.resultGridControl.MainView = this.ordersGridView;
             this.resultGridControl.MenuManager = this.ribbonControl;
@@ -124,9 +127,14 @@
             this.resultGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.ordersGridView});
             // 
+            // searchViewModelBindingSource
+            // 
+            this.searchViewModelBindingSource.DataSource = typeof(ContosoUI.Order.Search.SearchViewModel);
+            // 
             // ordersGridView
             // 
             this.ordersGridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colId,
             this.colStatus,
             this.colCustomer,
             this.colcountOfGoods,
@@ -134,6 +142,13 @@
             this.colcountOfComments});
             this.ordersGridView.GridControl = this.resultGridControl;
             this.ordersGridView.Name = "ordersGridView";
+            this.ordersGridView.OptionsBehavior.Editable = false;
+            this.ordersGridView.DoubleClick += new System.EventHandler(this.ordersGridView__DoubleClick);
+            // 
+            // colId
+            // 
+            this.colId.FieldName = "Id";
+            this.colId.Name = "colId";
             // 
             // colStatus
             // 
@@ -142,7 +157,6 @@
             this.colStatus.Name = "colStatus";
             this.colStatus.Visible = true;
             this.colStatus.VisibleIndex = 0;
-            this.colStatus.Width = 148;
             // 
             // colCustomer
             // 
@@ -151,7 +165,6 @@
             this.colCustomer.Name = "colCustomer";
             this.colCustomer.Visible = true;
             this.colCustomer.VisibleIndex = 1;
-            this.colCustomer.Width = 148;
             // 
             // colcountOfGoods
             // 
@@ -160,7 +173,6 @@
             this.colcountOfGoods.Name = "colcountOfGoods";
             this.colcountOfGoods.Visible = true;
             this.colcountOfGoods.VisibleIndex = 2;
-            this.colcountOfGoods.Width = 88;
             // 
             // colTotalCost
             // 
@@ -169,7 +181,6 @@
             this.colTotalCost.Name = "colTotalCost";
             this.colTotalCost.Visible = true;
             this.colTotalCost.VisibleIndex = 3;
-            this.colTotalCost.Width = 69;
             // 
             // colcountOfComments
             // 
@@ -178,7 +189,6 @@
             this.colcountOfComments.Name = "colcountOfComments";
             this.colcountOfComments.Visible = true;
             this.colcountOfComments.VisibleIndex = 4;
-            this.colcountOfComments.Width = 181;
             // 
             // layoutControlGroup
             // 
@@ -225,11 +235,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl)).EndInit();
             this.layoutControl.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.resultGridControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchViewModelBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordersGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.statusLayoutControlItem)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.searchViewModelBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -249,6 +259,7 @@
         private System.Windows.Forms.ComboBox statusComboBox;
         private DevExpress.XtraLayout.LayoutControlItem statusLayoutControlItem;
         private System.Windows.Forms.BindingSource searchViewModelBindingSource;
+        private DevExpress.XtraGrid.Columns.GridColumn colId;
         private DevExpress.XtraGrid.Columns.GridColumn colStatus;
         private DevExpress.XtraGrid.Columns.GridColumn colCustomer;
         private DevExpress.XtraGrid.Columns.GridColumn colcountOfGoods;

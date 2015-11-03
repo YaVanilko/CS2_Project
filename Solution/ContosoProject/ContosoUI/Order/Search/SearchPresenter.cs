@@ -13,59 +13,63 @@ namespace ContosoUI.Order.Search
     class SearchPresenter
     {
         readonly SearchView view;
-        public List<SearchViewModel> viewModel = new List<SearchViewModel>();
+        public List<SearchViewModel> viewModel { get; set; } 
+
         readonly IOrderRepository orderModel = new OrderDao();
         readonly IOrderStatusRepository orderStatusModel = new OrderStatusDao();
-        List<Domain.Entities.Order> ordersList = new List<Domain.Entities.Order>();
-        List<SearchViewModel> vm = new List<SearchViewModel>();
-        public List<string> Statuses = new List<string>();
- 
+
+        private List<Domain.Entities.Order> ordersList = new List<Domain.Entities.Order>();
+        readonly List<OrderStatus> statuses = new List<OrderStatus>();
+
+        public List<OrderStatus> StatusesList
+        {
+            get { return statuses; }
+        }
+
         public SearchPresenter(SearchView view)
         {
             this.view = view;
-            Statuses = orderStatusModel.GetAll().Select(x => x.Status).Distinct().ToList();
-            Statuses.Add("Все статусы");
+            viewModel = new List<SearchViewModel>();
+            statuses = orderStatusModel.GetAll().Distinct().ToList();
+            statuses.Add(new OrderStatus("Все статусы"));
         }
 
-        public void SelectOrdersByStatus(string status)
+        public void SelectOrdersByStatus(OrderStatus status)
         {
-            int index = 0;
-            if (status == "Все статусы")
+            if (status.Status == "Все статусы")
             {
                 ordersList = orderModel.GetAll().ToList();
                 viewModel.Clear();
+
                 foreach (var order in ordersList)
                 {
-                    if (index < order.goodsList.Count)
-                    {
                         viewModel.Add(new SearchViewModel()
                         {
+                            Id = order.Id,
                             Status = order.Status.Status,
                             Customer = order.Customer,
-                            countOfGoods = order.goodsList[index].Count,
+                            countOfGoods = order.goodsList.Count,
                             TotalCost = order.TotalCost,
-                            countOfComments = order.comments.Count
+                            countOfComments = order.Comments.Count
                         });
-                    }
                 }
             }
-            else if (Statuses.Contains(status))
+            else
             {
                 ordersList = orderModel.GetOrderByStatus(status).ToList();
                 viewModel.Clear();
+
                 foreach (var order in ordersList)
                 {
-                    if (index < order.goodsList.Count)
-                    {
                         viewModel.Add(new SearchViewModel()
                         {
+                            Id = order.Id,
                             Status = order.Status.Status,
                             Customer = order.Customer,
-                            countOfGoods = order.goodsList[0].Count,
+                            countOfGoods = order.goodsList.Count,
                             TotalCost = order.TotalCost,
-                            countOfComments = order.comments.Count
+                            countOfComments = order.Comments.Count
                         });
-                    }
                 }
             }
         }
@@ -73,6 +77,7 @@ namespace ContosoUI.Order.Search
 
     public class SearchViewModel
     {
+        public int Id { get; set; }
         public string Status { get; set; }
         public Customer Customer { get; set; }
         public int countOfGoods { get; set; }

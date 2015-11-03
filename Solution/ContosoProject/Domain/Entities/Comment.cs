@@ -10,5 +10,10 @@ namespace Domain.Entities
     {
         public string Message { get; set; }
         public CommentType Type { get; set; }
+
+        public override string ToString()
+        {
+            return Message;
+        }
     }
 }
