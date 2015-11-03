@@ -416,16 +416,16 @@ namespace Data.DumbData
         #region Permission
         public static List<Permission> PermissionCollection = new List<Permission>() 
         {
-            new Permission{Id=0,EditTime = DateTime.Now, Type = Domain.PermissionType.EditUser},
-            new Permission{Id=1,EditTime = DateTime.Now, Type = Domain.PermissionType.ListUser},
-            new Permission{Id=2,EditTime = DateTime.Now, Type = Domain.PermissionType.NewUser},
+            new Permission(){Id=0,EditTime = DateTime.Now, Type = Domain.PermissionType.EditUser},
+            new Permission(){Id=1,EditTime = DateTime.Now, Type = Domain.PermissionType.ListUser},
+            new Permission(){Id=2,EditTime = DateTime.Now, Type = Domain.PermissionType.NewUser},
             new Permission{Id=3,EditTime = DateTime.Now, Type = Domain.PermissionType.PrintReportUsers},
             new Permission{Id=4,EditTime = DateTime.Now, Type = Domain.PermissionType.SaveListUsers},
-            new Permission{Id=5,EditTime = DateTime.Now},
-            new Permission{Id=6,EditTime = DateTime.Now},
-            new Permission{Id=7,EditTime = DateTime.Now},
-            new Permission{Id=8,EditTime = DateTime.Now},
-            new Permission{Id=9,EditTime = DateTime.Now},
+            new Permission(){Id=5,EditTime = DateTime.Now},
+            new Permission(){Id=6,EditTime = DateTime.Now},
+            new Permission(){Id=7,EditTime = DateTime.Now},
+            new Permission(){Id=8,EditTime = DateTime.Now},
+            new Permission(){Id=9,EditTime = DateTime.Now},
 
         };
         #endregion

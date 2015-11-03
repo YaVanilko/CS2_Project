@@ -36,7 +36,7 @@ namespace ContosoUI.Order.AddEdit
 
         public List<Comment> Comments
         {
-            get { return order.Comments; }
+            get { return order.Comments.ToList(); }
             set
             {
                 if (Comments != value)

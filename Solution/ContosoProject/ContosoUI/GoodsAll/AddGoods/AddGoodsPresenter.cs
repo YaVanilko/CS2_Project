@@ -13,11 +13,11 @@ namespace ContosoUI.GoodsAll.AddGoods
     public class AddGoodsPresenter
     {
         AddGoods view;
-        IGoodsRepository model = new GoodsDao();
+        IGoodsRepository model = new EFGoodsDao();
         IProductCategoryRepository modelCategory = new Data.EFData.ProductCategoryDao();
         Goods thisGoods;
         public List<string> productCategoryList = new List<string>();
-        public List<Comment> Comments { get { return thisGoods.Coments; } set { } }
+        public List<Comment> Comments { get { return thisGoods.Coments.ToList(); } set { } }
 
         public AddGoodsPresenter(AddGoods view, int id)
         {

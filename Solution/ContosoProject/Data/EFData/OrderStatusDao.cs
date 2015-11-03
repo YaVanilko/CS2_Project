@@ -18,6 +18,13 @@ namespace Data.EFData
         public OrderStatusDao(ProjectContext context)
         {
 
+    public class OrderStatusDao : IOrderStatusRepository
+    {
+        ProjectContext dbContext;
+
+        public OrderStatusDao(ProjectContext ctx = null)
+        {
+            dbContext = ctx ?? new ProjectContext();
         }
 
         public new IQueryable<OrderStatus> GetAll()
@@ -37,6 +44,21 @@ namespace Data.EFData
         {
             dbContext.OrderStatus.AddOrUpdate(entity);
             dbContext.SaveChanges();
+        }
+
+        public void Add(OrderStatus entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Delete(OrderStatus entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IQueryable<OrderStatus> FindBy(System.Linq.Expressions.Expression<Func<OrderStatus, bool>> predicate)
+        {
+            throw new NotImplementedException();
         }
     }
 }
