@@ -1,4 +1,5 @@
-﻿using Data.DumbData;
+﻿using ContosoUI.Authentication;
+using Data.DumbData;
 using Domain.DAO;
 using Domain.Entities;
 using System;
@@ -60,9 +61,9 @@ namespace ContosoUI.Users.Edit
         private void PasswordChangedHandler(object sender, EventArgs e)
         {
             if (Program.AuthUser.Role.Permissions.Any(x => x.Type == Domain.PermissionType.EditUser) ||
-                    view.OldPassword == user.Password)
+                    view.OldPassword.ToMD5() == user.Password)
             {
-                user.Password = view.NewPassword;
+                user.Password = view.NewPassword.ToMD5();
             }
             else
             {

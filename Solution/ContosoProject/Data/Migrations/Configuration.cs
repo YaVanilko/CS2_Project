@@ -41,16 +41,20 @@ namespace Data.Migrations
 
                 new Permission{Name = "Список ролей", Type = Domain.PermissionType.ListRoles},
                 new Permission{Name = "Добавление роли", Type = Domain.PermissionType.NewRole},
-                new Permission{Name = "Редактирование роли", Type = Domain.PermissionType.EditRole}
+                new Permission{Name = "Редактирование роли", Type = Domain.PermissionType.EditRole},
+                new Permission{Name = "Редактирование категории товаров", Type = Domain.PermissionType.EditProductCategory}
             };
-            
+
             var role = new Role { Name = "Administrator", Permissions = permissions };
-            context.Roles.AddOrUpdate(x => x.Name, new Role[]{role});
+            context.Roles.AddOrUpdate(x => x.Name, new Role[] { role });
             var info = new PersonalInfo { FirstName = "admin", LastName = "admin", MiddleName = "admin" };
-            var admin = new User { Login = "admin", Password = "admin", Role = role, PersonalInfo = info };
-            context.Users.AddOrUpdate(x => x.Login, new User[]{admin});
+            context.PersonalInfoes.AddOrUpdate(info);
+            var admin = new User { Login = "admin", Password = "21232f297a57a5a743894a0e4a801fc3", Role = role, PersonalInfo = info };
+            context.Users.AddOrUpdate(x => x.Login, new User[] { admin });
+
 
             context.SaveChanges();
+
         }
     }
 }
