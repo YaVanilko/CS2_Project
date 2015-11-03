@@ -29,10 +29,10 @@ namespace Data.EFData
             dbContext.Categories.AddOrUpdate(entity);
             dbContext.SaveChanges();
         }
+
         public void AddOrUpdate(ProductCategory entity)
         {
-            dbContext.Categories.AddOrUpdate(x => x.CategoryName, new ProductCategory[] { entity });
-            dbContext.SaveChanges();
+            throw new NotImplementedException();
         }
     }
 }
