@@ -1,4 +1,5 @@
-﻿using Domain.Entities;
+﻿using DevExpress.XtraGrid.Views.Grid;
+using Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -29,6 +30,8 @@ namespace ContosoUI.ProductCategoryList
 
         private void saveButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            categoriesGridView.CloseEditor();
+            categoriesGridView.UpdateCurrentRow();
             presenter.Save();
         }
 

@@ -33,7 +33,7 @@
             this.addNewRoleButton = new DevExpress.XtraBars.BarButtonItem();
             this.mainRibbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.saveRoleRibbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.roleLayoutControl = new DevExpress.XtraLayout.LayoutControl();
             this.permissionsCheckedListBoxControl = new DevExpress.XtraEditors.CheckedListBoxControl();
             this.rolesGridControl = new DevExpress.XtraGrid.GridControl();
             this.rolesGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -41,17 +41,17 @@
             this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colIsActive = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colEditTime = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.rolePermissionLayoutControlGroup = new DevExpress.XtraLayout.LayoutControlGroup();
             this.roleControlItem = new DevExpress.XtraLayout.LayoutControlItem();
             this.permissionsControlItem = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             ((System.ComponentModel.ISupportInitialize)(this.rolesRibbomItem)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
-            this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.roleLayoutControl)).BeginInit();
+            this.roleLayoutControl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.permissionsCheckedListBoxControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rolesGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rolesGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rolePermissionLayoutControlGroup)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.roleControlItem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.permissionsControlItem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
@@ -103,18 +103,18 @@
             this.saveRoleRibbonPageGroup.Name = "saveRoleRibbonPageGroup";
             this.saveRoleRibbonPageGroup.Text = "Сохранение";
             // 
-            // layoutControl1
+            // roleLayoutControl
             // 
-            this.layoutControl1.Controls.Add(this.permissionsCheckedListBoxControl);
-            this.layoutControl1.Controls.Add(this.rolesGridControl);
-            this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.layoutControl1.Location = new System.Drawing.Point(0, 141);
-            this.layoutControl1.Name = "layoutControl1";
-            this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(196, 127, 328, 350);
-            this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(799, 527);
-            this.layoutControl1.TabIndex = 1;
-            this.layoutControl1.Text = "layoutControl1";
+            this.roleLayoutControl.Controls.Add(this.permissionsCheckedListBoxControl);
+            this.roleLayoutControl.Controls.Add(this.rolesGridControl);
+            this.roleLayoutControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.roleLayoutControl.Location = new System.Drawing.Point(0, 141);
+            this.roleLayoutControl.Name = "roleLayoutControl";
+            this.roleLayoutControl.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(196, 127, 328, 350);
+            this.roleLayoutControl.Root = this.rolePermissionLayoutControlGroup;
+            this.roleLayoutControl.Size = new System.Drawing.Size(799, 527);
+            this.roleLayoutControl.TabIndex = 1;
+            this.roleLayoutControl.Text = "layoutControl1";
             // 
             // permissionsCheckedListBoxControl
             // 
@@ -125,7 +125,7 @@
             this.permissionsCheckedListBoxControl.SelectionMode = System.Windows.Forms.SelectionMode.None;
             this.permissionsCheckedListBoxControl.Size = new System.Drawing.Size(247, 487);
             this.permissionsCheckedListBoxControl.SortOrder = System.Windows.Forms.SortOrder.Ascending;
-            this.permissionsCheckedListBoxControl.StyleController = this.layoutControl1;
+            this.permissionsCheckedListBoxControl.StyleController = this.roleLayoutControl;
             this.permissionsCheckedListBoxControl.TabIndex = 5;
             this.permissionsCheckedListBoxControl.ValueMember = "Id";
             // 
@@ -142,6 +142,7 @@
             // 
             // rolesGridView
             // 
+            this.rolesGridView.ColumnPanelRowHeight = 50;
             this.rolesGridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colName,
             this.colId,
@@ -149,49 +150,63 @@
             this.colEditTime});
             this.rolesGridView.GridControl = this.rolesGridControl;
             this.rolesGridView.Name = "rolesGridView";
+            this.rolesGridView.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
+            this.rolesGridView.OptionsView.RowAutoHeight = true;
             this.rolesGridView.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.rolesGridView_FocusedRowChanged);
             this.rolesGridView.BeforeLeaveRow += new DevExpress.XtraGrid.Views.Base.RowAllowEventHandler(this.rolesGridView_BeforeLeaveRow);
             // 
             // colName
             // 
+            this.colName.Caption = "Имя роли";
             this.colName.FieldName = "Name";
             this.colName.Name = "colName";
             this.colName.Visible = true;
-            this.colName.VisibleIndex = 0;
+            this.colName.VisibleIndex = 1;
+            this.colName.Width = 171;
             // 
             // colId
             // 
             this.colId.FieldName = "Id";
             this.colId.Name = "colId";
+            this.colId.OptionsColumn.AllowEdit = false;
+            this.colId.OptionsColumn.ReadOnly = true;
             this.colId.Visible = true;
-            this.colId.VisibleIndex = 1;
+            this.colId.VisibleIndex = 0;
+            this.colId.Width = 72;
             // 
             // colIsActive
             // 
+            this.colIsActive.Caption = "Статус (активировать/ деактивировать)";
             this.colIsActive.FieldName = "IsActive";
             this.colIsActive.Name = "colIsActive";
+            this.colIsActive.OptionsEditForm.RowSpan = 2;
             this.colIsActive.Visible = true;
             this.colIsActive.VisibleIndex = 2;
+            this.colIsActive.Width = 124;
             // 
             // colEditTime
             // 
+            this.colEditTime.Caption = "Дата редактирования";
             this.colEditTime.FieldName = "EditTime";
             this.colEditTime.Name = "colEditTime";
+            this.colEditTime.OptionsColumn.AllowEdit = false;
+            this.colEditTime.OptionsColumn.ReadOnly = true;
             this.colEditTime.Visible = true;
             this.colEditTime.VisibleIndex = 3;
+            this.colEditTime.Width = 122;
             // 
-            // layoutControlGroup1
+            // rolePermissionLayoutControlGroup
             // 
-            this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
-            this.layoutControlGroup1.GroupBordersVisible = false;
-            this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.rolePermissionLayoutControlGroup.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
+            this.rolePermissionLayoutControlGroup.GroupBordersVisible = false;
+            this.rolePermissionLayoutControlGroup.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.roleControlItem,
             this.permissionsControlItem,
             this.emptySpaceItem1});
-            this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlGroup1.Name = "Root";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(799, 527);
-            this.layoutControlGroup1.TextVisible = false;
+            this.rolePermissionLayoutControlGroup.Location = new System.Drawing.Point(0, 0);
+            this.rolePermissionLayoutControlGroup.Name = "rolePermissionLayoutControlGroup";
+            this.rolePermissionLayoutControlGroup.Size = new System.Drawing.Size(799, 527);
+            this.rolePermissionLayoutControlGroup.TextVisible = false;
             // 
             // roleControlItem
             // 
@@ -226,18 +241,18 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(799, 668);
-            this.Controls.Add(this.layoutControl1);
+            this.Controls.Add(this.roleLayoutControl);
             this.Controls.Add(this.rolesRibbomItem);
             this.Name = "RolesView";
             this.Text = "Роли пользователя";
             this.Load += new System.EventHandler(this.RolesView_Load);
             ((System.ComponentModel.ISupportInitialize)(this.rolesRibbomItem)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
-            this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.roleLayoutControl)).EndInit();
+            this.roleLayoutControl.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.permissionsCheckedListBoxControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rolesGridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rolesGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rolePermissionLayoutControlGroup)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.roleControlItem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.permissionsControlItem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
@@ -253,8 +268,8 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup saveRoleRibbonPageGroup;
         private DevExpress.XtraBars.BarButtonItem saveRoleButton;
         private DevExpress.XtraBars.BarButtonItem addNewRoleButton;
-        private DevExpress.XtraLayout.LayoutControl layoutControl1;
-        private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
+        private DevExpress.XtraLayout.LayoutControl roleLayoutControl;
+        private DevExpress.XtraLayout.LayoutControlGroup rolePermissionLayoutControlGroup;
         private DevExpress.XtraGrid.GridControl rolesGridControl;
         private DevExpress.XtraGrid.Views.Grid.GridView rolesGridView;
         private DevExpress.XtraLayout.LayoutControlItem roleControlItem;
