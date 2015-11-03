@@ -83,9 +83,9 @@
     <Compile Include="EFData\PersonalInfoDao.cs" />
     <Compile Include="EFData\ProjectContext.cs" />
     <Compile Include="EFData\RoleDao.cs" />
-    <Compile Include="EFData\RoleViewProxy.cs" />
+    <Compile Include="EFData\RoleViewService.cs" />
     <Compile Include="EFData\UserDao.cs" />
-    <Compile Include="EFData\UserRoleProxy.cs" />
+    <Compile Include="EFData\UserRoleService.cs" />
     <Compile Include="Migrations\201511031214147_Init.cs" />
     <Compile Include="Migrations\201511031214147_Init.Designer.cs">
       <DependentUpon>201511031214147_Init.cs</DependentUpon>

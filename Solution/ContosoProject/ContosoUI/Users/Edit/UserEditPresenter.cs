@@ -18,7 +18,7 @@ namespace ContosoUI.Users.Edit
         UserEditForm view = null;
         List<Role> roles = null;
 
-        UserRoleProxy model = new UserRoleProxy();
+        UserRoleService model = new UserRoleService();
         bool userIsFromBase = false;
         
         public event PropertyChangedEventHandler PropertyChanged;
