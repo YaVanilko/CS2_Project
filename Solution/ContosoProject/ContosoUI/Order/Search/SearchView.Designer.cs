@@ -37,11 +37,13 @@
             this.layoutControl = new DevExpress.XtraLayout.LayoutControl();
             this.statusComboBox = new System.Windows.Forms.ComboBox();
             this.resultGridControl = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.searchViewModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ordersGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colStatus = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCustomer = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colcountOfGoods = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTotalCost = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colStatus = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colcountOfComments = new DevExpress.XtraGrid.Columns.GridColumn();
             this.layoutControlGroup = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -50,7 +52,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl)).BeginInit();
             this.layoutControl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.resultGridControl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchViewModelBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ordersGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.statusLayoutControlItem)).BeginInit();
@@ -76,13 +79,14 @@
             this.searchBarButtonItem.Id = 1;
             this.searchBarButtonItem.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("searchBarButtonItem.LargeGlyph")));
             this.searchBarButtonItem.Name = "searchBarButtonItem";
+            this.searchBarButtonItem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.searchBarButtonItem_ItemClick);
             // 
             // mainRibbonPage
             // 
             this.mainRibbonPage.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.searchRibbonPageGroup});
             this.mainRibbonPage.Name = "mainRibbonPage";
-            this.mainRibbonPage.Text = "Главная";
+            this.mainRibbonPage.Text = "Меню";
             // 
             // searchRibbonPageGroup
             // 
@@ -106,63 +110,81 @@
             // statusComboBox
             // 
             this.statusComboBox.FormattingEnabled = true;
-            this.statusComboBox.Location = new System.Drawing.Point(51, 12);
+            this.statusComboBox.Location = new System.Drawing.Point(12, 28);
             this.statusComboBox.Name = "statusComboBox";
-            this.statusComboBox.Size = new System.Drawing.Size(721, 21);
+            this.statusComboBox.Size = new System.Drawing.Size(760, 21);
             this.statusComboBox.TabIndex = 5;
             // 
             // resultGridControl
             // 
-            this.resultGridControl.Location = new System.Drawing.Point(12, 37);
-            this.resultGridControl.MainView = this.gridView1;
+            this.resultGridControl.DataSource = this.searchViewModelBindingSource;
+            this.resultGridControl.Location = new System.Drawing.Point(12, 53);
+            this.resultGridControl.MainView = this.ordersGridView;
             this.resultGridControl.MenuManager = this.ribbonControl;
             this.resultGridControl.Name = "resultGridControl";
-            this.resultGridControl.Size = new System.Drawing.Size(760, 375);
+            this.resultGridControl.Size = new System.Drawing.Size(760, 359);
             this.resultGridControl.TabIndex = 4;
             this.resultGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
+            this.ordersGridView});
             // 
-            // gridView1
+            // searchViewModelBindingSource
             // 
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.searchViewModelBindingSource.DataSource = typeof(ContosoUI.Order.Search.SearchViewModel);
+            // 
+            // ordersGridView
+            // 
+            this.ordersGridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colId,
+            this.colStatus,
             this.colCustomer,
             this.colcountOfGoods,
             this.colTotalCost,
-            this.colStatus,
             this.colcountOfComments});
-            this.gridView1.GridControl = this.resultGridControl;
-            this.gridView1.Name = "gridView1";
+            this.ordersGridView.GridControl = this.resultGridControl;
+            this.ordersGridView.Name = "ordersGridView";
+            this.ordersGridView.OptionsBehavior.Editable = false;
+            this.ordersGridView.DoubleClick += new System.EventHandler(this.ordersGridView__DoubleClick);
             // 
-            // colCustomer
+            // colId
             // 
-            this.colCustomer.FieldName = "Customer";
-            this.colCustomer.Name = "colCustomer";
-            this.colCustomer.Visible = true;
-            this.colCustomer.VisibleIndex = 0;
-            // 
-            // colcountOfGoods
-            // 
-            this.colcountOfGoods.FieldName = "countOfGoods";
-            this.colcountOfGoods.Name = "colcountOfGoods";
-            this.colcountOfGoods.Visible = true;
-            this.colcountOfGoods.VisibleIndex = 1;
-            // 
-            // colTotalCost
-            // 
-            this.colTotalCost.FieldName = "TotalCost";
-            this.colTotalCost.Name = "colTotalCost";
-            this.colTotalCost.Visible = true;
-            this.colTotalCost.VisibleIndex = 2;
+            this.colId.FieldName = "Id";
+            this.colId.Name = "colId";
             // 
             // colStatus
             // 
+            this.colStatus.Caption = "Статус";
             this.colStatus.FieldName = "Status";
             this.colStatus.Name = "colStatus";
             this.colStatus.Visible = true;
-            this.colStatus.VisibleIndex = 3;
+            this.colStatus.VisibleIndex = 0;
+            // 
+            // colCustomer
+            // 
+            this.colCustomer.Caption = "Клиент";
+            this.colCustomer.FieldName = "Customer";
+            this.colCustomer.Name = "colCustomer";
+            this.colCustomer.Visible = true;
+            this.colCustomer.VisibleIndex = 1;
+            // 
+            // colcountOfGoods
+            // 
+            this.colcountOfGoods.Caption = "Кол-во товаров";
+            this.colcountOfGoods.FieldName = "countOfGoods";
+            this.colcountOfGoods.Name = "colcountOfGoods";
+            this.colcountOfGoods.Visible = true;
+            this.colcountOfGoods.VisibleIndex = 2;
+            // 
+            // colTotalCost
+            // 
+            this.colTotalCost.Caption = "Цена";
+            this.colTotalCost.FieldName = "TotalCost";
+            this.colTotalCost.Name = "colTotalCost";
+            this.colTotalCost.Visible = true;
+            this.colTotalCost.VisibleIndex = 3;
             // 
             // colcountOfComments
             // 
+            this.colcountOfComments.Caption = "Кол-во комментариев";
             this.colcountOfComments.FieldName = "countOfComments";
             this.colcountOfComments.Name = "colcountOfComments";
             this.colcountOfComments.Visible = true;
@@ -176,16 +198,16 @@
             this.layoutControlItem1,
             this.statusLayoutControlItem});
             this.layoutControlGroup.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlGroup.Name = "layoutControlGroup";
+            this.layoutControlGroup.Name = "Root";
             this.layoutControlGroup.Size = new System.Drawing.Size(784, 424);
             this.layoutControlGroup.TextVisible = false;
             // 
             // layoutControlItem1
             // 
             this.layoutControlItem1.Control = this.resultGridControl;
-            this.layoutControlItem1.Location = new System.Drawing.Point(0, 25);
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 41);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(764, 379);
+            this.layoutControlItem1.Size = new System.Drawing.Size(764, 363);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
@@ -194,8 +216,9 @@
             this.statusLayoutControlItem.Control = this.statusComboBox;
             this.statusLayoutControlItem.Location = new System.Drawing.Point(0, 0);
             this.statusLayoutControlItem.Name = "statusLayoutControlItem";
-            this.statusLayoutControlItem.Size = new System.Drawing.Size(764, 25);
+            this.statusLayoutControlItem.Size = new System.Drawing.Size(764, 41);
             this.statusLayoutControlItem.Text = "Статус";
+            this.statusLayoutControlItem.TextLocation = DevExpress.Utils.Locations.Top;
             this.statusLayoutControlItem.TextSize = new System.Drawing.Size(36, 13);
             // 
             // SearchView
@@ -207,11 +230,13 @@
             this.Controls.Add(this.ribbonControl);
             this.Name = "SearchView";
             this.Text = "Поиск";
+            this.Load += new System.EventHandler(this.SearchView_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl)).EndInit();
             this.layoutControl.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.resultGridControl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchViewModelBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ordersGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.statusLayoutControlItem)).EndInit();
@@ -229,14 +254,16 @@
         private DevExpress.XtraLayout.LayoutControl layoutControl;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup;
         private DevExpress.XtraGrid.GridControl resultGridControl;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.Views.Grid.GridView ordersGridView;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private System.Windows.Forms.ComboBox statusComboBox;
         private DevExpress.XtraLayout.LayoutControlItem statusLayoutControlItem;
+        private System.Windows.Forms.BindingSource searchViewModelBindingSource;
+        private DevExpress.XtraGrid.Columns.GridColumn colId;
+        private DevExpress.XtraGrid.Columns.GridColumn colStatus;
         private DevExpress.XtraGrid.Columns.GridColumn colCustomer;
         private DevExpress.XtraGrid.Columns.GridColumn colcountOfGoods;
         private DevExpress.XtraGrid.Columns.GridColumn colTotalCost;
-        private DevExpress.XtraGrid.Columns.GridColumn colStatus;
         private DevExpress.XtraGrid.Columns.GridColumn colcountOfComments;
     }
 }

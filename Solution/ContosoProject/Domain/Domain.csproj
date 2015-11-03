@@ -31,6 +31,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -45,7 +46,7 @@
     <Compile Include="DAO\IDAO\IGoodsRepository.cs" />
     <Compile Include="DAO\IDAO\IGoodsRowRepository.cs" />
     <Compile Include="DAO\IDAO\IOrderRepository.cs" />
-    <Compile Include="DAO\IDAO\IOrderStstusRepository.cs" />
+    <Compile Include="DAO\IDAO\IOrderStatusRepository.cs" />
     <Compile Include="DAO\IDAO\IPermissionRepository.cs" />
     <Compile Include="DAO\IDAO\IPersonalInfoRepository.cs" />
     <Compile Include="DAO\IDAO\IProductCategoryRepository.cs" />
