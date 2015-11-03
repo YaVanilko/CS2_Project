@@ -10,6 +10,8 @@ namespace Domain.Entities
     public class Permission : BaseEntity
     {
         public PermissionType Type { get; set; }
+
+        [MinLength(3), MaxLength(120)]
         public string Name { get; set; }
 
         public virtual ICollection<Role> Roles { get; set; }

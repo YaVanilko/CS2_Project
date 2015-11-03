@@ -9,15 +9,13 @@ namespace Domain.Entities
 {
     public class Customer : BaseEntity
     {
-        [Required]
         public PersonalInfo PersonalInfo { get; set; }
 
-        [Required]
         public ContactInfo Contacts { get; set; }
 
-        public List<Order> Orders { get; set; }
+        public virtual ICollection<Order> Orders { get; set; }
 
-        public List<Comment> Comments { get; set; }
+        public virtual ICollection<Comment> Comments { get; set; }
 
         public Customer()
         {

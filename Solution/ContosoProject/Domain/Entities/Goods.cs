@@ -22,10 +22,9 @@ namespace Domain.Entities
 
         public int Count { get; set; }
 
-        [Required]
         public ProductCategory Category { get; set; }
 
-        public List<Comment> Coments { get; set; }
+        public virtual ICollection<Comment> Coments { get; set; }
 
         public Goods()
         {

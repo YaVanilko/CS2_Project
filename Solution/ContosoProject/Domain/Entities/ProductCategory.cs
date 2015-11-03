@@ -10,11 +10,10 @@ namespace Domain.Entities
 {
     public class ProductCategory : BaseEntity
     {
-        [Required]
         [MinLength(2), MaxLength(50)]
         public string CategoryName { get; set; }
 
-        public List<Goods> Goods { get; set; }
+        public virtual ICollection<Goods> Goods { get; set; }
 
         public ProductCategory()
         {

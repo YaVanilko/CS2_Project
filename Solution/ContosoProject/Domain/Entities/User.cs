@@ -11,14 +11,11 @@ namespace Domain.Entities
     {
         public PersonalInfo PersonalInfo { get; set; }
 
-        [Required]
         public Role Role { get; set; }
 
-        [Required]
         [MinLength(3), MaxLength(25)]
         public string Login { get; set; }
 
-        [Required]
         [MinLength(5), MaxLength(40)]
         public string Password { get; set; }
 

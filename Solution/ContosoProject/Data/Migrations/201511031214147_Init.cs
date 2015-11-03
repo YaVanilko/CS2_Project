@@ -3,7 +3,7 @@ namespace Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class Initial : DbMigration
+    public partial class Init : DbMigration
     {
         public override void Up()
         {
@@ -12,7 +12,7 @@ namespace Data.Migrations
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        CategoryName = c.String(nullable: false, maxLength: 50),
+                        CategoryName = c.String(maxLength: 50),
                         IsActive = c.Boolean(nullable: false),
                         EditTime = c.DateTime(nullable: false),
                     })
@@ -29,10 +29,10 @@ namespace Data.Migrations
                         Count = c.Int(nullable: false),
                         IsActive = c.Boolean(nullable: false),
                         EditTime = c.DateTime(nullable: false),
-                        Category_Id = c.Int(nullable: false),
+                        Category_Id = c.Int(),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.ProductCategories", t => t.Category_Id, cascadeDelete: true)
+                .ForeignKey("dbo.ProductCategories", t => t.Category_Id)
                 .Index(t => t.Category_Id);
             
             CreateTable(
@@ -77,12 +77,12 @@ namespace Data.Migrations
                         Id = c.Int(nullable: false, identity: true),
                         IsActive = c.Boolean(nullable: false),
                         EditTime = c.DateTime(nullable: false),
-                        Contacts_Id = c.Int(nullable: false),
-                        PersonalInfo_Id = c.Int(nullable: false),
+                        Contacts_Id = c.Int(),
+                        PersonalInfo_Id = c.Int(),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.ContactInfoes", t => t.Contacts_Id, cascadeDelete: true)
-                .ForeignKey("dbo.PersonalInfoes", t => t.PersonalInfo_Id, cascadeDelete: true)
+                .ForeignKey("dbo.ContactInfoes", t => t.Contacts_Id)
+                .ForeignKey("dbo.PersonalInfoes", t => t.PersonalInfo_Id)
                 .Index(t => t.Contacts_Id)
                 .Index(t => t.PersonalInfo_Id);
             
@@ -91,14 +91,13 @@ namespace Data.Migrations
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        TotalCost = c.Double(nullable: false),
                         IsActive = c.Boolean(nullable: false),
                         EditTime = c.DateTime(nullable: false),
-                        Customer_Id = c.Int(nullable: false),
+                        Customer_Id = c.Int(),
                         Status_Id = c.Int(),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Customers", t => t.Customer_Id, cascadeDelete: true)
+                .ForeignKey("dbo.Customers", t => t.Customer_Id)
                 .ForeignKey("dbo.OrderStatus", t => t.Status_Id)
                 .Index(t => t.Customer_Id)
                 .Index(t => t.Status_Id);
@@ -113,11 +112,11 @@ namespace Data.Migrations
                         TotalPrice = c.Double(nullable: false),
                         IsActive = c.Boolean(nullable: false),
                         EditTime = c.DateTime(nullable: false),
-                        Goods_Id = c.Int(nullable: false),
+                        Goods_Id = c.Int(),
                         Order_Id = c.Int(),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Goods", t => t.Goods_Id, cascadeDelete: true)
+                .ForeignKey("dbo.Goods", t => t.Goods_Id)
                 .ForeignKey("dbo.Orders", t => t.Order_Id)
                 .Index(t => t.Goods_Id)
                 .Index(t => t.Order_Id);
@@ -138,9 +137,9 @@ namespace Data.Migrations
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        FirstName = c.String(nullable: false, maxLength: 25),
+                        FirstName = c.String(maxLength: 25),
                         MiddleName = c.String(maxLength: 25),
-                        LastName = c.String(nullable: false, maxLength: 25),
+                        LastName = c.String(maxLength: 25),
                         IsActive = c.Boolean(nullable: false),
                         EditTime = c.DateTime(nullable: false),
                     })
@@ -152,7 +151,7 @@ namespace Data.Migrations
                     {
                         Id = c.Int(nullable: false, identity: true),
                         Type = c.Int(nullable: false),
-                        Name = c.String(maxLength: 4000),
+                        Name = c.String(maxLength: 120),
                         IsActive = c.Boolean(nullable: false),
                         EditTime = c.DateTime(nullable: false),
                     })
@@ -163,7 +162,7 @@ namespace Data.Migrations
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        Name = c.String(nullable: false, maxLength: 50),
+                        Name = c.String(maxLength: 50),
                         IsActive = c.Boolean(nullable: false),
                         EditTime = c.DateTime(nullable: false),
                     })
@@ -174,16 +173,16 @@ namespace Data.Migrations
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        Login = c.String(nullable: false, maxLength: 25),
-                        Password = c.String(nullable: false, maxLength: 40),
+                        Login = c.String(maxLength: 25),
+                        Password = c.String(maxLength: 40),
                         IsActive = c.Boolean(nullable: false),
                         EditTime = c.DateTime(nullable: false),
                         PersonalInfo_Id = c.Int(),
-                        Role_Id = c.Int(nullable: false),
+                        Role_Id = c.Int(),
                     })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.PersonalInfoes", t => t.PersonalInfo_Id)
-                .ForeignKey("dbo.Roles", t => t.Role_Id, cascadeDelete: true)
+                .ForeignKey("dbo.Roles", t => t.Role_Id)
                 .Index(t => t.PersonalInfo_Id)
                 .Index(t => t.Role_Id);
             
