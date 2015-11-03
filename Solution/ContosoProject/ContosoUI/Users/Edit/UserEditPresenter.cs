@@ -1,5 +1,5 @@
 ﻿using ContosoUI.Authentication;
-using Data.DumbData;
+using Data.EFData;
 using Domain.DAO;
 using Domain.Entities;
 using System;
@@ -18,8 +18,7 @@ namespace ContosoUI.Users.Edit
         UserEditForm view = null;
         List<Role> roles = null;
 
-        IUserRepository model = new UserDao();
-        IRoleRepository role = new RoleDao();
+        UserRoleProxy model = new UserRoleProxy();
         bool userIsFromBase = false;
         
         public event PropertyChangedEventHandler PropertyChanged;
@@ -29,7 +28,7 @@ namespace ContosoUI.Users.Edit
         {
             this.user = new User();
             this.view = view;
-            this.roles = this.role.GetAll().ToList();
+            this.roles = this.model.RoleDao.GetAll().ToList();
             this.view.SaveBtnClick += new EventHandler(SaveBtnClickHandler);
             this.view.PasswordChange += new EventHandler(PasswordChangedHandler);
         }
@@ -38,7 +37,7 @@ namespace ContosoUI.Users.Edit
         public UserEditPresenter(UserEditForm view, int id)
             : this(view)
         {
-            this.user = model.GetById(id);
+            this.user = model.UserDao.GetById(id);
             this.userIsFromBase = true;
         }
         
@@ -46,11 +45,11 @@ namespace ContosoUI.Users.Edit
         {
             if (userIsFromBase)
             {
-                model.Update(user);
+                model.UserDao.Update(user);
             }
-            else if (!model.GetAll().ToList().Any(x => x.Login == this.user.Login))
+            else if (!model.UserDao.GetAll().ToList().Any(x => x.Login == this.user.Login))
             {
-                model.Add(user);
+                model.UserDao.Add(user);
             }
             else
             {
