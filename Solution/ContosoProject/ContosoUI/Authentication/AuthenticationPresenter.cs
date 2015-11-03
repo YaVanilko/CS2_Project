@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace ContosoUI.Authentication
 {
-    public class AuthenticationPresenter : BaseMD5
+    public class AuthenticationPresenter
     {
         IUserRepository model = null;
         AuthenticationForm view = null;
@@ -27,7 +27,7 @@ namespace ContosoUI.Authentication
         void OkButtonClickHendler(object sender, System.EventArgs e)
         
         {
-            if (model.TryFindByLoginPassword(out this.user, view.Login, view.Password == "admin"?"admin":GetMd5Hash(view.Password)))
+            if (model.TryFindByLoginPassword(out this.user, view.Login, view.Password.ToMD5()))
             {
                 if (user.IsActive)
                 {

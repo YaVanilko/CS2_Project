@@ -36,5 +36,10 @@ namespace Data.EFData
             dbContext.Orders.AddOrUpdate(entity);
             dbContext.SaveChanges();
         }
+
+        public ICollection<Order> GetOrderByStatus(OrderStatus status)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
