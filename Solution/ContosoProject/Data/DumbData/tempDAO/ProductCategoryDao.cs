@@ -10,5 +10,9 @@ namespace Data.DumbData
 {
     public class ProductCategoryDao : BaseDao<ProductCategory>, IProductCategoryRepository
     {
+        public void AddOrUpdate(ProductCategory entity)
+        {
+            //throw new NotImplementedException();
+        }
     }
 }

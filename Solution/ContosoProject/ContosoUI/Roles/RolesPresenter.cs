@@ -13,14 +13,22 @@ namespace ContosoUI.Roles
     public class RolesPresenter : INotifyPropertyChanged
     {
         readonly RolesView view;
-        readonly IRoleRepository model = new RoleDao();
-        readonly IPermissionRepository modelPermission = new PermissionDao();
+        readonly RoleViewProxy modelProxy = new RoleViewProxy();
         Role role;
         public RolesPresenter(RolesView view)
         {
             this.view = view;
-            Roles = model.GetAll().ToList();
-            Permissions = modelPermission.GetAll().ToList();
+            Roles = modelProxy.RoleDao.GetAll().ToList();
+            Permissions = modelProxy.PermissionDao.GetAll().ToList();
+            foreach (var role in Roles)
+            {
+                List<Permission> listPermissions = new List<Permission>();
+                foreach (var permission in role.Permissions)
+                {   
+                    listPermissions.Add(Permissions.First(x => x.Id == permission.Id));
+                }
+                role.Permissions = listPermissions;
+            }
         }
         List<Role> roles = new List<Role>();
         public List<Role> Roles
@@ -59,13 +67,9 @@ namespace ContosoUI.Roles
         }
         public void Save()
         {
-            if (role.Id > 0)
+            foreach (var role in roles)
             {
-                model.Update(this.role);
-            }
-            else
-            {
-                model.Add(role);
+                modelProxy.RoleDao.AddOrUpdate(role);
             }
         }
     }
