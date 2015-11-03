@@ -153,6 +153,7 @@
             this.rolesGridView.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
             this.rolesGridView.OptionsView.RowAutoHeight = true;
             this.rolesGridView.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.rolesGridView_FocusedRowChanged);
+            this.rolesGridView.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.rolesGridView_CellValueChanged);
             this.rolesGridView.BeforeLeaveRow += new DevExpress.XtraGrid.Views.Base.RowAllowEventHandler(this.rolesGridView_BeforeLeaveRow);
             // 
             // colName

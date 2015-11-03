@@ -90,5 +90,24 @@ namespace ContosoUI.Roles
                 role.Permissions.Add(checkedListItem.Value as Permission);
             }
         }
+
+        private void rolesGridView_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        {
+            GridView view = rolesGridView;
+            object roleObj = view.GetRow(view.FocusedRowHandle);
+            Role role = roleObj as Role;
+            if (e.Column.Caption != "Статус (активировать/ деактивировать)")
+            {
+                return;
+            }
+            else
+            {
+                if (role.IsActive != true)
+                {
+                    MessageBox.Show("Вы уверенны, что хотите деактивировать категорию товаров? После деактивации категория будет удалена из списка!");
+                }
+            }
+            presenter.Save();
+        }
     }
 }

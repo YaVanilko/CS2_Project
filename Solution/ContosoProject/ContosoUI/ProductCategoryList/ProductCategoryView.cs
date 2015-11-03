@@ -39,5 +39,24 @@ namespace ContosoUI.ProductCategoryList
         {
             productCategoryGridControl.DataSource = presenter.Categories;
         }
+
+        private void categoriesGridView_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        {
+            GridView view = sender as GridView;
+            object categoryObj = view.GetRow(view.FocusedRowHandle);
+            ProductCategory category = categoryObj as ProductCategory;
+            if (e.Column.Caption != "Статус  (активировать / деактивировать)")
+            {
+                return;
+            }
+            else
+            {
+                if (category.IsActive != true)
+                {
+                    MessageBox.Show("Вы уверенны, что хотите деактивировать категорию товаров? После деактивации категория будет удалена из списка!");
+                }    
+            }
+        }
+
     }
 }
