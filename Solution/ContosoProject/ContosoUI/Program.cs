@@ -1,6 +1,4 @@
-﻿using ContosoUI.Customers.Search;
-using ContosoUI.Customers.Add;
-using Data.DumbData;
+﻿using Data.DumbData;
 using Domain.DAO;
 using Domain.Entities;
 using System;
@@ -9,6 +7,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ContosoUI.Authentication;
+using System.IO;
+using System.Reflection;
 
 namespace ContosoUI
 {
@@ -21,6 +21,8 @@ namespace ContosoUI
         [STAThread]
         static void Main()
         {
+            AppDomain.CurrentDomain.SetData("DataDirectory", Path.GetDirectoryName(Assembly.GetEntryAssembly().Location));
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             GetAuthUser();
