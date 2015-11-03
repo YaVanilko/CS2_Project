@@ -3,7 +3,7 @@ namespace Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class Init : DbMigration
+    public partial class Initial : DbMigration
     {
         public override void Up()
         {
@@ -12,7 +12,7 @@ namespace Data.Migrations
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        CategoryName = c.String(),
+                        CategoryName = c.String(nullable: false, maxLength: 50),
                         IsActive = c.Boolean(nullable: false),
                         EditTime = c.DateTime(nullable: false),
                     })
@@ -23,16 +23,16 @@ namespace Data.Migrations
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        Name = c.String(),
-                        SKU = c.String(),
+                        Name = c.String(nullable: false, maxLength: 255),
+                        SKU = c.String(nullable: false, maxLength: 50),
                         Price = c.Double(nullable: false),
                         Count = c.Int(nullable: false),
                         IsActive = c.Boolean(nullable: false),
                         EditTime = c.DateTime(nullable: false),
-                        Category_Id = c.Int(),
+                        Category_Id = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.ProductCategories", t => t.Category_Id)
+                .ForeignKey("dbo.ProductCategories", t => t.Category_Id, cascadeDelete: true)
                 .Index(t => t.Category_Id);
             
             CreateTable(
@@ -40,7 +40,7 @@ namespace Data.Migrations
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        Message = c.String(),
+                        Message = c.String(maxLength: 2000),
                         Type = c.Int(nullable: false),
                         IsActive = c.Boolean(nullable: false),
                         EditTime = c.DateTime(nullable: false),
@@ -57,34 +57,34 @@ namespace Data.Migrations
                 .Index(t => t.Order_Id);
             
             CreateTable(
+                "dbo.ContactInfoes",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        City = c.String(maxLength: 25),
+                        Adress = c.String(maxLength: 100),
+                        Telephone = c.String(maxLength: 15),
+                        Email = c.String(maxLength: 40),
+                        IsActive = c.Boolean(nullable: false),
+                        EditTime = c.DateTime(nullable: false),
+                    })
+                .PrimaryKey(t => t.Id);
+            
+            CreateTable(
                 "dbo.Customers",
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
                         IsActive = c.Boolean(nullable: false),
                         EditTime = c.DateTime(nullable: false),
-                        Contacts_Id = c.Int(),
-                        PersonalInfo_Id = c.Int(),
+                        Contacts_Id = c.Int(nullable: false),
+                        PersonalInfo_Id = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.ContactInfoes", t => t.Contacts_Id)
-                .ForeignKey("dbo.PersonalInfoes", t => t.PersonalInfo_Id)
+                .ForeignKey("dbo.ContactInfoes", t => t.Contacts_Id, cascadeDelete: true)
+                .ForeignKey("dbo.PersonalInfoes", t => t.PersonalInfo_Id, cascadeDelete: true)
                 .Index(t => t.Contacts_Id)
                 .Index(t => t.PersonalInfo_Id);
-            
-            CreateTable(
-                "dbo.ContactInfoes",
-                c => new
-                    {
-                        Id = c.Int(nullable: false, identity: true),
-                        City = c.String(),
-                        Adress = c.String(),
-                        Telephone = c.String(),
-                        Email = c.String(),
-                        IsActive = c.Boolean(nullable: false),
-                        EditTime = c.DateTime(nullable: false),
-                    })
-                .PrimaryKey(t => t.Id);
             
             CreateTable(
                 "dbo.Orders",
@@ -94,11 +94,11 @@ namespace Data.Migrations
                         TotalCost = c.Double(nullable: false),
                         IsActive = c.Boolean(nullable: false),
                         EditTime = c.DateTime(nullable: false),
-                        Customer_Id = c.Int(),
+                        Customer_Id = c.Int(nullable: false),
                         Status_Id = c.Int(),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Customers", t => t.Customer_Id)
+                .ForeignKey("dbo.Customers", t => t.Customer_Id, cascadeDelete: true)
                 .ForeignKey("dbo.OrderStatus", t => t.Status_Id)
                 .Index(t => t.Customer_Id)
                 .Index(t => t.Status_Id);
@@ -113,11 +113,11 @@ namespace Data.Migrations
                         TotalPrice = c.Double(nullable: false),
                         IsActive = c.Boolean(nullable: false),
                         EditTime = c.DateTime(nullable: false),
-                        Goods_Id = c.Int(),
+                        Goods_Id = c.Int(nullable: false),
                         Order_Id = c.Int(),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Goods", t => t.Goods_Id)
+                .ForeignKey("dbo.Goods", t => t.Goods_Id, cascadeDelete: true)
                 .ForeignKey("dbo.Orders", t => t.Order_Id)
                 .Index(t => t.Goods_Id)
                 .Index(t => t.Order_Id);
@@ -127,7 +127,7 @@ namespace Data.Migrations
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        Status = c.String(),
+                        Status = c.String(maxLength: 4000),
                         IsActive = c.Boolean(nullable: false),
                         EditTime = c.DateTime(nullable: false),
                     })
@@ -138,9 +138,11 @@ namespace Data.Migrations
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        FirstName = c.String(),
-                        MiddleName = c.String(),
-                        LastName = c.String(),
+                        FirstName = c.String(nullable: false, maxLength: 25),
+                        MiddleName = c.String(maxLength: 25),
+                        LastName = c.String(nullable: false, maxLength: 25),
+                        IsActive = c.Boolean(nullable: false),
+                        EditTime = c.DateTime(nullable: false),
                     })
                 .PrimaryKey(t => t.Id);
             
@@ -150,7 +152,7 @@ namespace Data.Migrations
                     {
                         Id = c.Int(nullable: false, identity: true),
                         Type = c.Int(nullable: false),
-                        Name = c.String(),
+                        Name = c.String(maxLength: 4000),
                         IsActive = c.Boolean(nullable: false),
                         EditTime = c.DateTime(nullable: false),
                     })
@@ -161,7 +163,7 @@ namespace Data.Migrations
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        Name = c.String(),
+                        Name = c.String(nullable: false, maxLength: 50),
                         IsActive = c.Boolean(nullable: false),
                         EditTime = c.DateTime(nullable: false),
                     })
@@ -172,16 +174,16 @@ namespace Data.Migrations
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        Login = c.String(),
-                        Password = c.String(),
+                        Login = c.String(nullable: false, maxLength: 25),
+                        Password = c.String(nullable: false, maxLength: 40),
                         IsActive = c.Boolean(nullable: false),
                         EditTime = c.DateTime(nullable: false),
                         PersonalInfo_Id = c.Int(),
-                        Role_Id = c.Int(),
+                        Role_Id = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.PersonalInfoes", t => t.PersonalInfo_Id)
-                .ForeignKey("dbo.Roles", t => t.Role_Id)
+                .ForeignKey("dbo.Roles", t => t.Role_Id, cascadeDelete: true)
                 .Index(t => t.PersonalInfo_Id)
                 .Index(t => t.Role_Id);
             
@@ -238,8 +240,8 @@ namespace Data.Migrations
             DropTable("dbo.OrderStatus");
             DropTable("dbo.GoodsRows");
             DropTable("dbo.Orders");
-            DropTable("dbo.ContactInfoes");
             DropTable("dbo.Customers");
+            DropTable("dbo.ContactInfoes");
             DropTable("dbo.Comments");
             DropTable("dbo.Goods");
             DropTable("dbo.ProductCategories");
