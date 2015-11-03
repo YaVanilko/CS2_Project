@@ -35,8 +35,8 @@ namespace Data.EFData
 
         public new void Add(User entity)
         {
-            dbContext.Set<User>().Add(entity);
-            dbContext.SaveChanges();
+            context.Users.Add(entity);
+            context.SaveChanges();
         }
         public new IQueryable<User> GetAll()
         {
