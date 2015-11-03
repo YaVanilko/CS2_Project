@@ -48,7 +48,7 @@ namespace ContosoUI.Order.Search
                             Id = order.Id,
                             Status = order.Status.Status,
                             Customer = order.Customer,
-                            countOfGoods = order.goodsList.Count,
+                            countOfGoods = order.GoodsList.Count,
                             TotalCost = order.TotalCost,
                             countOfComments = order.Comments.Count
                         });
@@ -66,7 +66,7 @@ namespace ContosoUI.Order.Search
                             Id = order.Id,
                             Status = order.Status.Status,
                             Customer = order.Customer,
-                            countOfGoods = order.goodsList.Count,
+                            countOfGoods = order.GoodsList.Count,
                             TotalCost = order.TotalCost,
                             countOfComments = order.Comments.Count
                         });

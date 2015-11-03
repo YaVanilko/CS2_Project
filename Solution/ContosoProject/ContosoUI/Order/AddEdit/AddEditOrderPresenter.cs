@@ -42,7 +42,7 @@ namespace ContosoUI.Order.AddEdit
 
         public List<Comment> Comments
         {
-            get { return order.Comments; }
+            get { return order.Comments.ToList(); }
             set
             {
                 if (Comments != value)
@@ -64,7 +64,7 @@ namespace ContosoUI.Order.AddEdit
             if (orderId >= 0)
             {
                 order = orderModel.GetById(orderId);
-                foreach (GoodsRow row in order.goodsList)
+                foreach (GoodsRow row in order.GoodsList)
                 {
                     vm.Add(new AddEditViewModel() { Id = row.Id, Good = row.Goods, Count = row.Count, TotalCost = row.TotalPrice });
                 }
@@ -157,15 +157,15 @@ namespace ContosoUI.Order.AddEdit
         {
             GoodsRow item = new GoodsRow() {Goods = SelectedGood, Count = CountOfGood };
             vm.Add(new AddEditViewModel() { Id = item.Id, Good = item.Goods, Count = item.Count, TotalCost = item.TotalPrice });
-            order.goodsList.Add(item);
+            order.GoodsList.Add(item);
             goodsRowModel.Add(item);
         }
 
         public void DeleteGoodRow(int id)
         {
             vm.Remove(vm.Find(x => x.Id == id));
-            order.goodsList.Remove(order.goodsList.Find(x => x.Id == id));
-            goodsRowModel.Delete(order.goodsList.Find(x => x.Id == id));
+            order.GoodsList.Remove(order.GoodsList.FirstOrDefault(x => x.Id == id));
+            goodsRowModel.Delete(order.GoodsList.FirstOrDefault(x => x.Id == id));
         }
 
         public void AddNewComment(Comment value)
@@ -177,7 +177,7 @@ namespace ContosoUI.Order.AddEdit
         private double CalculateOrderCost()
         {
             double result = 0;
-            foreach (GoodsRow row in order.goodsList)
+            foreach (GoodsRow row in order.GoodsList)
             {
                 result += row.TotalPrice;
             }
