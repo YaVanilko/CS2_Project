@@ -187,6 +187,13 @@
             this.ChangePasswordBtn.Name = "ChangePasswordBtn";
             this.ChangePasswordBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick_1);
             // 
+            // RolesButton
+            // 
+            this.RolesButton.Caption = "Роли";
+            this.RolesButton.Id = 13;
+            this.RolesButton.ImageUri.Uri = "Show";
+            this.RolesButton.Name = "RolesButton";
+            // 
             // mainRibbonPage
             // 
             this.mainRibbonPage.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {

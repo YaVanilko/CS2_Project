@@ -10,5 +10,9 @@ namespace Data.DumbData
 {
     public class OrderDao : BaseDao<Order>, IOrderRepository
     {
+        public ICollection<Order> GetOrderByStatus(OrderStatus status)
+        {
+            return Storage.OrderCollection.Where(x => x.Status.Status == status.Status).ToList();
+        }
     }
 }
