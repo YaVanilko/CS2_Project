@@ -158,8 +158,8 @@ namespace ContosoUI.Order.AddEdit
         public void DeleteGoodRow(int id)
         {
             vm.Remove(vm.Find(x => x.Id == id));
-            order.GoodsList.Remove(order.GoodsList.Find(x => x.Id == id));
-            modelProxy.GoodsRowModel.Delete(order.GoodsList.Find(x => x.Id == id));
+            order.GoodsList.Remove(order.GoodsList.FirstOrDefault(x => x.Id == id));
+            modelProxy.GoodsRowModel.Delete(order.GoodsList.FirstOrDefault(x => x.Id == id));
         }
 
         public void AddNewComment(Comment value)

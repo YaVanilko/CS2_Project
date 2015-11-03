@@ -13,7 +13,7 @@ namespace ContosoUI.GoodsAll.AddGoods
     public class AddGoodsPresenter
     {
         AddGoods view;
-        IGoodsRepository model = new EFGoodsDao();
+        IGoodsRepository model = new GoodsDao();
         IProductCategoryRepository modelCategory = new Data.EFData.ProductCategoryDao();
         Goods thisGoods;
         public List<string> productCategoryList = new List<string>();
