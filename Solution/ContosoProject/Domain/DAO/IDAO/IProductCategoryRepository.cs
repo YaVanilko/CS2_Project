@@ -9,5 +9,6 @@ namespace Domain.DAO
 {
     public interface IProductCategoryRepository : IRepository<ProductCategory>
     {
+        void AddOrUpdate(ProductCategory entity);
     }
 }
