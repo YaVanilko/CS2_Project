@@ -62,6 +62,7 @@
     <Compile Include="DumbData\tempDAO\ProductCategoryDao.cs" />
     <Compile Include="DumbData\tempDAO\PersonalInfoDao.cs" />
     <Compile Include="DumbData\tempDAO\UserDao.cs" />
+    <Compile Include="EFData\AddOrderProxy.cs" />
     <Compile Include="EFData\CommentDao.cs" />
     <Compile Include="EFData\EfBaseDao.cs" />
     <Compile Include="EFData\ContactsInfoDao.cs" />

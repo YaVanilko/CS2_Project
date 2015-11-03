@@ -21,7 +21,7 @@ namespace ContosoUI
         public MainView()
         {
             InitializeComponent();
-            /*if (!Program.AuthUser.Role.Permissions.Any(x => x.Type == Domain.PermissionType.NewUser))
+            if (!Program.AuthUser.Role.Permissions.Any(x => x.Type == Domain.PermissionType.NewUser))
             {
                 this.addNewUserBtn.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             }

@@ -9,8 +9,17 @@ using System.Data.Entity.Migrations;
 
 namespace Data.EFData
 {
-    class OrderStatusDao : EfBaseDao<OrderStatus>, IOrderStstusRepository
+    public class OrderStatusDao : EfBaseDao<OrderStatus>, IOrderStatusRepository
     {
+        public OrderStatusDao()
+        {
+
+        }
+        public OrderStatusDao(ProjectContext context)
+        {
+
+        }
+
         public new IQueryable<OrderStatus> GetAll()
         {
             IQueryable<OrderStatus> collection =

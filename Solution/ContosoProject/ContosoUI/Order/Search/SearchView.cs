@@ -36,7 +36,7 @@ namespace ContosoUI.Order.Search
 
         private void searchBarButtonItem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Domain.Entities.OrderStatus currentStatus = new Domain.Entities.OrderStatus(statusComboBox.Text);
+            Domain.Entities.OrderStatus currentStatus = new Domain.Entities.OrderStatus() { Status = statusComboBox.Text };
             presenter.SelectOrdersByStatus(currentStatus);
             resultGridControl.RefreshDataSource();
         }

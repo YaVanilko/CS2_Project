@@ -10,9 +10,8 @@ namespace Domain.Entities
     {
         public string Status { get; set; }
 
-        public OrderStatus(string status)
+        public OrderStatus()
         {
-            Status = status;
         }
 
         public override string ToString()

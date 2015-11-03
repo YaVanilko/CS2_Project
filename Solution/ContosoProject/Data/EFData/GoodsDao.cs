@@ -10,8 +10,16 @@ using System.Data.Entity.Migrations;
 
 namespace Data.EFData
 {
-    public class EFGoodsDao : EfBaseDao<Goods>, IGoodsRepository
+    public class GoodsDao : EfBaseDao<Goods>, IGoodsRepository
     {
+        public GoodsDao()
+        {
+
+        }
+        public GoodsDao(ProjectContext context)
+        {
+               
+        }
         ProjectContext context;
         //public ICollection<Goods> Ge
 

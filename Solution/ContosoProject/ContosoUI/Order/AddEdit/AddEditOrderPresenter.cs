@@ -1,4 +1,4 @@
-﻿using Data.DumbData;
+﻿using Data.EFData;
 using Domain.DAO;
 using Domain.Entities;
 using System;
@@ -13,31 +13,25 @@ namespace ContosoUI.Order.AddEdit
     public class AddEditOrderPresenter : INotifyPropertyChanged
     {
         readonly AddEditOrderView view;
+        readonly AddOrderProxy modelProxy = new AddOrderProxy();
         public List<AddEditViewModel> vm { get; set; }
-
-        readonly IOrderRepository orderModel = new OrderDao();
-        readonly ICustomerRepository customerModel = new CustomerDao();
-        readonly IGoodsRepository goodsModel = new GoodDao();
-        readonly IGoodsRowRepository goodsRowModel = new GoodsRowDao();
-        readonly IOrderStatusRepository orderStatusModel = new OrderStatusDao();
-        readonly ICommentRepository commentModel = new CommentDao();
 
         private int orderId;
         Domain.Entities.Order order;
 
         public List<Customer> Customers
         {
-            get { return customerModel.GetAll().ToList(); }
+            get { return modelProxy.CustomerModel.GetAll().ToList(); }
         }
 
         public List<OrderStatus> Statuses
         {
-            get { return orderStatusModel.GetAll().Distinct().ToList(); }
+            get { return modelProxy.OrderStatusModel.GetAll().Distinct().ToList(); }
         }
 
         public List<Goods> GoodsList
         {
-            get { return goodsModel.GetAll().ToList(); }
+            get { return modelProxy.GoodsModel.GetAll().ToList(); }
         }
 
         public List<Comment> Comments
@@ -63,8 +57,8 @@ namespace ContosoUI.Order.AddEdit
 
             if (orderId >= 0)
             {
-                order = orderModel.GetById(orderId);
-                foreach (GoodsRow row in order.goodsList)
+                order = modelProxy.OrderModel.GetById(orderId);
+                foreach (GoodsRow row in order.GoodsList)
                 {
                     vm.Add(new AddEditViewModel() { Id = row.Id, Good = row.Goods, Count = row.Count, TotalCost = row.TotalPrice });
                 }
@@ -157,27 +151,27 @@ namespace ContosoUI.Order.AddEdit
         {
             GoodsRow item = new GoodsRow() {Goods = SelectedGood, Count = CountOfGood };
             vm.Add(new AddEditViewModel() { Id = item.Id, Good = item.Goods, Count = item.Count, TotalCost = item.TotalPrice });
-            order.goodsList.Add(item);
-            goodsRowModel.Add(item);
+            order.GoodsList.Add(item);
+            modelProxy.GoodsRowModel.Add(item);
         }
 
         public void DeleteGoodRow(int id)
         {
             vm.Remove(vm.Find(x => x.Id == id));
-            order.goodsList.Remove(order.goodsList.Find(x => x.Id == id));
-            goodsRowModel.Delete(order.goodsList.Find(x => x.Id == id));
+            order.GoodsList.Remove(order.GoodsList.Find(x => x.Id == id));
+            modelProxy.GoodsRowModel.Delete(order.GoodsList.Find(x => x.Id == id));
         }
 
         public void AddNewComment(Comment value)
         {
             order.Comments.Add(value);
-            commentModel.Add(value);
+            modelProxy.CommentModel.Add(value);
         }
 
         private double CalculateOrderCost()
         {
             double result = 0;
-            foreach (GoodsRow row in order.goodsList)
+            foreach (GoodsRow row in order.GoodsList)
             {
                 result += row.TotalPrice;
             }
@@ -188,11 +182,11 @@ namespace ContosoUI.Order.AddEdit
         {
             if (order.Id >= 0)
             {
-                orderModel.Update(order);
+                modelProxy.OrderModel.Update(order);
             }
             else
             {
-                orderModel.Add(order);
+                modelProxy.OrderModel.Add(order);
             }
         }
 

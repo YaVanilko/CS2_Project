@@ -178,11 +178,11 @@ namespace Data.DumbData
         #region OrderStatus
         public static List<OrderStatus> OrderStatusCollection = new List<OrderStatus>()
         { 
-            new OrderStatus("Открыт"){Id = 0},
-            new OrderStatus("Оплачен"){Id = 1},
-            new OrderStatus("Готов"){Id = 2},
-            new OrderStatus("Отгружен"){Id = 3},
-            new OrderStatus("Закрыт"){Id = 4}
+            new OrderStatus(){Id = 0, Status = "Открыт"},
+            new OrderStatus(){Id = 1, Status = "Оплачен"},
+            new OrderStatus(){Id = 2, Status = "Готов"},
+            new OrderStatus(){Id = 3, Status = "Отгружен"},
+            new OrderStatus(){Id = 4, Status = "Закрыт"}
         };
         #endregion
 
