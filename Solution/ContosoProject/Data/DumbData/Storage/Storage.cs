@@ -167,11 +167,11 @@ namespace Data.DumbData
         #region OrderStatus
         public static List<OrderStatus> OrderStatusCollection = new List<OrderStatus>()
         { 
-            new OrderStatus(){Id = 0, Status = "Открыт"},
-            new OrderStatus(){Id = 1, Status = "Оплачен"},
-            new OrderStatus(){Id = 2, Status = "Готов"},
-            new OrderStatus(){Id = 3, Status = "Отгружен"},
-            new OrderStatus(){Id = 4, Status = "Закрыт"}
+            new OrderStatus("Открыт"){Id = 0},
+            new OrderStatus("Оплачен"){Id = 1},
+            new OrderStatus("Готов"){Id = 2},
+            new OrderStatus("Отгружен"){Id = 3},
+            new OrderStatus("Закрыт"){Id = 4}
         };
         #endregion
 
@@ -357,48 +357,48 @@ namespace Data.DumbData
         #region Goods
         public static List<Goods> goodsCollection = new List<Goods>()
         {
-            new Goods(){Id = 0, Name="Стул Комфорт", Category = categoryCollection[0]},
-            new Goods(){Id = 1, Name="Стол Венеция",Category = categoryCollection[1]},
-            new Goods(){Id = 2, Name="Шкаф Марк",Category = categoryCollection[2]},
-            new Goods(){Id = 3, Name="Диван Тина с кушеткой",Category = categoryCollection[3]},
-            new Goods(){Id = 4, Name="Кровать Соната",Category = categoryCollection[4]},
-            new Goods(){Id = 5, Name="Полка Юниор",Category = categoryCollection[5]},
-            new Goods(){Id = 6, Name="Кухня Модерн",Category = categoryCollection[6]},
-            new Goods(){Id = 7, Name="Ручка дверная Стерх",Category = categoryCollection[7]},
-            new Goods(){Id = 8, Name="Комод Ришелье",Category = categoryCollection[8]},
-            new Goods(){Id = 9, Name="Тумба Стандарт прикроватная",Category = categoryCollection[9]},
+            new Goods(){Id = 0, Name="Стул Комфорт", Category = categoryCollection[0], Price=400},
+            new Goods(){Id = 1, Name="Стол Венеция",Category = categoryCollection[1], Price=2000},
+            new Goods(){Id = 2, Name="Шкаф Марк",Category = categoryCollection[2], Price=1400},
+            new Goods(){Id = 3, Name="Диван Тина с кушеткой",Category = categoryCollection[3], Price=12400},
+            new Goods(){Id = 4, Name="Кровать Соната",Category = categoryCollection[4], Price=6059.16},
+            new Goods(){Id = 5, Name="Полка Юниор",Category = categoryCollection[5], Price=605},
+            new Goods(){Id = 6, Name="Кухня Модерн",Category = categoryCollection[6], Price=7000.80},
+            new Goods(){Id = 7, Name="Ручка дверная Стерх",Category = categoryCollection[7], Price=200},
+            new Goods(){Id = 8, Name="Комод Ришелье",Category = categoryCollection[8], Price=1200},
+            new Goods(){Id = 9, Name="Тумба Стандарт прикроватная",Category = categoryCollection[9], Price=500},
         };
         #endregion
 
         #region GoodsRow
         public static List<GoodsRow> GoodsRowCollection = new List<GoodsRow>() 
         { 
-            new GoodsRow(){Id = 0,Goods = goodsCollection[0], Count=2, Price=400},
-            new GoodsRow(){Id = 1,Goods = goodsCollection[1], Count=1, Price=2000},
-            new GoodsRow(){Id = 2,Goods = goodsCollection[2], Count=1, Price=1400},
-            new GoodsRow(){Id = 3,Goods = goodsCollection[3], Count=1, Price=12400},
-            new GoodsRow(){Id = 4,Goods = goodsCollection[4], Count=1, Price=6059.16},
-            new GoodsRow(){Id = 5,Goods = goodsCollection[5], Count=2, Price=605},
-            new GoodsRow(){Id = 6,Goods = goodsCollection[6], Count=1, Price=7000.80},
-            new GoodsRow(){Id = 7,Goods = goodsCollection[7], Count=4, Price=200},
-            new GoodsRow(){Id = 8,Goods = goodsCollection[8], Count=1, Price=1200},
-            new GoodsRow(){Id = 9,Goods = goodsCollection[9], Count=2, Price=500},
+            new GoodsRow(){Id = 0,Goods = goodsCollection[0], Count=2},
+            new GoodsRow(){Id = 1,Goods = goodsCollection[1], Count=1},
+            new GoodsRow(){Id = 2,Goods = goodsCollection[2], Count=1},
+            new GoodsRow(){Id = 3,Goods = goodsCollection[3], Count=1},
+            new GoodsRow(){Id = 4,Goods = goodsCollection[4], Count=1},
+            new GoodsRow(){Id = 5,Goods = goodsCollection[5], Count=2},
+            new GoodsRow(){Id = 6,Goods = goodsCollection[6], Count=1},
+            new GoodsRow(){Id = 7,Goods = goodsCollection[7], Count=4},
+            new GoodsRow(){Id = 8,Goods = goodsCollection[8], Count=1},
+            new GoodsRow(){Id = 9,Goods = goodsCollection[9], Count=2},
         };
         #endregion
 
         #region Order
         public static List<Order> OrderCollection = new List<Order>() 
         { 
-            new Order(){Id = 0, Customer = CustomerCollection[0], Status = OrderStatusCollection[0], comments = CommentCollection},
-            new Order(){Id = 1, Customer = CustomerCollection[1], Status = OrderStatusCollection[1], comments = CommentCollection},
-            new Order(){Id = 2, Customer = CustomerCollection[2], Status = OrderStatusCollection[1], comments = CommentCollection},
-            new Order(){Id = 3, Customer = CustomerCollection[3], Status = OrderStatusCollection[2], comments = CommentCollection},
-            new Order(){Id = 4, Customer = CustomerCollection[4], Status = OrderStatusCollection[2], comments = CommentCollection},
-            new Order(){Id = 5, Customer = CustomerCollection[5], Status = OrderStatusCollection[3], comments = CommentCollection},
-            new Order(){Id = 6, Customer = CustomerCollection[6], Status = OrderStatusCollection[4], comments = CommentCollection},
-            new Order(){Id = 7, Customer = CustomerCollection[7], Status = OrderStatusCollection[4], comments = CommentCollection},
-            new Order(){Id = 8, Customer = CustomerCollection[8], Status = OrderStatusCollection[0], comments = CommentCollection},
-            new Order(){Id = 9, Customer = CustomerCollection[9], Status = OrderStatusCollection[0], comments = CommentCollection},
+            new Order(){Id = 0, Customer = CustomerCollection[0], Status = OrderStatusCollection[0], Comments = CommentCollection.Where(x => x.Type == CommentType.Order).ToList()},
+            new Order(){Id = 1, Customer = CustomerCollection[1], Status = OrderStatusCollection[1], Comments = CommentCollection.Where(x => x.Type == CommentType.Order).ToList()},
+            new Order(){Id = 2, Customer = CustomerCollection[2], Status = OrderStatusCollection[1], Comments = CommentCollection.Where(x => x.Type == CommentType.Order).ToList()},
+            new Order(){Id = 3, Customer = CustomerCollection[3], Status = OrderStatusCollection[2], Comments = CommentCollection.Where(x => x.Type == CommentType.Order).ToList()},
+            new Order(){Id = 4, Customer = CustomerCollection[4], Status = OrderStatusCollection[2], Comments = CommentCollection.Where(x => x.Type == CommentType.Order).ToList()},
+            new Order(){Id = 5, Customer = CustomerCollection[5], Status = OrderStatusCollection[3], Comments = CommentCollection.Where(x => x.Type == CommentType.Order).ToList()},
+            new Order(){Id = 6, Customer = CustomerCollection[6], Status = OrderStatusCollection[4], Comments = CommentCollection.Where(x => x.Type == CommentType.Order).ToList()},
+            new Order(){Id = 7, Customer = CustomerCollection[7], Status = OrderStatusCollection[4], Comments = CommentCollection.Where(x => x.Type == CommentType.Order).ToList()},
+            new Order(){Id = 8, Customer = CustomerCollection[8], Status = OrderStatusCollection[0], Comments = CommentCollection.Where(x => x.Type == CommentType.Order).ToList()},
+            new Order(){Id = 9, Customer = CustomerCollection[9], Status = OrderStatusCollection[0], Comments = CommentCollection.Where(x => x.Type == CommentType.Order).ToList()},
         };
         #endregion
 

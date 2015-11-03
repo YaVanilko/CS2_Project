@@ -20,5 +20,10 @@ namespace Domain.Entities
             Coments = new List<Comment>();
             Category = new ProductCategory();
         }
+
+        public override string ToString()
+        {
+            return Name;
+        }
     }
 }

@@ -20,5 +20,10 @@ namespace Domain.Entities
             PersonalInfo = new PersonalInfo();
             Contacts = new ContactInfo();
         }
+
+        public override string ToString()
+        {
+            return String.Format("{0} {1} {2}", PersonalInfo.LastName, PersonalInfo.FirstName, PersonalInfo.MiddleName);
+        }
     }
 }

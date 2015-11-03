@@ -28,8 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddEditOrderView));
             this.mainLayoutControl = new DevExpress.XtraLayout.LayoutControl();
+            this.deleteGoodButton = new DevExpress.XtraEditors.SimpleButton();
             this.priceEdit = new DevExpress.XtraEditors.TextEdit();
             this.mainRibbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.saveOrderButton = new DevExpress.XtraBars.BarButtonItem();
@@ -44,12 +46,11 @@
             this.goodsComboBox = new System.Windows.Forms.ComboBox();
             this.customerComboBox = new System.Windows.Forms.ComboBox();
             this.goodsRowGridControl = new DevExpress.XtraGrid.GridControl();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource();
+            this.addEditViewModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.goodsRowGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colGoods = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colGood = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCount = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colPrice = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colTotalPrice = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTotalCost = new DevExpress.XtraGrid.Columns.GridColumn();
             this.statusComboBox = new System.Windows.Forms.ComboBox();
             this.layoutControlGroup = new DevExpress.XtraLayout.LayoutControlGroup();
             this.goodsLayoutControlItem = new DevExpress.XtraLayout.LayoutControlItem();
@@ -62,9 +63,8 @@
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.priceLayoutControlItem = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem = new DevExpress.XtraLayout.LayoutControlItem();
-            this.editCommentButton = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.mainLayoutControl)).BeginInit();
             this.mainLayoutControl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.priceEdit.Properties)).BeginInit();
@@ -73,7 +73,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.commentsListBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.countOfGoodTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.goodsRowGridControl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.addEditViewModelBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.goodsRowGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.goodsLayoutControlItem)).BeginInit();
@@ -86,13 +86,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.priceLayoutControlItem)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem)).BeginInit();
             this.SuspendLayout();
             // 
             // mainLayoutControl
             // 
-            this.mainLayoutControl.Controls.Add(this.editCommentButton);
+            this.mainLayoutControl.Controls.Add(this.deleteGoodButton);
             this.mainLayoutControl.Controls.Add(this.priceEdit);
             this.mainLayoutControl.Controls.Add(this.addGoodButton);
             this.mainLayoutControl.Controls.Add(this.addCommentButton);
@@ -112,11 +112,22 @@
             this.mainLayoutControl.TabIndex = 0;
             this.mainLayoutControl.Text = "layoutControl1";
             // 
+            // deleteGoodButton
+            // 
+            this.deleteGoodButton.Location = new System.Drawing.Point(290, 363);
+            this.deleteGoodButton.Name = "deleteGoodButton";
+            this.deleteGoodButton.Size = new System.Drawing.Size(482, 22);
+            this.deleteGoodButton.StyleController = this.mainLayoutControl;
+            this.deleteGoodButton.TabIndex = 44;
+            this.deleteGoodButton.Text = "Удалить товар из списка";
+            this.deleteGoodButton.Click += new System.EventHandler(this.deleteGoodButton_Click);
+            // 
             // priceEdit
             // 
             this.priceEdit.Location = new System.Drawing.Point(96, 389);
             this.priceEdit.MenuManager = this.mainRibbonControl;
             this.priceEdit.Name = "priceEdit";
+            this.priceEdit.Properties.ReadOnly = true;
             this.priceEdit.Size = new System.Drawing.Size(676, 20);
             this.priceEdit.StyleController = this.mainLayoutControl;
             this.priceEdit.TabIndex = 43;
@@ -142,6 +153,7 @@
             this.saveOrderButton.Id = 1;
             this.saveOrderButton.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("saveOrderButton.LargeGlyph")));
             this.saveOrderButton.Name = "saveOrderButton";
+            this.saveOrderButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.saveOrderButton_ItemClick);
             // 
             // saveAndNewOrderButton
             // 
@@ -150,6 +162,7 @@
             this.saveAndNewOrderButton.Id = 2;
             this.saveAndNewOrderButton.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("saveAndNewOrderButton.LargeGlyph")));
             this.saveAndNewOrderButton.Name = "saveAndNewOrderButton";
+            this.saveAndNewOrderButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.saveAndNewOrderButton_ItemClick);
             // 
             // mainRibbonPage
             // 
@@ -174,12 +187,13 @@
             this.addGoodButton.StyleController = this.mainLayoutControl;
             this.addGoodButton.TabIndex = 42;
             this.addGoodButton.Text = "Добавить";
+            this.addGoodButton.Click += new System.EventHandler(this.addGoodButton_Click);
             // 
             // addCommentButton
             // 
             this.addCommentButton.Location = new System.Drawing.Point(12, 93);
             this.addCommentButton.Name = "addCommentButton";
-            this.addCommentButton.Size = new System.Drawing.Size(135, 22);
+            this.addCommentButton.Size = new System.Drawing.Size(274, 22);
             this.addCommentButton.StyleController = this.mainLayoutControl;
             this.addCommentButton.TabIndex = 41;
             this.addCommentButton.Text = "Добавить";
@@ -201,8 +215,6 @@
             this.commentsListBox.Size = new System.Drawing.Size(274, 265);
             this.commentsListBox.StyleController = this.mainLayoutControl;
             this.commentsListBox.TabIndex = 39;
-            this.commentsListBox.SelectedIndexChanged += new System.EventHandler(this.commentsListBox_SelectedIndexChanged);
-            this.commentsListBox.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.commentsListBox_MouseDoubleClick);
             // 
             // countOfGoodTextEdit
             // 
@@ -231,65 +243,50 @@
             // 
             // goodsRowGridControl
             // 
-            this.goodsRowGridControl.DataSource = this.bindingSource1;
+            this.goodsRowGridControl.DataSource = this.addEditViewModelBindingSource;
             this.goodsRowGridControl.Location = new System.Drawing.Point(290, 136);
             this.goodsRowGridControl.MainView = this.goodsRowGridView;
             this.goodsRowGridControl.MenuManager = this.mainRibbonControl;
             this.goodsRowGridControl.Name = "goodsRowGridControl";
-            this.goodsRowGridControl.Size = new System.Drawing.Size(482, 249);
+            this.goodsRowGridControl.Size = new System.Drawing.Size(482, 223);
             this.goodsRowGridControl.TabIndex = 19;
             this.goodsRowGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.goodsRowGridView});
             // 
-            // bindingSource1
+            // addEditViewModelBindingSource
             // 
-            this.bindingSource1.DataSource = typeof(Domain.Entities.GoodsRow);
+            this.addEditViewModelBindingSource.DataSource = typeof(ContosoUI.Order.AddEdit.AddEditViewModel);
             // 
             // goodsRowGridView
             // 
             this.goodsRowGridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colGoods,
+            this.colGood,
             this.colCount,
-            this.colPrice,
-            this.colTotalPrice});
+            this.colTotalCost});
             this.goodsRowGridView.GridControl = this.goodsRowGridControl;
             this.goodsRowGridView.Name = "goodsRowGridView";
+            this.goodsRowGridView.OptionsBehavior.Editable = false;
             // 
-            // colGoods
+            // colGood
             // 
-            this.colGoods.Caption = "Товар";
-            this.colGoods.FieldName = "Goods";
-            this.colGoods.Name = "colGoods";
-            this.colGoods.Visible = true;
-            this.colGoods.VisibleIndex = 0;
-            this.colGoods.Width = 308;
+            this.colGood.FieldName = "Good";
+            this.colGood.Name = "colGood";
+            this.colGood.Visible = true;
+            this.colGood.VisibleIndex = 0;
             // 
             // colCount
             // 
-            this.colCount.Caption = "Кол-во";
             this.colCount.FieldName = "Count";
             this.colCount.Name = "colCount";
             this.colCount.Visible = true;
             this.colCount.VisibleIndex = 1;
-            this.colCount.Width = 39;
             // 
-            // colPrice
+            // colTotalCost
             // 
-            this.colPrice.Caption = "Цена";
-            this.colPrice.FieldName = "Price";
-            this.colPrice.Name = "colPrice";
-            this.colPrice.Visible = true;
-            this.colPrice.VisibleIndex = 2;
-            this.colPrice.Width = 38;
-            // 
-            // colTotalPrice
-            // 
-            this.colTotalPrice.Caption = "Общая цена";
-            this.colTotalPrice.FieldName = "TotalPrice";
-            this.colTotalPrice.Name = "colTotalPrice";
-            this.colTotalPrice.Visible = true;
-            this.colTotalPrice.VisibleIndex = 3;
-            this.colTotalPrice.Width = 72;
+            this.colTotalCost.FieldName = "TotalCost";
+            this.colTotalCost.Name = "colTotalCost";
+            this.colTotalCost.Visible = true;
+            this.colTotalCost.VisibleIndex = 2;
             // 
             // statusComboBox
             // 
@@ -325,7 +322,7 @@
             this.goodsLayoutControlItem.Control = this.goodsRowGridControl;
             this.goodsLayoutControlItem.Location = new System.Drawing.Point(278, 108);
             this.goodsLayoutControlItem.Name = "goodsLayoutControlItem";
-            this.goodsLayoutControlItem.Size = new System.Drawing.Size(486, 269);
+            this.goodsLayoutControlItem.Size = new System.Drawing.Size(486, 243);
             this.goodsLayoutControlItem.Text = "Список товаров";
             this.goodsLayoutControlItem.TextLocation = DevExpress.Utils.Locations.Top;
             this.goodsLayoutControlItem.TextSize = new System.Drawing.Size(81, 13);
@@ -385,7 +382,7 @@
             this.layoutControlItem5.Control = this.addCommentButton;
             this.layoutControlItem5.Location = new System.Drawing.Point(0, 81);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(139, 27);
+            this.layoutControlItem5.Size = new System.Drawing.Size(278, 27);
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextVisible = false;
             // 
@@ -419,31 +416,21 @@
             this.priceLayoutControlItem.Text = "Цена заказа";
             this.priceLayoutControlItem.TextSize = new System.Drawing.Size(81, 13);
             // 
+            // layoutControlItem3
+            // 
+            this.layoutControlItem3.Control = this.deleteGoodButton;
+            this.layoutControlItem3.Location = new System.Drawing.Point(278, 351);
+            this.layoutControlItem3.Name = "layoutControlItem3";
+            this.layoutControlItem3.Size = new System.Drawing.Size(486, 26);
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem3.TextVisible = false;
+            // 
             // layoutControlItem
             // 
             this.layoutControlItem.Location = new System.Drawing.Point(382, 120);
             this.layoutControlItem.Name = "layoutControlItem7";
             this.layoutControlItem.Size = new System.Drawing.Size(382, 281);
             this.layoutControlItem.TextSize = new System.Drawing.Size(50, 20);
-            // 
-            // editCommentButton
-            // 
-            this.editCommentButton.Location = new System.Drawing.Point(151, 93);
-            this.editCommentButton.Name = "editCommentButton";
-            this.editCommentButton.Size = new System.Drawing.Size(135, 22);
-            this.editCommentButton.StyleController = this.mainLayoutControl;
-            this.editCommentButton.TabIndex = 44;
-            this.editCommentButton.Text = "Редактировать";
-            this.editCommentButton.Click += new System.EventHandler(this.editCommentButton_Click);
-            // 
-            // layoutControlItem3
-            // 
-            this.layoutControlItem3.Control = this.editCommentButton;
-            this.layoutControlItem3.Location = new System.Drawing.Point(139, 81);
-            this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(139, 27);
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem3.TextVisible = false;
             // 
             // AddEditOrderView
             // 
@@ -463,7 +450,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.commentsListBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.countOfGoodTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.goodsRowGridControl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.addEditViewModelBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.goodsRowGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.goodsLayoutControlItem)).EndInit();
@@ -476,8 +463,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.priceLayoutControlItem)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -491,11 +478,6 @@
         private DevExpress.XtraGrid.GridControl goodsRowGridControl;
         private DevExpress.XtraGrid.Views.Grid.GridView goodsRowGridView;
         private DevExpress.XtraLayout.LayoutControlItem goodsLayoutControlItem;
-        private System.Windows.Forms.BindingSource bindingSource1;
-        private DevExpress.XtraGrid.Columns.GridColumn colGoods;
-        private DevExpress.XtraGrid.Columns.GridColumn colCount;
-        private DevExpress.XtraGrid.Columns.GridColumn colPrice;
-        private DevExpress.XtraGrid.Columns.GridColumn colTotalPrice;
         private DevExpress.XtraBars.Ribbon.RibbonControl mainRibbonControl;
         private DevExpress.XtraBars.BarButtonItem saveOrderButton;
         private DevExpress.XtraBars.BarButtonItem saveAndNewOrderButton;
@@ -519,7 +501,11 @@
         private DevExpress.XtraLayout.LayoutControlItem priceLayoutControlItem;
         private System.Windows.Forms.ComboBox goodsComboBox;
         private DevExpress.XtraLayout.LayoutControlItem goodLayoutControlItem;
-        private DevExpress.XtraEditors.SimpleButton editCommentButton;
+        private System.Windows.Forms.BindingSource addEditViewModelBindingSource;
+        private DevExpress.XtraGrid.Columns.GridColumn colGood;
+        private DevExpress.XtraGrid.Columns.GridColumn colCount;
+        private DevExpress.XtraGrid.Columns.GridColumn colTotalCost;
+        private DevExpress.XtraEditors.SimpleButton deleteGoodButton;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
     }
 }

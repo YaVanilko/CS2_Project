@@ -10,6 +10,5 @@ namespace Data.DumbData
 {
     public class OrderStatusDao : BaseDao<OrderStatus>, IOrderStatusRepository
     {
-        
     }
 }

@@ -13,6 +13,7 @@ namespace ContosoUI.Order.AddEdit
     public class AddEditOrderPresenter : INotifyPropertyChanged
     {
         readonly AddEditOrderView view;
+        public List<AddEditViewModel> vm { get; set; }
 
         readonly IOrderRepository orderModel = new OrderDao();
         readonly ICustomerRepository customerModel = new CustomerDao();
@@ -22,62 +23,110 @@ namespace ContosoUI.Order.AddEdit
         readonly ICommentRepository commentModel = new CommentDao();
 
         private int orderId;
+        Domain.Entities.Order order;
 
-        public List<string> statusesView = new List<string>();
-        public List<string> customersView = new List<string>();
-        public List<string> goodsView = new List<string>();
-        public List<string> commentsView = new List<string>();
+        public List<Customer> Customers
+        {
+            get { return customerModel.GetAll().ToList(); }
+        }
 
-        readonly Domain.Entities.Order order;
-        readonly List<Customer> allCustomers;
-        readonly List<Goods> allGoods;
-        readonly List<GoodsRow> goodsList;
+        public List<OrderStatus> Statuses
+        {
+            get { return orderStatusModel.GetAll().Distinct().ToList(); }
+        }
+
+        public List<Goods> GoodsList
+        {
+            get { return goodsModel.GetAll().ToList(); }
+        }
+
+        public List<Comment> Comments
+        {
+            get { return order.Comments; }
+            set
+            {
+                if (Comments != value)
+                {
+                    Comments = value;
+                    NotifyPropertyChanged("Comments");
+                }
+            }
+        }
 
         public event PropertyChangedEventHandler PropertyChanged;
-
-        public AddEditOrderPresenter(AddEditOrderView view) : this(view, -1)
-        {
-            order = new Domain.Entities.Order();
-        }
 
         public AddEditOrderPresenter(AddEditOrderView view, int orderId)
         {
             this.view = view;
             this.orderId = orderId;
+            vm = new List<AddEditViewModel>();
 
-            if (orderId > 0)
+            if (orderId >= 0)
             {
                 order = orderModel.GetById(orderId);
+                foreach (GoodsRow row in order.goodsList)
+                {
+                    vm.Add(new AddEditViewModel() { Id = row.Id, Good = row.Goods, Count = row.Count, TotalCost = row.TotalPrice });
+                }
             }
-
-            allCustomers = customerModel.GetAll().ToList();
-            customersView = customerModel.GetAll().Select(x => x.PersonalInfo.LastName + " " + x.PersonalInfo.FirstName + " " + x.PersonalInfo.MiddleName).ToList();
-            statusesView = orderStatusModel.GetAll().Select(x => x.Status).Distinct().ToList();
-            allGoods = goodsModel.GetAll().ToList();
-            goodsView = goodsModel.GetAll().Select(x => x.Name).ToList();
-            goodsList = goodsRowModel.GetAll().Where(x => x.Id == orderId).ToList();
-
-            foreach (Comment comment in order.comments)
+            else
             {
-                commentsView.Add(comment.Message);
+                order = new Domain.Entities.Order();
             }
         }
 
-        public string SelectedCustomer
+        public Customer Customer
         {
-            get { return order.Customer.ToString(); }
+            get { return order.Customer; }
             set
             {
-                if (order.Customer.ToString() != value)
+                if (order.Customer != value)
                 {
-                    NotifyPropertyChanged("SelectedCustomer");
+                    order.Customer = value;
+                    NotifyPropertyChanged("Customer");
                 }
             }    
         }
 
-        public List<GoodsRow> listOFGoods
+        public OrderStatus Status
         {
-            get; set;
+            get { return order.Status; }
+            set
+            {
+                if (order.Status != value)
+                {
+                    order.Status = value;
+                    NotifyPropertyChanged("Status");
+                }
+            }
+        }
+
+        private Goods selectedGood { get; set; }
+        public Goods SelectedGood
+        {
+            get { return selectedGood; }
+            set
+            {
+                if (selectedGood != value)
+                {
+                    selectedGood = value;
+                    NotifyPropertyChanged("SelectedGood");
+                }
+            }
+        }
+
+        private int countOfGood { get; set; }
+        public int CountOfGood
+        {
+            get { return countOfGood; }
+            set
+            {
+                if (countOfGood != value)
+                {
+                    countOfGood = value;
+                    NotifyPropertyChanged("CountOfGood");
+                }
+            }
         }
 
         public double TotalCost
@@ -85,31 +134,15 @@ namespace ContosoUI.Order.AddEdit
             get { return CalculateOrderCost(); }
         }
 
-        public string SelectedStatus
-        {
-            get { return order.Status.Status; }
-            set
-            {
-                if (order.Status.Status != value)
-                {
-                    order.Status.Status = value;
-                    NotifyPropertyChanged("SelectedStatus");
-                }
-            }
-        }
-
-        public int CommentIndex
-        {
-            get; set;
-        }
+        private string message { get; set; }
         public string Message
         {
-            get { return order.comments[CommentIndex].Message; }
+            get { return message; }
             set
             {
-                if (Message != value)
+                if (message != value)
                 {
-                    order.comments[CommentIndex].Message = value;
+                    message = value;
                     NotifyPropertyChanged("Message");
                 }
             }
@@ -117,38 +150,31 @@ namespace ContosoUI.Order.AddEdit
 
         public Comment Comment
         {
-            get { return order.comments[orderId]; }
-            set
-            {
-                Comment.Message = Message;
-                Comment.Type = CommentType.Order;
-            }
+            get { return new Comment() { Message = message, Type = CommentType.Order }; }
+        }
+
+        public void AddNewGoodRow()
+        {
+            GoodsRow item = new GoodsRow() {Goods = SelectedGood, Count = CountOfGood };
+            vm.Add(new AddEditViewModel() { Id = item.Id, Good = item.Goods, Count = item.Count, TotalCost = item.TotalPrice });
+            order.goodsList.Add(item);
+            goodsRowModel.Add(item);
+        }
+
+        public void DeleteGoodRow(int id)
+        {
+            vm.Remove(vm.Find(x => x.Id == id));
+            order.goodsList.Remove(order.goodsList.Find(x => x.Id == id));
+            goodsRowModel.Delete(order.goodsList.Find(x => x.Id == id));
         }
 
         public void AddNewComment(Comment value)
         {
+            order.Comments.Add(value);
             commentModel.Add(value);
         }
 
-        public void UpdateCommentStorage (Comment value)
-        {
-            commentModel.Update(value);
-        }
-
-        public List<Comment> comments
-        {
-            get { return order.comments; }
-            set
-            {
-                if (order.comments != value)
-                {
-                    order.comments = value;
-                    NotifyPropertyChanged("comments");
-                }
-            }
-        }
-
-        private double CalculateOrderCost ()
+        private double CalculateOrderCost()
         {
             double result = 0;
             foreach (GoodsRow row in order.goodsList)
@@ -156,6 +182,24 @@ namespace ContosoUI.Order.AddEdit
                 result += row.TotalPrice;
             }
             return result;
+        }
+
+        public void Save()
+        {
+            if (order.Id >= 0)
+            {
+                orderModel.Update(order);
+            }
+            else
+            {
+                orderModel.Add(order);
+            }
+        }
+
+        public void SaveAndNew()
+        {
+            Save();
+            order = new Domain.Entities.Order();
         }
 
         private void NotifyPropertyChanged(String info)
@@ -169,10 +213,9 @@ namespace ContosoUI.Order.AddEdit
 
     public class AddEditViewModel
     {
-        public Customer Customer { get; set; }
-        public List<GoodsRow> goodsList { get; set; }
+        public int Id { get; set; }
+        public Goods Good{ get; set; }
+        public int Count { get; set; }
         public double TotalCost { get; set; }
-        public OrderStatus Status { get; set; }
-        public List<Comment> comments { get; set; }
     }
 }

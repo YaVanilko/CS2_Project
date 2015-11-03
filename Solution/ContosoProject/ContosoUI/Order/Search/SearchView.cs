@@ -16,6 +16,7 @@ namespace ContosoUI.Order.Search
     public partial class SearchView : DevExpress.XtraEditors.XtraForm
     {
         SearchPresenter presenter;
+        
         public SearchView()
         {
             InitializeComponent();
@@ -24,19 +25,19 @@ namespace ContosoUI.Order.Search
 
         private void SearchView_Load(object sender, EventArgs e)
         {
-            BindingSource bindings = new BindingSource();
-            bindings.DataSource = presenter;
+            searchViewModelBindingSource.DataSource = presenter;
 
-            statusComboBox.DataSource = presenter.Statuses;
-            //statusComboBox.DataBindings.Add("DataSource", bindings, "Statuses");
-            statusComboBox.SelectedItem = "Все статусы";
-            resultGridControl.DataSource = presenter.viewModel;
-            //statusComboBox.DataBindings.Add("DataSource", bindings, "Statuses");
+            statusComboBox.DataBindings.Add("DataSource", searchViewModelBindingSource, "StatusesList");
+            statusComboBox.SelectedIndex = 5;
+
+            resultGridControl.DataBindings.Add("DataSource", searchViewModelBindingSource, "viewModel");
+            
         }
 
         private void searchBarButtonItem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            presenter.SelectOrdersByStatus(statusComboBox.Text);
+            Domain.Entities.OrderStatus currentStatus = new Domain.Entities.OrderStatus(statusComboBox.Text);
+            presenter.SelectOrdersByStatus(currentStatus);
             resultGridControl.RefreshDataSource();
         }
 
