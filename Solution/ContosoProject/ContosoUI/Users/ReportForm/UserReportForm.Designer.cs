@@ -41,8 +41,8 @@
             this.userReportViewModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.barButtonGroup1 = new DevExpress.XtraBars.BarButtonGroup();
-            this.UserReportSaveBtn = new DevExpress.XtraBars.BarButtonItem();
-            this.UserReportPrintBtn = new DevExpress.XtraBars.BarButtonItem();
+            this.userReportSaveBtn = new DevExpress.XtraBars.BarButtonItem();
+            this.userReportPrintBtn = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
@@ -164,8 +164,8 @@
             this.ribbon.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbon.ExpandCollapseItem,
             this.barButtonGroup1,
-            this.UserReportSaveBtn,
-            this.UserReportPrintBtn});
+            this.userReportSaveBtn,
+            this.userReportPrintBtn});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
             this.ribbon.MaxItemId = 6;
             this.ribbon.Name = "ribbon";
@@ -181,23 +181,23 @@
             this.barButtonGroup1.Id = 1;
             this.barButtonGroup1.Name = "barButtonGroup1";
             // 
-            // UserReportSaveBtn
+            // userReportSaveBtn
             // 
-            this.UserReportSaveBtn.Caption = "Сохранить";
-            this.UserReportSaveBtn.Glyph = ((System.Drawing.Image)(resources.GetObject("UserReportSaveBtn.Glyph")));
-            this.UserReportSaveBtn.Id = 4;
-            this.UserReportSaveBtn.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("UserReportSaveBtn.LargeGlyph")));
-            this.UserReportSaveBtn.Name = "UserReportSaveBtn";
-            this.UserReportSaveBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.UserReportSaveBtn_ItemClick);
+            this.userReportSaveBtn.Caption = "Сохранить";
+            this.userReportSaveBtn.Glyph = ((System.Drawing.Image)(resources.GetObject("userReportSaveBtn.Glyph")));
+            this.userReportSaveBtn.Id = 4;
+            this.userReportSaveBtn.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("userReportSaveBtn.LargeGlyph")));
+            this.userReportSaveBtn.Name = "userReportSaveBtn";
+            this.userReportSaveBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.UserReportSaveBtn_ItemClick);
             // 
-            // UserReportPrintBtn
+            // userReportPrintBtn
             // 
-            this.UserReportPrintBtn.Caption = "Печать";
-            this.UserReportPrintBtn.Glyph = ((System.Drawing.Image)(resources.GetObject("UserReportPrintBtn.Glyph")));
-            this.UserReportPrintBtn.Id = 5;
-            this.UserReportPrintBtn.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("UserReportPrintBtn.LargeGlyph")));
-            this.UserReportPrintBtn.Name = "UserReportPrintBtn";
-            this.UserReportPrintBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.UserReportPrintBtn_ItemClick);
+            this.userReportPrintBtn.Caption = "Печать";
+            this.userReportPrintBtn.Glyph = ((System.Drawing.Image)(resources.GetObject("userReportPrintBtn.Glyph")));
+            this.userReportPrintBtn.Id = 5;
+            this.userReportPrintBtn.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("userReportPrintBtn.LargeGlyph")));
+            this.userReportPrintBtn.Name = "userReportPrintBtn";
+            this.userReportPrintBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.UserReportPrintBtn_ItemClick);
             // 
             // ribbonPage1
             // 
@@ -209,8 +209,8 @@
             // ribbonPageGroup1
             // 
             this.ribbonPageGroup1.ItemLinks.Add(this.barButtonGroup1);
-            this.ribbonPageGroup1.ItemLinks.Add(this.UserReportSaveBtn);
-            this.ribbonPageGroup1.ItemLinks.Add(this.UserReportPrintBtn);
+            this.ribbonPageGroup1.ItemLinks.Add(this.userReportSaveBtn);
+            this.ribbonPageGroup1.ItemLinks.Add(this.userReportPrintBtn);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.Text = "Сохранение";
             // 
@@ -356,7 +356,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
-        private DevExpress.XtraBars.BarButtonItem UserReportSaveBtn;
-        private DevExpress.XtraBars.BarButtonItem UserReportPrintBtn;
+        private DevExpress.XtraBars.BarButtonItem userReportSaveBtn;
+        private DevExpress.XtraBars.BarButtonItem userReportPrintBtn;
     }
 }

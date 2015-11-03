@@ -45,6 +45,12 @@ namespace ContosoUI.GoodsAll.AddGoods
         private void SaveGoodsButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
 
+
+        }
+
+        private void Со_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
             if (AddGoodsTextBoxName.Text == "" || AddGoodsTextBoxSKU.Text == "" || AddGoodsTextBoxPrice.Text == "" ||
                 AddGoodsTextBoxCount.Text == "")
             { MessageBox.Show("Вы заполнили не все поля"); }
@@ -99,7 +105,11 @@ namespace ContosoUI.GoodsAll.AddGoods
                 vm.Update(goods);
             }
 
+        }
 
+        private void AddGoodsComboBoxEditCategory_TextChanged(object sender, EventArgs e)
+        {
+            presenter.productCategoryList.Add(AddGoodsComboBoxEditCategory.Text);
         }
 
 

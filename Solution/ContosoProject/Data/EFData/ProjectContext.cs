@@ -1,10 +1,11 @@
-﻿using Domain.Entities;
+﻿using Domain.DAO;
+using Domain.Entities;
 using System;
 using System.Collections.Generic;
-using System.Data.Entity;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Data.Entity;
+using System.Data.Entity.Migrations;
 
 namespace Data.EFData
 {
@@ -19,7 +20,10 @@ namespace Data.EFData
         public DbSet<Role> Roles { get; set; }
         public DbSet<Permission> Permissions { get; set; }
         public DbSet<Comment> Comments { get; set; }
-        
+        public DbSet<ContactInfo> ContactInfoes { get; set; }
+        public DbSet<OrderStatus> OrderStatus { get; set; }
+        public DbSet<PersonalInfo> PersonalInfoes { get; set; }
+        public DbSet<GoodsRow> GoodsRows { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

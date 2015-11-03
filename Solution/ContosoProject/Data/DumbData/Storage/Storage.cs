@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -100,20 +101,30 @@ namespace Data.DumbData
             }
         };
         #endregion
-
+        static string GetMd5Hash(string input)
+        {
+            MD5 md5Hash = MD5.Create();
+            byte[] data = md5Hash.ComputeHash(Encoding.UTF8.GetBytes(input));
+            StringBuilder sBuilder = new StringBuilder();
+            for (int i = 0; i < data.Length; i++)
+            {
+                sBuilder.Append(data[i].ToString("x2"));
+            }
+            return sBuilder.ToString();
+        }
         #region User
         public static List<User> UserCollection = new List<User>() 
         {
-            new User {Id=0, Login="admin",Password="123",PersonalInfo = PersonalInfoCollection[0], Role = RoleCollection[0], /*IsActive = false*/},
-            new User {Id=1, Login="manager",Password="123",PersonalInfo = PersonalInfoCollection[1], Role = RoleCollection[1]},
-            new User {Id=2, Login="boss",Password="123",PersonalInfo = PersonalInfoCollection[2], Role = RoleCollection[2]},
-            new User {Id=3, Login="user3",Password="123",PersonalInfo = PersonalInfoCollection[3], Role = RoleCollection[3]},
-            new User {Id=4, Login="user4",Password="123",PersonalInfo = PersonalInfoCollection[4], Role = RoleCollection[4]},
-            new User {Id=5, Login="user5",Password="123",PersonalInfo = PersonalInfoCollection[5], Role = RoleCollection[5]},
-            new User {Id=6, Login="user6",Password="123",PersonalInfo = PersonalInfoCollection[6], Role = RoleCollection[6]},
-            new User {Id=7, Login="user7",Password="123",PersonalInfo = PersonalInfoCollection[7], Role = RoleCollection[7]},
-            new User {Id=8, Login="user8",Password="123",PersonalInfo = PersonalInfoCollection[8], Role = RoleCollection[8]},
-            new User {Id=9, Login="user9",Password="123",PersonalInfo = PersonalInfoCollection[9], Role = RoleCollection[9]},
+            new User {Id=0, Login="admin",Password=GetMd5Hash("123"),PersonalInfo = PersonalInfoCollection[0], Role = RoleCollection[0], /*IsActive = false*/},
+            new User {Id=1, Login="manager",Password="admin",PersonalInfo = PersonalInfoCollection[1], Role = RoleCollection[1]},
+            new User {Id=2, Login="boss",Password=GetMd5Hash("123"),PersonalInfo = PersonalInfoCollection[2], Role = RoleCollection[2]},
+            new User {Id=3, Login="user3",Password=GetMd5Hash("123"),PersonalInfo = PersonalInfoCollection[3], Role = RoleCollection[3]},
+            new User {Id=4, Login="user4",Password=GetMd5Hash("123"),PersonalInfo = PersonalInfoCollection[4], Role = RoleCollection[4]},
+            new User {Id=5, Login="user5",Password=GetMd5Hash("123"),PersonalInfo = PersonalInfoCollection[5], Role = RoleCollection[5]},
+            new User {Id=6, Login="user6",Password=GetMd5Hash("123"),PersonalInfo = PersonalInfoCollection[6], Role = RoleCollection[6]},
+            new User {Id=7, Login="user7",Password=GetMd5Hash("123"),PersonalInfo = PersonalInfoCollection[7], Role = RoleCollection[7]},
+            new User {Id=8, Login="user8",Password=GetMd5Hash("123"),PersonalInfo = PersonalInfoCollection[8], Role = RoleCollection[8]},
+            new User {Id=9, Login="user9",Password=GetMd5Hash("123"),PersonalInfo = PersonalInfoCollection[9], Role = RoleCollection[9]},
 
         };
         #endregion
@@ -357,16 +368,16 @@ namespace Data.DumbData
         #region Goods
         public static List<Goods> goodsCollection = new List<Goods>()
         {
-            new Goods(){Id = 0, Name="Стул Комфорт", Category = categoryCollection[0], Price=400},
-            new Goods(){Id = 1, Name="Стол Венеция",Category = categoryCollection[1], Price=2000},
-            new Goods(){Id = 2, Name="Шкаф Марк",Category = categoryCollection[2], Price=1400},
-            new Goods(){Id = 3, Name="Диван Тина с кушеткой",Category = categoryCollection[3], Price=12400},
-            new Goods(){Id = 4, Name="Кровать Соната",Category = categoryCollection[4], Price=6059.16},
-            new Goods(){Id = 5, Name="Полка Юниор",Category = categoryCollection[5], Price=605},
-            new Goods(){Id = 6, Name="Кухня Модерн",Category = categoryCollection[6], Price=7000.80},
-            new Goods(){Id = 7, Name="Ручка дверная Стерх",Category = categoryCollection[7], Price=200},
-            new Goods(){Id = 8, Name="Комод Ришелье",Category = categoryCollection[8], Price=1200},
-            new Goods(){Id = 9, Name="Тумба Стандарт прикроватная",Category = categoryCollection[9], Price=500},
+            new Goods(){Id = 0, Name="Стул Комфорт", Category = categoryCollection[0]},
+            new Goods(){Id = 1, Name="Стол Венеция",Category = categoryCollection[1]},
+            new Goods(){Id = 2, Name="Шкаф Марк",Category = categoryCollection[2]},
+            new Goods(){Id = 3, Name="Диван Тина с кушеткой",Category = categoryCollection[3]},
+            new Goods(){Id = 4, Name="Кровать Соната",Category = categoryCollection[4]},
+            new Goods(){Id = 5, Name="Полка Юниор",Category = categoryCollection[5]},
+            new Goods(){Id = 6, Name="Кухня Модерн",Category = categoryCollection[6]},
+            new Goods(){Id = 7, Name="Ручка дверная Стерх",Category = categoryCollection[7]},
+            new Goods(){Id = 8, Name="Комод Ришелье",Category = categoryCollection[8]},
+            new Goods(){Id = 9, Name="Тумба Стандарт прикроватная",Category = categoryCollection[9]},
         };
         #endregion
 
@@ -405,16 +416,16 @@ namespace Data.DumbData
         #region Permission
         public static List<Permission> PermissionCollection = new List<Permission>() 
         {
-            new Permission(){Id=0,EditTime = DateTime.Now, Type = Domain.PermissionType.EditUser},
-            new Permission(){Id=1,EditTime = DateTime.Now, Type = Domain.PermissionType.ListUser},
-            new Permission(){Id=2,EditTime = DateTime.Now, Type = Domain.PermissionType.NewUser},
-            new Permission(){Id=3,EditTime = DateTime.Now},
-            new Permission(){Id=4,EditTime = DateTime.Now},
-            new Permission(){Id=5,EditTime = DateTime.Now},
-            new Permission(){Id=6,EditTime = DateTime.Now},
-            new Permission(){Id=7,EditTime = DateTime.Now},
-            new Permission(){Id=8,EditTime = DateTime.Now},
-            new Permission(){Id=9,EditTime = DateTime.Now},
+            new Permission{Id=0,EditTime = DateTime.Now, Type = Domain.PermissionType.EditUser},
+            new Permission{Id=1,EditTime = DateTime.Now, Type = Domain.PermissionType.ListUser},
+            new Permission{Id=2,EditTime = DateTime.Now, Type = Domain.PermissionType.NewUser},
+            new Permission{Id=3,EditTime = DateTime.Now, Type = Domain.PermissionType.PrintReportUsers},
+            new Permission{Id=4,EditTime = DateTime.Now, Type = Domain.PermissionType.SaveListUsers},
+            new Permission{Id=5,EditTime = DateTime.Now},
+            new Permission{Id=6,EditTime = DateTime.Now},
+            new Permission{Id=7,EditTime = DateTime.Now},
+            new Permission{Id=8,EditTime = DateTime.Now},
+            new Permission{Id=9,EditTime = DateTime.Now},
 
         };
         #endregion
@@ -432,16 +443,16 @@ namespace Data.DumbData
             CustomerCollection[8].Orders.Add(OrderCollection[8]);
             CustomerCollection[9].Orders.Add(OrderCollection[9]);
 
-            OrderCollection[0].goodsList.Add(GoodsRowCollection[0]);
-            OrderCollection[1].goodsList.Add(GoodsRowCollection[1]);
-            OrderCollection[2].goodsList.Add(GoodsRowCollection[2]);
-            OrderCollection[3].goodsList.Add(GoodsRowCollection[3]);
-            OrderCollection[4].goodsList.Add(GoodsRowCollection[4]);
-            OrderCollection[5].goodsList.Add(GoodsRowCollection[5]);
-            OrderCollection[6].goodsList.Add(GoodsRowCollection[6]);
-            OrderCollection[7].goodsList.Add(GoodsRowCollection[7]);
-            OrderCollection[8].goodsList.Add(GoodsRowCollection[8]);
-            OrderCollection[9].goodsList.Add(GoodsRowCollection[9]);
+            OrderCollection[0].GoodsList.Add(GoodsRowCollection[0]);
+            OrderCollection[1].GoodsList.Add(GoodsRowCollection[1]);
+            OrderCollection[2].GoodsList.Add(GoodsRowCollection[2]);
+            OrderCollection[3].GoodsList.Add(GoodsRowCollection[3]);
+            OrderCollection[4].GoodsList.Add(GoodsRowCollection[4]);
+            OrderCollection[5].GoodsList.Add(GoodsRowCollection[5]);
+            OrderCollection[6].GoodsList.Add(GoodsRowCollection[6]);
+            OrderCollection[7].GoodsList.Add(GoodsRowCollection[7]);
+            OrderCollection[8].GoodsList.Add(GoodsRowCollection[8]);
+            OrderCollection[9].GoodsList.Add(GoodsRowCollection[9]);
 
             RoleCollection[0].Permissions = PermissionCollection;
         }

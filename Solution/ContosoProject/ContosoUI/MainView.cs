@@ -12,6 +12,7 @@ using ContosoUI.Customers.Search;
 using ContosoUI.Customers.Add;
 using ContosoUI.Users.Edit;
 using ContosoUI.Order;
+using ContosoUI.ProductCategoryList;
 
 namespace ContosoUI
 {
@@ -55,7 +56,11 @@ namespace ContosoUI
             if (!Program.AuthUser.Role.Permissions.Any(x => x.Type == Domain.PermissionType.NewGoods))
             {
                 this.addGoodsBarButton.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-            }*/
+            }
+            if (!Program.AuthUser.Role.Permissions.Any(x => x.Type == Domain.PermissionType.EditProductCategory))
+            {
+                this.productCategoryButton.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            }
         }
 
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -135,6 +140,13 @@ namespace ContosoUI
         private void addGoodsBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             var form = new GoodsAll.AddGoods.AddGoods();
+            form.MdiParent = this;
+            form.Show();
+        }
+
+        private void productCategoryButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            var form = new ProductCategoryView();
             form.MdiParent = this;
             form.Show();
         }

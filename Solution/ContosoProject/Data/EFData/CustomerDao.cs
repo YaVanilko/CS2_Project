@@ -19,6 +19,7 @@ namespace Data.EFData
                     .Include(x => x.Comments)
                     .ToList();
         }
+
         public new IQueryable<Customer> GetAll()
         {
             IQueryable<Customer> collection =
@@ -28,13 +29,15 @@ namespace Data.EFData
                     .Include(x => x.Comments);
             return collection;
         }
-        public Customer GetById(int id)
+
+        public new Customer GetById(int id)
         {
             return dbContext.Customers.Where(x => x.Id == id)
                     .Include(x => x.Contacts)
                     .Include(x => x.PersonalInfo)
                     .Include(x => x.Comments).FirstOrDefault();
         }
+
         public new void Update(Customer entity)
         {
             dbContext.Customers.AddOrUpdate(entity);

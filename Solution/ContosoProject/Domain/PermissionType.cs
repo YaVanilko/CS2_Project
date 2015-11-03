@@ -38,6 +38,8 @@ namespace Domain
         PrintReportGoods = 22,
         PrintReportUsers = 23,
 
+        EditProductCategory = 24,
+
         None = 0
     }
 }

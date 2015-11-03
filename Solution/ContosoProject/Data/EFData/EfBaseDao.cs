@@ -2,16 +2,21 @@
 using Domain.Entities;
 using System;
 using System.Collections.Generic;
-using System.Data.Entity;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Data.Entity;
+using System.Data.Entity.Migrations;
 
 namespace Data.EFData
 {
     public class EfBaseDao<T> : IRepository<T> where T : BaseEntity, new()
     {
         protected ProjectContext dbContext = new ProjectContext();
+
+        public EfBaseDao(ProjectContext context = null)
+        {
+            dbContext = context ?? new ProjectContext();
+        }
 
         public void Add(T entity)
         {

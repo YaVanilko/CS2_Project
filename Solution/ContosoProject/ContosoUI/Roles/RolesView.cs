@@ -1,4 +1,5 @@
-﻿using DevExpress.XtraGrid.Views.Grid;
+﻿using DevExpress.XtraEditors.Controls;
+using DevExpress.XtraGrid.Views.Grid;
 using Domain.Entities;
 using System;
 using System.Collections.Generic;
@@ -27,13 +28,16 @@ namespace ContosoUI.Roles
                 this.saveRoleButton.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             }
             presenter = new RolesPresenter(this);
+            List<CheckedListBoxItem> items = new List<CheckedListBoxItem>();
+            foreach (var perm in presenter.Permissions)
+            {
+                items.Add(new CheckedListBoxItem(perm, perm.Name, false));
+            }
+            permissionsCheckedListBoxControl.Items.AddRange(items.ToArray());
         }
         private void RolesView_Load(object sender, EventArgs e)
         {
             rolesGridControl.DataSource = presenter.Roles;
-            permissionsCheckedListBoxControl.DataSource = presenter.Permissions;
-            permissionsCheckedListBoxControl.DisplayMember = "Name";
-            permissionsCheckedListBoxControl.ValueMember = "Id";
         }
         private void rolesGridView_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
@@ -49,10 +53,12 @@ namespace ContosoUI.Roles
         private void SetCheckedPermissions(ICollection<Permission> permissions)
         {
             permissionsCheckedListBoxControl.UnCheckAll();
-            foreach (var perm in permissions)
+            foreach (var permission in permissions)
             {
-                permissionsCheckedListBoxControl.SetItemChecked(perm.Id - 1, true);
+                var permissionIndex = permissionsCheckedListBoxControl.FindString(permission.Name);
+                permissionsCheckedListBoxControl.SetItemChecked(permissionIndex, true);
             }
+
         }
 
         private void addNewRoleButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -62,12 +68,17 @@ namespace ContosoUI.Roles
         }
         private void saveRoleButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            SavePermissions();    
             presenter.Save();
         }
 
         private void rolesGridView_BeforeLeaveRow(object sender, DevExpress.XtraGrid.Views.Base.RowAllowEventArgs e)
         {
-            GridView view = sender as GridView;
+            SavePermissions();
+        }
+        void SavePermissions()
+        {
+            GridView view = rolesGridView;
             object roleObj = view.GetRow(view.FocusedRowHandle);
             Role role = roleObj as Role;
 
@@ -75,7 +86,8 @@ namespace ContosoUI.Roles
             role.Permissions.Clear();
             foreach (var p in permissions)
             {
-                role.Permissions.Add(p as Permission);
+                var checkedListItem = p as CheckedListBoxItem;
+                role.Permissions.Add(checkedListItem.Value as Permission);
             }
         }
     }
