@@ -13,7 +13,7 @@ namespace ContosoUI.Roles
     public class RolesPresenter : INotifyPropertyChanged
     {
         readonly RolesView view;
-        readonly RoleViewProxy modelProxy = new RoleViewProxy();
+        readonly RoleViewService modelProxy = new RoleViewService();
         Role role;
         public RolesPresenter(RolesView view)
         {
