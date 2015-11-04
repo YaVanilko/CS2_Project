@@ -70,8 +70,19 @@ namespace ContosoUI.Roles
         {
             rolesGridView.CloseEditor();
             rolesGridView.UpdateCurrentRow();
-            SavePermissions();    
-            presenter.Save();
+            GridView view = rolesGridView;
+            object roleObj = view.GetRow(view.FocusedRowHandle);
+            Role role = roleObj as Role;
+            SavePermissions();
+            if (role.Permissions.Count == 0)
+            {
+                MessageBox.Show("Запрещено создавать роль без назначения разрешений");
+            }
+            else
+            {
+                presenter.Save();
+            }
+
         }
 
         private void rolesGridView_BeforeLeaveRow(object sender, DevExpress.XtraGrid.Views.Base.RowAllowEventArgs e)
