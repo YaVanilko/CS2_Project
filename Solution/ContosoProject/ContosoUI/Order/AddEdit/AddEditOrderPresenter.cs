@@ -1,4 +1,5 @@
-﻿using Data.DumbData;
+﻿using ContosoUI.Presenter;
+using Data.DumbData;
 using Domain.DAO;
 using Domain.Entities;
 using System;
@@ -10,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace ContosoUI.Order.AddEdit
 {
-    public class AddEditOrderPresenter : INotifyPropertyChanged
+    public class AddEditOrderPresenter : BasePresenter
     {
         readonly AddEditOrderView view;
         public List<AddEditViewModel> vm { get; set; }
