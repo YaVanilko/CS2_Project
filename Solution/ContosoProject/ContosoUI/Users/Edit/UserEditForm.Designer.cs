@@ -32,14 +32,14 @@
             this.ChangePasswordBarBtn = new DevExpress.XtraBars.BarButtonItem();
             this.mainRibbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.saveOrEditribbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.MiddleNameTextEdit = new DevExpress.XtraEditors.TextEdit();
-            this.LastNameTextEdit = new DevExpress.XtraEditors.TextEdit();
-            this.FirstNameTextEdit = new DevExpress.XtraEditors.TextEdit();
+            this.middleNameTextEdit = new DevExpress.XtraEditors.TextEdit();
+            this.lastNameTextEdit = new DevExpress.XtraEditors.TextEdit();
+            this.firstNameTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.OldPasswordTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.loginTextEdit = new DevExpress.XtraEditors.TextEdit();
-            this.NewPasswordTextEdit = new DevExpress.XtraEditors.TextEdit();
+            this.newPasswordTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.ConfimPasswordTextEdit = new DevExpress.XtraEditors.TextEdit();
-            this.SelectRoleComboBox = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.selectRoleComboBox = new DevExpress.XtraEditors.ComboBoxEdit();
             this.customerGroup = new DevExpress.XtraLayout.LayoutControlGroup();
             this.personalInfoGroup = new DevExpress.XtraLayout.LayoutControlGroup();
             this.oldPasswordLayoutControlItem = new DevExpress.XtraLayout.LayoutControlItem();
@@ -57,14 +57,14 @@
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.IsActiveUserCheckEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.MiddleNameTextEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LastNameTextEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.FirstNameTextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.middleNameTextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lastNameTextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.firstNameTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OldPasswordTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.loginTextEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NewPasswordTextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.newPasswordTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ConfimPasswordTextEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SelectRoleComboBox.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.selectRoleComboBox.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerGroup)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.personalInfoGroup)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.oldPasswordLayoutControlItem)).BeginInit();
@@ -83,14 +83,14 @@
             // layoutControl1
             // 
             this.layoutControl1.Controls.Add(this.IsActiveUserCheckEdit);
-            this.layoutControl1.Controls.Add(this.MiddleNameTextEdit);
-            this.layoutControl1.Controls.Add(this.LastNameTextEdit);
-            this.layoutControl1.Controls.Add(this.FirstNameTextEdit);
+            this.layoutControl1.Controls.Add(this.middleNameTextEdit);
+            this.layoutControl1.Controls.Add(this.lastNameTextEdit);
+            this.layoutControl1.Controls.Add(this.firstNameTextEdit);
             this.layoutControl1.Controls.Add(this.OldPasswordTextEdit);
             this.layoutControl1.Controls.Add(this.loginTextEdit);
-            this.layoutControl1.Controls.Add(this.NewPasswordTextEdit);
+            this.layoutControl1.Controls.Add(this.newPasswordTextEdit);
             this.layoutControl1.Controls.Add(this.ConfimPasswordTextEdit);
-            this.layoutControl1.Controls.Add(this.SelectRoleComboBox);
+            this.layoutControl1.Controls.Add(this.selectRoleComboBox);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 143);
             this.layoutControl1.Name = "layoutControl1";
@@ -153,39 +153,39 @@
             this.saveOrEditribbonPageGroup.Name = "saveOrEditribbonPageGroup";
             this.saveOrEditribbonPageGroup.Text = "Сохранение";
             // 
-            // MiddleNameTextEdit
+            // middleNameTextEdit
             // 
-            this.MiddleNameTextEdit.Location = new System.Drawing.Point(306, 138);
-            this.MiddleNameTextEdit.Name = "MiddleNameTextEdit";
-            this.MiddleNameTextEdit.Properties.Mask.EditMask = "\\p{L}+";
-            this.MiddleNameTextEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
-            this.MiddleNameTextEdit.Properties.Mask.ShowPlaceHolders = false;
-            this.MiddleNameTextEdit.Size = new System.Drawing.Size(623, 20);
-            this.MiddleNameTextEdit.StyleController = this.layoutControl1;
-            this.MiddleNameTextEdit.TabIndex = 6;
+            this.middleNameTextEdit.Location = new System.Drawing.Point(306, 138);
+            this.middleNameTextEdit.Name = "middleNameTextEdit";
+            this.middleNameTextEdit.Properties.Mask.EditMask = "\\p{L}+";
+            this.middleNameTextEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
+            this.middleNameTextEdit.Properties.Mask.ShowPlaceHolders = false;
+            this.middleNameTextEdit.Size = new System.Drawing.Size(623, 20);
+            this.middleNameTextEdit.StyleController = this.layoutControl1;
+            this.middleNameTextEdit.TabIndex = 6;
             // 
-            // LastNameTextEdit
+            // lastNameTextEdit
             // 
-            this.LastNameTextEdit.Location = new System.Drawing.Point(306, 98);
-            this.LastNameTextEdit.Name = "LastNameTextEdit";
-            this.LastNameTextEdit.Properties.Mask.EditMask = "\\p{L}+";
-            this.LastNameTextEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
-            this.LastNameTextEdit.Properties.Mask.ShowPlaceHolders = false;
-            this.LastNameTextEdit.Size = new System.Drawing.Size(623, 20);
-            this.LastNameTextEdit.StyleController = this.layoutControl1;
-            this.LastNameTextEdit.TabIndex = 5;
+            this.lastNameTextEdit.Location = new System.Drawing.Point(306, 98);
+            this.lastNameTextEdit.Name = "lastNameTextEdit";
+            this.lastNameTextEdit.Properties.Mask.EditMask = "\\p{L}+";
+            this.lastNameTextEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
+            this.lastNameTextEdit.Properties.Mask.ShowPlaceHolders = false;
+            this.lastNameTextEdit.Size = new System.Drawing.Size(623, 20);
+            this.lastNameTextEdit.StyleController = this.layoutControl1;
+            this.lastNameTextEdit.TabIndex = 5;
             // 
-            // FirstNameTextEdit
+            // firstNameTextEdit
             // 
-            this.FirstNameTextEdit.Location = new System.Drawing.Point(306, 58);
-            this.FirstNameTextEdit.Name = "FirstNameTextEdit";
-            this.FirstNameTextEdit.Properties.Mask.EditMask = "\\p{L}+";
-            this.FirstNameTextEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
-            this.FirstNameTextEdit.Properties.Mask.ShowPlaceHolders = false;
-            this.FirstNameTextEdit.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.FirstNameTextEdit.Size = new System.Drawing.Size(623, 20);
-            this.FirstNameTextEdit.StyleController = this.layoutControl1;
-            this.FirstNameTextEdit.TabIndex = 4;
+            this.firstNameTextEdit.Location = new System.Drawing.Point(306, 58);
+            this.firstNameTextEdit.Name = "firstNameTextEdit";
+            this.firstNameTextEdit.Properties.Mask.EditMask = "\\p{L}+";
+            this.firstNameTextEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
+            this.firstNameTextEdit.Properties.Mask.ShowPlaceHolders = false;
+            this.firstNameTextEdit.Properties.Mask.UseMaskAsDisplayFormat = true;
+            this.firstNameTextEdit.Size = new System.Drawing.Size(623, 20);
+            this.firstNameTextEdit.StyleController = this.layoutControl1;
+            this.firstNameTextEdit.TabIndex = 4;
             // 
             // OldPasswordTextEdit
             // 
@@ -209,18 +209,20 @@
             this.loginTextEdit.Size = new System.Drawing.Size(254, 20);
             this.loginTextEdit.StyleController = this.layoutControl1;
             this.loginTextEdit.TabIndex = 1;
+            this.loginTextEdit.InvalidValue += new DevExpress.XtraEditors.Controls.InvalidValueExceptionEventHandler(this.loginTextEdit_InvalidValue);
+            this.loginTextEdit.Validating += new System.ComponentModel.CancelEventHandler(this.loginTextEdit_Validating);
             // 
-            // NewPasswordTextEdit
+            // newPasswordTextEdit
             // 
-            this.NewPasswordTextEdit.Location = new System.Drawing.Point(24, 138);
-            this.NewPasswordTextEdit.Name = "NewPasswordTextEdit";
-            this.NewPasswordTextEdit.Properties.Mask.EditMask = "\\p{L}+";
-            this.NewPasswordTextEdit.Properties.Mask.ShowPlaceHolders = false;
-            this.NewPasswordTextEdit.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.NewPasswordTextEdit.Properties.UseSystemPasswordChar = true;
-            this.NewPasswordTextEdit.Size = new System.Drawing.Size(254, 20);
-            this.NewPasswordTextEdit.StyleController = this.layoutControl1;
-            this.NewPasswordTextEdit.TabIndex = 3;
+            this.newPasswordTextEdit.Location = new System.Drawing.Point(24, 138);
+            this.newPasswordTextEdit.Name = "newPasswordTextEdit";
+            this.newPasswordTextEdit.Properties.Mask.EditMask = "\\p{L}+";
+            this.newPasswordTextEdit.Properties.Mask.ShowPlaceHolders = false;
+            this.newPasswordTextEdit.Properties.Mask.UseMaskAsDisplayFormat = true;
+            this.newPasswordTextEdit.Properties.UseSystemPasswordChar = true;
+            this.newPasswordTextEdit.Size = new System.Drawing.Size(254, 20);
+            this.newPasswordTextEdit.StyleController = this.layoutControl1;
+            this.newPasswordTextEdit.TabIndex = 3;
             // 
             // ConfimPasswordTextEdit
             // 
@@ -234,16 +236,16 @@
             this.ConfimPasswordTextEdit.StyleController = this.layoutControl1;
             this.ConfimPasswordTextEdit.TabIndex = 4;
             // 
-            // SelectRoleComboBox
+            // selectRoleComboBox
             // 
-            this.SelectRoleComboBox.Location = new System.Drawing.Point(306, 178);
-            this.SelectRoleComboBox.Name = "SelectRoleComboBox";
-            this.SelectRoleComboBox.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.selectRoleComboBox.Location = new System.Drawing.Point(306, 178);
+            this.selectRoleComboBox.Name = "selectRoleComboBox";
+            this.selectRoleComboBox.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.SelectRoleComboBox.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.SelectRoleComboBox.Size = new System.Drawing.Size(623, 20);
-            this.SelectRoleComboBox.StyleController = this.layoutControl1;
-            this.SelectRoleComboBox.TabIndex = 7;
+            this.selectRoleComboBox.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.selectRoleComboBox.Size = new System.Drawing.Size(623, 20);
+            this.selectRoleComboBox.StyleController = this.layoutControl1;
+            this.selectRoleComboBox.TabIndex = 7;
             // 
             // customerGroup
             // 
@@ -293,7 +295,7 @@
             // 
             // newPasswordLayoutControlItem
             // 
-            this.newPasswordLayoutControlItem.Control = this.NewPasswordTextEdit;
+            this.newPasswordLayoutControlItem.Control = this.newPasswordTextEdit;
             this.newPasswordLayoutControlItem.CustomizationFormText = "Имя";
             this.newPasswordLayoutControlItem.Location = new System.Drawing.Point(0, 80);
             this.newPasswordLayoutControlItem.Name = "newPasswordLayoutControlItem";
@@ -328,7 +330,7 @@
             // 
             // lastNameItem
             // 
-            this.lastNameItem.Control = this.LastNameTextEdit;
+            this.lastNameItem.Control = this.lastNameTextEdit;
             this.lastNameItem.Location = new System.Drawing.Point(0, 40);
             this.lastNameItem.Name = "lastNameItem";
             this.lastNameItem.Size = new System.Drawing.Size(627, 40);
@@ -338,7 +340,7 @@
             // 
             // layoutControlItem2
             // 
-            this.layoutControlItem2.Control = this.FirstNameTextEdit;
+            this.layoutControlItem2.Control = this.firstNameTextEdit;
             this.layoutControlItem2.CustomizationFormText = "Имя";
             this.layoutControlItem2.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem2.Name = "layoutControlItem2";
@@ -349,7 +351,7 @@
             // 
             // middleNameItem
             // 
-            this.middleNameItem.Control = this.MiddleNameTextEdit;
+            this.middleNameItem.Control = this.middleNameTextEdit;
             this.middleNameItem.Location = new System.Drawing.Point(0, 80);
             this.middleNameItem.Name = "middleNameItem";
             this.middleNameItem.Size = new System.Drawing.Size(627, 40);
@@ -359,7 +361,7 @@
             // 
             // layoutControlItem1
             // 
-            this.layoutControlItem1.Control = this.SelectRoleComboBox;
+            this.layoutControlItem1.Control = this.selectRoleComboBox;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 120);
             this.layoutControlItem1.Name = "layoutControlItem1";
             this.layoutControlItem1.Size = new System.Drawing.Size(627, 40);
@@ -396,14 +398,14 @@
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.IsActiveUserCheckEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.MiddleNameTextEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LastNameTextEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.FirstNameTextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.middleNameTextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lastNameTextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.firstNameTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.OldPasswordTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.loginTextEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NewPasswordTextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.newPasswordTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ConfimPasswordTextEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SelectRoleComboBox.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.selectRoleComboBox.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerGroup)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.personalInfoGroup)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.oldPasswordLayoutControlItem)).EndInit();
@@ -426,8 +428,8 @@
 
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
         private DevExpress.XtraLayout.LayoutControlGroup customerGroup;
-        private DevExpress.XtraEditors.TextEdit MiddleNameTextEdit;
-        private DevExpress.XtraEditors.TextEdit LastNameTextEdit;
+        private DevExpress.XtraEditors.TextEdit middleNameTextEdit;
+        private DevExpress.XtraEditors.TextEdit lastNameTextEdit;
         private DevExpress.XtraLayout.LayoutControlGroup personalInfoGroup;
         private DevExpress.XtraLayout.LayoutControlItem lastNameItem;
         private DevExpress.XtraLayout.LayoutControlItem middleNameItem;
@@ -437,13 +439,13 @@
         private DevExpress.XtraBars.BarButtonItem saveEditButtonItem;
         private DevExpress.XtraBars.Ribbon.RibbonControl ribbonControl1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
-        private DevExpress.XtraEditors.TextEdit FirstNameTextEdit;
+        private DevExpress.XtraEditors.TextEdit firstNameTextEdit;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private DevExpress.XtraEditors.TextEdit OldPasswordTextEdit;
         private DevExpress.XtraEditors.TextEdit loginTextEdit;
-        private DevExpress.XtraEditors.TextEdit NewPasswordTextEdit;
+        private DevExpress.XtraEditors.TextEdit newPasswordTextEdit;
         private DevExpress.XtraEditors.TextEdit ConfimPasswordTextEdit;
-        private DevExpress.XtraEditors.ComboBoxEdit SelectRoleComboBox;
+        private DevExpress.XtraEditors.ComboBoxEdit selectRoleComboBox;
         private DevExpress.XtraLayout.LayoutControlItem oldPasswordLayoutControlItem;
         private DevExpress.XtraLayout.LayoutControlItem loginLayoutControlItem;
         private DevExpress.XtraLayout.LayoutControlItem newPasswordLayoutControlItem;
