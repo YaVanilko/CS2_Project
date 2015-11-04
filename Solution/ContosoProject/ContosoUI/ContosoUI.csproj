@@ -92,7 +92,8 @@
       <DependentUpon>AuthenticationForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Authentication\AuthenticationPresenter.cs" />
-    <Compile Include="Authentication\BaseMD5Extension.cs" />
+    <Compile Include="Authentication\MD5Extension.cs" />
+    <Compile Include="Presenter\BasePresenter.cs" />
     <Compile Include="Customers\Add\CustomerDetailsPresenter.cs" />
     <Compile Include="Customers\Add\CustomerDetailsViev.cs">
       <SubType>Form</SubType>

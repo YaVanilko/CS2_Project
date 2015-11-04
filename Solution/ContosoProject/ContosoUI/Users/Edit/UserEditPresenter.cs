@@ -1,4 +1,5 @@
 ﻿using ContosoUI.Authentication;
+using ContosoUI.Presenter;
 using Data.EFData;
 using Domain.DAO;
 using Domain.Entities;
@@ -12,7 +13,7 @@ using System.Windows.Forms;
 
 namespace ContosoUI.Users.Edit
 {
-    class UserEditPresenter : INotifyPropertyChanged
+    class UserEditPresenter : BasePresenter
     {
         User user = null;
         UserEditForm view = null;
@@ -21,7 +22,6 @@ namespace ContosoUI.Users.Edit
         UserRoleService model = new UserRoleService();
         bool userIsFromBase = false;
         
-        public event PropertyChangedEventHandler PropertyChanged;
         
 
         public UserEditPresenter(UserEditForm view)
@@ -63,22 +63,17 @@ namespace ContosoUI.Users.Edit
                     view.OldPassword.ToMD5() == user.Password)
             {
                 user.Password = view.NewPassword.ToMD5();
-                MessageBox.Show("Пароль успешно изменен.", "Сообщеие");
-                SaveBtnClickHandler(null, null);
-            }
+                if (userIsFromBase)
+	            {
+                    MessageBox.Show("Пароль успешно изменен.", "Сообщеие");
+                }
+	            }
             else
             {
                 MessageBox.Show("Введен неверный пароль.", "Ошибка!");
             }
         }
 
-        private void NotifyPropertyChanged(String info)
-        {
-            if (PropertyChanged != null)
-            {
-                PropertyChanged(this, new PropertyChangedEventArgs(info));
-            }
-        }
 
         public string FirstName
         {

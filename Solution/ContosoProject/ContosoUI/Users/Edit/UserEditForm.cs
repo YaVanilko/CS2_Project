@@ -64,11 +64,11 @@ namespace ContosoUI.Users.Edit
             if (loginTextEdit.Text!=String.Empty&&NewPasswordTextEdit.Text==ConfimPasswordTextEdit.Text)
             {
                 userEditBindingSource.EndEdit();
-                SaveBtnClick.Invoke(sender, e);
                 if (NewPasswordTextEdit.Text!=String.Empty)
                 {
                     PasswordChange.Invoke(sender, e);
                 }
+                SaveBtnClick.Invoke(sender, e);
             }
             else
             {

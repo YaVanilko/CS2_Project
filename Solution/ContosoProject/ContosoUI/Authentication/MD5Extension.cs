@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ContosoUI.Authentication
 {
-    public static class BaseMD5Extension
+    public static class MD5Extension
     {
         public static string ToMD5(this string input)
         {
