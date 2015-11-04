@@ -8,6 +8,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace ContosoUI.Roles
 {
@@ -58,13 +59,32 @@ namespace ContosoUI.Roles
                 }
             }
         }
-
         public void Save()
         {
+            if (roles.Any(x => x.IsActive == false))
+            {
+                DialogResult result;
+                result = MessageBox.Show("Вы уверенны, что хотите деактивировать роль пользователя? После деактивации роль будет удалена из списка!", buttons: MessageBoxButtons.OKCancel, caption: "Деактивация роли");
+                if (result == DialogResult.Cancel)
+                {
+                    return;
+                }
+            }
+            if (roles.Any(x => x.Name == null))
+            {
+                   MessageBox.Show("Запрещено создавать роль без названия", caption: "Предупреждение" );
+                   return;
+            }
             foreach (var role in roles)
             {
+                if (role.Permissions.Count == 0)
+                {
+                    string roleName = role.Name;
+                    MessageBox.Show("Роль " + roleName + " не содержит разрешений. Запрещено создавать роль без назначения разрешений", caption: "Предупреждение" );
+                    return;
+                }
                 modelProxy.RoleDao.AddOrUpdate(role);
             }
-        }
+        }   
     }
 }

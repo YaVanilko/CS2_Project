@@ -68,32 +68,17 @@ namespace ContosoUI.Roles
         private void saveRoleButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             SavePermissions();
-            GridView view = rolesGridView;
-            for (int i = 0; i < view.RowCount; i++)
-            {
-                var row = view.GetRow(i);
-                Role role = row as Role;
-                if (role.Permissions.Count == 0)
-                {
-                    MessageBox.Show("Запрещено создавать роль без назначения разрешений");
-                    return;
-                }
-                else if (role.Name.Length < 2 || role.Name.Length > 50)
-                {
-                    MessageBox.Show("Название роли должно содержать не менее 2 и не более 50 символов");
-                }
-                else
-                {
-                    rolesGridView.CloseEditor();
-                    rolesGridView.UpdateCurrentRow();
-                    presenter.Save();
-                }  
-            }
+            rolesGridView.CloseEditor();
+            rolesGridView.UpdateCurrentRow();
+            presenter.Save();
+            rolesGridControl.RefreshDataSource();
         }
 
         private void rolesGridView_BeforeLeaveRow(object sender, DevExpress.XtraGrid.Views.Base.RowAllowEventArgs e)
         {
             SavePermissions();
+            rolesGridView.CloseEditor();
+            rolesGridView.UpdateCurrentRow();
         }
         void SavePermissions()
         {
@@ -107,34 +92,6 @@ namespace ContosoUI.Roles
             {
                 var checkedListItem = p as CheckedListBoxItem;
                 role.Permissions.Add(checkedListItem.Value as Permission);
-            }
-        }
-
-        private void rolesGridView_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
-        {
-            GridView view = rolesGridView;
-            object roleObj = view.GetRow(view.FocusedRowHandle);
-            Role role = roleObj as Role;
-            if (e.Column.Caption != "Статус (активировать/ деактивировать)")
-            {
-                return;
-            }
-            else
-            {
-                if (role.IsActive != true)
-                {
-                    DialogResult result;
-                    result = MessageBox.Show("Вы уверенны, что хотите деактивировать роль пользователя? После деактивации роль будет удалена из списка!", buttons: MessageBoxButtons.OKCancel, caption: "Деактивация роли");
-                    if (result == System.Windows.Forms.DialogResult.OK)
-                    {
-                        presenter.Save();
-                    }
-                    else
-                    {
-                        role.IsActive = true;
-                        presenter.Save();
-                    }
-                }
             }
         }
     }
