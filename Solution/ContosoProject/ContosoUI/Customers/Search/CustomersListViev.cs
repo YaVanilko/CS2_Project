@@ -53,7 +53,7 @@ namespace ContosoUI.Customers.Search
                 GridView view = (GridView)sender;
                 GridHitInfo info = view.CalcHitInfo(view.GridControl.PointToClient(Control.MousePosition));
                 int id = (int)view.GetRowCellValue(info.RowHandle, "Id");
-                var form = new AddEditOrderView(id);
+                var form = new CustomerDetailsViev(id);
                 form.MdiParent = this.MdiParent;
                 form.Show();
             }
