@@ -1,4 +1,5 @@
-﻿using Data.EFData;
+﻿using ContosoUI.Presenter;
+using Data.EFData;
 using Domain.DAO;
 using Domain.Entities;
 using System;
@@ -10,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace ContosoUI.Customers.Add
 {
-    public class CustomerDetailsPresenter : INotifyPropertyChanged
+    public class CustomerDetailsPresenter : BasePresenter
     {
         readonly CustomerDetailsViev view;
         readonly ICustomerRepository model = new CustomerDao();
@@ -126,14 +127,7 @@ namespace ContosoUI.Customers.Add
                 }NotifyPropertyChanged("CurentComment");
             }
         }
-        public event PropertyChangedEventHandler PropertyChanged;
-        private void NotifyPropertyChanged(String info)
-        {
-            if (PropertyChanged != null)
-            {
-                PropertyChanged(this, new PropertyChangedEventArgs(info));
-            }
-        }
+
         public void Save()
         {
             if (!string.IsNullOrWhiteSpace(currentComment))

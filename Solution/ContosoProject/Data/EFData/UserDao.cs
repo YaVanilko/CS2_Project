@@ -11,10 +11,19 @@ namespace Data.EFData
 {
     public class UserDao : EfBaseDao<User>, IUserRepository
     {
+        readonly ProjectContext context;
+        public UserDao()
+        {
+            this.context = dbContext;
+        }
+        public UserDao(ProjectContext context)
+        {
+            this.context = context;
+        }
         public bool TryFindByLoginPassword(out User authUser, string login, string password)
         {
             bool isFind = false;
-            authUser = dbContext.Users.Where(x => x.Login==login&&x.Password==password)
+            authUser = context.Users.Where(x => x.Login==login&&x.Password==password)
                     .Include(x => x.Role)
                     .Include(x => x.PersonalInfo).FirstOrDefault();
             if (authUser !=null)
@@ -24,10 +33,15 @@ namespace Data.EFData
             return isFind;
         }
 
+        public new void Add(User entity)
+        {
+            context.Users.Add(entity);
+            context.SaveChanges();
+        }
         public new IQueryable<User> GetAll()
         {
             IQueryable<User> collection =
-                dbContext.Users
+                context.Users
                     .Include(x => x.Role)
                     .Include(x => x.PersonalInfo);
             return collection;
@@ -35,15 +49,15 @@ namespace Data.EFData
 
         public new User GetById(int id)
         {
-            return dbContext.Users.Where(x => x.Id == id)
+            return context.Users.Where(x => x.Id == id)
                     .Include(x => x.Role)
                     .Include(x => x.PersonalInfo).FirstOrDefault();
         }
 
         public new void Update(User entity)
         {
-            dbContext.Users.AddOrUpdate(entity);
-            dbContext.SaveChanges();
+            context.Users.AddOrUpdate(entity);
+            context.SaveChanges();
         }
     }
 }

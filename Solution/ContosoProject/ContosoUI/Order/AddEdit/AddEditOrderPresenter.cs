@@ -1,4 +1,6 @@
 ﻿using Data.EFData;
+﻿using ContosoUI.Presenter;
+using Data.DumbData;
 using Domain.DAO;
 using Domain.Entities;
 using System;
@@ -10,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace ContosoUI.Order.AddEdit
 {
-    public class AddEditOrderPresenter : INotifyPropertyChanged
+    public class AddEditOrderPresenter : INotifyPropertyChanged, BasePresenter
     {
         readonly AddEditOrderView view;
         readonly AddOrderProxy modelProxy = new AddOrderProxy();

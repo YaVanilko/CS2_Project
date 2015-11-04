@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace Data.EFData
 {
-    public class RoleViewProxy
+    public class RoleViewService
     {
         public IRoleRepository RoleDao { get; set; }
         public IPermissionRepository PermissionDao { get; set; }
         readonly ProjectContext context = new ProjectContext();
-        public RoleViewProxy()
+        public RoleViewService()
         {
             RoleDao = new RoleDao(context);
             PermissionDao = new PermissionDao(context);

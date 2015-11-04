@@ -12,6 +12,7 @@ namespace Data.EFData
     public class RoleDao : EfBaseDao<Role>, IRoleRepository
     {
         readonly ProjectContext context;
+
         public RoleDao(ProjectContext context)
         {
             this.context = context;

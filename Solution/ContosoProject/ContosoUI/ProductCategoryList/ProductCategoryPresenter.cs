@@ -1,4 +1,5 @@
-﻿using Data.EFData;
+﻿using ContosoUI.Presenter;
+using Data.EFData;
 using Domain.DAO;
 using Domain.Entities;
 using System;
@@ -10,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace ContosoUI.ProductCategoryList
 {
-    public class ProductCategoryPresenter : INotifyPropertyChanged
+    public class ProductCategoryPresenter : BasePresenter
     {
         readonly ProductCategoryView view;
         readonly IProductCategoryRepository model = new ProductCategoryDao();
@@ -30,16 +31,6 @@ namespace ContosoUI.ProductCategoryList
                     categories = value;
                     NotifyPropertyChanged("Categories");
                 }
-            }
-        }
-
-
-        public event PropertyChangedEventHandler PropertyChanged;
-        private void NotifyPropertyChanged(String info)
-        {
-            if (PropertyChanged != null)
-            {
-                PropertyChanged(this, new PropertyChangedEventArgs(info));
             }
         }
 

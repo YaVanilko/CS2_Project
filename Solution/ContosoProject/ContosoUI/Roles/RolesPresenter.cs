@@ -1,4 +1,5 @@
-﻿using Data.EFData;
+﻿using ContosoUI.Presenter;
+using Data.EFData;
 using Domain.DAO;
 using Domain.Entities;
 using System;
@@ -10,10 +11,10 @@ using System.Threading.Tasks;
 
 namespace ContosoUI.Roles
 {
-    public class RolesPresenter : INotifyPropertyChanged
+    public class RolesPresenter : BasePresenter
     {
         readonly RolesView view;
-        readonly RoleViewProxy modelProxy = new RoleViewProxy();
+        readonly RoleViewService modelProxy = new RoleViewService();
         Role role;
         public RolesPresenter(RolesView view)
         {
@@ -57,14 +58,7 @@ namespace ContosoUI.Roles
                 }
             }
         }
-        public event PropertyChangedEventHandler PropertyChanged;
-        private void NotifyPropertyChanged(String info)
-        {
-            if (PropertyChanged != null)
-            {
-                PropertyChanged(this, new PropertyChangedEventArgs(info));
-            }
-        }
+
         public void Save()
         {
             foreach (var role in roles)

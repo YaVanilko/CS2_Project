@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace ContosoUI.GoodsAll.GoodsF
 {
-    class GoodsPresenter : INotifyPropertyChanged, IProductCategoryRepository
+    class GoodsPresenter 
     {
         private IGoodsRepository model = new GoodsDao();
         private IProductCategoryRepository modelCategory = new ProductCategoryDao();
@@ -105,51 +105,6 @@ namespace ContosoUI.GoodsAll.GoodsF
             }
 
             return viewModel;
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        private void NotifyPropertyChanged(String info)
-        {
-            if (PropertyChanged != null)
-            {
-                PropertyChanged(this, new PropertyChangedEventArgs(info));
-            }
-        }
-
-        public void Add(ProductCategory entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Update(ProductCategory entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Delete(ProductCategory entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        public ProductCategory GetById(int Id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IQueryable<ProductCategory> GetAll()
-        {
-            throw new NotImplementedException();
-        }
-
-        public IQueryable<ProductCategory> FindBy(System.Linq.Expressions.Expression<Func<ProductCategory, bool>> predicate)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void AddOrUpdate(ProductCategory entity)
-        {
-            throw new NotImplementedException();
         }
     }
 }
