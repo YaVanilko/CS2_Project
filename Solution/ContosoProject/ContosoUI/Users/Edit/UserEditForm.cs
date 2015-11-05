@@ -8,6 +8,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraBars;
+using DevExpress.XtraEditors.Controls;
 
 namespace ContosoUI.Users.Edit
 {
@@ -18,7 +19,7 @@ namespace ContosoUI.Users.Edit
         public event EventHandler PasswordChange;
 
         public string OldPassword { get { return OldPasswordTextEdit.Text; } }
-        public string NewPassword { get { return NewPasswordTextEdit.Text; } }
+        public string NewPassword { get { return newPasswordTextEdit.Text; } }
 
         public UserEditForm()
         {
@@ -42,38 +43,118 @@ namespace ContosoUI.Users.Edit
         {
             this.userEditBindingSource.DataSource = presenter;
 
-            FirstNameTextEdit.DataBindings.Add("EditValue", userEditBindingSource, "FirstName");
-            LastNameTextEdit.DataBindings.Add("EditValue", userEditBindingSource, "LastName");
-            MiddleNameTextEdit.DataBindings.Add("EditValue", userEditBindingSource, "MiddleName");
+            firstNameTextEdit.DataBindings.Add("EditValue", userEditBindingSource, "FirstName");
+            lastNameTextEdit.DataBindings.Add("EditValue", userEditBindingSource, "LastName");
+            middleNameTextEdit.DataBindings.Add("EditValue", userEditBindingSource, "MiddleName");
             
             loginTextEdit.DataBindings.Add("EditValue", userEditBindingSource, "Login");
 
-            SelectRoleComboBox.DataBindings.Add("EditValue", userEditBindingSource, "Role");
-            SelectRoleComboBox.Properties.Items.AddRange(presenter.AllRoles);
+            selectRoleComboBox.DataBindings.Add("EditValue", userEditBindingSource, "Role");
+            selectRoleComboBox.Properties.Items.AddRange(presenter.AllRoles);
 
             IsActiveUserCheckEdit.DataBindings.Add("EditValue", userEditBindingSource, "IsActive");
         }
 
         internal void AsPasswordChange()
         {
-            this.contactInfoGroup.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
+            this.personalInfoGroup.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
         }
 
         private void saveEditButtonItem_ItemClick(object sender, ItemClickEventArgs e)
         {
-            if (loginTextEdit.Text!=String.Empty&&NewPasswordTextEdit.Text==ConfimPasswordTextEdit.Text)
+       
+            if (newPasswordTextEdit.Text==confimPasswordTextEdit.Text&&
+                selectRoleComboBox.SelectedItem.ToString() != null)
             {
                 userEditBindingSource.EndEdit();
-                SaveBtnClick.Invoke(sender, e);
-                if (NewPasswordTextEdit.Text!=String.Empty)
+                if (newPasswordTextEdit.Text!=String.Empty)
                 {
                     PasswordChange.Invoke(sender, e);
                 }
+                SaveBtnClick.Invoke(sender, e);
             }
             else
             {
-                MessageBox.Show("Логин не введен или пароли не совпадают.", "Ошибка!");
+                MessageBox.Show("Заполнены не все поля или пароли не совпадают.", "Ошибка!");
             }
         }
+
+        private void loginTextEdit_Validating(object sender, CancelEventArgs e)
+        {
+            var textEditControl = sender as DevExpress.XtraEditors.TextEdit;
+            var length = textEditControl.Text.Length;
+            if ((length<3||length>25)&&isPersonalInfoModified)
+            {
+                e.Cancel = true;              
+            }
+        }
+
+        private void loginTextEdit_InvalidValue(object sender, DevExpress.XtraEditors.Controls.InvalidValueExceptionEventArgs e)
+        {
+            e.ErrorText = "Необходимо от 3 до 25 символов.";
+        }
+
+        private void PasswordTextEdit_Validating(object sender, CancelEventArgs e)
+        {
+            var textEditControl = sender as DevExpress.XtraEditors.TextEdit;
+            var length = textEditControl.Text.Length;
+            if ((length < 5 || length > 40)&&isPasswordModified)
+            {
+                e.Cancel = true;
+            }
+        }
+
+        private void PasswordTextEdit_InvalidValue(object sender, InvalidValueExceptionEventArgs e)
+        {
+            e.ErrorText = "Необходимо от 5 до 40 символов.";
+        }
+
+        private void PersonalInfoTextEdit_Validating(object sender, CancelEventArgs e)
+        {
+            var textEditControl = sender as DevExpress.XtraEditors.TextEdit;
+            var length = textEditControl.Text.Length;
+            if ((length < 2 || length > 25)&&isPersonalInfoModified)
+            {
+                e.Cancel = true;
+            }
+        }
+
+        private void PersonalInfoTextEdit_InvalidValue(object sender, InvalidValueExceptionEventArgs e)
+        {
+            e.ErrorText = "Необходимо от 2 до 25 символов.";
+        }
+
+
+        private void UserEditForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (isPersonalInfoModified||isPasswordModified)
+            {
+                DialogResult dialog = MessageBox.Show("Сохраить внесенные изменения?", "Сообщение",MessageBoxButtons.YesNoCancel);
+                if (dialog == System.Windows.Forms.DialogResult.Yes)
+                {
+                    saveEditButtonItem_ItemClick(null, null);
+                }
+                else if (dialog == System.Windows.Forms.DialogResult.Cancel)
+                {
+                    e.Cancel = true;
+                }
+            }
+            e.Cancel = false;
+        }
+
+        private bool isPersonalInfoModified = false;
+        private bool isPasswordModified = false;
+
+        private void AnyTextEdit_Modified(object sender, EventArgs e)
+        {
+            isPersonalInfoModified = true;
+        }
+
+        private void AnyPasswordTextEdit_Modified(object sender, EventArgs e)
+        {
+            isPasswordModified = true;
+        }
+
     }
+
 }

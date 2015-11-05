@@ -31,10 +31,10 @@
             this.components = new System.ComponentModel.Container();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.commentsListBoxControl = new DevExpress.XtraEditors.ListBoxControl();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.commentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.commentMemoEdit = new DevExpress.XtraEditors.MemoEdit();
             this.ordersGridControl = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.customerOrderGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.orderNumberGridColumn = new DevExpress.XtraGrid.Columns.GridColumn();
             this.orderSumGridColumn = new DevExpress.XtraGrid.Columns.GridColumn();
             this.orderStatusGridColumn = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -58,7 +58,7 @@
             this.ordersItem = new DevExpress.XtraLayout.LayoutControlItem();
             this.commentItem = new DevExpress.XtraLayout.LayoutControlItem();
             this.listCommentsItem = new DevExpress.XtraLayout.LayoutControlItem();
-            this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
+            this.customerRibbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.saveEditButtonItem = new DevExpress.XtraBars.BarButtonItem();
             this.saveAndNewButtonItem = new DevExpress.XtraBars.BarButtonItem();
             this.mainRibbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -67,10 +67,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.commentsListBoxControl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.commentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.commentMemoEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordersGridControl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerOrderGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emailTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.telephoneTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.addressTextEdit.Properties)).BeginInit();
@@ -91,7 +91,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ordersItem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.commentItem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listCommentsItem)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerRibbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -118,7 +118,7 @@
             // 
             // commentsListBoxControl
             // 
-            this.commentsListBoxControl.DataSource = this.bindingSource1;
+            this.commentsListBoxControl.DataSource = this.commentBindingSource;
             this.commentsListBoxControl.DisplayMember = "Message";
             this.commentsListBoxControl.Location = new System.Drawing.Point(12, 457);
             this.commentsListBoxControl.Name = "commentsListBoxControl";
@@ -127,9 +127,9 @@
             this.commentsListBoxControl.TabIndex = 15;
             this.commentsListBoxControl.ValueMember = "Id";
             // 
-            // bindingSource1
+            // commentBindingSource
             // 
-            this.bindingSource1.DataSource = typeof(Domain.Entities.Comment);
+            this.commentBindingSource.DataSource = typeof(Domain.Entities.Comment);
             // 
             // commentMemoEdit
             // 
@@ -142,21 +142,21 @@
             // ordersGridControl
             // 
             this.ordersGridControl.Location = new System.Drawing.Point(12, 190);
-            this.ordersGridControl.MainView = this.gridView1;
+            this.ordersGridControl.MainView = this.customerOrderGridView;
             this.ordersGridControl.Name = "ordersGridControl";
             this.ordersGridControl.Size = new System.Drawing.Size(660, 247);
             this.ordersGridControl.TabIndex = 11;
             this.ordersGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
+            this.customerOrderGridView});
             // 
-            // gridView1
+            // customerOrderGridView
             // 
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.customerOrderGridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.orderNumberGridColumn,
             this.orderSumGridColumn,
             this.orderStatusGridColumn});
-            this.gridView1.GridControl = this.ordersGridControl;
-            this.gridView1.Name = "gridView1";
+            this.customerOrderGridView.GridControl = this.ordersGridControl;
+            this.customerOrderGridView.Name = "customerOrderGridView";
             // 
             // orderNumberGridColumn
             // 
@@ -238,7 +238,7 @@
             // 
             // lastNameTextEdit
             // 
-            this.lastNameTextEdit.Location = new System.Drawing.Point(24, 98);
+            this.lastNameTextEdit.Location = new System.Drawing.Point(24, 58);
             this.lastNameTextEdit.Name = "lastNameTextEdit";
             this.lastNameTextEdit.Properties.Mask.EditMask = "\\p{L}+";
             this.lastNameTextEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
@@ -249,7 +249,7 @@
             // 
             // firstNameTextEdit
             // 
-            this.firstNameTextEdit.Location = new System.Drawing.Point(24, 58);
+            this.firstNameTextEdit.Location = new System.Drawing.Point(24, 98);
             this.firstNameTextEdit.Name = "firstNameTextEdit";
             this.firstNameTextEdit.Properties.Mask.EditMask = "\\p{L}+";
             this.firstNameTextEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
@@ -278,8 +278,8 @@
             // 
             this.personalInfoGroup.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.firstNameItem,
-            this.lastNameItem,
-            this.middleNameItem});
+            this.middleNameItem,
+            this.lastNameItem});
             this.personalInfoGroup.Location = new System.Drawing.Point(0, 0);
             this.personalInfoGroup.Name = "personalInfoGroup";
             this.personalInfoGroup.Size = new System.Drawing.Size(332, 162);
@@ -288,7 +288,7 @@
             // firstNameItem
             // 
             this.firstNameItem.Control = this.firstNameTextEdit;
-            this.firstNameItem.Location = new System.Drawing.Point(0, 0);
+            this.firstNameItem.Location = new System.Drawing.Point(0, 40);
             this.firstNameItem.Name = "firstNameItem";
             this.firstNameItem.Size = new System.Drawing.Size(308, 40);
             this.firstNameItem.Text = "Имя";
@@ -298,7 +298,7 @@
             // lastNameItem
             // 
             this.lastNameItem.Control = this.lastNameTextEdit;
-            this.lastNameItem.Location = new System.Drawing.Point(0, 40);
+            this.lastNameItem.Location = new System.Drawing.Point(0, 0);
             this.lastNameItem.Name = "lastNameItem";
             this.lastNameItem.Size = new System.Drawing.Size(308, 40);
             this.lastNameItem.Text = "Фамилия";
@@ -397,19 +397,19 @@
             this.listCommentsItem.TextLocation = DevExpress.Utils.Locations.Top;
             this.listCommentsItem.TextSize = new System.Drawing.Size(105, 13);
             // 
-            // ribbonControl1
+            // customerRibbonControl
             // 
-            this.ribbonControl1.ExpandCollapseItem.Id = 0;
-            this.ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
-            this.ribbonControl1.ExpandCollapseItem,
+            this.customerRibbonControl.ExpandCollapseItem.Id = 0;
+            this.customerRibbonControl.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
+            this.customerRibbonControl.ExpandCollapseItem,
             this.saveEditButtonItem,
             this.saveAndNewButtonItem});
-            this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 3;
-            this.ribbonControl1.Name = "ribbonControl1";
-            this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
+            this.customerRibbonControl.Location = new System.Drawing.Point(0, 0);
+            this.customerRibbonControl.MaxItemId = 3;
+            this.customerRibbonControl.Name = "customerRibbonControl";
+            this.customerRibbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.mainRibbonPage});
-            this.ribbonControl1.Size = new System.Drawing.Size(684, 141);
+            this.customerRibbonControl.Size = new System.Drawing.Size(684, 141);
             // 
             // saveEditButtonItem
             // 
@@ -447,7 +447,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(684, 665);
-            this.Controls.Add(this.ribbonControl1);
+            this.Controls.Add(this.customerRibbonControl);
             this.Controls.Add(this.layoutControl1);
             this.MinimumSize = new System.Drawing.Size(690, 550);
             this.Name = "CustomerDetailsViev";
@@ -456,10 +456,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.commentsListBoxControl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.commentBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.commentMemoEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordersGridControl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerOrderGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emailTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.telephoneTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.addressTextEdit.Properties)).EndInit();
@@ -480,7 +480,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ordersItem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.commentItem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.listCommentsItem)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerRibbonControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -492,7 +492,7 @@
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
         private DevExpress.XtraLayout.LayoutControlGroup customerGroup;
         private DevExpress.XtraGrid.GridControl ordersGridControl;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.Views.Grid.GridView customerOrderGridView;
         private DevExpress.XtraGrid.Columns.GridColumn orderNumberGridColumn;
         private DevExpress.XtraGrid.Columns.GridColumn orderSumGridColumn;
         private DevExpress.XtraGrid.Columns.GridColumn orderStatusGridColumn;
@@ -517,13 +517,13 @@
         private DevExpress.XtraLayout.LayoutControlItem commentItem;
         private DevExpress.XtraEditors.ListBoxControl commentsListBoxControl;
         private DevExpress.XtraLayout.LayoutControlItem listCommentsItem;
-        private DevExpress.XtraBars.Ribbon.RibbonControl ribbonControl1;
+        private DevExpress.XtraBars.Ribbon.RibbonControl customerRibbonControl;
         private DevExpress.XtraBars.Ribbon.RibbonPage mainRibbonPage;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup saveOrEditribbonPageGroup;
         private DevExpress.XtraBars.BarButtonItem saveEditButtonItem;
         private DevExpress.XtraBars.BarButtonItem saveAndNewButtonItem;
         private System.Windows.Forms.BindingSource customerBindingSource;
-        private System.Windows.Forms.BindingSource bindingSource1;
+        private System.Windows.Forms.BindingSource commentBindingSource;
 
 
 

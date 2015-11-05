@@ -10,10 +10,11 @@ using System.Threading.Tasks;
 
 namespace ContosoUI.GoodsAll.GoodsF
 {
-    class GoodsPresenter : INotifyPropertyChanged, IProductCategoryRepository
+    class GoodsPresenter : INotifyPropertyChanged//, IProductCategoryRepository
     {
-        private IGoodsRepository model = new EFGoodsDao();
-        private IProductCategoryRepository modelCategory = new ProductCategoryDao();
+        GoodsCategoryService service = new GoodsCategoryService();
+        //private IGoodsRepository model = new EFGoodsDao();
+       // private IProductCategoryRepository modelCategory = new ProductCategoryDao();
         private GoodsForm goodsView;
 
         public List<GoodsListViewModel> viewModel = new List<GoodsListViewModel>();
@@ -24,7 +25,7 @@ namespace ContosoUI.GoodsAll.GoodsF
         public GoodsPresenter(GoodsForm goodsView)
         {
             this.goodsView = goodsView;
-            foreach (ProductCategory pc in modelCategory.GetAll())
+            foreach (ProductCategory pc in service.CategoryDao.GetAll())
             {
                 productCategoryList.Add(pc.CategoryName);
             }
@@ -32,7 +33,7 @@ namespace ContosoUI.GoodsAll.GoodsF
 
         public List<GoodsListViewModel> SearchGoodsOnActivity(bool isActive)
         {
-            goodsForLoad = model.GetAll().ToList();
+            goodsForLoad = service.GoodsDao.GetAll().ToList();
             viewModel.Clear();
             foreach (Goods g in goodsForLoad)
             {
@@ -57,7 +58,7 @@ namespace ContosoUI.GoodsAll.GoodsF
 
         public List<GoodsListViewModel> SearchGoodsOnCategory(string category)
         {
-            goodsForLoad = model.GetAll().ToList();
+            goodsForLoad =service.GoodsDao.GetAll().ToList();
             viewModel.Clear();
             if (category == "Все")
             {
@@ -117,39 +118,5 @@ namespace ContosoUI.GoodsAll.GoodsF
             }
         }
 
-        public void Add(ProductCategory entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Update(ProductCategory entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Delete(ProductCategory entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        public ProductCategory GetById(int Id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IQueryable<ProductCategory> GetAll()
-        {
-            throw new NotImplementedException();
-        }
-
-        public IQueryable<ProductCategory> FindBy(System.Linq.Expressions.Expression<Func<ProductCategory, bool>> predicate)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void AddOrUpdate(ProductCategory entity)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

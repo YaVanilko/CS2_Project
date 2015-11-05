@@ -74,6 +74,7 @@
     <Compile Include="EFData\EfBaseDao.cs" />
     <Compile Include="EFData\ContactsInfoDao.cs" />
     <Compile Include="EFData\CustomerDao.cs" />
+    <Compile Include="EFData\GoodsCategoryService.cs" />
     <Compile Include="EFData\GoodsRowDao.cs" />
     <Compile Include="EFData\ProductCategoryDao.cs" />
     <Compile Include="EFData\GoodsDao.cs" />
@@ -83,8 +84,9 @@
     <Compile Include="EFData\PersonalInfoDao.cs" />
     <Compile Include="EFData\ProjectContext.cs" />
     <Compile Include="EFData\RoleDao.cs" />
-    <Compile Include="EFData\RoleViewProxy.cs" />
+    <Compile Include="EFData\RoleViewService.cs" />
     <Compile Include="EFData\UserDao.cs" />
+    <Compile Include="EFData\UserRoleService.cs" />
     <Compile Include="Migrations\201511031214147_Init.cs" />
     <Compile Include="Migrations\201511031214147_Init.Designer.cs">
       <DependentUpon>201511031214147_Init.cs</DependentUpon>

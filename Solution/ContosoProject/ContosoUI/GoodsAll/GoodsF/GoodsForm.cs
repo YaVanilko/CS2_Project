@@ -43,6 +43,7 @@ namespace ContosoUI.GoodsAll.GoodsF
         private void IsActiveCheckBox_CheckedChanged(object sender, EventArgs e)
         {
             this.goodsBindingSource.DataSource = presenter.SearchGoodsOnActivity(IsActiveCheckBox.Checked);
+            GoodsGridControl.RefreshDataSource();
         }
 
         private void GoodsComboBoxCategory_SelectedIndexChanged(object sender, EventArgs e)

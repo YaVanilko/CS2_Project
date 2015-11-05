@@ -18,5 +18,6 @@ namespace ContosoUI.Customers.Search
         public string Email { get; set; }
         public int CounOrders { get; set; }
         public double SumOrders { get; set; }
+        public bool IsActive { get; set; }
     }
 }

@@ -10,6 +10,15 @@ namespace Data.EFData
 {
     public class ProductCategoryDao : EfBaseDao<ProductCategory>, IProductCategoryRepository
     {
+        readonly ProjectContext context;
+        public ProductCategoryDao()
+        {
+
+        }
+        public ProductCategoryDao(ProjectContext context)
+        {
+            this.context = context;
+        }
         public new IQueryable<ProductCategory> GetAll()
         {
             IQueryable<ProductCategory> collection =
@@ -34,6 +43,12 @@ namespace Data.EFData
         {
             dbContext.Categories.AddOrUpdate(x => x.CategoryName, new ProductCategory[] { entity });
             dbContext.SaveChanges();
+        }
+
+        public new ProductCategory GetByName(string  name)
+        {
+            return dbContext.Categories.Where(x => x.CategoryName == name)
+                .Include(x => x.Goods).FirstOrDefault();
         }
     }
 }

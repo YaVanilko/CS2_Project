@@ -1,5 +1,6 @@
 ﻿using ContosoUI.Authentication;
-using Data.DumbData;
+using ContosoUI.Presenter;
+using Data.EFData;
 using Domain.DAO;
 using Domain.Entities;
 using System;
@@ -12,24 +13,22 @@ using System.Windows.Forms;
 
 namespace ContosoUI.Users.Edit
 {
-    class UserEditPresenter : INotifyPropertyChanged
+    class UserEditPresenter : BasePresenter
     {
         User user = null;
         UserEditForm view = null;
         List<Role> roles = null;
 
-        IUserRepository model = new UserDao();
-        IRoleRepository role = new RoleDao();
+        UserRoleService model = new UserRoleService();
         bool userIsFromBase = false;
         
-        public event PropertyChangedEventHandler PropertyChanged;
         
 
         public UserEditPresenter(UserEditForm view)
         {
             this.user = new User();
             this.view = view;
-            this.roles = this.role.GetAll().ToList();
+            this.roles = this.model.RoleDao.GetAll().ToList();
             this.view.SaveBtnClick += new EventHandler(SaveBtnClickHandler);
             this.view.PasswordChange += new EventHandler(PasswordChangedHandler);
         }
@@ -38,7 +37,7 @@ namespace ContosoUI.Users.Edit
         public UserEditPresenter(UserEditForm view, int id)
             : this(view)
         {
-            this.user = model.GetById(id);
+            this.user = model.UserDao.GetById(id);
             this.userIsFromBase = true;
         }
         
@@ -46,11 +45,13 @@ namespace ContosoUI.Users.Edit
         {
             if (userIsFromBase)
             {
-                model.Update(user);
+                model.UserDao.Update(user);
+                MessageBox.Show("Данные обновлены.", "Сообщеие");
             }
-            else if (!model.GetAll().ToList().Any(x => x.Login == this.user.Login))
+            else if (!model.UserDao.GetAll().ToList().Any(x => x.Login == this.user.Login))
             {
-                model.Add(user);
+                model.UserDao.Add(user);
+                MessageBox.Show("Новый пользователь добавлен.", "Сообщение");
             }
             else
             {
@@ -64,20 +65,13 @@ namespace ContosoUI.Users.Edit
                     view.OldPassword.ToMD5() == user.Password)
             {
                 user.Password = view.NewPassword.ToMD5();
-            }
+	        }
             else
             {
                 MessageBox.Show("Введен неверный пароль.", "Ошибка!");
             }
         }
 
-        private void NotifyPropertyChanged(String info)
-        {
-            if (PropertyChanged != null)
-            {
-                PropertyChanged(this, new PropertyChangedEventArgs(info));
-            }
-        }
 
         public string FirstName
         {
