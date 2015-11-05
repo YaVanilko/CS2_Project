@@ -8,6 +8,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraBars;
+using DevExpress.XtraEditors.Controls;
 
 namespace ContosoUI.Users.Edit
 {
@@ -83,18 +84,44 @@ namespace ContosoUI.Users.Edit
 
         private void loginTextEdit_Validating(object sender, CancelEventArgs e)
         {
-            var length = (sender as String).Length;
-            //if (length<3||length>25)
-            //{
-            //    e.Cancel = true;
-            //    e.
-            //}
+            var length = (sender as DevExpress.XtraEditors.TextEdit).Text.Length;
+            if (length<3||length>25)
+            {
+                e.Cancel = true;              
+            }
         }
 
         private void loginTextEdit_InvalidValue(object sender, DevExpress.XtraEditors.Controls.InvalidValueExceptionEventArgs e)
         {
-            e.ExceptionMode = DevExpress.XtraEditors.Controls.ExceptionMode.NoAction;
-            MessageBox.Show("Enter a date within the current month.", "Error");
+            e.ErrorText = "Необходимо от 3 до 25 символов.";
+        }
+
+        private void OldPasswordTextEdit_Validating(object sender, CancelEventArgs e)
+        {
+            var length = (sender as DevExpress.XtraEditors.TextEdit).Text.Length;
+            if (length < 5 || length > 40)
+            {
+                e.Cancel = true;
+            }
+        }
+
+        private void OldPasswordTextEdit_InvalidValue(object sender, InvalidValueExceptionEventArgs e)
+        {
+            e.ErrorText = "Необходимо от 5 до 40 символов.";
+        }
+
+        private void firstNameTextEdit_Validating(object sender, CancelEventArgs e)
+        {
+            var length = (sender as DevExpress.XtraEditors.TextEdit).Text.Length;
+            if (length < 2 || length > 25)
+            {
+                e.Cancel = true;
+            }
+        }
+
+        private void firstNameTextEdit_InvalidValue(object sender, InvalidValueExceptionEventArgs e)
+        {
+            e.ErrorText = "Необходимо от 2 до 25 символов.";
         }
     }
 }

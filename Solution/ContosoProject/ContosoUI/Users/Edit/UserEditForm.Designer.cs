@@ -163,6 +163,8 @@
             this.middleNameTextEdit.Size = new System.Drawing.Size(623, 20);
             this.middleNameTextEdit.StyleController = this.layoutControl1;
             this.middleNameTextEdit.TabIndex = 6;
+            this.middleNameTextEdit.InvalidValue += new DevExpress.XtraEditors.Controls.InvalidValueExceptionEventHandler(this.firstNameTextEdit_InvalidValue);
+            this.middleNameTextEdit.Validating += new System.ComponentModel.CancelEventHandler(this.firstNameTextEdit_Validating);
             // 
             // lastNameTextEdit
             // 
@@ -174,6 +176,8 @@
             this.lastNameTextEdit.Size = new System.Drawing.Size(623, 20);
             this.lastNameTextEdit.StyleController = this.layoutControl1;
             this.lastNameTextEdit.TabIndex = 5;
+            this.lastNameTextEdit.InvalidValue += new DevExpress.XtraEditors.Controls.InvalidValueExceptionEventHandler(this.firstNameTextEdit_InvalidValue);
+            this.lastNameTextEdit.Validating += new System.ComponentModel.CancelEventHandler(this.firstNameTextEdit_Validating);
             // 
             // firstNameTextEdit
             // 
@@ -186,6 +190,8 @@
             this.firstNameTextEdit.Size = new System.Drawing.Size(623, 20);
             this.firstNameTextEdit.StyleController = this.layoutControl1;
             this.firstNameTextEdit.TabIndex = 4;
+            this.firstNameTextEdit.InvalidValue += new DevExpress.XtraEditors.Controls.InvalidValueExceptionEventHandler(this.firstNameTextEdit_InvalidValue);
+            this.firstNameTextEdit.Validating += new System.ComponentModel.CancelEventHandler(this.firstNameTextEdit_Validating);
             // 
             // OldPasswordTextEdit
             // 
@@ -198,6 +204,8 @@
             this.OldPasswordTextEdit.Size = new System.Drawing.Size(254, 20);
             this.OldPasswordTextEdit.StyleController = this.layoutControl1;
             this.OldPasswordTextEdit.TabIndex = 2;
+            this.OldPasswordTextEdit.InvalidValue += new DevExpress.XtraEditors.Controls.InvalidValueExceptionEventHandler(this.OldPasswordTextEdit_InvalidValue);
+            this.OldPasswordTextEdit.Validating += new System.ComponentModel.CancelEventHandler(this.OldPasswordTextEdit_Validating);
             // 
             // loginTextEdit
             // 
@@ -223,6 +231,8 @@
             this.newPasswordTextEdit.Size = new System.Drawing.Size(254, 20);
             this.newPasswordTextEdit.StyleController = this.layoutControl1;
             this.newPasswordTextEdit.TabIndex = 3;
+            this.newPasswordTextEdit.InvalidValue += new DevExpress.XtraEditors.Controls.InvalidValueExceptionEventHandler(this.OldPasswordTextEdit_InvalidValue);
+            this.newPasswordTextEdit.Validating += new System.ComponentModel.CancelEventHandler(this.OldPasswordTextEdit_Validating);
             // 
             // ConfimPasswordTextEdit
             // 
@@ -235,6 +245,8 @@
             this.ConfimPasswordTextEdit.Size = new System.Drawing.Size(254, 20);
             this.ConfimPasswordTextEdit.StyleController = this.layoutControl1;
             this.ConfimPasswordTextEdit.TabIndex = 4;
+            this.ConfimPasswordTextEdit.InvalidValue += new DevExpress.XtraEditors.Controls.InvalidValueExceptionEventHandler(this.OldPasswordTextEdit_InvalidValue);
+            this.ConfimPasswordTextEdit.Validating += new System.ComponentModel.CancelEventHandler(this.OldPasswordTextEdit_Validating);
             // 
             // selectRoleComboBox
             // 
