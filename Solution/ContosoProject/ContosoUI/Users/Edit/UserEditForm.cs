@@ -152,7 +152,7 @@ namespace ContosoUI.Users.Edit
 
         private void AnyPasswordTextEdit_Modified(object sender, EventArgs e)
         {
-            isPasswordModified = false;
+            isPasswordModified = true;
         }
 
     }
