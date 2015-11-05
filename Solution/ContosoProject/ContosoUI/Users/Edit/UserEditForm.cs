@@ -130,6 +130,7 @@ namespace ContosoUI.Users.Edit
             if (isPersonalInfoModified)
             {
                 DialogResult dialog = MessageBox.Show("Сохраить внесенные изменения?", "Сообщение",MessageBoxButtons.YesNoCancel);
+                if (dialog == System.Windows.Forms.DialogResult.Yes)
                 {
                     saveEditButtonItem_ItemClick(null, null);
                 }
@@ -137,6 +138,8 @@ namespace ContosoUI.Users.Edit
                 {
                     e.Cancel = true;
                 }
+            }
+            e.Cancel = false;
         }
 
         private bool isPersonalInfoModified = false;
