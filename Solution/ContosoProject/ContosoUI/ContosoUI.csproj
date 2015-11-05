@@ -243,6 +243,7 @@
     <None Include="Properties\DataSources\Data.EFData.PermissionDao.datasource" />
     <None Include="Properties\DataSources\Domain.Entities.Customer.datasource" />
     <None Include="Properties\DataSources\Domain.Entities.Goods.datasource" />
+    <None Include="Properties\DataSources\Domain.Entities.GoodsRow.datasource" />
     <None Include="Properties\DataSources\Domain.Entities.Order.datasource" />
     <EmbeddedResource Include="Test\CustomerListView.resx">
       <DependentUpon>CustomerListView.cs</DependentUpon>

@@ -1,4 +1,4 @@
-namespace Data.Migrations
+Ôªønamespace Data.Migrations
 {
     using Domain.Entities;
     using System;
@@ -11,38 +11,38 @@ namespace Data.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
         }
 
         protected override void Seed(Data.EFData.ProjectContext context)
         {
             var permissions = new List<Permission>
             {
-                new Permission{Name = "—ÔËÒÓÍ ÍÎËÂÌÚÓ‚", Type = Domain.PermissionType.ListClient},
-                new Permission{Name = "ƒÓ·‡‚ÎÂÌËÂ ÍÎËÂÌÚ‡", Type = Domain.PermissionType.NewClient},
-                new Permission{Name = "–Â‰‡ÍÚËÓ‚‡ÌËÂ ÍÎËÂÌÚ‡", Type = Domain.PermissionType.EditClient},
-                new Permission{Name = "—ÔËÒÓÍ Á‡Í‡ÁÓ‚", Type = Domain.PermissionType.ListOrder},
-                new Permission{Name = "ÕÓ‚˚È Á‡Í‡Á", Type = Domain.PermissionType.NewOrder},
-                new Permission{Name = "–Â‰‡ÍÚËÓ‚‡ÌËÂ Á‡Í‡Á‡", Type = Domain.PermissionType.EditOrder},
-                new Permission{Name = "—ÔËÒÓÍ ÚÓ‚‡Ó‚", Type = Domain.PermissionType.ListGoods},
-                new Permission{Name = "ÕÓ‚˚È ÚÓ‚‡", Type = Domain.PermissionType.NewGoods},
-                new Permission{Name = "–Â‰‡ÍÚËÓ‚‡ÌËÂ ÚÓ‚‡‡", Type = Domain.PermissionType.EditGoods},
-                new Permission{Name = "—ÔËÒÓÍ ÔÓÎ¸ÁÓ‚‡ÚÂÎÂÈ", Type = Domain.PermissionType.ListUser},
-                new Permission{Name = "ÕÓ‚˚È ÔÓÎ¸ÁÓ‚‡ÚÂÎ¸", Type = Domain.PermissionType.NewUser},
-                new Permission{Name = "–Â‰‡ÍÚËÓ‚‡ÌËÂ ÔÓÎ¸ÁÓ‚‡ÚÂÎˇ", Type = Domain.PermissionType.EditUser},
-                new Permission{Name = "—Óı‡ÌËÚ¸ ÒÔËÒÓÍ ÍÎËÂÌÚÓ‚", Type = Domain.PermissionType.SaveListClients},
-                new Permission{Name = "—Óı‡ÌËÚ¸ ÒÔËÒÓÍ Á‡Í‡ÁÓ‚", Type = Domain.PermissionType.SaveListOrders},
-                new Permission{Name = "—Óı‡ÌËÚ¸ ÒÔËÒÓÍ ÚÓ‚‡Ó‚", Type = Domain.PermissionType.SaveListGoods},
-                new Permission{Name = "—Óı‡ÌËÚ¸ ÒÔËÒÓÍ ÔÓÎ¸ÁÓ‚‡ÚÂÎÂÈ", Type = Domain.PermissionType.SaveListUsers},
-                new Permission{Name = "œÂ˜‡Ú‡Ú¸ ÓÚ˜ÂÚ ÔÓ ÍÎËÂÌÚ‡Ï", Type = Domain.PermissionType.PrintReportClients},
-                new Permission{Name = "œÂ˜‡Ú‡Ú¸ ÓÚ˜ÂÚ ÔÓ Á‡Í‡Á‡Ï", Type = Domain.PermissionType.PrintReportOrders},
-                new Permission{Name = "œÂ˜‡Ú‡Ú¸ ÓÚ˜ÂÚ ÔÓ ÚÓ‚‡‡Ï", Type = Domain.PermissionType.PrintReportGoods},
-                new Permission{Name = "œÂ˜‡Ú‡Ú¸ ÓÚ˜ÂÚ ÔÓ ÔÓÎ¸ÁÓ‚‡ÚÂÎˇÏ", Type = Domain.PermissionType.PrintReportUsers},
+                new Permission{Name = "√ë√Ø√®√±√Æ√™ √™√´√®√•√≠√≤√Æ√¢", Type = Domain.PermissionType.ListClient},
+                new Permission{Name = "√Ñ√Æ√°√†√¢√´√•√≠√®√• √™√´√®√•√≠√≤√†", Type = Domain.PermissionType.NewClient},
+                new Permission{Name = "√ê√•√§√†√™√≤√®√∞√Æ√¢√†√≠√®√• √™√´√®√•√≠√≤√†", Type = Domain.PermissionType.EditClient},
+                new Permission{Name = "√ë√Ø√®√±√Æ√™ √ß√†√™√†√ß√Æ√¢", Type = Domain.PermissionType.ListOrder},
+                new Permission{Name = "√ç√Æ√¢√ª√© √ß√†√™√†√ß", Type = Domain.PermissionType.NewOrder},
+                new Permission{Name = "√ê√•√§√†√™√≤√®√∞√Æ√¢√†√≠√®√• √ß√†√™√†√ß√†", Type = Domain.PermissionType.EditOrder},
+                new Permission{Name = "√ë√Ø√®√±√Æ√™ √≤√Æ√¢√†√∞√Æ√¢", Type = Domain.PermissionType.ListGoods},
+                new Permission{Name = "√ç√Æ√¢√ª√© √≤√Æ√¢√†√∞", Type = Domain.PermissionType.NewGoods},
+                new Permission{Name = "√ê√•√§√†√™√≤√®√∞√Æ√¢√†√≠√®√• √≤√Æ√¢√†√∞√†", Type = Domain.PermissionType.EditGoods},
+                new Permission{Name = "√ë√Ø√®√±√Æ√™ √Ø√Æ√´√º√ß√Æ√¢√†√≤√•√´√•√©", Type = Domain.PermissionType.ListUser},
+                new Permission{Name = "√ç√Æ√¢√ª√© √Ø√Æ√´√º√ß√Æ√¢√†√≤√•√´√º", Type = Domain.PermissionType.NewUser},
+                new Permission{Name = "√ê√•√§√†√™√≤√®√∞√Æ√¢√†√≠√®√• √Ø√Æ√´√º√ß√Æ√¢√†√≤√•√´√ø", Type = Domain.PermissionType.EditUser},
+                new Permission{Name = "√ë√Æ√µ√∞√†√≠√®√≤√º √±√Ø√®√±√Æ√™ √™√´√®√•√≠√≤√Æ√¢", Type = Domain.PermissionType.SaveListClients},
+                new Permission{Name = "√ë√Æ√µ√∞√†√≠√®√≤√º √±√Ø√®√±√Æ√™ √ß√†√™√†√ß√Æ√¢", Type = Domain.PermissionType.SaveListOrders},
+                new Permission{Name = "√ë√Æ√µ√∞√†√≠√®√≤√º √±√Ø√®√±√Æ√™ √≤√Æ√¢√†√∞√Æ√¢", Type = Domain.PermissionType.SaveListGoods},
+                new Permission{Name = "√ë√Æ√µ√∞√†√≠√®√≤√º √±√Ø√®√±√Æ√™ √Ø√Æ√´√º√ß√Æ√¢√†√≤√•√´√•√©", Type = Domain.PermissionType.SaveListUsers},
+                new Permission{Name = "√è√•√∑√†√≤√†√≤√º √Æ√≤√∑√•√≤ √Ø√Æ √™√´√®√•√≠√≤√†√¨", Type = Domain.PermissionType.PrintReportClients},
+                new Permission{Name = "√è√•√∑√†√≤√†√≤√º √Æ√≤√∑√•√≤ √Ø√Æ √ß√†√™√†√ß√†√¨", Type = Domain.PermissionType.PrintReportOrders},
+                new Permission{Name = "√è√•√∑√†√≤√†√≤√º √Æ√≤√∑√•√≤ √Ø√Æ √≤√Æ√¢√†√∞√†√¨", Type = Domain.PermissionType.PrintReportGoods},
+                new Permission{Name = "√è√•√∑√†√≤√†√≤√º √Æ√≤√∑√•√≤ √Ø√Æ √Ø√Æ√´√º√ß√Æ√¢√†√≤√•√´√ø√¨", Type = Domain.PermissionType.PrintReportUsers},
 
-                new Permission{Name = "—ÔËÒÓÍ ÓÎÂÈ", Type = Domain.PermissionType.ListRoles},
-                new Permission{Name = "ƒÓ·‡‚ÎÂÌËÂ ÓÎË", Type = Domain.PermissionType.NewRole},
-                new Permission{Name = "–Â‰‡ÍÚËÓ‚‡ÌËÂ ÓÎË", Type = Domain.PermissionType.EditRole},
-                new Permission{Name = "–Â‰‡ÍÚËÓ‚‡ÌËÂ Í‡ÚÂ„ÓËË ÚÓ‚‡Ó‚", Type = Domain.PermissionType.EditProductCategory}
+                new Permission{Name = "√ë√Ø√®√±√Æ√™ √∞√Æ√´√•√©", Type = Domain.PermissionType.ListRoles},
+                new Permission{Name = "√Ñ√Æ√°√†√¢√´√•√≠√®√• √∞√Æ√´√®", Type = Domain.PermissionType.NewRole},
+                new Permission{Name = "√ê√•√§√†√™√≤√®√∞√Æ√¢√†√≠√®√• √∞√Æ√´√®", Type = Domain.PermissionType.EditRole},
+                new Permission{Name = "√ê√•√§√†√™√≤√®√∞√Æ√¢√†√≠√®√• √™√†√≤√•√£√Æ√∞√®√® √≤√Æ√¢√†√∞√Æ√¢", Type = Domain.PermissionType.EditProductCategory}
             };
 
             var role = new Role { Name = "Administrator", Permissions = permissions };
@@ -52,6 +52,31 @@ namespace Data.Migrations
             var admin = new User { Login = "admin", Password = "21232f297a57a5a743894a0e4a801fc3", Role = role, PersonalInfo = info };
             context.Users.AddOrUpdate(x => x.Login, new User[] { admin });
 
+            var statuses = new List<OrderStatus>()
+            {
+                new OrderStatus() { Status = "–û—Ç–∫—Ä—ã—Ç"},
+                new OrderStatus() { Status = "–û–ø–ª–∞—á–µ–Ω"},
+                new OrderStatus() { Status = "–ì–æ—Ç–æ–≤"},
+                new OrderStatus() { Status = "–û—Ç–≥—Ä—É–∂–µ–Ω"},
+                new OrderStatus() { Status = "–ó–∞–∫—Ä—ã—Ç"},
+            };
+
+            if (context.OrderStatus.Count() == 0)
+            {
+                context.OrderStatus.AddRange(statuses);
+            }
+
+            var goods = new List<Goods>()
+            {
+                new Goods() {Name = "–¢–æ–≤–∞—Ä1", SKU = "3333", Price = 400 },
+                 new Goods() {Name = "–¢–æ–≤–∞—Ä2", SKU = "444", Price = 4400 },
+                  new Goods() {Name = "–¢–æ–≤–∞—Ä3", SKU = "335533", Price = 40670 },
+            };
+
+            if (context.Products.Count() == 0)
+            {
+                context.Products.AddRange(goods);
+            }
 
             context.SaveChanges();
 

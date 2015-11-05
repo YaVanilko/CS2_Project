@@ -11,6 +11,10 @@ namespace Data.EFData
 {
     public class CustomerDao : EfBaseDao<Customer>, ICustomerRepository
     {
+        public CustomerDao()
+        {
+
+        }
         public ICollection<Customer> GetCustomersByCity(string city)
         {
             return dbContext.Customers.Where(x => x.Contacts.City == city)
@@ -42,6 +46,11 @@ namespace Data.EFData
         {
             dbContext.Customers.AddOrUpdate(entity);
             dbContext.SaveChanges();
+        }
+
+        public CustomerDao(ProjectContext context)
+        {
+
         }
     }
 }

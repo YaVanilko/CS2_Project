@@ -10,9 +10,16 @@ using System.Data.Entity.Migrations;
 
 namespace Data.EFData
 {
-    public class EFGoodsDao : EfBaseDao<Goods>, IGoodsRepository
+    public class GoodsDao : EfBaseDao<Goods>, IGoodsRepository
     {
-       readonly ProjectContext context;
+        public GoodsDao()
+        {
+
+        }
+        public GoodsDao(ProjectContext context)
+        {
+               
+        }
         //public ICollection<Goods> Ge
          public EFGoodsDao(ProjectContext context)
         {

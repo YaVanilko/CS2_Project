@@ -178,11 +178,11 @@ namespace Data.DumbData
         #region OrderStatus
         public static List<OrderStatus> OrderStatusCollection = new List<OrderStatus>()
         { 
-            new OrderStatus("Открыт"){Id = 0},
-            new OrderStatus("Оплачен"){Id = 1},
-            new OrderStatus("Готов"){Id = 2},
-            new OrderStatus("Отгружен"){Id = 3},
-            new OrderStatus("Закрыт"){Id = 4}
+            new OrderStatus(){Id = 0, Status = "Открыт"},
+            new OrderStatus(){Id = 1, Status = "Оплачен"},
+            new OrderStatus(){Id = 2, Status = "Готов"},
+            new OrderStatus(){Id = 3, Status = "Отгружен"},
+            new OrderStatus(){Id = 4, Status = "Закрыт"}
         };
         #endregion
 
@@ -368,16 +368,16 @@ namespace Data.DumbData
         #region Goods
         public static List<Goods> goodsCollection = new List<Goods>()
         {
-            new Goods(){Id = 0, Name="Стул Комфорт", Category = categoryCollection[0], Price=400},
-            new Goods(){Id = 1, Name="Стол Венеция",Category = categoryCollection[1], Price=2000},
-            new Goods(){Id = 2, Name="Шкаф Марк",Category = categoryCollection[2], Price=1400},
-            new Goods(){Id = 3, Name="Диван Тина с кушеткой",Category = categoryCollection[3], Price=12400},
-            new Goods(){Id = 4, Name="Кровать Соната",Category = categoryCollection[4], Price=6059.16},
-            new Goods(){Id = 5, Name="Полка Юниор",Category = categoryCollection[5], Price=605},
-            new Goods(){Id = 6, Name="Кухня Модерн",Category = categoryCollection[6], Price=7000.80},
-            new Goods(){Id = 7, Name="Ручка дверная Стерх",Category = categoryCollection[7], Price=200},
-            new Goods(){Id = 8, Name="Комод Ришелье",Category = categoryCollection[8], Price=1200},
-            new Goods(){Id = 9, Name="Тумба Стандарт прикроватная",Category = categoryCollection[9], Price=500},
+            new Goods(){Id = 0, Name="Стул Комфорт", Category = categoryCollection[0]},
+            new Goods(){Id = 1, Name="Стол Венеция",Category = categoryCollection[1]},
+            new Goods(){Id = 2, Name="Шкаф Марк",Category = categoryCollection[2]},
+            new Goods(){Id = 3, Name="Диван Тина с кушеткой",Category = categoryCollection[3]},
+            new Goods(){Id = 4, Name="Кровать Соната",Category = categoryCollection[4]},
+            new Goods(){Id = 5, Name="Полка Юниор",Category = categoryCollection[5]},
+            new Goods(){Id = 6, Name="Кухня Модерн",Category = categoryCollection[6]},
+            new Goods(){Id = 7, Name="Ручка дверная Стерх",Category = categoryCollection[7]},
+            new Goods(){Id = 8, Name="Комод Ришелье",Category = categoryCollection[8]},
+            new Goods(){Id = 9, Name="Тумба Стандарт прикроватная",Category = categoryCollection[9]},
         };
         #endregion
 
