@@ -140,6 +140,7 @@ namespace ContosoUI.Users.Edit
                 else if (dialog == System.Windows.Forms.DialogResult.Cancel)
                 {
                     e.Cancel = true;
+                    return;
                 }
             }
             e.Cancel = false;
