@@ -28,9 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.customersGridControl = new DevExpress.XtraGrid.GridControl();
-            this.customersListViewModelBindingSource1 = new System.Windows.Forms.BindingSource();
+            this.customersListViewModelBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.customersGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.firstNameGridColumn = new DevExpress.XtraGrid.Columns.GridColumn();
             this.lastNameGridColumn = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -42,12 +43,13 @@
             this.telephoneGridColumn = new DevExpress.XtraGrid.Columns.GridColumn();
             this.eMailGridColumn = new DevExpress.XtraGrid.Columns.GridColumn();
             this.idGridColumn = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.statusGridColumn = new DevExpress.XtraGrid.Columns.GridColumn();
             this.filterCityComboBoxEdit = new DevExpress.XtraEditors.ComboBoxEdit();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.customersListItem = new DevExpress.XtraLayout.LayoutControlItem();
             this.filterCityItem = new DevExpress.XtraLayout.LayoutControlItem();
-            this.customersListViewModelBindingSource = new System.Windows.Forms.BindingSource();
-            this.customerBindingSource = new System.Windows.Forms.BindingSource();
+            this.customersListViewModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.menuRibbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.searchButtonItem = new DevExpress.XtraBars.BarButtonItem();
             this.saveButtonItem = new DevExpress.XtraBars.BarButtonItem();
@@ -112,7 +114,8 @@
             this.ordersSumGridColumn,
             this.telephoneGridColumn,
             this.eMailGridColumn,
-            this.idGridColumn});
+            this.idGridColumn,
+            this.statusGridColumn});
             this.customersGridView.GridControl = this.customersGridControl;
             this.customersGridView.Name = "customersGridView";
             this.customersGridView.OptionsBehavior.Editable = false;
@@ -125,7 +128,7 @@
             this.firstNameGridColumn.FieldName = "FirstName";
             this.firstNameGridColumn.Name = "firstNameGridColumn";
             this.firstNameGridColumn.Visible = true;
-            this.firstNameGridColumn.VisibleIndex = 0;
+            this.firstNameGridColumn.VisibleIndex = 1;
             // 
             // lastNameGridColumn
             // 
@@ -133,7 +136,7 @@
             this.lastNameGridColumn.FieldName = "LastName";
             this.lastNameGridColumn.Name = "lastNameGridColumn";
             this.lastNameGridColumn.Visible = true;
-            this.lastNameGridColumn.VisibleIndex = 1;
+            this.lastNameGridColumn.VisibleIndex = 0;
             // 
             // middleNameGridColumn
             // 
@@ -201,6 +204,13 @@
             this.idGridColumn.Caption = "Id";
             this.idGridColumn.FieldName = "Id";
             this.idGridColumn.Name = "idGridColumn";
+            // 
+            // statusGridColumn
+            // 
+            this.statusGridColumn.Caption = "Статус";
+            this.statusGridColumn.Name = "statusGridColumn";
+            this.statusGridColumn.Visible = true;
+            this.statusGridColumn.VisibleIndex = 9;
             // 
             // filterCityComboBoxEdit
             // 
@@ -368,6 +378,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn telephoneGridColumn;
         private DevExpress.XtraGrid.Columns.GridColumn eMailGridColumn;
         private DevExpress.XtraGrid.Columns.GridColumn idGridColumn;
+        private DevExpress.XtraGrid.Columns.GridColumn statusGridColumn;
 
     }
 }

@@ -113,11 +113,11 @@
             // productCategoryGridControl
             // 
             this.productCategoryGridControl.DataSource = this.productCategoryBindingSource;
-            this.productCategoryGridControl.Location = new System.Drawing.Point(12, 28);
+            this.productCategoryGridControl.Location = new System.Drawing.Point(12, 12);
             this.productCategoryGridControl.MainView = this.categoriesGridView;
             this.productCategoryGridControl.MenuManager = this.categoryAddOrEditRibbonControl;
             this.productCategoryGridControl.Name = "productCategoryGridControl";
-            this.productCategoryGridControl.Size = new System.Drawing.Size(781, 318);
+            this.productCategoryGridControl.Size = new System.Drawing.Size(781, 334);
             this.productCategoryGridControl.TabIndex = 4;
             this.productCategoryGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.categoriesGridView});
@@ -203,7 +203,8 @@
             this.productCategoryControlItem.Size = new System.Drawing.Size(785, 338);
             this.productCategoryControlItem.Text = "Список категорий товаров";
             this.productCategoryControlItem.TextLocation = DevExpress.Utils.Locations.Top;
-            this.productCategoryControlItem.TextSize = new System.Drawing.Size(137, 13);
+            this.productCategoryControlItem.TextSize = new System.Drawing.Size(0, 0);
+            this.productCategoryControlItem.TextVisible = false;
             // 
             // ProductCategoryView
             // 
