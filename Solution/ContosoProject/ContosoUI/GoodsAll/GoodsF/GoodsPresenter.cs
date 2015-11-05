@@ -10,10 +10,11 @@ using System.Threading.Tasks;
 
 namespace ContosoUI.GoodsAll.GoodsF
 {
-    class GoodsPresenter 
+    public class GoodsPresenter : INotifyPropertyChanged//, IProductCategoryRepository
     {
-        private IGoodsRepository model = new GoodsDao();
-        private IProductCategoryRepository modelCategory = new ProductCategoryDao();
+        GoodsCategoryService service = new GoodsCategoryService();
+        //private IGoodsRepository model = new EFGoodsDao();
+       // private IProductCategoryRepository modelCategory = new ProductCategoryDao();
         private GoodsForm goodsView;
 
         public List<GoodsListViewModel> viewModel = new List<GoodsListViewModel>();
@@ -24,7 +25,8 @@ namespace ContosoUI.GoodsAll.GoodsF
         public GoodsPresenter(GoodsForm goodsView)
         {
             this.goodsView = goodsView;
-            foreach (ProductCategory pc in modelCategory.GetAll())
+            var categories = service.CategoryDao.GetAll().ToList();
+            foreach (ProductCategory pc in categories)
             {
                 productCategoryList.Add(pc.CategoryName);
             }
@@ -32,7 +34,7 @@ namespace ContosoUI.GoodsAll.GoodsF
 
         public List<GoodsListViewModel> SearchGoodsOnActivity(bool isActive)
         {
-            goodsForLoad = model.GetAll().ToList();
+            goodsForLoad = service.GoodsDao.GetAll().ToList();
             viewModel.Clear();
             foreach (Goods g in goodsForLoad)
             {
@@ -57,7 +59,7 @@ namespace ContosoUI.GoodsAll.GoodsF
 
         public List<GoodsListViewModel> SearchGoodsOnCategory(string category)
         {
-            goodsForLoad = model.GetAll().ToList();
+            goodsForLoad =service.GoodsDao.GetAll().ToList();
             viewModel.Clear();
             if (category == "Все")
             {
@@ -106,5 +108,16 @@ namespace ContosoUI.GoodsAll.GoodsF
 
             return viewModel;
         }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private void NotifyPropertyChanged(String info)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(info));
+            }
+        }
+
     }
 }

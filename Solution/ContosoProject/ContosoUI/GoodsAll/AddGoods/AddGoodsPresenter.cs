@@ -4,26 +4,27 @@ using Domain.DAO;
 using Domain.Entities;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace ContosoUI.GoodsAll.AddGoods
 {
-    public class AddGoodsPresenter
+    public class AddGoodsPresenter : INotifyPropertyChanged
     {
         AddGoods view;
-        IGoodsRepository model = new GoodsDao();
-        IProductCategoryRepository modelCategory = new Data.EFData.ProductCategoryDao();
+        public GoodsCategoryService service = new GoodsCategoryService();
+
         Goods thisGoods;
-        public List<string> productCategoryList = new List<string>();
+        public List<ProductCategory> productCategoryList = new List<ProductCategory>();
         public List<Comment> Comments { get { return thisGoods.Coments.ToList(); } set { } }
 
         public AddGoodsPresenter(AddGoods view, int id)
         {
-            foreach (ProductCategory pc in modelCategory.GetAll())
+            foreach (ProductCategory pc in service.CategoryDao.GetAll())
             {
-                productCategoryList.Add(pc.CategoryName);
+                productCategoryList.Add(pc);
             }
             this.view = view;
             if (id < 1)
@@ -32,60 +33,155 @@ namespace ContosoUI.GoodsAll.AddGoods
             }
             else
             {
-                thisGoods = model.GetById(id);
+                thisGoods = service.GoodsDao.GetById(id);
             }
         }
 
         public string Name
         {
             get { return thisGoods.Name; }
-            set { thisGoods.Name = value; }
+         
+            set
+            {
+                if (thisGoods.Name != value)
+                {
+                    thisGoods.Name = value;
+                    NotifyPropertyChanged("Name");
+                }
+            }
         }
 
         public string SKU
         {
             get { return thisGoods.SKU; }
-            set { thisGoods.SKU = value; }
+            set
+            {
+                if (thisGoods.SKU != value)
+                {
+                    thisGoods.SKU = value;
+                    NotifyPropertyChanged("SKU");
+                }
+            }
         }
 
         public double Price
         {
             get { return thisGoods.Price; }
-            set { thisGoods.Price = value; }
+            set
+            {
+                if (thisGoods.Price != value)
+                {
+                    thisGoods.Price = value;
+                    NotifyPropertyChanged("Price");
+                }
+            }
         }
 
         public int Count
         {
             get { return thisGoods.Count; }
-            set { thisGoods.Count = value; }
+            set
+            {
+                if (thisGoods.Count != value)
+                {
+                    thisGoods.Count = value;
+                    NotifyPropertyChanged("Count");
+                }
+            }
         }
 
-        public string Category
+        public int Category
         {
-            get { return thisGoods.Category.CategoryName; }
-            set { thisGoods.Category.CategoryName = value; }
+            get { return thisGoods.Category.Id; }
+            set
+            {
+                if (thisGoods.Category.Id != value)
+                {
+                    thisGoods.Category.Id= value;
+                    NotifyPropertyChanged("CategoryId");
+                }
+            }
         }
 
-        public string Coments
-        {
-            get { return thisGoods.Coments.ToString(); }
-            //set { thisGoods.Coments = value; }
-        }
+        //public string Coments
+        //{
+        //    get { return thisGoods.Coments.ToString(); }
+        //    //set
+        //    //{
+        //    //    if (thisGoods.Coments != value)
+        //    //    {
+        //    //        thisGoods.Name = value;
+        //    //        NotifyPropertyChanged("FirstName");
+        //    //    }
+        //    //}
+        //}
 
         public bool IsActive
         {
             get { return thisGoods.IsActive; }
-            set { thisGoods.IsActive = value; }
+            set
+            {
+                if (thisGoods.IsActive != value)
+                {
+                    thisGoods.IsActive = value;
+                    NotifyPropertyChanged("IsActive");
+                }
+            }
         }
 
-        public void Save(Goods goods)
+        private string currentComment = string.Empty;
+        public string CurentComment
         {
-            model.Add(goods);
+            get { return currentComment; }
+            set
+            {
+                if (currentComment != value)
+                {
+                    currentComment = value;
+
+                } NotifyPropertyChanged("CurentComment");
+            }
         }
 
-        public void Update(Goods goods)
+        public void Save(Goods thisGoods)
         {
-            model.Update(goods);
+
+            if (!string.IsNullOrWhiteSpace(currentComment))
+            {
+                thisGoods.Coments.Add(new Comment() { Message = currentComment, Type = CommentType.Goods });
+                currentComment = string.Empty;
+            }
+            if (thisGoods.Id > 0)
+            {
+                service.GoodsDao.Update(this.thisGoods);
+            }
+            else
+            {
+                service.GoodsDao.Add(thisGoods);//???
+            }
+            NotifyPropertyChanged("Save");
+           // service.GoodsDao.Add(goods);
+        }
+
+        //public void Update(Goods goods)
+        //{
+        //    service.GoodsDao.Update(goods);
+        //}
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        private void NotifyPropertyChanged(String info)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(info));
+            }
+        }
+
+        public void SaveAndNew(Goods g)
+        {
+            this.Save(g);
+           // thisGoods = new Goods();
+            NotifyPropertyChanged("New goods");
         }
     }
 }

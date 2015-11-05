@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ContosoUI.GoodsAll.GoodsF
 {
-    class GoodsListViewModel
+    public class GoodsListViewModel
     {
         public int Id { get; set; }
         public string Name { get; set; }

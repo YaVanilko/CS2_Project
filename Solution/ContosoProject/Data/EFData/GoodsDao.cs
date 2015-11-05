@@ -12,17 +12,11 @@ namespace Data.EFData
 {
     public class GoodsDao : EfBaseDao<Goods>, IGoodsRepository
     {
-        public GoodsDao()
+        readonly ProjectContext context;
+        public GoodsDao(ProjectContext context = null)
         {
-
+            this.context = context ?? new ProjectContext();
         }
-        public GoodsDao(ProjectContext context)
-        {
-               
-        }
-        ProjectContext context;
-        //public ICollection<Goods> Ge
-
         public ICollection<Goods> GetGoodsByCategory(string category)
         {
             return dbContext.Products.Where(x => x.Category.CategoryName == category).ToList();
@@ -30,20 +24,32 @@ namespace Data.EFData
 
         public new ICollection<Goods> GetAll()
         {
-            return dbContext.Products.Include(x=>x.Coments).ToList();
-         
-                             
+            return dbContext.Products.Include(x => x.Coments).ToList();
+
+
         }
 
         public ICollection<Goods> GetAllIsActive()
         {
-            return dbContext.Products.Where(x => x.IsActive==true).Include(x => x.Coments).ToList();
-                               
+            return dbContext.Products.Where(x => x.IsActive == true).Include(x => x.Coments).ToList();
+
         }
 
-        public void Update(Goods g)
+        public new void Update(Goods goods)
         {
-            dbContext.Products.AddOrUpdate(g);
+            dbContext.Products.AddOrUpdate(goods);
+            dbContext.SaveChanges();
+        }
+
+        public void AddOrUpdate(Goods goods)
+        {
+            dbContext.Products.AddOrUpdate(x => x.Name, new Goods[] { goods });
+            dbContext.SaveChanges();
+        }
+
+        public new void Add(Goods goods)
+        {
+            dbContext.Set<Goods>().Add(goods);
             dbContext.SaveChanges();
         }
     }

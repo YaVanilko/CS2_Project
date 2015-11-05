@@ -43,6 +43,7 @@
             this.telephoneGridColumn = new DevExpress.XtraGrid.Columns.GridColumn();
             this.eMailGridColumn = new DevExpress.XtraGrid.Columns.GridColumn();
             this.idGridColumn = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.statusGridColumn = new DevExpress.XtraGrid.Columns.GridColumn();
             this.filterCityComboBoxEdit = new DevExpress.XtraEditors.ComboBoxEdit();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.customersListItem = new DevExpress.XtraLayout.LayoutControlItem();
@@ -113,7 +114,8 @@
             this.ordersSumGridColumn,
             this.telephoneGridColumn,
             this.eMailGridColumn,
-            this.idGridColumn});
+            this.idGridColumn,
+            this.statusGridColumn});
             this.customersGridView.GridControl = this.customersGridControl;
             this.customersGridView.Name = "customersGridView";
             this.customersGridView.OptionsBehavior.Editable = false;
@@ -126,7 +128,7 @@
             this.firstNameGridColumn.FieldName = "FirstName";
             this.firstNameGridColumn.Name = "firstNameGridColumn";
             this.firstNameGridColumn.Visible = true;
-            this.firstNameGridColumn.VisibleIndex = 0;
+            this.firstNameGridColumn.VisibleIndex = 1;
             // 
             // lastNameGridColumn
             // 
@@ -134,7 +136,7 @@
             this.lastNameGridColumn.FieldName = "LastName";
             this.lastNameGridColumn.Name = "lastNameGridColumn";
             this.lastNameGridColumn.Visible = true;
-            this.lastNameGridColumn.VisibleIndex = 1;
+            this.lastNameGridColumn.VisibleIndex = 0;
             // 
             // middleNameGridColumn
             // 
@@ -202,6 +204,13 @@
             this.idGridColumn.Caption = "Id";
             this.idGridColumn.FieldName = "Id";
             this.idGridColumn.Name = "idGridColumn";
+            // 
+            // statusGridColumn
+            // 
+            this.statusGridColumn.Caption = "Статус";
+            this.statusGridColumn.Name = "statusGridColumn";
+            this.statusGridColumn.Visible = true;
+            this.statusGridColumn.VisibleIndex = 9;
             // 
             // filterCityComboBoxEdit
             // 
@@ -369,6 +378,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn telephoneGridColumn;
         private DevExpress.XtraGrid.Columns.GridColumn eMailGridColumn;
         private DevExpress.XtraGrid.Columns.GridColumn idGridColumn;
+        private DevExpress.XtraGrid.Columns.GridColumn statusGridColumn;
 
     }
 }
