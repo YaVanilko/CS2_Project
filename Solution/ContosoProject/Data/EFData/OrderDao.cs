@@ -9,8 +9,14 @@ using System.Data.Entity.Migrations;
 
 namespace Data.EFData
 {
-    public class OrderDao : EfBaseDao<Order>, IOrderRepository
+    public class OrderDao : IOrderRepository
     {
+        ProjectContext dbContext;
+        public OrderDao(ProjectContext context = null)
+        {
+            dbContext = context ?? new ProjectContext();
+        }
+
         public new IQueryable<Order> GetAll()
         {
             IQueryable<Order> collection =
@@ -48,14 +54,20 @@ namespace Data.EFData
             dbContext.SaveChanges();
         }
 
-        public OrderDao(ProjectContext context)
+        public new void Add(Order entity)
         {
-
+            dbContext.Orders.Add(entity);
+            dbContext.SaveChanges();
         }
 
-        public OrderDao()
+        public void Delete(Order entity)
         {
+            dbContext.Orders.Remove(entity);
+        }
 
+        public IQueryable<Order> FindBy(System.Linq.Expressions.Expression<Func<Order, bool>> predicate)
+        {
+            throw new NotImplementedException();
         }
     }
 }

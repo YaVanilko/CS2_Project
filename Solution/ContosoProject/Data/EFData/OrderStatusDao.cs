@@ -9,15 +9,9 @@ using System.Data.Entity.Migrations;
 
 namespace Data.EFData
 {
-    public class OrderStatusDao : EfBaseDao<OrderStatus>, IOrderStatusRepository
+    public class OrderStatusDao : IOrderStatusRepository
     {
-        public OrderStatusDao()
-        {
-
-        }
-
-        //ProjectContext dbContext;
-
+        ProjectContext dbContext;
         public OrderStatusDao(ProjectContext ctx = null)
         {
             dbContext = ctx ?? new ProjectContext();
@@ -41,5 +35,20 @@ namespace Data.EFData
                 dbContext.OrderStatus.AddOrUpdate(entity);
                 dbContext.SaveChanges();
             }
-        }
+
+            public void Add(OrderStatus entity)
+            {
+                throw new NotImplementedException();
+            }
+
+            public void Delete(OrderStatus entity)
+            {
+                throw new NotImplementedException();
+            }
+
+            public IQueryable<OrderStatus> FindBy(System.Linq.Expressions.Expression<Func<OrderStatus, bool>> predicate)
+            {
+                throw new NotImplementedException();
+            }
+    }
     }

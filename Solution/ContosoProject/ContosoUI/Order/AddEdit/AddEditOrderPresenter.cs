@@ -183,7 +183,7 @@ namespace ContosoUI.Order.AddEdit
 
         public void Save()
         {
-            if (order.Id >= 0)
+            if (order.Id > 0)
             {
                 modelProxy.OrderModel.Update(order);
             }

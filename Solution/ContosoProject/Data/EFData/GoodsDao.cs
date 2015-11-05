@@ -10,12 +10,12 @@ using System.Data.Entity.Migrations;
 
 namespace Data.EFData
 {
-    public class GoodsDao : EfBaseDao<Goods>, IGoodsRepository
+    public class GoodsDao : IGoodsRepository
     {
-        readonly ProjectContext context;
+        readonly ProjectContext dbContext;
         public GoodsDao(ProjectContext context = null)
         {
-            this.context = context ?? new ProjectContext();
+            dbContext = context ?? new ProjectContext();
         }
         public ICollection<Goods> GetGoodsByCategory(string category)
         {
@@ -51,6 +51,27 @@ namespace Data.EFData
         {
             dbContext.Set<Goods>().Add(goods);
             dbContext.SaveChanges();
+        }
+
+
+        public void Delete(Goods entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Goods GetById(int Id)
+        {
+            throw new NotImplementedException();
+        }
+
+        IQueryable<Goods> IRepository<Goods>.GetAll()
+        {
+            return dbContext.Products;
+        }
+
+        public IQueryable<Goods> FindBy(System.Linq.Expressions.Expression<Func<Goods, bool>> predicate)
+        {
+            throw new NotImplementedException();
         }
     }
 }
