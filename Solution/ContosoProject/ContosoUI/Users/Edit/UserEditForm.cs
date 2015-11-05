@@ -59,6 +59,7 @@ namespace ContosoUI.Users.Edit
         {
             this.personalInfoGroup.HideToCustomization();
             asPasswordChange = true;
+            selectRoleComboBox.CausesValidation = false;
         }
 
         private void saveEditButtonItem_ItemClick(object sender, ItemClickEventArgs e)
@@ -155,6 +156,15 @@ namespace ContosoUI.Users.Edit
         private void AnyPasswordTextEdit_Modified(object sender, EventArgs e)
         {
             isPasswordModified = true;
+        }
+
+        private void selectRoleComboBox_Validating(object sender, CancelEventArgs e)
+        {
+            var combo = sender as DevExpress.XtraEditors.ComboBoxEdit;
+            if (combo.SelectedItem==null||combo.SelectedItem.ToString()==null)
+            {
+                e.Cancel = true;
+            }
         }
 
     }

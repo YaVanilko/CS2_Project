@@ -268,6 +268,7 @@
             this.selectRoleComboBox.StyleController = this.layoutControl1;
             this.selectRoleComboBox.TabIndex = 7;
             this.selectRoleComboBox.Modified += new System.EventHandler(this.AnyTextEdit_Modified);
+            this.selectRoleComboBox.Validating += new System.ComponentModel.CancelEventHandler(this.selectRoleComboBox_Validating);
             // 
             // userGroup
             // 
