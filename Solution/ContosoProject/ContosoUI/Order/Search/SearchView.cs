@@ -54,5 +54,24 @@ namespace ContosoUI.Order.Search
                 form.Show();
             }
         }
+
+        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+
+            saveFileDialog.Filter = "xls files (*.xls)|*.xls|All files (*.*)|*.*";
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string FileName = saveFileDialog.FileName;
+                ordersGridView.ExportToXls(FileName);
+            }
+        }
+
+        private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            ordersGridView.ShowPrintPreview();
+            ordersGridView.Print();
+        }
     }
 }

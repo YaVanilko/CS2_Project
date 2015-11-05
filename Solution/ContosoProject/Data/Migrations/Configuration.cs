@@ -11,7 +11,7 @@
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
         }
 
         protected override void Seed(Data.EFData.ProjectContext context)
@@ -61,7 +61,22 @@
                 new OrderStatus() { Status = "Закрыт"},
             };
 
-            context.OrderStatus.AddRange(statuses);
+            if (context.OrderStatus.Count() == 0)
+            {
+                context.OrderStatus.AddRange(statuses);
+            }
+
+            var goods = new List<Goods>()
+            {
+                new Goods() {Name = "Товар1", SKU = "3333", Price = 400 },
+                 new Goods() {Name = "Товар2", SKU = "444", Price = 4400 },
+                  new Goods() {Name = "Товар3", SKU = "335533", Price = 40670 },
+            };
+
+            if (context.Products.Count() == 0)
+            {
+                context.Products.AddRange(goods);
+            }
 
             context.SaveChanges();
 

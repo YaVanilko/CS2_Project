@@ -39,38 +39,30 @@ namespace ContosoUI.Order.Search
             if (status.Status == "Все статусы")
             {
                 ordersList = orderModel.GetAll().ToList();
-                viewModel.Clear();
-
-                foreach (var order in ordersList)
-                {
-                        viewModel.Add(new SearchViewModel()
-                        {
-                            Id = order.Id,
-                            Status = order.Status.Status,
-                            Customer = order.Customer,
-                            countOfGoods = order.GoodsList.Count,
-                            TotalCost = order.TotalCost,
-                            countOfComments = order.Comments.Count
-                        });
-                }
+                FillViewModel();
             }
             else
             {
                 ordersList = orderModel.GetOrderByStatus(status).ToList();
-                viewModel.Clear();
+                FillViewModel();
+            }
+        }
 
-                foreach (var order in ordersList)
+        private void FillViewModel ()
+        {
+            viewModel.Clear();
+
+            foreach (var order in ordersList)
+            {
+                viewModel.Add(new SearchViewModel()
                 {
-                        viewModel.Add(new SearchViewModel()
-                        {
-                            Id = order.Id,
-                            Status = order.Status.Status,
-                            Customer = order.Customer,
-                            countOfGoods = order.GoodsList.Count,
-                            TotalCost = order.TotalCost,
-                            countOfComments = order.Comments.Count
-                        });
-                }
+                    Id = order.Id,
+                    Status = order.Status.Status,
+                    Customer = order.Customer,
+                    countOfGoods = order.GoodsList.Count,
+                    TotalCost = order.TotalCost,
+                    countOfComments = order.Comments.Count
+                });
             }
         }
 }
