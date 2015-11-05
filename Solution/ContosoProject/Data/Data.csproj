@@ -74,6 +74,7 @@
     <Compile Include="EFData\EfBaseDao.cs" />
     <Compile Include="EFData\ContactsInfoDao.cs" />
     <Compile Include="EFData\CustomerDao.cs" />
+    <Compile Include="EFData\GoodsCategoryService.cs" />
     <Compile Include="EFData\GoodsRowDao.cs" />
     <Compile Include="EFData\ProductCategoryDao.cs" />
     <Compile Include="EFData\GoodsDao.cs" />
