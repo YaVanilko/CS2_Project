@@ -31,7 +31,7 @@ namespace Domain.Entities
         {
             Customer = new Customer();
             GoodsList = new List<GoodsRow>();
-            Status = new OrderStatus("Открыт");
+            Status = new OrderStatus();
             Comments = new List<Comment>();
         }
     }

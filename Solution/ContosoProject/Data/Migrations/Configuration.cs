@@ -1,4 +1,4 @@
-namespace Data.Migrations
+Ôªønamespace Data.Migrations
 {
     using Domain.Entities;
     using System;
@@ -11,38 +11,38 @@ namespace Data.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
         }
 
         protected override void Seed(Data.EFData.ProjectContext context)
         {
             var permissions = new List<Permission>
             {
-                new Permission{Name = "—ÔËÒÓÍ ÍÎËÂÌÚÓ‚", Type = Domain.PermissionType.ListClient},
-                new Permission{Name = "ƒÓ·‡‚ÎÂÌËÂ ÍÎËÂÌÚ‡", Type = Domain.PermissionType.NewClient},
-                new Permission{Name = "–Â‰‡ÍÚËÓ‚‡ÌËÂ ÍÎËÂÌÚ‡", Type = Domain.PermissionType.EditClient},
-                new Permission{Name = "—ÔËÒÓÍ Á‡Í‡ÁÓ‚", Type = Domain.PermissionType.ListOrder},
-                new Permission{Name = "ÕÓ‚˚È Á‡Í‡Á", Type = Domain.PermissionType.NewOrder},
-                new Permission{Name = "–Â‰‡ÍÚËÓ‚‡ÌËÂ Á‡Í‡Á‡", Type = Domain.PermissionType.EditOrder},
-                new Permission{Name = "—ÔËÒÓÍ ÚÓ‚‡Ó‚", Type = Domain.PermissionType.ListGoods},
-                new Permission{Name = "ÕÓ‚˚È ÚÓ‚‡", Type = Domain.PermissionType.NewGoods},
-                new Permission{Name = "–Â‰‡ÍÚËÓ‚‡ÌËÂ ÚÓ‚‡‡", Type = Domain.PermissionType.EditGoods},
-                new Permission{Name = "—ÔËÒÓÍ ÔÓÎ¸ÁÓ‚‡ÚÂÎÂÈ", Type = Domain.PermissionType.ListUser},
-                new Permission{Name = "ÕÓ‚˚È ÔÓÎ¸ÁÓ‚‡ÚÂÎ¸", Type = Domain.PermissionType.NewUser},
-                new Permission{Name = "–Â‰‡ÍÚËÓ‚‡ÌËÂ ÔÓÎ¸ÁÓ‚‡ÚÂÎˇ", Type = Domain.PermissionType.EditUser},
-                new Permission{Name = "—Óı‡ÌËÚ¸ ÒÔËÒÓÍ ÍÎËÂÌÚÓ‚", Type = Domain.PermissionType.SaveListClients},
-                new Permission{Name = "—Óı‡ÌËÚ¸ ÒÔËÒÓÍ Á‡Í‡ÁÓ‚", Type = Domain.PermissionType.SaveListOrders},
-                new Permission{Name = "—Óı‡ÌËÚ¸ ÒÔËÒÓÍ ÚÓ‚‡Ó‚", Type = Domain.PermissionType.SaveListGoods},
-                new Permission{Name = "—Óı‡ÌËÚ¸ ÒÔËÒÓÍ ÔÓÎ¸ÁÓ‚‡ÚÂÎÂÈ", Type = Domain.PermissionType.SaveListUsers},
-                new Permission{Name = "œÂ˜‡Ú‡Ú¸ ÓÚ˜ÂÚ ÔÓ ÍÎËÂÌÚ‡Ï", Type = Domain.PermissionType.PrintReportClients},
-                new Permission{Name = "œÂ˜‡Ú‡Ú¸ ÓÚ˜ÂÚ ÔÓ Á‡Í‡Á‡Ï", Type = Domain.PermissionType.PrintReportOrders},
-                new Permission{Name = "œÂ˜‡Ú‡Ú¸ ÓÚ˜ÂÚ ÔÓ ÚÓ‚‡‡Ï", Type = Domain.PermissionType.PrintReportGoods},
-                new Permission{Name = "œÂ˜‡Ú‡Ú¸ ÓÚ˜ÂÚ ÔÓ ÔÓÎ¸ÁÓ‚‡ÚÂÎˇÏ", Type = Domain.PermissionType.PrintReportUsers},
+                new Permission{Name = "–°–ø–∏—Å–æ–∫ –∫–ª–∏–µ–Ω—Ç–æ–≤", Type = Domain.PermissionType.ListClient},
+                new Permission{Name = "–î–æ–±–∞–≤–ª–µ–Ω–∏–µ –∫–ª–∏–µ–Ω—Ç–∞", Type = Domain.PermissionType.NewClient},
+                new Permission{Name = "–†–µ–¥–∞–∫—Ç–∏—Ä–æ–≤–∞–Ω–∏–µ –∫–ª–∏–µ–Ω—Ç–∞", Type = Domain.PermissionType.EditClient},
+                new Permission{Name = "–°–ø–∏—Å–æ–∫ –∑–∞–∫–∞–∑–æ–≤", Type = Domain.PermissionType.ListOrder},
+                new Permission{Name = "–ù–æ–≤—ã–π –∑–∞–∫–∞–∑", Type = Domain.PermissionType.NewOrder},
+                new Permission{Name = "–†–µ–¥–∞–∫—Ç–∏—Ä–æ–≤–∞–Ω–∏–µ –∑–∞–∫–∞–∑–∞", Type = Domain.PermissionType.EditOrder},
+                new Permission{Name = "–°–ø–∏—Å–æ–∫ —Ç–æ–≤–∞—Ä–æ–≤", Type = Domain.PermissionType.ListGoods},
+                new Permission{Name = "–ù–æ–≤—ã–π —Ç–æ–≤–∞—Ä", Type = Domain.PermissionType.NewGoods},
+                new Permission{Name = "–†–µ–¥–∞–∫—Ç–∏—Ä–æ–≤–∞–Ω–∏–µ —Ç–æ–≤–∞—Ä–∞", Type = Domain.PermissionType.EditGoods},
+                new Permission{Name = "–°–ø–∏—Å–æ–∫ –ø–æ–ª—å–∑–æ–≤–∞—Ç–µ–ª–µ–π", Type = Domain.PermissionType.ListUser},
+                new Permission{Name = "–ù–æ–≤—ã–π –ø–æ–ª—å–∑–æ–≤–∞—Ç–µ–ª—å", Type = Domain.PermissionType.NewUser},
+                new Permission{Name = "–†–µ–¥–∞–∫—Ç–∏—Ä–æ–≤–∞–Ω–∏–µ –ø–æ–ª—å–∑–æ–≤–∞—Ç–µ–ª—è", Type = Domain.PermissionType.EditUser},
+                new Permission{Name = "–°–æ—Ö—Ä–∞–Ω–∏—Ç—å —Å–ø–∏—Å–æ–∫ –∫–ª–∏–µ–Ω—Ç–æ–≤", Type = Domain.PermissionType.SaveListClients},
+                new Permission{Name = "–°–æ—Ö—Ä–∞–Ω–∏—Ç—å —Å–ø–∏—Å–æ–∫ –∑–∞–∫–∞–∑–æ–≤", Type = Domain.PermissionType.SaveListOrders},
+                new Permission{Name = "–°–æ—Ö—Ä–∞–Ω–∏—Ç—å —Å–ø–∏—Å–æ–∫ —Ç–æ–≤–∞—Ä–æ–≤", Type = Domain.PermissionType.SaveListGoods},
+                new Permission{Name = "–°–æ—Ö—Ä–∞–Ω–∏—Ç—å —Å–ø–∏—Å–æ–∫ –ø–æ–ª—å–∑–æ–≤–∞—Ç–µ–ª–µ–π", Type = Domain.PermissionType.SaveListUsers},
+                new Permission{Name = "–ü–µ—á–∞—Ç–∞—Ç—å –æ—Ç—á–µ—Ç –ø–æ –∫–ª–∏–µ–Ω—Ç–∞–º", Type = Domain.PermissionType.PrintReportClients},
+                new Permission{Name = "–ü–µ—á–∞—Ç–∞—Ç—å –æ—Ç—á–µ—Ç –ø–æ –∑–∞–∫–∞–∑–∞–º", Type = Domain.PermissionType.PrintReportOrders},
+                new Permission{Name = "–ü–µ—á–∞—Ç–∞—Ç—å –æ—Ç—á–µ—Ç –ø–æ —Ç–æ–≤–∞—Ä–∞–º", Type = Domain.PermissionType.PrintReportGoods},
+                new Permission{Name = "–ü–µ—á–∞—Ç–∞—Ç—å –æ—Ç—á–µ—Ç –ø–æ –ø–æ–ª—å–∑–æ–≤–∞—Ç–µ–ª—è–º", Type = Domain.PermissionType.PrintReportUsers},
 
-                new Permission{Name = "—ÔËÒÓÍ ÓÎÂÈ", Type = Domain.PermissionType.ListRoles},
-                new Permission{Name = "ƒÓ·‡‚ÎÂÌËÂ ÓÎË", Type = Domain.PermissionType.NewRole},
-                new Permission{Name = "–Â‰‡ÍÚËÓ‚‡ÌËÂ ÓÎË", Type = Domain.PermissionType.EditRole},
-                new Permission{Name = "–Â‰‡ÍÚËÓ‚‡ÌËÂ Í‡ÚÂ„ÓËË ÚÓ‚‡Ó‚", Type = Domain.PermissionType.EditProductCategory}
+                new Permission{Name = "–°–ø–∏—Å–æ–∫ —Ä–æ–ª–µ–π", Type = Domain.PermissionType.ListRoles},
+                new Permission{Name = "–î–æ–±–∞–≤–ª–µ–Ω–∏–µ —Ä–æ–ª–∏", Type = Domain.PermissionType.NewRole},
+                new Permission{Name = "–†–µ–¥–∞–∫—Ç–∏—Ä–æ–≤–∞–Ω–∏–µ —Ä–æ–ª–∏", Type = Domain.PermissionType.EditRole},
+                new Permission{Name = "–†–µ–¥–∞–∫—Ç–∏—Ä–æ–≤–∞–Ω–∏–µ –∫–∞—Ç–µ–≥–æ—Ä–∏–∏ —Ç–æ–≤–∞—Ä–æ–≤", Type = Domain.PermissionType.EditProductCategory}
             };
 
             var role = new Role { Name = "Administrator", Permissions = permissions };
@@ -52,6 +52,99 @@ namespace Data.Migrations
             var admin = new User { Login = "admin", Password = "21232f297a57a5a743894a0e4a801fc3", Role = role, PersonalInfo = info };
             context.Users.AddOrUpdate(x => x.Login, new User[] { admin });
 
+            var statuses = new List<OrderStatus>()
+            {
+                new OrderStatus() { Status = "–û—Ç–∫—Ä—ã—Ç"},
+                new OrderStatus() { Status = "–û–ø–ª–∞—á–µ–Ω"},
+                new OrderStatus() { Status = "–ì–æ—Ç–æ–≤"},
+                new OrderStatus() { Status = "–û—Ç–≥—Ä—É–∂–µ–Ω"},
+                new OrderStatus() { Status = "–ó–∞–∫—Ä—ã—Ç"},
+            };
+
+            if (context.OrderStatus.Count() == 0)
+            {
+                context.OrderStatus.AddRange(statuses);
+            }
+
+            // Dummy data
+            var cars = new List<ProductCategory>
+            {
+                new ProductCategory{CategoryName="cat1"},
+                new ProductCategory{CategoryName="cat2"},
+                new ProductCategory{CategoryName="cat3"},
+                new ProductCategory{CategoryName="cat4"}
+            };
+            var prods = new List<Goods>
+            {
+                new Goods{Name="Goods1",Price=10,SKU="SKU1",Count=3,Category=cars[0]},
+                new Goods{Name="Goods2",Price=10,SKU="SKU2",Count=5,Category=cars[1]},
+                new Goods{Name="Goods3",Price=10,SKU="SKU3",Count=2,Category=cars[0]},
+                new Goods{Name="Goods4",Price=10,SKU="SKU4",Count=6,Category=cars[2]},
+                new Goods{Name="Goods5",Price=10,SKU="SKU5",Count=8,Category=cars[0]}
+            };
+
+            var cust = new List<Customer>
+            {
+                new Customer
+                {
+                    Contacts = new ContactInfo{Adress="addres",City="city",},
+                    PersonalInfo = new PersonalInfo{FirstName="Ivan",LastName="Ivanov"},
+                },
+                new Customer
+                {
+                    Contacts = new ContactInfo{Adress="addres",City="city",},
+                    PersonalInfo = new PersonalInfo{FirstName="Petr",LastName="Petrov"},
+                },
+                new Customer
+                {
+                    Contacts = new ContactInfo{Adress="addres",City="city",},
+                    PersonalInfo = new PersonalInfo{FirstName="Sidor",LastName="Sidorov"},
+                }
+            };
+
+            var orders = new List<Order>
+            {
+                new Order
+                {
+                    Status = statuses[0], 
+                    Customer = cust[0], 
+                    GoodsList = 
+                    {
+                        new GoodsRow{Goods = prods[0],Price=10,Count=1},
+                        new GoodsRow{Goods = prods[1],Price=20,Count=2},
+                        new GoodsRow{Goods = prods[2],Price=30,Count=3}
+                    },
+                },
+                new Order
+                {
+                    Status = statuses[1], 
+                    Customer = cust[1], 
+                    GoodsList = 
+                    {
+                        new GoodsRow{Goods = prods[2],Price=10,Count=1},
+                        new GoodsRow{Goods = prods[3],Price=20,Count=2},
+                        new GoodsRow{Goods = prods[4],Price=30,Count=3}
+                    },
+                },
+            };
+
+            if (context.Categories.Count() == 0)
+            {
+                context.Categories.AddRange(cars);
+            }
+
+            if (context.Products.Count() == 0)
+            {
+                context.Products.AddRange(prods);
+            }
+            if (context.Customers.Count()==0)
+            {
+                context.Customers.AddRange(cust);
+            }
+            if (context.Orders.Count()==0)
+            {
+                context.Orders.AddRange(orders);
+            }
 
             context.SaveChanges();
 

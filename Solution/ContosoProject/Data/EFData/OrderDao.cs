@@ -31,15 +31,31 @@ namespace Data.EFData
                 .Include(x => x.Comments).FirstOrDefault();
         }
 
+        public ICollection<Order> GetOrderByStatus(OrderStatus status)
+        {
+            return dbContext.Orders.Where(x => x.Status == status)
+                .Include(x => x.Comments)
+                .Include(x => x.Customer)
+                .Include(x => x.GoodsList)
+                .Include(x => x.Status)
+                .Include(x => x.TotalCost)
+                .ToList();
+        }
+
         public new void Update(Order entity)
         {
             dbContext.Orders.AddOrUpdate(entity);
             dbContext.SaveChanges();
         }
 
-        public ICollection<Order> GetOrderByStatus(OrderStatus status)
+        public OrderDao(ProjectContext context)
         {
-            throw new NotImplementedException();
+
+        }
+
+        public OrderDao()
+        {
+
         }
     }
 }

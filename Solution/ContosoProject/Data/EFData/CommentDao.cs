@@ -9,8 +9,13 @@ using System.Data.Entity.Migrations;
 
 namespace Data.EFData
 {
-    class CommentDao : EfBaseDao<Comment>, ICommentRepository
+    public class CommentDao : EfBaseDao<Comment>, ICommentRepository
     {
+        public CommentDao(ProjectContext context)
+        {
+
+        }
+
         public new IQueryable<Comment> GetAll()
         {
             IQueryable<Comment> collection =
