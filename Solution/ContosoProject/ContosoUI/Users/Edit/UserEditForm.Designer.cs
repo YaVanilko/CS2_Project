@@ -173,7 +173,7 @@
             // 
             // lastNameTextEdit
             // 
-            this.lastNameTextEdit.Location = new System.Drawing.Point(306, 98);
+            this.lastNameTextEdit.Location = new System.Drawing.Point(306, 58);
             this.lastNameTextEdit.Name = "lastNameTextEdit";
             this.lastNameTextEdit.Properties.Mask.EditMask = "\\p{L}+";
             this.lastNameTextEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
@@ -187,7 +187,7 @@
             // 
             // firstNameTextEdit
             // 
-            this.firstNameTextEdit.Location = new System.Drawing.Point(306, 58);
+            this.firstNameTextEdit.Location = new System.Drawing.Point(306, 98);
             this.firstNameTextEdit.Name = "firstNameTextEdit";
             this.firstNameTextEdit.Properties.Mask.EditMask = "\\p{L}+";
             this.firstNameTextEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
@@ -341,11 +341,11 @@
             // personalInfoGroup
             // 
             this.personalInfoGroup.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.lastNameItem,
             this.layoutControlItem2,
             this.middleNameItem,
             this.rol,
-            this.IsActiveUserLayoutControl});
+            this.IsActiveUserLayoutControl,
+            this.lastNameItem});
             this.personalInfoGroup.Location = new System.Drawing.Point(282, 0);
             this.personalInfoGroup.Name = "personalInfoGroup";
             this.personalInfoGroup.Size = new System.Drawing.Size(651, 502);
@@ -354,7 +354,7 @@
             // lastNameItem
             // 
             this.lastNameItem.Control = this.lastNameTextEdit;
-            this.lastNameItem.Location = new System.Drawing.Point(0, 40);
+            this.lastNameItem.Location = new System.Drawing.Point(0, 0);
             this.lastNameItem.Name = "lastNameItem";
             this.lastNameItem.Size = new System.Drawing.Size(627, 40);
             this.lastNameItem.Text = "Фамилия";
@@ -365,7 +365,7 @@
             // 
             this.layoutControlItem2.Control = this.firstNameTextEdit;
             this.layoutControlItem2.CustomizationFormText = "Имя";
-            this.layoutControlItem2.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 40);
             this.layoutControlItem2.Name = "layoutControlItem2";
             this.layoutControlItem2.Size = new System.Drawing.Size(627, 40);
             this.layoutControlItem2.Text = "Имя";

@@ -83,8 +83,8 @@
             this.colPersonalInfo.OptionsColumn.AllowFocus = false;
             this.colPersonalInfo.OptionsColumn.ReadOnly = true;
             this.colPersonalInfo.Visible = true;
-            this.colPersonalInfo.VisibleIndex = 0;
-            this.colPersonalInfo.Width = 257;
+            this.colPersonalInfo.VisibleIndex = 2;
+            this.colPersonalInfo.Width = 499;
             // 
             // colRole
             // 
@@ -94,8 +94,8 @@
             this.colRole.OptionsColumn.AllowFocus = false;
             this.colRole.OptionsColumn.ReadOnly = true;
             this.colRole.Visible = true;
-            this.colRole.VisibleIndex = 1;
-            this.colRole.Width = 143;
+            this.colRole.VisibleIndex = 0;
+            this.colRole.Width = 133;
             // 
             // colLogin
             // 
@@ -105,8 +105,8 @@
             this.colLogin.OptionsColumn.AllowFocus = false;
             this.colLogin.OptionsColumn.ReadOnly = true;
             this.colLogin.Visible = true;
-            this.colLogin.VisibleIndex = 2;
-            this.colLogin.Width = 195;
+            this.colLogin.VisibleIndex = 1;
+            this.colLogin.Width = 120;
             // 
             // colId
             // 
@@ -114,9 +114,7 @@
             this.colId.Name = "colId";
             this.colId.OptionsColumn.AllowFocus = false;
             this.colId.OptionsColumn.ReadOnly = true;
-            this.colId.Visible = true;
-            this.colId.VisibleIndex = 3;
-            this.colId.Width = 89;
+            this.colId.Width = 85;
             // 
             // colIsActive
             // 
@@ -126,8 +124,8 @@
             this.colIsActive.OptionsColumn.AllowFocus = false;
             this.colIsActive.OptionsColumn.ReadOnly = true;
             this.colIsActive.Visible = true;
-            this.colIsActive.VisibleIndex = 4;
-            this.colIsActive.Width = 137;
+            this.colIsActive.VisibleIndex = 3;
+            this.colIsActive.Width = 115;
             // 
             // colEditTime
             // 
@@ -137,8 +135,8 @@
             this.colEditTime.OptionsColumn.AllowFocus = false;
             this.colEditTime.OptionsColumn.ReadOnly = true;
             this.colEditTime.Visible = true;
-            this.colEditTime.VisibleIndex = 5;
-            this.colEditTime.Width = 165;
+            this.colEditTime.VisibleIndex = 4;
+            this.colEditTime.Width = 119;
             // 
             // UserReportGridControl
             // 
