@@ -148,7 +148,7 @@
             this.colCategoryName.OptionsEditForm.VisibleIndex = 2;
             this.colCategoryName.Visible = true;
             this.colCategoryName.VisibleIndex = 1;
-            this.colCategoryName.Width = 303;
+            this.colCategoryName.Width = 318;
             // 
             // colId
             // 
@@ -159,6 +159,7 @@
             this.colId.OptionsEditForm.VisibleIndex = 1;
             this.colId.Visible = true;
             this.colId.VisibleIndex = 0;
+            this.colId.Width = 39;
             // 
             // colIsActive
             // 
@@ -169,7 +170,7 @@
             this.colIsActive.OptionsEditForm.VisibleIndex = 3;
             this.colIsActive.Visible = true;
             this.colIsActive.VisibleIndex = 2;
-            this.colIsActive.Width = 203;
+            this.colIsActive.Width = 213;
             // 
             // colEditTime
             // 
@@ -182,7 +183,7 @@
             this.colEditTime.OptionsEditForm.VisibleIndex = 4;
             this.colEditTime.Visible = true;
             this.colEditTime.VisibleIndex = 3;
-            this.colEditTime.Width = 182;
+            this.colEditTime.Width = 193;
             // 
             // categoryLayoutControlGroup
             // 
