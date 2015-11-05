@@ -61,30 +61,39 @@ namespace ContosoUI.Roles
         }
         public void Save()
         {
-            if (roles.Any(x => x.IsActive == false))
+            if (ValidationRolesBeforeSave())
             {
-                DialogResult result;
-                result = MessageBox.Show("Вы уверенны, что хотите деактивировать роль пользователя? После деактивации роль будет удалена из списка!", buttons: MessageBoxButtons.OKCancel, caption: "Деактивация роли");
-                if (result == DialogResult.Cancel)
+                foreach (var role in roles)
                 {
-                    return;
+                    modelProxy.RoleDao.AddOrUpdate(role);
                 }
             }
-            if (roles.Any(x => x.Name == null))
+            Roles.RemoveAll(x => !x.IsActive);
+            NotifyPropertyChanged("Save");
+        }
+        bool ValidationRolesBeforeSave()
+        {
+            bool isValid = true;
+            if (roles.Any(x => x.IsActive == false))
             {
-                   MessageBox.Show("Запрещено создавать роль без названия", caption: "Предупреждение" );
-                   return;
+                view.ShowValidationDialog("Вы уверенны, что хотите деактивировать роль пользователя? После деактивации роль будет удалена из списка!", "Предупреждение");
+                isValid = false;
+            }
+            if (roles.Any(x => x == null || x.Name == null))
+            {
+                view.ShowValidationDialog("Запрещено создавать роль без названия", "Предупреждение");
+                isValid = false;
             }
             foreach (var role in roles)
             {
-                if (role.Permissions.Count == 0)
+                if (role == null || role.Permissions.Count == 0)
                 {
-                    string roleName = role.Name;
-                    MessageBox.Show("Роль " + roleName + " не содержит разрешений. Запрещено создавать роль без назначения разрешений", caption: "Предупреждение" );
-                    return;
+                   string roleName = role.Name;
+                   view.ShowValidationDialog("Роль " + roleName + " не содержит разрешений. Запрещено создавать роль без назначения разрешений", "Предупреждение");
+                   isValid = false;
                 }
-                modelProxy.RoleDao.AddOrUpdate(role);
             }
-        }   
+            return isValid;
+        }
     }
 }

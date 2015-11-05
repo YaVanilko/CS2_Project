@@ -85,14 +85,26 @@ namespace ContosoUI.Roles
             GridView view = rolesGridView;
             object roleObj = view.GetRow(view.FocusedRowHandle);
             Role role = roleObj as Role;
-
-            var permissions = permissionsCheckedListBoxControl.CheckedItems;
-            role.Permissions.Clear();
-            foreach (var p in permissions)
+            if (role != null)
             {
-                var checkedListItem = p as CheckedListBoxItem;
-                role.Permissions.Add(checkedListItem.Value as Permission);
+                var permissions = permissionsCheckedListBoxControl.CheckedItems;
+                role.Permissions.Clear();
+                foreach (var p in permissions)
+                {
+                    var checkedListItem = p as CheckedListBoxItem;
+                    role.Permissions.Add(checkedListItem.Value as Permission);
+                }
             }
+        }
+        public bool ShowValidationDialog(string caption, string message)
+        {
+            bool isOk = false;
+            DialogResult result = MessageBox.Show(caption, message, buttons: MessageBoxButtons.OKCancel);
+            if (result == DialogResult.OK)
+            {
+                isOk = true;
+            }
+            return isOk;
         }
     }
 }
