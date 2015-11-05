@@ -33,39 +33,22 @@ namespace ContosoUI.ProductCategoryList
             categoriesGridView.CloseEditor();
             categoriesGridView.UpdateCurrentRow();
             presenter.Save();
+            productCategoryGridControl.RefreshDataSource();
         }
 
         private void ProductCategoryView_Load(object sender, EventArgs e)
         {
             productCategoryGridControl.DataSource = presenter.Categories;
         }
-
-        private void categoriesGridView_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        public bool ShowValidationDialog(string caption, string message)
         {
-            GridView view = sender as GridView;
-            object categoryObj = view.GetRow(view.FocusedRowHandle);
-            ProductCategory category = categoryObj as ProductCategory;
-            if (e.Column.Caption != "Статус  (активировать / деактивировать)")
+            bool isOk = false;
+            DialogResult result = MessageBox.Show(caption, message, buttons: MessageBoxButtons.OKCancel);
+            if (result == DialogResult.OK)
             {
-                return;
+                isOk = true;
             }
-            else
-            {
-                if (category.IsActive != true)
-                {
-                    DialogResult result;
-                    result = MessageBox.Show("Вы уверенны, что хотите деактивировать категорию товаров? После деактивации категория будет удалена из списка!", buttons: MessageBoxButtons.OKCancel, caption: "Деактивация категории товара");
-                    if (result == System.Windows.Forms.DialogResult.OK)
-                    {
-                        presenter.Save();
-                    }
-                    else
-                    {
-                        category.IsActive = true;
-                        presenter.Save();
-                    }
-                }    
-            }
+            return isOk;
         }
 
     }
