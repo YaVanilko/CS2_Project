@@ -9,8 +9,13 @@ using Domain.DAO;
 
 namespace Data.EFData
 {
-    class GoodsRowDao : EfBaseDao<GoodsRow>, IGoodsRowRepository
+    public class GoodsRowDao : EfBaseDao<GoodsRow>, IGoodsRowRepository
     {
+        public GoodsRowDao(ProjectContext context)
+        {
+
+        }
+
         public new IQueryable<GoodsRow> GetAll()
         {
             IQueryable<GoodsRow> collection =

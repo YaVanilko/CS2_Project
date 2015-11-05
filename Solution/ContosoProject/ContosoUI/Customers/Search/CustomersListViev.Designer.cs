@@ -74,12 +74,12 @@
             // 
             this.layoutControl1.Controls.Add(this.customersGridControl);
             this.layoutControl1.Controls.Add(this.filterCityComboBoxEdit);
-            this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.layoutControl1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.layoutControl1.Location = new System.Drawing.Point(0, 171);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(401, 347, 498, 350);
             this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(804, 561);
+            this.layoutControl1.Size = new System.Drawing.Size(804, 390);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
@@ -89,7 +89,7 @@
             this.customersGridControl.Location = new System.Drawing.Point(12, 52);
             this.customersGridControl.MainView = this.customersGridView;
             this.customersGridControl.Name = "customersGridControl";
-            this.customersGridControl.Size = new System.Drawing.Size(780, 497);
+            this.customersGridControl.Size = new System.Drawing.Size(780, 326);
             this.customersGridControl.TabIndex = 5;
             this.customersGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.customersGridView});
@@ -223,7 +223,7 @@
             this.filterCityItem});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "Root";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(804, 561);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(804, 390);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // customersListItem
@@ -231,7 +231,7 @@
             this.customersListItem.Control = this.customersGridControl;
             this.customersListItem.Location = new System.Drawing.Point(0, 24);
             this.customersListItem.Name = "customersListItem";
-            this.customersListItem.Size = new System.Drawing.Size(784, 517);
+            this.customersListItem.Size = new System.Drawing.Size(784, 346);
             this.customersListItem.Text = "Покупатели";
             this.customersListItem.TextLocation = DevExpress.Utils.Locations.Top;
             this.customersListItem.TextSize = new System.Drawing.Size(61, 13);
