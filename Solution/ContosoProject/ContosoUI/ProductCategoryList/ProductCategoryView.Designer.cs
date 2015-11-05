@@ -138,7 +138,6 @@
             this.categoriesGridView.Name = "categoriesGridView";
             this.categoriesGridView.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
             this.categoriesGridView.OptionsView.RowAutoHeight = true;
-            this.categoriesGridView.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.categoriesGridView_CellValueChanged);
             // 
             // colCategoryName
             // 
