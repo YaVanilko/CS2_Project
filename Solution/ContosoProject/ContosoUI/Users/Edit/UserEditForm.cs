@@ -54,17 +54,19 @@ namespace ContosoUI.Users.Edit
 
             IsActiveUserCheckEdit.DataBindings.Add("EditValue", userEditBindingSource, "IsActive");
         }
-
+        bool asPasswordChange = false;
         internal void AsPasswordChange()
         {
-            this.personalInfoGroup.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
+            this.personalInfoGroup.HideToCustomization();
+            asPasswordChange = true;
         }
 
         private void saveEditButtonItem_ItemClick(object sender, ItemClickEventArgs e)
         {
-       
+            isPersonalInfoModified = false;
+            isPasswordModified = false;
             if (newPasswordTextEdit.Text==confimPasswordTextEdit.Text&&
-                selectRoleComboBox.SelectedItem.ToString() != null)
+                (firstNameTextEdit.Text!=String.Empty||asPasswordChange))
             {
                 userEditBindingSource.EndEdit();
                 if (newPasswordTextEdit.Text!=String.Empty)

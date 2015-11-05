@@ -239,7 +239,7 @@
             this.newPasswordTextEdit.StyleController = this.layoutControl1;
             this.newPasswordTextEdit.TabIndex = 3;
             this.newPasswordTextEdit.InvalidValue += new DevExpress.XtraEditors.Controls.InvalidValueExceptionEventHandler(this.PasswordTextEdit_InvalidValue);
-            this.newPasswordTextEdit.Modified += new System.EventHandler(this.AnyTextEdit_Modified);
+            this.newPasswordTextEdit.Modified += new System.EventHandler(this.AnyPasswordTextEdit_Modified);
             this.newPasswordTextEdit.Validating += new System.ComponentModel.CancelEventHandler(this.PasswordTextEdit_Validating);
             // 
             // confimPasswordTextEdit
@@ -254,7 +254,7 @@
             this.confimPasswordTextEdit.StyleController = this.layoutControl1;
             this.confimPasswordTextEdit.TabIndex = 4;
             this.confimPasswordTextEdit.InvalidValue += new DevExpress.XtraEditors.Controls.InvalidValueExceptionEventHandler(this.PasswordTextEdit_InvalidValue);
-            this.confimPasswordTextEdit.Modified += new System.EventHandler(this.AnyTextEdit_Modified);
+            this.confimPasswordTextEdit.Modified += new System.EventHandler(this.AnyPasswordTextEdit_Modified);
             this.confimPasswordTextEdit.Validating += new System.ComponentModel.CancelEventHandler(this.PasswordTextEdit_Validating);
             // 
             // selectRoleComboBox
