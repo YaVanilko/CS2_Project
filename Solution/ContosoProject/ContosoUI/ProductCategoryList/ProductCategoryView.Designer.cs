@@ -113,11 +113,11 @@
             // productCategoryGridControl
             // 
             this.productCategoryGridControl.DataSource = this.productCategoryBindingSource;
-            this.productCategoryGridControl.Location = new System.Drawing.Point(12, 28);
+            this.productCategoryGridControl.Location = new System.Drawing.Point(12, 12);
             this.productCategoryGridControl.MainView = this.categoriesGridView;
             this.productCategoryGridControl.MenuManager = this.categoryAddOrEditRibbonControl;
             this.productCategoryGridControl.Name = "productCategoryGridControl";
-            this.productCategoryGridControl.Size = new System.Drawing.Size(781, 318);
+            this.productCategoryGridControl.Size = new System.Drawing.Size(781, 334);
             this.productCategoryGridControl.TabIndex = 4;
             this.productCategoryGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.categoriesGridView});
@@ -138,7 +138,6 @@
             this.categoriesGridView.Name = "categoriesGridView";
             this.categoriesGridView.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
             this.categoriesGridView.OptionsView.RowAutoHeight = true;
-            this.categoriesGridView.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.categoriesGridView_CellValueChanged);
             // 
             // colCategoryName
             // 
@@ -149,7 +148,7 @@
             this.colCategoryName.OptionsEditForm.VisibleIndex = 2;
             this.colCategoryName.Visible = true;
             this.colCategoryName.VisibleIndex = 1;
-            this.colCategoryName.Width = 303;
+            this.colCategoryName.Width = 318;
             // 
             // colId
             // 
@@ -160,6 +159,7 @@
             this.colId.OptionsEditForm.VisibleIndex = 1;
             this.colId.Visible = true;
             this.colId.VisibleIndex = 0;
+            this.colId.Width = 39;
             // 
             // colIsActive
             // 
@@ -170,7 +170,7 @@
             this.colIsActive.OptionsEditForm.VisibleIndex = 3;
             this.colIsActive.Visible = true;
             this.colIsActive.VisibleIndex = 2;
-            this.colIsActive.Width = 203;
+            this.colIsActive.Width = 213;
             // 
             // colEditTime
             // 
@@ -183,7 +183,7 @@
             this.colEditTime.OptionsEditForm.VisibleIndex = 4;
             this.colEditTime.Visible = true;
             this.colEditTime.VisibleIndex = 3;
-            this.colEditTime.Width = 182;
+            this.colEditTime.Width = 193;
             // 
             // categoryLayoutControlGroup
             // 
@@ -204,7 +204,8 @@
             this.productCategoryControlItem.Size = new System.Drawing.Size(785, 338);
             this.productCategoryControlItem.Text = "Список категорий товаров";
             this.productCategoryControlItem.TextLocation = DevExpress.Utils.Locations.Top;
-            this.productCategoryControlItem.TextSize = new System.Drawing.Size(137, 13);
+            this.productCategoryControlItem.TextSize = new System.Drawing.Size(0, 0);
+            this.productCategoryControlItem.TextVisible = false;
             // 
             // ProductCategoryView
             // 

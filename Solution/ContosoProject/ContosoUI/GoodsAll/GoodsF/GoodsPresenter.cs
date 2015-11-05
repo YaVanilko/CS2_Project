@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace ContosoUI.GoodsAll.GoodsF
 {
-    class GoodsPresenter : INotifyPropertyChanged//, IProductCategoryRepository
+    public class GoodsPresenter : INotifyPropertyChanged//, IProductCategoryRepository
     {
         GoodsCategoryService service = new GoodsCategoryService();
         //private IGoodsRepository model = new EFGoodsDao();
@@ -25,7 +25,8 @@ namespace ContosoUI.GoodsAll.GoodsF
         public GoodsPresenter(GoodsForm goodsView)
         {
             this.goodsView = goodsView;
-            foreach (ProductCategory pc in service.CategoryDao.GetAll())
+            var categories = service.CategoryDao.GetAll().ToList();
+            foreach (ProductCategory pc in categories)
             {
                 productCategoryList.Add(pc.CategoryName);
             }

@@ -46,10 +46,12 @@ namespace ContosoUI.Users.Edit
             if (userIsFromBase)
             {
                 model.UserDao.Update(user);
+                MessageBox.Show("Данные обновлены.", "Сообщеие");
             }
             else if (!model.UserDao.GetAll().ToList().Any(x => x.Login == this.user.Login))
             {
                 model.UserDao.Add(user);
+                MessageBox.Show("Новый пользователь добавлен.", "Сообщение");
             }
             else
             {
@@ -63,11 +65,7 @@ namespace ContosoUI.Users.Edit
                     view.OldPassword.ToMD5() == user.Password)
             {
                 user.Password = view.NewPassword.ToMD5();
-                if (userIsFromBase)
-	            {
-                    MessageBox.Show("Пароль успешно изменен.", "Сообщеие");
-                }
-	            }
+	        }
             else
             {
                 MessageBox.Show("Введен неверный пароль.", "Ошибка!");
