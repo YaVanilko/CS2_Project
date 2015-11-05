@@ -9,12 +9,8 @@ using System.Data.Entity.Migrations;
 
 namespace Data.EFData
 {
-    public class CustomerDao : EfBaseDao<Customer>, ICustomerRepository
+    public class CustomerDao : ICustomerRepository
     {
-        public CustomerDao()
-        {
-
-        }
         public ICollection<Customer> GetCustomersByCity(string city)
         {
             return dbContext.Customers.Where(x => x.Contacts.City == city)
@@ -48,9 +44,25 @@ namespace Data.EFData
             dbContext.SaveChanges();
         }
 
-        public CustomerDao(ProjectContext context)
+        ProjectContext dbContext;
+        public CustomerDao(ProjectContext context = null)
         {
+            dbContext = context ?? new ProjectContext();
+        }
 
+        public void Add(Customer entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Delete(Customer entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IQueryable<Customer> FindBy(System.Linq.Expressions.Expression<Func<Customer, bool>> predicate)
+        {
+            throw new NotImplementedException();
         }
     }
 }

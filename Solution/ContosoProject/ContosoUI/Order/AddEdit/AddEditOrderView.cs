@@ -19,6 +19,8 @@ namespace ContosoUI.Order
     {
         AddEditOrderPresenter presenter;
 
+        BindingSource bindings;
+
         public AddEditOrderView(int id = -1)
         {
             InitializeComponent();
@@ -27,7 +29,7 @@ namespace ContosoUI.Order
 
         private void AddEditOrderView_Load(object sender, EventArgs e)
         {
-            BindingSource bindings = new BindingSource();
+            bindings = new BindingSource();
             bindings.DataSource = presenter;
             goodsRowBindingSource.DataSource = presenter;
 
@@ -35,7 +37,7 @@ namespace ContosoUI.Order
             customerComboBox.DataBindings.Add("DataSource", bindings, "Customers");
             customerComboBox.DataBindings.Add("SelectedItem", bindings, "Customer");
 
-            priceEdit.DataBindings.Add("Text", goodsRowBindingSource, "TotalCost");
+            priceEdit.DataBindings.Add("EditValue", bindings, "TotalCost");
 
             statusComboBox.DataBindings.Clear();
             statusComboBox.DataBindings.Add("DataSource", bindings, "Statuses");
@@ -50,10 +52,10 @@ namespace ContosoUI.Order
             commentTextEdit.DataBindings.Clear();
             commentTextEdit.DataBindings.Add("Text", bindings, "Message");
 
-            goodsRowGridControl.DataBindings.Add("DataSource", goodsRowBindingSource, "vm");
-            goodsComboBox.DataBindings.Add("SelectedItem", goodsRowBindingSource, "SelectedGood");
+            goodsRowGridControl.DataBindings.Add("DataSource", bindings, "vm");
+            goodsComboBox.DataBindings.Add("SelectedItem", bindings, "SelectedGood");
 
-            countOfGoodTextEdit.DataBindings.Add("Text", goodsRowBindingSource, "CountOfGood");
+            countOfGoodTextEdit.DataBindings.Add("Text", bindings, "CountOfGood");
 
         }
 
@@ -74,6 +76,7 @@ namespace ContosoUI.Order
         private void saveOrderButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             goodsRowBindingSource.EndEdit();
+            bindings.EndEdit();
             presenter.Save();
         }
 
