@@ -45,7 +45,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.AddGoodsComboBoxEditCategory = new DevExpress.XtraEditors.ComboBoxEdit();
             this.AddGoodsTextBoxComent = new DevExpress.XtraEditors.TextEdit();
             this.AddGoodsTextBoxSKU = new DevExpress.XtraEditors.TextEdit();
             this.AddGoodsTextBoxName = new DevExpress.XtraEditors.TextEdit();
@@ -56,7 +55,8 @@
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.Со = new DevExpress.XtraBars.BarButtonItem();
             this.mainRibbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.saveOrEditribbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.AddGoodsLookUpEditCategory = new DevExpress.XtraEditors.LookUpEdit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).BeginInit();
@@ -68,7 +68,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.AddGoodsTextBoxPrice.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.AddGoodsComboBoxEditCategory.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AddGoodsTextBoxComent.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AddGoodsTextBoxSKU.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AddGoodsTextBoxName.Properties)).BeginInit();
@@ -77,6 +76,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AddGoodsLookUpEditCategory.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -168,6 +168,7 @@
             this.AddGoodsTextBoxUser.Name = "AddGoodsTextBoxUser";
             this.AddGoodsTextBoxUser.Size = new System.Drawing.Size(335, 20);
             this.AddGoodsTextBoxUser.TabIndex = 2;
+            this.AddGoodsTextBoxUser.Visible = false;
             // 
             // AddGoodsTextBoxCount
             // 
@@ -185,11 +186,11 @@
             // 
             // groupControl1
             // 
+            this.groupControl1.Controls.Add(this.AddGoodsLookUpEditCategory);
             this.groupControl1.Controls.Add(this.label4);
             this.groupControl1.Controls.Add(this.label3);
             this.groupControl1.Controls.Add(this.label2);
             this.groupControl1.Controls.Add(this.label1);
-            this.groupControl1.Controls.Add(this.AddGoodsComboBoxEditCategory);
             this.groupControl1.Controls.Add(this.AddGoodsTextBoxComent);
             this.groupControl1.Controls.Add(this.AddGoodsTextBoxSKU);
             this.groupControl1.Controls.Add(this.AddGoodsTextBoxName);
@@ -234,15 +235,6 @@
             this.label1.Size = new System.Drawing.Size(55, 13);
             this.label1.TabIndex = 4;
             this.label1.Text = "Название";
-            // 
-            // AddGoodsComboBoxEditCategory
-            // 
-            this.AddGoodsComboBoxEditCategory.Location = new System.Drawing.Point(5, 112);
-            this.AddGoodsComboBoxEditCategory.Name = "AddGoodsComboBoxEditCategory";
-            this.AddGoodsComboBoxEditCategory.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.AddGoodsComboBoxEditCategory.Size = new System.Drawing.Size(341, 20);
-            this.AddGoodsComboBoxEditCategory.TabIndex = 3;
             // 
             // AddGoodsTextBoxComent
             // 
@@ -331,15 +323,25 @@
             // mainRibbonPage
             // 
             this.mainRibbonPage.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup1});
+            this.saveOrEditribbonPageGroup});
             this.mainRibbonPage.Name = "mainRibbonPage";
-            this.mainRibbonPage.Text = "ribbonPage1";
+            this.mainRibbonPage.Text = "Меню";
             // 
-            // ribbonPageGroup1
+            // saveOrEditribbonPageGroup
             // 
-            this.ribbonPageGroup1.ItemLinks.Add(this.Со);
-            this.ribbonPageGroup1.Name = "ribbonPageGroup1";
-            this.ribbonPageGroup1.Text = "ribbonPageGroup1";
+            this.saveOrEditribbonPageGroup.ItemLinks.Add(this.Со);
+            this.saveOrEditribbonPageGroup.Name = "saveOrEditribbonPageGroup";
+            this.saveOrEditribbonPageGroup.Text = "Сохранение";
+            // 
+            // AddGoodsLookUpEditCategory
+            // 
+            this.AddGoodsLookUpEditCategory.Location = new System.Drawing.Point(5, 112);
+            this.AddGoodsLookUpEditCategory.MenuManager = this.ribbonControl1;
+            this.AddGoodsLookUpEditCategory.Name = "AddGoodsLookUpEditCategory";
+            this.AddGoodsLookUpEditCategory.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.AddGoodsLookUpEditCategory.Size = new System.Drawing.Size(341, 20);
+            this.AddGoodsLookUpEditCategory.TabIndex = 7;
             // 
             // AddGoods
             // 
@@ -364,7 +366,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.AddGoodsComboBoxEditCategory.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AddGoodsTextBoxComent.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AddGoodsTextBoxSKU.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AddGoodsTextBoxName.Properties)).EndInit();
@@ -373,6 +374,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AddGoodsLookUpEditCategory.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -390,7 +392,6 @@
         private DevExpress.XtraEditors.TextEdit AddGoodsTextBoxCount;
         private DevExpress.XtraEditors.TextEdit AddGoodsTextBoxPrice;
         private System.Windows.Forms.Label label1;
-        private DevExpress.XtraEditors.ComboBoxEdit AddGoodsComboBoxEditCategory;
         private DevExpress.XtraEditors.TextEdit AddGoodsTextBoxSKU;
         private DevExpress.XtraEditors.TextEdit AddGoodsTextBoxName;
         private System.Windows.Forms.CheckBox AddGoodsCheckBoxIsActive;
@@ -407,6 +408,7 @@
         private DevExpress.XtraBars.Ribbon.RibbonControl ribbonControl1;
         private DevExpress.XtraBars.BarButtonItem Со;
         private DevExpress.XtraBars.Ribbon.RibbonPage mainRibbonPage;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup saveOrEditribbonPageGroup;
+        private DevExpress.XtraEditors.LookUpEdit AddGoodsLookUpEditCategory;
     }
 }

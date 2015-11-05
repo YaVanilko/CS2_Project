@@ -58,7 +58,6 @@ namespace ContosoUI.Roles
                 var permissionIndex = permissionsCheckedListBoxControl.FindString(permission.Name);
                 permissionsCheckedListBoxControl.SetItemChecked(permissionIndex, true);
             }
-
         }
 
         private void addNewRoleButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -68,57 +67,44 @@ namespace ContosoUI.Roles
         }
         private void saveRoleButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            SavePermissions();
             rolesGridView.CloseEditor();
             rolesGridView.UpdateCurrentRow();
-            SavePermissions();    
             presenter.Save();
+            rolesGridControl.RefreshDataSource();
         }
 
         private void rolesGridView_BeforeLeaveRow(object sender, DevExpress.XtraGrid.Views.Base.RowAllowEventArgs e)
         {
             SavePermissions();
+            rolesGridView.CloseEditor();
+            rolesGridView.UpdateCurrentRow();
         }
         void SavePermissions()
         {
             GridView view = rolesGridView;
             object roleObj = view.GetRow(view.FocusedRowHandle);
             Role role = roleObj as Role;
-
-            var permissions = permissionsCheckedListBoxControl.CheckedItems;
-            role.Permissions.Clear();
-            foreach (var p in permissions)
+            if (role != null)
             {
-                var checkedListItem = p as CheckedListBoxItem;
-                role.Permissions.Add(checkedListItem.Value as Permission);
-            }
-        }
-
-        private void rolesGridView_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
-        {
-            GridView view = rolesGridView;
-            object roleObj = view.GetRow(view.FocusedRowHandle);
-            Role role = roleObj as Role;
-            if (e.Column.Caption != "Статус (активировать/ деактивировать)")
-            {
-                return;
-            }
-            else
-            {
-                if (role.IsActive != true)
+                var permissions = permissionsCheckedListBoxControl.CheckedItems;
+                role.Permissions.Clear();
+                foreach (var p in permissions)
                 {
-                    DialogResult result;
-                    result = MessageBox.Show("Вы уверенны, что хотите деактивировать роль пользователя? После деактивации роль будет удалена из списка!", buttons: MessageBoxButtons.OKCancel, caption: "Деактивация роли");
-                    if (result == System.Windows.Forms.DialogResult.OK)
-                    {
-                        presenter.Save();
-                    }
-                    else
-                    {
-                        role.IsActive = true;
-                        presenter.Save();
-                    }
+                    var checkedListItem = p as CheckedListBoxItem;
+                    role.Permissions.Add(checkedListItem.Value as Permission);
                 }
             }
+        }
+        public bool ShowValidationDialog(string caption, string message)
+        {
+            bool isOk = false;
+            DialogResult result = MessageBox.Show(caption, message, buttons: MessageBoxButtons.OKCancel);
+            if (result == DialogResult.OK)
+            {
+                isOk = true;
+            }
+            return isOk;
         }
     }
 }

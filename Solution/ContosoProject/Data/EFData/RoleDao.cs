@@ -13,6 +13,11 @@ namespace Data.EFData
     {
         readonly ProjectContext context;
 
+        public RoleDao()
+        {
+            this.context = dbContext;
+        }
+
         public RoleDao(ProjectContext context)
         {
             this.context = context;

@@ -36,10 +36,30 @@ namespace ContosoUI.ProductCategoryList
 
         public void Save()
         {
-            foreach (var category in categories)
+            if (Validation())
             {
-                model.AddOrUpdate(category);
+                foreach (var category in categories)
+                {
+                    model.AddOrUpdate(category);
+                } 
             }
+            Categories.RemoveAll(x => !x.IsActive);
+            NotifyPropertyChanged("Save");
+        }
+        bool Validation()
+        {
+            bool isValid = true;
+            if (categories.Any(x => x.IsActive == false))
+            {
+                view.ShowValidationDialog("Вы уверенны, что хотите деактивировать категорию товаров? После деактивации категория будет удалена из списка!", "Деактивация категории");
+                isValid = false;
+            }
+            if (categories.Any(x => x == null || x.CategoryName == null))
+            {
+                view.ShowValidationDialog("Запрещено создавать категорию без названия", "Предупреждение");
+                isValid = false;
+            }
+            return isValid;
         }
     }
 }
