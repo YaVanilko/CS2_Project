@@ -15,7 +15,7 @@ namespace Data.EFData
 
         public GoodsCategoryService()
         {
-            GoodsDao = new EFGoodsDao(context);
+            GoodsDao = new GoodsDao(context);
             CategoryDao=new ProductCategoryDao(context);
         } 
     }
