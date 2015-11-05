@@ -57,16 +57,13 @@ namespace ContosoUI.Users.Edit
 
         internal void AsPasswordChange()
         {
-            this.contactInfoGroup.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
+            this.personalInfoGroup.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
         }
 
         private void saveEditButtonItem_ItemClick(object sender, ItemClickEventArgs e)
         {
-            if (loginTextEdit.Text!=String.Empty&&
-                newPasswordTextEdit.Text==ConfimPasswordTextEdit.Text&&
-                firstNameTextEdit.Text != String.Empty&&
-                lastNameTextEdit.Text != String.Empty&&
-                middleNameTextEdit.Text != String.Empty&&
+       
+            if (newPasswordTextEdit.Text==confimPasswordTextEdit.Text&&
                 selectRoleComboBox.SelectedItem.ToString() != null)
             {
                 userEditBindingSource.EndEdit();
@@ -84,8 +81,9 @@ namespace ContosoUI.Users.Edit
 
         private void loginTextEdit_Validating(object sender, CancelEventArgs e)
         {
-            var length = (sender as DevExpress.XtraEditors.TextEdit).Text.Length;
-            if (length<3||length>25)
+            var textEditControl = sender as DevExpress.XtraEditors.TextEdit;
+            var length = textEditControl.Text.Length;
+            if ((length<3||length>25)&&isPersonalInfoModified)
             {
                 e.Cancel = true;              
             }
@@ -96,32 +94,67 @@ namespace ContosoUI.Users.Edit
             e.ErrorText = "Необходимо от 3 до 25 символов.";
         }
 
-        private void OldPasswordTextEdit_Validating(object sender, CancelEventArgs e)
+        private void PasswordTextEdit_Validating(object sender, CancelEventArgs e)
         {
-            var length = (sender as DevExpress.XtraEditors.TextEdit).Text.Length;
-            if (length < 5 || length > 40)
+            var textEditControl = sender as DevExpress.XtraEditors.TextEdit;
+            var length = textEditControl.Text.Length;
+            if ((length < 5 || length > 40)&&isPasswordModified)
             {
                 e.Cancel = true;
             }
         }
 
-        private void OldPasswordTextEdit_InvalidValue(object sender, InvalidValueExceptionEventArgs e)
+        private void PasswordTextEdit_InvalidValue(object sender, InvalidValueExceptionEventArgs e)
         {
             e.ErrorText = "Необходимо от 5 до 40 символов.";
         }
 
-        private void firstNameTextEdit_Validating(object sender, CancelEventArgs e)
+        private void PersonalInfoTextEdit_Validating(object sender, CancelEventArgs e)
         {
-            var length = (sender as DevExpress.XtraEditors.TextEdit).Text.Length;
-            if (length < 2 || length > 25)
+            var textEditControl = sender as DevExpress.XtraEditors.TextEdit;
+            var length = textEditControl.Text.Length;
+            if ((length < 2 || length > 25)&&isPersonalInfoModified)
             {
                 e.Cancel = true;
             }
         }
 
-        private void firstNameTextEdit_InvalidValue(object sender, InvalidValueExceptionEventArgs e)
+        private void PersonalInfoTextEdit_InvalidValue(object sender, InvalidValueExceptionEventArgs e)
         {
             e.ErrorText = "Необходимо от 2 до 25 символов.";
         }
+
+
+        private void UserEditForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (isPersonalInfoModified||isPasswordModified)
+            {
+                DialogResult dialog = MessageBox.Show("Сохраить внесенные изменения?", "Сообщение",MessageBoxButtons.YesNoCancel);
+                if (dialog == System.Windows.Forms.DialogResult.Yes)
+                {
+                    saveEditButtonItem_ItemClick(null, null);
+                }
+                else if (dialog == System.Windows.Forms.DialogResult.Cancel)
+                {
+                    e.Cancel = true;
+                }
+            }
+            e.Cancel = false;
+        }
+
+        private bool isPersonalInfoModified = false;
+        private bool isPasswordModified = false;
+
+        private void AnyTextEdit_Modified(object sender, EventArgs e)
+        {
+            isPersonalInfoModified = true;
+        }
+
+        private void AnyPasswordTextEdit_Modified(object sender, EventArgs e)
+        {
+            isPasswordModified = true;
+        }
+
     }
+
 }
