@@ -127,7 +127,7 @@ namespace ContosoUI.Users.Edit
 
         private void UserEditForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (isPersonalInfoModified)
+            if (isPersonalInfoModified||isPasswordModified)
             {
                 DialogResult dialog = MessageBox.Show("Сохраить внесенные изменения?", "Сообщение",MessageBoxButtons.YesNoCancel);
                 if (dialog == System.Windows.Forms.DialogResult.Yes)
