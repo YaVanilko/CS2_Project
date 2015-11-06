@@ -11,8 +11,8 @@ namespace ContosoUI.EditUserForm
 {
     class UserReportPresenter
     {
-        readonly UserReportForm view;
-        readonly IUserRepository model = new UserDao();
+        UserReportForm view;
+        IUserRepository model = new UserDao();
         List<User> users = new List<User>();
         public List<UserReportViewModel> viewModels = new List<UserReportViewModel>(); 
 

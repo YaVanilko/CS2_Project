@@ -35,7 +35,7 @@ namespace ContosoUI
             auth.ShowDialog();
             if (auth.DialogResult==DialogResult.OK)
             {
-                AuthUser = auth.presenter.user;
+                AuthUser = auth.Presenter.User;
             }
             else
             {

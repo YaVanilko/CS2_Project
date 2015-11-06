@@ -11,8 +11,8 @@ namespace ContosoUI.Authentication
     {
         public static string ToMD5(this string input)
         {
-            MD5 md5Hash = MD5.Create();
-            byte[] data = md5Hash.ComputeHash(Encoding.UTF8.GetBytes(input));
+            MD5 md = MD5.Create();
+            byte[] data = md.ComputeHash(Encoding.UTF8.GetBytes(input));
             StringBuilder sBuilder = new StringBuilder();
             foreach (var d in data)
 	        {
