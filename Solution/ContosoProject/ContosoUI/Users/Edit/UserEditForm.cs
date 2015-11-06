@@ -166,20 +166,16 @@ namespace ContosoUI.Users.Edit
 
         private void UserEditForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (isPersonalInfoModified||isPasswordModified)
+            if (isPersonalInfoModified || isPasswordModified)
             {
-                DialogResult dialog = MessageBox.Show("Сохраить внесенные изменения?", "Сообщение",MessageBoxButtons.YesNoCancel);
+                DialogResult dialog = MessageBox.Show("Внимание, данные не сохранены!\n Вы уверены что хотите закрыть?", "Сообщение", MessageBoxButtons.YesNo);
                 if (dialog == System.Windows.Forms.DialogResult.Yes)
                 {
-                    saveEditButtonItem_ItemClick(null, null);
-                }
-                else if (dialog == System.Windows.Forms.DialogResult.Cancel)
-                {
-                    e.Cancel = true;
+                    e.Cancel = false;
                 }
                 else
                 {
-                    e.Cancel = false;
+                    e.Cancel = true;
                 }
             }
             else
