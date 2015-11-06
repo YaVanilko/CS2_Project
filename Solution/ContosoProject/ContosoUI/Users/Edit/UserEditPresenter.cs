@@ -46,16 +46,16 @@ namespace ContosoUI.Users.Edit
             if (userIsFromBase)
             {
                 model.UserDao.Update(user);
-                MessageBox.Show("Данные обновлены.", "Сообщеие");
+                view.UserUpdateDialog();
             }
             else if (!model.UserDao.GetAll().ToList().Any(x => x.Login == this.user.Login))
             {
                 model.UserDao.Add(user);
-                MessageBox.Show("Новый пользователь добавлен.", "Сообщение");
+                view.UserAddDialog();
             }
             else
             {
-                MessageBox.Show("Пользователь с данным логином уже существует.", "Ошибка!");
+                view.WrongLoginDialog();
             }
         }
 
@@ -68,7 +68,7 @@ namespace ContosoUI.Users.Edit
 	        }
             else
             {
-                MessageBox.Show("Введен неверный пароль.", "Ошибка!");
+                view.WrongPasswordDialog();
             }
         }
 

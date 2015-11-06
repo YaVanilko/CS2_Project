@@ -47,11 +47,11 @@
             this.newPasswordLayoutControlItem = new DevExpress.XtraLayout.LayoutControlItem();
             this.confimPasswordLayoutControlItem = new DevExpress.XtraLayout.LayoutControlItem();
             this.personalInfoGroup = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.lastNameItem = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.middleNameItem = new DevExpress.XtraLayout.LayoutControlItem();
             this.rol = new DevExpress.XtraLayout.LayoutControlItem();
             this.IsActiveUserLayoutControl = new DevExpress.XtraLayout.LayoutControlItem();
+            this.lastNameItem = new DevExpress.XtraLayout.LayoutControlItem();
             this.RoleLayoutControlItem = new DevExpress.XtraLayout.LayoutControlItem();
             this.userEditBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
@@ -73,11 +73,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.newPasswordLayoutControlItem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.confimPasswordLayoutControlItem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.personalInfoGroup)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lastNameItem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.middleNameItem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rol)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.IsActiveUserLayoutControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lastNameItem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RoleLayoutControlItem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userEditBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -267,6 +267,7 @@
             this.selectRoleComboBox.Size = new System.Drawing.Size(623, 20);
             this.selectRoleComboBox.StyleController = this.layoutControl1;
             this.selectRoleComboBox.TabIndex = 7;
+            this.selectRoleComboBox.InvalidValue += new DevExpress.XtraEditors.Controls.InvalidValueExceptionEventHandler(this.selectRoleComboBox_InvalidValue);
             this.selectRoleComboBox.Modified += new System.EventHandler(this.AnyTextEdit_Modified);
             this.selectRoleComboBox.Validating += new System.ComponentModel.CancelEventHandler(this.selectRoleComboBox_Validating);
             // 
@@ -351,16 +352,6 @@
             this.personalInfoGroup.Size = new System.Drawing.Size(651, 502);
             this.personalInfoGroup.Text = "Личная информация";
             // 
-            // lastNameItem
-            // 
-            this.lastNameItem.Control = this.lastNameTextEdit;
-            this.lastNameItem.Location = new System.Drawing.Point(0, 0);
-            this.lastNameItem.Name = "lastNameItem";
-            this.lastNameItem.Size = new System.Drawing.Size(627, 40);
-            this.lastNameItem.Text = "Фамилия";
-            this.lastNameItem.TextLocation = DevExpress.Utils.Locations.Top;
-            this.lastNameItem.TextSize = new System.Drawing.Size(109, 13);
-            // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.firstNameTextEdit;
@@ -400,6 +391,16 @@
             this.IsActiveUserLayoutControl.Size = new System.Drawing.Size(627, 300);
             this.IsActiveUserLayoutControl.TextSize = new System.Drawing.Size(0, 0);
             this.IsActiveUserLayoutControl.TextVisible = false;
+            // 
+            // lastNameItem
+            // 
+            this.lastNameItem.Control = this.lastNameTextEdit;
+            this.lastNameItem.Location = new System.Drawing.Point(0, 0);
+            this.lastNameItem.Name = "lastNameItem";
+            this.lastNameItem.Size = new System.Drawing.Size(627, 40);
+            this.lastNameItem.Text = "Фамилия";
+            this.lastNameItem.TextLocation = DevExpress.Utils.Locations.Top;
+            this.lastNameItem.TextSize = new System.Drawing.Size(109, 13);
             // 
             // RoleLayoutControlItem
             // 
@@ -448,11 +449,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.newPasswordLayoutControlItem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.confimPasswordLayoutControlItem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.personalInfoGroup)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lastNameItem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.middleNameItem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rol)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.IsActiveUserLayoutControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lastNameItem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.RoleLayoutControlItem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.userEditBindingSource)).EndInit();
             this.ResumeLayout(false);
