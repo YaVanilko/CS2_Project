@@ -54,17 +54,20 @@ namespace ContosoUI.Users.Edit
 
             IsActiveUserCheckEdit.DataBindings.Add("EditValue", userEditBindingSource, "IsActive");
         }
-
+        bool asPasswordChange = false;
         internal void AsPasswordChange()
         {
-            this.personalInfoGroup.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
+            this.personalInfoGroup.HideToCustomization();
+            asPasswordChange = true;
+            selectRoleComboBox.CausesValidation = false;
         }
 
         private void saveEditButtonItem_ItemClick(object sender, ItemClickEventArgs e)
         {
-       
+            isPersonalInfoModified = false;
+            isPasswordModified = false;
             if (newPasswordTextEdit.Text==confimPasswordTextEdit.Text&&
-                selectRoleComboBox.SelectedItem.ToString() != null)
+                (firstNameTextEdit.Text!=String.Empty||asPasswordChange))
             {
                 userEditBindingSource.EndEdit();
                 if (newPasswordTextEdit.Text!=String.Empty)
@@ -137,6 +140,7 @@ namespace ContosoUI.Users.Edit
                 else if (dialog == System.Windows.Forms.DialogResult.Cancel)
                 {
                     e.Cancel = true;
+                    return;
                 }
             }
             e.Cancel = false;
@@ -153,6 +157,15 @@ namespace ContosoUI.Users.Edit
         private void AnyPasswordTextEdit_Modified(object sender, EventArgs e)
         {
             isPasswordModified = true;
+        }
+
+        private void selectRoleComboBox_Validating(object sender, CancelEventArgs e)
+        {
+            var combo = sender as DevExpress.XtraEditors.ComboBoxEdit;
+            if (combo.SelectedItem==null||combo.SelectedItem.ToString()==null)
+            {
+                e.Cancel = true;
+            }
         }
 
     }
