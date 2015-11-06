@@ -20,16 +20,13 @@ namespace Data.EFData
         public bool TryFindByLoginPassword(out User authUser, string login, string password)
         {
             bool isFind = false;
-            using (ProjectContext ctx = new ProjectContext())
-            {
-                authUser = ctx.Users.Where(x => x.Login == login && x.Password == password)
+            authUser = dbContext.Users.Where(x => x.Login == login && x.Password == password)
                             .Include(x => x.Role)
                             .Include(x => x.PersonalInfo).FirstOrDefault();
                 if (authUser != null)
                 {
                     isFind = true;
                 }
-            }
             return isFind;
         }
         public new IQueryable<User> GetAll()
