@@ -12,11 +12,12 @@ namespace Data.EFData
 {
     public class GoodsDao : EfBaseDao<Goods>, IGoodsRepository
     {
-        readonly ProjectContext context;
         public GoodsDao(ProjectContext context = null)
+            : base(context)
         {
-            this.context = context ?? new ProjectContext();
+
         }
+
         public ICollection<Goods> GetGoodsByCategory(string category)
         {
             return dbContext.Products.Where(x => x.Category.CategoryName == category).ToList();
@@ -25,32 +26,11 @@ namespace Data.EFData
         public new ICollection<Goods> GetAll()
         {
             return dbContext.Products.Include(x => x.Coments).ToList();
-
-
         }
 
         public ICollection<Goods> GetAllIsActive()
         {
             return dbContext.Products.Where(x => x.IsActive == true).Include(x => x.Coments).ToList();
-
-        }
-
-        public new void Update(Goods goods)
-        {
-            dbContext.Products.AddOrUpdate(goods);
-            dbContext.SaveChanges();
-        }
-
-        public void AddOrUpdate(Goods goods)
-        {
-            dbContext.Products.AddOrUpdate(x => x.Name, new Goods[] { goods });
-            dbContext.SaveChanges();
-        }
-
-        public new void Add(Goods goods)
-        {
-            dbContext.Set<Goods>().Add(goods);
-            dbContext.SaveChanges();
         }
     }
 }

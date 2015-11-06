@@ -11,7 +11,8 @@ namespace Data.EFData
 {
     public class CommentDao : EfBaseDao<Comment>, ICommentRepository
     {
-        public CommentDao(ProjectContext context)
+        public CommentDao(ProjectContext context = null)
+            : base(context)
         {
 
         }

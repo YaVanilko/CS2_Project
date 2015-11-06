@@ -11,22 +11,16 @@ namespace Data.EFData
 {
     public class PersonalInfoDao : EfBaseDao<PersonalInfo>, IPersonalInfoRepository
     {
+        public PersonalInfoDao(ProjectContext context = null)
+            : base(context)
+        {
+
+        }
         public new IQueryable<PersonalInfo> GetAll()
         {
             IQueryable<PersonalInfo> collection =
                 dbContext.PersonalInfoes.Where(x => x.IsActive);
             return collection;
-        }
-
-        public new PersonalInfo GetById(int id)
-        {
-            return dbContext.PersonalInfoes.Where(x => x.Id == id).FirstOrDefault();
-        }
-
-        public new void Update(PersonalInfo entity)
-        {
-            dbContext.PersonalInfoes.AddOrUpdate(entity);
-            dbContext.SaveChanges();
         }
     }
 }
