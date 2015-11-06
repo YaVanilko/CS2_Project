@@ -11,6 +11,11 @@ namespace Data.EFData
 {
     public class OrderDao : EfBaseDao<Order>, IOrderRepository
     {
+        public OrderDao(ProjectContext context = null)
+            : base(context)
+        {
+
+        }
         public new IQueryable<Order> GetAll()
         {
             IQueryable<Order> collection =
@@ -40,22 +45,6 @@ namespace Data.EFData
                 .Include(x => x.Status)
                 .Include(x => x.TotalCost)
                 .ToList();
-        }
-
-        public new void Update(Order entity)
-        {
-            dbContext.Orders.AddOrUpdate(entity);
-            dbContext.SaveChanges();
-        }
-
-        public OrderDao(ProjectContext context)
-        {
-
-        }
-
-        public OrderDao()
-        {
-
         }
     }
 }

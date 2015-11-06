@@ -31,7 +31,7 @@ namespace ContosoUI.Customers.Search
             }
             presenter = new CustomersListPresenter(this);
         }
-        public void Refresh()
+        public void RefreshUI()
         {
             filterCityComboBoxEdit.Properties.Items.Clear();
             filterCityComboBoxEdit.Properties.Items.Add("Все города");
@@ -42,7 +42,7 @@ namespace ContosoUI.Customers.Search
         }
         private void CustomersListView_Load(object sender, EventArgs e)
         {
-            Refresh();
+            RefreshUI();
         }
 
         private void customersGridView_DoubleClick(object sender, EventArgs e)
