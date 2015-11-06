@@ -37,6 +37,7 @@ namespace ContosoUI.Customers.Add
             ordersGridControl.DataBindings.Add("DataSource", customerBindingSource, "Orders");
             commentsListBoxControl.DataBindings.Add("DataSource", customerBindingSource, "Comments");
             commentMemoEdit.DataBindings.Add("EditValue", customerBindingSource, "CurentComment");
+            isActiveCustomerCheckEdit.DataBindings.Add("EditValue", customerBindingSource, "IsActive");
         }
 
         private void saveEditButtonItem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -49,6 +50,16 @@ namespace ContosoUI.Customers.Add
         {
             customerBindingSource.EndEdit();
             presenter.SaveAndNew();
+        }
+        public bool ShowValidationDialog(string caption, string message)
+        {
+            bool isOk = false;
+            DialogResult result = MessageBox.Show(caption, message, buttons: MessageBoxButtons.OKCancel);
+            if (result == DialogResult.OK)
+            {
+                isOk = true;
+            }
+            return isOk;
         }
     }
 }

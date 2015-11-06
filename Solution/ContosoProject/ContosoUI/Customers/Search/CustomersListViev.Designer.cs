@@ -43,7 +43,6 @@
             this.telephoneGridColumn = new DevExpress.XtraGrid.Columns.GridColumn();
             this.eMailGridColumn = new DevExpress.XtraGrid.Columns.GridColumn();
             this.idGridColumn = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.statusGridColumn = new DevExpress.XtraGrid.Columns.GridColumn();
             this.filterCityComboBoxEdit = new DevExpress.XtraEditors.ComboBoxEdit();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.customersListItem = new DevExpress.XtraLayout.LayoutControlItem();
@@ -114,8 +113,7 @@
             this.ordersSumGridColumn,
             this.telephoneGridColumn,
             this.eMailGridColumn,
-            this.idGridColumn,
-            this.statusGridColumn});
+            this.idGridColumn});
             this.customersGridView.GridControl = this.customersGridControl;
             this.customersGridView.Name = "customersGridView";
             this.customersGridView.OptionsBehavior.Editable = false;
@@ -204,13 +202,6 @@
             this.idGridColumn.Caption = "Id";
             this.idGridColumn.FieldName = "Id";
             this.idGridColumn.Name = "idGridColumn";
-            // 
-            // statusGridColumn
-            // 
-            this.statusGridColumn.Caption = "Статус";
-            this.statusGridColumn.Name = "statusGridColumn";
-            this.statusGridColumn.Visible = true;
-            this.statusGridColumn.VisibleIndex = 9;
             // 
             // filterCityComboBoxEdit
             // 
@@ -378,7 +369,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn telephoneGridColumn;
         private DevExpress.XtraGrid.Columns.GridColumn eMailGridColumn;
         private DevExpress.XtraGrid.Columns.GridColumn idGridColumn;
-        private DevExpress.XtraGrid.Columns.GridColumn statusGridColumn;
 
     }
 }
