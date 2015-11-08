@@ -9,22 +9,22 @@ using System.Data.Entity.Migrations;
 
 namespace Data.EFData
 {
-    public class OrderDao : IOrderRepository
+    public class OrderDao : EfBaseDao<Order>, IOrderRepository
     {
-        ProjectContext dbContext;
         public OrderDao(ProjectContext context = null)
+            : base(context)
         {
-            dbContext = context ?? new ProjectContext();
-        }
 
-        public IQueryable<Order> GetAll()
+        }
+        public new IQueryable<Order> GetAll()
         {
-            return dbContext.Orders.Where(x => x.IsActive)
+            IQueryable<Order> collection =
+                dbContext.Orders.Where(x => x.IsActive)
                 .Include(x=>x.Customer)
-                .Include(x => x.TotalCost)
                 .Include(x => x.GoodsList)
                 .Include(x => x.Status)
                 .Include(x => x.Comments);
+            return collection;
         }
 
         public new Order GetById(int id)

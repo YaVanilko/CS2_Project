@@ -9,12 +9,12 @@ using System.Data.Entity.Migrations;
 
 namespace Data.EFData
 {
-    public class CommentDao : ICommentRepository
+    public class CommentDao : EfBaseDao<Comment>, ICommentRepository
     {
-        ProjectContext dbContext;
         public CommentDao(ProjectContext context = null)
+            : base(context)
         {
-            dbContext = context ?? new ProjectContext();
+
         }
 
         public new IQueryable<Comment> GetAll()
@@ -35,21 +35,6 @@ namespace Data.EFData
         {
             dbContext.Comments.AddOrUpdate(entity);
             dbContext.SaveChanges();
-        }
-
-        public void Add(Comment entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Delete(Comment entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IQueryable<Comment> FindBy(System.Linq.Expressions.Expression<Func<Comment, bool>> predicate)
-        {
-            throw new NotImplementedException();
         }
     }
 }

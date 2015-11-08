@@ -9,14 +9,13 @@ using Domain.DAO;
 
 namespace Data.EFData
 {
-    public class GoodsRowDao : IGoodsRowRepository
+    public class GoodsRowDao : EfBaseDao<GoodsRow>, IGoodsRowRepository
     {
-        ProjectContext dbContext;
         public GoodsRowDao(ProjectContext context = null)
+            : base(context)
         {
-            dbContext = context ?? new ProjectContext();
-        }
 
+        }
         public new IQueryable<GoodsRow> GetAll()
         {
             IQueryable<GoodsRow> collection =
@@ -29,27 +28,6 @@ namespace Data.EFData
         {
             return dbContext.GoodsRows.Where(x => x.Id == id)
                    .Include(x=>x.Goods).FirstOrDefault();
-        }
-
-        public new void Update(GoodsRow entity)
-        {
-            dbContext.GoodsRows.AddOrUpdate(entity);
-            dbContext.SaveChanges();
-        }
-
-        public void Add(GoodsRow entity)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void Delete(GoodsRow entity)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public IQueryable<GoodsRow> FindBy(System.Linq.Expressions.Expression<System.Func<GoodsRow, bool>> predicate)
-        {
-            throw new System.NotImplementedException();
         }
     }
 }

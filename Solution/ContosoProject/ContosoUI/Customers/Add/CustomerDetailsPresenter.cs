@@ -114,6 +114,13 @@ namespace ContosoUI.Customers.Add
                 }
             }
         }
+        public bool IsActive
+        {
+            get { return customer.IsActive; }
+            set { customer.IsActive = value;
+            NotifyPropertyChanged("IsActive");
+            }
+        }
         private string currentComment = string.Empty;
         public string CurentComment
         {
@@ -130,26 +137,51 @@ namespace ContosoUI.Customers.Add
 
         public void Save()
         {
-            if (!string.IsNullOrWhiteSpace(currentComment))
+            if (Validate())
             {
-                customer.Comments.Add(new Comment() { Message = currentComment, Type = CommentType.Customer });
-                currentComment = string.Empty;
+                if (!string.IsNullOrWhiteSpace(currentComment))
+                {
+                    customer.Comments.Add(new Comment() { Message = currentComment, Type = CommentType.Customer });
+                    currentComment = string.Empty;
+                }
+                if (customer.Id > 0)
+                {
+                    model.Update(this.customer);
+                }
+                else
+                {
+                    model.Add(customer);
+                }
+                NotifyPropertyChanged("Save");
             }
-            if (customer.Id > 0)
-            {
-                model.Update(this.customer);
-            }
-            else
-            {
-                model.Add(customer);
-            }
-            NotifyPropertyChanged("Save");
         }
         public void SaveAndNew()
         {
             this.Save();
             customer = new Customer();
             NotifyPropertyChanged("New Customer");
+        }
+        bool Validate()
+        {
+            bool isValid = true;
+            if (customer.PersonalInfo.FirstName == null 
+                || customer.PersonalInfo.LastName == null
+                || customer.Contacts.Adress == null
+                || customer.Contacts.City == null
+                || customer.Contacts.Telephone == null)
+            {
+                view.ShowValidationDialog("Не заполнены обязательные поля в форме!", "Предупреждение");
+                isValid = false;
+            }
+            if (!customer.IsActive)
+	        {
+                bool result = view.ShowValidationDialog("Вы уверенны, что хотите деактивировать роль пользователя? После деактивации роль будет удалена из списка!", "Предупреждение");
+                if (!result)
+                {
+                    isValid = false;
+                }
+	        }
+            return isValid; 
         }
     }
 }

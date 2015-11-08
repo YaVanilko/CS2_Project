@@ -46,16 +46,16 @@ namespace ContosoUI.Users.Edit
             if (userIsFromBase)
             {
                 model.UserDao.Update(user);
-                MessageBox.Show("Данные обновлены.", "Сообщеие");
+                view.UserUpdateDialog();
             }
             else if (!model.UserDao.GetAll().ToList().Any(x => x.Login == this.user.Login))
             {
                 model.UserDao.Add(user);
-                MessageBox.Show("Новый пользователь добавлен.", "Сообщение");
+                view.UserAddDialog();
             }
             else
             {
-                MessageBox.Show("Пользователь с данным логином уже существует.", "Ошибка!");
+                view.WrongLoginDialog();
             }
         }
 
@@ -68,7 +68,7 @@ namespace ContosoUI.Users.Edit
 	        }
             else
             {
-                MessageBox.Show("Введен неверный пароль.", "Ошибка!");
+                view.WrongPasswordDialog();
             }
         }
 
@@ -78,7 +78,7 @@ namespace ContosoUI.Users.Edit
             get { return user.PersonalInfo.FirstName; }
             set
             {
-                if (user.PersonalInfo.FirstName != value)
+                if (user.PersonalInfo.FirstName != value&&value != String.Empty)
                 {
                     user.PersonalInfo.FirstName = value;
                     NotifyPropertyChanged("FirstName");
@@ -91,7 +91,7 @@ namespace ContosoUI.Users.Edit
             get { return user.PersonalInfo.LastName; }
             set
             {
-                if (user.PersonalInfo.LastName != value)
+                if (user.PersonalInfo.LastName != value && value != String.Empty)
                 {
                     user.PersonalInfo.LastName = value;
                     NotifyPropertyChanged("LastName");
@@ -104,7 +104,7 @@ namespace ContosoUI.Users.Edit
             get { return user.PersonalInfo.MiddleName; }
             set
             {
-                if (user.PersonalInfo.MiddleName != value)
+                if (user.PersonalInfo.MiddleName != value && value != String.Empty)
                 {
                     user.PersonalInfo.MiddleName = value;
                     NotifyPropertyChanged("MiddleName");
@@ -136,7 +136,7 @@ namespace ContosoUI.Users.Edit
             get { return user.Role; }
             set
             {
-                if (user.Role != value)
+                if (user.Role != value&&value.Name!=String.Empty)
                 {
                     user.Role = value;
                     NotifyPropertyChanged("Role");
