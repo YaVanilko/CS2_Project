@@ -11,11 +11,11 @@ namespace Data.EFData
 {
     public class GoodsRowDao : EfBaseDao<GoodsRow>, IGoodsRowRepository
     {
-        public GoodsRowDao(ProjectContext context)
+        public GoodsRowDao(ProjectContext context = null)
+            : base(context)
         {
 
         }
-
         public new IQueryable<GoodsRow> GetAll()
         {
             IQueryable<GoodsRow> collection =
@@ -28,12 +28,6 @@ namespace Data.EFData
         {
             return dbContext.GoodsRows.Where(x => x.Id == id)
                    .Include(x=>x.Goods).FirstOrDefault();
-        }
-
-        public new void Update(GoodsRow entity)
-        {
-            dbContext.GoodsRows.AddOrUpdate(entity);
-            dbContext.SaveChanges();
         }
     }
 }

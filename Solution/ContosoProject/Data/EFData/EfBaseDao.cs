@@ -11,7 +11,7 @@ namespace Data.EFData
 {
     public class EfBaseDao<T> : IRepository<T> where T : BaseEntity, new()
     {
-        protected ProjectContext dbContext = new ProjectContext();
+        protected ProjectContext dbContext;
 
         public EfBaseDao(ProjectContext context = null)
         {
@@ -48,8 +48,7 @@ namespace Data.EFData
 
         public IQueryable<T> FindBy(System.Linq.Expressions.Expression<Func<T, bool>> predicate)
         {
-            IQueryable<T> query = dbContext.Set<T>().Where(predicate);
-            return query;
+            return dbContext.Set<T>().Where(predicate);
         }
     }
 }

@@ -11,10 +11,12 @@ namespace Data.EFData
 {
     public class CustomerDao : EfBaseDao<Customer>, ICustomerRepository
     {
-        public CustomerDao()
+        public CustomerDao(ProjectContext context = null)
+            : base(context)
         {
 
         }
+
         public ICollection<Customer> GetCustomersByCity(string city)
         {
             return dbContext.Customers.Where(x => x.Contacts.City == city)
@@ -40,17 +42,6 @@ namespace Data.EFData
                     .Include(x => x.Contacts)
                     .Include(x => x.PersonalInfo)
                     .Include(x => x.Comments).FirstOrDefault();
-        }
-
-        public new void Update(Customer entity)
-        {
-            dbContext.Customers.AddOrUpdate(entity);
-            dbContext.SaveChanges();
-        }
-
-        public CustomerDao(ProjectContext context)
-        {
-
         }
     }
 }

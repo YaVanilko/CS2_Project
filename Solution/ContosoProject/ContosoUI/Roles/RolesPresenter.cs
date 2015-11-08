@@ -16,7 +16,6 @@ namespace ContosoUI.Roles
     {
         readonly RolesView view;
         readonly RoleViewService modelProxy = new RoleViewService();
-        Role role;
         public RolesPresenter(RolesView view)
         {
             this.view = view;
