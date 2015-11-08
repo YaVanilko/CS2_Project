@@ -23,6 +23,7 @@ namespace Data.EFData
                     .Include(x => x.Contacts)
                     .Include(x => x.PersonalInfo)
                     .Include(x => x.Comments)
+                    .Include(x => x.Orders.Select(y => y.GoodsList.Select(z => z.Goods)))
                     .ToList();
         }
 
@@ -32,16 +33,20 @@ namespace Data.EFData
                 dbContext.Customers.Where(x => x.IsActive)
                     .Include(x => x.Contacts)
                     .Include(x => x.PersonalInfo)
-                    .Include(x => x.Comments);
+                    .Include(x => x.Comments)
+                    .Include(x => x.Orders.Select(y => y.GoodsList.Select(z => z.Goods)));
             return collection;
         }
-
+       
         public new Customer GetById(int id)
         {
             return dbContext.Customers.Where(x => x.Id == id)
                     .Include(x => x.Contacts)
                     .Include(x => x.PersonalInfo)
-                    .Include(x => x.Comments).FirstOrDefault();
+                    .Include(x => x.Comments)
+                    .Include(x => x.Orders.Select(y => y.Status))
+                    .Include(x => x.Orders.Select(y => y.GoodsList.Select(z => z.Goods)))
+                    .FirstOrDefault();
         }
     }
 }
