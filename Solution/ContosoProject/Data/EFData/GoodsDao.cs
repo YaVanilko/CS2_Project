@@ -10,28 +10,32 @@ using System.Data.Entity.Migrations;
 
 namespace Data.EFData
 {
-    public class GoodsDao : EfBaseDao<Goods>, IGoodsRepository
+    public class GoodsDao : IGoodsRepository
     {
-        readonly ProjectContext context;
+        readonly ProjectContext dbContext;
         public GoodsDao(ProjectContext context = null)
         {
-            this.context = context ?? new ProjectContext();
+            this.dbContext = context ?? new ProjectContext();
         }
         public ICollection<Goods> GetGoodsByCategory(string category)
         {
-            return dbContext.Products.Where(x => x.Category.CategoryName == category).ToList();
+            return dbContext.Products.Where(x => x.Category.CategoryName == category).
+                                      Include(x => x.Category).ToList();
         }
 
         public new ICollection<Goods> GetAll()
         {
-            return dbContext.Products.Include(x => x.Coments).ToList();
+            return dbContext.Products.Include(x => x.Coments).
+                                      Include(x=>x.Category).ToList();
 
 
         }
 
         public ICollection<Goods> GetAllIsActive()
         {
-            return dbContext.Products.Where(x => x.IsActive == true).Include(x => x.Coments).ToList();
+            return dbContext.Products.Where(x => x.IsActive == true).
+                                      Include(x => x.Coments). 
+                                      Include(x=>x.Category).ToList();
 
         }
 
@@ -51,6 +55,27 @@ namespace Data.EFData
         {
             dbContext.Set<Goods>().Add(goods);
             dbContext.SaveChanges();
+        }
+
+        public void Delete(Goods entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public new Goods GetById(int Id)
+        {
+            return dbContext.Products.Where(x => x.Id == Id). 
+                                      Include(x=>x.Category).FirstOrDefault();
+        }
+
+        IQueryable<Goods> IRepository<Goods>.GetAll()
+        {
+            return dbContext.Products;
+        }
+
+        public IQueryable<Goods> FindBy(System.Linq.Expressions.Expression<Func<Goods, bool>> predicate)
+        {
+            throw new NotImplementedException();
         }
     }
 }

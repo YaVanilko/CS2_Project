@@ -109,21 +109,21 @@
       <DependentUpon>CustomersListViev.cs</DependentUpon>
     </Compile>
     <Compile Include="Customers\Search\CustomersListViewModel.cs" />
-    <Compile Include="GoodsAll\AddGoods\AddGoods.cs">
+    <Compile Include="GoodsAll\AddGoods\AddGoodsView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GoodsAll\AddGoods\AddGoods.Designer.cs">
-      <DependentUpon>AddGoods.cs</DependentUpon>
+    <Compile Include="GoodsAll\AddGoods\AddGoodsView.Designer.cs">
+      <DependentUpon>AddGoodsView.cs</DependentUpon>
     </Compile>
     <Compile Include="GoodsAll\AddGoods\AddGoodsPresenter.cs" />
-    <Compile Include="GoodsAll\GoodsF\GoodsForm.cs">
+    <Compile Include="GoodsAll\GoodsView\GoodsFormView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GoodsAll\GoodsF\GoodsForm.Designer.cs">
-      <DependentUpon>GoodsForm.cs</DependentUpon>
+    <Compile Include="GoodsAll\GoodsView\GoodsFormView.Designer.cs">
+      <DependentUpon>GoodsFormView.cs</DependentUpon>
     </Compile>
-    <Compile Include="GoodsAll\GoodsF\GoodsListViewModel.cs" />
-    <Compile Include="GoodsAll\GoodsF\GoodsPresenter.cs" />
+    <Compile Include="GoodsAll\GoodsView\GoodsListViewModel.cs" />
+    <Compile Include="GoodsAll\GoodsView\GoodsPresenter.cs" />
     <Compile Include="Order\AddEdit\AddEditOrderPresenter.cs" />
     <Compile Include="Order\AddEdit\AddEditOrderView.cs">
       <SubType>Form</SubType>
@@ -194,11 +194,11 @@
     <EmbeddedResource Include="Customers\Search\CustomersListViev.resx">
       <DependentUpon>CustomersListViev.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GoodsAll\AddGoods\AddGoods.resx">
-      <DependentUpon>AddGoods.cs</DependentUpon>
+    <EmbeddedResource Include="GoodsAll\AddGoods\AddGoodsView.resx">
+      <DependentUpon>AddGoodsView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GoodsAll\GoodsF\GoodsForm.resx">
-      <DependentUpon>GoodsForm.cs</DependentUpon>
+    <EmbeddedResource Include="GoodsAll\GoodsView\GoodsFormView.resx">
+      <DependentUpon>GoodsFormView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Order\AddEdit\AddEditOrderView.resx">
       <DependentUpon>AddEditOrderView.cs</DependentUpon>

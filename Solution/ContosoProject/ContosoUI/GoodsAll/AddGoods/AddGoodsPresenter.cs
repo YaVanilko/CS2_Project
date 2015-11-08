@@ -17,15 +17,14 @@ namespace ContosoUI.GoodsAll.AddGoods
         public GoodsCategoryService service = new GoodsCategoryService();
 
         Goods thisGoods;
-        public List<ProductCategory> productCategoryList = new List<ProductCategory>();
+        public List<ProductCategory> Categories { get; private set; }
         public List<Comment> Comments { get { return thisGoods.Coments.ToList(); } set { } }
 
         public AddGoodsPresenter(AddGoods view, int id)
         {
-            foreach (ProductCategory pc in service.CategoryDao.GetAll())
-            {
-                productCategoryList.Add(pc);
-            }
+            Categories = new List<ProductCategory>();
+            Categories.AddRange(service.CategoryDao.GetAll());
+
             this.view = view;
             if (id < 1)
             {
@@ -90,15 +89,15 @@ namespace ContosoUI.GoodsAll.AddGoods
             }
         }
 
-        public int Category
+        public ProductCategory Category
         {
-            get { return thisGoods.Category.Id; }
+            get { return thisGoods.Category; }
             set
             {
-                if (thisGoods.Category.Id != value)
+                if (thisGoods.Category != value)
                 {
-                    thisGoods.Category.Id= value;
-                    NotifyPropertyChanged("CategoryId");
+                    thisGoods.Category = value;
+                    NotifyPropertyChanged("Category");
                 }
             }
         }
@@ -143,9 +142,9 @@ namespace ContosoUI.GoodsAll.AddGoods
             }
         }
 
-        public void Save(Goods thisGoods)
+        public void Save()
         {
-
+            //когда попадаю сюда, нективный товар становится активным
             if (!string.IsNullOrWhiteSpace(currentComment))
             {
                 thisGoods.Coments.Add(new Comment() { Message = currentComment, Type = CommentType.Goods });
@@ -153,14 +152,13 @@ namespace ContosoUI.GoodsAll.AddGoods
             }
             if (thisGoods.Id > 0)
             {
-                service.GoodsDao.Update(this.thisGoods);
+                service.GoodsDao.Update(thisGoods);
             }
             else
             {
                 service.GoodsDao.Add(thisGoods);//???
             }
             NotifyPropertyChanged("Save");
-           // service.GoodsDao.Add(goods);
         }
 
         //public void Update(Goods goods)
@@ -179,7 +177,7 @@ namespace ContosoUI.GoodsAll.AddGoods
 
         public void SaveAndNew(Goods g)
         {
-            this.Save(g);
+            this.Save();
            // thisGoods = new Goods();
             NotifyPropertyChanged("New goods");
         }
