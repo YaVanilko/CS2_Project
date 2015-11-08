@@ -87,18 +87,18 @@
             {
                 new Customer
                 {
-                    Contacts = new ContactInfo{Adress="addres",City="city",},
-                    PersonalInfo = new PersonalInfo{FirstName="Ivan",LastName="Ivanov"},
+                    Contacts = new ContactInfo(){Adress="addres",City="city",},
+                    PersonalInfo = new PersonalInfo(){FirstName="Ivan", MiddleName = "Ivanovich", LastName="Ivanov"}
                 },
                 new Customer
                 {
-                    Contacts = new ContactInfo{Adress="addres",City="city",},
-                    PersonalInfo = new PersonalInfo{FirstName="Petr",LastName="Petrov"},
+                    Contacts = new ContactInfo(){Adress="addres",City="city",},
+                    PersonalInfo = new PersonalInfo(){FirstName="Petr", MiddleName = "Petrovich" ,LastName="Petrov"}
                 },
                 new Customer
                 {
-                    Contacts = new ContactInfo{Adress="addres",City="city",},
-                    PersonalInfo = new PersonalInfo{FirstName="Sidor",LastName="Sidorov"},
+                    Contacts = new ContactInfo(){Adress="addres",City="city",},
+                    PersonalInfo = new PersonalInfo(){FirstName="Sidor", MiddleName = "Sidorovich", LastName="Sidorov"}
                 }
             };
 

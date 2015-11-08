@@ -57,7 +57,7 @@ namespace ContosoUI.Order.Search
                 viewModel.Add(new SearchViewModel()
                 {
                     Id = order.Id,
-                    Status = order.Status.Status,
+                    Status = order.Status,
                     Customer = order.Customer,
                     countOfGoods = order.GoodsList.Count,
                     TotalCost = order.TotalCost,
@@ -70,7 +70,7 @@ namespace ContosoUI.Order.Search
     public class SearchViewModel
     {
         public int Id { get; set; }
-        public string Status { get; set; }
+        public OrderStatus Status { get; set; }
         public Customer Customer { get; set; }
         public int countOfGoods { get; set; }
         public double TotalCost { get; set; }

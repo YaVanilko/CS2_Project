@@ -17,15 +17,14 @@ namespace Data.EFData
             dbContext = context ?? new ProjectContext();
         }
 
-        public new IQueryable<Order> GetAll()
+        public IQueryable<Order> GetAll()
         {
-            IQueryable<Order> collection =
-                dbContext.Orders.Where(x => x.IsActive)
+            return dbContext.Orders.Where(x => x.IsActive)
                 .Include(x=>x.Customer)
+                .Include(x => x.TotalCost)
                 .Include(x => x.GoodsList)
                 .Include(x => x.Status)
                 .Include(x => x.Comments);
-            return collection;
         }
 
         public new Order GetById(int id)
