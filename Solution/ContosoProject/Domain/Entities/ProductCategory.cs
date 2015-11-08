@@ -19,5 +19,10 @@ namespace Domain.Entities
         {
             Goods = new List<Goods>();
         }
+
+        public override string ToString()
+        {
+            return CategoryName;
+        }
     }
 }

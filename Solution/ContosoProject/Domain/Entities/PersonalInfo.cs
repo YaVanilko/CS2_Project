@@ -17,5 +17,10 @@ namespace Domain.Entities
 
         [MinLength(2), MaxLength(25)]
         public string LastName { get; set; }
+
+        public override string ToString()
+        {
+            return LastName + " " + FirstName + " " + MiddleName;
+        }
     }
 }

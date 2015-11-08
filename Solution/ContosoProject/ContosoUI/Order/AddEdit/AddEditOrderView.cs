@@ -31,7 +31,6 @@ namespace ContosoUI.Order
         {
             bindings = new BindingSource();
             bindings.DataSource = presenter;
-            goodsRowBindingSource.DataSource = presenter;
 
             customerComboBox.DataBindings.Clear();
             customerComboBox.DataBindings.Add("DataSource", bindings, "Customers");
@@ -44,7 +43,7 @@ namespace ContosoUI.Order
             statusComboBox.DataBindings.Add("SelectedItem", bindings, "Status");
 
             goodsComboBox.DataBindings.Clear();
-            goodsComboBox.DataBindings.Add("DataSource", bindings, "GoodsList");
+            goodsComboBox.DataBindings.Add("DataSource", bindings, "Goods");
 
             commentsListBox.DataBindings.Clear();
             commentsListBox.DataBindings.Add("DataSource", bindings, "Comments");
@@ -67,10 +66,20 @@ namespace ContosoUI.Order
 
         private void addGoodButton_Click(object sender, EventArgs e)
         {
-            presenter.AddGoodRow();
-            countOfGoodTextEdit.Text = "";
-            goodsRowGridControl.RefreshDataSource();
-            priceEdit.Text = Convert.ToString(presenter.TotalCost);
+            bindings.EndEdit();
+            goodsRowBindingSource.EndEdit();
+
+            if (ValidateCount())
+            { 
+                presenter.AddGoodRow();
+                countOfGoodTextEdit.Text = "0";
+                goodsRowGridControl.RefreshDataSource();
+                priceEdit.Text = Convert.ToString(presenter.TotalCost);
+            }
+            else
+            {
+                MessageBox.Show("Некорректное кол-во товаров", buttons: MessageBoxButtons.OK, caption: "Уведомление");
+            }
         }
 
         private void saveOrderButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -106,7 +115,7 @@ namespace ContosoUI.Order
                         result = MessageBox.Show("Вы уверенны, что хотите удалить поле из заказа?", buttons: MessageBoxButtons.OKCancel, caption: "Деактивация поля");
                         if (result == DialogResult.OK)
                         {
-                            presenter.SetIsActive(false, e.RowHandle);
+                            presenter.SetIsActive(e.RowHandle);
                             priceEdit.Text = Convert.ToString(presenter.TotalCost);
                         }
                     }
@@ -115,12 +124,32 @@ namespace ContosoUI.Order
                         result = MessageBox.Show("Вы уверенны, что хотите вернуть поле в заказ?", buttons: MessageBoxButtons.OKCancel, caption: "Деактивация поля");
                         if (result == DialogResult.OK)
                         {
-                            presenter.SetIsActive(true, e.RowHandle);
+                            presenter.SetIsActive(e.RowHandle);
                             priceEdit.Text = Convert.ToString(presenter.TotalCost);
                         }
                     }
                 }
             }
+        }
+
+        private bool ValidateCount()
+        {
+            bool result = false;
+            int minValue = 0;
+            int maxValue = int.MaxValue;
+            int temp;
+            int.TryParse(countOfGoodTextEdit.Text, out temp);
+
+            if (temp > minValue && temp < maxValue)
+            {
+                result = true;
+            }
+
+            return result;
+        }
+
+        private void AddEditOrderView_FormClosed(object sender, FormClosedEventArgs e)
+        {
         }
     }
 }

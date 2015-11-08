@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace ContosoUI.Order.Search
 {
@@ -41,11 +42,17 @@ namespace ContosoUI.Order.Search
                 ordersList = orderModel.GetAll().ToList();
                 FillViewModel();
             }
-            else
+            else if (statuses.Contains(status))
             {
                 ordersList = orderModel.GetOrderByStatus(status).ToList();
                 FillViewModel();
             }
+            else
+            {
+                viewModel.Clear();
+                MessageBox.Show("Не существует заказов с таким статусом", buttons: MessageBoxButtons.OK, caption: "Уведомление");
+            } 
+
         }
 
         private void FillViewModel ()
@@ -61,7 +68,6 @@ namespace ContosoUI.Order.Search
                     Customer = order.Customer,
                     countOfGoods = order.GoodsList.Count,
                     TotalCost = order.TotalCost,
-                    countOfComments = order.Comments.Count
                 });
             }
         }
@@ -74,6 +80,5 @@ namespace ContosoUI.Order.Search
         public Customer Customer { get; set; }
         public int countOfGoods { get; set; }
         public double TotalCost { get; set; }
-        public int countOfComments { get; set; }
     }
 }
