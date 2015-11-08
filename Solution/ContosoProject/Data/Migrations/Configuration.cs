@@ -74,6 +74,7 @@
                 new ProductCategory{CategoryName="cat3"},
                 new ProductCategory{CategoryName="cat4"}
             };
+
             var prods = new List<Goods>
             {
                 new Goods{Name="Goods1",Price=10,SKU="SKU1",Count=3,Category=cars[0]},
@@ -87,18 +88,18 @@
             {
                 new Customer
                 {
-                    Contacts = new ContactInfo{Adress="addres",City="city",},
-                    PersonalInfo = new PersonalInfo{FirstName="Ivan",LastName="Ivanov"},
+                    Contacts = new ContactInfo(){Adress="addres",City="city",},
+                    PersonalInfo = new PersonalInfo(){FirstName="Ivan", MiddleName = "Ivanovich", LastName="Ivanov"}
                 },
                 new Customer
                 {
-                    Contacts = new ContactInfo{Adress="addres",City="city",},
-                    PersonalInfo = new PersonalInfo{FirstName="Petr",LastName="Petrov"},
+                    Contacts = new ContactInfo(){Adress="addres",City="city",},
+                    PersonalInfo = new PersonalInfo(){FirstName="Petr", MiddleName = "Petrovich" ,LastName="Petrov"}
                 },
                 new Customer
                 {
-                    Contacts = new ContactInfo{Adress="addres",City="city",},
-                    PersonalInfo = new PersonalInfo{FirstName="Sidor",LastName="Sidorov"},
+                    Contacts = new ContactInfo(){Adress="addres",City="city",},
+                    PersonalInfo = new PersonalInfo(){FirstName="Sidor", MiddleName = "Sidorovich", LastName="Sidorov"}
                 }
             };
 
@@ -137,17 +138,18 @@
             {
                 context.Products.AddRange(prods);
             }
-            if (context.Customers.Count()==0)
+
+            if (context.Customers.Count() == 0)
             {
                 context.Customers.AddRange(cust);
             }
-            if (context.Orders.Count()==0)
+
+            if (context.Orders.Count() == 0)
             {
                 context.Orders.AddRange(orders);
             }
 
             context.SaveChanges();
-
         }
     }
 }
