@@ -43,6 +43,7 @@
             this.addGoodsBarButton = new DevExpress.XtraBars.BarButtonItem();
             this.RolesButton = new DevExpress.XtraBars.BarButtonItem();
             this.ChangePasswordBtn = new DevExpress.XtraBars.BarButtonItem();
+            this.productCategoryButton = new DevExpress.XtraBars.BarButtonItem();
             this.mainRibbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.customersMenuGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ordersMenuGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -50,7 +51,6 @@
             this.usersMenuGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.System = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
-            this.productCategoryButton = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
@@ -187,12 +187,13 @@
             this.ChangePasswordBtn.Name = "ChangePasswordBtn";
             this.ChangePasswordBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick_1);
             // 
-            // RolesButton
+            // productCategoryButton
             // 
-            this.RolesButton.Caption = "Роли";
-            this.RolesButton.Id = 13;
-            this.RolesButton.ImageUri.Uri = "Show";
-            this.RolesButton.Name = "RolesButton";
+            this.productCategoryButton.Caption = "Категории товаров";
+            this.productCategoryButton.Id = 15;
+            this.productCategoryButton.ImageUri.Uri = "Filter";
+            this.productCategoryButton.Name = "productCategoryButton";
+            this.productCategoryButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.productCategoryButton_ItemClick);
             // 
             // mainRibbonPage
             // 
@@ -253,16 +254,9 @@
             // 
             this.xtraTabbedMdiManager1.MdiParent = this;
             // 
-            // productCategoryButton
-            // 
-            this.productCategoryButton.Caption = "Категории товаров";
-            this.productCategoryButton.Id = 15;
-            this.productCategoryButton.ImageUri.Uri = "Filter";
-            this.productCategoryButton.Name = "productCategoryButton";
-            this.productCategoryButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.productCategoryButton_ItemClick);
-            // 
             // MainView
             // 
+            this.CausesValidation = false;
             this.ClientSize = new System.Drawing.Size(1028, 621);
             this.Controls.Add(this.ribbonControl);
             this.IsMdiContainer = true;

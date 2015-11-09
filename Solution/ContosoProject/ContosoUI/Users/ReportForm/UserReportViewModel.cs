@@ -32,17 +32,7 @@ namespace ContosoUI.EditUserForm
         }
         public string IsActive
         {
-            get
-            {
-                if (user.IsActive)
-                {
-                    return "Да";
-                }
-                else
-                {
-                    return "Нет";
-                }
-            }
+            get { return string.Format(user.IsActive ? "Да" : "Нет");}
         }
         public int Id
         {
