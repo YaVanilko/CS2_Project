@@ -34,7 +34,7 @@ namespace Domain.Entities
 
         public override string ToString()
         {
-            return Name;
+            return Name + " " + Category.CategoryName;
         }
     }
 }

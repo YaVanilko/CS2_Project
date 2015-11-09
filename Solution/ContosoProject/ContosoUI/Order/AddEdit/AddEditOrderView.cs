@@ -19,6 +19,8 @@ namespace ContosoUI.Order
     {
         AddEditOrderPresenter presenter;
 
+        BindingSource bindings;
+
         public AddEditOrderView(int id = -1)
         {
             InitializeComponent();
@@ -27,22 +29,21 @@ namespace ContosoUI.Order
 
         private void AddEditOrderView_Load(object sender, EventArgs e)
         {
-            BindingSource bindings = new BindingSource();
+            bindings = new BindingSource();
             bindings.DataSource = presenter;
-            goodsRowBindingSource.DataSource = presenter;
 
             customerComboBox.DataBindings.Clear();
             customerComboBox.DataBindings.Add("DataSource", bindings, "Customers");
             customerComboBox.DataBindings.Add("SelectedItem", bindings, "Customer");
 
-            priceEdit.DataBindings.Add("Text", goodsRowBindingSource, "TotalCost");
+            priceEdit.DataBindings.Add("EditValue", bindings, "TotalCost");
 
             statusComboBox.DataBindings.Clear();
             statusComboBox.DataBindings.Add("DataSource", bindings, "Statuses");
             statusComboBox.DataBindings.Add("SelectedItem", bindings, "Status");
 
             goodsComboBox.DataBindings.Clear();
-            goodsComboBox.DataBindings.Add("DataSource", bindings, "GoodsList");
+            goodsComboBox.DataBindings.Add("DataSource", bindings, "Goods");
 
             commentsListBox.DataBindings.Clear();
             commentsListBox.DataBindings.Add("DataSource", bindings, "Comments");
@@ -50,10 +51,10 @@ namespace ContosoUI.Order
             commentTextEdit.DataBindings.Clear();
             commentTextEdit.DataBindings.Add("Text", bindings, "Message");
 
-            goodsRowGridControl.DataBindings.Add("DataSource", goodsRowBindingSource, "vm");
-            goodsComboBox.DataBindings.Add("SelectedItem", goodsRowBindingSource, "SelectedGood");
+            goodsRowGridControl.DataBindings.Add("DataSource", bindings, "vm");
+            goodsComboBox.DataBindings.Add("SelectedItem", bindings, "SelectedGood");
 
-            countOfGoodTextEdit.DataBindings.Add("Text", goodsRowBindingSource, "CountOfGood");
+            countOfGoodTextEdit.DataBindings.Add("Text", bindings, "CountOfGood");
 
         }
 
@@ -65,15 +66,26 @@ namespace ContosoUI.Order
 
         private void addGoodButton_Click(object sender, EventArgs e)
         {
-            presenter.AddGoodRow();
-            countOfGoodTextEdit.Text = "";
-            goodsRowGridControl.RefreshDataSource();
-            priceEdit.Text = Convert.ToString(presenter.TotalCost);
+            bindings.EndEdit();
+            goodsRowBindingSource.EndEdit();
+
+            if (ValidateCount())
+            { 
+                presenter.AddGoodRow();
+                countOfGoodTextEdit.Text = "0";
+                goodsRowGridControl.RefreshDataSource();
+                priceEdit.Text = Convert.ToString(presenter.TotalCost);
+            }
+            else
+            {
+                MessageBox.Show("Некорректное кол-во товаров", buttons: MessageBoxButtons.OK, caption: "Уведомление");
+            }
         }
 
         private void saveOrderButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             goodsRowBindingSource.EndEdit();
+            bindings.EndEdit();
             presenter.Save();
         }
 
@@ -103,7 +115,7 @@ namespace ContosoUI.Order
                         result = MessageBox.Show("Вы уверенны, что хотите удалить поле из заказа?", buttons: MessageBoxButtons.OKCancel, caption: "Деактивация поля");
                         if (result == DialogResult.OK)
                         {
-                            presenter.SetIsActive(false, e.RowHandle);
+                            presenter.SetIsActive(e.RowHandle);
                             priceEdit.Text = Convert.ToString(presenter.TotalCost);
                         }
                     }
@@ -112,12 +124,32 @@ namespace ContosoUI.Order
                         result = MessageBox.Show("Вы уверенны, что хотите вернуть поле в заказ?", buttons: MessageBoxButtons.OKCancel, caption: "Деактивация поля");
                         if (result == DialogResult.OK)
                         {
-                            presenter.SetIsActive(true, e.RowHandle);
+                            presenter.SetIsActive(e.RowHandle);
                             priceEdit.Text = Convert.ToString(presenter.TotalCost);
                         }
                     }
                 }
             }
+        }
+
+        private bool ValidateCount()
+        {
+            bool result = false;
+            int minValue = 0;
+            int maxValue = int.MaxValue;
+            int temp;
+            int.TryParse(countOfGoodTextEdit.Text, out temp);
+
+            if (temp > minValue && temp < maxValue)
+            {
+                result = true;
+            }
+
+            return result;
+        }
+
+        private void AddEditOrderView_FormClosed(object sender, FormClosedEventArgs e)
+        {
         }
     }
 }
