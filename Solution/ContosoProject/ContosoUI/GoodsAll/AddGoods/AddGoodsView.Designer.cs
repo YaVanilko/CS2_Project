@@ -237,7 +237,7 @@
             this.saveGoodsButton.MergeOrder = 1;
             this.saveGoodsButton.Name = "saveGoodsButton";
             this.saveGoodsButton.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            this.saveGoodsButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Со_ItemClick);
+            this.saveGoodsButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.saveGoodsButton_ItemClick);
             // 
             // mainRibbonPage
             // 
