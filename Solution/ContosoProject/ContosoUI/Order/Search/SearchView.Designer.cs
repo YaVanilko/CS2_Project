@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SearchView));
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             this.ribbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.searchBarButtonItem = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
@@ -40,13 +41,16 @@
             this.layoutControl = new DevExpress.XtraLayout.LayoutControl();
             this.statusComboBox = new System.Windows.Forms.ComboBox();
             this.resultGridControl = new DevExpress.XtraGrid.GridControl();
-            this.searchViewModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.orderBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ordersGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colStatus = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCustomer = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colcountOfGoods = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colGoodsList = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTotalCost = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colStatus = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colComments = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colIsActive = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colEditTime = new DevExpress.XtraGrid.Columns.GridColumn();
             this.layoutControlGroup = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.statusLayoutControlItem = new DevExpress.XtraLayout.LayoutControlItem();
@@ -54,7 +58,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl)).BeginInit();
             this.layoutControl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.resultGridControl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.searchViewModelBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordersGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
@@ -149,7 +153,11 @@
             // 
             // resultGridControl
             // 
-            this.resultGridControl.DataSource = this.searchViewModelBindingSource;
+            this.resultGridControl.DataSource = this.orderBindingSource;
+            this.resultGridControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            gridLevelNode1.RelationName = "Level1";
+            this.resultGridControl.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
+            gridLevelNode1});
             this.resultGridControl.Location = new System.Drawing.Point(12, 53);
             this.resultGridControl.MainView = this.ordersGridView;
             this.resultGridControl.MenuManager = this.ribbonControl;
@@ -159,67 +167,82 @@
             this.resultGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.ordersGridView});
             // 
-            // searchViewModelBindingSource
+            // orderBindingSource
             // 
-            this.searchViewModelBindingSource.DataSource = typeof(ContosoUI.Order.Search.SearchViewModel);
+            this.orderBindingSource.DataSource = typeof(Domain.Entities.Order);
             // 
             // ordersGridView
             // 
             this.ordersGridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colId,
-            this.colStatus,
             this.colCustomer,
-            this.colcountOfGoods,
-            this.colTotalCost});
+            this.colGoodsList,
+            this.colTotalCost,
+            this.colStatus,
+            this.colComments,
+            this.colId,
+            this.colIsActive,
+            this.colEditTime});
             this.ordersGridView.GridControl = this.resultGridControl;
             this.ordersGridView.Name = "ordersGridView";
             this.ordersGridView.OptionsBehavior.Editable = false;
             this.ordersGridView.DoubleClick += new System.EventHandler(this.ordersGridView__DoubleClick);
+            // 
+            // colCustomer
+            // 
+            this.colCustomer.Caption = "Клиент";
+            this.colCustomer.FieldName = "Customer";
+            this.colCustomer.Name = "colCustomer";
+            this.colCustomer.Visible = true;
+            this.colCustomer.VisibleIndex = 1;
+            this.colCustomer.Width = 312;
+            // 
+            // colGoodsList
+            // 
+            this.colGoodsList.Caption = "Список товаров";
+            this.colGoodsList.FieldName = "GoodsList";
+            this.colGoodsList.Name = "colGoodsList";
+            this.colGoodsList.Visible = true;
+            this.colGoodsList.VisibleIndex = 2;
+            this.colGoodsList.Width = 268;
+            // 
+            // colTotalCost
+            // 
+            this.colTotalCost.Caption = "Цена";
+            this.colTotalCost.FieldName = "TotalCost";
+            this.colTotalCost.Name = "colTotalCost";
+            this.colTotalCost.OptionsColumn.ReadOnly = true;
+            this.colTotalCost.Visible = true;
+            this.colTotalCost.VisibleIndex = 3;
+            this.colTotalCost.Width = 85;
+            // 
+            // colStatus
+            // 
+            this.colStatus.Caption = "Статус";
+            this.colStatus.FieldName = "Status";
+            this.colStatus.Name = "colStatus";
+            this.colStatus.Visible = true;
+            this.colStatus.VisibleIndex = 0;
+            this.colStatus.Width = 77;
+            // 
+            // colComments
+            // 
+            this.colComments.FieldName = "Comments";
+            this.colComments.Name = "colComments";
             // 
             // colId
             // 
             this.colId.FieldName = "Id";
             this.colId.Name = "colId";
             // 
-            // colStatus
+            // colIsActive
             // 
-            this.colStatus.Caption = "Статус";
-            this.colStatus.FieldName = "Status";
-            this.colStatus.MinWidth = 10;
-            this.colStatus.Name = "colStatus";
-            this.colStatus.Visible = true;
-            this.colStatus.VisibleIndex = 0;
-            this.colStatus.Width = 171;
+            this.colIsActive.FieldName = "IsActive";
+            this.colIsActive.Name = "colIsActive";
             // 
-            // colCustomer
+            // colEditTime
             // 
-            this.colCustomer.Caption = "Клиент";
-            this.colCustomer.FieldName = "Customer";
-            this.colCustomer.MinWidth = 100;
-            this.colCustomer.Name = "colCustomer";
-            this.colCustomer.Visible = true;
-            this.colCustomer.VisibleIndex = 1;
-            this.colCustomer.Width = 408;
-            // 
-            // colcountOfGoods
-            // 
-            this.colcountOfGoods.Caption = "Кол-во товаров";
-            this.colcountOfGoods.FieldName = "countOfGoods";
-            this.colcountOfGoods.MinWidth = 10;
-            this.colcountOfGoods.Name = "colcountOfGoods";
-            this.colcountOfGoods.Visible = true;
-            this.colcountOfGoods.VisibleIndex = 2;
-            this.colcountOfGoods.Width = 101;
-            // 
-            // colTotalCost
-            // 
-            this.colTotalCost.Caption = "Цена";
-            this.colTotalCost.FieldName = "TotalCost";
-            this.colTotalCost.MinWidth = 15;
-            this.colTotalCost.Name = "colTotalCost";
-            this.colTotalCost.Visible = true;
-            this.colTotalCost.VisibleIndex = 3;
-            this.colTotalCost.Width = 62;
+            this.colEditTime.FieldName = "EditTime";
+            this.colEditTime.Name = "colEditTime";
             // 
             // layoutControlGroup
             // 
@@ -266,7 +289,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl)).EndInit();
             this.layoutControl.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.resultGridControl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.searchViewModelBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordersGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
@@ -292,11 +315,14 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
-        private System.Windows.Forms.BindingSource searchViewModelBindingSource;
-        private DevExpress.XtraGrid.Columns.GridColumn colId;
-        private DevExpress.XtraGrid.Columns.GridColumn colStatus;
+        private System.Windows.Forms.BindingSource orderBindingSource;
         private DevExpress.XtraGrid.Columns.GridColumn colCustomer;
-        private DevExpress.XtraGrid.Columns.GridColumn colcountOfGoods;
+        private DevExpress.XtraGrid.Columns.GridColumn colGoodsList;
         private DevExpress.XtraGrid.Columns.GridColumn colTotalCost;
+        private DevExpress.XtraGrid.Columns.GridColumn colStatus;
+        private DevExpress.XtraGrid.Columns.GridColumn colComments;
+        private DevExpress.XtraGrid.Columns.GridColumn colId;
+        private DevExpress.XtraGrid.Columns.GridColumn colIsActive;
+        private DevExpress.XtraGrid.Columns.GridColumn colEditTime;
     }
 }

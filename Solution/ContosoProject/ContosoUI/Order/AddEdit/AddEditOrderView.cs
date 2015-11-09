@@ -1,15 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using ContosoUI.Order.AddEdit;
-using DevExpress.XtraGrid.Views.Grid.ViewInfo;
 using DevExpress.XtraGrid.Views.Grid;
 using Domain.Entities;
 
@@ -51,7 +43,7 @@ namespace ContosoUI.Order
             commentTextEdit.DataBindings.Clear();
             commentTextEdit.DataBindings.Add("EditValue", bindings, "Message");
 
-            goodsRowGridControl.DataBindings.Add("DataSource", bindings, "vm");
+            goodsRowGridControl.DataBindings.Add("DataSource", bindings, "GoodsListSource");
             goodsComboBox.DataBindings.Add("SelectedItem", bindings, "SelectedGood");
 
             countOfGoodTextEdit.DataBindings.Add("EditValue", bindings, "CountOfGood");
@@ -66,16 +58,17 @@ namespace ContosoUI.Order
 
         private void addGoodButton_Click(object sender, EventArgs e)
         {
-            bindings.EndEdit();
-
             if (ValidateCount())
-            { 
+            {
+                bindings.EndEdit();
                 presenter.AddGoodRow();
                 goodsRowGridControl.RefreshDataSource();
                 priceEdit.Text = Convert.ToString(presenter.TotalCost);
             }
             else
             {
+                bindings.EndEdit();
+                goodsRowGridControl.RefreshDataSource();
                 notifyManager.ShowInfo("Некорректное кол-во товаров", "Сообщение");
             }
         }
@@ -146,10 +139,6 @@ namespace ContosoUI.Order
             }
 
             return result;
-        }
-
-        private void AddEditOrderView_FormClosed(object sender, FormClosedEventArgs e)
-        {
         }
     }
 }

@@ -1,43 +1,38 @@
 ﻿using Data.EFData;
 using ContosoUI.Presenter;
 using Domain.Entities;
-using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
-using System.Windows.Forms;
 
 namespace ContosoUI.Order.AddEdit
 {
-    public class AddEditOrderPresenter : BasePresenter, INotifyPropertyChanged
+    public class AddEditOrderPresenter : BasePresenter
     {
         readonly AddEditOrderView view;
         readonly AddOrderProxy modelProxy = new AddOrderProxy();
-        public List<GoodsRow> vm { get; set; }
         IUserNotify notifyManager = Program.MainWiewInstance;
         Domain.Entities.Order order;
 
         public AddEditOrderPresenter(AddEditOrderView view, int orderId)
         {
             this.view = view;
-            vm = new List<GoodsRow>();
 
             goods.AddRange(modelProxy.GoodsModel.GetAll().Where(x => x.IsActive == true));
 
             if (orderId >= 0)
             {
                 order = modelProxy.OrderModel.GetById(orderId);
-
-                foreach (GoodsRow row in order.GoodsList)
-                {
-                    vm.Add(new GoodsRow()
-                    { Id = row.Id, Goods = row.Goods, Count = row.Count, Price = row.Goods.Price });
-                }
             }
             else
             {
                 order = new Domain.Entities.Order();
             }
+        }
+        
+        public List<GoodsRow> GoodsListSource
+        {
+            get { return order.GoodsList.ToList(); }
         }
 
         public List<Customer> Customers
@@ -51,7 +46,6 @@ namespace ContosoUI.Order.AddEdit
         }
 
         List<Goods> goods = new List<Goods>();
-        
         public List<Goods> Goods
         {
             get { return goods; }
@@ -151,8 +145,8 @@ namespace ContosoUI.Order.AddEdit
         public void AddGoodRow()
         {
             GoodsRow newGoodsRow = new GoodsRow() {Goods = SelectedGood, Count = CountOfGood, Price = SelectedGood.Price };
-            vm.Add(new GoodsRow() { Goods = newGoodsRow.Goods, Count = newGoodsRow.Count, Price = newGoodsRow.Goods.Price });
             order.GoodsList.Add(newGoodsRow);
+            NotifyPropertyChanged("AddGoodRow");
         }
 
         public void AddComment ()
@@ -166,7 +160,7 @@ namespace ContosoUI.Order.AddEdit
         {
             double result = 0;
 
-            foreach (GoodsRow row in order.GoodsList)
+            foreach (GoodsRow row in GoodsListSource)
             {
                 if (row.IsActive)
                 {
@@ -199,7 +193,6 @@ namespace ContosoUI.Order.AddEdit
         {
             Save();
             order = new Domain.Entities.Order();
-            vm.Clear();
             NotifyPropertyChanged("SaveAndNew");
         }
     }
