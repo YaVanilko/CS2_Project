@@ -28,7 +28,7 @@ namespace ContosoUI.GoodsAll.AddGoods
             this.view = view;
             if (id < 1)
             {
-                thisGoods = new Goods();
+                thisGoods = new Goods() { Category = Categories[0]};
             }
             else
             {

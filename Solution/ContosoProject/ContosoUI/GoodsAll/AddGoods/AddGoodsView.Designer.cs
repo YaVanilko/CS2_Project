@@ -217,9 +217,10 @@
             this.addGoodsLookUpEditCategory.Name = "addGoodsLookUpEditCategory";
             this.addGoodsLookUpEditCategory.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.addGoodsLookUpEditCategory.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("CategoryName", "Category Name", 98, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near)});
             this.addGoodsLookUpEditCategory.Properties.DataSource = this.productCategoryBindingSource;
             this.addGoodsLookUpEditCategory.Properties.DisplayMember = "CategoryName";
-            this.addGoodsLookUpEditCategory.Properties.ValueMember = "Id";
             this.addGoodsLookUpEditCategory.Size = new System.Drawing.Size(341, 20);
             this.addGoodsLookUpEditCategory.TabIndex = 7;
             // 
