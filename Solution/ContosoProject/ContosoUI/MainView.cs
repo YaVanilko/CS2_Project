@@ -16,7 +16,7 @@ using ContosoUI.ProductCategoryList;
 
 namespace ContosoUI
 {
-    public partial class MainView : DevExpress.XtraEditors.XtraForm
+    public partial class MainView : DevExpress.XtraEditors.XtraForm, IUserNotify
     {
         public MainView()
         {
@@ -152,5 +152,27 @@ namespace ContosoUI
             form.MdiParent = this;
             form.Show();
         }
+# region IUserNotify
+        public void ShowError(string text, string header)
+        {
+            XtraMessageBox.Show(text, header, MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        public void ShowWarning(string text, string header)
+        {
+            XtraMessageBox.Show(text, header, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+
+        public void ShowInfo(string text, string header)
+        {
+            XtraMessageBox.Show(text, header, MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        public bool ShowYesNo(string text, string header)
+        {
+            DialogResult dialog = XtraMessageBox.Show(text, header, MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            return dialog == DialogResult.Yes;
+        }
+# endregion 
     }
 }

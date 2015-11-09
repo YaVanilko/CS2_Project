@@ -93,6 +93,7 @@
     </Compile>
     <Compile Include="Authentication\AuthenticationPresenter.cs" />
     <Compile Include="Authentication\MD5Extension.cs" />
+    <Compile Include="IUserNotify.cs" />
     <Compile Include="Presenter\BasePresenter.cs" />
     <Compile Include="Customers\Add\CustomerDetailsPresenter.cs" />
     <Compile Include="Customers\Add\CustomerDetailsViev.cs">
