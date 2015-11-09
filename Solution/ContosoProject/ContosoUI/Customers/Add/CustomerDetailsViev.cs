@@ -1,4 +1,7 @@
-﻿using System;
+﻿using ContosoUI.Order;
+using DevExpress.XtraGrid.Views.Grid;
+using DevExpress.XtraGrid.Views.Grid.ViewInfo;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -60,6 +63,20 @@ namespace ContosoUI.Customers.Add
                 isOk = true;
             }
             return isOk;
+        }
+
+        private void customerOrderGridView_DoubleClick(object sender, EventArgs e)
+        {
+            GridHitInfo hi = customerOrderGridView.CalcHitInfo(ordersGridControl.PointToClient(MousePosition));
+            if (hi.InRowCell)
+            {
+                GridView view = (GridView)sender;
+                GridHitInfo info = view.CalcHitInfo(view.GridControl.PointToClient(Control.MousePosition));
+                int id = (int)view.GetRowCellValue(info.RowHandle, "Id");
+                var form = new AddEditOrderView(id);
+                form.MdiParent = this.MdiParent;
+                form.Show();
+            }
         }
     }
 }
