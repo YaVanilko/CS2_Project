@@ -25,7 +25,7 @@ namespace ContosoUI.GoodsAll.AddGoods
             bs = new BindingSource();
             bs.DataSource = presenter;
             this.Text = "Редактировать товар";
-
+           // addGoodsCheckBoxIsActive.Checked = true;
             addGoodsTextBoxName.DataBindings.Add("EditValue", bs, "Name");
             addGoodsTextBoxSKU.DataBindings.Add("EditValue", bs, "SKU");
             addGoodsTextBoxCount.DataBindings.Add("EditValue", bs, "Count");
@@ -35,7 +35,7 @@ namespace ContosoUI.GoodsAll.AddGoods
             addGoodsLookUpEditCategory.DataBindings.Add("EditValue", bs, "Category");
 
             addGoodsTextBoxComent.DataBindings.Add("EditValue", bs, "CurentComment");
-
+       
             addGoodsCheckBoxIsActive.DataBindings.Add("EditValue", bs, "IsActive");
             
         }

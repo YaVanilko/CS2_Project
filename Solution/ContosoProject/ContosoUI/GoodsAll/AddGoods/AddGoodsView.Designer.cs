@@ -59,6 +59,7 @@
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.addGoodsCheckBoxIsActive = new DevExpress.XtraEditors.CheckEdit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).BeginInit();
@@ -81,6 +82,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.addGoodsCheckBoxIsActive.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -372,6 +374,17 @@
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextVisible = false;
             // 
+            // addGoodsCheckBoxIsActive
+            // 
+            this.addGoodsCheckBoxIsActive.EditValue = true;
+            this.addGoodsCheckBoxIsActive.Location = new System.Drawing.Point(6, 148);
+            this.addGoodsCheckBoxIsActive.MenuManager = this.ribbonControl1;
+            this.addGoodsCheckBoxIsActive.Name = "addGoodsCheckBoxIsActive";
+            this.addGoodsCheckBoxIsActive.Properties.Caption = "Активный";
+            this.addGoodsCheckBoxIsActive.Size = new System.Drawing.Size(75, 19);
+            this.addGoodsCheckBoxIsActive.TabIndex = 7;
+            this.addGoodsCheckBoxIsActive.CheckedChanged += new System.EventHandler(this.addGoodsCheckBoxIsActive_CheckedChanged);
+            // 
             // AddGoods
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -406,6 +419,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.addGoodsCheckBoxIsActive.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
