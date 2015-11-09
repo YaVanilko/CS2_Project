@@ -38,7 +38,7 @@ namespace ContosoUI.GoodsAll.GoodsF
             viewModel.Clear();
             foreach (Goods g in goodsForLoad)
             {
-                if (g.Category.IsActive == isActive)
+                if (g.IsActive)
                 {
                     viewModel.Add(new GoodsListViewModel
                     {
@@ -57,7 +57,7 @@ namespace ContosoUI.GoodsAll.GoodsF
             return viewModel;
         }
 
-        public List<GoodsListViewModel> SearchGoodsOnCategory(string category)
+        public List<GoodsListViewModel> SearchGoodsOnCategory(string category, bool isActive)
         {
             goodsForLoad =service.GoodsDao.GetAll().ToList();
             viewModel.Clear();
@@ -66,18 +66,21 @@ namespace ContosoUI.GoodsAll.GoodsF
 
                 foreach (Goods g in goodsForLoad)
                 {
-                    viewModel.Add(new GoodsListViewModel
+                    if (g.IsActive == isActive)
                     {
-                        Id = g.Id,
-                        Name = g.Name,
-                        SKU = g.SKU,
-                        Price = g.Price,
-                        Count = g.Count,
-                        Category = g.Category.CategoryName,
-                        Coment = g.Coments.ToString(),
-                        isActive = g.IsActive,
-                        //User = g.User.Login
-                    });
+                        viewModel.Add(new GoodsListViewModel
+                        {
+                            Id = g.Id,
+                            Name = g.Name,
+                            SKU = g.SKU,
+                            Price = g.Price,
+                            Count = g.Count,
+                            Category = g.Category.CategoryName,
+                            Coment = g.Coments.ToString(),
+                            isActive = g.IsActive,
+                            //User = g.User.Login
+                        });
+                    }
                 }
             }
 
@@ -86,7 +89,7 @@ namespace ContosoUI.GoodsAll.GoodsF
                 foreach (Goods g in goodsForLoad)
                 {
 
-                    if (g.Category.CategoryName == category)
+                    if (g.Category.CategoryName == category&&g.IsActive==isActive)
                     {
                         viewModel.Add(new GoodsListViewModel
                         {

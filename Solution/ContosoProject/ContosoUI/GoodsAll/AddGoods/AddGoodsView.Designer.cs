@@ -37,7 +37,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.addGoodsCheckBoxIsActive = new System.Windows.Forms.CheckBox();
             this.AddGoodsTextBoxUser = new DevExpress.XtraEditors.TextEdit();
             this.addGoodsTextBoxCount = new DevExpress.XtraEditors.TextEdit();
             this.addGoodsTextBoxPrice = new DevExpress.XtraEditors.TextEdit();
@@ -59,6 +58,7 @@
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.addGoodsCheckBoxIsActive = new DevExpress.XtraEditors.CheckEdit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).BeginInit();
@@ -80,6 +80,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.addGoodsCheckBoxIsActive.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -115,10 +116,10 @@
             // 
             // groupControl2
             // 
+            this.groupControl2.Controls.Add(this.addGoodsCheckBoxIsActive);
             this.groupControl2.Controls.Add(this.label7);
             this.groupControl2.Controls.Add(this.label6);
             this.groupControl2.Controls.Add(this.label5);
-            this.groupControl2.Controls.Add(this.addGoodsCheckBoxIsActive);
             this.groupControl2.Controls.Add(this.AddGoodsTextBoxUser);
             this.groupControl2.Controls.Add(this.addGoodsTextBoxCount);
             this.groupControl2.Controls.Add(this.addGoodsTextBoxPrice);
@@ -155,16 +156,6 @@
             this.label5.Size = new System.Drawing.Size(33, 13);
             this.label5.TabIndex = 4;
             this.label5.Text = "Цена";
-            // 
-            // addGoodsCheckBoxIsActive
-            // 
-            this.addGoodsCheckBoxIsActive.AutoSize = true;
-            this.addGoodsCheckBoxIsActive.Location = new System.Drawing.Point(6, 151);
-            this.addGoodsCheckBoxIsActive.Name = "addGoodsCheckBoxIsActive";
-            this.addGoodsCheckBoxIsActive.Size = new System.Drawing.Size(77, 17);
-            this.addGoodsCheckBoxIsActive.TabIndex = 3;
-            this.addGoodsCheckBoxIsActive.Text = "Активный";
-            this.addGoodsCheckBoxIsActive.UseVisualStyleBackColor = true;
             // 
             // AddGoodsTextBoxUser
             // 
@@ -370,6 +361,17 @@
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextVisible = false;
             // 
+            // addGoodsCheckBoxIsActive
+            // 
+            this.addGoodsCheckBoxIsActive.EditValue = true;
+            this.addGoodsCheckBoxIsActive.Location = new System.Drawing.Point(6, 148);
+            this.addGoodsCheckBoxIsActive.MenuManager = this.ribbonControl1;
+            this.addGoodsCheckBoxIsActive.Name = "addGoodsCheckBoxIsActive";
+            this.addGoodsCheckBoxIsActive.Properties.Caption = "Активный";
+            this.addGoodsCheckBoxIsActive.Size = new System.Drawing.Size(75, 19);
+            this.addGoodsCheckBoxIsActive.TabIndex = 7;
+            this.addGoodsCheckBoxIsActive.CheckedChanged += new System.EventHandler(this.addGoodsCheckBoxIsActive_CheckedChanged);
+            // 
             // AddGoods
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -403,6 +405,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.addGoodsCheckBoxIsActive.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -422,7 +425,6 @@
         private System.Windows.Forms.Label label1;
         private DevExpress.XtraEditors.TextEdit addGoodsTextBoxSKU;
         private DevExpress.XtraEditors.TextEdit addGoodsTextBoxName;
-        private System.Windows.Forms.CheckBox addGoodsCheckBoxIsActive;
         private DevExpress.XtraEditors.GroupControl groupControl4;
         private System.Windows.Forms.TextBox textBox1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
@@ -439,5 +441,6 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup saveOrEditribbonPageGroup;
         private DevExpress.XtraEditors.LookUpEdit addGoodsLookUpEditCategory;
         private System.Windows.Forms.BindingSource productCategoryBindingSource;
+        private DevExpress.XtraEditors.CheckEdit addGoodsCheckBoxIsActive;
     }
 }
