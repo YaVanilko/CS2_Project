@@ -16,12 +16,13 @@ namespace ContosoUI.GoodsAll.AddGoods
     {
         private readonly AddGoodsPresenter presenter;
         int idGoods;
+        BindingSource bs;
 
         public AddGoods(int id = -1)
         {
             InitializeComponent();
             presenter = new AddGoodsPresenter(this, id);
-            BindingSource bs = new BindingSource();
+            bs = new BindingSource();
             bs.DataSource = presenter;
             this.Text = "Редактировать товар";
 
@@ -34,8 +35,8 @@ namespace ContosoUI.GoodsAll.AddGoods
             addGoodsLookUpEditCategory.DataBindings.Add("EditValue", bs, "Category");
 
             addGoodsTextBoxComent.DataBindings.Add("EditValue", bs, "CurentComment");
-       
-            addGoodsCheckBoxIsActive.Checked = presenter.IsActive;
+
+            addGoodsCheckBoxIsActive.DataBindings.Add("EditValue", bs, "IsActive");
             
         }
 
@@ -77,6 +78,11 @@ namespace ContosoUI.GoodsAll.AddGoods
             //goods.Category=categorySt;
             presenter.Save();
 
+        }
+
+        private void addGoodsCheckBoxIsActive_CheckedChanged(object sender, EventArgs e)
+        {
+            bs.EndEdit();
         }
 
     }
