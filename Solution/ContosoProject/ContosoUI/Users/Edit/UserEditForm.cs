@@ -17,6 +17,7 @@ namespace ContosoUI.Users.Edit
         UserEditPresenter presenter;
         public event EventHandler SaveBtnClick;
         public event EventHandler PasswordChange;
+        IUserNotify notifyManager = Program.MainWiewInstance;
 
         public string OldPassword { get { return OldPasswordTextEdit.Text; } }
         public string NewPassword { get { return newPasswordTextEdit.Text; } }
@@ -161,7 +162,7 @@ namespace ContosoUI.Users.Edit
             }
             else
             {
-                MessageBox.Show("Заполнены не все поля или пароли не совпадают.", "Ошибка!");
+                notifyManager.ShowError("Заполнены не все поля или пароли не совпадают.", "Ошибка!");
             }
         }
 
@@ -169,8 +170,7 @@ namespace ContosoUI.Users.Edit
         {
             if (isPersonalInfoModified || isPasswordModified)
             {
-                DialogResult dialog = MessageBox.Show("Внимание, данные не сохранены!\n Вы уверены что хотите закрыть?", "Сообщение", MessageBoxButtons.YesNo);
-                if (dialog == System.Windows.Forms.DialogResult.Yes)
+                if (notifyManager.ShowYesNo("Внимание, данные не сохранены!\n Вы уверены что хотите закрыть?", "Сообщение"))
                 {
                     e.Cancel = false;
                 }
@@ -187,23 +187,23 @@ namespace ContosoUI.Users.Edit
             
         internal void UserUpdateDialog()
         {
-            MessageBox.Show("Данные обновлены.", "Сообщеие");
+            notifyManager.ShowInfo("Данные обновлены.", "Сообщеие");
         }
 
         internal void UserAddDialog()
         {
-            MessageBox.Show("Новый пользователь добавлен.", "Сообщение");
+            notifyManager.ShowInfo("Новый пользователь добавлен.", "Сообщение");
         }
 
         internal void WrongLoginDialog()
         {
-            MessageBox.Show("Пользовател с таким логином уже существует.", "Ошибка!");
+            notifyManager.ShowError("Пользовател с таким логином уже существует.", "Ошибка!");
             isPersonalInfoModified = true;
         }
 
         internal void WrongPasswordDialog()
         {
-            MessageBox.Show("Введен неверный пароль.", "Ошибка!");
+            notifyManager.ShowError("Введен неверный пароль.", "Ошибка!");
             OldPasswordTextEdit.Text = String.Empty;
         }
     }
