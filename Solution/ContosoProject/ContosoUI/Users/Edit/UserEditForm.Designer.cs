@@ -153,6 +153,7 @@
             // saveOrEditribbonPageGroup
             // 
             this.saveOrEditribbonPageGroup.ItemLinks.Add(this.saveEditButtonItem);
+            this.saveOrEditribbonPageGroup.MergeOrder = 5;
             this.saveOrEditribbonPageGroup.Name = "saveOrEditribbonPageGroup";
             this.saveOrEditribbonPageGroup.Text = "Сохранение";
             // 
