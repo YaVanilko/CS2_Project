@@ -28,9 +28,10 @@ namespace ContosoUI.Order.AddEdit
             get { return modelProxy.OrderStatusModel.GetAll().Distinct().ToList(); }
         }
 
+        List<Goods> goods = new List<Goods>();
         public List<Goods> Goods
         {
-            get { return modelProxy.GoodsModel.GetAll().Where(x => x.IsActive == true).ToList(); }
+            get { return goods; }
         }
 
         public List<Comment> Comments
@@ -51,6 +52,8 @@ namespace ContosoUI.Order.AddEdit
             this.view = view;
             this.orderId = orderId;
             vm = new List<GoodsRow>();
+
+            goods.AddRange(modelProxy.GoodsModel.GetAll().Where(x => x.IsActive == true));
 
             if (orderId >= 0)
             {
