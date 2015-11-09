@@ -17,7 +17,7 @@ namespace Domain.Entities
 
         public override string ToString()
         {
-            return String.Format(Status);
+            return Status;
         }
     }
 }

@@ -104,12 +104,12 @@
             this.mainLayoutControl.Controls.Add(this.goodsComboBox);
             this.mainLayoutControl.Controls.Add(this.customerComboBox);
             this.mainLayoutControl.Controls.Add(this.statusComboBox);
-            this.mainLayoutControl.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.mainLayoutControl.Location = new System.Drawing.Point(0, 140);
+            this.mainLayoutControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mainLayoutControl.Location = new System.Drawing.Point(0, 0);
             this.mainLayoutControl.Name = "mainLayoutControl";
-            this.mainLayoutControl.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(878, 363, 250, 350);
+            this.mainLayoutControl.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(582, 363, 250, 350);
             this.mainLayoutControl.Root = this.layoutControlGroup;
-            this.mainLayoutControl.Size = new System.Drawing.Size(784, 421);
+            this.mainLayoutControl.Size = new System.Drawing.Size(784, 561);
             this.mainLayoutControl.TabIndex = 0;
             this.mainLayoutControl.Text = "layoutControl1";
             // 
@@ -120,7 +120,7 @@
             this.goodsRowGridControl.MainView = this.ordersGridView;
             this.goodsRowGridControl.MenuManager = this.mainRibbonControl;
             this.goodsRowGridControl.Name = "goodsRowGridControl";
-            this.goodsRowGridControl.Size = new System.Drawing.Size(482, 265);
+            this.goodsRowGridControl.Size = new System.Drawing.Size(482, 405);
             this.goodsRowGridControl.TabIndex = 20;
             this.goodsRowGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.ordersGridView});
@@ -131,6 +131,7 @@
             // 
             // ordersGridView
             // 
+            this.ordersGridView.ActiveFilterEnabled = false;
             this.ordersGridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colGoods,
             this.colCount,
@@ -141,6 +142,7 @@
             this.colEditTime});
             this.ordersGridView.GridControl = this.goodsRowGridControl;
             this.ordersGridView.Name = "ordersGridView";
+            this.ordersGridView.OptionsBehavior.Editable = false;
             this.ordersGridView.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.ordersGridView_CellValueChanged);
             // 
             // colGoods
@@ -193,6 +195,7 @@
             // 
             // mainRibbonControl
             // 
+            this.mainRibbonControl.Dock = System.Windows.Forms.DockStyle.None;
             this.mainRibbonControl.ExpandCollapseItem.Id = 0;
             this.mainRibbonControl.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.mainRibbonControl.ExpandCollapseItem,
@@ -234,13 +237,14 @@
             // 
             this.saveRibbonPageGroup.ItemLinks.Add(this.saveOrderButton);
             this.saveRibbonPageGroup.ItemLinks.Add(this.saveAndNewOrderButton);
-            this.saveRibbonPageGroup.MergeOrder = 30;
+            this.saveRibbonPageGroup.MergeOrder = 5;
             this.saveRibbonPageGroup.Name = "saveRibbonPageGroup";
             this.saveRibbonPageGroup.Text = "Сохранить";
             // 
             // priceEdit
             // 
-            this.priceEdit.Location = new System.Drawing.Point(82, 389);
+            this.priceEdit.Enabled = false;
+            this.priceEdit.Location = new System.Drawing.Point(82, 529);
             this.priceEdit.MenuManager = this.mainRibbonControl;
             this.priceEdit.Name = "priceEdit";
             this.priceEdit.Properties.ReadOnly = true;
@@ -281,7 +285,7 @@
             // 
             this.commentsListBox.Location = new System.Drawing.Point(12, 120);
             this.commentsListBox.Name = "commentsListBox";
-            this.commentsListBox.Size = new System.Drawing.Size(274, 265);
+            this.commentsListBox.Size = new System.Drawing.Size(274, 405);
             this.commentsListBox.StyleController = this.mainLayoutControl;
             this.commentsListBox.TabIndex = 8;
             // 
@@ -296,6 +300,7 @@
             // 
             // goodsComboBox
             // 
+            this.goodsComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.goodsComboBox.FormattingEnabled = true;
             this.goodsComboBox.Location = new System.Drawing.Point(290, 69);
             this.goodsComboBox.Name = "goodsComboBox";
@@ -304,6 +309,7 @@
             // 
             // customerComboBox
             // 
+            this.customerComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.customerComboBox.FormattingEnabled = true;
             this.customerComboBox.Location = new System.Drawing.Point(290, 28);
             this.customerComboBox.Name = "customerComboBox";
@@ -312,6 +318,7 @@
             // 
             // statusComboBox
             // 
+            this.statusComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.statusComboBox.FormattingEnabled = true;
             this.statusComboBox.Location = new System.Drawing.Point(12, 28);
             this.statusComboBox.Name = "statusComboBox";
@@ -335,7 +342,7 @@
             this.gridLayoutControlItem});
             this.layoutControlGroup.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup.Name = "Root";
-            this.layoutControlGroup.Size = new System.Drawing.Size(784, 421);
+            this.layoutControlGroup.Size = new System.Drawing.Size(784, 561);
             this.layoutControlGroup.TextVisible = false;
             // 
             // goodLayoutControlItem
@@ -374,7 +381,7 @@
             this.layoutControlItem1.Control = this.commentsListBox;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 108);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(278, 269);
+            this.layoutControlItem1.Size = new System.Drawing.Size(278, 409);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
@@ -421,7 +428,7 @@
             // priceLayoutControlItem
             // 
             this.priceLayoutControlItem.Control = this.priceEdit;
-            this.priceLayoutControlItem.Location = new System.Drawing.Point(0, 377);
+            this.priceLayoutControlItem.Location = new System.Drawing.Point(0, 517);
             this.priceLayoutControlItem.Name = "priceLayoutControlItem";
             this.priceLayoutControlItem.Size = new System.Drawing.Size(764, 24);
             this.priceLayoutControlItem.Text = "Цена заказа";
@@ -432,7 +439,7 @@
             this.gridLayoutControlItem.Control = this.goodsRowGridControl;
             this.gridLayoutControlItem.Location = new System.Drawing.Point(278, 108);
             this.gridLayoutControlItem.Name = "gridLayoutControlItem";
-            this.gridLayoutControlItem.Size = new System.Drawing.Size(486, 269);
+            this.gridLayoutControlItem.Size = new System.Drawing.Size(486, 409);
             this.gridLayoutControlItem.TextLocation = DevExpress.Utils.Locations.Top;
             this.gridLayoutControlItem.TextSize = new System.Drawing.Size(0, 0);
             this.gridLayoutControlItem.TextVisible = false;
@@ -457,10 +464,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
-            this.Controls.Add(this.mainRibbonControl);
             this.Controls.Add(this.mainLayoutControl);
+            this.Controls.Add(this.mainRibbonControl);
             this.Name = "AddEditOrderView";
             this.Text = "Добавить/Редактировать заказ";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AddEditOrderView_FormClosed);
             this.Load += new System.EventHandler(this.AddEditOrderView_Load);
             ((System.ComponentModel.ISupportInitialize)(this.mainLayoutControl)).EndInit();
             this.mainLayoutControl.ResumeLayout(false);
@@ -519,6 +527,8 @@
         private DevExpress.XtraGrid.GridControl goodsRowGridControl;
         private DevExpress.XtraGrid.Views.Grid.GridView ordersGridView;
         private DevExpress.XtraLayout.LayoutControlItem gridLayoutControlItem;
+        private DevExpress.XtraEditors.TextEdit priceEdit;
+        private DevExpress.XtraLayout.LayoutControlItem priceLayoutControlItem;
         private System.Windows.Forms.BindingSource goodsRowBindingSource;
         private DevExpress.XtraGrid.Columns.GridColumn colGoods;
         private DevExpress.XtraGrid.Columns.GridColumn colCount;
@@ -527,7 +537,5 @@
         private DevExpress.XtraGrid.Columns.GridColumn colId;
         private DevExpress.XtraGrid.Columns.GridColumn colIsActive1;
         private DevExpress.XtraGrid.Columns.GridColumn colEditTime;
-        private DevExpress.XtraEditors.TextEdit priceEdit;
-        private DevExpress.XtraLayout.LayoutControlItem priceLayoutControlItem;
     }
 }

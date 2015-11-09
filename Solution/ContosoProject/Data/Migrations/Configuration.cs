@@ -45,12 +45,20 @@
                 new Permission{Name = "Редактирование категории товаров", Type = Domain.PermissionType.EditProductCategory}
             };
 
-            var role = new Role { Name = "Administrator", Permissions = permissions };
-            context.Roles.AddOrUpdate(x => x.Name, new Role[] { role });
-            var info = new PersonalInfo { FirstName = "admin", LastName = "admin", MiddleName = "admin" };
+            var role = new Role { Name = "Администратор", Permissions = permissions };
+            if (context.Roles.Count() == 0)
+            {
+                context.Roles.AddOrUpdate(x => x.Name, new Role[] { role }); 
+            }
+
+            var info = new PersonalInfo { FirstName = "Админ", LastName = "Админов", MiddleName = "Администраторович" };
             context.PersonalInfoes.AddOrUpdate(info);
             var admin = new User { Login = "admin", Password = "21232f297a57a5a743894a0e4a801fc3", Role = role, PersonalInfo = info };
-            context.Users.AddOrUpdate(x => x.Login, new User[] { admin });
+
+            if (context.Users.Count() == 0)
+            {
+                context.Users.AddOrUpdate(x => x.Login, new User[] { admin });
+            }
 
             var statuses = new List<OrderStatus>()
             {
@@ -65,89 +73,7 @@
             {
                 context.OrderStatus.AddRange(statuses);
             }
-
-            // Dummy data
-            var cars = new List<ProductCategory>
-            {
-                new ProductCategory{CategoryName="cat1"},
-                new ProductCategory{CategoryName="cat2"},
-                new ProductCategory{CategoryName="cat3"},
-                new ProductCategory{CategoryName="cat4"}
-            };
-            var prods = new List<Goods>
-            {
-                new Goods{Name="Goods1",Price=10,SKU="SKU1",Count=3,Category=cars[0]},
-                new Goods{Name="Goods2",Price=10,SKU="SKU2",Count=5,Category=cars[1]},
-                new Goods{Name="Goods3",Price=10,SKU="SKU3",Count=2,Category=cars[0]},
-                new Goods{Name="Goods4",Price=10,SKU="SKU4",Count=6,Category=cars[2]},
-                new Goods{Name="Goods5",Price=10,SKU="SKU5",Count=8,Category=cars[0]}
-            };
-
-            var cust = new List<Customer>
-            {
-                new Customer
-                {
-                    Contacts = new ContactInfo{Adress="addres",City="city",},
-                    PersonalInfo = new PersonalInfo{FirstName="Ivan",LastName="Ivanov"},
-                },
-                new Customer
-                {
-                    Contacts = new ContactInfo{Adress="addres",City="city",},
-                    PersonalInfo = new PersonalInfo{FirstName="Petr",LastName="Petrov"},
-                },
-                new Customer
-                {
-                    Contacts = new ContactInfo{Adress="addres",City="city",},
-                    PersonalInfo = new PersonalInfo{FirstName="Sidor",LastName="Sidorov"},
-                }
-            };
-
-            var orders = new List<Order>
-            {
-                new Order
-                {
-                    Status = statuses[0], 
-                    Customer = cust[0], 
-                    GoodsList = 
-                    {
-                        new GoodsRow{Goods = prods[0],Price=10,Count=1},
-                        new GoodsRow{Goods = prods[1],Price=20,Count=2},
-                        new GoodsRow{Goods = prods[2],Price=30,Count=3}
-                    },
-                },
-                new Order
-                {
-                    Status = statuses[1], 
-                    Customer = cust[1], 
-                    GoodsList = 
-                    {
-                        new GoodsRow{Goods = prods[2],Price=10,Count=1},
-                        new GoodsRow{Goods = prods[3],Price=20,Count=2},
-                        new GoodsRow{Goods = prods[4],Price=30,Count=3}
-                    },
-                },
-            };
-
-            if (context.Categories.Count() == 0)
-            {
-                context.Categories.AddRange(cars);
-            }
-
-            if (context.Products.Count() == 0)
-            {
-                context.Products.AddRange(prods);
-            }
-            if (context.Customers.Count()==0)
-            {
-                context.Customers.AddRange(cust);
-            }
-            if (context.Orders.Count()==0)
-            {
-                context.Orders.AddRange(orders);
-            }
-
             context.SaveChanges();
-
         }
     }
 }

@@ -36,7 +36,7 @@ namespace ContosoUI.Customers.Search
             filterCityComboBoxEdit.Properties.Items.Clear();
             filterCityComboBoxEdit.Properties.Items.Add("Все города");
             filterCityComboBoxEdit.Properties.Items.AddRange(presenter.Cities.ToArray());
-            filterCityComboBoxEdit.SelectedIndex = 0;
+            filterCityComboBoxEdit.SelectedIndex = 1;
             customersGridControl.DataSource = presenter.viewModel;
             customersGridControl.RefreshDataSource();
         }
@@ -62,7 +62,7 @@ namespace ContosoUI.Customers.Search
         private void searchButtonItem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             presenter.SearchCustomers(filterCityComboBoxEdit.Text);
-            Refresh();
+            RefreshUI();
         }
 
         private void saveButtonItem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

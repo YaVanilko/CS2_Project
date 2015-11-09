@@ -18,6 +18,7 @@ namespace Data.EFData
         public ICommentRepository CommentModel { get; set; }
 
         readonly ProjectContext context = new ProjectContext();
+
         public AddOrderProxy()
         {
             OrderModel = new OrderDao(context);
