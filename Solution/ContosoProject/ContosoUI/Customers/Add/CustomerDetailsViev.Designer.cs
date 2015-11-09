@@ -229,6 +229,8 @@
             this.orderStatusGridColumn});
             this.customerOrderGridView.GridControl = this.ordersGridControl;
             this.customerOrderGridView.Name = "customerOrderGridView";
+            this.customerOrderGridView.OptionsBehavior.Editable = false;
+            this.customerOrderGridView.DoubleClick += new System.EventHandler(this.customerOrderGridView_DoubleClick);
             // 
             // orderNumberGridColumn
             // 
