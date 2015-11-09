@@ -203,11 +203,6 @@ namespace ContosoUI.Order.AddEdit
             order = new Domain.Entities.Order();
             vm.Clear();
             NotifyPropertyChanged("SaveAndNew");
-
-            //view.Close();
-            //var form = new AddEditOrderView();
-            //form.MdiParent = ContosoUI.MainView.ActiveForm;
-            //form.Show();
         }
     }
 }
