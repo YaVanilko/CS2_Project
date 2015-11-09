@@ -15,8 +15,8 @@ namespace ContosoUI.Authentication
     public partial class AuthenticationForm : DevExpress.XtraEditors.XtraForm
     {
         public event EventHandler OkButtonClick = null;
-        public AuthenticationPresenter presenter = null;
-        
+        AuthenticationPresenter presenter = null;
+        public AuthenticationPresenter Presenter { get { return this.presenter; } }
         public string Login { get { return LoginTextEdit.Text; } }
         public string Password { get { return PasswordEdit.Text; } }
         
@@ -63,6 +63,16 @@ namespace ContosoUI.Authentication
         {
             PasswordReset();
             LoginTextEdit.Text = String.Empty;
+        }
+
+        internal void UserIsNotActiveDialog()
+        {
+            MessageBox.Show("Извините, данный аккаунт не активен.", "Ошибка!");
+        }
+
+        internal void AccessDenyDialog()
+        {
+            MessageBox.Show("Неверный логин и/или пароль", "Ошибка!");
         }
     }
 }

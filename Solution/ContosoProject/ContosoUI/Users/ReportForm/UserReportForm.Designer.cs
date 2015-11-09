@@ -209,6 +209,7 @@
             this.ribbonPageGroup1.ItemLinks.Add(this.barButtonGroup1);
             this.ribbonPageGroup1.ItemLinks.Add(this.userReportSaveBtn);
             this.ribbonPageGroup1.ItemLinks.Add(this.userReportPrintBtn);
+            this.ribbonPageGroup1.MergeOrder = 5;
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.Text = "Сохранение";
             // 

@@ -15,7 +15,8 @@ namespace ContosoUI.Authentication
     {
         IUserRepository model = null;
         AuthenticationForm view = null;
-        public User user = null;
+        User user = null;
+        public User User { get { return this.user; } }
 
         public AuthenticationPresenter(AuthenticationForm view)
         {
@@ -36,14 +37,14 @@ namespace ContosoUI.Authentication
                 }
                 else
                 {
-                    MessageBox.Show("Извините, данный аккаунт не активен.", "Ошибка!");
+                    view.UserIsNotActiveDialog();
                     view.FieldsReset();
                 }
                 
             }
             else
             {
-                MessageBox.Show("Неверный логин и/или пароль", "Ошибка!");
+                view.AccessDenyDialog(); 
                 view.PasswordReset();
             }
         }

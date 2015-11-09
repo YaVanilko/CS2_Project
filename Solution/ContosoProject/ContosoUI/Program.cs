@@ -15,6 +15,7 @@ namespace ContosoUI
     static class Program
     {
         public static User AuthUser { get; private set; }
+        public static MainView MainWiewInstance { get; private set; }
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -26,7 +27,7 @@ namespace ContosoUI
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             GetAuthUser();
-            Application.Run(new MainView());
+            Application.Run(MainWiewInstance = new MainView());
         }
 
         private static void GetAuthUser()
@@ -35,7 +36,7 @@ namespace ContosoUI
             auth.ShowDialog();
             if (auth.DialogResult==DialogResult.OK)
             {
-                AuthUser = auth.presenter.user;
+                AuthUser = auth.Presenter.User;
             }
             else
             {

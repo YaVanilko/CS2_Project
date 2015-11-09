@@ -17,6 +17,7 @@ namespace ContosoUI.Users.Edit
         UserEditPresenter presenter;
         public event EventHandler SaveBtnClick;
         public event EventHandler PasswordChange;
+        IUserNotify notifyManager = Program.MainWiewInstance;
 
         public string OldPassword { get { return OldPasswordTextEdit.Text; } }
         public string NewPassword { get { return newPasswordTextEdit.Text; } }
@@ -147,7 +148,8 @@ namespace ContosoUI.Users.Edit
         private void saveEditButtonItem_ItemClick(object sender, ItemClickEventArgs e)
         {
             if (newPasswordTextEdit.Text==confimPasswordTextEdit.Text&&
-                (firstNameTextEdit.Text!=String.Empty||asPasswordChange))
+                (firstNameTextEdit.Text!=String.Empty||asPasswordChange)&&
+                loginTextEdit.Text!= String.Empty)
             {
                 isPersonalInfoModified = false;
                 isPasswordModified = false;
@@ -160,26 +162,21 @@ namespace ContosoUI.Users.Edit
             }
             else
             {
-                MessageBox.Show("Заполнены не все поля или пароли не совпадают.", "Ошибка!");
+                notifyManager.ShowError("Заполнены не все поля или пароли не совпадают.", "Ошибка!");
             }
         }
 
         private void UserEditForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (isPersonalInfoModified||isPasswordModified)
+            if (isPersonalInfoModified || isPasswordModified)
             {
-                DialogResult dialog = MessageBox.Show("Сохраить внесенные изменения?", "Сообщение",MessageBoxButtons.YesNoCancel);
-                if (dialog == System.Windows.Forms.DialogResult.Yes)
+                if (notifyManager.ShowYesNo("Внимание, данные не сохранены!\n Вы уверены что хотите закрыть?", "Сообщение"))
                 {
-                    saveEditButtonItem_ItemClick(null, null);
-                }
-                else if (dialog == System.Windows.Forms.DialogResult.Cancel)
-                {
-                    e.Cancel = true;
+                    e.Cancel = false;
                 }
                 else
                 {
-                    e.Cancel = false;
+                    e.Cancel = true;
                 }
             }
             else
@@ -190,23 +187,23 @@ namespace ContosoUI.Users.Edit
             
         internal void UserUpdateDialog()
         {
-            MessageBox.Show("Данные обновлены.", "Сообщеие");
+            notifyManager.ShowInfo("Данные обновлены.", "Сообщеие");
         }
 
         internal void UserAddDialog()
         {
-            MessageBox.Show("Новый пользователь добавлен.", "Сообщение");
+            notifyManager.ShowInfo("Новый пользователь добавлен.", "Сообщение");
         }
 
         internal void WrongLoginDialog()
         {
-            MessageBox.Show("Пользовател с таким логином уже существует.", "Ошибка!");
+            notifyManager.ShowError("Пользовател с таким логином уже существует.", "Ошибка!");
             isPersonalInfoModified = true;
         }
 
         internal void WrongPasswordDialog()
         {
-            MessageBox.Show("Введен неверный пароль.", "Ошибка!");
+            notifyManager.ShowError("Введен неверный пароль.", "Ошибка!");
             OldPasswordTextEdit.Text = String.Empty;
         }
     }
