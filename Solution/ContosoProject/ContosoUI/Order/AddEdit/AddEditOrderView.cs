@@ -18,7 +18,7 @@ namespace ContosoUI.Order
     public partial class AddEditOrderView : XtraForm
     {
         AddEditOrderPresenter presenter;
-
+        IUserNotify notifyManager = Program.MainWiewInstance;
         BindingSource bindings;
 
         public AddEditOrderView(int id = -1)
@@ -54,7 +54,7 @@ namespace ContosoUI.Order
             goodsRowGridControl.DataBindings.Add("DataSource", bindings, "vm");
             goodsComboBox.DataBindings.Add("SelectedItem", bindings, "SelectedGood");
 
-            countOfGoodTextEdit.DataBindings.Add("Text", bindings, "CountOfGood");
+            countOfGoodTextEdit.DataBindings.Add("EditValue", bindings, "CountOfGood");
 
         }
 
@@ -62,38 +62,33 @@ namespace ContosoUI.Order
         {
             bindings.EndEdit();
             presenter.AddComment();
-            //commentTextEdit.Text = "";
-
         }
 
         private void addGoodButton_Click(object sender, EventArgs e)
         {
             bindings.EndEdit();
-            goodsRowBindingSource.EndEdit();
 
             if (ValidateCount())
             { 
                 presenter.AddGoodRow();
-                countOfGoodTextEdit.Text = "0";
                 goodsRowGridControl.RefreshDataSource();
                 priceEdit.Text = Convert.ToString(presenter.TotalCost);
             }
             else
             {
-                MessageBox.Show("Некорректное кол-во товаров", buttons: MessageBoxButtons.OK, caption: "Уведомление");
+                notifyManager.ShowInfo("Некорректное кол-во товаров", "Сообщение");
             }
         }
 
         private void saveOrderButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            goodsRowBindingSource.EndEdit();
             bindings.EndEdit();
             presenter.Save();
         }
 
         private void saveAndNewOrderButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            goodsRowBindingSource.EndEdit();
+            bindings.EndEdit();
             presenter.SaveAndNew();
             goodsRowGridControl.RefreshDataSource();
         }
@@ -102,7 +97,8 @@ namespace ContosoUI.Order
         {
             GridView view = ordersGridView;
             object goodsRow = view.GetRow(view.FocusedRowHandle);
-            DialogResult result;
+            bool result;
+
             if (goodsRow is GoodsRow)
             {
                 GoodsRow row = goodsRow as GoodsRow;
@@ -115,8 +111,9 @@ namespace ContosoUI.Order
                 {
                     if (!row.IsActive)
                     {
-                        result = MessageBox.Show("Вы уверенны, что хотите удалить поле из заказа?", buttons: MessageBoxButtons.OKCancel, caption: "Деактивация поля");
-                        if (result == DialogResult.OK)
+                        result = notifyManager.ShowYesNo("Вы уверенны, что хотите удалить поле из заказа?", "Сообщение");
+
+                        if (result)
                         {
                             presenter.SetIsActive(e.RowHandle);
                             priceEdit.Text = Convert.ToString(presenter.TotalCost);
@@ -124,8 +121,8 @@ namespace ContosoUI.Order
                     }
                     else
                     { 
-                        result = MessageBox.Show("Вы уверенны, что хотите вернуть поле в заказ?", buttons: MessageBoxButtons.OKCancel, caption: "Деактивация поля");
-                        if (result == DialogResult.OK)
+                        result = notifyManager.ShowYesNo("Вы уверенны, что хотите вернуть поле в заказ?", "Сообщение");
+                        if (result)
                         {
                             presenter.SetIsActive(e.RowHandle);
                             priceEdit.Text = Convert.ToString(presenter.TotalCost);

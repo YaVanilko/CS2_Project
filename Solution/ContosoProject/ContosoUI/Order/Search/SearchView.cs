@@ -13,10 +13,12 @@ using DevExpress.XtraGrid.Views.Grid;
 
 namespace ContosoUI.Order.Search
 {
-    public partial class SearchView : DevExpress.XtraEditors.XtraForm
+    public partial class SearchView : XtraForm
     {
         SearchPresenter presenter;
-        
+        IUserNotify notifyManager = Program.MainWiewInstance;
+        const int defaultIndex = 5;
+
         public SearchView()
         {
             InitializeComponent();
@@ -28,7 +30,7 @@ namespace ContosoUI.Order.Search
             searchViewModelBindingSource.DataSource = presenter;
 
             statusComboBox.DataBindings.Add("DataSource", searchViewModelBindingSource, "StatusesList");
-            statusComboBox.SelectedIndex = 5;
+            statusComboBox.SelectedIndex = defaultIndex;
 
             resultGridControl.DataBindings.Add("DataSource", searchViewModelBindingSource, "viewModel");
             
