@@ -147,7 +147,8 @@ namespace ContosoUI.Users.Edit
         private void saveEditButtonItem_ItemClick(object sender, ItemClickEventArgs e)
         {
             if (newPasswordTextEdit.Text==confimPasswordTextEdit.Text&&
-                (firstNameTextEdit.Text!=String.Empty||asPasswordChange))
+                (firstNameTextEdit.Text!=String.Empty||asPasswordChange)&&
+                loginTextEdit.Text!= String.Empty)
             {
                 isPersonalInfoModified = false;
                 isPasswordModified = false;

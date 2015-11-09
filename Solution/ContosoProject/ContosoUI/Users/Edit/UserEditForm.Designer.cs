@@ -223,7 +223,7 @@
             this.loginTextEdit.StyleController = this.layoutControl1;
             this.loginTextEdit.TabIndex = 1;
             this.loginTextEdit.InvalidValue += new DevExpress.XtraEditors.Controls.InvalidValueExceptionEventHandler(this.loginTextEdit_InvalidValue);
-            this.loginTextEdit.Modified += new System.EventHandler(this.AnyTextEdit_Modified);
+            this.loginTextEdit.Modified += new System.EventHandler(this.AnyPasswordTextEdit_Modified);
             this.loginTextEdit.Validating += new System.ComponentModel.CancelEventHandler(this.loginTextEdit_Validating);
             // 
             // newPasswordTextEdit
