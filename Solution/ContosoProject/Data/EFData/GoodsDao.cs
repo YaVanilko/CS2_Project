@@ -23,9 +23,12 @@ namespace Data.EFData
             return dbContext.Products.Where(x => x.Category.CategoryName == category).ToList();
         }
 
-        public new ICollection<Goods> GetAll()
+        public new IQueryable<Goods> GetAll()
         {
-            return dbContext.Products.Include(x => x.Coments).ToList();
+            return dbContext.Products
+                .Include(x => x.Coments)
+                .Include(x => x.Category)
+                ;
         }
 
         public ICollection<Goods> GetAllIsActive()
