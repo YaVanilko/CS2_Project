@@ -42,7 +42,7 @@ namespace ContosoUI.Order.Search
                 ordersList = orderModel.GetAll().ToList();
                 FillViewModel();
             }
-            else if (statuses.Contains(status))
+            else if (statuses.Any(x=>x.Status == status.Status))
             {
                 ordersList = orderModel.GetOrderByStatus(status).ToList();
                 FillViewModel();

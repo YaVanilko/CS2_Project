@@ -156,9 +156,11 @@ namespace ContosoUI.Order.AddEdit
             order.GoodsList.Add(item);
         }
 
-        public void AddComment (Comment value)
+        public void AddComment ()
         {
-            order.Comments.Add(value);
+            order.Comments.Add(new Comment() { Message = Message, Type = CommentType.Order});
+            message = string.Empty;
+            NotifyPropertyChanged("CommentsAdd");
         }
 
         private double CalculateOrderCost()
@@ -199,11 +201,13 @@ namespace ContosoUI.Order.AddEdit
             Save();
 
             order = new Domain.Entities.Order();
+            vm.Clear();
+            NotifyPropertyChanged("SaveAndNew");
 
-            view.Close();
-            var form = new AddEditOrderView();
-            form.MdiParent = ContosoUI.MainView.ActiveForm;
-            form.Show();
+            //view.Close();
+            //var form = new AddEditOrderView();
+            //form.MdiParent = ContosoUI.MainView.ActiveForm;
+            //form.Show();
         }
     }
 }

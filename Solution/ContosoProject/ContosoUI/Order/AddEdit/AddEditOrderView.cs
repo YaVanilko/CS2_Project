@@ -49,7 +49,7 @@ namespace ContosoUI.Order
             commentsListBox.DataBindings.Add("DataSource", bindings, "Comments");
 
             commentTextEdit.DataBindings.Clear();
-            commentTextEdit.DataBindings.Add("Text", bindings, "Message");
+            commentTextEdit.DataBindings.Add("EditValue", bindings, "Message");
 
             goodsRowGridControl.DataBindings.Add("DataSource", bindings, "vm");
             goodsComboBox.DataBindings.Add("SelectedItem", bindings, "SelectedGood");
@@ -60,8 +60,10 @@ namespace ContosoUI.Order
 
         private void addCommentButton_Click(object sender, EventArgs e)
         {
-            presenter.AddComment(presenter.Comment);
-            commentTextEdit.Text = "";
+            bindings.EndEdit();
+            presenter.AddComment();
+            //commentTextEdit.Text = "";
+
         }
 
         private void addGoodButton_Click(object sender, EventArgs e)
@@ -93,6 +95,7 @@ namespace ContosoUI.Order
         {
             goodsRowBindingSource.EndEdit();
             presenter.SaveAndNew();
+            goodsRowGridControl.RefreshDataSource();
         }
 
         private void ordersGridView_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
