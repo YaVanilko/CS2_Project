@@ -170,11 +170,6 @@ namespace ContosoUI.Order.AddEdit
             return result;
         }
 
-        public void SetIsActive(int id)
-        {
-            order.GoodsList.ToList()[id].IsActive = !order.GoodsList.ToList()[id].IsActive;
-        }
-
         public void Save()
         {
             if (order.Id > 0)

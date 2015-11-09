@@ -91,39 +91,27 @@ namespace ContosoUI.Order
             GridView view = ordersGridView;
             object goodsRow = view.GetRow(view.FocusedRowHandle);
             bool result;
+            GoodsRow row = goodsRow as GoodsRow;
 
-            if (goodsRow is GoodsRow)
+            if (!row.IsActive)
             {
-                GoodsRow row = goodsRow as GoodsRow;
+                result = notifyManager.ShowYesNo("Вы уверенны, что хотите удалить поле из заказа?", "Сообщение");
 
-                if (e.Column.AbsoluteIndex != 5)
+                if (result)
                 {
-                    return;
+                    priceEdit.Text = Convert.ToString(presenter.TotalCost);
                 }
-                else
-                {
-                    if (!row.IsActive)
+                 else
+                 { 
+                    result = notifyManager.ShowYesNo("Вы уверенны, что хотите вернуть поле в заказ?", "Сообщение");
+               
+                    if (result)
                     {
-                        result = notifyManager.ShowYesNo("Вы уверенны, что хотите удалить поле из заказа?", "Сообщение");
-
-                        if (result)
-                        {
-                            presenter.SetIsActive(e.RowHandle);
-                            priceEdit.Text = Convert.ToString(presenter.TotalCost);
-                        }
+                        priceEdit.Text = Convert.ToString(presenter.TotalCost);
                     }
-                    else
-                    { 
-                        result = notifyManager.ShowYesNo("Вы уверенны, что хотите вернуть поле в заказ?", "Сообщение");
-                        if (result)
-                        {
-                            presenter.SetIsActive(e.RowHandle);
-                            priceEdit.Text = Convert.ToString(presenter.TotalCost);
-                        }
-                    }
-                }
-            }
-        }
+                 }
+             }
+         }
 
         private bool ValidateCount()
         {

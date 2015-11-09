@@ -142,7 +142,6 @@
             this.colEditTime});
             this.ordersGridView.GridControl = this.goodsRowGridControl;
             this.ordersGridView.Name = "ordersGridView";
-            this.ordersGridView.OptionsBehavior.Editable = false;
             this.ordersGridView.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.ordersGridView_CellValueChanged);
             // 
             // colGoods
