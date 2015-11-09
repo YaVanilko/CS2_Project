@@ -40,6 +40,7 @@
             this.commentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.commentMemoEdit = new DevExpress.XtraEditors.MemoEdit();
             this.ordersGridControl = new DevExpress.XtraGrid.GridControl();
+            this.orderBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.customerOrderGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.orderNumberGridColumn = new DevExpress.XtraGrid.Columns.GridColumn();
             this.orderSumGridColumn = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -75,6 +76,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.commentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.commentMemoEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordersGridControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerOrderGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emailTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.telephoneTextEdit.Properties)).BeginInit();
@@ -206,6 +208,7 @@
             // 
             // ordersGridControl
             // 
+            this.ordersGridControl.DataSource = this.orderBindingSource;
             this.ordersGridControl.Location = new System.Drawing.Point(12, 190);
             this.ordersGridControl.MainView = this.customerOrderGridView;
             this.ordersGridControl.Name = "ordersGridControl";
@@ -213,6 +216,10 @@
             this.ordersGridControl.TabIndex = 11;
             this.ordersGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.customerOrderGridView});
+            // 
+            // orderBindingSource
+            // 
+            this.orderBindingSource.DataSource = typeof(Domain.Entities.Order);
             // 
             // customerOrderGridView
             // 
@@ -222,12 +229,15 @@
             this.orderStatusGridColumn});
             this.customerOrderGridView.GridControl = this.ordersGridControl;
             this.customerOrderGridView.Name = "customerOrderGridView";
+            this.customerOrderGridView.OptionsBehavior.Editable = false;
+            this.customerOrderGridView.DoubleClick += new System.EventHandler(this.customerOrderGridView_DoubleClick);
             // 
             // orderNumberGridColumn
             // 
             this.orderNumberGridColumn.Caption = "Номер заказа";
             this.orderNumberGridColumn.FieldName = "Id";
             this.orderNumberGridColumn.Name = "orderNumberGridColumn";
+            this.orderNumberGridColumn.OptionsColumn.ReadOnly = true;
             this.orderNumberGridColumn.Visible = true;
             this.orderNumberGridColumn.VisibleIndex = 0;
             this.orderNumberGridColumn.Width = 133;
@@ -246,6 +256,7 @@
             this.orderStatusGridColumn.Caption = "Статус заказа";
             this.orderStatusGridColumn.FieldName = "Status.Status";
             this.orderStatusGridColumn.Name = "orderStatusGridColumn";
+            this.orderStatusGridColumn.OptionsColumn.ReadOnly = true;
             this.orderStatusGridColumn.Visible = true;
             this.orderStatusGridColumn.VisibleIndex = 2;
             this.orderStatusGridColumn.Width = 251;
@@ -500,6 +511,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.commentBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.commentMemoEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordersGridControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerOrderGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emailTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.telephoneTextEdit.Properties)).EndInit();
@@ -569,6 +581,7 @@
         private DevExpress.XtraEditors.CheckEdit isActiveCustomerCheckEdit;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem2;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
+        private System.Windows.Forms.BindingSource orderBindingSource;
 
 
 
