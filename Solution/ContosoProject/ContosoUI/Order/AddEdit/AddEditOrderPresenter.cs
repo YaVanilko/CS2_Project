@@ -1,10 +1,11 @@
 ﻿using Data.EFData;
-﻿using ContosoUI.Presenter;
+using ContosoUI.Presenter;
 using Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Windows.Forms;
 
 namespace ContosoUI.Order.AddEdit
 {
@@ -27,7 +28,7 @@ namespace ContosoUI.Order.AddEdit
             get { return modelProxy.OrderStatusModel.GetAll().Distinct().ToList(); }
         }
 
-        public List<Goods> GoodsList
+        public List<Goods> Goods
         {
             get { return modelProxy.GoodsModel.GetAll().Where(x => x.IsActive == true).ToList(); }
         }
@@ -54,6 +55,7 @@ namespace ContosoUI.Order.AddEdit
             if (orderId >= 0)
             {
                 order = modelProxy.OrderModel.GetById(orderId);
+
                 foreach (GoodsRow row in order.GoodsList)
                 {
                     vm.Add(new GoodsRow()
@@ -112,7 +114,7 @@ namespace ContosoUI.Order.AddEdit
             get { return countOfGood; }
             set
             {
-                if (countOfGood != value)
+                if (countOfGood != value && value > 0)
                 {
                     countOfGood = value;
                     NotifyPropertyChanged("CountOfGood");
@@ -159,6 +161,7 @@ namespace ContosoUI.Order.AddEdit
         private double CalculateOrderCost()
         {
             double result = 0;
+
             foreach (GoodsRow row in order.GoodsList)
             {
                 if (row.IsActive)
@@ -169,34 +172,35 @@ namespace ContosoUI.Order.AddEdit
             return result;
         }
 
-        public void SetIsActive(bool flag, int id)
+        public void SetIsActive(int id)
         {
-            if (!flag)
-            {
-                order.GoodsList.ToList()[id].IsActive = false;
-            }
-            else
-            {
-                order.GoodsList.ToList()[id].IsActive = true;
-            }
+            order.GoodsList.ToList()[id].IsActive = !order.GoodsList.ToList()[id].IsActive;
         }
 
         public void Save()
         {
-            if (order.Id >= 0)
+            if (order.Id > 0)
             {
                 modelProxy.OrderModel.Update(order);
+                MessageBox.Show("Заказ обновлен", buttons: MessageBoxButtons.OK, caption: "Уведомление");
             }
             else
             {
                 modelProxy.OrderModel.Add(order);
+                MessageBox.Show("Заказ добавлен", buttons: MessageBoxButtons.OK, caption: "Уведомление");
             }
         }
 
         public void SaveAndNew()
         {
             Save();
+
             order = new Domain.Entities.Order();
+
+            view.Close();
+            var form = new AddEditOrderView();
+            form.MdiParent = ContosoUI.MainView.ActiveForm;
+            form.Show();
         }
     }
 }

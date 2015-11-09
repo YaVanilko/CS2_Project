@@ -16,22 +16,21 @@ namespace Data.EFData
         {
 
         }
+
         public new IQueryable<Order> GetAll()
         {
-            IQueryable<Order> collection =
-                dbContext.Orders.Where(x => x.IsActive)
-                .Include(x=>x.Customer)
-                .Include(x => x.GoodsList)
+            return dbContext.Orders.Where(x => x.IsActive)
+                .Include(x => x.Customer.PersonalInfo)
+                .Include(x => x.GoodsList.Select(y => y.Goods).Select(z => z.Category))
                 .Include(x => x.Status)
                 .Include(x => x.Comments);
-            return collection;
         }
 
         public new Order GetById(int id)
         {
             return dbContext.Orders.Where(x => x.Id == id)
-                .Include(x => x.Customer)
-                .Include(x => x.GoodsList)
+                .Include(x => x.Customer.PersonalInfo)
+                .Include(x => x.GoodsList.Select(y => y.Goods).Select(z => z.Category))
                 .Include(x => x.Status)
                 .Include(x => x.Comments).FirstOrDefault();
         }

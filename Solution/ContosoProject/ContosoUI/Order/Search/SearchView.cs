@@ -50,7 +50,7 @@ namespace ContosoUI.Order.Search
                 GridHitInfo info = view.CalcHitInfo(view.GridControl.PointToClient(Control.MousePosition));
                 int id = (int)view.GetRowCellValue(info.RowHandle, "Id");
                 var form = new AddEditOrderView(id);
-                form.MdiParent = this.MdiParent;
+                form.MdiParent = MdiParent;
                 form.Show();
             }
         }
