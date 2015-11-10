@@ -125,6 +125,7 @@
             this.firstNameGridColumn.Caption = "Имя";
             this.firstNameGridColumn.FieldName = "FirstName";
             this.firstNameGridColumn.Name = "firstNameGridColumn";
+            this.firstNameGridColumn.OptionsColumn.AllowFocus = false;
             this.firstNameGridColumn.Visible = true;
             this.firstNameGridColumn.VisibleIndex = 1;
             // 
@@ -133,6 +134,7 @@
             this.lastNameGridColumn.Caption = "Фамилия";
             this.lastNameGridColumn.FieldName = "LastName";
             this.lastNameGridColumn.Name = "lastNameGridColumn";
+            this.lastNameGridColumn.OptionsColumn.AllowFocus = false;
             this.lastNameGridColumn.Visible = true;
             this.lastNameGridColumn.VisibleIndex = 0;
             // 
@@ -141,6 +143,7 @@
             this.middleNameGridColumn.Caption = "Отчество";
             this.middleNameGridColumn.FieldName = "MiddleName";
             this.middleNameGridColumn.Name = "middleNameGridColumn";
+            this.middleNameGridColumn.OptionsColumn.AllowFocus = false;
             this.middleNameGridColumn.Visible = true;
             this.middleNameGridColumn.VisibleIndex = 2;
             // 
@@ -149,6 +152,7 @@
             this.cityGridColumn.Caption = "Город";
             this.cityGridColumn.FieldName = "City";
             this.cityGridColumn.Name = "cityGridColumn";
+            this.cityGridColumn.OptionsColumn.AllowFocus = false;
             this.cityGridColumn.Visible = true;
             this.cityGridColumn.VisibleIndex = 3;
             // 
@@ -157,6 +161,7 @@
             this.addressGridColumn.Caption = "Адрес";
             this.addressGridColumn.FieldName = "Address";
             this.addressGridColumn.Name = "addressGridColumn";
+            this.addressGridColumn.OptionsColumn.AllowFocus = false;
             this.addressGridColumn.Visible = true;
             this.addressGridColumn.VisibleIndex = 4;
             // 
@@ -167,6 +172,7 @@
             this.ordersCountGridColumn.Caption = "Количество заказов";
             this.ordersCountGridColumn.FieldName = "CounOrders";
             this.ordersCountGridColumn.Name = "ordersCountGridColumn";
+            this.ordersCountGridColumn.OptionsColumn.AllowFocus = false;
             this.ordersCountGridColumn.Visible = true;
             this.ordersCountGridColumn.VisibleIndex = 7;
             // 
@@ -177,6 +183,7 @@
             this.ordersSumGridColumn.Caption = "Общая сумма заказов";
             this.ordersSumGridColumn.FieldName = "SumOrders";
             this.ordersSumGridColumn.Name = "ordersSumGridColumn";
+            this.ordersSumGridColumn.OptionsColumn.AllowFocus = false;
             this.ordersSumGridColumn.OptionsEditForm.RowSpan = 2;
             this.ordersSumGridColumn.Visible = true;
             this.ordersSumGridColumn.VisibleIndex = 8;
@@ -186,6 +193,7 @@
             this.telephoneGridColumn.Caption = "Телефон";
             this.telephoneGridColumn.FieldName = "Telephone";
             this.telephoneGridColumn.Name = "telephoneGridColumn";
+            this.telephoneGridColumn.OptionsColumn.AllowFocus = false;
             this.telephoneGridColumn.Visible = true;
             this.telephoneGridColumn.VisibleIndex = 5;
             // 
@@ -194,6 +202,7 @@
             this.eMailGridColumn.Caption = "E-mail";
             this.eMailGridColumn.FieldName = "Email";
             this.eMailGridColumn.Name = "eMailGridColumn";
+            this.eMailGridColumn.OptionsColumn.AllowFocus = false;
             this.eMailGridColumn.Visible = true;
             this.eMailGridColumn.VisibleIndex = 6;
             // 

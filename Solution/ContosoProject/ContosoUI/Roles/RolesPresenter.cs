@@ -16,6 +16,7 @@ namespace ContosoUI.Roles
     {
         readonly RolesView view;
         readonly RoleViewService modelProxy = new RoleViewService();
+        IUserNotify notifyManager = Program.MainWiewInstance;
         public RolesPresenter(RolesView view)
         {
             this.view = view;
@@ -66,6 +67,7 @@ namespace ContosoUI.Roles
                 {
                     modelProxy.RoleDao.AddOrUpdate(role);
                 }
+                notifyManager.ShowInfo("Изменения сохранены", "Информация");
             }
             Roles.RemoveAll(x => !x.IsActive);
             NotifyPropertyChanged("Save");
@@ -75,12 +77,15 @@ namespace ContosoUI.Roles
             bool isValid = true;
             if (roles.Any(x => x.IsActive == false))
             {
-                view.ShowValidationDialog("Вы уверенны, что хотите деактивировать роль пользователя? После деактивации роль будет удалена из списка!", "Предупреждение");
-                isValid = false;
+                bool result = notifyManager.ShowYesNo("Вы уверенны, что хотите деактивировать роль пользователя? После деактивации роль будет удалена из списка!", "Предупреждение");
+                if (!result)
+                {
+                    isValid = false; 
+                }
             }
-            if (roles.Any(x => x == null || x.Name == null))
+            if (roles.Any(x => string.IsNullOrWhiteSpace( x.Name)))
             {
-                view.ShowValidationDialog("Запрещено создавать роль без названия", "Предупреждение");
+                notifyManager.ShowWarning("Запрещено создавать роль без названия", "Предупреждение");
                 isValid = false;
             }
             foreach (var role in roles)
@@ -88,7 +93,7 @@ namespace ContosoUI.Roles
                 if (role == null || role.Permissions.Count == 0)
                 {
                    string roleName = role.Name;
-                   view.ShowValidationDialog("Роль " + roleName + " не содержит разрешений. Запрещено создавать роль без назначения разрешений", "Предупреждение");
+                   notifyManager.ShowWarning("Роль " + roleName + " не содержит разрешений. Запрещено создавать роль без назначения разрешений", "Предупреждение");
                    isValid = false;
                 }
             }
