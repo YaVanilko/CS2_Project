@@ -47,6 +47,10 @@
             this.addGoodsTextBoxPrice = new DevExpress.XtraEditors.TextEdit();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.addGoodsLookUpEditCategory = new DevExpress.XtraEditors.LookUpEdit();
+            this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
+            this.saveGoodsButton = new DevExpress.XtraBars.BarButtonItem();
+            this.mainRibbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.saveOrEditribbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.productCategoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -74,6 +78,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.addGoodsLookUpEditCategory.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productCategoryBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.addGoodsTextBoxComent.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.addGoodsTextBoxSKU.Properties)).BeginInit();
@@ -267,6 +272,45 @@
             this.addGoodsLookUpEditCategory.Size = new System.Drawing.Size(341, 20);
             this.addGoodsLookUpEditCategory.TabIndex = 7;
             // 
+            // ribbonControl1
+            // 
+            this.ribbonControl1.Dock = System.Windows.Forms.DockStyle.None;
+            this.ribbonControl1.ExpandCollapseItem.Id = 0;
+            this.ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
+            this.ribbonControl1.ExpandCollapseItem,
+            this.saveGoodsButton});
+            this.ribbonControl1.Location = new System.Drawing.Point(0, -1);
+            this.ribbonControl1.MaxItemId = 2;
+            this.ribbonControl1.Name = "ribbonControl1";
+            this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
+            this.mainRibbonPage});
+            this.ribbonControl1.Size = new System.Drawing.Size(713, 141);
+            // 
+            // saveGoodsButton
+            // 
+            this.saveGoodsButton.Caption = "Сохранить";
+            this.saveGoodsButton.Glyph = ((System.Drawing.Image)(resources.GetObject("saveGoodsButton.Glyph")));
+            this.saveGoodsButton.Id = 1;
+            this.saveGoodsButton.MergeOrder = 1;
+            this.saveGoodsButton.Name = "saveGoodsButton";
+            this.saveGoodsButton.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.saveGoodsButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.saveGoodsButton_ItemClick);
+            // 
+            // mainRibbonPage
+            // 
+            this.mainRibbonPage.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.saveOrEditribbonPageGroup});
+            this.mainRibbonPage.MergeOrder = 1;
+            this.mainRibbonPage.Name = "mainRibbonPage";
+            this.mainRibbonPage.Text = "Меню";
+            // 
+            // saveOrEditribbonPageGroup
+            // 
+            this.saveOrEditribbonPageGroup.ItemLinks.Add(this.saveGoodsButton);
+            this.saveOrEditribbonPageGroup.MergeOrder = 5;
+            this.saveOrEditribbonPageGroup.Name = "saveOrEditribbonPageGroup";
+            this.saveOrEditribbonPageGroup.Text = "Сохранение";
+            // 
             // productCategoryBindingSource
             // 
             this.productCategoryBindingSource.DataSource = typeof(Domain.Entities.ProductCategory);
@@ -411,6 +455,7 @@
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.addGoodsLookUpEditCategory.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productCategoryBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.addGoodsTextBoxComent.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.addGoodsTextBoxSKU.Properties)).EndInit();

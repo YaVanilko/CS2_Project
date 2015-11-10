@@ -237,6 +237,7 @@
             this.orderNumberGridColumn.Caption = "Номер заказа";
             this.orderNumberGridColumn.FieldName = "Id";
             this.orderNumberGridColumn.Name = "orderNumberGridColumn";
+            this.orderNumberGridColumn.OptionsColumn.AllowFocus = false;
             this.orderNumberGridColumn.OptionsColumn.ReadOnly = true;
             this.orderNumberGridColumn.Visible = true;
             this.orderNumberGridColumn.VisibleIndex = 0;
@@ -247,6 +248,7 @@
             this.orderSumGridColumn.Caption = "Сумма заказа";
             this.orderSumGridColumn.FieldName = "TotalCost";
             this.orderSumGridColumn.Name = "orderSumGridColumn";
+            this.orderSumGridColumn.OptionsColumn.AllowFocus = false;
             this.orderSumGridColumn.Visible = true;
             this.orderSumGridColumn.VisibleIndex = 1;
             this.orderSumGridColumn.Width = 248;
@@ -256,6 +258,7 @@
             this.orderStatusGridColumn.Caption = "Статус заказа";
             this.orderStatusGridColumn.FieldName = "Status.Status";
             this.orderStatusGridColumn.Name = "orderStatusGridColumn";
+            this.orderStatusGridColumn.OptionsColumn.AllowFocus = false;
             this.orderStatusGridColumn.OptionsColumn.ReadOnly = true;
             this.orderStatusGridColumn.Visible = true;
             this.orderStatusGridColumn.VisibleIndex = 2;
