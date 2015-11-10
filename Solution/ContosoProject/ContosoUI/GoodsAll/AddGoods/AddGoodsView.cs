@@ -43,7 +43,7 @@ namespace ContosoUI.GoodsAll.AddGoods
                 addGoodsLookUpEditCategory.DataBindings.Add("EditValue", bs, "Category");
 
                 addGoodsTextBoxComent.DataBindings.Add("EditValue", bs, "CurentComment");
-
+       
                 addGoodsCheckBoxIsActive.DataBindings.Add("EditValue", bs, "IsActive");
 
             }

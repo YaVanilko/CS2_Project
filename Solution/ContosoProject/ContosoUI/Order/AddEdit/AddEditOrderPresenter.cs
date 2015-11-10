@@ -1,22 +1,38 @@
 ﻿using Data.EFData;
 using ContosoUI.Presenter;
 using Domain.Entities;
-using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
-using System.Windows.Forms;
 
 namespace ContosoUI.Order.AddEdit
 {
-    public class AddEditOrderPresenter : BasePresenter, INotifyPropertyChanged
+    public class AddEditOrderPresenter : BasePresenter
     {
+        public AddEditOrderPresenter(AddEditOrderView view, int orderId)
+        {
+            this.view = view;
+
+            goods.AddRange(modelProxy.GoodsModel.GetAll().Where(x => x.IsActive == true));
+
+            if (orderId >= 0)
+            {
+                order = modelProxy.OrderModel.GetById(orderId);
+            }
+            else
+            {
+                order = new Domain.Entities.Order();
+            }
+        }
+
         readonly AddEditOrderView view;
         readonly AddOrderProxy modelProxy = new AddOrderProxy();
-        public List<GoodsRow> vm { get; set; }
-
-        private int orderId;
+        IUserNotify notifyManager = Program.MainWiewInstance;
         Domain.Entities.Order order;
+
+        public List<GoodsRow> GoodsListSource
+        {
+            get { return order.GoodsList.ToList(); }
+        }
 
         public List<Customer> Customers
         {
@@ -44,30 +60,6 @@ namespace ContosoUI.Order.AddEdit
                     Comments = value;
                     NotifyPropertyChanged("Comments");
                 }
-            }
-        }
-
-        public AddEditOrderPresenter(AddEditOrderView view, int orderId)
-        {
-            this.view = view;
-            this.orderId = orderId;
-            vm = new List<GoodsRow>();
-
-            goods.AddRange(modelProxy.GoodsModel.GetAll().Where(x => x.IsActive == true));
-
-            if (orderId >= 0)
-            {
-                order = modelProxy.OrderModel.GetById(orderId);
-
-                foreach (GoodsRow row in order.GoodsList)
-                {
-                    vm.Add(new GoodsRow()
-                    { Id = row.Id, Goods = row.Goods, Count = row.Count, Price = row.Goods.Price });
-                }
-            }
-            else
-            {
-                order = new Domain.Entities.Order();
             }
         }
 
@@ -111,13 +103,13 @@ namespace ContosoUI.Order.AddEdit
             }
         }
 
-        private int countOfGood { get; set; }
+        private int countOfGood;
         public int CountOfGood
         {
             get { return countOfGood; }
             set
             {
-                if (countOfGood != value && value > 0)
+                if (countOfGood != value)
                 {
                     countOfGood = value;
                     NotifyPropertyChanged("CountOfGood");
@@ -127,10 +119,10 @@ namespace ContosoUI.Order.AddEdit
 
         public double TotalCost
         {
-            get { return CalculateOrderCost(); }
+            get { return order.TotalCost; }
         }
 
-        private string message { get; set; }
+        private string message;
         public string Message
         {
             get { return message; }
@@ -151,35 +143,16 @@ namespace ContosoUI.Order.AddEdit
 
         public void AddGoodRow()
         {
-            GoodsRow item = new GoodsRow() {Goods = SelectedGood, Count = CountOfGood };
-            vm.Add(new GoodsRow() { Goods = item.Goods, Count = item.Count, Price = item.Goods.Price });
-            order.GoodsList.Add(item);
+            GoodsRow newGoodsRow = new GoodsRow() { Goods = SelectedGood, Count = CountOfGood, Price = SelectedGood.Price };
+            order.GoodsList.Add(newGoodsRow);
+            NotifyPropertyChanged("AddGoodRow");
         }
 
-        public void AddComment ()
+        public void AddComment()
         {
-            order.Comments.Add(new Comment() { Message = Message, Type = CommentType.Order});
+            order.Comments.Add(Comment);
             message = string.Empty;
             NotifyPropertyChanged("CommentsAdd");
-        }
-
-        private double CalculateOrderCost()
-        {
-            double result = 0;
-
-            foreach (GoodsRow row in order.GoodsList)
-            {
-                if (row.IsActive)
-                {
-                    result += row.TotalPrice;
-                }
-            }
-            return result;
-        }
-
-        public void SetIsActive(int id)
-        {
-            order.GoodsList.ToList()[id].IsActive = !order.GoodsList.ToList()[id].IsActive;
         }
 
         public void Save()
@@ -187,27 +160,20 @@ namespace ContosoUI.Order.AddEdit
             if (order.Id > 0)
             {
                 modelProxy.OrderModel.Update(order);
-                MessageBox.Show("Заказ обновлен", buttons: MessageBoxButtons.OK, caption: "Уведомление");
+                notifyManager.ShowInfo("Заказ обновлен", "Сообщение");
             }
             else
             {
                 modelProxy.OrderModel.Add(order);
-                MessageBox.Show("Заказ добавлен", buttons: MessageBoxButtons.OK, caption: "Уведомление");
+                notifyManager.ShowInfo("Заказ добавлен", "Сообщение");
             }
         }
 
         public void SaveAndNew()
         {
             Save();
-
             order = new Domain.Entities.Order();
-            vm.Clear();
             NotifyPropertyChanged("SaveAndNew");
-
-            //view.Close();
-            //var form = new AddEditOrderView();
-            //form.MdiParent = ContosoUI.MainView.ActiveForm;
-            //form.Show();
         }
     }
 }
