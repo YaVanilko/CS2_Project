@@ -66,25 +66,35 @@ namespace ContosoUI.GoodsAll.AddGoods
         {
             if (addGoodsTextBoxName.Text == "" || addGoodsTextBoxSKU.Text == "" || addGoodsTextBoxPrice.Text == "" ||
                addGoodsTextBoxCount.Text == "")
-            { MessageBox.Show("Вы заполнили не все поля"); }
+            { MessageBox.Show("Вы заполнили не все поля");
+            return;
+            }
             if (addGoodsTextBoxName.Text.Length > 255)
-            { MessageBox.Show("Значие поля Название слишком длинное"); }
+            { MessageBox.Show("Значие поля Название слишком длинное");
+            return;
+            }
 
             if (addGoodsTextBoxSKU.Text.Length > 50)
-            { MessageBox.Show("Значение поля Артикул слишком длинное"); }
+            { MessageBox.Show("Значение поля Артикул слишком длинное");
+            return;
+            }
             double price;
             Int16 count;
             Goods goods = new Goods();
             goods.Name = addGoodsTextBoxName.Text;
             goods.SKU = addGoodsTextBoxSKU.Text;
             if (!Double.TryParse(addGoodsTextBoxPrice.Text, out price))
-            { MessageBox.Show("Вы заполнили поле Цена неправильно"); };
+            { MessageBox.Show("Вы заполнили поле Цена неправильно");
+            return;
+            };
             goods.Price = price;
             Comment newComment = new Comment();
             newComment.Message = addGoodsTextBoxComent.Text;
             goods.Coments.Add(newComment);
             if (!Int16.TryParse(addGoodsTextBoxCount.Text, out count))
-            { MessageBox.Show("Вы заполнили поле Количество неправильно"); };
+            { MessageBox.Show("Вы заполнили поле Количество неправильно");
+            return;
+            };
             goods.Count = count;
 
             if (addGoodsCheckBoxIsActive.Checked)

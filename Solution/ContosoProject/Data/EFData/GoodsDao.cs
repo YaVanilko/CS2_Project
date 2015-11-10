@@ -35,6 +35,24 @@ namespace Data.EFData
         {
             return dbContext.Products.Where(x => x.IsActive == true).Include(x => x.Coments).ToList();
         }
+
+        public new void Update(Goods goods)
+        {
+            dbContext.Products.AddOrUpdate(goods);
+            dbContext.SaveChanges();
+        }
+
+        public void AddOrUpdate(Goods goods)
+        {
+            dbContext.Products.AddOrUpdate(x => x.Name, new Goods[] { goods });
+            dbContext.SaveChanges();
+        }
+
+        public new void Add(Goods goods)
+        {
+            dbContext.Set<Goods>().Add(goods);
+            dbContext.SaveChanges();
+        }
     }
 }
 
