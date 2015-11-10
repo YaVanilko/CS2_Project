@@ -178,7 +178,7 @@ namespace ContosoUI.Customers.Add
                 notifyManager.ShowWarning("Не указана фамилия клиента или ее длина менее 2 или более 25 знаков! Проверьте правильность заполнения поля", "Предупреждение");
                 isValid = false;
             }
-            if (customer.PersonalInfo.MiddleName.Count() < 2 || customer.PersonalInfo.LastName.Count() > 25)
+            if (string.IsNullOrWhiteSpace(customer.PersonalInfo.MiddleName) || customer.PersonalInfo.MiddleName.Count() < 2 || customer.PersonalInfo.LastName.Count() > 25)
             {
                 notifyManager.ShowWarning("Отчество клиента состоит менее чем из 2 или более 25 знаков! Проверьте правильность заполнения поля", "Предупреждение");
                 isValid = false;
@@ -198,7 +198,7 @@ namespace ContosoUI.Customers.Add
                 notifyManager.ShowWarning("Не указан номер телефона клиента или его длина менее 3 или более 15 знаков! Поле обязательно для заполнения", "Предупреждение");
                 isValid = false;
             }
-            if (customer.Contacts.Email.Count() < 3 ||  customer.Contacts.Email.Count() > 40)
+            if (string.IsNullOrWhiteSpace(customer.Contacts.Email) || customer.Contacts.Email.Count() < 3 || customer.Contacts.Email.Count() > 40)
             {
                 notifyManager.ShowWarning("E-mail клиента состоит менее чем из 3 или более 40 знаков! Проверьте правильность заполнения поля", "Предупреждение");
                 isValid = false;

@@ -45,11 +45,6 @@ namespace ContosoUI.Order.Search
             {
                 orders = orderModel.GetOrderByStatus(status).ToList();
             }
-            else
-            {
-                orders = new List<Domain.Entities.Order>();
-                notifyManager.ShowInfo("Не существует заказов с таким статусом", "Сообщение");
-            }
 
             NotifyPropertyChanged("SelectOrdersByStatus");
         }
