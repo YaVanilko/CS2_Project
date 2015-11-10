@@ -96,15 +96,5 @@ namespace ContosoUI.Roles
                 }
             }
         }
-        public bool ShowValidationDialog(string caption, string message)
-        {
-            bool isOk = false;
-            DialogResult result = MessageBox.Show(caption, message, buttons: MessageBoxButtons.OKCancel);
-            if (result == DialogResult.OK)
-            {
-                isOk = true;
-            }
-            return isOk;
-        }
     }
 }

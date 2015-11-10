@@ -28,7 +28,7 @@ namespace ContosoUI.GoodsAll.GoodsF
             goodsComboBoxCategory.SelectedIndex = 0;
 
             this.goodsComboBoxCategory.SelectedIndexChanged += new EventHandler(GoodsComboBoxCategory_SelectedIndexChanged);
-
+            isActiveCheckBox.Checked = true;
 
         }
         public void SetGoodsCategory(List<Domain.Entities.ProductCategory> categoryList)
@@ -48,7 +48,7 @@ namespace ContosoUI.GoodsAll.GoodsF
 
         private void GoodsComboBoxCategory_SelectedIndexChanged(object sender, EventArgs e)
         {
-            this.goodsBindingSource.DataSource = presenter.SearchGoodsOnCategory(goodsComboBoxCategory.SelectedItem.ToString());
+            this.goodsBindingSource.DataSource = presenter.SearchGoodsOnCategory(goodsComboBoxCategory.SelectedItem.ToString(), isActiveCheckBox.Checked);
             goodsGridControl.RefreshDataSource();
         }
 
@@ -81,7 +81,8 @@ namespace ContosoUI.GoodsAll.GoodsF
 
         private void SearchbarButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            this.goodsBindingSource.DataSource = presenter.SearchGoodsOnCategory(goodsComboBoxCategory.SelectedItem.ToString());
+            this.goodsBindingSource.DataSource = presenter.SearchGoodsOnCategory(goodsComboBoxCategory.SelectedItem.ToString(), isActiveCheckBox.Checked);
+            
             goodsGridControl.RefreshDataSource();
         }
 

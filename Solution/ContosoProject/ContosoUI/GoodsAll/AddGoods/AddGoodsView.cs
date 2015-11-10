@@ -25,23 +25,33 @@ namespace ContosoUI.GoodsAll.AddGoods
             bs = new BindingSource();
             bs.DataSource = presenter;
             this.Text = "Редактировать товар";
+           // addGoodsCheckBoxIsActive.Checked = true;
+            if (presenter.Categories.Count < 1)
+            {
+                MessageBox.Show("Нет категорий товаров. Невозможно добавить новый товар");
+                //return;
+            }
 
-            addGoodsTextBoxName.DataBindings.Add("EditValue", bs, "Name");
-            addGoodsTextBoxSKU.DataBindings.Add("EditValue", bs, "SKU");
-            addGoodsTextBoxCount.DataBindings.Add("EditValue", bs, "Count");
-            addGoodsTextBoxPrice.DataBindings.Add("EditValue", bs, "Price");
-            
-            addGoodsLookUpEditCategory.Properties.DataSource = presenter.Categories;
-            addGoodsLookUpEditCategory.DataBindings.Add("EditValue", bs, "Category");
+            else
+            {
+                addGoodsTextBoxName.DataBindings.Add("EditValue", bs, "Name");
+                addGoodsTextBoxSKU.DataBindings.Add("EditValue", bs, "SKU");
+                addGoodsTextBoxCount.DataBindings.Add("EditValue", bs, "Count");
+                addGoodsTextBoxPrice.DataBindings.Add("EditValue", bs, "Price");
 
-            addGoodsTextBoxComent.DataBindings.Add("EditValue", bs, "CurentComment");
+                addGoodsLookUpEditCategory.Properties.DataSource = presenter.Categories;
+                addGoodsLookUpEditCategory.DataBindings.Add("EditValue", bs, "Category");
 
-            addGoodsCheckBoxIsActive.DataBindings.Add("EditValue", bs, "IsActive");
+                addGoodsTextBoxComent.DataBindings.Add("EditValue", bs, "CurentComment");
+
+                addGoodsCheckBoxIsActive.DataBindings.Add("EditValue", bs, "IsActive");
+
+            }
             
         }
 
 
-        private void Со_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void saveGoodsButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
 
             if (addGoodsTextBoxName.Text == "" || addGoodsTextBoxSKU.Text == "" || addGoodsTextBoxPrice.Text == "" ||
@@ -76,6 +86,7 @@ namespace ContosoUI.GoodsAll.AddGoods
 
             var categorySt = addGoodsLookUpEditCategory.GetColumnValue("Id");
             //goods.Category=categorySt;
+            bs.EndEdit();
             presenter.Save();
 
         }
