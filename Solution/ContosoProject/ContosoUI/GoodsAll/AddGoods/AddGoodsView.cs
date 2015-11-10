@@ -17,6 +17,7 @@ namespace ContosoUI.GoodsAll.AddGoods
         private readonly AddGoodsPresenter presenter;
         int idGoods;
         BindingSource bs;
+
         public AddGoods(int id = -1)
         {
             InitializeComponent();

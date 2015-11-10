@@ -34,6 +34,11 @@
             this.groupControl4 = new DevExpress.XtraEditors.GroupControl();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
+            this.addGoodsCheckBoxIsActive = new DevExpress.XtraEditors.CheckEdit();
+            this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
+            this.saveGoodsButton = new DevExpress.XtraBars.BarButtonItem();
+            this.mainRibbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.saveOrEditribbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -65,6 +70,8 @@
             this.groupControl4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.addGoodsCheckBoxIsActive.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AddGoodsTextBoxUser.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.addGoodsTextBoxCount.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.addGoodsTextBoxPrice.Properties)).BeginInit();
@@ -128,6 +135,56 @@
             this.groupControl2.Size = new System.Drawing.Size(346, 208);
             this.groupControl2.TabIndex = 5;
             this.groupControl2.Text = "Данные товара";
+            // 
+            // addGoodsCheckBoxIsActive
+            // 
+            this.addGoodsCheckBoxIsActive.EditValue = true;
+            this.addGoodsCheckBoxIsActive.Location = new System.Drawing.Point(8, 151);
+            this.addGoodsCheckBoxIsActive.MenuManager = this.ribbonControl1;
+            this.addGoodsCheckBoxIsActive.Name = "addGoodsCheckBoxIsActive";
+            this.addGoodsCheckBoxIsActive.Properties.Caption = "Активный";
+            this.addGoodsCheckBoxIsActive.Size = new System.Drawing.Size(75, 19);
+            this.addGoodsCheckBoxIsActive.TabIndex = 7;
+            this.addGoodsCheckBoxIsActive.CheckedChanged += new System.EventHandler(this.addGoodsCheckBoxIsActive_CheckedChanged);
+            // 
+            // ribbonControl1
+            // 
+            this.ribbonControl1.Dock = System.Windows.Forms.DockStyle.None;
+            this.ribbonControl1.ExpandCollapseItem.Id = 0;
+            this.ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
+            this.ribbonControl1.ExpandCollapseItem,
+            this.saveGoodsButton});
+            this.ribbonControl1.Location = new System.Drawing.Point(0, -1);
+            this.ribbonControl1.MaxItemId = 2;
+            this.ribbonControl1.Name = "ribbonControl1";
+            this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
+            this.mainRibbonPage});
+            this.ribbonControl1.Size = new System.Drawing.Size(713, 141);
+            // 
+            // saveGoodsButton
+            // 
+            this.saveGoodsButton.Caption = "Сохранить";
+            this.saveGoodsButton.Glyph = ((System.Drawing.Image)(resources.GetObject("saveGoodsButton.Glyph")));
+            this.saveGoodsButton.Id = 1;
+            this.saveGoodsButton.MergeOrder = 1;
+            this.saveGoodsButton.Name = "saveGoodsButton";
+            this.saveGoodsButton.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.saveGoodsButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Со_ItemClick);
+            // 
+            // mainRibbonPage
+            // 
+            this.mainRibbonPage.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.saveOrEditribbonPageGroup});
+            this.mainRibbonPage.MergeOrder = 1;
+            this.mainRibbonPage.Name = "mainRibbonPage";
+            this.mainRibbonPage.Text = "Меню";
+            // 
+            // saveOrEditribbonPageGroup
+            // 
+            this.saveOrEditribbonPageGroup.ItemLinks.Add(this.saveGoodsButton);
+            this.saveOrEditribbonPageGroup.MergeOrder = 5;
+            this.saveOrEditribbonPageGroup.Name = "saveOrEditribbonPageGroup";
+            this.saveOrEditribbonPageGroup.Text = "Сохранение";
             // 
             // label7
             // 
@@ -389,6 +446,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
             this.groupControl2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.addGoodsCheckBoxIsActive.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AddGoodsTextBoxUser.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.addGoodsTextBoxCount.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.addGoodsTextBoxPrice.Properties)).EndInit();
