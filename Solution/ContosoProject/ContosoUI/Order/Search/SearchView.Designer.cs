@@ -48,12 +48,12 @@
             this.colTotalCost = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colStatus = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colComments = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colIsActive = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colEditTime = new DevExpress.XtraGrid.Columns.GridColumn();
             this.layoutControlGroup = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.statusLayoutControlItem = new DevExpress.XtraLayout.LayoutControlItem();
+            this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl)).BeginInit();
             this.layoutControl.SuspendLayout();
@@ -154,7 +154,6 @@
             // resultGridControl
             // 
             this.resultGridControl.DataSource = this.orderBindingSource;
-            this.resultGridControl.Dock = System.Windows.Forms.DockStyle.Fill;
             gridLevelNode1.RelationName = "Level1";
             this.resultGridControl.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
             gridLevelNode1});
@@ -174,12 +173,12 @@
             // ordersGridView
             // 
             this.ordersGridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colId,
             this.colCustomer,
             this.colGoodsList,
             this.colTotalCost,
             this.colStatus,
             this.colComments,
-            this.colId,
             this.colIsActive,
             this.colEditTime});
             this.ordersGridView.GridControl = this.resultGridControl;
@@ -193,16 +192,14 @@
             this.colCustomer.FieldName = "Customer";
             this.colCustomer.Name = "colCustomer";
             this.colCustomer.Visible = true;
-            this.colCustomer.VisibleIndex = 1;
-            this.colCustomer.Width = 312;
+            this.colCustomer.VisibleIndex = 2;
+            this.colCustomer.Width = 455;
             // 
             // colGoodsList
             // 
             this.colGoodsList.Caption = "Список товаров";
             this.colGoodsList.FieldName = "GoodsList";
             this.colGoodsList.Name = "colGoodsList";
-            this.colGoodsList.Visible = true;
-            this.colGoodsList.VisibleIndex = 2;
             this.colGoodsList.Width = 268;
             // 
             // colTotalCost
@@ -213,7 +210,7 @@
             this.colTotalCost.OptionsColumn.ReadOnly = true;
             this.colTotalCost.Visible = true;
             this.colTotalCost.VisibleIndex = 3;
-            this.colTotalCost.Width = 85;
+            this.colTotalCost.Width = 128;
             // 
             // colStatus
             // 
@@ -221,18 +218,13 @@
             this.colStatus.FieldName = "Status";
             this.colStatus.Name = "colStatus";
             this.colStatus.Visible = true;
-            this.colStatus.VisibleIndex = 0;
-            this.colStatus.Width = 77;
+            this.colStatus.VisibleIndex = 1;
+            this.colStatus.Width = 100;
             // 
             // colComments
             // 
             this.colComments.FieldName = "Comments";
             this.colComments.Name = "colComments";
-            // 
-            // colId
-            // 
-            this.colId.FieldName = "Id";
-            this.colId.Name = "colId";
             // 
             // colIsActive
             // 
@@ -274,6 +266,15 @@
             this.statusLayoutControlItem.Text = "Статус";
             this.statusLayoutControlItem.TextLocation = DevExpress.Utils.Locations.Top;
             this.statusLayoutControlItem.TextSize = new System.Drawing.Size(36, 13);
+            // 
+            // colId
+            // 
+            this.colId.Caption = "Номер";
+            this.colId.FieldName = "Id";
+            this.colId.Name = "colId";
+            this.colId.Visible = true;
+            this.colId.VisibleIndex = 0;
+            this.colId.Width = 59;
             // 
             // SearchView
             // 
@@ -321,8 +322,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn colTotalCost;
         private DevExpress.XtraGrid.Columns.GridColumn colStatus;
         private DevExpress.XtraGrid.Columns.GridColumn colComments;
-        private DevExpress.XtraGrid.Columns.GridColumn colId;
         private DevExpress.XtraGrid.Columns.GridColumn colIsActive;
         private DevExpress.XtraGrid.Columns.GridColumn colEditTime;
+        private DevExpress.XtraGrid.Columns.GridColumn colId;
     }
 }

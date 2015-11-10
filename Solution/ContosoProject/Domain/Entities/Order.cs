@@ -19,7 +19,17 @@ namespace Domain.Entities
         {
             get
             {
-                return GoodsList.Sum(x => x.TotalPrice);
+                double result = 0;
+
+                foreach (GoodsRow row in GoodsList)
+                {
+                    if (row.IsActive)
+                    {
+                        result += row.TotalPrice;
+                    }
+                }
+
+                return result;
             }
         }
 

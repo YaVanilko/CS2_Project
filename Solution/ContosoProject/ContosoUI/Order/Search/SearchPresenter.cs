@@ -3,7 +3,6 @@ using Data.EFData;
 using Domain.Entities;
 using System.Collections.Generic;
 using System.Linq;
-using System.ComponentModel;
 using ContosoUI.Presenter;
 
 namespace ContosoUI.Order.Search
@@ -41,19 +40,18 @@ namespace ContosoUI.Order.Search
             if (status.Status == defaultStatus)
             {
                 orders = orderModel.GetAll().ToList();
-                NotifyPropertyChanged("SelectOrdersByStatus");
             }
             else if (statuses.Any(x=>x.Status == status.Status))
             {
                 orders = orderModel.GetOrderByStatus(status).ToList();
-                NotifyPropertyChanged("SelectOrdersByStatus");
             }
             else
             {
                 orders = new List<Domain.Entities.Order>();
                 notifyManager.ShowInfo("Не существует заказов с таким статусом", "Сообщение");
-                NotifyPropertyChanged("SelectOrdersByStatus");
-            } 
+            }
+
+            NotifyPropertyChanged("SelectOrdersByStatus");
         }
     }
 }

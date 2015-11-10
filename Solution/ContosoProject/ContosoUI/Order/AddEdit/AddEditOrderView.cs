@@ -34,13 +34,10 @@ namespace ContosoUI.Order
             statusComboBox.DataBindings.Add("DataSource", bindings, "Statuses");
             statusComboBox.DataBindings.Add("SelectedItem", bindings, "Status");
 
-            goodsComboBox.DataBindings.Clear();
             goodsComboBox.DataBindings.Add("DataSource", bindings, "Goods");
 
-            commentsListBox.DataBindings.Clear();
             commentsListBox.DataBindings.Add("DataSource", bindings, "Comments");
 
-            commentTextEdit.DataBindings.Clear();
             commentTextEdit.DataBindings.Add("EditValue", bindings, "Message");
 
             goodsRowGridControl.DataBindings.Add("DataSource", bindings, "GoodsListSource");
@@ -58,19 +55,19 @@ namespace ContosoUI.Order
 
         private void addGoodButton_Click(object sender, EventArgs e)
         {
+            bindings.EndEdit();
+
             if (ValidateCount())
             {
-                bindings.EndEdit();
                 presenter.AddGoodRow();
-                goodsRowGridControl.RefreshDataSource();
                 priceEdit.Text = Convert.ToString(presenter.TotalCost);
             }
             else
             {
-                bindings.EndEdit();
-                goodsRowGridControl.RefreshDataSource();
                 notifyManager.ShowInfo("Некорректное кол-во товаров", "Сообщение");
             }
+
+            goodsRowGridControl.RefreshDataSource();
         }
 
         private void saveOrderButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -88,45 +85,15 @@ namespace ContosoUI.Order
 
         private void ordersGridView_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
         {
-            GridView view = ordersGridView;
-            object goodsRow = view.GetRow(view.FocusedRowHandle);
-            bool result;
-            GoodsRow row = goodsRow as GoodsRow;
-
-            if (!row.IsActive)
-            {
-                result = notifyManager.ShowYesNo("Вы уверенны, что хотите удалить поле из заказа?", "Сообщение");
-
-                if (result)
-                {
-                    priceEdit.Text = Convert.ToString(presenter.TotalCost);
-                }
-                 else
-                 { 
-                    result = notifyManager.ShowYesNo("Вы уверенны, что хотите вернуть поле в заказ?", "Сообщение");
-               
-                    if (result)
-                    {
-                        priceEdit.Text = Convert.ToString(presenter.TotalCost);
-                    }
-                 }
-             }
-         }
+            priceEdit.Text = Convert.ToString(presenter.TotalCost);
+        }
 
         private bool ValidateCount()
         {
-            bool result = false;
-            int minValue = 0;
-            int maxValue = int.MaxValue;
             int temp;
             int.TryParse(countOfGoodTextEdit.Text, out temp);
 
-            if (temp > minValue && temp < maxValue)
-            {
-                result = true;
-            }
-
-            return result;
+            return temp > 0 && temp < int.MaxValue;
         }
     }
 }

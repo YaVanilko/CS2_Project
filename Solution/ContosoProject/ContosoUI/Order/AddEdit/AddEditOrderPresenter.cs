@@ -2,18 +2,12 @@
 using ContosoUI.Presenter;
 using Domain.Entities;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
 
 namespace ContosoUI.Order.AddEdit
 {
     public class AddEditOrderPresenter : BasePresenter
     {
-        readonly AddEditOrderView view;
-        readonly AddOrderProxy modelProxy = new AddOrderProxy();
-        IUserNotify notifyManager = Program.MainWiewInstance;
-        Domain.Entities.Order order;
-
         public AddEditOrderPresenter(AddEditOrderView view, int orderId)
         {
             this.view = view;
@@ -29,7 +23,12 @@ namespace ContosoUI.Order.AddEdit
                 order = new Domain.Entities.Order();
             }
         }
-        
+
+        readonly AddEditOrderView view;
+        readonly AddOrderProxy modelProxy = new AddOrderProxy();
+        IUserNotify notifyManager = Program.MainWiewInstance;
+        Domain.Entities.Order order;
+
         public List<GoodsRow> GoodsListSource
         {
             get { return order.GoodsList.ToList(); }
@@ -104,13 +103,13 @@ namespace ContosoUI.Order.AddEdit
             }
         }
 
-        private int countOfGood { get; set; }
+        private int countOfGood;
         public int CountOfGood
         {
             get { return countOfGood; }
             set
             {
-                if (countOfGood != value && value > 0)
+                if (countOfGood != value)
                 {
                     countOfGood = value;
                     NotifyPropertyChanged("CountOfGood");
@@ -120,10 +119,10 @@ namespace ContosoUI.Order.AddEdit
 
         public double TotalCost
         {
-            get { return CalculateOrderCost(); }
+            get { return order.TotalCost; }
         }
 
-        private string message { get; set; }
+        private string message;
         public string Message
         {
             get { return message; }
@@ -144,30 +143,16 @@ namespace ContosoUI.Order.AddEdit
 
         public void AddGoodRow()
         {
-            GoodsRow newGoodsRow = new GoodsRow() {Goods = SelectedGood, Count = CountOfGood, Price = SelectedGood.Price };
+            GoodsRow newGoodsRow = new GoodsRow() { Goods = SelectedGood, Count = CountOfGood, Price = SelectedGood.Price };
             order.GoodsList.Add(newGoodsRow);
             NotifyPropertyChanged("AddGoodRow");
         }
 
-        public void AddComment ()
+        public void AddComment()
         {
-            order.Comments.Add(new Comment() { Message = Message, Type = CommentType.Order});
+            order.Comments.Add(Comment);
             message = string.Empty;
             NotifyPropertyChanged("CommentsAdd");
-        }
-
-        private double CalculateOrderCost()
-        {
-            double result = 0;
-
-            foreach (GoodsRow row in GoodsListSource)
-            {
-                if (row.IsActive)
-                {
-                    result += row.TotalPrice;
-                }
-            }
-            return result;
         }
 
         public void Save()
