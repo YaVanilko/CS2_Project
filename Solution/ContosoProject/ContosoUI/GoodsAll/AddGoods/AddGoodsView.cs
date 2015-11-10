@@ -54,8 +54,18 @@ namespace ContosoUI.GoodsAll.AddGoods
         private void saveGoodsButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
 
+           
+        }
+
+        private void addGoodsCheckBoxIsActive_CheckedChanged(object sender, EventArgs e)
+        {
+            bs.EndEdit();
+        }
+
+        private void saveGoodsButton1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
             if (addGoodsTextBoxName.Text == "" || addGoodsTextBoxSKU.Text == "" || addGoodsTextBoxPrice.Text == "" ||
-                addGoodsTextBoxCount.Text == "")
+               addGoodsTextBoxCount.Text == "")
             { MessageBox.Show("Вы заполнили не все поля"); }
             if (addGoodsTextBoxName.Text.Length > 255)
             { MessageBox.Show("Значие поля Название слишком длинное"); }
@@ -91,10 +101,6 @@ namespace ContosoUI.GoodsAll.AddGoods
 
         }
 
-        private void addGoodsCheckBoxIsActive_CheckedChanged(object sender, EventArgs e)
-        {
-            bs.EndEdit();
-        }
-
+       
     }
 }

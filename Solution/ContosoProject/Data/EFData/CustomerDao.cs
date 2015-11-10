@@ -45,7 +45,7 @@ namespace Data.EFData
                     .Include(x => x.PersonalInfo)
                     .Include(x => x.Comments)
                     .Include(x => x.Orders.Select(y => y.Status))
-                    .Include(x => x.Orders.Select(y => y.GoodsList.Select(z => z.Goods)))
+                    .Include(x => x.Orders.Select(y => y.GoodsList.Select(z => z.Goods.Category)))
                     .FirstOrDefault();
         }
         public new void Update(Customer entity)
