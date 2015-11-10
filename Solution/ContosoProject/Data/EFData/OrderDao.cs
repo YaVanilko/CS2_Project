@@ -39,8 +39,8 @@ namespace Data.EFData
         {
             return dbContext.Orders.Where(x => x.Status.Id == status.Id)
                 .Include(x => x.Comments)
-                .Include(x => x.Customer)
-                .Include(x => x.GoodsList)
+                .Include(x => x.Customer.PersonalInfo)
+                .Include(x => x.GoodsList.Select(y => y.Goods).Select(z => z.Category))
                 .Include(x => x.Status)
                 .ToList();
         }
