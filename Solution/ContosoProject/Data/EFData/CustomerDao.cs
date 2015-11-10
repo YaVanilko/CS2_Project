@@ -48,5 +48,10 @@ namespace Data.EFData
                     .Include(x => x.Orders.Select(y => y.GoodsList.Select(z => z.Goods)))
                     .FirstOrDefault();
         }
+        public new void Update(Customer entity)
+        {
+            dbContext.Entry(entity).State = EntityState.Modified;
+            dbContext.SaveChanges();
+        }
     }
 }

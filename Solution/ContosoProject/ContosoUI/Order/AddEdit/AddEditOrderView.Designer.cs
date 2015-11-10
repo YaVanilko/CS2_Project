@@ -142,7 +142,6 @@
             this.colEditTime});
             this.ordersGridView.GridControl = this.goodsRowGridControl;
             this.ordersGridView.Name = "ordersGridView";
-            this.ordersGridView.OptionsBehavior.Editable = false;
             this.ordersGridView.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.ordersGridView_CellValueChanged);
             // 
             // colGoods
@@ -468,7 +467,6 @@
             this.Controls.Add(this.mainRibbonControl);
             this.Name = "AddEditOrderView";
             this.Text = "Добавить/Редактировать заказ";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AddEditOrderView_FormClosed);
             this.Load += new System.EventHandler(this.AddEditOrderView_Load);
             ((System.ComponentModel.ISupportInitialize)(this.mainLayoutControl)).EndInit();
             this.mainLayoutControl.ResumeLayout(false);

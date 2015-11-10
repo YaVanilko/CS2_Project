@@ -15,6 +15,7 @@ namespace ContosoUI.ProductCategoryList
     {
         readonly ProductCategoryView view;
         readonly IProductCategoryRepository model = new ProductCategoryDao();
+        IUserNotify notifyManager = Program.MainWiewInstance;
         public ProductCategoryPresenter(ProductCategoryView view)
         {
             this.view = view;
@@ -41,7 +42,8 @@ namespace ContosoUI.ProductCategoryList
                 foreach (var category in categories)
                 {
                     model.AddOrUpdate(category);
-                } 
+                }
+                notifyManager.ShowInfo("Изменения сохранены", "Информация");
             }
             Categories.RemoveAll(x => !x.IsActive);
             NotifyPropertyChanged("Save");
@@ -51,12 +53,16 @@ namespace ContosoUI.ProductCategoryList
             bool isValid = true;
             if (categories.Any(x => x.IsActive == false))
             {
-                view.ShowValidationDialog("Вы уверенны, что хотите деактивировать категорию товаров? После деактивации категория будет удалена из списка!", "Деактивация категории");
-                isValid = false;
+                bool result  = notifyManager.ShowYesNo("Вы уверенны, что хотите деактивировать категорию товаров? После деактивации категория будет удалена из списка!", "Деактивация категории");
+                if (!result)
+                {
+                    isValid = false;
+                }
             }
-            if (categories.Any(x => x == null || x.CategoryName == null))
+            if (categories.Any(x => string.IsNullOrWhiteSpace (x.CategoryName)))
             {
-                view.ShowValidationDialog("Запрещено создавать категорию без названия", "Предупреждение");
+
+                notifyManager.ShowWarning("Название категории не заполнено или поле содержит менее 2 или более 50 знаков. Проверьте правильность заполнения поля", "Предупреждение");
                 isValid = false;
             }
             return isValid;

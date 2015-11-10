@@ -15,6 +15,7 @@ namespace ContosoUI.Customers.Add
     {
         readonly CustomerDetailsViev view;
         readonly ICustomerRepository model = new CustomerDao();
+        IUserNotify notifyManager = Program.MainWiewInstance;
         Customer customer;
         public List<Domain.Entities.Order> Orders { get { return customer.Orders.ToList(); } set { } }
         public List<Comment> Comments { get { return customer.Comments.ToList(); } set { } }
@@ -147,10 +148,12 @@ namespace ContosoUI.Customers.Add
                 if (customer.Id > 0)
                 {
                     model.Update(this.customer);
+                    notifyManager.ShowInfo("Изменения были сохранены", "Информация");
                 }
                 else
                 {
                     model.Add(customer);
+                    notifyManager.ShowInfo("Клиент был добавлен", "Информация");
                 }
                 NotifyPropertyChanged("Save");
             }
@@ -161,27 +164,56 @@ namespace ContosoUI.Customers.Add
             customer = new Customer();
             NotifyPropertyChanged("New Customer");
         }
+        #region Validation
         bool Validate()
         {
             bool isValid = true;
-            if (customer.PersonalInfo.FirstName == null 
-                || customer.PersonalInfo.LastName == null
-                || customer.Contacts.Adress == null
-                || customer.Contacts.City == null
-                || customer.Contacts.Telephone == null)
+            if (string.IsNullOrWhiteSpace(customer.PersonalInfo.FirstName) || customer.PersonalInfo.FirstName.Count() < 2 || customer.PersonalInfo.FirstName.Count() > 25)
             {
-                view.ShowValidationDialog("Не заполнены обязательные поля в форме!", "Предупреждение");
+                notifyManager.ShowWarning("Не указано имя клиента или его длина менее 2 или более 25 знаков! Проверьте правильность заполнения поля", "Предупреждение");
+                isValid = false;
+            }
+            if (string.IsNullOrWhiteSpace(customer.PersonalInfo.LastName) || customer.PersonalInfo.LastName.Count() < 2 || customer.PersonalInfo.LastName.Count() > 25)
+            {
+                notifyManager.ShowWarning("Не указана фамилия клиента или ее длина менее 2 или более 25 знаков! Проверьте правильность заполнения поля", "Предупреждение");
+                isValid = false;
+            }
+            if (customer.PersonalInfo.MiddleName.Count() < 2 || customer.PersonalInfo.LastName.Count() > 25)
+            {
+                notifyManager.ShowWarning("Отчество клиента состоит менее чем из 2 или более 25 знаков! Проверьте правильность заполнения поля", "Предупреждение");
+                isValid = false;
+            }
+            if (string.IsNullOrWhiteSpace(customer.Contacts.Adress) || customer.Contacts.Adress.Count() < 3 || customer.Contacts.Adress.Count() > 100)
+            {
+                notifyManager.ShowWarning("Не указан адрес клиента или его длина менее 3 или более 100 знаков! Поле обязательно для заполнения", "Предупреждение");
+                isValid = false;
+            }
+            if (string.IsNullOrWhiteSpace(customer.Contacts.City) || customer.Contacts.City.Count() < 3 || customer.Contacts.City.Count() > 25)
+            {
+                notifyManager.ShowWarning("Не указан город клиента или его длина менее 3 или более 25 знаков! Поле обязательно для заполнения", "Предупреждение");
+                isValid = false;
+            }
+            if (string.IsNullOrWhiteSpace(customer.Contacts.Telephone) || customer.Contacts.Telephone.Count() < 3 || customer.Contacts.Telephone.Count() > 15)
+            {
+                notifyManager.ShowWarning("Не указан номер телефона клиента или его длина менее 3 или более 15 знаков! Поле обязательно для заполнения", "Предупреждение");
+                isValid = false;
+            }
+            if (customer.Contacts.Email.Count() < 3 ||  customer.Contacts.Email.Count() > 40)
+            {
+                notifyManager.ShowWarning("E-mail клиента состоит менее чем из 3 или более 40 знаков! Проверьте правильность заполнения поля", "Предупреждение");
                 isValid = false;
             }
             if (!customer.IsActive)
-	        {
-                bool result = view.ShowValidationDialog("Вы уверенны, что хотите деактивировать роль пользователя? После деактивации роль будет удалена из списка!", "Предупреждение");
+            {
+                bool result = notifyManager.ShowYesNo("Вы уверенны, что хотите деактивировать клиента? После деактивации клиент будет удален из списка!", "Предупреждение");
                 if (!result)
                 {
+                    customer.IsActive = true;
                     isValid = false;
                 }
-	        }
-            return isValid; 
-        }
+            }
+            return isValid;
+        } 
+        #endregion
     }
 }

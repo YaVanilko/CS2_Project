@@ -37,12 +37,11 @@ namespace Data.EFData
 
         public ICollection<Order> GetOrderByStatus(OrderStatus status)
         {
-            return dbContext.Orders.Where(x => x.Status == status)
+            return dbContext.Orders.Where(x => x.Status.Id == status.Id)
                 .Include(x => x.Comments)
                 .Include(x => x.Customer)
                 .Include(x => x.GoodsList)
                 .Include(x => x.Status)
-                .Include(x => x.TotalCost)
                 .ToList();
         }
     }

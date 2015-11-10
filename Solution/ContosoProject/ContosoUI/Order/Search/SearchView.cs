@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Views.Grid.ViewInfo;
@@ -13,10 +6,12 @@ using DevExpress.XtraGrid.Views.Grid;
 
 namespace ContosoUI.Order.Search
 {
-    public partial class SearchView : DevExpress.XtraEditors.XtraForm
+    public partial class SearchView : XtraForm
     {
         SearchPresenter presenter;
-        
+        IUserNotify notifyManager = Program.MainWiewInstance;
+        const int defaultIndex = 5;
+
         public SearchView()
         {
             InitializeComponent();
@@ -25,19 +20,18 @@ namespace ContosoUI.Order.Search
 
         private void SearchView_Load(object sender, EventArgs e)
         {
-            searchViewModelBindingSource.DataSource = presenter;
+            orderBindingSource.DataSource = presenter;
 
-            statusComboBox.DataBindings.Add("DataSource", searchViewModelBindingSource, "StatusesList");
-            statusComboBox.SelectedIndex = 5;
+            statusComboBox.DataBindings.Add("DataSource", orderBindingSource, "StatusesList");
+            statusComboBox.SelectedIndex = defaultIndex;
 
-            resultGridControl.DataBindings.Add("DataSource", searchViewModelBindingSource, "viewModel");
+            resultGridControl.DataBindings.Add("DataSource", orderBindingSource, "OrdersList");
             
         }
 
         private void searchBarButtonItem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Domain.Entities.OrderStatus currentStatus = new Domain.Entities.OrderStatus() { Status = statusComboBox.Text };
-            presenter.SelectOrdersByStatus(currentStatus);
+            presenter.SelectOrdersByStatus(statusComboBox.SelectedValue as Domain.Entities.OrderStatus);
             resultGridControl.RefreshDataSource();
         }
 
@@ -47,7 +41,7 @@ namespace ContosoUI.Order.Search
             if (hi.InRowCell)
             {
                 GridView view = (GridView)sender;
-                GridHitInfo info = view.CalcHitInfo(view.GridControl.PointToClient(Control.MousePosition));
+                GridHitInfo info = view.CalcHitInfo(view.GridControl.PointToClient(MousePosition));
                 int id = (int)view.GetRowCellValue(info.RowHandle, "Id");
                 var form = new AddEditOrderView(id);
                 form.MdiParent = MdiParent;

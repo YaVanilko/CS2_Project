@@ -26,5 +26,10 @@ namespace Domain.Entities
         { 
             Goods = new Goods(); 
         }
+
+        public override string ToString()
+        {
+            return Goods.ToString() + " " + Convert.ToString(Count) + " " + Convert.ToString(TotalPrice);
+        }
     }
 }
