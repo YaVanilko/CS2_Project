@@ -148,11 +148,6 @@ namespace ContosoUI.GoodsAll.AddGoods
             NotifyPropertyChanged("Save");
         }
 
-        //public void Update(Goods goods)
-        //{
-        //    service.GoodsDao.Update(goods);
-        //}
-
         public event PropertyChangedEventHandler PropertyChanged;
         private void NotifyPropertyChanged(String info)
         {
