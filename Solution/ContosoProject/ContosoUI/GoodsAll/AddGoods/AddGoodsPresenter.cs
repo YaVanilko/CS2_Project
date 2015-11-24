@@ -143,7 +143,7 @@ namespace ContosoUI.GoodsAll.AddGoods
             }
             else
             {
-                service.GoodsDao.Add(thisGoods);//???
+                service.GoodsDao.Add(thisGoods);
             }
             NotifyPropertyChanged("Save");
         }
