@@ -160,7 +160,6 @@ namespace ContosoUI.GoodsAll.AddGoods
         public void SaveAndNew(Goods g)
         {
             this.Save();
-           // thisGoods = new Goods();
             NotifyPropertyChanged("New goods");
         }
     }
