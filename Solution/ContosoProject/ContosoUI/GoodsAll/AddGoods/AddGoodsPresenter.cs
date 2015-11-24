@@ -102,19 +102,6 @@ namespace ContosoUI.GoodsAll.AddGoods
             }
         }
 
-        //public string Coments
-        //{
-        //    get { return thisGoods.Coments.ToString(); }
-        //    //set
-        //    //{
-        //    //    if (thisGoods.Coments != value)
-        //    //    {
-        //    //        thisGoods.Name = value;
-        //    //        NotifyPropertyChanged("FirstName");
-        //    //    }
-        //    //}
-        //}
-
         public bool IsActive
         {
             get { return thisGoods.IsActive; }
