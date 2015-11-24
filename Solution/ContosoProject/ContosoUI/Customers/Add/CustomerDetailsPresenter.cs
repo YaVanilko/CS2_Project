@@ -118,8 +118,10 @@ namespace ContosoUI.Customers.Add
         public bool IsActive
         {
             get { return customer.IsActive; }
-            set { customer.IsActive = value;
-            NotifyPropertyChanged("IsActive");
+            set
+            {
+                customer.IsActive = value;
+                NotifyPropertyChanged("IsActive");
             }
         }
         private string currentComment = string.Empty;
@@ -131,8 +133,7 @@ namespace ContosoUI.Customers.Add
                 if (currentComment != value)
                 {
                     currentComment = value;
-                    
-                }NotifyPropertyChanged("CurentComment");
+                } NotifyPropertyChanged("CurentComment");
             }
         }
 
@@ -213,7 +214,7 @@ namespace ContosoUI.Customers.Add
                 }
             }
             return isValid;
-        } 
+        }
         #endregion
     }
 }
